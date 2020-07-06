@@ -3,4 +3,4 @@
 screencapture -i ~/.cache/screenshot.png
 
 # curl -F'file=@/Users/gadzhi/.cache/screenshot.png' https://0x0.st | pbcopy
-ds /Users/gadzhi/.cache/screenshot.png
+ds ~/.cache/screenshot.png
