@@ -7,7 +7,6 @@ export EDITOR=nvim
 # export BROWSER=firefox
 export VISUAL=nvim
 
-export TODOTXT_DEFAULT_ACTION=ls
 export FZF_DEFAULT_COMMAND='rg --files --follow'
 export FZF_DEFAULT_OPTS='--color=bw'
 
