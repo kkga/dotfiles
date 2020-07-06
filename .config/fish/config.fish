@@ -23,5 +23,5 @@ if not functions -q fisher
     fish -c fisher
 end
 
-# zoxide init fish | source
+zoxide init fish | source
 # starship init fish | source
