@@ -1,0 +1,47 @@
+add_newline = false
+
+[character]      # The name of the module we are configuring is "character"
+symbol = "→"     # The "symbol" segment is being set to "➜"
+style = "dimmed"
+
+prompt_order=["line_break","package","line_break","character"]
+
+[battery]
+disabled = true
+
+[package]
+disabled = true
+
+[aws]
+disabled = true
+
+[nodejs]
+disabled = true
+
+# [directory]
+# style = "fg:fg"
+
+[git_branch]
+symbol = ""
+style = "purple"
+truncation_length = 32
+truncation_symbol = "…"
+
+[git_commit]
+commit_hash_length = 4
+
+[git_status]
+style = "purple"
+# conflicted = "🏳"
+ahead = "↑"
+behind = "↓"
+# diverged = "😵"
+untracked = "?"
+# stashed = "📦"
+modified = "M"
+# staged.value = "++"
+# staged.style = "green"
+# staged_count.enabled = true
+# staged_count.style = "green"
+renamed = "R"
+deleted = "D"

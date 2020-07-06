@@ -10,6 +10,7 @@ export VISUAL=nvim
 
 export FZF_DEFAULT_COMMAND="rg --files --follow"
 export FZF_DEFAULT_OPTS="--color=bw"
+export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 export RESTIC_REPOSITORY="sftp:gadzhi.synology.me:/home/restic-backup"
 export RESTIC_PASSWORD_COMMAND="security find-generic-password -s backup-restic-repository -a restic_backup -w"
