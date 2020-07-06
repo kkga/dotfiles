@@ -1,0 +1,34 @@
+[user]
+	name = Gadzhi Kharkharov
+	email = me@kkga.me
+[credential]
+	helper = osxkeychain
+[diff]
+	tool = kitty
+	guitool = kitty.gui
+[difftool]
+	prompt = false
+	trustExitCode = true
+[difftool "kitty"]
+	cmd = kitty +kitten diff $LOCAL $REMOTE
+[difftool "kitty.gui"]
+	cmd = kitty kitty +kitten diff $LOCAL $REMOTE
+[core]
+	excludesfile = /Users/kkga/.gitignore
+	editor = nvim
+[alias]
+	ci = commit
+	co = checkout
+	br = branch
+	st = status
+[hub]
+	protocol = ssh
+[color]
+	ui = auto
+[push]
+	default = simple
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
