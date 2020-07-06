@@ -1,3 +1,5 @@
+source /usr/share/defaults/etc/profile
+
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export GPG_TTY=$(tty)

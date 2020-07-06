@@ -44,8 +44,8 @@ Plug 'junegunn/goyo.vim'
 Plug 'previm/previm/'
 
 " snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+" Plug 'SirVer/ultisnips'
+" Plug 'honza/vim-snippets'
 
 " file browsing
 Plug 'justinmk/vim-dirvish'

@@ -1,7 +1,5 @@
 set fish_greeting ''
 
-set -g fish_user_paths "/usr/local/opt/gnu-getopt/bin" $fish_user_paths
-
 alias vim 'nvim'
 alias nano 'kibi'
 
@@ -25,5 +23,5 @@ if not functions -q fisher
     fish -c fisher
 end
 
-zoxide init fish | source
-starship init fish | source
+# zoxide init fish | source
+# starship init fish | source
