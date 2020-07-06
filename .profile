@@ -1,5 +1,6 @@
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+export GPG_TTY=$(tty)
 
 export PATH="$HOME/.scripts:$HOME/.cargo/bin:$HOME/.local/bin:$HOME/Library/Python/3.7/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
