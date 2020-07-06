@@ -1,0 +1,4 @@
+Documents/
+godot-projects/
+.config/
+.ssh/

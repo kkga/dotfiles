@@ -1,0 +1,9 @@
+#!/bin/zsh
+
+cd "$HOME/Documents/Notes"
+
+file=$(rg --files --follow | fzf --reverse --height 40% --preview 'bat --style="plain" --color=always {} | head -500')
+
+[[ -n "$file" ]] || exit
+
+exec nvim $file
