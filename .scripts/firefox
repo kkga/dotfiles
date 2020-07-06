@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-exec /Applications/Firefox\ Nightly.app/Contents/MacOS/firefox $@

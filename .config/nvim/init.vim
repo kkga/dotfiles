@@ -130,7 +130,7 @@ let b:colortemplate_outdir = "/Users/kkga/.config/nvim"
 " colorscheme apprentice
 " }}}
 " Wiki {{{
-let g:wiki_root = '~/Documents/Notes/'
+let g:wiki_root = '~/Documents/notes/'
 let g:wiki_filetypes = ['md']
 let g:wiki_link_extension = '.md'
 let g:wiki_list_todos = ['[ ]', '[x]']
