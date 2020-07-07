@@ -1,4 +1,6 @@
-source /usr/share/defaults/etc/profile
+if [ -f /usr/share/defaults/etc/profile ]; then
+    source /usr/share/defaults/etc/profile
+fi
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
