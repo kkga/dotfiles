@@ -1,0 +1,30 @@
+[Persistent_Options]
+[Persistent_Options/Window]
+[Persistent_Options/Window/MapFrame]
+x=0
+y=54
+w=3840
+h=2106
+Maximized=0
+Iconized=0
+decor_l=0
+decor_r=0
+decor_t=74
+decor_b=0
+[Persistent_Options/SplitterWindow2]
+[Persistent_Options/SplitterWindow2/MapFrameHSplitter]
+SplitRatio=7877
+[Persistent_Options/SplitterWindow2/MapFrameVSplitter]
+SplitRatio=9458
+[Persistent_Options/SplitterWindow2/EntityInspectorSplitter]
+SplitRatio=3062
+[Persistent_Options/SplitterWindow2/EntityAttributeEditorSplitter]
+SplitRatio=8214
+[Persistent_Options/SplitterWindow2/EntityDocumentationSplitter]
+SplitRatio=4950
+[Persistent_Options/SplitterWindow2/FaceInspectorSplitter]
+SplitRatio=-10000
+[Texture\ Browser]
+Icon\ size=1.000000
+[Renderer]
+Font\ size=20
