@@ -3,12 +3,6 @@
 " PLUGINS {{{
 call plug#begin('~/.config/nvim/plugged')
 
-" testing
-" Plug 'liuchengxu/vim-better-default'
-" Plug 'liuchengxu/vim-which-key'
-" nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
-" nnoremap <silent> <localleader> :<c-u>WhichKey  ','<CR>
-
 " basics
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
@@ -25,7 +19,6 @@ Plug 'godlygeek/tabular'
 Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-flagship'
 
-
 " themes
 Plug 'romainl/Apprentice'
 Plug 'hardselius/warlock'
@@ -33,12 +26,11 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'lifepillar/vim-colortemplate'
 
 " markdown and note-taking
-" Plug 'tpope/vim-markdown'
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
+Plug 'tpope/vim-markdown'
+" Plug 'vim-pandoc/vim-pandoc'
+" Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'lifepillar/vim-outlaw'
 Plug 'lervag/wiki.vim'
-" Plug 'reedes/vim-pencil', { 'for': 'markdown' }
 " Plug 'Alok/notational-fzf-vim'
 Plug 'junegunn/goyo.vim'
 Plug 'previm/previm/'
@@ -71,11 +63,6 @@ let g:grepper.jump = 1
 nnoremap <leader>/ :GrepperRg<Space>
 nnoremap gs :Grepper -cword -noprompt<CR>
 xmap gs <Plug>(GrepperOperator)
-
-" tags
-" Plug 'majutsushi/tagbar'
-Plug 'ludovicchabant/vim-gutentags'
-" Plug 'liuchengxu/vista.vim'
 
 " linting
 Plug 'dense-analysis/ale'
