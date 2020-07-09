@@ -1,7 +1,7 @@
 add_newline = false
 
 [character]      # The name of the module we are configuring is "character"
-symbol = "→"     # The "symbol" segment is being set to "➜"
+symbol = "#"     # The "symbol" segment is being set to "➜"
 style = "dimmed"
 
 prompt_order=["line_break","package","line_break","character"]
