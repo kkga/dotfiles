@@ -2,10 +2,10 @@
 
 # global settings
 yabai -m config mouse_follows_focus          on
-yabai -m config focus_follows_mouse          autoraise
+yabai -m config focus_follows_mouse          off
 yabai -m config window_placement             second_child
 yabai -m config window_topmost               on
-yabai -m config window_opacity               on
+yabai -m config window_opacity               off
 yabai -m config window_opacity_duration      0.0
 yabai -m config active_window_opacity        1.0
 yabai -m config normal_window_opacity        0.90
@@ -23,11 +23,8 @@ yabai -m config mouse_action2                resize
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config top_padding                  20
-yabai -m config bottom_padding               0
-yabai -m config left_padding                 0
-yabai -m config right_padding                0
 yabai -m config window_gap                   4
+yabai -m config external_bar                 all:20:0
 
 
 # space config
@@ -41,10 +38,11 @@ yabai -m rule --add app="^Preview$"            manage=off
 yabai -m rule --add app="^Kap$"                manage=off
 yabai -m rule --add app="^YT Music$"           manage=off display=^2
 yabai -m rule --add app="^Music$"              manage=off display=^2
-yabai -m rule --add app="Bitwarden"            manage=off
+yabai -m rule --add app="^Bitwarden$"          manage=off
 yabai -m rule --add app="^zoom.us$"            manage=off
 yabai -m rule --add app="^iStat Menus Status$" manage=off
-yabai -m rule --add app="^Godot$" manage=off
+yabai -m rule --add app="^Godot$"              manage=off
+yabai -m rule --add app='^Little Snitch$'      manage=off
 
 yabai -m rule --add app="^Safari$"             space=^1
 yabai -m rule --add app="^Firefox Nightly$"    space=^1
