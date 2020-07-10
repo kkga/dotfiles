@@ -24,11 +24,17 @@ SplitRatio=8260
 SplitRatio=4950
 [Persistent_Options/SplitterWindow2/FaceInspectorSplitter]
 SplitRatio=1140
+[Persistent_Options/SplitterWindow4]
+[Persistent_Options/SplitterWindow4/4PaneMapViewSplitter]
+SplitRatioX=4997
+SplitRatioY=5000
 [Games]
 [Games/Room32]
 Path=/home/kkga/godot-projects/3d-prototype
 [Views]
 Map\ view\ layout=3
+[Renderer]
+Font\ size=14
 [RecentDocuments]
 0=/home/kkga/godot-projects/3d-prototype/maps/home.map
 1=/home/kkga/godot-projects/3d-prototype/maps/1-exit-1.map
