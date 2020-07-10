@@ -1,0 +1,8 @@
+Renderer info: llvmpipe (LLVM 7.0, 128 bits) version 3.1 Mesa 19.1.7 from VMware, Inc.
+Depth buffer bits: 24
+Multisampling disabled
+Adding file system path /home/kkga/godot-projects/3d-prototype/.
+Loading document from /home/kkga/godot-projects/3d-prototype/maps/home.map
+Loaded entity definition file Room32.fgd
+Loading palette file addons/qodot/palette.lmp
+Loaded texture collection '../textures/wads/prototype_1_2.wad'
