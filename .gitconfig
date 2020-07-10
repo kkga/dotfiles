@@ -17,16 +17,25 @@
 	excludesfile = /Users/kkga/.gitignore
 	editor = nvim
 [alias]
-	ci = commit
+	a = add
+	c = commit
 	co = checkout
-	br = branch
-	st = status
+	b = branch
+	s = status
+	d = diff
+	l = log --oneline
 [hub]
 	protocol = ssh
 [color]
 	ui = auto
+[status]
+	short = true
 [push]
 	default = simple
+[pull]
+	rebase = false
+[log]
+    date = format:%Y-%m-%d %H:%M:%S %z (%A)
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
