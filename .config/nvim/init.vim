@@ -26,9 +26,9 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'lifepillar/vim-colortemplate'
 
 " markdown and note-taking
-Plug 'tpope/vim-markdown'
-" Plug 'vim-pandoc/vim-pandoc'
-" Plug 'vim-pandoc/vim-pandoc-syntax'
+" Plug 'tpope/vim-markdown'
+Plug 'vim-pandoc/vim-pandoc'
+Plug 'vim-pandoc/vim-pandoc-syntax'
 Plug 'lifepillar/vim-outlaw'
 Plug 'lervag/wiki.vim'
 " Plug 'Alok/notational-fzf-vim'
@@ -76,13 +76,9 @@ Plug 'calviken/vim-gdscript3'
 call plug#end()
 "}}}
 " PLUGIN SETTINGS {{{
-" Sneak {{{
-" let g:sneak#label = 1
-" }}}
 " Colorscheme {{{
 let g:solarized_visibility = "high"
 let g:solarized_termtrans = 1
-" let g:solarized_use16 = 1
 let g:solarized_statusline = "flat"
 let g:solarized_extra_hi_groups = 1
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
@@ -92,29 +88,6 @@ colorscheme solarized8
 " }}}
 " Colortemplate {{{
 let b:colortemplate_outdir = "/Users/kkga/.config/nvim"
-" }}}
-" Apprentice theme tweaks {{{
-" function! MyHighlights() abort
-"     hi Normal ctermbg=NONE guibg=NONE
-"     " hi NormalNC ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
-"     hi Folded ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
-"     hi FoldColumn ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
-"     hi LineNr ctermbg=NONE ctermfg=242 cterm=NONE guibg=NONE guifg=#6C6C6C gui=NONE
-"     hi StatusLine ctermbg=236 ctermfg=250 cterm=NONE guibg=#303030 guifg=#BCBCBC gui=NONE
-"     hi StatusLineNC ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
-"     hi TabLine ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
-"     hi TabLineFill ctermbg=236 ctermfg=240 cterm=NONE guibg=#303030 guifg=#585858 gui=NONE
-"     hi TabLineSel ctermbg=238 ctermfg=250 cterm=NONE guibg=#444444 guifg=#BCBCBC gui=NONE
-"     hi Title ctermbg=NONE ctermfg=231 cterm=BOLD guibg=NONE guifg=#FFFFFF gui=BOLD
-"     hi EndOfBuffer ctermbg=NONE ctermfg=238 cterm=NONE guibg=NONE guifg=#444444 gui=NONE
-"     hi VertSplit ctermbg=236 ctermfg=236 cterm=NONE guibg=#303030 guifg=#303030 gui=NONE
-"     hi ModeMsg ctermbg=NONE ctermfg=73 cterm=BOLD guibg=NONE guifg=#5FAFAF gui=BOLD
-" endfunction
-" augroup MyColors
-"     autocmd!
-"     autocmd ColorScheme * call MyHighlights()
-" augroup END
-" colorscheme apprentice
 " }}}
 " Wiki {{{
 let g:wiki_root = '~/Documents/notes/'
@@ -304,10 +277,6 @@ set directory=$HOME/.vim/swp//  " Write swap files in one directory, unique nms
 " leader
 let mapleader = "\<space>"
 let maplocalleader = "\\"
-
-" sneak
-map f <Plug>Sneak_s
-map F <Plug>Sneak_S
 
 " theme switcher
 nnoremap <Leader>cd :set bg=dark<CR>

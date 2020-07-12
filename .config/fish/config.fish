@@ -12,10 +12,13 @@ alias gg 'lazygit'
 alias brewup 'brew update && brew upgrade && brew cask upgrade'
 
 alias gdocs 'open ~/repos/godot-docs/_build/html/index.html'
-alias godot '/Applications/Godot.app/Contents/MacOS/Godot'
 
 alias kd 'kitty @ set-colors -a "~/.config/kitty/theme-dark.conf"'
 alias kl 'kitty @ set-colors -a "~/.config/kitty/theme-light.conf"'
+
+if test (uname) = "Darwin"
+    alias godot '/Applications/Godot.app/Contents/MacOS/Godot'
+end
 
 if not functions -q fisher
     set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
