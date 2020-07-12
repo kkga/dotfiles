@@ -204,6 +204,9 @@ let g:sleuth_automatic = 1
 let g:outlaw_indent = 2
 let g:outlaw_auto_close = 0
 " }}}
+" Org {{{
+let g:org_aggressive_conceal = 1
+" }}}
 " }}}
 " SETTINGS {{{
 
@@ -454,7 +457,7 @@ endfunc
 command! -nargs=* Zet call ZettelEdit(<f-args>)
 
 command! -bang -nargs=? -complete=dir NoteFiles
-    \ call fzf#vim#files('/home/kkga/Documents/notes/', {'options': ['--info=inline', '--preview', 'cat {}']}, <bang>0)
+    \ call fzf#vim#files('$HOME/Documents/Notes/', {'options': ['--info=inline', '--preview', 'cat {}']}, <bang>0)
 
 " }}}
 
