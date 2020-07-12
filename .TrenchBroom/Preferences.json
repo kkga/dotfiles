@@ -8,13 +8,13 @@
     "Games/Room32/Path": "/Users/kkga/godot-projects/3d-prototype",
     "Rendere/Grid/Color2D": "0.501961 0.501961 0.501961 1",
     "Renderer/Brightness": 1.274999976158142,
-    "Renderer/Colors/Background": "0.14902 0.14902 0.14902 1",
-    "Renderer/Colors/Edges": "0.9 0.9 0.9 1",
+    "Renderer/Colors/Edges": "0.898039 0.898039 0.898039 1",
     "Renderer/Font size": 13,
     "Renderer/Grid/Alpha": 0.5,
     "Renderer/Show axes": true,
     "Renderer/Texture mode mag filter": 9728,
     "Renderer/Texture mode min filter": 9984,
     "Texture Browser/Icon size": 1,
-    "Views/Map view layout": 0
+    "Theme": "Dark",
+    "Views/Map view layout": 3
 }
