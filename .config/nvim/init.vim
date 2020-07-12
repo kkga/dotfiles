@@ -34,6 +34,7 @@ Plug 'lervag/wiki.vim'
 " Plug 'Alok/notational-fzf-vim'
 Plug 'junegunn/goyo.vim'
 Plug 'previm/previm/'
+Plug 'jceb/vim-orgmode'
 
 " snippets
 " Plug 'SirVer/ultisnips'
@@ -453,7 +454,7 @@ endfunc
 command! -nargs=* Zet call ZettelEdit(<f-args>)
 
 command! -bang -nargs=? -complete=dir NoteFiles
-    \ call fzf#vim#files('~/Documents/Notes/', {'options': ['--info=inline', '--preview', 'cat {}']}, <bang>0)
+    \ call fzf#vim#files('/home/kkga/Documents/notes/', {'options': ['--info=inline', '--preview', 'cat {}']}, <bang>0)
 
 " }}}
 
