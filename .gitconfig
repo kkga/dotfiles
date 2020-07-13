@@ -16,6 +16,7 @@
 [core]
 	excludesfile = /Users/kkga/.gitignore
 	editor = nvim
+	pager = less
 [alias]
 	a = add
 	c = commit
@@ -35,7 +36,7 @@
 [pull]
 	rebase = false
 [log]
-    date = format:%Y-%m-%d %H:%M:%S %z (%A)
+	date = format:%Y-%m-%d %H:%M:%S %z (%A)
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
