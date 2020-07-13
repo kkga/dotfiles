@@ -43,6 +43,7 @@ yabai -m rule --add app="^iStat Menus Status$" manage=off
 yabai -m rule --add app="^Godot$"              manage=off
 yabai -m rule --add app='^Little Snitch$'      manage=off
 yabai -m rule --add app="^Figma$"              space=^4 manage=off
+yabai -m rule --add app="^Quick Add to Trello$" manage=off
 
 yabai -m rule --add app="^Safari$"             space=^1
 yabai -m rule --add app="^Firefox Nightly$"    space=^1
