@@ -23,6 +23,7 @@
 	co = checkout
 	b = branch
 	s = status
+	sl = status --long
 	d = diff
 	l = log --oneline
 [hub]
