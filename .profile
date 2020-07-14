@@ -6,7 +6,11 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export GPG_TTY=$(tty)
 
-export PATH=$HOME/.scripts:$HOME/.cargo/bin:$HOME/.local/bin:$HOME/Library/Python/3.7/bin:$PATH
+export PATH=$PATH:$HOME/go/bin
+export PATH=$PATH:$HOME/.scripts
+export PATH=$PATH:$HOME/.cargo/bin
+export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/Library/Python/3.7/bin
 
 export BROWSER=firefox
 export EDITOR=nvim

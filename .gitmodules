@@ -1,3 +1,6 @@
 [submodule ".config/ubersicht/widgets/nibar"]
 	path = .config/ubersicht/widgets/nibar
 	url = https://github.com/kkga/nibar.git
+[submodule ".config/godot/text_editor_themes"]
+	path = .config/godot/text_editor_themes
+	url = https://github.com/kkga/godot-syntax-themes
