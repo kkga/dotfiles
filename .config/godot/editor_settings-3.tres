@@ -2,18 +2,22 @@
 
 [sub_resource type="InputEventKey" id=1]
 control = true
+command = true
 scancode = 96
 
 [sub_resource type="InputEventKey" id=2]
 control = true
+command = true
 scancode = 32
 
 [sub_resource type="InputEventKey" id=3]
+control = true
 meta = true
 command = true
 scancode = 49
 
 [sub_resource type="InputEventKey" id=4]
+control = true
 meta = true
 command = true
 scancode = 50
@@ -23,20 +27,24 @@ scancode = 16777247
 unicode = 16777247
 
 [sub_resource type="InputEventKey" id=6]
+control = true
 meta = true
 command = true
 scancode = 51
 
 [sub_resource type="InputEventKey" id=7]
 control = true
+command = true
 scancode = 79
 
 [sub_resource type="InputEventKey" id=8]
+control = true
 meta = true
 command = true
 scancode = 125
 
 [sub_resource type="InputEventKey" id=9]
+control = true
 meta = true
 command = true
 scancode = 123
@@ -44,20 +52,24 @@ scancode = 123
 [sub_resource type="InputEventKey" id=10]
 shift = true
 control = true
+command = true
 scancode = 90
 
 [sub_resource type="InputEventKey" id=11]
+control = true
 meta = true
 command = true
 scancode = 47
 
 [sub_resource type="InputEventKey" id=12]
 control = true
+command = true
 scancode = 90
 
 [sub_resource type="InputEventKey" id=13]
 alt = true
 control = true
+command = true
 scancode = 90
 
 [resource]
@@ -65,9 +77,6 @@ interface/editor/display_scale = 7
 interface/editor/custom_display_scale = 1.4
 interface/editor/main_font_size = 16
 interface/editor/code_font_size = 20
-interface/editor/main_font = "/Users/kkga/Library/Fonts/Inter-Regular.otf"
-interface/editor/main_font_bold = "/Users/kkga/Library/Fonts/Inter-Bold.otf"
-interface/editor/code_font = "/Users/kkga/Library/Fonts/iosevka-custom-regular.ttf"
 interface/editor/dim_editor_on_dialog_popup = false
 interface/editor/separate_distraction_mode = true
 interface/editor/hide_console_window = true
@@ -251,4 +260,5 @@ projects/::Users::kkga::godot-projects::notetrees = "/Users/kkga/godot-projects/
 projects/::Users::kkga::godot-projects::datatype-ui-designer = "/Users/kkga/godot-projects/datatype-ui-designer"
 editors/3d/navigation/show_viewport_rotation_gizmo = true
 projects/::Users::kkga::godot-projects::3d-prototype = "/Users/kkga/godot-projects/3d-prototype"
+projects/::home::kkga::godot-projects::3d-prototype = "/home/kkga/godot-projects/3d-prototype"
 shortcuts = [ "debugger/keep_debugger_open", SubResource( 1 ), "editor/distraction_free_mode", SubResource( 2 ), "editor/editor_2d", SubResource( 3 ), "editor/editor_3d", SubResource( 4 ), "editor/editor_help", SubResource( 5 ), "editor/editor_script", SubResource( 6 ), "editor/quick_open", SubResource( 7 ), "script_editor/history_next", SubResource( 8 ), "script_editor/history_previous", SubResource( 9 ), "script_text_editor/fold_all_lines", SubResource( 10 ), "script_text_editor/toggle_comment", SubResource( 11 ), "script_text_editor/toggle_fold_line", SubResource( 12 ), "script_text_editor/unfold_all_lines", SubResource( 13 ) ]
