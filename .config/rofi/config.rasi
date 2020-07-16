@@ -1,5 +1,5 @@
 configuration {
-	modi: "window,drun,run,combi";
+	modi: "combi,run";
 	combi-modi: "window,drun";
 	width: 32;
 	lines: 8;
@@ -12,7 +12,7 @@ configuration {
 	/* line-padding: 8; */
 	sorting-method: "fzf";
 	combi-hide-mode-prefix: true;
-	sidebar-mode: true;
+	/* sidebar-mode: true; */
 	dpi: 192;
 	terminal: "kitty";
 	theme: "rofi-theme";
