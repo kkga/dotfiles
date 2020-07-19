@@ -1,4 +1,4 @@
-[gd_resource type="EditorSettings" load_steps=14 format=2]
+[gd_resource type="EditorSettings" load_steps=26 format=2]
 
 [sub_resource type="InputEventKey" id=1]
 control = true
@@ -39,51 +39,152 @@ scancode = 79
 
 [sub_resource type="InputEventKey" id=8]
 control = true
+command = true
+scancode = 78
+unicode = 78
+
+[sub_resource type="InputEventKey" id=9]
+scancode = 16777224
+unicode = 16777224
+
+[sub_resource type="InputEventKey" id=10]
+control = true
+command = true
+scancode = 68
+unicode = 68
+
+[sub_resource type="InputEventKey" id=11]
+alt = true
+scancode = 16777231
+unicode = 16777231
+
+[sub_resource type="InputEventKey" id=12]
+alt = true
+scancode = 16777233
+unicode = 16777233
+
+[sub_resource type="InputEventKey" id=13]
+alt = true
+scancode = 16777232
+unicode = 16777232
+
+[sub_resource type="InputEventKey" id=14]
+control = true
+command = true
+scancode = 16777234
+unicode = 16777234
+
+[sub_resource type="InputEventKey" id=15]
+control = true
+command = true
+scancode = 16777232
+unicode = 16777232
+
+[sub_resource type="InputEventKey" id=16]
+scancode = 16777248
+unicode = 16777248
+
+[sub_resource type="InputEventKey" id=17]
+alt = true
+scancode = 70
+unicode = 70
+
+[sub_resource type="InputEventKey" id=18]
+control = true
+command = true
+scancode = 72
+unicode = 72
+
+[sub_resource type="InputEventKey" id=19]
+alt = true
+scancode = 86
+unicode = 86
+
+[sub_resource type="InputEventKey" id=20]
+control = true
 meta = true
 command = true
 scancode = 125
 
-[sub_resource type="InputEventKey" id=9]
+[sub_resource type="InputEventKey" id=21]
 control = true
 meta = true
 command = true
 scancode = 123
 
-[sub_resource type="InputEventKey" id=10]
+[sub_resource type="InputEventKey" id=22]
 shift = true
 control = true
 command = true
 scancode = 90
 
-[sub_resource type="InputEventKey" id=11]
+[sub_resource type="InputEventKey" id=23]
 control = true
 meta = true
 command = true
 scancode = 47
 
-[sub_resource type="InputEventKey" id=12]
+[sub_resource type="InputEventKey" id=24]
 control = true
 command = true
 scancode = 90
 
-[sub_resource type="InputEventKey" id=13]
+[sub_resource type="InputEventKey" id=25]
 alt = true
 control = true
 command = true
 scancode = 90
 
 [resource]
+resource_local_to_scene = false
+resource_name = ""
+interface/editor/editor_language = "en"
 interface/editor/display_scale = 7
 interface/editor/custom_display_scale = 1.4
 interface/editor/main_font_size = 16
 interface/editor/code_font_size = 20
+interface/editor/font_antialiased = true
+interface/editor/font_hinting = 0
+interface/editor/main_font = ""
+interface/editor/main_font_bold = ""
+interface/editor/code_font = ""
 interface/editor/dim_editor_on_dialog_popup = false
+interface/editor/low_processor_mode_sleep_usec = 6900
+interface/editor/unfocused_low_processor_mode_sleep_usec = 50000
 interface/editor/separate_distraction_mode = true
+interface/editor/automatically_open_screenshots = true
 interface/editor/hide_console_window = true
+interface/editor/save_each_scene_on_quit = true
+interface/editor/quit_confirmation = true
 interface/theme/preset = "Grey"
+interface/theme/icon_and_font_color = 0
 interface/theme/base_color = Color( 0.24, 0.24, 0.24, 1 )
 interface/theme/accent_color = Color( 0.72, 0.89, 1, 1 )
 interface/theme/contrast = 0.2
+interface/theme/relationship_line_opacity = 0.1
+interface/theme/highlight_tabs = false
+interface/theme/border_size = 1
+interface/theme/use_graph_node_headers = false
+interface/theme/additional_spacing = 0
+interface/theme/custom_theme = ""
+interface/scene_tabs/show_extension = false
+interface/scene_tabs/show_thumbnail_on_hover = true
+interface/scene_tabs/resize_if_many_tabs = true
+interface/scene_tabs/minimum_width = 50
+interface/scene_tabs/show_script_button = false
+filesystem/directories/autoscan_project_path = ""
+filesystem/directories/default_project_path = "/home/kkga"
+filesystem/on_save/compress_binary_resources = true
+filesystem/on_save/safe_save_on_backup_then_rename = true
+filesystem/file_dialog/show_hidden_files = false
+filesystem/file_dialog/display_mode = 0
+filesystem/file_dialog/thumbnail_size = 64
+filesystem/import/pvrtc_texture_tool = ""
+filesystem/import/pvrtc_fast_conversion = false
+docks/scene_tree/start_create_dialog_fully_expanded = false
+docks/filesystem/thumbnail_size = 64
+docks/filesystem/always_show_folders = true
+docks/property_editor/auto_refresh_interval = 0.3
 text_editor/theme/color_theme = "Apprentice"
 text_editor/theme/line_spacing = 2
 text_editor/highlighting/symbol_color = Color( 0.737255, 0.737255, 0.737255, 1 )
@@ -106,6 +207,7 @@ text_editor/highlighting/caret_color = Color( 0.372549, 0.686275, 0.686275, 1 )
 text_editor/highlighting/caret_background_color = Color( 0.266667, 0.266667, 0.266667, 1 )
 text_editor/highlighting/text_selected_color = Color( 0.8, 0.8, 0.8, 1 )
 text_editor/highlighting/selection_color = Color( 0, 0.764706, 1, 0.188235 )
+text_editor/highlighting/brace_mismatch_color = Color( 1, 0.2, 0.2, 1 )
 text_editor/highlighting/current_line_color = Color( 1, 1, 1, 0.0431373 )
 text_editor/highlighting/line_length_guideline_color = Color( 0.266667, 0.266667, 0.266667, 1 )
 text_editor/highlighting/word_highlighted_color = Color( 1, 1, 1, 0.101961 )
@@ -115,24 +217,116 @@ text_editor/highlighting/member_variable_color = Color( 0.737255, 0.737255, 0.73
 text_editor/highlighting/mark_color = Color( 1, 0.196078, 0.196078, 0.219608 )
 text_editor/highlighting/bookmark_color = Color( 0.529412, 0.686275, 0.529412, 1 )
 text_editor/highlighting/breakpoint_color = Color( 1, 0.529412, 0, 1 )
+text_editor/highlighting/executing_line_color = Color( 0.2, 0.8, 0.2, 0.4 )
 text_editor/highlighting/code_folding_color = Color( 0.423529, 0.423529, 0.423529, 1 )
 text_editor/highlighting/search_result_color = Color( 0.372549, 0.686275, 0.686275, 0.34902 )
 text_editor/highlighting/search_result_border_color = Color( 0, 0, 0, 0 )
+text_editor/highlighting/syntax_highlighting = true
+text_editor/highlighting/highlight_all_occurrences = true
+text_editor/highlighting/highlight_current_line = true
+text_editor/highlighting/highlight_type_safe_lines = true
+text_editor/indent/type = 0
+text_editor/indent/size = 4
+text_editor/indent/auto_indent = true
+text_editor/indent/convert_indent_on_save = true
 text_editor/indent/draw_tabs = false
+text_editor/indent/draw_spaces = false
+text_editor/navigation/smooth_scrolling = true
 text_editor/navigation/v_scroll_speed = 160
+text_editor/navigation/show_minimap = true
 text_editor/navigation/minimap_width = 50
 text_editor/appearance/show_line_numbers = false
+text_editor/appearance/line_numbers_zero_padded = false
+text_editor/appearance/show_bookmark_gutter = true
+text_editor/appearance/show_breakpoint_gutter = true
+text_editor/appearance/show_info_gutter = true
+text_editor/appearance/code_folding = true
+text_editor/appearance/word_wrap = false
+text_editor/appearance/show_line_length_guideline = true
 text_editor/appearance/line_length_guideline_column = 100
+text_editor/script_list/show_members_overview = true
 text_editor/files/trim_trailing_whitespace_on_save = true
+text_editor/files/autosave_interval_secs = 0
+text_editor/files/restore_scripts_on_load = true
+text_editor/tools/create_signal_callbacks = true
+text_editor/tools/sort_members_outline_alphabetically = false
 text_editor/cursor/scroll_past_end_of_file = true
+text_editor/cursor/block_caret = false
+text_editor/cursor/caret_blink = true
+text_editor/cursor/caret_blink_speed = 0.5
+text_editor/cursor/right_click_moves_caret = true
+text_editor/completion/idle_parse_delay = 2.0
+text_editor/completion/auto_brace_complete = true
+text_editor/completion/code_complete_delay = 0.3
+text_editor/completion/put_callhint_tooltip_below_current_line = true
+text_editor/completion/callhint_tooltip_offset = Vector2( 0, 0 )
+text_editor/completion/complete_file_paths = true
 text_editor/completion/add_type_hints = true
+text_editor/completion/use_single_quotes = false
+text_editor/help/show_help_index = true
 text_editor/help/help_font_size = 18
 text_editor/help/help_source_font_size = 20
 text_editor/help/help_title_font_size = 32
+editors/grid_map/pick_distance = 5000.0
+editors/3d/primary_grid_color = Color( 0.56, 0.56, 0.56, 1 )
+editors/3d/secondary_grid_color = Color( 0.38, 0.38, 0.38, 1 )
+editors/3d/grid_size = 50
+editors/3d/primary_grid_steps = 10
+editors/3d/default_fov = 70.0
+editors/3d/default_z_near = 0.05
+editors/3d/default_z_far = 500.0
+editors/3d/navigation/navigation_scheme = 0
+editors/3d/navigation/invert_y_axis = false
+editors/3d/navigation/zoom_style = 0
+editors/3d/navigation/emulate_3_button_mouse = false
+editors/3d/navigation/orbit_modifier = 0
+editors/3d/navigation/pan_modifier = 1
+editors/3d/navigation/zoom_modifier = 4
+editors/3d/navigation/warped_mouse_panning = true
+editors/3d/navigation_feel/orbit_sensitivity = 0.4
+editors/3d/navigation_feel/orbit_inertia = 0.05
+editors/3d/navigation_feel/translation_inertia = 0.15
+editors/3d/navigation_feel/zoom_inertia = 0.075
+editors/3d/navigation_feel/manipulation_orbit_inertia = 0.075
+editors/3d/navigation_feel/manipulation_translation_inertia = 0.075
+editors/3d/freelook/freelook_navigation_scheme = false
+editors/3d/freelook/freelook_inertia = 0.1
+editors/3d/freelook/freelook_base_speed = 5.0
+editors/3d/freelook/freelook_activation_modifier = 0
+editors/3d/freelook/freelook_speed_zoom_link = false
+editors/2d/grid_color = Color( 1, 1, 1, 0.07 )
+editors/2d/guides_color = Color( 0.6, 0, 0.8, 1 )
+editors/2d/smart_snapping_line_color = Color( 0.9, 0.1, 0.1, 1 )
+editors/2d/bone_width = 5
+editors/2d/bone_color1 = Color( 1, 1, 1, 0.9 )
+editors/2d/bone_color2 = Color( 0.6, 0.6, 0.6, 0.9 )
+editors/2d/bone_selected_color = Color( 0.9, 0.45, 0.45, 0.9 )
+editors/2d/bone_ik_color = Color( 0.9, 0.9, 0.45, 0.9 )
+editors/2d/bone_outline_color = Color( 0.35, 0.35, 0.35, 1 )
+editors/2d/bone_outline_size = 2
+editors/2d/viewport_border_color = Color( 0.4, 0.4, 1, 0.4 )
+editors/2d/constrain_editor_view = true
+editors/2d/warped_mouse_panning = true
+editors/2d/simple_panning = false
+editors/2d/scroll_to_pan = false
+editors/2d/pan_speed = 20
+editors/poly_editor/point_grab_radius = 8
+editors/poly_editor/show_previous_outline = true
+editors/animation/autorename_animation_tracks = true
+editors/animation/confirm_insert_track = true
+editors/animation/onion_layers_past_color = Color( 1, 0, 0, 1 )
+editors/animation/onion_layers_future_color = Color( 0, 1, 0, 1 )
 run/window_placement/rect = 0
+run/window_placement/rect_custom_position = Vector2( 0, 0 )
 run/window_placement/screen = 2
+run/auto_save/save_before_running = true
 run/output/font_size = 17
+run/output/always_clear_output_on_play = true
+run/output/always_open_output_on_play = true
 run/output/always_close_output_on_stop = true
+network/debug/remote_host = "127.0.0.1"
+network/debug/remote_port = 6007
+network/ssl/editor_ssl_certificates = ""
 project_manager/sorting_order = 2
 asset_library/use_threads = true
 export/android/adb = ""
@@ -261,4 +455,4 @@ projects/::Users::kkga::godot-projects::datatype-ui-designer = "/Users/kkga/godo
 editors/3d/navigation/show_viewport_rotation_gizmo = true
 projects/::Users::kkga::godot-projects::3d-prototype = "/Users/kkga/godot-projects/3d-prototype"
 projects/::home::kkga::godot-projects::3d-prototype = "/home/kkga/godot-projects/3d-prototype"
-shortcuts = [ "debugger/keep_debugger_open", SubResource( 1 ), "editor/distraction_free_mode", SubResource( 2 ), "editor/editor_2d", SubResource( 3 ), "editor/editor_3d", SubResource( 4 ), "editor/editor_help", SubResource( 5 ), "editor/editor_script", SubResource( 6 ), "editor/quick_open", SubResource( 7 ), "script_editor/history_next", SubResource( 8 ), "script_editor/history_previous", SubResource( 9 ), "script_text_editor/fold_all_lines", SubResource( 10 ), "script_text_editor/toggle_comment", SubResource( 11 ), "script_text_editor/toggle_fold_line", SubResource( 12 ), "script_text_editor/unfold_all_lines", SubResource( 13 ) ]
+shortcuts = [ "debugger/keep_debugger_open", SubResource( 1 ), "editor/distraction_free_mode", SubResource( 2 ), "editor/editor_2d", SubResource( 3 ), "editor/editor_3d", SubResource( 4 ), "editor/editor_help", SubResource( 5 ), "editor/editor_script", SubResource( 6 ), "editor/quick_open", SubResource( 7 ), "file_dialog/create_folder", SubResource( 8 ), "file_dialog/delete", SubResource( 9 ), "file_dialog/focus_path", SubResource( 10 ), "file_dialog/go_back", SubResource( 11 ), "file_dialog/go_forward", SubResource( 12 ), "file_dialog/go_up", SubResource( 13 ), "file_dialog/move_favorite_down", SubResource( 14 ), "file_dialog/move_favorite_up", SubResource( 15 ), "file_dialog/refresh", SubResource( 16 ), "file_dialog/toggle_favorite", SubResource( 17 ), "file_dialog/toggle_hidden_files", SubResource( 18 ), "file_dialog/toggle_mode", SubResource( 19 ), "script_editor/history_next", SubResource( 20 ), "script_editor/history_previous", SubResource( 21 ), "script_text_editor/fold_all_lines", SubResource( 22 ), "script_text_editor/toggle_comment", SubResource( 23 ), "script_text_editor/toggle_fold_line", SubResource( 24 ), "script_text_editor/unfold_all_lines", SubResource( 25 ) ]
