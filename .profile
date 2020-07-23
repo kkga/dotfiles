@@ -11,6 +11,7 @@ export PATH=$PATH:$HOME/.scripts
 export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/Library/Python/3.7/bin
+export PATH=$PATH:/usr/local/opt/python@3.7/bin
 
 export BROWSER=firefox
 export EDITOR=nvim
