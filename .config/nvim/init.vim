@@ -27,14 +27,13 @@ Plug 'lifepillar/vim-colortemplate'
 
 " markdown and note-taking
 " Plug 'tpope/vim-markdown'
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'lifepillar/vim-outlaw'
+Plug 'plasticboy/vim-markdown'
+" Plug 'lifepillar/vim-outlaw'
 Plug 'lervag/wiki.vim'
 " Plug 'Alok/notational-fzf-vim'
 Plug 'junegunn/goyo.vim'
 Plug 'previm/previm/'
-Plug 'jceb/vim-orgmode'
+Plug 'cweagans/vim-taskpaper'
 
 " snippets
 " Plug 'SirVer/ultisnips'
@@ -45,15 +44,15 @@ Plug 'justinmk/vim-dirvish'
 Plug 'preservim/nerdtree'
 
 " utils
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'mbbill/undotree'
 Plug 'junegunn/vim-peekaboo'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'konfekt/fastfold'
 Plug 'lifepillar/vim-cheat40'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-" Plug 'justinmk/vim-sneak'
-Plug 'rhysd/clever-f.vim'
+Plug 'justinmk/vim-sneak'
+" Plug 'rhysd/clever-f.vim'
 
 " searching
 Plug 'mhinz/vim-grepper'
@@ -66,14 +65,15 @@ nnoremap gs :Grepper -cword -noprompt<CR>
 xmap gs <Plug>(GrepperOperator)
 
 " linting
-Plug 'dense-analysis/ale'
+" Plug 'dense-analysis/ale'
 
 " Autocomplete
-Plug 'maralla/completor.vim'
+" Plug 'maralla/completor.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " lang
 Plug 'sheerun/vim-polyglot'
-Plug 'calviken/vim-gdscript3'
+Plug 'habamax/vim-godot'
 call plug#end()
 "}}}
 " PLUGIN SETTINGS {{{
@@ -104,17 +104,21 @@ let g:wiki_mappings_global = {
 	\}
 " }}}
 " Markdown {{{
-let g:pencil#autoformat = 0
-let g:pencil#conceallevel = 3     " 0=disable, 1=one char, 2=hide char, 3=hide all (def)
-let g:pencil#concealcursor = 'c'  " n=normal, v=visual, i=insert, c=command (def)
-let g:pencil#wrapModeDefault = 'soft'   " default is 'hard'
-let g:pandoc#folding#mode = "syntax"
-let g:pandoc#folding#level = 2
-let g:pandoc#folding#fdc = 4
-let g:pandoc#spell#enabled = 0
-let g:pandoc#filetypes#handled = ["pandoc", "markdown"]
-" let g:pandoc#filetypes#pandoc_markdown = 1
 let g:previm_open_cmd = 'open -a Min'
+
+" Configuration for vim-markdown
+let g:vim_markdown_conceal = 2
+let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_math = 1
+let g:vim_markdown_toml_frontmatter = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_strikethrough = 1
+let g:vim_markdown_autowrite = 1
+let g:vim_markdown_edit_url_in = 'tab'
+let g:vim_markdown_follow_anchor = 1
+let g:vim_markdown_folding_style_pythonic = 1
+let g:vim_markdown_folding_level = 1
+let g:vim_markdown_toc_autofit = 1
 
 " }}}
 " ALE {{{
@@ -146,20 +150,20 @@ let g:fzf_action = {
 
 
 " Customize fzf colors to match your color scheme
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
+" let g:fzf_colors =
+" \ { 'fg':      ['fg', 'Normal'],
+"   \ 'bg':      ['bg', 'Normal'],
+"   \ 'hl':      ['fg', 'Comment'],
+"   \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+"   \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+"   \ 'hl+':     ['fg', 'Statement'],
+"   \ 'info':    ['fg', 'PreProc'],
+"   \ 'border':  ['fg', 'Ignore'],
+"   \ 'prompt':  ['fg', 'Conditional'],
+"   \ 'pointer': ['fg', 'Exception'],
+"   \ 'marker':  ['fg', 'Keyword'],
+"   \ 'spinner': ['fg', 'Label'],
+"   \ 'header':  ['fg', 'Comment'] }
 
 " Enable per-command history.
 " CTRL-N and CTRL-P will be automatically bound to next-history and
@@ -178,7 +182,6 @@ augroup END
 let g:fastfold_savehook = 1
 let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
 let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
-let g:markdown_folding = 1
 " }}}
 " Ultisnips {{{
 let g:UltiSnipsExpandTrigger="<C-e>"
@@ -227,9 +230,8 @@ set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.o,.git,tmp,node_modules,*.pyc
 set backspace=indent,eol,start  " Allow backspace in insert mode
 set ttimeoutlen=2               " Exit insert/visual mode without ESC delay
 set inccommand=split            " Highlight search results and show in preview split
-" set conceallevel=0              " Conceals markdown syntax
-" set foldlevelstart=1
-" set foldcolumn=4
+set conceallevel=0              " Conceals markdown syntax
+set foldcolumn=4
 set nospell
 set mouse=a
 
@@ -418,9 +420,9 @@ command! ToggleWrap call ToggleWrap()
 " }}}
 " AUGROUPS {{{
 " markdown {{{
-augroup pandoc_syntax
+augroup markdown_syntax
     autocmd!
-    autocmd BufNewFile,BufFilePre,BufRead *.md setlocal filetype=markdown.pandoc
+    autocmd BufNewFile,BufFilePre,BufRead *.md setlocal filetype=markdown
 augroup END
 " }}}
 " outlaw {{{
@@ -429,6 +431,19 @@ augroup Outlaw
   autocmd BufNewFile,BufFilePre,BufRead *-outline.* set filetype=outlaw
   " autocmd FileType outlaw setlocal tw=80 sw=4 ts=4 sts=0 et
 augroup END
+" }}}
+" godot {{{
+func! GodotSettings() abort
+    setlocal foldmethod=expr
+    setlocal tabstop=4
+    nnoremap <buffer> <F4> :GodotRunLast<CR>
+    nnoremap <buffer> <F5> :GodotRun<CR>
+    nnoremap <buffer> <F6> :GodotRunCurrent<CR>
+    nnoremap <buffer> <F7> :GodotRunFZF<CR>
+endfunc
+augroup godot | au!
+    au FileType gdscript call GodotSettings()
+augroup end
 " }}}
 " }}}
 " NOTETAKING {{{
