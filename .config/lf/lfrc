@@ -34,6 +34,8 @@ map K half-up
 map o &mimeopen $f
 map O $mimeopen --ask $f
 
+map <c-f> :fzf_jump
+
 # define a custom 'open' command
 # This command is called when current file is not a directory. You may want to
 # use either file extensions and/or mime types here. Below uses an editor for
@@ -99,4 +101,14 @@ cmd zip ${{
     cp -r $fx $1
     zip -r $1.zip $1
     rm -rf $1
+}}
+
+cmd fzf_jump ${{
+   res="$(find . -maxdepth 1 | fzf --reverse --header='Jump to location')"
+   if [ -f "$res" ]; then
+     cmd="select"
+   elif [ -d "$res" ]; then
+     cmd="cd"                                                       
+   fi
+lf -remote "send $id $cmd \"$res\""
 }}

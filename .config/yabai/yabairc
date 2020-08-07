@@ -56,7 +56,7 @@ yabai -m rule --add app="^Things$"             space=^7
 yabai -m rule --add app="^Taskpaper$"          space=^7
 yabai -m rule --add app="^Spotify$"            space=^8
 
-yabai -m rule --add app="^kitty$"              display=^2
+# yabai -m rule --add app="^kitty$"              display=^2
 
 
 # refresh spaces widget on primary display

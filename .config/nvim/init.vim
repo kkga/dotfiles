@@ -17,42 +17,51 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'airblade/vim-gitgutter'
 Plug 'godlygeek/tabular'
 Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-flagship'
 
 " themes
 Plug 'romainl/Apprentice'
-Plug 'hardselius/warlock'
 Plug 'lifepillar/vim-solarized8'
 Plug 'lifepillar/vim-colortemplate'
+Plug 'swalladge/paper.vim'
 
 " markdown and note-taking
 " Plug 'tpope/vim-markdown'
 Plug 'plasticboy/vim-markdown'
 " Plug 'lifepillar/vim-outlaw'
-Plug 'lervag/wiki.vim'
+" Plug 'lervag/wiki.vim'
 " Plug 'Alok/notational-fzf-vim'
-Plug 'junegunn/goyo.vim'
-Plug 'previm/previm/'
-Plug 'cweagans/vim-taskpaper'
+" Plug 'junegunn/goyo.vim'
+" Plug 'previm/previm/'
+" Plug 'cweagans/vim-taskpaper'
 
 " snippets
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
 " Plug 'SirVer/ultisnips'
 " Plug 'honza/vim-snippets'
 
 " file browsing
-Plug 'justinmk/vim-dirvish'
-Plug 'preservim/nerdtree'
+" Plug 'justinmk/vim-dirvish'
+" Plug 'preservim/nerdtree'
+" Plug 'lambdalisue/fern.vim'
+" let g:fern#disable_default_mappings = 1
 
 " utils
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'mbbill/undotree'
 Plug 'junegunn/vim-peekaboo'
+Plug 'mbbill/undotree'
 Plug 'nelstrom/vim-visual-star-search'
-Plug 'konfekt/fastfold'
+" Plug 'konfekt/fastfold'
 Plug 'lifepillar/vim-cheat40'
 Plug 'justinmk/vim-sneak'
-" Plug 'rhysd/clever-f.vim'
+Plug 'rhysd/clever-f.vim'
+let g:clever_f_across_no_line    = 1
+let g:clever_f_fix_key_direction = 1
+Plug 'tommcdo/vim-lion'
+let g:lion_squeeze_spaces = 1
+Plug 'ap/vim-buftabline'
+Plug 'unblevable/quick-scope'
 
 " searching
 Plug 'mhinz/vim-grepper'
@@ -68,40 +77,39 @@ xmap gs <Plug>(GrepperOperator)
 " Plug 'dense-analysis/ale'
 
 " Autocomplete
-" Plug 'maralla/completor.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " lang
-Plug 'sheerun/vim-polyglot'
 Plug 'habamax/vim-godot'
 call plug#end()
 "}}}
 " PLUGIN SETTINGS {{{
 " Colorscheme {{{
-let g:solarized_visibility = "high"
-let g:solarized_termtrans = 1
-let g:solarized_statusline = "flat"
-let g:solarized_extra_hi_groups = 1
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+" let g:solarized_visibility = "high"
+" let g:solarized_termtrans = 1
+" let g:solarized_statusline = "flat"
+" let g:solarized_extra_hi_groups = 1
+" let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+" let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set notermguicolors
-colorscheme solarized8
+set t_Co=256
+colorscheme envy
 " }}}
 " Colortemplate {{{
 let b:colortemplate_outdir = "/Users/kkga/.config/nvim"
 " }}}
 " Wiki {{{
-let g:wiki_root = '~/Documents/notes/'
-let g:wiki_filetypes = ['md']
-let g:wiki_link_extension = '.md'
-let g:wiki_list_todos = ['[ ]', '[x]']
-let g:wiki_link_target_type = 'md'
-let g:wiki_mappings_use_defaults = 1
-let g:wiki_mappings_global = {
-	\ '<plug>(wiki-list-toggle)' : '<c-t>',
-	\ '<plug>(wiki-link-next)' : '<c-j>',
-	\ '<plug>(wiki-link-prev)' : '<c-k>',
-	\}
+" let g:wiki_root = '~/Documents/notes/'
+" let g:wiki_filetypes = ['md']
+" let g:wiki_link_extension = '.md'
+" let g:wiki_link_target_type = 'md'
+" let g:wiki_list_todos = ['[ ]', '[x]']
+" let g:wiki_mappings_use_defaults = 1
+" let g:wiki_mappings_global = {
+" 	\ '<plug>(wiki-list-toggle)' : '<c-t>',
+" 	\ '<plug>(wiki-link-next)' : '<c-j>',
+" 	\ '<plug>(wiki-link-prev)' : '<c-k>',
+" 	\}
 " }}}
 " Markdown {{{
 let g:previm_open_cmd = 'open -a Min'
@@ -117,23 +125,30 @@ let g:vim_markdown_autowrite = 1
 let g:vim_markdown_edit_url_in = 'tab'
 let g:vim_markdown_follow_anchor = 1
 let g:vim_markdown_folding_style_pythonic = 1
-let g:vim_markdown_folding_level = 1
+let g:vim_markdown_folding_level = 6
 let g:vim_markdown_toc_autofit = 1
 
 " }}}
 " ALE {{{
-let g:ale_lintes = {
-\   'markdown': ['']
-\}
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['eslint', 'prettier'],
-\   'json': ['prettier'],
-\   'css': ['prettier'],
-\   'markdown': ['prettier']
-\}
-let g:ale_fix_on_save = 0
-let g:ale_lint_on_save = 1
+" let g:ale_lintes = {
+" \   'markdown': ['']
+" \}
+" let g:ale_fixers = {
+" \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+" \   'javascript': ['eslint', 'prettier'],
+" \   'json': ['prettier'],
+" \   'css': ['prettier'],
+" \   'markdown': ['prettier']
+" \}
+" let g:ale_fix_on_save = 0
+" let g:ale_lint_on_save = 1
+
+" call ale#linter#Define('gdscript', {
+" \   'name': 'gdscript',
+" \   'lsp': 'socket',
+" \   'address': '127.0.0.1:6008',
+" \   'project_root': '/Users/kkga/godot-projects/four-knights',
+" \})
 " }}}
 " FZF {{{
 let $FZF_DEFAULT_COMMAND = 'rg --files'
@@ -189,16 +204,36 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/snippets']
 " }}}
-" Completor {{{
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
-" }}}
-" Flagship {{{
-let g:tabprefix = ''
-set laststatus=2
-set showtabline=2
-set guioptions-=e
+" Completion {{{
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+if has('nvim')
+  inoremap <silent><expr> <c-space> coc#refresh()
+else
+  inoremap <silent><expr> <c-@> coc#refresh()
+endif
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
+" position. Coc only does snippet and additional edit on confirm.
+" <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
 " }}}
 " sleuth {{{
 let g:sleuth_automatic = 1
@@ -208,13 +243,16 @@ let g:outlaw_indent = 2
 let g:outlaw_auto_close = 0
 " }}}
 " Org {{{
-let g:org_aggressive_conceal = 1
+" let g:org_aggressive_conceal = 1
+" }}}
+" sneak {{{
+let g:sneak#s_next = 1
 " }}}
 " }}}
 " SETTINGS {{{
 
 filetype plugin indent on       " no idea
-synta on
+syntax on
 
 " various
 set encoding=utf8               " Set UTF-8 encoding
@@ -231,7 +269,7 @@ set backspace=indent,eol,start  " Allow backspace in insert mode
 set ttimeoutlen=2               " Exit insert/visual mode without ESC delay
 set inccommand=split            " Highlight search results and show in preview split
 set conceallevel=0              " Conceals markdown syntax
-set foldcolumn=4
+set foldlevel=6
 set nospell
 set mouse=a
 
@@ -252,14 +290,15 @@ set autoindent                  " Minimal automatic indenting for any filetype
 " set list
 
 " lines and numbers
-" set nonumber                      " Show line number
-" set norelativenumber              " Relative numbers are good
+set nonumber                      " Show line number
+set norelativenumber              " Relative numbers are good
 " set numberwidth=4               " Wider linenumbers
 set cursorline                  " Show line
 set nocursorcolumn
-set norelativenumber
-" set synmaxcol=200
-" let loaded_matchparen = 1
+set foldcolumn=0
+set signcolumn=yes 
+set synmaxcol=200
+let loaded_matchparen = 1
 
 " splits
 set splitright                  " Splitting will put the new window right
@@ -277,12 +316,148 @@ set undofile                    " Write changes to the undofile
 set undolevels=1000             " Max # of changes that can be undone
 set undoreload=10000            " Max # of lines to save for undo on buf reload
 set directory=$HOME/.vim/swp//  " Write swap files in one directory, unique nms
+
+" }}}
+" STATUSLINE {{{
+" Statusline colors
+" Get current mode
+let g:currentmode={
+      \'n' : 'N ',
+      \'no' : 'N·Operator Pending ',
+      \'v' : 'V ',
+      \'V' : 'V·L ',
+      \'^V' : 'V·B ',
+      \'s' : 'Select ',
+      \'S': 'S·Line ',
+      \'^S' : 'S·Block ',
+      \'i' : 'I ',
+      \'R' : 'Replace ',
+      \'Rv' : 'V·Replace ',
+      \'c' : 'Command ',
+      \'cv' : 'Vim Ex ',
+      \'ce' : 'Ex ',
+      \'r' : 'Prompt ',
+      \'rm' : 'More ',
+      \'r?' : 'Confirm ',
+      \'!' : 'Shell ',
+      \'t' : 'Terminal '
+      \}
+
+" Get current mode
+function! ModeCurrent() abort
+    let l:modecurrent = mode()
+    let l:modelist = toupper(get(g:currentmode, l:modecurrent, 'V·Block '))
+    let l:current_status_mode = l:modelist
+    return l:current_status_mode
+endfunction
+
+" Get current git branch
+function! GitBranch(git)
+  if a:git == ""
+    return '-'
+  else
+    return a:git
+  endif
+endfunction
+
+" Get current filetype
+function! CheckFT(filetype)
+  if a:filetype == ''
+    return '-'
+  else
+    return tolower(a:filetype)
+  endif
+endfunction
+
+" Check modified status
+function! CheckMod(modi)
+  if a:modi == 1
+    return expand('%:t').' *'
+  else
+    return expand('%:t')
+  endif
+endfunction
+
+" Coc status
+function! StatusDiagnostic() abort
+  let info = get(b:, 'coc_diagnostic_info', {})
+  if empty(info) | return '' | endif
+  let msgs = []
+  if get(info, 'error', 0)
+    call add(msgs, 'E ' . info['error'])
+  endif
+  if get(info, 'warning', 0)
+    call add(msgs, 'W ' . info['warning'])
+  endif
+  return join(msgs, ' ') . ' ' . get(g:, 'coc_status', '')
+endfunction
+
+" Set active statusline
+function! ActiveLine()
+  " Set empty statusline and colors
+  let statusline = ""
+  let statusline .= "%#StatusLine# "
+
+  " Current mode
+  let statusline .= "%{ModeCurrent()}|"
+
+  " Current modified status and filename
+  let statusline .= " %{CheckMod(&modified)} "
+
+  " Align items to right
+  let statusline .= "%="
+
+  let statusline .= "| %{StatusDiagnostic()}"
+  
+  " Current git branch
+  let statusline .= "| %{GitBranch(fugitive#head())} %)"
+
+  " Current filetype
+  let statusline .= "| %{CheckFT(&filetype)} "
+
+  " Current line and column
+  let statusline .= "| %3l/%3L %2c %P "
+  return statusline
+endfunction
+
+function! InactiveLine()
+  " Set empty statusline and colors
+  let statusline = ""
+  let statusline .= "%#StatusLineNC#"
+
+  " Full path of the file
+  let statusline .= "%F "
+
+  return statusline
+endfunction
 " }}}
 " MAPPINGS {{{
 
 " leader
 let mapleader = "\<space>"
 let maplocalleader = "\\"
+
+" esc alternative
+inoremap jk <esc>
+inoremap kj <esc>
+
+" quick save
+nnoremap <leader>ww :w<cr>
+nnoremap <leader>wq :w<cr>
+
+" Quick Cmd mode
+nnoremap <leader><space> :
+
+" create a new buffer (save it with :w ./path/to/FILENAME)
+nnoremap <leader>B :enew<cr>
+" close current buffer
+nnoremap <leader>bq :bp <bar> bd! #<cr>
+" close all open buffers
+nnoremap <leader>ba :bufdo bd!<cr>
+
+" navigate buffers
+nnoremap <C-N> :bnext<CR>
+nnoremap <C-P> :bprev<CR>
 
 " theme switcher
 nnoremap <Leader>cd :set bg=dark<CR>
@@ -291,7 +466,9 @@ nnoremap <Leader>cl :set bg=light<CR>
 " ¯\_(ツ)_/¯
 map <silent> q: :q<Cr>
 map <silent> Q: :q<Cr>
-map <silent> Q q<Cr>
+
+" disable Ex mode
+nnoremap Q nop
 
 " yank/put to system clipboard
 vnoremap <leader>y "+y
@@ -338,9 +515,6 @@ inoremap <Right> <NOP>
 " highlight last inserted text
 nnoremap gV `[v`]<Paste>
 
-" disable Ex mode
-nnoremap Q nop
-
 " toggle wrap
 nnoremap <leader>tw :ToggleWrap<CR>
 
@@ -352,47 +526,29 @@ nnoremap <leader>vr :vsp $MYVIMRC<cr>
 nnoremap <leader>sr :source $MYVIMRC<cr>
 
 " fzf mappings
-nnoremap <leader>ff :Files<CR>
-nnoremap <leader>bb :Buffers<CR>
-nnoremap <leader>cm :Commands<CR>
-nnoremap <leader>nf :WikiFzfPages<CR>
-nnoremap <leader>rg :Rg<CR>
-
-" quick save
-inoremap <C-s> <esc>:w<cr>
-nnoremap <C-s> <esc>:w<cr>
-nnoremap <leader>fs :w<CR>
-
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>g :Rg<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>n :NoteFiles<CR>
+ 
 " split faster
 nnoremap <leader>ws :split<CR>
-nnoremap <leader>wv :vsplit<CR>
-
-" tabs
-nnoremap <leader>tn :tabnew<Space>
-nnoremap <leader>tk :tabprevious<CR>
-nnoremap <leader>tj :tabnext<CR>
-nnoremap <leader>th :tabfirst<CR>
-nnoremap <leader>tl :tablast<CR>
-nnoremap <leader>tc :tabclose<CR>
-
-" jump between ALE warnings
-" nmap <silent> <C-n> <Plug>(ale_next_wrap)
-" nmap <silent> <C-p> <Plug>(ale_previous_wrap)
+nnoremap <leader>wx :vsplit<CR>
 
 " replace the word under cursor
 nnoremap <leader>* :%s/\<<c-r><c-w>\>//g<left><left>
 
-"move lines around
+" move lines around
 xnoremap <leader>j :m'>+<cr>gv=gv
 nnoremap <leader>k :m-2<cr>==
 nnoremap <leader>j :m+<cr>==
 xnoremap <leader>k :m-2<cr>gv=gv
 
-" open goyo
-nnoremap <leader>go :Goyo<CR>
-
 " quick folding
 nnoremap <tab> za
+
+" coc
+nnoremap <silent> <leader>ch :call CocAction('doHover')<CR>
 
 "}}}
 " FUNCTIONS {{{
@@ -419,11 +575,20 @@ command! ToggleWrap call ToggleWrap()
 
 " }}}
 " AUGROUPS {{{
-" markdown {{{
-augroup markdown_syntax
-    autocmd!
-    autocmd BufNewFile,BufFilePre,BufRead *.md setlocal filetype=markdown
+" statusline {{{
+" Change statusline automatically
+augroup Statusline
+  autocmd!
+  autocmd WinEnter,BufEnter * setlocal statusline=%!ActiveLine()
+  autocmd WinLeave,BufLeave * setlocal statusline=%!InactiveLine()
+  autocmd FileType nerdtree setlocal statusline=%!NERDLine()
 augroup END
+" }}}
+" markdown {{{
+" augroup markdown_syntax
+"     autocmd!
+"     autocmd BufNewFile,BufFilePre,BufRead *.md setlocal filetype=markdown
+" augroup END
 " }}}
 " outlaw {{{
 augroup Outlaw
@@ -435,6 +600,7 @@ augroup END
 " godot {{{
 func! GodotSettings() abort
     setlocal foldmethod=expr
+    setlocal signcolumn=yes
     setlocal tabstop=4
     nnoremap <buffer> <F4> :GodotRunLast<CR>
     nnoremap <buffer> <F5> :GodotRun<CR>

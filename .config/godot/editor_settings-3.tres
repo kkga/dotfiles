@@ -1,9 +1,8 @@
-[gd_resource type="EditorSettings" load_steps=21 format=2]
+[gd_resource type="EditorSettings" load_steps=18 format=2]
 
 [sub_resource type="InputEventKey" id=1]
+shift = true
 control = true
-meta = true
-command = true
 scancode = 96
 
 [sub_resource type="InputEventKey" id=2]
@@ -11,104 +10,68 @@ control = true
 scancode = 32
 
 [sub_resource type="InputEventKey" id=3]
-meta = true
-command = true
+control = true
 scancode = 49
 
 [sub_resource type="InputEventKey" id=4]
-meta = true
-command = true
+control = true
 scancode = 50
 
 [sub_resource type="InputEventKey" id=5]
 scancode = 16777247
-unicode = 16777247
 
 [sub_resource type="InputEventKey" id=6]
-meta = true
-command = true
+control = true
 scancode = 51
 
 [sub_resource type="InputEventKey" id=7]
 shift = true
-meta = true
-command = true
+control = true
 scancode = 125
 
 [sub_resource type="InputEventKey" id=8]
-shift = true
-meta = true
-command = true
-scancode = 123
+control = true
+scancode = 82
 
 [sub_resource type="InputEventKey" id=9]
+alt = true
 control = true
-meta = true
-command = true
-scancode = 78
-unicode = 78
+scancode = 82
 
 [sub_resource type="InputEventKey" id=10]
-scancode = 16777224
-unicode = 16777224
+shift = true
+control = true
+scancode = 123
 
 [sub_resource type="InputEventKey" id=11]
+shift = true
 control = true
-meta = true
-command = true
-scancode = 68
-unicode = 68
+scancode = 79
 
 [sub_resource type="InputEventKey" id=12]
+alt = true
 control = true
-meta = true
-command = true
-scancode = 16777234
-unicode = 16777234
+scancode = 79
 
 [sub_resource type="InputEventKey" id=13]
 control = true
-meta = true
-command = true
-scancode = 16777232
-unicode = 16777232
+scancode = 46
 
 [sub_resource type="InputEventKey" id=14]
 control = true
-meta = true
-command = true
-scancode = 72
-unicode = 72
-
-[sub_resource type="InputEventKey" id=15]
-meta = true
-command = true
 scancode = 125
 
-[sub_resource type="InputEventKey" id=16]
-meta = true
-command = true
+[sub_resource type="InputEventKey" id=15]
+control = true
 scancode = 123
 
+[sub_resource type="InputEventKey" id=16]
+control = true
+scancode = 92
+
 [sub_resource type="InputEventKey" id=17]
-shift = true
 control = true
-scancode = 90
-
-[sub_resource type="InputEventKey" id=18]
-meta = true
-command = true
 scancode = 47
-
-[sub_resource type="InputEventKey" id=19]
-control = true
-scancode = 90
-
-[sub_resource type="InputEventKey" id=20]
-alt = true
-shift = true
-control = true
-scancode = 90
 
 [resource]
 interface/editor/display_scale = 7
@@ -304,4 +267,8 @@ projects/::Users::kkga::godot-projects::datatype-ui-designer = "/Users/kkga/godo
 editors/3d/navigation/show_viewport_rotation_gizmo = true
 projects/::Users::kkga::godot-projects::3d-prototype = "/Users/kkga/godot-projects/3d-prototype"
 projects/::home::kkga::godot-projects::3d-prototype = "/home/kkga/godot-projects/3d-prototype"
-shortcuts = [ "debugger/keep_debugger_open", SubResource( 1 ), "editor/distraction_free_mode", SubResource( 2 ), "editor/editor_2d", SubResource( 3 ), "editor/editor_3d", SubResource( 4 ), "editor/editor_help", SubResource( 5 ), "editor/editor_script", SubResource( 6 ), "editor/next_tab", SubResource( 7 ), "editor/prev_tab", SubResource( 8 ), "file_dialog/create_folder", SubResource( 9 ), "file_dialog/delete", SubResource( 10 ), "file_dialog/focus_path", SubResource( 11 ), "file_dialog/move_favorite_down", SubResource( 12 ), "file_dialog/move_favorite_up", SubResource( 13 ), "file_dialog/toggle_hidden_files", SubResource( 14 ), "script_editor/history_next", SubResource( 15 ), "script_editor/history_previous", SubResource( 16 ), "script_text_editor/fold_all_lines", SubResource( 17 ), "script_text_editor/toggle_comment", SubResource( 18 ), "script_text_editor/toggle_fold_line", SubResource( 19 ), "script_text_editor/unfold_all_lines", SubResource( 20 ) ]
+projects/::Users::kkga::godot-projects::rebels = "/Users/kkga/godot-projects/rebels"
+projects/::Users::kkga::godot-projects::four-knights = "/Users/kkga/godot-projects/four-knights"
+projects/::Users::kkga::godot-projects::godot-pcg-secrets-0.1.0::pcg-secrets-0.1.0-godot-project = "/Users/kkga/godot-projects/godot-pcg-secrets-0.1.0/pcg-secrets-0.1.0-godot-project"
+projects/::Users::kkga::godot-projects::godot-procedural-generation::godot = "/Users/kkga/godot-projects/godot-procedural-generation/godot"
+shortcuts = [ "debugger/keep_debugger_open", SubResource( 1 ), "editor/distraction_free_mode", SubResource( 2 ), "editor/editor_2d", SubResource( 3 ), "editor/editor_3d", SubResource( 4 ), "editor/editor_help", SubResource( 5 ), "editor/editor_script", SubResource( 6 ), "editor/next_tab", SubResource( 7 ), "editor/play", SubResource( 8 ), "editor/play_scene", SubResource( 9 ), "editor/prev_tab", SubResource( 10 ), "editor/quick_open_scene", SubResource( 11 ), "editor/quick_open_script", SubResource( 12 ), "editor/stop", SubResource( 13 ), "script_editor/history_next", SubResource( 14 ), "script_editor/history_previous", SubResource( 15 ), "script_editor/toggle_scripts_panel", SubResource( 16 ), "script_text_editor/toggle_comment", SubResource( 17 ) ]
