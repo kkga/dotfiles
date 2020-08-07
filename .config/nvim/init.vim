@@ -638,7 +638,7 @@ endfunc
 command! -nargs=* Zet call ZettelEdit(<f-args>)
 
 command! -bang -nargs=? -complete=dir NoteFiles
-    \ call fzf#vim#files('$HOME/Documents/Notes/', {'options': ['--info=inline', '--preview', 'cat {}']}, <bang>0)
+    \ call fzf#vim#files('$HOME/Documents/Notes/', {'options': ['--info=inline', '--preview', 'mdcat {}']}, <bang>0)
 
 " }}}
 

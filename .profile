@@ -19,7 +19,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 
 export FZF_DEFAULT_COMMAND="rg --files --follow"
-export FZF_DEFAULT_OPTS="--color=bw"
+export FZF_DEFAULT_OPTS="--color=16 --preview='bat {}'"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 export RESTIC_REPOSITORY="sftp:gadzhi.synology.me:/home/restic-backup"
