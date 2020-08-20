@@ -1,10 +1,10 @@
 configuration {
 	modi: "combi,run";
 	combi-modi: "window,drun";
-	width: 32;
+	width: 40;
 	lines: 8;
 	columns: 1;
-	font: "Iosevka 12";
+	font: "Iosevka Fixed SS10 Extended 12";
 	bw: 0;
 	show-icons: true;
 	/* padding: 16; */
