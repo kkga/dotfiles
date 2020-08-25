@@ -18,6 +18,9 @@ export BROWSER=firefox
 export EDITOR=nvim
 export VISUAL=nvim
 
+export GDK_SCALE=2
+export GDK_DPI_SCALE=0.5
+
 export FZF_DEFAULT_COMMAND="rg --files --follow"
 export FZF_DEFAULT_OPTS="--color=16 --preview='bat {}'"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
