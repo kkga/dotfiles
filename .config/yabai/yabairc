@@ -35,16 +35,15 @@ yabai -m rule --add app="^App Store$"          manage=off
 yabai -m rule --add app="^Activity Monitor$"   manage=off
 yabai -m rule --add app="^Preview$"            manage=off 
 yabai -m rule --add app="^Kap$"                manage=off
-yabai -m rule --add app="^YT Music$"           manage=off display=^2
-yabai -m rule --add app="^Music$"              manage=off display=^2
 yabai -m rule --add app="^Bitwarden$"          manage=off
-yabai -m rule --add app="^zoom.us$"            manage=off
 yabai -m rule --add app="^iStat Menus Status$" manage=off
-yabai -m rule --add app="^Godot$"              manage=off
 yabai -m rule --add app='^Little Snitch$'      manage=off
-yabai -m rule --add app="^Figma$"              space=^4 manage=off
 yabai -m rule --add app="^Quick Add to Trello$" manage=off
+yabai -m rule --add app="Godot"		   manage=off
 
+yabai -m rule --add app="^Godot$"              space=^4
+yabai -m rule --add app="^Figma$"              space=^5 
+yabai -m rule --add app="^zoom.us$"            space=^3
 yabai -m rule --add app="^Safari$"             space=^1
 yabai -m rule --add app="^Firefox Nightly$"    space=^1
 yabai -m rule --add app="^Firefox$"            space=^2
@@ -54,19 +53,18 @@ yabai -m rule --add app="^DejaLu$"             space=^6
 yabai -m rule --add app="^Keep It$"            space=^7
 yabai -m rule --add app="^Things$"             space=^7
 yabai -m rule --add app="^Taskpaper$"          space=^7
-yabai -m rule --add app="^Spotify$"            space=^8
 
 # yabai -m rule --add app="^kitty$"              display=^2
 
 
 # refresh spaces widget on primary display
-yabai -m signal --add event=space_changed \
-    action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-primary-jsx\"'"
-yabai -m signal --add event=display_changed \
-    action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-primary-jsx\"'"
+# yabai -m signal --add event=space_changed \
+#     action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-primary-jsx\"'"
+# yabai -m signal --add event=display_changed \
+#     action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-primary-jsx\"'"
 
 # refresh spaces widget on secondary display
-yabai -m signal --add event=space_changed \
-    action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-secondary-jsx\"'"
-yabai -m signal --add event=display_changed \
-    action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-secondary-jsx\"'"
+# yabai -m signal --add event=space_changed \
+#     action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-secondary-jsx\"'"
+# yabai -m signal --add event=display_changed \
+#     action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-secondary-jsx\"'"

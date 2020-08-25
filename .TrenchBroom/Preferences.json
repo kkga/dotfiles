@@ -3,7 +3,7 @@
     "Controls/Camera/Fly move speed": 0.9101560115814209,
     "Controls/Camera/Use alt to move": true,
     "Editor/Texture lock": false,
-    "Games/Qodot/Path": "/Users/kkga/godot-projects/3d-prototype",
+    "Games/Qodot/Path": "/Users/kkga/godot-projects/3d-prototype/addons/qodot",
     "Games/Quake/Path": "/Applications/QuakeSpasm",
     "Games/Room32/Path": "/Users/kkga/godot-projects/3d-prototype",
     "Rendere/Grid/Color2D": "0.501961 0.501961 0.501961 1",

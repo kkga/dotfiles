@@ -31,8 +31,8 @@ Plug 'plasticboy/vim-markdown'
 " Plug 'lervag/wiki.vim'
 " Plug 'Alok/notational-fzf-vim'
 " Plug 'junegunn/goyo.vim'
-" Plug 'previm/previm/'
-" Plug 'cweagans/vim-taskpaper'
+Plug 'previm/previm/'
+Plug 'cweagans/vim-taskpaper'
 
 " snippets
 Plug 'hrsh7th/vim-vsnip'
@@ -477,10 +477,10 @@ nnoremap <leader>p "+p
 vnoremap <leader>p "+p
 
 " motion across wrapped lines
-nnoremap j gj
-nnoremap k gk
-vnoremap j gj
-vnoremap k gk
+nnoremap <silent> j gj
+nnoremap <silent> k gk
+vnoremap <silent> j gj
+vnoremap <silent> k gk
 
 " move to beginning/end of line
 nnoremap H ^
