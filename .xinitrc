@@ -54,7 +54,7 @@ export SSH_AUTH_SOCK
 
 $HOME/.config/screenlayout/displays.sh &
 # picom &
-$HOME/repos/dwm-bar/dwm_bar.sh &
+$HOME/.config/dwm-bar/dwm_bar.sh &
 redshift &
 xset r rate 300 50 &
 xidlehook --timer 120 'slock' '' --timer 3600 'loginctl suspend' '' &
