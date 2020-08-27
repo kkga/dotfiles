@@ -1,0 +1,98 @@
+# A TTDL config. It can be in the current working directory - to support
+#   ttdl settings on per project basis. Global user config must be in:
+# * Linux: ~/.config/ttdl/ttdl.toml
+# * Windows: c:\Users\<username>\AppData\Roaming\ttdl\ttdl.toml
+# * MacOS: /Users/<username>/Library/Preferences/ttdl/ttdl.toml
+#
+# All section must exists in the custom configuration file, but all options
+#   inside every section are optional.
+#
+# available colors (names are case-insensitive):
+#   black, red, green, yellow, blue, magenta, cyan, white
+# every color may have upto 3 modifiers:
+#   bold, underline, bright(or intense)
+# the first two modifiers works only in ANSI-compatible terminal.
+# To make them work on Windows, use ConEmu or Cmder instead
+#   of standard cmd or PowerShell.
+# For Cmder/ConEmu and Linux terminals indexed 256-color terminal and
+#   RGB colors are supported as well. Format for indexed colors is the index
+#   of the color(enclosed in double quotes):
+#   overdue="140"
+#   Format for RGB is enclosed in double quotes a comma separated list of 3
+#   numbers (order of colors is R,G,B) :
+#   overdue="220,0,0"
+#   For both indexed and RGB colors the number can be either decimal between
+#   0 and 255 or hexadecimal in range 0x0 - 0xFF. In latter case, it must start
+#   with  "0x".
+# If a color value cannot be parsed it defaults to 'white'
+[colors]
+# color_term: terminal color support
+#   auto: standard console API for Windows, ANSI for *nix OSes
+#   ansi: use ANSI-compatible colors (to make it work on Windows you have to
+#       use a third-party console emulator like ConEmu or Cmder
+#   none: disable colors
+color_term = "ansi"
+# overdue incomplete todos
+overdue = "bright red"
+# todos with overdue threshold date
+threshold = "red"
+# todos with highest priority (A)
+top = "bright red"
+# important todos - with a priority equal to or higher than `ranges.important`
+important = "white"
+# done todos
+done = "white"
+# todos that are due today
+today = "bright yellow"
+# todos that are due in and less in `ranges.soon` days
+soon = "white"
+# todos that old (color for creation date)
+old = "bright black"
+
+[ranges]
+# TTDL filter `soon` selects todos that are due in and less than in `soon` days
+# 0 - disable `soon` feature
+soon = 0
+# todos that have priority equal or higher than `important` are displayed in
+#   in `colors.important` font color.
+# Priority is a character from 'a'(highest priority) through 'z'. Setting
+#   `important` to any other value disables the feature
+important = ""
+# creation date of todos that are older than `old` is displayed in `old` color.
+# Format: single digit and modifier 'd'(day), 'w'(week), 'm'(month), 'y'(year)
+old = "1y"
+
+[global]
+# set global todo.txt filename. It works as environment variable TTDL_FILENAME,
+#   but environment variable overrides config setting
+filename = "/home/kkga/Documents/notes/todo.txt"
+
+# automatically set creation date to today if it is not set when adding a new todo
+# creation_date_auto = true
+
+# fields that are displayed by default. Available fields:
+#   pri, done, due, created, finished, thr
+fields = "done,pri"
+
+# default sorting
+# sort = "pri"
+
+# shell to execute plugins. If not set, it defaults to:
+#   ["cmd", "/c"] on Windows
+#   ["sh", "-cu"] on other OS
+# shell = ["powershell", "-c"]
+
+# add extension to plugin name when calling it.
+# if extension does not start with '.', the dot is added automatically.
+# Useful on Windows to choose between 'ps1', 'cmd', and 'bat'
+# script_ext = ".ps1"
+
+# add prefix to plugin name before calling it.
+# E.g., for powershell simple "plugin" fails but "./plugin" works fine.
+# script_prefix = "./"
+
+# determine first day of the week
+#    true - first day of week is Sunday
+#    false - first day of week is Monday
+# Note: The option is unused yet
+# first_sunday = true
