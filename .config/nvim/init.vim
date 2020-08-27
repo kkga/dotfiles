@@ -62,7 +62,7 @@ let g:clever_f_fix_key_direction = 1
 Plug 'tommcdo/vim-lion'
 let g:lion_squeeze_spaces = 1
 Plug 'ap/vim-buftabline'
-Plug 'unblevable/quick-scope'
+" Plug 'unblevable/quick-scope'
 
 " searching
 Plug 'mhinz/vim-grepper'
