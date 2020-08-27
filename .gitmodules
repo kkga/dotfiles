@@ -4,3 +4,9 @@
 [submodule ".config/godot/text_editor_themes"]
 	path = .config/godot/text_editor_themes
 	url = https://github.com/kkga/godot-syntax-themes
+[submodule ".config/dwm"]
+	path = .config/dwm
+	url = git@github.com:kkga/dwm.git
+[submodule ".config/dwm-bar"]
+	path = .config/dwm-bar
+	url = git@github.com:kkga/dwm-bar.git

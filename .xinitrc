@@ -48,11 +48,15 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+# start gnome-keyring, for auto-unlocking ssh on login: https://wiki.archlinux.org/index.php/GNOME/Keyring#PAM_method
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+
 $HOME/.config/screenlayout/displays.sh &
-# xsetroot -cursor_name left_ptr &
 # picom &
-$HOME/repos/dwm-bar/dwm_bar.sh &
+$HOME/.config/dwm-bar/dwm_bar.sh &
+clipmenud &
 redshift &
 xset r rate 300 50 &
-xidlehook --timer 120 'betterlockscreen -l' '' --timer 3600 'loginctl suspend' '' &
+xidlehook --timer 120 'slock' '' --timer 3600 'loginctl suspend' '' &
 exec dwm

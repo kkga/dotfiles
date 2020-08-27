@@ -13,13 +13,15 @@ export PATH=$PATH:$HOME/.cargo/bin
 export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/Library/Python/3.7/bin
 export PATH=$PATH:/usr/local/opt/python@3.7/bin
+export PATH=$PATH:/var/lib/flatpak/exports/bin/
 
 export BROWSER=firefox
 export EDITOR=nvim
 export VISUAL=nvim
 
-export GDK_SCALE=2
-export GDK_DPI_SCALE=0.5
+# export GDK_SCALE=2
+# export GDK_DPI_SCALE=0.5
+export MANGOHUD=1
 
 export FZF_DEFAULT_COMMAND="rg --files --follow"
 export FZF_DEFAULT_OPTS="--color=16 --preview='bat {}'"
