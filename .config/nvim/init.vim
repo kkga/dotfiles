@@ -22,7 +22,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'romainl/Apprentice'
 Plug 'lifepillar/vim-solarized8'
 Plug 'lifepillar/vim-colortemplate'
-Plug 'swalladge/paper.vim'
+" Plug 'swalladge/paper.vim'
+Plug 'https://gitlab.com/yorickpeterse/vim-paper.git'
 
 " markdown and note-taking
 " Plug 'tpope/vim-markdown'
@@ -638,7 +639,7 @@ endfunc
 command! -nargs=* Zet call ZettelEdit(<f-args>)
 
 command! -bang -nargs=? -complete=dir NoteFiles
-    \ call fzf#vim#files('$HOME/Documents/Notes/', {'options': ['--info=inline', '--preview', 'mdcat {}']}, <bang>0)
+    \ call fzf#vim#files('$HOME/notes/', {'options': ['--info=inline', '--preview', 'mdcat {}']}, <bang>0)
 
 " }}}
 
