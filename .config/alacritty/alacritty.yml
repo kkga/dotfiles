@@ -1,16 +1,16 @@
 font:
   normal:
-    family: Spleen 32x64
-    size: 16
+    family: Fantasque Sans Mono
+  size: 14
   use_thin_strokes: true
 
-draw_bold_text_with_bright_colors: true
+draw_bold_text_with_bright_colors: false
 
 window:
   decorations: none
 
-key_bindings:
-  - { key: N, mods: Command, action: SpawnNewInstance }
+# key_bindings:
+#   - { key: N, mods: Command, action: SpawnNewInstance }
 
 # color_start
 # apprentice.yml
