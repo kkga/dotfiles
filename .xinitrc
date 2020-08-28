@@ -59,4 +59,6 @@ clipmenud &
 redshift &
 xset r rate 300 50 &
 xidlehook --timer 120 'slock' '' --timer 3600 'loginctl suspend' '' &
+syncthing -no-browser &
+exec corectrl &
 exec dwm
