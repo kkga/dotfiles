@@ -63,6 +63,7 @@ Plug 'tommcdo/vim-lion'
 let g:lion_squeeze_spaces = 1
 Plug 'ap/vim-buftabline'
 " Plug 'unblevable/quick-scope'
+Plug 'liuchengxu/vista.vim'
 
 " searching
 Plug 'mhinz/vim-grepper'
@@ -249,6 +250,10 @@ let g:outlaw_auto_close = 0
 " sneak {{{
 let g:sneak#s_next = 1
 " }}}
+" vista {{{
+let g:vista_default_executive = 'coc'
+let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
+" }}}
 " }}}
 " SETTINGS {{{
 
@@ -285,7 +290,7 @@ set shiftwidth=2                " # of spaces to use for autoindent
 set tabstop=4                   " # of spaces that a tab counts for
 set softtabstop=4               " # of spaces in tab when editing
 set linebreak                   " Wrap lines when convenient
-set wrap                        " Wrap lines
+set nowrap                      " Wrap lines
 set autoindent                  " Minimal automatic indenting for any filetype
 " set listchars=tab:▸\ ,eol:¬,
 " set list
@@ -294,7 +299,7 @@ set autoindent                  " Minimal automatic indenting for any filetype
 set nonumber                      " Show line number
 set norelativenumber              " Relative numbers are good
 " set numberwidth=4               " Wider linenumbers
-set cursorline                  " Show line
+set nocursorline                  " Show line
 set nocursorcolumn
 set foldcolumn=0
 set signcolumn=yes 
