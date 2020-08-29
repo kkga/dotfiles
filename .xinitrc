@@ -53,12 +53,13 @@ eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 
 $HOME/.config/screenlayout/displays.sh &
-# picom &
+picom &
+dunst &
 $HOME/.config/dwm-bar/dwm_bar.sh &
 clipmenud &
 redshift &
 xset r rate 300 50 &
 xidlehook --timer 120 'slock' '' --timer 3600 'loginctl suspend' '' &
-syncthing -no-browser &
-exec corectrl &
+# syncthing -no-browser &
+# exec corectrl &
 exec dwm
