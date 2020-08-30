@@ -29,6 +29,7 @@ dosfstools
 dunst
 efibootmgr
 elogind-runit
+espanso
 etc-update
 exa
 fakeroot
@@ -68,6 +69,7 @@ lib32-libstdc++5
 libelogind
 libstdc++5
 libtool
+libva-mesa-driver
 linux
 linux-firmware
 linux-headers
@@ -79,12 +81,14 @@ m4
 make
 meson
 mlocate
+mpv
 needrestart
 neofetch
 neovim
 network-manager-applet
 networkmanager
 networkmanager-dmenu-git
+networkmanager-openvpn
 networkmanager-runit
 nodejs
 openssh
@@ -99,6 +103,7 @@ picom
 pkgconf
 polkit-gnome
 polybar
+protonvpn-cli-ng
 pulseaudio
 pulsemixer
 python-mako
