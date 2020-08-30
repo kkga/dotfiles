@@ -34,6 +34,7 @@ Plug 'plasticboy/vim-markdown'
 " Plug 'junegunn/goyo.vim'
 Plug 'previm/previm/'
 Plug 'cweagans/vim-taskpaper'
+Plug 'alok/notational-fzf-vim'
 
 " snippets
 Plug 'hrsh7th/vim-vsnip'
@@ -249,6 +250,16 @@ let g:outlaw_auto_close = 0
 " }}}
 " sneak {{{
 let g:sneak#s_next = 1
+" }}}
+" NV {{{
+let g:nv_search_paths = ['~/notes', '~/writing', '~/code', 'docs.md' , './notes.md']
+let g:nv_keymap = {
+                    \ 'ctrl-s': 'split ',
+                    \ 'ctrl-x': 'vertical split ',
+                    \ 'ctrl-t': 'tabedit ',
+                    \ }
+let g:nv_create_note_key = 'ctrl-n'
+let g:nv_create_note_window = 'vertical split'
 " }}}
 " vista {{{
 let g:vista_default_executive = 'coc'
@@ -535,7 +546,7 @@ nnoremap <leader>sr :source $MYVIMRC<cr>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>g :Rg<CR>
 nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>n :NoteFiles<CR>
+nnoremap <leader>n :NV<CR>
  
 " split faster
 nnoremap <leader>ws :split<CR>
