@@ -41,6 +41,7 @@ flatpak
 flex
 fwupd
 fzf
+gamemode
 gawk
 gcc
 gettext
