@@ -78,6 +78,7 @@ logiops-git
 lutris-git
 lxappearance
 m4
+maim
 make
 meson
 mlocate
@@ -110,7 +111,7 @@ python-mako
 qt5ct
 r8125-dkms
 radeon-profile-git
-redshift
+redshift-minimal
 ripgrep
 runit
 rust
@@ -120,12 +121,12 @@ siji-git
 slock
 solaar
 speedtest-cli
+spleen-font
 starship
 steam
 sudo
 sxhkd
 syncthing
-syncthing-relaysrv-runit
 syncthing-runit
 tealdeer
 terminus-font
@@ -139,6 +140,7 @@ ttf-font-awesome
 ttf-ibm-plex
 ttf-iosevka-aile
 ttf-iosevka-fixed-ss10
+ufw
 unigine-heaven
 vdirsyncer
 vim
@@ -203,6 +205,7 @@ xorg-xwud
 xpadneo-dkms-git
 xsel
 yadm-git
+yarn
 yay
 ytop
 zoxide
