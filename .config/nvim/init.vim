@@ -24,6 +24,9 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'lifepillar/vim-colortemplate'
 " Plug 'swalladge/paper.vim'
 Plug 'https://gitlab.com/yorickpeterse/vim-paper.git'
+Plug 'habamax/vim-polar'
+Plug 'habamax/vim-habanight'
+Plug 'axvr/photon.vim'
 
 " markdown and note-taking
 " Plug 'tpope/vim-markdown'
@@ -34,6 +37,9 @@ Plug 'plasticboy/vim-markdown'
 " Plug 'junegunn/goyo.vim'
 Plug 'previm/previm/'
 Plug 'cweagans/vim-taskpaper'
+" Plug 'jceb/vim-orgmode'
+Plug 'axvr/org.vim'
+" Plug 'shushcat/vim-minimd'
 
 " snippets
 Plug 'hrsh7th/vim-vsnip'
@@ -254,6 +260,14 @@ let g:sneak#s_next = 1
 let g:vista_default_executive = 'coc'
 let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
 " }}}
+" gitgutter {{{
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '~'
+let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_removed_first_line = '^^'
+let g:gitgutter_sign_removed_above_and_below = '{'
+let g:gitgutter_sign_modified_removed = 'ww'
+" }}}
 " }}}
 " SETTINGS {{{
 
@@ -292,8 +306,8 @@ set softtabstop=4               " # of spaces in tab when editing
 set linebreak                   " Wrap lines when convenient
 set nowrap                      " Wrap lines
 set autoindent                  " Minimal automatic indenting for any filetype
-" set listchars=tab:▸\ ,eol:¬,
-" set list
+set listchars=tab:>-\ ,
+set nolist
 
 " lines and numbers
 set nonumber                      " Show line number
@@ -366,6 +380,12 @@ function! GitBranch(git)
   endif
 endfunction
 
+" Git changes
+function! GitStatus()
+  let [a,m,r] = GitGutterGetHunkSummary()
+  return printf('+%d ~%d -%d', a, m, r)
+endfunction
+
 " Get current filetype
 function! CheckFT(filetype)
   if a:filetype == ''
@@ -416,7 +436,10 @@ function! ActiveLine()
   let statusline .= "| %{StatusDiagnostic()}"
   
   " Current git branch
-  let statusline .= "| %{GitBranch(fugitive#head())} %)"
+  let statusline .= "| %{GitBranch(fugitive#head())} %{GitStatus()} %)"
+
+  " Git changes
+  " let statusline .= " %{GitStatus()}"
 
   " Current filetype
   let statusline .= "| %{CheckFT(&filetype)} "
@@ -524,6 +547,9 @@ nnoremap gV `[v`]<Paste>
 " toggle wrap
 nnoremap <leader>tw :ToggleWrap<CR>
 
+" toggle checkbox
+nnoremap <leader>tt :ToggleTask<CR>
+
 " clear search highlight
 nnoremap <esc><esc> :nohl<CR>
 
@@ -558,6 +584,24 @@ nnoremap <silent> <leader>ch :call CocAction('doHover')<CR>
 
 "}}}
 " FUNCTIONS {{{
+
+" checkbox toggle
+function! ToggleTask()
+  let b:line = getline(".")
+  let b:linenum = line(".")
+  if b:line =~ '^\s*\(-\|*\|+\|\d\+\.\) \[ \] .*$'
+    let b:newline = substitute(b:line, '\[ \] ', '\[X\] ', "")
+    call setline(b:linenum, b:newline)
+  elseif b:line =~ '^\s*\(-\|*\|+\|\d\+\.\) \[X\] .*$'
+    let b:newline = substitute(b:line, '\[X\] ', '\[ \] ', "")
+    call setline(b:linenum, b:newline)
+  elseif b:line =~ '^\s*\(-\|*\|+\|\d\+\.\) .*$'
+    let b:newline = substitute(b:line, '\(^\s*\)\(-\|*\|+\|\d\+\.\)\s', '\1\2 \[ \] ', "")
+    call setline(b:linenum, b:newline)
+  endif
+endfunction
+command! ToggleTask call ToggleTask()
+
 
 " show highlight
 nmap <leader>sp :call <SID>SynStack()<CR>
@@ -617,6 +661,19 @@ augroup godot | au!
     au FileType gdscript call GodotSettings()
 augroup end
 " }}}
+" }}}
+" SYNTAX {{{
+" markdown lists {
+syntax match  listItem "^\s*\(-\|*\|+\|\d\+\.\)\s.*$"
+highlight default link listItem Normal
+syntax match  listMarker "^\s*\(-\|*\|+\|\d\+\.\)\s" contained containedin=listItem
+syntax match  listMarker "^\s*\(-\|*\|+\|\d\+\.\)\s\(\[ \]\|\[X\]\)" contained containedin=listItem
+highlight default link listMarker LineNr
+syntax match  taskBox "\[ \]" contained containedin=listMarker
+highlight default link taskBox Todo
+syntax match  doneBox "\[X\]" contained containedin=listMarker
+highlight default link doneBox Comment
+" }
 " }}}
 " NOTETAKING {{{
 " https://vimways.org/2019/personal-notetaking-in-vim/
