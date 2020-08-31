@@ -3,7 +3,7 @@ add_newline = true
 [character]      # The name of the module we are configuring is "character"
 symbol = ">"     # The "symbol" segment is being set to "➜"
 vicmd_symbol = "<"
-error_symbol = "✗"
+error_symbol = "x"
 use_symbol_for_status = true
 # style_success = ""
 
@@ -27,6 +27,7 @@ fish_style_pwd_dir_length = 1
 
 [git_branch]
 style = ""
+symbol = ""
 truncation_length = 32
 truncation_symbol = "…"
 
