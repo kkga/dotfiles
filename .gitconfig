@@ -2,7 +2,7 @@
 	name = Gadzhi Kharkharov
 	email = me@kkga.me
 [credential]
-	helper = osxkeychain
+	helper = /usr/lib/git-core/git-credential-libsecret
 [diff]
 	tool = kitty
 	guitool = kitty.gui

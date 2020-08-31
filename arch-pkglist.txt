@@ -5,6 +5,7 @@ amd-ucode
 arandr
 autoconf
 automake
+bandwhich
 base
 bat
 bc
@@ -22,7 +23,6 @@ corectrl
 cpu-x
 cronie
 cronie-runit
-ddcci-driver-linux-dkms
 ddcutil
 dmenu
 dosfstools
@@ -31,8 +31,10 @@ efibootmgr
 elogind-runit
 espanso
 etc-update
+eva
 exa
 fakeroot
+fd
 feh
 file
 findutils
@@ -58,6 +60,7 @@ grep
 groff
 grub
 gzip
+hacksaw
 htop
 imagemagick
 j4-dmenu-desktop
@@ -105,6 +108,7 @@ picom
 pkgconf
 polkit-gnome
 polybar
+procs
 protonvpn-cli-ng
 pulseaudio
 pulsemixer
@@ -118,7 +122,9 @@ runit
 rust
 seahorse
 sed
+shotgun
 siji-git
+skim
 slock
 solaar
 speedtest-cli
@@ -136,6 +142,7 @@ timeshift
 timeshift-autosnap
 todoist
 todoman
+tokei
 topgrade
 ttf-envy-code-r
 ttf-ibm-plex

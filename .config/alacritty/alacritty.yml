@@ -43,3 +43,7 @@ colors:
     white:   '0xffffff'
 
 # color_end
+
+cursor:
+  style: Beam
+  vi_mode_style: Block
