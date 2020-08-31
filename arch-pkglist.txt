@@ -40,6 +40,7 @@ firefox
 fish
 flatpak
 flex
+font-manager
 fwupd
 fzf
 gamemode
@@ -136,10 +137,9 @@ timeshift-autosnap
 todoist
 todoman
 topgrade
-ttf-font-awesome
+ttf-envy-code-r
 ttf-ibm-plex
 ttf-iosevka-aile
-ttf-iosevka-fixed-ss10
 ufw
 unigine-heaven
 vdirsyncer
