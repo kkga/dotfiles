@@ -121,7 +121,7 @@ let b:colortemplate_outdir = "/Users/kkga/.config/nvim"
 let g:previm_open_cmd = 'open -a Min'
 
 " Configuration for vim-markdown
-let g:vim_markdown_conceal = 2
+let g:vim_markdown_conceal = 1
 let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_math = 1
 let g:vim_markdown_toml_frontmatter = 1
@@ -296,7 +296,7 @@ set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.o,.git,tmp,node_modules,*.pyc
 set backspace=indent,eol,start  " Allow backspace in insert mode
 set ttimeoutlen=2               " Exit insert/visual mode without ESC delay
 set inccommand=split            " Highlight search results and show in preview split
-set conceallevel=0              " Conceals markdown syntax
+set conceallevel=1              " Conceals markdown syntax
 set foldlevel=6
 set nospell
 set mouse=a
