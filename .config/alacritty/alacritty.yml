@@ -9,8 +9,8 @@ draw_bold_text_with_bright_colors: true
 window:
   decorations: none
 
-# key_bindings:
-#   - { key: N, mods: Command, action: SpawnNewInstance }
+key_bindings:
+  - { key: Return, mods: Control|Shift, action: SpawnNewInstance }
 
 # color_start
 # apprentice.yml

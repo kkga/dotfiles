@@ -18,9 +18,12 @@ export PATH=$PATH:/var/lib/flatpak/exports/bin/
 export BROWSER=firefox
 export EDITOR=nvim
 export VISUAL=nvim
+export TERMINAL=alacritty
 
 export GDK_SCALE=2
 export GDK_DPI_SCALE=0.5
+export QT_SCALE_FACTOR=2
+
 export MANGOHUD=1
 
 export FZF_DEFAULT_COMMAND="rg --files --follow"

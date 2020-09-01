@@ -30,7 +30,6 @@ dunst
 efibootmgr
 elogind-runit
 espanso
-etc-update
 eva
 exa
 fakeroot
@@ -87,6 +86,7 @@ make
 meson
 mlocate
 mpv
+myrepos
 needrestart
 neofetch
 neovim
@@ -117,6 +117,7 @@ qt5ct
 r8125-dkms
 radeon-profile-git
 redshift-minimal
+restic
 ripgrep
 runit
 rust
@@ -148,6 +149,7 @@ ttf-envy-code-r
 ttf-ibm-plex
 ttf-iosevka-aile
 ufw
+ufw-runit
 unigine-heaven
 vdirsyncer
 vim
@@ -157,6 +159,7 @@ vulkan-tools
 wget
 which
 wine-staging
+x11-ssh-askpass
 xdg-user-dirs
 xdg-utils
 xf86-video-vesa
