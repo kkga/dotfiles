@@ -5,6 +5,7 @@ amd-ucode
 arandr
 autoconf
 automake
+bandwhich
 base
 bat
 bc
@@ -22,7 +23,6 @@ corectrl
 cpu-x
 cronie
 cronie-runit
-ddcci-driver-linux-dkms
 ddcutil
 dmenu
 dosfstools
@@ -30,9 +30,10 @@ dunst
 efibootmgr
 elogind-runit
 espanso
-etc-update
+eva
 exa
 fakeroot
+fd
 feh
 file
 findutils
@@ -58,6 +59,7 @@ grep
 groff
 grub
 gzip
+hacksaw
 htop
 imagemagick
 j4-dmenu-desktop
@@ -84,6 +86,7 @@ make
 meson
 mlocate
 mpv
+myrepos
 needrestart
 neofetch
 neovim
@@ -105,6 +108,7 @@ picom
 pkgconf
 polkit-gnome
 polybar
+procs
 protonvpn-cli-ng
 pulseaudio
 pulsemixer
@@ -113,12 +117,15 @@ qt5ct
 r8125-dkms
 radeon-profile-git
 redshift-minimal
+restic
 ripgrep
 runit
 rust
 seahorse
 sed
+shotgun
 siji-git
+skim
 slock
 solaar
 speedtest-cli
@@ -136,11 +143,13 @@ timeshift
 timeshift-autosnap
 todoist
 todoman
+tokei
 topgrade
 ttf-envy-code-r
 ttf-ibm-plex
 ttf-iosevka-aile
 ufw
+ufw-runit
 unigine-heaven
 vdirsyncer
 vim
@@ -150,6 +159,7 @@ vulkan-tools
 wget
 which
 wine-staging
+x11-ssh-askpass
 xdg-user-dirs
 xdg-utils
 xf86-video-vesa
