@@ -53,10 +53,12 @@ github-cli
 glibc-runit
 glslang
 gnome-keyring
+gnome-themes-extra
 godot
 goverlay-git
 grep
 groff
+grsync
 grub
 gzip
 hacksaw
@@ -69,6 +71,7 @@ kitty
 lazygit
 lf
 lib32-libstdc++5
+lib32-mangohud
 libelogind
 libstdc++5
 libtool
@@ -83,6 +86,7 @@ lxappearance
 m4
 maim
 make
+mangohud
 meson
 mlocate
 mpv
@@ -119,6 +123,7 @@ radeon-profile-git
 redshift-minimal
 restic
 ripgrep
+rsync-runit
 runit
 rust
 seahorse
@@ -148,11 +153,13 @@ topgrade
 ttf-envy-code-r
 ttf-ibm-plex
 ttf-iosevka-aile
+ttf-iosevka-term
 ufw
 ufw-runit
 unigine-heaven
 vdirsyncer
 vim
+vkbasalt
 vulkan-headers
 vulkan-radeon
 vulkan-tools

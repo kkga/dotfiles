@@ -20,15 +20,18 @@ export EDITOR=nvim
 export VISUAL=nvim
 export TERMINAL=alacritty
 
-export GDK_SCALE=2
-export GDK_DPI_SCALE=0.5
-export QT_SCALE_FACTOR=2
-
 export MANGOHUD=1
+export ENABLE_VKBASALT=1
 
 export FZF_DEFAULT_COMMAND="rg --files --follow"
 export FZF_DEFAULT_OPTS="--color=16 --preview='bat {}'"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
+
+if [[ "$(hostname)" == "artix" ]]; then
+    export GDK_SCALE=2
+    export GDK_DPI_SCALE=0.5
+    export QT_SCALE_FACTOR=2
+else
 
 export RESTIC_REPOSITORY="sftp:gadzhi.synology.me:/home/restic-backup"
 export RESTIC_PASSWORD_COMMAND="security find-generic-password -s backup-restic-repository -a restic_backup -w"
