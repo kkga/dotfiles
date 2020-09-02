@@ -31,7 +31,7 @@ if [[ "$(hostname)" == "artix" ]]; then
     export GDK_SCALE=2
     export GDK_DPI_SCALE=0.5
     export QT_SCALE_FACTOR=2
-else
-
-export RESTIC_REPOSITORY="sftp:gadzhi.synology.me:/home/restic-backup"
-export RESTIC_PASSWORD_COMMAND="security find-generic-password -s backup-restic-repository -a restic_backup -w"
+elif [[ "$(hostname)" == "mbp16" ]]; then
+    export RESTIC_REPOSITORY="sftp:gadzhi.synology.me:/home/restic-backup"
+    export RESTIC_PASSWORD_COMMAND="security find-generic-password -s backup-restic-repository -a restic_backup -w"
+fi

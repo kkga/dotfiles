@@ -60,6 +60,6 @@ dunst &
 clipmenud &
 redshift -l 55:37 &
 espanso daemon &
-xset r rate 300 50 &
+xset r rate 200 30 &
 xidlehook --timer 120 'slock' '' --timer 3600 'loginctl suspend' '' &
 exec dwm
