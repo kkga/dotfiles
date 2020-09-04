@@ -74,7 +74,6 @@ kitty
 lazygit
 lf
 lib32-libstdc++5
-lib32-mangohud
 libelogind
 libstdc++5
 libtool
@@ -84,7 +83,7 @@ linux-firmware
 linux-headers
 lite
 logiops-git
-lutris-git
+lutris
 lxappearance
 m4
 maim
@@ -148,6 +147,7 @@ sxhkd
 syncthing-runit
 tealdeer
 terminus-font
+terminus-font-otb
 texinfo
 thunar
 thunar-volman
