@@ -6,9 +6,7 @@ selection=$(
 )
 
 case "$selection" in
-    Clipboard) maim -s | xclip -selection clipboard -t image/png;;
-    File) maim ~/Pictures/Screenshots/$(date +%s).png;;
-    Imgur) maim ~/tmp/screenshot.png; imgur.sh /tmp/screenshot.png | xclip -selection clipboard;;
+    Clipboard) shotgun -s | xclip -selection clipboard -t image/png;;
+    File) shotgun ~/Pictures/Screenshots/$(date +%s).png;;
+    Imgur) shotgun ~/tmp/screenshot.png; imgur.sh /tmp/screenshot.png | xclip -selection clipboard;;
 esac
-
-dunstify "Maim" "Screenshot taken"
