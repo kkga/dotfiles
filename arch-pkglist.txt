@@ -48,6 +48,7 @@ gamemode
 gawk
 gcc
 gettext
+gimp
 git
 github-cli
 glibc-runit
