@@ -42,12 +42,11 @@ alt + shift - space : yabai -m window --toggle float;\
           yabai -m window --grid 8:8:1:1:6:6
 
 # toggle sticky
-alt - s : yabai -m window --toggle sticky
+# alt - s : yabai -m window --toggle sticky
 
 # toggle sticky(+float), topmost, border and picture-in-picture
 alt - p : yabai -m window --toggle sticky;\
           yabai -m window --toggle topmost;\
-          yabai -m window --toggle border;\
           yabai -m window --toggle pip
 
 
@@ -94,6 +93,3 @@ ctrl + alt - tab  : yabai -m display --focus recent
 
 # send window to display and follow focus
 ctrl + alt + shift - tab  : yabai -m window --display recent; yabai -m display --focus recent
-
-
-
