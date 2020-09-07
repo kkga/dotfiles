@@ -1,11 +1,11 @@
 # APPS
 
 # term
-alt + shift - return : /Applications/kitty.app/Contents/MacOS/kitty --listen-on=unix:/tmp/mykitty --single-instance -d ~
+alt + shift - return : alacritty
 
 # change colors
-alt + ctrl - l : kitty @ --to=unix:/tmp/mykitty set-colors -a "~/.config/kitty/theme-light.conf"
-alt + ctrl - d : kitty @ --to=unix:/tmp/mykitty set-colors -a "~/.config/kitty/theme-dark.conf"
+alt + ctrl - l : alacritty-colorscheme -a light.yml
+alt + ctrl - d : alacritty-colorscheme -a dark.yml
 
 # quick restart
 alt + ctrl - q : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
