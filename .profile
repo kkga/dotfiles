@@ -27,7 +27,7 @@ export QT_SCALE_FACTOR=2
 export MANGOHUD=1
 
 export FZF_DEFAULT_COMMAND="rg --files --follow"
-export FZF_DEFAULT_OPTS="--color=16 --preview='bat {}'"
+export FZF_DEFAULT_OPTS="--color 16 --info inline --border horizontal --preview 'bat {}'"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 export RESTIC_REPOSITORY="sftp:gadzhi.synology.me:/home/restic-backup"

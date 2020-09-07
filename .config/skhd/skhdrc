@@ -7,15 +7,9 @@ fn - b : /Applications/Safari.app/Contents/MacOS/Safari
 # finder
 fn - f : open ~
 
-# CHANGE COLORS
-
+# change colors
 fn - l : kitty @ --to=unix:/tmp/mykitty set-colors -a "~/.config/kitty/theme-light.conf"
 fn - d : kitty @ --to=unix:/tmp/mykitty set-colors -a "~/.config/kitty/theme-dark.conf"
-
-# BRIGHTNESS/VOLUME
-
-
-
 
 # quick restart
 alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
@@ -27,33 +21,24 @@ alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 # WINDOWS
 
 # navigate windows and spaces
-alt - h : yabai -m window --focus prev
-alt - k : yabai -m window --focus prev
-alt - j : yabai -m window --focus next
-alt - k : yabai -m window --focus prev
-alt + ctrl - j : yabai -m space  --focus next
-alt + ctrl - k : yabai -m space  --focus prev
+alt - j : yabai -m window --focus stack.next || yabai -m window --focus next || yabai -m window --focus first
+alt - k : yabai -m window --focus stack.prev || yabai -m window --focus prev || yabai -m window --focus last
 
 # move window
 shift + alt - k : yabai -m window --warp prev
-# shift + alt - j : yabai -m window --space next; yabai -m space --focus next
-# shift + alt - k : yabai -m window --space prev; yabai -m space --focus prev
+shift + alt + ctrl - j : yabai -m window --space next; yabai -m space --focus next
+shift + alt + ctrl - k : yabai -m window --space prev; yabai -m space --focus prev
 shift + alt - j : yabai -m window --warp next
 
 # balance size of windows
 shift + alt - 0 : yabai -m space --balance
 
-# make floating window fill screen
-# shift + alt - up     : yabai -m window --grid 1:1:0:0:1:1
-
-# make floating window fill left-half of screen
-# shift + alt - left   : yabai -m window --grid 1:2:0:0:1:1
-
-# make floating window fill right-half of screen
-# shift + alt - right  : yabai -m window --grid 1:2:1:0:1:1
 
 
 # SPACES
+
+alt + ctrl - j : yabai -m space  --focus next
+alt + ctrl - k : yabai -m space  --focus prev
 
 # create spaces, move window and follow focus
 shift + alt + cmd - n : yabai -m space --create;\
@@ -185,6 +170,7 @@ shift + alt - space : yabai -m window --toggle float;\
 #           yabai -m window --toggle border;\
 #           yabai -m window --toggle pip
 
-# change layout of desktop
-# ctrl + alt - b : yabai -m space --layout bsp
-# ctrl + alt - f : yabai -m space --layout float
+#z change layout of desktop
+ctrl + alt - z : yabai -m space --layout bsp
+ctrl + alt - x : yabai -m space --layout float
+ctrl + alt - c : yabai -m space --layout stack

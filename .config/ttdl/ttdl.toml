@@ -31,7 +31,7 @@
 #   ansi: use ANSI-compatible colors (to make it work on Windows you have to
 #       use a third-party console emulator like ConEmu or Cmder
 #   none: disable colors
-color_term = "ansi"
+color_term = "auto"
 # overdue incomplete todos
 overdue = "bright red"
 # todos with overdue threshold date
@@ -65,14 +65,14 @@ old = "1y"
 [global]
 # set global todo.txt filename. It works as environment variable TTDL_FILENAME,
 #   but environment variable overrides config setting
-filename = "/home/kkga/Documents/notes/todo.txt"
+filename = "~/notes/todo.txt"
 
 # automatically set creation date to today if it is not set when adding a new todo
 # creation_date_auto = true
 
 # fields that are displayed by default. Available fields:
 #   pri, done, due, created, finished, thr
-fields = "done,pri"
+# fields = "done,pri"
 
 # default sorting
 # sort = "pri"

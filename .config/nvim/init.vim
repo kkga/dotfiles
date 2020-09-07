@@ -32,12 +32,9 @@ Plug 'axvr/photon.vim'
 " Plug 'tpope/vim-markdown'
 Plug 'plasticboy/vim-markdown'
 " Plug 'lifepillar/vim-outlaw'
-" Plug 'lervag/wiki.vim'
-" Plug 'Alok/notational-fzf-vim'
-" Plug 'junegunn/goyo.vim'
 Plug 'previm/previm/'
 Plug 'cweagans/vim-taskpaper'
-Plug 'alok/notational-fzf-vim'
+Plug 'https://gitlab.com/dbeniamine/todo.txt-vim'
 
 " snippets
 Plug 'hrsh7th/vim-vsnip'
@@ -103,19 +100,6 @@ colorscheme envy
 " }}}
 " Colortemplate {{{
 let b:colortemplate_outdir = "/Users/kkga/.config/nvim"
-" }}}
-" Wiki {{{
-" let g:wiki_root = '~/Documents/notes/'
-" let g:wiki_filetypes = ['md']
-" let g:wiki_link_extension = '.md'
-" let g:wiki_link_target_type = 'md'
-" let g:wiki_list_todos = ['[ ]', '[x]']
-" let g:wiki_mappings_use_defaults = 1
-" let g:wiki_mappings_global = {
-" 	\ '<plug>(wiki-list-toggle)' : '<c-t>',
-" 	\ '<plug>(wiki-link-next)' : '<c-j>',
-" 	\ '<plug>(wiki-link-prev)' : '<c-k>',
-" 	\}
 " }}}
 " Markdown {{{
 let g:previm_open_cmd = 'open -a Min'
@@ -254,16 +238,6 @@ let g:outlaw_auto_close = 0
 " sneak {{{
 let g:sneak#s_next = 1
 " }}}
-" NV {{{
-let g:nv_search_paths = ['~/notes', '~/writing', '~/code', 'docs.md' , './notes.md']
-let g:nv_keymap = {
-                    \ 'ctrl-s': 'split ',
-                    \ 'ctrl-x': 'vertical split ',
-                    \ 'ctrl-t': 'tabedit ',
-                    \ }
-let g:nv_create_note_key = 'ctrl-n'
-let g:nv_create_note_window = 'vertical split'
-" }}}
 " vista {{{
 let g:vista_default_executive = 'coc'
 let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
@@ -274,7 +248,11 @@ let g:gitgutter_sign_modified = '~'
 let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_removed_first_line = '^^'
 let g:gitgutter_sign_removed_above_and_below = '{'
-let g:gitgutter_sign_modified_removed = 'ww'
+let g:gitgutter_sign_modified_removed = '~-'
+" }}}
+" todo {{{
+let g:Todo_txt_prefix_creation_date=1
+let g:Todo_fold_char='+'
 " }}}
 " }}}
 " SETTINGS {{{
@@ -569,7 +547,7 @@ nnoremap <leader>sr :source $MYVIMRC<cr>
 nnoremap <leader>f :Files<CR>
 nnoremap <leader>g :Rg<CR>
 nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>n :NV<CR>
+nnoremap <leader>n :NoteFiles<CR>
  
 " split faster
 nnoremap <leader>ws :split<CR>
@@ -648,6 +626,15 @@ augroup END
 "     autocmd BufNewFile,BufFilePre,BufRead *.md setlocal filetype=markdown
 " augroup END
 " }}}
+" todo {{{
+augroup todo
+  autocmd!
+  autocmd filetype todo setlocal omnifunc=todo#Complete
+  autocmd filetype todo imap <buffer> + +<C-X><C-O>
+  autocmd filetype todo imap <buffer> @ @<C-X><C-O>
+  autocmd filetype todo setlocal completeopt-=preview
+augroup END
+" }}}
 " outlaw {{{
 augroup Outlaw
   autocmd!
@@ -709,7 +696,7 @@ endfunc
 command! -nargs=* Zet call ZettelEdit(<f-args>)
 
 command! -bang -nargs=? -complete=dir NoteFiles
-    \ call fzf#vim#files('$HOME/notes/', {'options': ['--info=inline', '--preview', 'mdcat {}']}, <bang>0)
+    \ call fzf#vim#files('$HOME/notes/', {'options': ['--info=inline', '--preview', 'sh ~/.config/nvim/plugged/fzf.vim/bin/preview.sh {}']}, <bang>0)
 
 " }}}
 
