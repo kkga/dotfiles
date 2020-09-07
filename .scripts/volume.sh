@@ -4,7 +4,7 @@
 # Arbitrary but unique message id
 msgId="991049"
 
-pamixer --sink 1 "$@" > /dev/null
+pamixer "$@" > /dev/null
 
 volume="$(pamixer --get-volume-human)"
 dunstify -a "changeVolume" -u low -i audio-volume-high -r "$msgId" \

@@ -9,6 +9,7 @@ bandwhich
 base
 bat
 bc
+bemenu
 binutils
 bison
 bitwarden-bin
@@ -53,11 +54,14 @@ glibc-runit
 glslang
 gnome-keyring
 gnome-themes-extra
+go
 godot
 grep
 groff
 grsync
 grub
+gvfs
+gvfs-smb
 gzip
 hacksaw
 hexchat
@@ -107,12 +111,14 @@ pavucontrol
 pcmanfm-gtk3
 picom
 pkgconf
+playerctl
 polkit-gnome
 procs
 protonvpn-cli-ng
 pulseaudio
 pulsemixer
 python-mako
+qmk
 qt5ct
 r8125-dkms
 radeon-profile-git
@@ -131,6 +137,10 @@ solaar
 spectrwm
 speedtest-cli
 spleen-font
+spotify-tui
+spotifyd
+sshfs
+st
 starship
 steam
 sudo
@@ -138,6 +148,7 @@ sv-helper
 sxhkd
 syncthing-runit
 tealdeer
+telegram-desktop
 terminus-font
 texinfo
 timeshift
@@ -154,6 +165,7 @@ ufw-runit
 unigine-heaven
 vdirsyncer
 vim
+virtualbox
 vkbasalt
 vulkan-headers
 vulkan-radeon
@@ -223,3 +235,4 @@ yarn
 yay
 ytop
 zoxide
+zsa-wally
