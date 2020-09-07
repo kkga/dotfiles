@@ -8,7 +8,7 @@ alt + ctrl - l : kitty @ --to=unix:/tmp/mykitty set-colors -a "~/.config/kitty/t
 alt + ctrl - d : kitty @ --to=unix:/tmp/mykitty set-colors -a "~/.config/kitty/theme-dark.conf"
 
 # quick restart
-alt + shift - q : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+alt + ctrl - q : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
 
 # WINDOWS
@@ -68,7 +68,7 @@ alt - s : yabai -m space --focus 5
 alt - d : yabai -m space --focus 6
 
 # send window to desktop and follow focus
-shift + alt - tab : yabai -m window --space last; yabai -m space --focus last
+shift + alt - tab : yabai -m window --space recent; yabai -m space --focus recent
 shift + alt - q : yabai -m window --space  1; yabai -m space --focus 1
 shift + alt - w : yabai -m window --space  2; yabai -m space --focus 2
 shift + alt - e : yabai -m window --space  3; yabai -m space --focus 3
