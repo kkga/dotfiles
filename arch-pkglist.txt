@@ -119,7 +119,6 @@ protonvpn-cli-ng
 pulseaudio
 pulsemixer
 python-mako
-qmk
 qt5ct
 r8125-dkms
 radeon-profile-git
