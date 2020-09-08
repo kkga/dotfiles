@@ -26,6 +26,7 @@ Plug 'ap/vim-buftabline'
 Plug 'unblevable/quick-scope'
 Plug 'rstacruz/vim-closer'
 Plug 'mhinz/vim-signify'
+Plug 'junegunn/vim-easy-align'
 
 " themes
 Plug 'romainl/Apprentice'
