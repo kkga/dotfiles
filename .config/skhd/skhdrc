@@ -8,7 +8,7 @@ alt + ctrl - l : alacritty-colorscheme -a light.yml
 alt + ctrl - d : alacritty-colorscheme -a dark.yml
 
 # quick restart
-alt + ctrl - q : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+# alt + ctrl - q : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
 
 # WINDOWS
