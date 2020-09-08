@@ -13,23 +13,29 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-endwise'
 Plug 'machakann/vim-highlightedyank'
-Plug 'airblade/vim-gitgutter'
-Plug 'godlygeek/tabular'
-Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/vim-peekaboo'
+Plug 'mbbill/undotree'
+Plug 'nelstrom/vim-visual-star-search'
+" Plug 'konfekt/fastfold'
+Plug 'lifepillar/vim-cheat40'
+Plug 'justinmk/vim-sneak'
+Plug 'rhysd/clever-f.vim'
+Plug 'ap/vim-buftabline'
+Plug 'unblevable/quick-scope'
+Plug 'rstacruz/vim-closer'
+Plug 'mhinz/vim-signify'
 
 " themes
 Plug 'romainl/Apprentice'
 Plug 'lifepillar/vim-solarized8'
 Plug 'lifepillar/vim-colortemplate'
-" Plug 'swalladge/paper.vim'
 Plug 'https://gitlab.com/yorickpeterse/vim-paper.git'
 Plug 'habamax/vim-polar'
-Plug 'habamax/vim-habanight'
 Plug 'axvr/photon.vim'
 
 " markdown and note-taking
-" Plug 'tpope/vim-markdown'
 Plug 'plasticboy/vim-markdown'
 " Plug 'lifepillar/vim-outlaw'
 Plug 'previm/previm/'
@@ -39,51 +45,18 @@ Plug 'https://gitlab.com/dbeniamine/todo.txt-vim'
 " snippets
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
-" Plug 'SirVer/ultisnips'
-" Plug 'honza/vim-snippets'
 
 " file browsing
-" Plug 'justinmk/vim-dirvish'
-" Plug 'preservim/nerdtree'
-" Plug 'lambdalisue/fern.vim'
-" let g:fern#disable_default_mappings = 1
-
-" utils
+Plug 'justinmk/vim-dirvish'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-peekaboo'
-Plug 'mbbill/undotree'
-Plug 'nelstrom/vim-visual-star-search'
-" Plug 'konfekt/fastfold'
-Plug 'lifepillar/vim-cheat40'
-Plug 'justinmk/vim-sneak'
-Plug 'rhysd/clever-f.vim'
-let g:clever_f_across_no_line    = 1
-let g:clever_f_fix_key_direction = 1
-Plug 'tommcdo/vim-lion'
-let g:lion_squeeze_spaces = 1
-Plug 'ap/vim-buftabline'
-" Plug 'unblevable/quick-scope'
-Plug 'liuchengxu/vista.vim'
 
-" searching
-Plug 'mhinz/vim-grepper'
-let g:grepper = {}
-let g:grepper.tools = ["rg"]
-runtime autoload/grepper.vim
-let g:grepper.jump = 1
-nnoremap <leader>/ :GrepperRg<Space>
-nnoremap gs :Grepper -cword -noprompt<CR>
-xmap gs <Plug>(GrepperOperator)
-
-" linting
-" Plug 'dense-analysis/ale'
-
-" Autocomplete
+" autocomplete
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " lang
 Plug 'habamax/vim-godot'
+
 call plug#end()
 "}}}
 " PLUGIN SETTINGS {{{
@@ -118,27 +91,6 @@ let g:vim_markdown_folding_style_pythonic = 1
 let g:vim_markdown_folding_level = 6
 let g:vim_markdown_toc_autofit = 1
 
-" }}}
-" ALE {{{
-" let g:ale_lintes = {
-" \   'markdown': ['']
-" \}
-" let g:ale_fixers = {
-" \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-" \   'javascript': ['eslint', 'prettier'],
-" \   'json': ['prettier'],
-" \   'css': ['prettier'],
-" \   'markdown': ['prettier']
-" \}
-" let g:ale_fix_on_save = 0
-" let g:ale_lint_on_save = 1
-
-" call ale#linter#Define('gdscript', {
-" \   'name': 'gdscript',
-" \   'lsp': 'socket',
-" \   'address': '127.0.0.1:6008',
-" \   'project_root': '/Users/kkga/godot-projects/four-knights',
-" \})
 " }}}
 " FZF {{{
 let $FZF_DEFAULT_COMMAND = 'rg --files'
@@ -182,18 +134,6 @@ augroup fzf_statusline
 augroup END
 
 " }}}
-" Fastfold {{{
-" nmap zz <Plug>(FastFoldUpdate)
-let g:fastfold_savehook = 1
-let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
-let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
-" }}}
-" Ultisnips {{{
-let g:UltiSnipsExpandTrigger="<C-e>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-let g:UltiSnipsSnippetDirectories=[$HOME.'/.config/nvim/snippets']
-" }}}
 " Completion {{{
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
@@ -219,36 +159,17 @@ endif
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
 " <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
-if exists('*complete_info')
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-else
-  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-endif
+" if exists('*complete_info')
+"   inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+" else
+"   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" endif
 " }}}
 " sleuth {{{
 let g:sleuth_automatic = 1
 " }}}
-" Outlaw {{{
-let g:outlaw_indent = 2
-let g:outlaw_auto_close = 0
-" }}}
-" Org {{{
-" let g:org_aggressive_conceal = 1
-" }}}
 " sneak {{{
 let g:sneak#s_next = 1
-" }}}
-" vista {{{
-let g:vista_default_executive = 'coc'
-let g:vista_icon_indent = ["╰─▸ ", "├─▸ "]
-" }}}
-" gitgutter {{{
-let g:gitgutter_sign_added = '+'
-let g:gitgutter_sign_modified = '~'
-let g:gitgutter_sign_removed = '-'
-let g:gitgutter_sign_removed_first_line = '^^'
-let g:gitgutter_sign_removed_above_and_below = '{'
-let g:gitgutter_sign_modified_removed = '~-'
 " }}}
 " todo {{{
 let g:Todo_txt_prefix_creation_date=1
@@ -279,11 +200,6 @@ set foldlevel=6
 set nospell
 set mouse=a
 
-" disable backups and swap
-set nobackup
-set nowb
-set noswapfile
-
 " text, tabs and indents
 " set expandtab                   " Tabs are spaces
 set shiftwidth=2                " # of spaces to use for autoindent
@@ -298,7 +214,6 @@ set nolist
 " lines and numbers
 set nonumber                      " Show line number
 set norelativenumber              " Relative numbers are good
-" set numberwidth=4               " Wider linenumbers
 set nocursorline                  " Show line
 set nocursorcolumn
 set foldcolumn=0
@@ -316,12 +231,16 @@ set nojoinspaces                " Set 1 space btwn lines/periods to be joined
 " scrollin
 set scrolloff=8               " Working line will always be in the center
 
+" disable backups and swap
+set nobackup
+set nowb
+set noswapfile
+
 " undo
 set undodir=$HOME/.vim/undodir  " Set persistent undodir path
 set undofile                    " Write changes to the undofile
 set undolevels=1000             " Max # of changes that can be undone
 set undoreload=10000            " Max # of lines to save for undo on buf reload
-set directory=$HOME/.vim/swp//  " Write swap files in one directory, unique nms
 
 " }}}
 " STATUSLINE {{{
@@ -366,11 +285,11 @@ function! GitBranch(git)
   endif
 endfunction
 
-" Git changes
-function! GitStatus()
-  let [a,m,r] = GitGutterGetHunkSummary()
-  return printf('+%d ~%d -%d', a, m, r)
-endfunction
+" " Git changes
+" function! GitStatus()
+"   let [a,m,r] = GitGutterGetHunkSummary()
+"   return printf('+%d ~%d -%d', a, m, r)
+" endfunction
 
 " Get current filetype
 function! CheckFT(filetype)
@@ -422,10 +341,7 @@ function! ActiveLine()
   let statusline .= "| %{StatusDiagnostic()}"
   
   " Current git branch
-  let statusline .= "| %{GitBranch(fugitive#head())} %{GitStatus()} %)"
-
-  " Git changes
-  " let statusline .= " %{GitStatus()}"
+  let statusline .= "| %{GitBranch(fugitive#head())} "
 
   " Current filetype
   let statusline .= "| %{CheckFT(&filetype)} "
@@ -471,8 +387,8 @@ nnoremap <leader>bq :bp <bar> bd! #<cr>
 nnoremap <leader>ba :bufdo bd!<cr>
 
 " navigate buffers
-nnoremap <C-N> :bnext<CR>
-nnoremap <C-P> :bprev<CR>
+nnoremap <C-j> :bnext<CR>
+nnoremap <C-k> :bprev<CR>
 
 " theme switcher
 nnoremap <Leader>cd :set bg=dark<CR>
@@ -492,10 +408,10 @@ nnoremap <leader>p "+p
 vnoremap <leader>p "+p
 
 " motion across wrapped lines
-nnoremap <silent> j gj
-nnoremap <silent> k gk
-vnoremap <silent> j gj
-vnoremap <silent> k gk
+nnoremap <silent>j gj
+nnoremap <silent>k gk
+vnoremap <silent>j gj
+vnoremap <silent>k gk
 
 " move to beginning/end of line
 nnoremap H ^
@@ -521,12 +437,6 @@ nnoremap <Right> :vertical resize +1<CR>
 nnoremap <Up> :resize -1<CR>
 nnoremap <Down> :resize +1<CR>
 
-" don't use arrows for movement in insert mode
-inoremap <Up> <NOP>
-inoremap <Down> <NOP>
-inoremap <Left> <NOP>
-inoremap <Right> <NOP>
-
 " highlight last inserted text
 nnoremap gV `[v`]<Paste>
 
@@ -549,10 +459,6 @@ nnoremap <leader>g :Rg<CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <leader>n :NoteFiles<CR>
  
-" split faster
-nnoremap <leader>ws :split<CR>
-nnoremap <leader>wx :vsplit<CR>
-
 " replace the word under cursor
 nnoremap <leader>* :%s/\<<c-r><c-w>\>//g<left><left>
 
@@ -561,9 +467,6 @@ xnoremap <leader>j :m'>+<cr>gv=gv
 nnoremap <leader>k :m-2<cr>==
 nnoremap <leader>j :m+<cr>==
 xnoremap <leader>k :m-2<cr>gv=gv
-
-" quick folding
-nnoremap <tab> za
 
 " coc
 nnoremap <silent> <leader>ch :call CocAction('doHover')<CR>

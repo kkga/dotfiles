@@ -4,8 +4,8 @@
 alt + shift - return : alacritty
 
 # change colors
-alt + ctrl - l : alacritty-colorscheme -a light.yml
-alt + ctrl - d : alacritty-colorscheme -a dark.yml
+alt + ctrl - l : alacritty-colorscheme -a light.yml -c ~/.config/alacritty/base.yml
+alt + ctrl - d : alacritty-colorscheme -a dark.yml -c ~/.config/alacritty/base.yml
 
 # quick restart
 # alt + ctrl - q : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"

@@ -10,30 +10,34 @@ window:
 #   - { key: Return, mods: Control|Shift, action: SpawnNewInstance }
 
 # color_start
-# dark.yml
-# Colors (Selenized black)
+# apprentice.yml
 colors:
+  # Default colors
   primary:
-    background: '0x181818'
-    foreground: '0xb9b9b9'
+    background: '0x262626'
+    foreground: '0xbcbcbc'
+
+  # Normal colors
   normal:
-    black:   '0x252525'
-    red:     '0xed4a46'
-    green:   '0x70b433'
-    yellow:  '0xdbb32d'
-    blue:    '0x368aeb'
-    magenta: '0xeb6eb7'
-    cyan:    '0x3fc5b7'
-    white:   '0x777777'
+    black:   '0x1c1c1c'
+    red:     '0xaf5f5f'
+    green:   '0x5f875f'
+    yellow:  '0x87875f'
+    blue:    '0x5f87af'
+    magenta: '0x5f5f87'
+    cyan:    '0x5f8787'
+    white:   '0x6c6c6c'
+
+  # Bright colors
   bright:
-    black:   '0x3b3b3b'
-    red:     '0xff5e56'
-    green:   '0x83c746'
-    yellow:  '0xefc541'
-    blue:    '0x4f9cfe'
-    magenta: '0xff81ca'
-    cyan:    '0x56d8c9'
-    white:   '0xdedede'
+    black:   '0x444444'
+    red:     '0xff8700'
+    green:   '0x87af87'
+    yellow:  '0xffffaf'
+    blue:    '0x8fafd7'
+    magenta: '0x8787af'
+    cyan:    '0x5fafaf'
+    white:   '0xffffff'
 
 # color_end
 
