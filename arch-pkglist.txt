@@ -18,6 +18,7 @@ blueman
 bluez
 bluez-runit
 bluez-utils
+brave-bin
 clipmenu
 corectrl
 cpu-x
@@ -103,6 +104,7 @@ nodejs
 obs-studio
 openssh
 openssh-runit
+pacback
 pacman
 pacman-contrib
 pamixer
@@ -134,7 +136,6 @@ shotgun
 siji-git
 slock
 solaar
-spectrwm
 speedtest-cli
 spleen-font
 spotify-tui
@@ -164,6 +165,7 @@ ufw
 ufw-runit
 unigine-heaven
 vdirsyncer
+via-bin
 vim
 virtualbox
 vkbasalt
