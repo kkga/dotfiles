@@ -3,11 +3,10 @@
 " PLUGINS {{{
 call plug#begin('~/.config/nvim/plugged')
 
-" basics
+" utils
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
-Plug 'rbong/vim-flog'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
@@ -18,7 +17,6 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'junegunn/vim-peekaboo'
 Plug 'mbbill/undotree'
 Plug 'nelstrom/vim-visual-star-search'
-" Plug 'konfekt/fastfold'
 Plug 'lifepillar/vim-cheat40'
 Plug 'justinmk/vim-sneak'
 Plug 'rhysd/clever-f.vim'
@@ -33,12 +31,10 @@ Plug 'romainl/Apprentice'
 Plug 'lifepillar/vim-solarized8'
 Plug 'lifepillar/vim-colortemplate'
 Plug 'https://gitlab.com/yorickpeterse/vim-paper.git'
-Plug 'habamax/vim-polar'
 Plug 'axvr/photon.vim'
 
 " markdown and note-taking
 Plug 'plasticboy/vim-markdown'
-" Plug 'lifepillar/vim-outlaw'
 Plug 'previm/previm/'
 Plug 'cweagans/vim-taskpaper'
 Plug 'https://gitlab.com/dbeniamine/todo.txt-vim'
@@ -51,8 +47,9 @@ Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'justinmk/vim-dirvish'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'dyng/ctrlsf.vim'
 
-" autocomplete
+" necessary evil
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " lang
@@ -175,6 +172,8 @@ let g:sneak#s_next = 1
 " todo {{{
 let g:Todo_txt_prefix_creation_date=1
 let g:Todo_fold_char='+'
+" }}}
+" CtrlSF {{{
 " }}}
 " }}}
 " SETTINGS {{{
@@ -373,11 +372,30 @@ let maplocalleader = "\\"
 inoremap jk <esc>
 inoremap kj <esc>
 
+" fzf mappings
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>g :Rg<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>n :NoteFiles<CR>
+ 
+" CtrlSF
+nmap     <C-F>f <Plug>CtrlSFPrompt
+vmap     <C-F>f <Plug>CtrlSFVwordPath
+vmap     <C-F>F <Plug>CtrlSFVwordExec
+nmap     <C-F>n <Plug>CtrlSFCwordPath
+nmap     <C-F>p <Plug>CtrlSFPwordPath
+nnoremap <C-F>o :CtrlSFOpen<CR>
+nnoremap <C-F>t :CtrlSFToggle<CR>
+inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+
+" coc
+nnoremap <silent> <leader>ch :call CocAction('doHover')<CR>
+
 " quick save
 nnoremap <leader>ww :w<cr>
 nnoremap <leader>wq :w<cr>
 
-" Quick Cmd mode
+" quick cmd mode
 nnoremap <leader><space> :
 
 " create a new buffer (save it with :w ./path/to/FILENAME)
@@ -454,12 +472,7 @@ nnoremap <esc><esc> :nohl<CR>
 nnoremap <leader>vr :vsp $MYVIMRC<cr>
 nnoremap <leader>sr :source $MYVIMRC<cr>
 
-" fzf mappings
-nnoremap <leader>f :Files<CR>
-nnoremap <leader>g :Rg<CR>
-nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>n :NoteFiles<CR>
- 
+
 " replace the word under cursor
 nnoremap <leader>* :%s/\<<c-r><c-w>\>//g<left><left>
 
@@ -469,8 +482,6 @@ nnoremap <leader>k :m-2<cr>==
 nnoremap <leader>j :m+<cr>==
 xnoremap <leader>k :m-2<cr>gv=gv
 
-" coc
-nnoremap <silent> <leader>ch :call CocAction('doHover')<CR>
 
 "}}}
 " FUNCTIONS {{{
@@ -521,7 +532,6 @@ augroup Statusline
   autocmd!
   autocmd WinEnter,BufEnter * setlocal statusline=%!ActiveLine()
   autocmd WinLeave,BufLeave * setlocal statusline=%!InactiveLine()
-  autocmd FileType nerdtree setlocal statusline=%!NERDLine()
 augroup END
 " }}}
 " markdown {{{
@@ -563,15 +573,15 @@ augroup end
 " }}}
 " SYNTAX {{{
 " markdown lists {
-syntax match  listItem "^\s*\(-\|*\|+\|\d\+\.\)\s.*$"
-highlight default link listItem Normal
-syntax match  listMarker "^\s*\(-\|*\|+\|\d\+\.\)\s" contained containedin=listItem
-syntax match  listMarker "^\s*\(-\|*\|+\|\d\+\.\)\s\(\[ \]\|\[X\]\)" contained containedin=listItem
-highlight default link listMarker LineNr
-syntax match  taskBox "\[ \]" contained containedin=listMarker
-highlight default link taskBox Todo
-syntax match  doneBox "\[X\]" contained containedin=listMarker
-highlight default link doneBox Comment
+" syntax match  listItem "^\s*\(-\|*\|+\|\d\+\.\)\s.*$"
+" highlight default link listItem Normal
+" syntax match  listMarker "^\s*\(-\|*\|+\|\d\+\.\)\s" contained containedin=listItem
+" syntax match  listMarker "^\s*\(-\|*\|+\|\d\+\.\)\s\(\[ \]\|\[X\]\)" contained containedin=listItem
+" highlight default link listMarker LineNr
+" syntax match  taskBox "\[ \]" contained containedin=listMarker
+" highlight default link taskBox Todo
+" syntax match  doneBox "\[X\]" contained containedin=listMarker
+" highlight default link doneBox Comment
 " }
 " }}}
 " NOTETAKING {{{
