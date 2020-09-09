@@ -55,7 +55,7 @@ export SSH_AUTH_SOCK
 /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
 $HOME/.config/screenlayout/displays.sh &
 $HOME/.config/dwm-bar/dwm_bar.sh &
-# $HOME/.fehbg &
+sxhkd &
 # picom &
 dunst &
 clipmenud &

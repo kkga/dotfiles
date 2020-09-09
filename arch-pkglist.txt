@@ -9,6 +9,7 @@ bandwhich
 base
 bat
 bc
+bdf-spleen
 bemenu
 binutils
 bison
@@ -137,7 +138,6 @@ siji-git
 slock
 solaar
 speedtest-cli
-spleen-font
 spotify-tui
 spotifyd
 sshfs
@@ -181,6 +181,7 @@ xdg-user-dirs
 xdg-utils
 xf86-video-vesa
 xidlehook
+xob
 xorg-bdftopcf
 xorg-docs
 xorg-font-util
