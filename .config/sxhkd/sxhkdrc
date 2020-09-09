@@ -14,6 +14,16 @@ XF86AudioLowerVolume
 # @XF86LaunchA
 # 	scrot -s -e 'image_viewer $f'
 
+# XF86AudioMute 
+
+# XF86MonBrightnessUp 
+# XF86MonBrightnessDown 
+
+# XF86AudioPlay exec playerctl play
+# XF86AudioPause exec playerctl pause
+# XF86AudioNext exec playerctl next
+# XF86AudioPrev exec playerctl previous
+
 super + Return
 	alacritty
 
