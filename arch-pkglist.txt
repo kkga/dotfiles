@@ -26,7 +26,6 @@ cpu-x
 cronie
 cronie-runit
 ddcutil
-dmenu
 dosfstools
 dunst
 efibootmgr
@@ -145,6 +144,7 @@ st
 starship
 steam
 sudo
+surf
 sv-helper
 sxhkd
 syncthing-runit
