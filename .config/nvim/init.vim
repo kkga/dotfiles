@@ -10,6 +10,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
+let g:sleuth_automatic = 1
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-endwise'
@@ -19,6 +20,7 @@ Plug 'mbbill/undotree'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'lifepillar/vim-cheat40'
 Plug 'justinmk/vim-sneak'
+let g:sneak#s_next = 1
 Plug 'rhysd/clever-f.vim'
 Plug 'ap/vim-buftabline'
 Plug 'unblevable/quick-scope'
@@ -30,52 +32,16 @@ Plug 'junegunn/vim-easy-align'
 Plug 'romainl/Apprentice'
 Plug 'lifepillar/vim-solarized8'
 Plug 'lifepillar/vim-colortemplate'
+let b:colortemplate_outdir = "/Users/kkga/.config/nvim"
+
 Plug 'https://gitlab.com/yorickpeterse/vim-paper.git'
 Plug 'axvr/photon.vim'
-
-" markdown and note-taking
-Plug 'plasticboy/vim-markdown'
-Plug 'previm/previm/'
-Plug 'cweagans/vim-taskpaper'
-Plug 'https://gitlab.com/dbeniamine/todo.txt-vim'
-
-" snippets
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
-
-" file browsing
-Plug 'justinmk/vim-dirvish'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-Plug 'dyng/ctrlsf.vim'
-
-" necessary evil
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" lang
-Plug 'habamax/vim-godot'
-
-call plug#end()
-"}}}
-" PLUGIN SETTINGS {{{
-" Colorscheme {{{
-" let g:solarized_visibility = "high"
-" let g:solarized_termtrans = 1
-" let g:solarized_statusline = "flat"
-" let g:solarized_extra_hi_groups = 1
-" let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-" let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 set notermguicolors
 set t_Co=256
 colorscheme envy
-" }}}
-" Colortemplate {{{
-let b:colortemplate_outdir = "/Users/kkga/.config/nvim"
-" }}}
-" Markdown {{{
-let g:previm_open_cmd = 'open -a Min'
 
-" Configuration for vim-markdown
+" markdown and note-taking
+Plug 'plasticboy/vim-markdown'
 let g:vim_markdown_conceal = 1
 let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_math = 1
@@ -88,51 +54,49 @@ let g:vim_markdown_follow_anchor = 1
 let g:vim_markdown_folding_style_pythonic = 1
 let g:vim_markdown_folding_level = 6
 let g:vim_markdown_toc_autofit = 1
+Plug 'previm/previm/'
+let g:previm_open_cmd = 'open -a Min'
+Plug 'cweagans/vim-taskpaper'
+Plug 'https://gitlab.com/dbeniamine/todo.txt-vim'
+let g:Todo_txt_prefix_creation_date=1
+let g:Todo_fold_char='+'
 
-" }}}
-" FZF {{{
+" snippets
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+
+" file browsing
+Plug 'justinmk/vim-dirvish'
+Plug 'dyng/ctrlsf.vim'
+nmap     <C-F>f <Plug>CtrlSFPrompt
+vmap     <C-F>f <Plug>CtrlSFVwordPath
+vmap     <C-F>F <Plug>CtrlSFVwordExec
+nmap     <C-F>n <Plug>CtrlSFCwordPath
+nmap     <C-F>p <Plug>CtrlSFPwordPath
+nnoremap <C-F>o :CtrlSFOpen<CR>
+nnoremap <C-F>t :CtrlSFToggle<CR>
+inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 let $FZF_DEFAULT_COMMAND = 'rg --files'
-" This is the default extra key bindings
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
-
-" Default fzf layout
-" - down / up / left / right
-" let g:fzf_layout = { 'down': '~40%' }
-" let g:fzf_layout = { 'window': { 'width': 0.8 , 'height': 0.6 } }
-
-
-" Customize fzf colors to match your color scheme
-" let g:fzf_colors =
-" \ { 'fg':      ['fg', 'Normal'],
-"   \ 'bg':      ['bg', 'Normal'],
-"   \ 'hl':      ['fg', 'Comment'],
-"   \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-"   \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-"   \ 'hl+':     ['fg', 'Statement'],
-"   \ 'info':    ['fg', 'PreProc'],
-"   \ 'border':  ['fg', 'Ignore'],
-"   \ 'prompt':  ['fg', 'Conditional'],
-"   \ 'pointer': ['fg', 'Exception'],
-"   \ 'marker':  ['fg', 'Keyword'],
-"   \ 'spinner': ['fg', 'Label'],
-"   \ 'header':  ['fg', 'Comment'] }
-
-" Enable per-command history.
-" CTRL-N and CTRL-P will be automatically bound to next-history and
-" previous-history instead of down and up. If you don't like the change,
-" explicitly bind the keys to down and up in your $FZF_DEFAULT_OPTS.
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 augroup fzf_statusline
     autocmd! FileType fzf
     autocmd  FileType fzf set laststatus=0 noshowmode noruler
       \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 augroup END
+" fzf mappings
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>g :Rg<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>n :NoteFiles<CR>
 
-" }}}
-" Completion {{{
+" necessary evil
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
@@ -162,20 +126,13 @@ endif
 " else
 "   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " endif
-" }}}
-" sleuth {{{
-let g:sleuth_automatic = 1
-" }}}
-" sneak {{{
-let g:sneak#s_next = 1
-" }}}
-" todo {{{
-let g:Todo_txt_prefix_creation_date=1
-let g:Todo_fold_char='+'
-" }}}
-" CtrlSF {{{
-" }}}
-" }}}
+nnoremap <silent> <leader>ch :call CocAction('doHover')<CR>
+
+" lang
+Plug 'habamax/vim-godot'
+
+call plug#end()
+"}}}
 " SETTINGS {{{
 
 filetype plugin indent on       " no idea
@@ -372,31 +329,12 @@ let maplocalleader = "\\"
 inoremap jk <esc>
 inoremap kj <esc>
 
-" fzf mappings
-nnoremap <leader>f :Files<CR>
-nnoremap <leader>g :Rg<CR>
-nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>n :NoteFiles<CR>
- 
-" CtrlSF
-nmap     <C-F>f <Plug>CtrlSFPrompt
-vmap     <C-F>f <Plug>CtrlSFVwordPath
-vmap     <C-F>F <Plug>CtrlSFVwordExec
-nmap     <C-F>n <Plug>CtrlSFCwordPath
-nmap     <C-F>p <Plug>CtrlSFPwordPath
-nnoremap <C-F>o :CtrlSFOpen<CR>
-nnoremap <C-F>t :CtrlSFToggle<CR>
-inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
-
-" coc
-nnoremap <silent> <leader>ch :call CocAction('doHover')<CR>
+" less shifting
+nnoremap ; :
 
 " quick save
 nnoremap <leader>ww :w<cr>
 nnoremap <leader>wq :w<cr>
-
-" quick cmd mode
-nnoremap <leader><space> :
 
 " create a new buffer (save it with :w ./path/to/FILENAME)
 nnoremap <leader>B :enew<cr>
@@ -406,8 +344,8 @@ nnoremap <leader>bq :bp <bar> bd! #<cr>
 nnoremap <leader>ba :bufdo bd!<cr>
 
 " navigate buffers
-nnoremap <C-j> :bnext<CR>
-nnoremap <C-k> :bprev<CR>
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-p> :bprev<CR>
 
 " theme switcher
 nnoremap <Leader>cd :set bg=dark<CR>
@@ -471,7 +409,6 @@ nnoremap <esc><esc> :nohl<CR>
 " change/source config
 nnoremap <leader>vr :vsp $MYVIMRC<cr>
 nnoremap <leader>sr :source $MYVIMRC<cr>
-
 
 " replace the word under cursor
 nnoremap <leader>* :%s/\<<c-r><c-w>\>//g<left><left>
