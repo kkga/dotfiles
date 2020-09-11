@@ -27,8 +27,8 @@ XF86AudioLowerVolume
 super + Return
 	alacritty
 
-super + d
-	dmenu_run -i
+# super + d
+# 	dmenu_run -i
 
 super + ctrl + c
 	clipmenu -i
