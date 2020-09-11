@@ -1,4 +1,4 @@
-alacritty
+alacritty-git
 alsa-firmware
 alsa-utils
 amd-ucode
@@ -118,6 +118,7 @@ piper
 pkgconf
 playerctl
 polkit-gnome
+powerupp-git
 procs
 protonvpn-cli-ng
 pulseaudio
@@ -139,11 +140,12 @@ sed
 shotgun
 siji-git
 slock
+socklog
 solaar
 speedtest-cli
 spotify-tui
-spotifyd
 sshfs
+sshguard-runit
 st
 starship
 steam
