@@ -34,7 +34,6 @@ Plug 'lifepillar/vim-solarized8'
 Plug 'lifepillar/vim-colortemplate'
 let b:colortemplate_outdir = "/Users/kkga/.config/nvim"
 
-Plug 'https://gitlab.com/yorickpeterse/vim-paper.git'
 Plug 'axvr/photon.vim'
 set notermguicolors
 set t_Co=256
@@ -68,14 +67,6 @@ Plug 'hrsh7th/vim-vsnip-integ'
 " file browsing
 Plug 'justinmk/vim-dirvish'
 Plug 'dyng/ctrlsf.vim'
-nmap     <C-F>f <Plug>CtrlSFPrompt
-vmap     <C-F>f <Plug>CtrlSFVwordPath
-vmap     <C-F>F <Plug>CtrlSFVwordExec
-nmap     <C-F>n <Plug>CtrlSFCwordPath
-nmap     <C-F>p <Plug>CtrlSFPwordPath
-nnoremap <C-F>o :CtrlSFOpen<CR>
-nnoremap <C-F>t :CtrlSFToggle<CR>
-inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 let $FZF_DEFAULT_COMMAND = 'rg --files'
@@ -89,11 +80,6 @@ augroup fzf_statusline
     autocmd  FileType fzf set laststatus=0 noshowmode noruler
       \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 augroup END
-" fzf mappings
-nnoremap <leader>f :Files<CR>
-nnoremap <leader>g :Rg<CR>
-nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>n :NoteFiles<CR>
 
 " necessary evil
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -126,7 +112,6 @@ endif
 " else
 "   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " endif
-nnoremap <silent> <leader>ch :call CocAction('doHover')<CR>
 
 " lang
 Plug 'habamax/vim-godot'
@@ -331,6 +316,25 @@ inoremap kj <esc>
 
 " less shifting
 nnoremap ; :
+
+" fzf mappings
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>g :Rg<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>n :NoteFiles<CR>
+
+" ctrlsf
+nmap     <C-F>f <Plug>CtrlSFPrompt
+vmap     <C-F>f <Plug>CtrlSFVwordPath
+vmap     <C-F>F <Plug>CtrlSFVwordExec
+nmap     <C-F>n <Plug>CtrlSFCwordPath
+nmap     <C-F>p <Plug>CtrlSFPwordPath
+nnoremap <C-F>o :CtrlSFOpen<CR>
+nnoremap <C-F>t :CtrlSFToggle<CR>
+inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+
+" coc
+nnoremap <silent> <leader>ch :call CocAction('doHover')<CR>
 
 " quick save
 nnoremap <leader>ww :w<cr>
