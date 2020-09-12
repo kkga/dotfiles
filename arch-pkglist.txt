@@ -69,6 +69,7 @@ hacksaw
 hexchat
 htop
 imagemagick
+j4-dmenu-desktop
 keychain
 kitty
 lazygit
@@ -91,7 +92,9 @@ meson
 mlocate
 mpv
 myrepos
+nautilus
 needrestart
+nemo
 neofetch
 neovim
 network-manager-applet
@@ -127,7 +130,6 @@ pulsemixer
 python-mako
 qmk
 qt5ct
-qutebrowser
 r8125-dkms
 radeon-profile-git
 redshift-minimal
@@ -163,6 +165,7 @@ timeshift-autosnap
 todoman
 tokei
 topgrade
+trash-cli
 ttf-ibm-plex
 ttf-iosevka-aile
 ttf-iosevka-term
@@ -244,6 +247,8 @@ yadm-git
 yarn
 yay
 ytop
+zathura
+zathura-pdf-poppler
 zola
 zoxide
 zsa-wally
