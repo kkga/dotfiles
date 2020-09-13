@@ -23,8 +23,8 @@ export TERMINAL=alacritty
 export MANGOHUD=1
 export ENABLE_VKBASALT=1
 
-export FZF_DEFAULT_COMMAND="rg --files --follow"
-export FZF_DEFAULT_OPTS="--color 16 --info inline --border horizontal"
+# export FZF_DEFAULT_COMMAND="rg --files --follow"
+# export FZF_DEFAULT_OPTS="--color 16 --info inline --border horizontal"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
 if [[ "$(hostname)" == "artix" ]]; then

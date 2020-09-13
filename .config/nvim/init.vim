@@ -30,7 +30,6 @@ Plug 'junegunn/vim-easy-align'
 Plug 'romainl/Apprentice'
 Plug 'lifepillar/vim-gruvbox8'
 Plug 'lifepillar/vim-colortemplate'
-Plug 'jonathanfilip/vim-lucius'
 
 " markdown and note-taking
 Plug 'plasticboy/vim-markdown'
@@ -82,19 +81,18 @@ let g:previm_open_cmd = 'open -a Min'
 
 let g:Todo_txt_prefix_creation_date=1
 let g:Todo_fold_char='+'
-Plug 'https://github.com/wincent/corpus'
 
-let $FZF_DEFAULT_COMMAND = 'rg --files'
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
-  \ 'ctrl-v': 'vsplit' }
-let g:fzf_history_dir = '~/.local/share/fzf-history'
-augroup fzf_statusline
-    autocmd! FileType fzf
-    autocmd  FileType fzf set laststatus=0 noshowmode noruler
-      \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
-augroup END
+" let $FZF_DEFAULT_COMMAND = 'rg --files'
+" let g:fzf_action = {
+"   \ 'ctrl-t': 'tab split',
+"   \ 'ctrl-x': 'split',
+"   \ 'ctrl-v': 'vsplit' }
+" let g:fzf_history_dir = '~/.local/share/fzf-history'
+" augroup fzf_statusline
+"     autocmd! FileType fzf
+"     autocmd  FileType fzf set laststatus=0 noshowmode noruler
+"       \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+" augroup END
 
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
