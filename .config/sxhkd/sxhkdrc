@@ -24,7 +24,7 @@ XF86AudioLowerVolume
 # XF86AudioNext exec playerctl next
 # XF86AudioPrev exec playerctl previous
 
-super + Return
+super + shift + Return
 	alacritty
 
 # super + d

@@ -1,4 +1,3 @@
-
 [Default Applications]
 text/html=firefox.desktop
 x-scheme-handler/http=firefox.desktop
@@ -7,3 +6,6 @@ x-scheme-handler/about=firefox.desktop
 x-scheme-handler/unknown=firefox.desktop
 inode/directory=pcmanfm.desktop
 application/pdf=org.pwmt.zathura.desktop
+
+[Added Associations]
+image/jpeg=feh.desktop;gimp.desktop;

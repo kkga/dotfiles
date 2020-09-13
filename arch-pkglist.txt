@@ -4,6 +4,7 @@ alsa-utils
 amd-ucode
 arandr
 arch-audit
+asciidoctor
 autoconf
 automake
 bandwhich
@@ -26,10 +27,12 @@ cpu-x
 cronie
 cronie-runit
 ddcutil
+dina-font-otb
 dosfstools
 dunst
 efibootmgr
 elogind-runit
+envypn-font
 espanso
 eva
 exa
@@ -58,6 +61,7 @@ gnome-keyring
 gnome-themes-extra
 go
 godot
+gohufont-otb
 grep
 groff
 grsync
@@ -96,7 +100,7 @@ nautilus
 needrestart
 nemo
 neofetch
-neovim
+neovim-git
 network-manager-applet
 networkmanager
 networkmanager-dmenu-git
@@ -106,6 +110,8 @@ nodejs
 obs-studio
 openssh
 openssh-runit
+otb-uw_ttyp0
+otf-fantasque-sans-mono
 pacback
 pacman
 pacman-contrib
@@ -156,9 +162,10 @@ surf
 sv-helper
 sxhkd
 syncthing-runit
+tamsyn-font
 tealdeer
 telegram-desktop
-terminus-font
+terminus-font-otb
 texinfo
 timeshift
 timeshift-autosnap
