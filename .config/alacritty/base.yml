@@ -10,7 +10,6 @@ window:
 #   - { key: Return, mods: Control|Shift, action: SpawnNewInstance }
 
 # color_start
-# apprentice.yml
 colors:
   # Default colors
   primary:
@@ -27,7 +26,6 @@ colors:
     magenta: '0x5f5f87'
     cyan:    '0x5f8787'
     white:   '0x6c6c6c'
-
   # Bright colors
   bright:
     black:   '0x444444'
@@ -38,7 +36,6 @@ colors:
     magenta: '0x8787af'
     cyan:    '0x5fafaf'
     white:   '0xffffff'
-
 # color_end
 
 cursor:

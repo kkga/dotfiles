@@ -10,7 +10,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
-let g:sleuth_automatic = 1
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-endwise'
@@ -20,7 +19,6 @@ Plug 'mbbill/undotree'
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'lifepillar/vim-cheat40'
 Plug 'justinmk/vim-sneak'
-let g:sneak#s_next = 1
 Plug 'rhysd/clever-f.vim'
 Plug 'ap/vim-buftabline'
 Plug 'unblevable/quick-scope'
@@ -30,18 +28,43 @@ Plug 'junegunn/vim-easy-align'
 
 " themes
 Plug 'romainl/Apprentice'
-Plug 'lifepillar/vim-solarized8'
+Plug 'lifepillar/vim-gruvbox8'
 Plug 'lifepillar/vim-colortemplate'
-let b:colortemplate_outdir = "/Users/kkga/.config/nvim"
-
-Plug 'https://gitlab.com/yorickpeterse/vim-paper.git'
-Plug 'axvr/photon.vim'
-set notermguicolors
-set t_Co=256
-colorscheme envy
+Plug 'jonathanfilip/vim-lucius'
 
 " markdown and note-taking
 Plug 'plasticboy/vim-markdown'
+Plug 'previm/previm/'
+Plug 'cweagans/vim-taskpaper'
+Plug 'https://gitlab.com/dbeniamine/todo.txt-vim'
+
+" snippets
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+
+" file browsing
+Plug 'justinmk/vim-dirvish'
+Plug 'dyng/ctrlsf.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
+" necessary evil
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+" lang
+Plug 'habamax/vim-godot'
+
+call plug#end()
+"}}}
+" PLUGIN SETTINGS {{{
+let g:sleuth_automatic = 1
+
+let g:sneak#s_next = 1
+let b:colortemplate_outdir = "/Users/kkga/.config/nvim"
+set termguicolors
+" set t_Co=256
+colorscheme envy
+
 let g:vim_markdown_conceal = 1
 let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_math = 1
@@ -54,31 +77,13 @@ let g:vim_markdown_follow_anchor = 1
 let g:vim_markdown_folding_style_pythonic = 1
 let g:vim_markdown_folding_level = 6
 let g:vim_markdown_toc_autofit = 1
-Plug 'previm/previm/'
+
 let g:previm_open_cmd = 'open -a Min'
-Plug 'cweagans/vim-taskpaper'
-Plug 'https://gitlab.com/dbeniamine/todo.txt-vim'
+
 let g:Todo_txt_prefix_creation_date=1
 let g:Todo_fold_char='+'
 Plug 'https://github.com/wincent/corpus'
 
-" snippets
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
-
-" file browsing
-Plug 'justinmk/vim-dirvish'
-Plug 'dyng/ctrlsf.vim'
-nmap     <C-F>f <Plug>CtrlSFPrompt
-vmap     <C-F>f <Plug>CtrlSFVwordPath
-vmap     <C-F>F <Plug>CtrlSFVwordExec
-nmap     <C-F>n <Plug>CtrlSFCwordPath
-nmap     <C-F>p <Plug>CtrlSFPwordPath
-nnoremap <C-F>o :CtrlSFOpen<CR>
-nnoremap <C-F>t :CtrlSFToggle<CR>
-inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
 let $FZF_DEFAULT_COMMAND = 'rg --files'
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
@@ -90,14 +95,7 @@ augroup fzf_statusline
     autocmd  FileType fzf set laststatus=0 noshowmode noruler
       \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 augroup END
-" fzf mappings
-nnoremap <leader>f :Files<CR>
-nnoremap <leader>g :Rg<CR>
-nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>n :NoteFiles<CR>
 
-" necessary evil
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
@@ -127,13 +125,8 @@ endif
 " else
 "   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 " endif
-nnoremap <silent> <leader>ch :call CocAction('doHover')<CR>
 
-" lang
-Plug 'habamax/vim-godot'
-
-call plug#end()
-"}}}
+" }}}
 " SETTINGS {{{
 
 filetype plugin indent on       " no idea
@@ -332,6 +325,25 @@ inoremap kj <esc>
 
 " less shifting
 nnoremap ; :
+
+" fzf mappings
+nnoremap <leader>f :Files<CR>
+nnoremap <leader>g :Rg<CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>n :NoteFiles<CR>
+
+" ctrlsf
+nmap     <C-F>f <Plug>CtrlSFPrompt
+vmap     <C-F>f <Plug>CtrlSFVwordPath
+vmap     <C-F>F <Plug>CtrlSFVwordExec
+nmap     <C-F>n <Plug>CtrlSFCwordPath
+nmap     <C-F>p <Plug>CtrlSFPwordPath
+nnoremap <C-F>o :CtrlSFOpen<CR>
+nnoremap <C-F>t :CtrlSFToggle<CR>
+inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
+
+" coc
+nnoremap <silent> <leader>ch :call CocAction('doHover')<CR>
 
 " quick save
 nnoremap <leader>ww :w<cr>

@@ -62,5 +62,6 @@ clipmenud &
 redshift -l 55:37 &
 espanso daemon &
 xset r rate 200 30 &
+xsetroot -solid "#6D7F6F" &
 xidlehook --timer 300 'slock' '' --timer 3600 'loginctl suspend' '' &
-dbus-launch dwm
+exec dwm
