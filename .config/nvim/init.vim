@@ -60,6 +60,7 @@ Plug 'cweagans/vim-taskpaper'
 Plug 'https://gitlab.com/dbeniamine/todo.txt-vim'
 let g:Todo_txt_prefix_creation_date=1
 let g:Todo_fold_char='+'
+Plug 'https://github.com/wincent/corpus'
 
 " snippets
 Plug 'hrsh7th/vim-vsnip'
