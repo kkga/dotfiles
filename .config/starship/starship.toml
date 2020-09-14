@@ -1,4 +1,4 @@
-add_newline = true
+add_newline = false
 
 [character]      # The name of the module we are configuring is "character"
 symbol = ">"     # The "symbol" segment is being set to "➜"
@@ -49,3 +49,8 @@ modified = "M"
 # staged_count.style = "green"
 renamed = "R"
 deleted = "D"
+
+[cmd_duration]
+min_time = 500
+prefix = ""
+style = "fg:white"
