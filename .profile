@@ -23,7 +23,6 @@ export TERMINAL=alacritty
 export MANGOHUD=1
 export ENABLE_VKBASALT=1
 
-# export FZF_DEFAULT_COMMAND="rg --files --follow"
 export FZF_DEFAULT_OPTS="--color bw"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 

@@ -85,7 +85,6 @@ lib32-libstdc++5
 libelogind
 libstdc++5
 libtool
-libva-mesa-driver
 linux
 linux-firmware
 linux-headers
@@ -95,6 +94,7 @@ lxappearance
 m4
 make
 mangohud
+mesa-git
 meson
 mlocate
 mpv
@@ -192,7 +192,6 @@ vim
 virtualbox
 vkbasalt
 vulkan-headers
-vulkan-radeon
 vulkan-tools
 weechat
 wget
