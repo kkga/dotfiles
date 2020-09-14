@@ -8,13 +8,6 @@ sysmodmap=/etc/X11/xinit/.Xmodmap
 # merge in defaults and keymaps
 
 if [ -f $sysresources ]; then
-
-
-
-
-
-
-
     xrdb -merge $sysresources
 
 fi
@@ -24,13 +17,6 @@ if [ -f $sysmodmap ]; then
 fi
 
 if [ -f "$userresources" ]; then
-
-
-
-
-
-
-
     xrdb -merge "$userresources"
 
 fi
@@ -62,6 +48,6 @@ clipmenud &
 redshift -l 55:37 &
 espanso daemon &
 xset r rate 200 30 &
-xsetroot -solid "#6D7F6F" &
-xidlehook --timer 300 'slock' '' --timer 3600 'loginctl suspend' '' &
-exec dwm
+xsetroot -solid "#1c1c1c" &
+xidlehook --timer 600 'slock' '' --timer 3600 'loginctl suspend' '' &
+exec dbus-launch dwm

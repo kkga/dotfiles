@@ -32,6 +32,7 @@ dosfstools
 dunst
 efibootmgr
 elogind-runit
+elvish
 envypn-font
 espanso
 eva
@@ -66,6 +67,8 @@ grep
 groff
 grsync
 grub
+gtypist-single-space
+gufw
 gvfs
 gvfs-smb
 gzip
@@ -169,6 +172,7 @@ terminus-font-otb
 texinfo
 timeshift
 timeshift-autosnap
+tipp10
 todoman
 tokei
 topgrade
@@ -176,6 +180,8 @@ trash-cli
 ttf-ibm-plex
 ttf-iosevka-aile
 ttf-iosevka-term
+typespeed
+typiskt
 udiskie
 ufw
 ufw-runit
