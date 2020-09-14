@@ -44,7 +44,7 @@ Plug 'hrsh7th/vim-vsnip-integ'
 " file browsing
 Plug 'justinmk/vim-dirvish'
 Plug 'dyng/ctrlsf.vim'
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf', { 'do': { -> fzf#insttll() } }
 Plug 'junegunn/fzf.vim'
 
 " necessary evil
