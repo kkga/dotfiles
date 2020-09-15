@@ -12,6 +12,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-obsession'
+Plug 'tpope/vim-unimpaired'
 " Plug 'tpope/vim-endwise'
 Plug 'machakann/vim-highlightedyank'
 Plug 'junegunn/vim-peekaboo'
@@ -23,8 +24,9 @@ Plug 'rhysd/clever-f.vim'
 Plug 'ap/vim-buftabline'
 Plug 'unblevable/quick-scope'
 Plug 'rstacruz/vim-closer'
-Plug 'mhinz/vim-signify'
+Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/vim-easy-align'
+Plug 'mhinz/vim-startify'
 
 " themes
 Plug 'romainl/Apprentice'
@@ -343,6 +345,11 @@ set nojoinspaces                " Set 1 space btwn lines/periods to be joined
 " scrollin
 set scrolloff=8               " Working line will always be in the center
 
+" fish doesn't always play nice in vim
+if &shell =~# 'fish$'
+  set shell=/bin/bash
+endif
+
 " disable backups and swap
 set nobackup
 set nowb
@@ -520,14 +527,6 @@ nnoremap <leader>bq :bp <bar> bd! #<cr>
 " close all open buffers
 nnoremap <leader>ba :bufdo bd!<cr>
 
-" navigate buffers
-nnoremap <C-n> :bnext<CR>
-nnoremap <C-p> :bprev<CR>
-
-" theme switcher
-nnoremap <Leader>cd :set bg=dark<CR>
-nnoremap <Leader>cl :set bg=light<CR>
-
 " ¯\_(ツ)_/¯
 map <silent> q: :q<Cr>
 map <silent> Q: :q<Cr>
@@ -574,14 +573,8 @@ nnoremap <Down> :resize +1<CR>
 " highlight last inserted text
 nnoremap gV `[v`]<Paste>
 
-" toggle wrap
-nnoremap <leader>tw :ToggleWrap<CR>
-
 " toggle checkbox
 nnoremap <leader>tt :ToggleTask<CR>
-
-" clear search highlight
-nnoremap <esc><esc> :nohl<CR>
 
 " change/source config
 nnoremap <leader>vr :vsp $MYVIMRC<cr>
@@ -620,16 +613,6 @@ function! <SID>SynStack()
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
 
-" toggle wrap
-function! ToggleWrap()
-    if(&wrap == 1)
-        set nowrap
-    else
-        set wrap
-    endif
-endfunc
-
-command! ToggleWrap call ToggleWrap()
 
 " }}}
 " AUGROUPS {{{
