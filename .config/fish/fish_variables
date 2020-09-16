@@ -9,7 +9,7 @@ SETUVAR _fish_abbr_zi:z\x20\x2di
 SETUVAR _fish_abbr_zq:zoxide\x20query
 SETUVAR _fish_abbr_zqi:zoxide\x20query\x20\x2di
 SETUVAR _fish_abbr_zr:zoxide\x20remove
-SETUVAR fish_color_autosuggestion:grey
+SETUVAR fish_color_autosuggestion:brblack
 SETUVAR fish_color_cancel:red
 SETUVAR fish_color_command:cyan
 SETUVAR fish_color_comment:brblack
@@ -32,7 +32,7 @@ SETUVAR fish_color_selection:red
 SETUVAR fish_color_status:red
 SETUVAR fish_color_user:normal
 SETUVAR fish_color_valid_path:cyan
-SETUVAR fish_key_bindings:fish_default_key_bindings
+SETUVAR fish_key_bindings:fish_vi_key_bindings
 SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:cyan
 SETUVAR fish_pager_color_selected_completion:brcyan

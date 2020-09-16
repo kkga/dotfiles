@@ -1,10 +1,10 @@
 add_newline = false
 
 [character]      # The name of the module we are configuring is "character"
-symbol = ">"     # The "symbol" segment is being set to "➜"
-vicmd_symbol = "<"
+symbol = "❯"     # The "symbol" segment is being set to "➜"
+vicmd_symbol = "❮"
 error_symbol = "x"
-use_symbol_for_status = true
+use_symbol_for_status = false
 # style_success = ""
 
 prompt_order=["line_break","package","line_break","character"]
