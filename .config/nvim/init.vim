@@ -33,6 +33,7 @@ Plug 'mhinz/vim-startify'
 Plug 'romainl/Apprentice'
 Plug 'lifepillar/vim-gruvbox8'
 Plug 'lifepillar/vim-colortemplate'
+Plug 'pgdouyon/vim-yin-yang'
 
 " markdown and note-taking
 Plug 'plasticboy/vim-markdown'
