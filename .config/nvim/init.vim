@@ -100,8 +100,8 @@ call plug#end()
 let g:sleuth_automatic = 1
 let g:sneak#s_next = 1
 let b:colortemplate_outdir = "/Users/kkga/.config/nvim"
-set termguicolors
-" set t_Co=256
+set notermguicolors
+set t_Co=256
 colorscheme envy
 
 let g:vim_markdown_conceal = 1
