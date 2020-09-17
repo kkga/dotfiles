@@ -17,7 +17,7 @@ yabai -m config normal_window_border_color   0xff444444
 yabai -m config insert_window_border_color   0xffFFFFAF
 yabai -m config split_ratio                  0.60
 yabai -m config auto_balance                 on
-yabai -m config mouse_modifier               alt
+yabai -m config mouse_modifier               fn
 yabai -m config mouse_action1                move
 yabai -m config mouse_action2                resize
 
