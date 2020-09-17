@@ -13,7 +13,8 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-unimpaired'
-" Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-endwise'
+Plug 'rstacruz/vim-closer'
 Plug 'machakann/vim-highlightedyank'
 Plug 'junegunn/vim-peekaboo'
 Plug 'mbbill/undotree'
@@ -33,7 +34,6 @@ Plug 'mhinz/vim-startify'
 Plug 'romainl/Apprentice'
 Plug 'lifepillar/vim-gruvbox8'
 Plug 'lifepillar/vim-colortemplate'
-Plug 'pgdouyon/vim-yin-yang'
 
 " markdown and note-taking
 Plug 'plasticboy/vim-markdown'
@@ -61,6 +61,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " lang
 Plug 'habamax/vim-godot'
+Plug 'rust-lang/rust.vim'
 
 call plug#end()
 "}}}
@@ -98,8 +99,8 @@ call plug#end()
 let g:sleuth_automatic = 1
 let g:sneak#s_next = 1
 let b:colortemplate_outdir = "/Users/kkga/.config/nvim"
-set termguicolors
-" set t_Co=256
+set notermguicolors
+set t_Co=256
 colorscheme envy
 
 let g:vim_markdown_conceal = 1
