@@ -1,0 +1,23 @@
+# Colors (envy dark)
+colors:
+  primary:
+    foreground: '0xd0d0d0'
+    background: '0x444444'
+  normal:
+    black:      '0x444444'
+    red:        '0xAF5F5F'
+    green:      '0x5F875F'
+    yellow:     '0x87875f'
+    blue:       '0x5F87AF'
+    magenta:    '0x5F5F87'
+    cyan:       '0x5fafaf'
+    white:      '0xBCBCBC'
+  bright:
+    black:      '0x6c6c6c'
+    red:        '0xFF8700'
+    green:      '0x87AF87'
+    yellow:     '0xFFFFAF'
+    blue:       '0x87AFD7'
+    magenta:    '0x8787AF'
+    cyan:       '0x5FAFAF'
+    white:      '0xFFFFFF'
