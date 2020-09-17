@@ -26,6 +26,7 @@ Plug 'rstacruz/vim-closer'
 Plug 'mhinz/vim-signify'
 Plug 'junegunn/vim-easy-align'
 
+
 " themes
 Plug 'romainl/Apprentice'
 Plug 'lifepillar/vim-gruvbox8'
@@ -163,11 +164,11 @@ endif
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
 " <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
-if exists('*complete_info')
-  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-else
-  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-endif
+" if exists('*complete_info')
+"   inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+" else
+"   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" endif
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
@@ -476,6 +477,13 @@ function! InactiveLine()
 
   return statusline
 endfunction
+
+" Change statusline automatically
+augroup Statusline
+  autocmd!
+  autocmd WinEnter,BufEnter * setlocal statusline=%!ActiveLine()
+  autocmd WinLeave,BufLeave * setlocal statusline=%!InactiveLine()
+augroup END
 " }}}
 " MAPPINGS {{{
 
@@ -633,14 +641,6 @@ command! ToggleWrap call ToggleWrap()
 
 " }}}
 " AUGROUPS {{{
-" statusline {{{
-" Change statusline automatically
-augroup Statusline
-  autocmd!
-  autocmd WinEnter,BufEnter * setlocal statusline=%!ActiveLine()
-  autocmd WinLeave,BufLeave * setlocal statusline=%!InactiveLine()
-augroup END
-" }}}
 " markdown {{{
 " augroup markdown_syntax
 "     autocmd!
@@ -656,21 +656,10 @@ augroup todo
   autocmd filetype todo setlocal completeopt-=preview
 augroup END
 " }}}
-" outlaw {{{
-augroup Outlaw
-  autocmd!
-  autocmd BufNewFile,BufFilePre,BufRead *-outline.* set filetype=outlaw
-  " autocmd FileType outlaw setlocal tw=80 sw=4 ts=4 sts=0 et
-augroup END
-" }}}
 " godot {{{
 func! GodotSettings() abort
     setlocal foldmethod=expr
     setlocal tabstop=4
-    nnoremap <buffer> <F4> :GodotRunLast<CR>
-    nnoremap <buffer> <F5> :GodotRun<CR>
-    nnoremap <buffer> <F6> :GodotRunCurrent<CR>
-    nnoremap <buffer> <F7> :GodotRunFZF<CR>
 endfunc
 augroup godot | au!
     au FileType gdscript call GodotSettings()
