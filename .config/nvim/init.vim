@@ -24,11 +24,11 @@ Plug 'justinmk/vim-sneak'
 Plug 'rhysd/clever-f.vim'
 Plug 'ap/vim-buftabline'
 Plug 'unblevable/quick-scope'
-Plug 'rstacruz/vim-closer'
+" Plug 'rstacruz/vim-closer'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/vim-easy-align'
 Plug 'mhinz/vim-startify'
-" Plug 'norcalli/nvim-colorizer.lua'
+Plug 'cohama/lexima.vim'
 
 " themes
 Plug 'romainl/Apprentice'
@@ -502,17 +502,13 @@ let mapleader = "\<space>"
 let maplocalleader = "\\"
 
 " esc alternative
-inoremap jk <esc>
-inoremap kj <esc>
-
-" less shifting
-nnoremap ; :
+inoremap jj <esc>
 
 " fzf mappings
-nnoremap <leader>f :Files<CR>
-nnoremap <leader>g :Rg<CR>
-nnoremap <leader>b :Buffers<CR>
-nnoremap <leader>n :NoteFiles<CR>
+nnoremap <leader>ff :Files<CR>
+nnoremap <leader>fg :Rg<CR>
+nnoremap <leader>fb :Buffers<CR>
+nnoremap <leader>fn :NoteFiles<CR>
 
 " ctrlsf
 nmap     <C-F>f <Plug>CtrlSFPrompt
