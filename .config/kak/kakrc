@@ -11,3 +11,7 @@ lsp-enable
 
 # colorscheme lucius
 
+# User mappings
+# ───────────────
+ 
+map global user n ':e ~/notes/'
