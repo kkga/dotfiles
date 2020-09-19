@@ -28,13 +28,14 @@ Plug 'rstacruz/vim-closer'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/vim-easy-align'
 Plug 'mhinz/vim-startify'
-
+" Plug 'norcalli/nvim-colorizer.lua'
 
 " themes
 Plug 'romainl/Apprentice'
-Plug 'lifepillar/vim-gruvbox8'
+" Plug 'lifepillar/vim-gruvbox8'
 Plug 'lifepillar/vim-colortemplate'
-Plug 'cormacrelf/vim-colors-github'
+Plug 'caksoylar/vim-mysticaltutor'
+Plug 'jonathanfilip/vim-lucius'
 
 " markdown and note-taking
 Plug 'plasticboy/vim-markdown'
@@ -99,10 +100,9 @@ call plug#end()
 
 let g:sleuth_automatic = 1
 let g:sneak#s_next = 1
-let b:colortemplate_outdir = "/Users/kkga/.config/nvim"
-set notermguicolors
-set t_Co=256
-colorscheme envy
+" set notermguicolors
+" set t_Co=256
+colorscheme apprentice
 
 let g:vim_markdown_conceal = 1
 let g:vim_markdown_conceal_code_blocks = 0
@@ -332,10 +332,10 @@ set nolist
 " lines and numbers
 set number                      " Show line number
 set relativenumber              " Relative numbers are good
-set cursorline                  " Show line
+set nocursorline                  " Show line
 set nocursorcolumn
 set foldcolumn=0
-set signcolumn=number
+" set signcolumn=number
 set synmaxcol=200
 let loaded_matchparen = 1
 

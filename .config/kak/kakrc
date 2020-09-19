@@ -1,0 +1,13 @@
+source "%val{config}/plugins/plug.kak/rc/plug.kak"
+
+plug "caksoylar/kakoune-mysticaltutor" theme %{ colorscheme mysticaltutor }
+plug "Skytrias/gdscript-kak"
+
+eval %sh{kak-lsp --kakoune -s $kak_session}
+lsp-enable
+
+# User preference
+# ───────────────
+
+# colorscheme lucius
+

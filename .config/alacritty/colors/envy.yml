@@ -1,23 +1,27 @@
-# Colors (envy dark)
 colors:
+  # Default colors
   primary:
-    foreground: '0xd0d0d0'
-    background: '0x444444'
+    background: '0xafafaf'
+    foreground: '0x3a3a3a'
+
+  # Normal colors
   normal:
-    black:      '0x444444'
-    red:        '0xAF5F5F'
-    green:      '0x5F875F'
-    yellow:     '0x87875f'
-    blue:       '0x5F87AF'
-    magenta:    '0x5F5F87'
-    cyan:       '0x5fafaf'
-    white:      '0xBCBCBC'
+    black:   '0x1c1c1c'
+    red:     '0xd75f5f'
+    green:   '0x5f875f'
+    yellow:  '0xd7af00'
+    blue:    '0x5f87ff'
+    magenta: '0x8787d7'
+    cyan:    '0x00af87'
+    white:   '0x8a8a8a'
+
+  # Bright colors
   bright:
-    black:      '0x6c6c6c'
-    red:        '0xFF8700'
-    green:      '0x87AF87'
-    yellow:     '0xFFFFAF'
-    blue:       '0x87AFD7'
-    magenta:    '0x8787AF'
-    cyan:       '0x5FAFAF'
-    white:      '0xFFFFFF'
+    black:   '0x000000'
+    red:     '0xff875f'
+    green:   '0x87d7af'
+    yellow:  '0xffffaf'
+    blue:    '0x00afd7'
+    magenta: '0xaf87ff'
+    cyan:    '0x00d7d7'
+    white:   '0xffffff'
