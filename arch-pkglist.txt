@@ -2,6 +2,7 @@ alacritty-git
 alsa-firmware
 alsa-utils
 amd-ucode
+aqemu
 arandr
 arch-audit
 asciidoctor
@@ -23,7 +24,6 @@ bluez-runit
 bluez-utils
 brave-bin
 clipmenu
-cmake
 corectrl
 cpu-x
 cronie
@@ -39,6 +39,7 @@ envypn-font
 espanso
 eva
 exa
+exercism-bin
 fakeroot
 fd
 feh
@@ -63,7 +64,7 @@ glslang
 gnome-keyring
 gnome-themes-extra
 go
-godot
+godot-bin
 gohufont-otb
 grep
 groff
@@ -79,17 +80,18 @@ hexchat
 htop
 imagemagick
 j4-dmenu-desktop
-jsoncpp
 kak-lsp
 kakoune
 keychain
 kitty
 lazygit
 lf
+lib32-gamemode
 lib32-libstdc++5
 libelogind
 libstdc++5
 libtool
+libvirt
 linux
 linux-firmware
 linux-headers
@@ -121,6 +123,7 @@ openssh
 openssh-runit
 otb-uw_ttyp0
 otf-fantasque-sans-mono
+ovmf
 pacback
 pacman
 pacman-contrib
@@ -144,6 +147,7 @@ protonvpn-cli-ng
 pulseaudio
 pulsemixer
 python-mako
+qemu
 qmk
 qt5ct
 r8125-dkms
@@ -151,11 +155,11 @@ radeon-profile-git
 redshift-minimal
 reflector
 restic
-rhash
 ripgrep
 rsync-runit
 runit
 rust
+rust-analyzer
 seahorse
 sed
 shotgun
@@ -183,6 +187,7 @@ timeshift
 timeshift-autosnap
 tipp10
 tmux
+tmuxinator
 todoman
 tokei
 topgrade
@@ -196,6 +201,7 @@ udiskie
 ufw
 ufw-runit
 unigine-heaven
+unixbench
 vdirsyncer
 via-bin
 vim
