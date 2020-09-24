@@ -29,6 +29,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/vim-easy-align'
 Plug 'mhinz/vim-startify'
 Plug 'cohama/lexima.vim'
+Plug 'kdheepak/lazygit.nvim'
 
 " themes
 Plug 'romainl/Apprentice'
@@ -36,12 +37,14 @@ Plug 'romainl/Apprentice'
 Plug 'lifepillar/vim-colortemplate'
 Plug 'caksoylar/vim-mysticaltutor'
 Plug 'jonathanfilip/vim-lucius'
+Plug 'jnurmine/Zenburn'
 
 " markdown and note-taking
 Plug 'plasticboy/vim-markdown'
 Plug 'previm/previm/'
 Plug 'cweagans/vim-taskpaper'
 Plug 'https://gitlab.com/dbeniamine/todo.txt-vim'
+Plug 'fiatjaf/neuron.vim'
 
 " snippets
 Plug 'hrsh7th/vim-vsnip'
@@ -59,7 +62,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'neovim/nvim-lspconfig'
 " Plug 'nvim-lua/completion-nvim'
 " Plug 'nvim-lua/diagnostic-nvim'
-
 
 " lang
 Plug 'habamax/vim-godot'
