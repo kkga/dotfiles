@@ -36,12 +36,12 @@ commit_hash_length = 4
 
 [git_status]
 # style = ""
-# conflicted = "🏳"
+# conflicted = ""
 ahead = "↑"
 behind = "↓"
-# diverged = "😵"
+# diverged = ""
 untracked = "?"
-# stashed = "📦"
+# stashed = ""
 modified = "M"
 # staged.value = "++"
 # staged.style = "green"
@@ -53,4 +53,4 @@ deleted = "D"
 [cmd_duration]
 min_time = 500
 prefix = ""
-style = "fg:white"
+/* style = "fg:normal" */

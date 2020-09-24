@@ -36,6 +36,11 @@ Plug 'romainl/Apprentice'
 " Plug 'lifepillar/vim-gruvbox8'
 Plug 'lifepillar/vim-colortemplate'
 Plug 'caksoylar/vim-mysticaltutor'
+Plug 'lifepillar/vim-solarized8'
+Plug 'yasukotelin/notelight'
+Plug 'AlxHnr/clear_colors'
+Plug 'https://gitlab.com/yorickpeterse/vim-paper.git'
+Plug 'https://gitlab.com/yorickpeterse/happy_hacking.vim.git'
 
 " markdown and note-taking
 Plug 'plasticboy/vim-markdown'
@@ -103,9 +108,17 @@ call plug#end()
 
 let g:sleuth_automatic = 1
 let g:sneak#s_next = 1
-set notermguicolors
-" set t_Co=256
 
+" solarized8 {{{
+let g:solarized_visibility = "low"
+" let g:solarized_diffmode = "normal"
+" let g:solarized_termtrans = 1
+let g:solarized_statusline = "flat"
+let g:solarized_use16 = 0
+let g:solarized_extra_hi_groups = 1
+set termguicolors
+" set t_Co=256
+" }}}
 " markdown {{{
 let g:vim_markdown_conceal = 1
 let g:vim_markdown_conceal_code_blocks = 0
@@ -133,11 +146,32 @@ let g:fzf_action = {
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 let g:fzf_history_dir = '~/.local/share/fzf-history'
-augroup fzf_statusline
-    autocmd! FileType fzf
-    autocmd  FileType fzf set laststatus=0 noshowmode noruler
-      \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
-augroup END
+" augroup fzf_statusline
+"     autocmd! FileType fzf
+"     autocmd  FileType fzf set laststatus=0 noshowmode noruler
+"       \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+" augroup END
+" Default fzf layout
+" - down / up / left / right / window
+" let g:fzf_layout = { 'down': '40%' }
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
+
+" Customize fzf colors to match your color scheme
+" - fzf#wrap translates this to a set of `--color` options
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 " }}}
 " coc {{{
 
@@ -326,7 +360,7 @@ EOF
 
 filetype plugin indent on       " no idea
 syntax on
-colorscheme apprentice
+colorscheme paper
 
 " various
 set encoding=utf8               " Set UTF-8 encoding
@@ -716,7 +750,7 @@ endfunc
 command! -nargs=* Zet call ZettelEdit(<f-args>)
 
 command! -bang -nargs=? -complete=dir NoteFiles
-    \ call fzf#vim#files('$HOME/notes/', {'options': ['--info=inline', '--preview', 'sh ~/.config/nvim/plugged/fzf.vim/bin/preview.sh {}']}, <bang>0)
+    \ call fzf#vim#files('$HOME/notes/', {'options': ['--info=inline', '--preview', 'bat --plain {}']}, <bang>0)
 
 " }}}
 
