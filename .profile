@@ -23,8 +23,9 @@ export TERMINAL=alacritty
 export MANGOHUD=1
 export ENABLE_VKBASALT=1
 
-export FZF_DEFAULT_OPTS="--color bw"
+export FZF_DEFAULT_OPTS="--color 16"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
+export TTDL_FILENAME=$HOME/notes/todo.txt
 
 if [[ "$(hostname)" == "artix" ]]; then
     export GDK_SCALE=2

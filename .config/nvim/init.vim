@@ -13,8 +13,8 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-endwise'
-Plug 'rstacruz/vim-closer'
+" Plug 'tpope/vim-endwise'
+" Plug 'rstacruz/vim-closer'
 Plug 'machakann/vim-highlightedyank'
 Plug 'junegunn/vim-peekaboo'
 Plug 'mbbill/undotree'
@@ -23,7 +23,7 @@ Plug 'lifepillar/vim-cheat40'
 Plug 'justinmk/vim-sneak'
 Plug 'rhysd/clever-f.vim'
 Plug 'ap/vim-buftabline'
-Plug 'unblevable/quick-scope'
+" Plug 'unblevable/quick-scope'
 " Plug 'rstacruz/vim-closer'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/vim-easy-align'
@@ -35,7 +35,7 @@ Plug 'romainl/Apprentice'
 " Plug 'lifepillar/vim-gruvbox8'
 Plug 'lifepillar/vim-colortemplate'
 Plug 'caksoylar/vim-mysticaltutor'
-Plug 'jonathanfilip/vim-lucius'
+Plug 'habamax/vim-gruvbit'
 
 " markdown and note-taking
 Plug 'plasticboy/vim-markdown'
@@ -60,15 +60,17 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'nvim-lua/completion-nvim'
 " Plug 'nvim-lua/diagnostic-nvim'
 
+Plug 'preservim/tagbar'
 
 " lang
 Plug 'habamax/vim-godot'
 Plug 'rust-lang/rust.vim'
+Plug 'nvim-treesitter/nvim-treesitter'
 
+Plug 'ThePrimeagen/vim-be-good'
 call plug#end()
 "}}}
 " PLUGIN SETTINGS {{{
-
 " nvim-lsp {{{
 " lua << EOF
 " local on_attach_vim = function(client)
@@ -100,10 +102,10 @@ call plug#end()
 
 let g:sleuth_automatic = 1
 let g:sneak#s_next = 1
-" set notermguicolors
+set notermguicolors
 " set t_Co=256
-colorscheme apprentice
 
+" markdown {{{
 let g:vim_markdown_conceal = 1
 let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_math = 1
@@ -118,11 +120,12 @@ let g:vim_markdown_folding_level = 6
 let g:vim_markdown_toc_autofit = 1
 
 let g:previm_open_cmd = 'open -a Min'
-
+" }}}
+" todo-txt {{{
 let g:Todo_txt_prefix_creation_date=1
 let g:Todo_fold_char='+'
-
-" FZF {{{
+" }}}
+" fzf {{{
 " let $FZF_DEFAULT_COMMAND = 'rg --files'
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
@@ -135,8 +138,7 @@ augroup fzf_statusline
       \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 augroup END
 " }}}
-
-" COC config {{{
+" coc {{{
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
@@ -292,12 +294,38 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " }}}
-
+" rust {{{
+let g:rustfmt_autosave = 1
+" }}}
+" treesitter {{{
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "all",     -- one of "all", "language", or a list of languages
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+  },
+  refactor = {
+    highlight_definitions = { enable = true },
+    highlight_current_scope = { enable = true },
+    navigation = {
+      enable = true,
+      keymaps = {
+        goto_definition = "gnd",
+        list_definitions = "gnD",
+        goto_next_usage = "<a-*>",
+        goto_previous_usage = "<a-#>",
+      },
+    },
+  },
+}
+EOF
+" }}}
 " }}}
 " SETTINGS {{{
 
 filetype plugin indent on       " no idea
 syntax on
+colorscheme apprentice
 
 " various
 set encoding=utf8               " Set UTF-8 encoding
@@ -499,7 +527,7 @@ augroup END
 
 " leader
 let mapleader = "\<space>"
-let maplocalleader = "\\"
+let maplocalleader = "\,"
 
 " esc alternative
 inoremap jj <esc>

@@ -39,36 +39,36 @@ threshold = "red"
 # todos with highest priority (A)
 top = "bright red"
 # important todos - with a priority equal to or higher than `ranges.important`
-important = "white"
+important = "cyan"
 # done todos
 done = "white"
 # todos that are due today
 today = "bright yellow"
 # todos that are due in and less in `ranges.soon` days
-soon = "white"
+soon = "bright white"
 # todos that old (color for creation date)
-old = "bright black"
+old = "white"
 
 [ranges]
 # TTDL filter `soon` selects todos that are due in and less than in `soon` days
 # 0 - disable `soon` feature
-soon = 0
+soon = 5
 # todos that have priority equal or higher than `important` are displayed in
 #   in `colors.important` font color.
 # Priority is a character from 'a'(highest priority) through 'z'. Setting
 #   `important` to any other value disables the feature
-important = ""
+important = "z"
 # creation date of todos that are older than `old` is displayed in `old` color.
 # Format: single digit and modifier 'd'(day), 'w'(week), 'm'(month), 'y'(year)
-old = "1y"
+old = "3m"
 
 [global]
 # set global todo.txt filename. It works as environment variable TTDL_FILENAME,
 #   but environment variable overrides config setting
-filename = "~/notes/todo.txt"
+# filename = "~/notes/todo.txt"
 
 # automatically set creation date to today if it is not set when adding a new todo
-# creation_date_auto = true
+creation_date_auto = true
 
 # fields that are displayed by default. Available fields:
 #   pri, done, due, created, finished, thr
