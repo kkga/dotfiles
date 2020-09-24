@@ -7,7 +7,17 @@
 [core]
 	excludesfile = /Users/kkga/.gitignore
 	editor = nvim
-	pager = less
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	syntax-theme = ansi-light
+	; features = side-by-side line-numbers decorations
+	; whitespace-error-style = 22 reverse
+; [delta "decorations"]
+	; commit-decoration-style = bold yellow box ul
+	; file-style = bold yellow ul
+	; file-decoration-style = none
 [alias]
 	a = add
 	c = commit
@@ -32,5 +42,3 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
-[delta]
-	side-by-side = false

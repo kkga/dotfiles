@@ -1,7 +1,14 @@
-reporting: "off"
-startuppopupversion: 1
-
 git:
   paging:
-    colorArg: always
-    pager: delta --dark --paging=never --24-bit-color=never
+    colorarg: always
+    useconfig: false
+    pager: delta --light --paging=never --24-bit-color=never
+gui:
+  theme:
+    lightTheme: true
+    activeBorderColor:
+      - black
+      - bold
+    inactiveBorderColor:
+      - black
+startuppopupversion: 1

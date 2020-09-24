@@ -53,4 +53,3 @@ deleted = "D"
 [cmd_duration]
 min_time = 500
 prefix = ""
-/* style = "fg:normal" */
