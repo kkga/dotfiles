@@ -1,6 +1,7 @@
 " vim:foldmethod=marker:foldlevel=0
 
 " PLUGINS {{{
+
 call plug#begin('~/.config/nvim/plugged')
 
 " utils
@@ -74,9 +75,14 @@ Plug 'rust-lang/rust.vim'
 Plug 'nvim-treesitter/nvim-treesitter'
 
 Plug 'ThePrimeagen/vim-be-good'
+
 call plug#end()
 "}}}
 " PLUGIN SETTINGS {{{
+
+let g:sleuth_automatic = 1
+let g:sneak#s_next = 1
+
 " nvim-lsp {{{
 " lua << EOF
 " local on_attach_vim = function(client)
@@ -105,10 +111,6 @@ call plug#end()
 " Avoid showing message extra message when using completion
 " set shortmess+=c
 " }}}
-
-let g:sleuth_automatic = 1
-let g:sneak#s_next = 1
-
 " solarized8 {{{
 let g:solarized_visibility = "low"
 " let g:solarized_diffmode = "normal"
@@ -355,6 +357,7 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 " }}}
+
 " }}}
 " SETTINGS {{{
 
@@ -393,12 +396,12 @@ set listchars=tab:>-\ ,
 set nolist
 
 " lines and numbers
-set number                      " Show line number
-set relativenumber              " Relative numbers are good
-set nocursorline                  " Show line
+set nonumber                      
+set norelativenumber             
+set nocursorline                
 set nocursorcolumn
 set foldcolumn=0
-" set signcolumn=number
+set signcolumn=yes
 set synmaxcol=200
 let loaded_matchparen = 1
 
@@ -428,135 +431,12 @@ set undofile                    " Write changes to the undofile
 set undolevels=1000             " Max # of changes that can be undone
 set undoreload=10000            " Max # of lines to save for undo on buf reload
 
-" }}}
-" STATUSLINE {{{
-" Statusline colors
-" Get current mode
-let g:currentmode={
-      \'n' : 'N ',
-      \'no' : 'N·Operator Pending ',
-      \'v' : 'V ',
-      \'V' : 'V·L ',
-      \'^V' : 'V·B ',
-      \'s' : 'Select ',
-      \'S': 'S·Line ',
-      \'^S' : 'S·Block ',
-      \'i' : 'I ',
-      \'R' : 'Replace ',
-      \'Rv' : 'V·Replace ',
-      \'c' : 'Command ',
-      \'cv' : 'Vim Ex ',
-      \'ce' : 'Ex ',
-      \'r' : 'Prompt ',
-      \'rm' : 'More ',
-      \'r?' : 'Confirm ',
-      \'!' : 'Shell ',
-      \'t' : 'Terminal '
-      \}
+" statusline
+set statusline=%<\ %{mode()}\ \|\ %f%m\ \|\ %{fugitive#statusline()\ }
+set statusline+=\|\ %{coc#status()}
+set statusline+=%{&paste?'\ \ \|\ PASTE\ ':'\ '}
+set statusline+=%=\ %{&fileformat}\ \|\ %{&fileencoding}\ \|\ %{&filetype}\ \|\ %l/%L\(%c\)\ 
 
-" Get current mode
-function! ModeCurrent() abort
-    let l:modecurrent = mode()
-    let l:modelist = toupper(get(g:currentmode, l:modecurrent, 'V·Block '))
-    let l:current_status_mode = l:modelist
-    return l:current_status_mode
-endfunction
-
-" Get current git branch
-function! GitBranch(git)
-  if a:git == ""
-    return '-'
-  else
-    return a:git
-  endif
-endfunction
-
-" " Git changes
-" function! GitStatus()
-"   let [a,m,r] = GitGutterGetHunkSummary()
-"   return printf('+%d ~%d -%d', a, m, r)
-" endfunction
-
-" Get current filetype
-function! CheckFT(filetype)
-  if a:filetype == ''
-    return '-'
-  else
-    return tolower(a:filetype)
-  endif
-endfunction
-
-" Check modified status
-function! CheckMod(modi)
-  if a:modi == 1
-    return expand('%:t').' *'
-  else
-    return expand('%:t')
-  endif
-endfunction
-
-" Coc status
-function! StatusDiagnostic() abort
-  let info = get(b:, 'coc_diagnostic_info', {})
-  if empty(info) | return '' | endif
-  let msgs = []
-  if get(info, 'error', 0)
-    call add(msgs, 'E ' . info['error'])
-  endif
-  if get(info, 'warning', 0)
-    call add(msgs, 'W ' . info['warning'])
-  endif
-  return join(msgs, ' ') . ' ' . get(g:, 'coc_status', '')
-endfunction
-
-" Set active statusline
-function! ActiveLine()
-  " Set empty statusline and colors
-  let statusline = ""
-  let statusline .= "%#StatusLine# "
-
-  " Current mode
-  let statusline .= "%{ModeCurrent()}|"
-
-  " Current modified status and filename
-  let statusline .= " %{CheckMod(&modified)} "
-
-  " Align items to right
-  let statusline .= "%="
-
-  let statusline .= "| %{StatusDiagnostic()}"
-  
-  " Current git branch
-  let statusline .= "| %{GitBranch(fugitive#head())} "
-
-  " Current filetype
-  let statusline .= "| %{CheckFT(&filetype)} "
-
-  " Current line and column
-  let statusline .= "| %3l/%3L %2c %P "
-
-  "let statusline .= %{coc#status()}%{get(b:,'coc_current_function','')}
-
-  return statusline
-endfunction
-
-function! InactiveLine()
-  " Set empty statusline and colors
-  let statusline = ""
-  let statusline .= "%#StatusLineNC#"
-
-  " Full path of the file
-  let statusline .= "%F "
-
-  return statusline
-endfunction
-
-" Change statusline automatically
-augroup Statusline
-  autocmd!
-  autocmd WinEnter,BufEnter * setlocal statusline=%!ActiveLine()
-  autocmd WinLeave,BufLeave * setlocal statusline=%!InactiveLine()
-augroup END
 " }}}
 " MAPPINGS {{{
 
@@ -643,9 +523,6 @@ nnoremap <Down> :resize +1<CR>
 " highlight last inserted text
 nnoremap gV `[v`]<Paste>
 
-" toggle checkbox
-nnoremap <leader>tt :ToggleTask<CR>
-
 " change/source config
 nnoremap <leader>vr :vsp $MYVIMRC<cr>
 nnoremap <leader>sr :source $MYVIMRC<cr>
@@ -654,44 +531,7 @@ nnoremap <leader>sr :source $MYVIMRC<cr>
 nnoremap <leader>* :%s/\<<c-r><c-w>\>//g<left><left>
 
 "}}}
-" FUNCTIONS {{{
-
-" checkbox toggle
-function! ToggleTask()
-  let b:line = getline(".")
-  let b:linenum = line(".")
-  if b:line =~ '^\s*\(-\|*\|+\|\d\+\.\) \[ \] .*$'
-    let b:newline = substitute(b:line, '\[ \] ', '\[X\] ', "")
-    call setline(b:linenum, b:newline)
-  elseif b:line =~ '^\s*\(-\|*\|+\|\d\+\.\) \[X\] .*$'
-    let b:newline = substitute(b:line, '\[X\] ', '\[ \] ', "")
-    call setline(b:linenum, b:newline)
-  elseif b:line =~ '^\s*\(-\|*\|+\|\d\+\.\) .*$'
-    let b:newline = substitute(b:line, '\(^\s*\)\(-\|*\|+\|\d\+\.\)\s', '\1\2 \[ \] ', "")
-    call setline(b:linenum, b:newline)
-  endif
-endfunction
-command! ToggleTask call ToggleTask()
-
-
-" show highlight
-nmap <leader>sp :call <SID>SynStack()<CR>
-function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
-
-
-" }}}
 " AUGROUPS {{{
-" markdown {{{
-" augroup markdown_syntax
-"     autocmd!
-"     autocmd BufNewFile,BufFilePre,BufRead *.md setlocal filetype=markdown
-" augroup END
-" }}}
 " todo {{{
 augroup todo
   autocmd!
@@ -710,19 +550,6 @@ augroup godot | au!
     au FileType gdscript call GodotSettings()
 augroup end
 " }}}
-" }}}
-" SYNTAX {{{
-" markdown lists {
-" syntax match  listItem "^\s*\(-\|*\|+\|\d\+\.\)\s.*$"
-" highlight default link listItem Normal
-" syntax match  listMarker "^\s*\(-\|*\|+\|\d\+\.\)\s" contained containedin=listItem
-" syntax match  listMarker "^\s*\(-\|*\|+\|\d\+\.\)\s\(\[ \]\|\[X\]\)" contained containedin=listItem
-" highlight default link listMarker LineNr
-" syntax match  taskBox "\[ \]" contained containedin=listMarker
-" highlight default link taskBox Todo
-" syntax match  doneBox "\[X\]" contained containedin=listMarker
-" highlight default link doneBox Comment
-" }
 " }}}
 " NOTETAKING {{{
 " https://vimways.org/2019/personal-notetaking-in-vim/
@@ -751,6 +578,91 @@ command! -nargs=* Zet call ZettelEdit(<f-args>)
 
 command! -bang -nargs=? -complete=dir NoteFiles
     \ call fzf#vim#files('$HOME/notes/', {'options': ['--info=inline', '--preview', 'bat --plain {}']}, <bang>0)
+
+let s:notes_folder = "~/notes"
+let s:notes_fileending = ".md"
+
+" This is either called with
+" 0 lines, which means there's no result and no query
+" 1 line, which means there's no result, but a user query
+"         in this case: create a new file, based on user query
+" 2 lines, which means there are results, so open them
+"
+function! s:note_handler(lines)
+  if len(a:lines) < 1 | return | endif
+
+  if len(a:lines) == 1
+    let query = a:lines[0]
+    let new_filename = fnameescape(query . s:notes_fileending)
+    let new_title = "# " . query
+
+    execute "edit " . new_filename
+
+    " Append the new title and an empty line
+    let failed = append(0, [new_title, ''])
+    if (failed)
+      echo "Unable to insert title file!"
+    else
+      let &modified = 1
+    endif
+  else
+    execute "edit " fnameescape(a:lines[1])
+  endif
+endfunction
+
+command! -nargs=* Notes call fzf#run({
+\ 'sink*':   function('<sid>note_handler'),
+\ 'options': '--print-query ',
+\ 'dir':     s:notes_folder
+\ })
+
+function! s:rg_to_quickfix(line)
+  let parts = split(a:line, ':')
+  return {'filename': parts[0], 'lnum': parts[1], 'col': parts[2],
+        \ 'text': join(parts[3:], ':')}
+endfunction
+
+function! s:find_notes_handler(lines)
+  if len(a:lines) < 2 | return | endif
+
+  let cmd = get({'ctrl-x': 'split',
+               \ 'ctrl-v': 'vertical split',
+               \ 'ctrl-t': 'tabe'}, a:lines[0], 'e')
+  let list = map(a:lines[1:], 's:rg_to_quickfix(v:val)')
+
+  let first = list[0]
+  execute cmd escape(first.filename, ' %#\')
+  execute first.lnum
+  execute 'normal!' first.col.'|zz'
+
+  if len(list) > 1
+    call setqflist(list)
+    copen
+    wincmd p
+  endif
+endfunction
+
+command! -nargs=* FindNotes call fzf#run({
+\ 'source':  printf('rg --column --color=always "%s"',
+\                   escape(empty(<q-args>) ? '' : <q-args>, '"\')),
+\ 'sink*':    function('<sid>find_notes_handler'),
+\ 'options': '--ansi --expect=ctrl-t,ctrl-v,ctrl-x --delimiter : --nth 4.. '.
+\            '--multi --bind=ctrl-a:select-all,ctrl-d:deselect-all '.
+\            '--color hl:68,hl+:110',
+\ 'down':    '50%',
+\ 'dir':     s:notes_folder
+\ })
+
+command! -bang -nargs=* FindNotesWithPreview
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview({'dir': s:notes_folder}, 'right:50%'),
+  \   0,
+  \ )
+
+" nmap <silent> <leader>nn :Notes<CR>
+" nmap <silent> <leader>fn :FindNotes<CR>
+" nmap <silent> <leader>nw :FindNotesWithPreview<CR>
 
 " }}}
 

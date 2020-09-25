@@ -23,7 +23,6 @@ bluez-runit
 bluez-utils
 brave-bin
 clipmenu
-cmake
 corectrl
 cpu-x
 cronie
@@ -63,7 +62,6 @@ gnome-keyring
 gnome-themes-extra
 go
 godot-bin
-gperf
 grep
 groff
 grsync
@@ -76,7 +74,6 @@ hacksaw
 hexchat
 htop
 imagemagick
-jsoncpp
 kak-lsp
 kakoune
 keychain
@@ -84,7 +81,6 @@ kitty
 lazygit
 lf
 libelogind
-libmpack
 libstdc++5
 libtool
 libvirt
@@ -92,9 +88,6 @@ linux
 linux-firmware
 linux-headers
 logiops-git
-lua51
-lua51-lpeg
-lua51-mpack
 lutris
 lxappearance
 m4
@@ -150,7 +143,6 @@ radeon-profile-git
 redshift-minimal
 reflector
 restic
-rhash
 ripgrep
 rsync-runit
 runit
@@ -169,6 +161,7 @@ sshfs
 sshguard-runit
 starship
 steam
+steam-tweaks
 sudo
 sv-helper
 sxhkd
