@@ -27,6 +27,7 @@ corectrl
 cpu-x
 cronie
 cronie-runit
+ddcci-driver-linux-dkms
 ddcutil
 dosfstools
 dunst
@@ -84,6 +85,7 @@ libelogind
 libstdc++5
 libtool
 libvirt
+light
 linux
 linux-firmware
 linux-headers
@@ -162,6 +164,7 @@ sshguard-runit
 starship
 steam
 steam-tweaks
+steamtinkerlaunch
 sudo
 sv-helper
 sxhkd
