@@ -23,15 +23,16 @@ export TERMINAL=alacritty
 export MANGOHUD=1
 export ENABLE_VKBASALT=1
 
-export FZF_DEFAULT_OPTS="--color 16"
+export FZF_DEFAULT_OPTS="--color bw"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export TTDL_FILENAME=$HOME/notes/todo.txt
 
-if [[ "$(hostname)" == "artix" ]]; then
+if [[ "$(uname)" == "Linux" ]]; then
     export GDK_SCALE=2
     export GDK_DPI_SCALE=0.5
+    export QT_AUTO_SCREEN_SCALE_FACTOR=1
     # export QT_SCALE_FACTOR=2
-elif [[ "$(hostname)" == "mbp16" ]]; then
+elif [[ "$(uname)" == "Darwin" ]]; then
     export RESTIC_REPOSITORY="sftp:gadzhi.synology.me:/home/restic-backup"
     export RESTIC_PASSWORD_COMMAND="security find-generic-password -s backup-restic-repository -a restic_backup -w"
 fi

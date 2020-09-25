@@ -142,24 +142,22 @@ let g:Todo_txt_prefix_creation_date=1
 let g:Todo_fold_char='+'
 " }}}
 " fzf {{{
-" let $FZF_DEFAULT_COMMAND = 'rg --files'
+" let $FZF_DEFAULT_COMMAND = 'rg --files --follow'
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
   \ 'ctrl-x': 'split',
   \ 'ctrl-v': 'vsplit' }
 let g:fzf_history_dir = '~/.local/share/fzf-history'
-" augroup fzf_statusline
-"     autocmd! FileType fzf
-"     autocmd  FileType fzf set laststatus=0 noshowmode noruler
-"       \| autocmd BufLeave <buffer> set laststatus=2 showmode ruler
-" augroup END
-" Default fzf layout
-" - down / up / left / right / window
-" let g:fzf_layout = { 'down': '40%' }
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6 } }
 
-" Customize fzf colors to match your color scheme
-" - fzf#wrap translates this to a set of `--color` options
+let g:fzf_layout = {
+  \ 'window': {
+  \   'width': 0.7,
+  \   'height': 0.6,
+  \   'border': 'sharp',
+  \   'highlight': 'VertSplit'
+  \ }
+  \ }
+
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
@@ -343,7 +341,7 @@ require'nvim-treesitter.configs'.setup {
   },
   refactor = {
     highlight_definitions = { enable = true },
-    highlight_current_scope = { enable = true },
+    -- highlight_current_scope = { enable = true },
     navigation = {
       enable = true,
       keymaps = {
@@ -386,9 +384,9 @@ set mouse=a
 
 " text, tabs and indents
 " set expandtab                   " Tabs are spaces
-set shiftwidth=2                " # of spaces to use for autoindent
-set tabstop=4                   " # of spaces that a tab counts for
-set softtabstop=4               " # of spaces in tab when editing
+" set shiftwidth=2                " # of spaces to use for autoindent
+" set tabstop=4                   " # of spaces that a tab counts for
+" set softtabstop=4               " # of spaces in tab when editing
 set linebreak                   " Wrap lines when convenient
 set nowrap                      " Wrap lines
 set autoindent                  " Minimal automatic indenting for any filetype
@@ -432,8 +430,8 @@ set undolevels=1000             " Max # of changes that can be undone
 set undoreload=10000            " Max # of lines to save for undo on buf reload
 
 " statusline
-set statusline=%<\ %{mode()}\ \|\ %f%m\ \|\ %{fugitive#statusline()\ }
-set statusline+=\|\ %{coc#status()}
+set statusline=%<\ %{mode()}\ \|\ %f%m\ %{fugitive#statusline()\ }
+set statusline+=\ %{coc#status()}
 set statusline+=%{&paste?'\ \ \|\ PASTE\ ':'\ '}
 set statusline+=%=\ %{&fileformat}\ \|\ %{&fileencoding}\ \|\ %{&filetype}\ \|\ %l/%L\(%c\)\ 
 

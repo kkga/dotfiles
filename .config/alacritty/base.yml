@@ -6,9 +6,9 @@ font:
 window:
   decorations: none
 
-# key_bindings:
-#   - { key: Return, mods: Control|Shift, action: SpawnNewInstance }
+key_bindings:
+  - { key: Return, mods: Control|Shift, action: SpawnNewInstance }
 
 cursor:
-  style: Underline
+  style: Block
   vi_mode_style: Block
