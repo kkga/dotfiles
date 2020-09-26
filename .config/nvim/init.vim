@@ -430,10 +430,10 @@ set undolevels=1000             " Max # of changes that can be undone
 set undoreload=10000            " Max # of lines to save for undo on buf reload
 
 " statusline
-set statusline=%<\ %f%m%r\ %{fugitive#statusline()\ }
+set statusline=%<%m%r\ %f 
 set statusline+=\ %{coc#status()}
 set statusline+=%{&paste?'\ \ \|\ PASTE\ ':'\ '}
-set statusline+=%=\ [%{&filetype}]\ %3l/%3L\ (%2c\)\ 
+set statusline+=%=%{fugitive#statusline()}\ [%{&filetype}]\ %3l/%3L\ (%2c\)\ 
 
 " }}}
 " MAPPINGS {{{

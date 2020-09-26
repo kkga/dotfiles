@@ -164,6 +164,7 @@ sshguard-runit
 starship
 steam
 steam-tweaks
+steamcmd
 steamtinkerlaunch
 sudo
 sv-helper
