@@ -68,6 +68,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'nvim-lua/diagnostic-nvim'
 
 Plug 'preservim/tagbar'
+" Plug 'dense-analysis/ale'
 
 " lang
 Plug 'habamax/vim-godot'
@@ -83,6 +84,10 @@ call plug#end()
 let g:sleuth_automatic = 1
 let g:sneak#s_next = 1
 
+" ale {{{
+let g:ale_disable_lsp = 1
+let g:ale_linters = {'rust': ['analyzer', 'cargo', 'rls']}
+" }}}
 " nvim-lsp {{{
 " lua << EOF
 " local on_attach_vim = function(client)
