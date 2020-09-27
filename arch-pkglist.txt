@@ -21,9 +21,10 @@ blueman
 bluez
 bluez-runit
 bluez-utils
+bottom
 brave-bin
 clipmenu
-cmake
+clog-bin
 corectrl
 cpu-x
 cronie
@@ -75,11 +76,11 @@ hacksaw
 hexchat
 htop
 imagemagick
-jsoncpp
 kak-lsp
 kakoune
 keychain
 kitty
+kmon
 lazygit
 lf
 libelogind
@@ -146,7 +147,6 @@ radeon-profile-git
 redshift-minimal
 reflector
 restic
-rhash
 ripgrep
 rsync-runit
 runit
@@ -256,7 +256,6 @@ xsel
 xsettingsd
 yadm-git
 yay
-ytop
 zathura
 zathura-pdf-poppler
 zola
