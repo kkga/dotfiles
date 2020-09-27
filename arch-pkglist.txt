@@ -23,6 +23,7 @@ bluez-runit
 bluez-utils
 brave-bin
 clipmenu
+cmake
 corectrl
 cpu-x
 cronie
@@ -49,7 +50,6 @@ flatpak
 flex
 fwupd
 fzf
-gamemode
 gawk
 gcc
 gettext
@@ -75,6 +75,7 @@ hacksaw
 hexchat
 htop
 imagemagick
+jsoncpp
 kak-lsp
 kakoune
 keychain
@@ -145,6 +146,7 @@ radeon-profile-git
 redshift-minimal
 reflector
 restic
+rhash
 ripgrep
 rsync-runit
 runit
