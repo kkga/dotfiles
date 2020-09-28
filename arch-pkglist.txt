@@ -25,6 +25,7 @@ bottom
 brave-bin
 clipmenu
 clog-bin
+cmake
 corectrl
 cpu-x
 cronie
@@ -76,6 +77,7 @@ hacksaw
 hexchat
 htop
 imagemagick
+jsoncpp
 kak-lsp
 kakoune
 keychain
@@ -147,6 +149,7 @@ radeon-profile-git
 redshift-minimal
 reflector
 restic
+rhash
 ripgrep
 rsync-runit
 runit
