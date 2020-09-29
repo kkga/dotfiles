@@ -389,9 +389,9 @@ set mouse=a
 
 " text, tabs and indents
 " set expandtab                   " Tabs are spaces
-" set shiftwidth=2                " # of spaces to use for autoindent
-" set tabstop=4                   " # of spaces that a tab counts for
 " set softtabstop=4               " # of spaces in tab when editing
+" set tabstop=4                   " # of spaces that a tab counts for
+set shiftwidth=4                " # of spaces to use for autoindent
 set linebreak                   " Wrap lines when convenient
 set nowrap                      " Wrap lines
 set autoindent                  " Minimal automatic indenting for any filetype
