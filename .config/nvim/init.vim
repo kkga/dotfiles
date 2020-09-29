@@ -76,6 +76,7 @@ Plug 'rust-lang/rust.vim'
 Plug 'nvim-treesitter/nvim-treesitter'
 
 Plug 'ThePrimeagen/vim-be-good'
+Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
 
 call plug#end()
 "}}}

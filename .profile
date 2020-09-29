@@ -27,6 +27,7 @@ export FZF_DEFAULT_OPTS="--color bw"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export TTDL_FILENAME=$HOME/notes/todo.txt
 export BAT_THEME=ansi-light
+export LS_COLORS="di=0;35:ln=1;34:ex=1;30"
 
 if [[ "$(uname)" == "Linux" ]]; then
     export SUDO_ASKPASS=/usr/lib/seahorse/ssh-askpass

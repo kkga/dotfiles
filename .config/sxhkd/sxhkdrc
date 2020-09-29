@@ -17,7 +17,7 @@ XF86AudioLowerVolume
 # XF86AudioMute 
 
 XF86MonBrightness{Down,Up}
-	sudo -A ddcutil -d 1 setvcp 10 {- 25, + 25}; dunstify 'hello'
+	sudo -A ddcutil -d 1 setvcp 10 {- 25, + 25}
 
 shift + XF86MonBrightness{Down,Up}
 	sudo -A ddcutil -d 2 setvcp 10 {- 25, + 25}

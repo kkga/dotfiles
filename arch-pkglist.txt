@@ -25,12 +25,10 @@ bottom
 brave-bin
 clipmenu
 clog-bin
-cmake
 corectrl
 cpu-x
 cronie
 cronie-runit
-ddcci-driver-linux-dkms
 ddcutil
 dosfstools
 dunst
@@ -77,7 +75,6 @@ hacksaw
 hexchat
 htop
 imagemagick
-jsoncpp
 kak-lsp
 kakoune
 keychain
@@ -99,7 +96,7 @@ lxappearance
 m4
 make
 mangohud
-mesa-git
+mesa
 meson
 mlocate
 mpv
@@ -149,7 +146,6 @@ radeon-profile-git
 redshift-minimal
 reflector
 restic
-rhash
 ripgrep
 rsync-runit
 runit
@@ -184,9 +180,11 @@ timeshift-autosnap
 tokei
 topgrade
 trash-cli
+ttf-go-mono-git
 ttf-ibm-plex
 ttf-iosevka-aile
 ttf-iosevka-term
+ttf-profont-iix
 udiskie
 ufw
 ufw-runit
