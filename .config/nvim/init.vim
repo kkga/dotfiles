@@ -25,7 +25,6 @@ Plug 'justinmk/vim-sneak'
 Plug 'rhysd/clever-f.vim'
 Plug 'ap/vim-buftabline'
 " Plug 'unblevable/quick-scope'
-" Plug 'rstacruz/vim-closer'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/vim-easy-align'
 Plug 'mhinz/vim-startify'
@@ -34,12 +33,10 @@ Plug 'kdheepak/lazygit.nvim'
 
 " themes
 Plug 'romainl/Apprentice'
-" Plug 'lifepillar/vim-gruvbox8'
-Plug 'lifepillar/vim-colortemplate'
 Plug 'caksoylar/vim-mysticaltutor'
+Plug 'lifepillar/vim-gruvbox8'
+Plug 'lifepillar/vim-colortemplate'
 Plug 'lifepillar/vim-solarized8'
-Plug 'yasukotelin/notelight'
-Plug 'AlxHnr/clear_colors'
 Plug 'https://gitlab.com/yorickpeterse/vim-paper.git'
 Plug 'https://gitlab.com/yorickpeterse/happy_hacking.vim.git'
 
@@ -76,7 +73,6 @@ Plug 'rust-lang/rust.vim'
 Plug 'nvim-treesitter/nvim-treesitter'
 
 Plug 'ThePrimeagen/vim-be-good'
-Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
 
 call plug#end()
 "}}}
@@ -85,6 +81,18 @@ call plug#end()
 let g:sleuth_automatic = 1
 let g:sneak#s_next = 1
 
+" buftabline {{{
+let g:buftabline_show = 1
+let g:buftabline_numbers = 2
+let g:buftabline_indicators = 1
+let g:buftabline_separators = 1
+
+" hi link BufTabLine TabLine
+" hi link BufTabLineActive 
+" BufTabLineHidden
+" BufTabLineFill
+
+" }}}
 " ale {{{
 let g:ale_disable_lsp = 1
 let g:ale_linters = {'rust': ['analyzer', 'cargo', 'rls']}
@@ -457,6 +465,29 @@ nnoremap <leader>fg :Rg<CR>
 nnoremap <leader>fb :Buffers<CR>
 nnoremap <leader>fn :NoteFiles<CR>
 
+" buffers
+nmap <leader>1 <Plug>BufTabLine.Go(1)
+nmap <leader>2 <Plug>BufTabLine.Go(2)
+nmap <leader>3 <Plug>BufTabLine.Go(3)
+nmap <leader>4 <Plug>BufTabLine.Go(4)
+nmap <leader>5 <Plug>BufTabLine.Go(5)
+nmap <leader>6 <Plug>BufTabLine.Go(6)
+nmap <leader>7 <Plug>BufTabLine.Go(7)
+nmap <leader>8 <Plug>BufTabLine.Go(8)
+nmap <leader>9 <Plug>BufTabLine.Go(9)
+nmap <leader>0 <Plug>BufTabLine.Go(10)
+
+nnoremap <C-j> :bnext<CR>
+nnoremap <C-k> :bprev<CR>
+
+" create a new buffer 
+nnoremap <leader>B :enew<cr>
+" close current buffer
+nnoremap <leader>bq :bp <bar> bd! #<cr>
+" close all open buffers
+nnoremap <leader>ba :bufdo bd!<cr>
+
+
 " ctrlsf
 nmap     <C-F>f <Plug>CtrlSFPrompt
 vmap     <C-F>f <Plug>CtrlSFVwordPath
@@ -473,13 +504,6 @@ nnoremap <silent> <leader>ch :call CocAction('doHover')<CR>
 " quick save
 nnoremap <leader>ww :w<cr>
 nnoremap <leader>wq :w<cr>
-
-" create a new buffer (save it with :w ./path/to/FILENAME)
-nnoremap <leader>B :enew<cr>
-" close current buffer
-nnoremap <leader>bq :bp <bar> bd! #<cr>
-" close all open buffers
-nnoremap <leader>ba :bufdo bd!<cr>
 
 " ¯\_(ツ)_/¯
 map <silent> q: :q<Cr>
