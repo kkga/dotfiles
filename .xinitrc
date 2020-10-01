@@ -18,7 +18,6 @@ fi
 
 if [ -f "$userresources" ]; then
     xrdb -merge "$userresources"
-
 fi
 
 if [ -f "$usermodmap" ]; then
@@ -35,6 +34,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
 fi
 
 # start gnome-keyring, for auto-unlocking ssh on login: https://wiki.archlinux.org/index.php/GNOME/Keyring#PAM_method
+
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 
@@ -49,5 +49,6 @@ redshift -l 55:37 &
 espanso daemon &
 xset r rate 200 30 &
 xsetroot -solid "#1c1c1c" &
-xidlehook --timer 600 'slock' '' --timer 3600 'loginctl suspend' '' &
+# xidlehook --timer 600 'slock' '' --timer 3600 'loginctl suspend' '' &
+xss-lock slock &
 exec dbus-launch dwm

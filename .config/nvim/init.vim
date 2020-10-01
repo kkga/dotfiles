@@ -71,6 +71,7 @@ Plug 'preservim/tagbar'
 " Plug 'dense-analysis/ale'
 
 " lang
+Plug 'sheerun/vim-polyglot'
 Plug 'habamax/vim-godot'
 Plug 'rust-lang/rust.vim'
 Plug 'nvim-treesitter/nvim-treesitter'

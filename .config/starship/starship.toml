@@ -1,13 +1,25 @@
 add_newline = false
 
-[character]      # The name of the module we are configuring is "character"
-symbol = "❯"     # The "symbol" segment is being set to "➜"
-vicmd_symbol = "❮"
-error_symbol = "x"
-use_symbol_for_status = false
-# style_success = ""
+[character]     
+success_symbol = "[❯](bold green)"
+error_symbol = "[X](bold red)"
+vicmd_symbol = "[❮](bold green)"
 
-prompt_order=["line_break","package","line_break","character"]
+
+# format = """\
+#   $directory\
+#   $git_branch\
+#   $git_commit\
+#   $git_state\
+#   $git_status\
+#   $cmd_duration\
+#   $custom\
+#   $line_break\
+#   $jobs\
+#   $battery\
+#   $time\
+#   $character\
+#   """
 
 [battery]
 disabled = true
@@ -27,10 +39,12 @@ symbol = "rust "
 [directory]
 style = "bold"
 truncate_to_repo = true
+format = "[$path]($style)[$lock_symbol]($lock_style) "
 
 [git_branch]
-style = "bold"
-symbol = ""
+format = "on [$symbol $branch]($style) "
+style = "bold purple"
+symbol = ""
 truncation_length = 32
 truncation_symbol = "…"
 
@@ -38,21 +52,21 @@ truncation_symbol = "…"
 commit_hash_length = 4
 
 [git_status]
-# style = ""
-# conflicted = ""
 ahead = "↑"
 behind = "↓"
-# diverged = ""
 untracked = "?"
-# stashed = ""
 modified = "M"
+renamed = "R"
+deleted = "D"
+style = "bold red"
+# conflicted = ""
+# diverged = ""
+# stashed = ""
 # staged.value = "++"
 # staged.style = "green"
 # staged_count.enabled = true
 # staged_count.style = "green"
-renamed = "R"
-deleted = "D"
 
 [cmd_duration]
 min_time = 500
-prefix = ""
+format = "took [$duration]($style)"

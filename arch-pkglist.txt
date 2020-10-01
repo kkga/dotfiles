@@ -19,6 +19,7 @@ bitwarden-bin
 blender-benchmark
 blueman
 bluez
+bluez-hcitool
 bluez-runit
 bluez-utils
 bottom
@@ -111,6 +112,7 @@ networkmanager
 networkmanager-dmenu-git
 networkmanager-openvpn
 networkmanager-runit
+nnn
 nodejs
 obs-studio
 openssh
@@ -132,6 +134,7 @@ piper
 pkgconf
 playerctl
 polkit-gnome
+powertop
 powerupp-git
 procs
 protonvpn-cli-ng
@@ -202,7 +205,6 @@ xdg-user-dirs
 xdg-utils
 xf86-video-amdgpu
 xf86-video-vesa
-xidlehook
 xob
 xorg-bdftopcf
 xorg-docs
@@ -252,13 +254,14 @@ xorg-xvinfo
 xorg-xwd
 xorg-xwininfo
 xorg-xwud
-xpadneo-dkms-git
 xsel
 xsettingsd
+xss-lock
 yadm-git
 yay
 zathura
 zathura-pdf-poppler
+zenith-bin
 zola
 zoxide
 zsa-wally
