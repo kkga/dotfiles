@@ -1,14 +1,14 @@
 # APPS
 
 # term
-alt + shift - return : alacritty
+alt + shift - return : kitty --directory ~ --single-instance --listen-on=unix:/tmp/mykitty
 
 # change colors
-alt + ctrl - l : alacritty-colorscheme -a light.yml -c ~/.config/alacritty/base.yml
-alt + ctrl - d : alacritty-colorscheme -a dark.yml -c ~/.config/alacritty/base.yml
+alt + ctrl - l : kitty @ --to unix:/tmp/mykitty set-colors ~/.config/kitty/paper.conf
+alt + ctrl - d : kitty @ --to unix:/tmp/mykitty set-colors ~/.config/kitty/apprentice.conf
 
 # quick restart
-# alt + ctrl - q : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+alt + ctrl - q : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
 
 # WINDOWS
