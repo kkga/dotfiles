@@ -51,4 +51,4 @@ xset r rate 200 30 &
 xsetroot -solid "#1c1c1c" &
 # xidlehook --timer 600 'slock' '' --timer 3600 'loginctl suspend' '' &
 xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock &
-exec dbus-launch dwm
+exec dbus-launch --exit-with-session dwm

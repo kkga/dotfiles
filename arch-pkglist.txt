@@ -43,6 +43,7 @@ exercism-bin
 fakeroot
 fd
 feh
+ff2mpv-native-messaging-host-git
 file
 findutils
 firefox
@@ -261,6 +262,7 @@ xsettingsd
 xss-lock
 yadm-git
 yay
+youtube-dl
 zathura
 zathura-pdf-poppler
 zenith-bin
