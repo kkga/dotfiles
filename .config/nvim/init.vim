@@ -86,7 +86,7 @@ let g:sneak#s_next = 1
 let g:buftabline_show = 1
 let g:buftabline_numbers = 2
 let g:buftabline_indicators = 1
-let g:buftabline_separators = 1
+let g:buftabline_separators = 0
 
 " hi link BufTabLine TabLine
 " hi link BufTabLineActive 
