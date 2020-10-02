@@ -1,23 +1,10 @@
 [user]
 	name = Gadzhi Kharkharov
 	email = me@kkga.me
-[difftool]
-	prompt = false
-	trustExitCode = true
 [core]
 	excludesfile = /Users/kkga/.gitignore
 	editor = nvim
 	pager = delta
-[interactive]
-	diffFilter = delta --color-only
-[delta]
-	syntax-theme = ansi-light
-	; features = side-by-side line-numbers decorations
-	; whitespace-error-style = 22 reverse
-; [delta "decorations"]
-	; commit-decoration-style = bold yellow box ul
-	; file-style = bold yellow ul
-	; file-decoration-style = none
 [alias]
 	a = add
 	c = commit
@@ -42,3 +29,23 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 	required = true
+[diff]
+	tool = kitty
+	guitool = kitty.gui
+[difftool]
+    	prompt = false
+    	trustExitCode = true
+[difftool "kitty"]
+    	cmd = kitty +kitten diff $LOCAL $REMOTE
+[difftool "kitty.gui"]
+ 	cmd = kitty kitty +kitten diff $LOCAL $REMOTE
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	syntax-theme = ansi-light
+	; features = side-by-side line-numbers decorations
+	; whitespace-error-style = 22 reverse
+[delta "decorations"]
+	commit-decoration-style = bold yellow box ul
+	file-style = bold yellow ul
+	file-decoration-style = none
