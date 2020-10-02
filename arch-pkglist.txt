@@ -1,4 +1,4 @@
-alacritty-git
+alacritty
 alsa-firmware
 alsa-utils
 amd-ucode
@@ -186,6 +186,7 @@ trash-cli
 ttf-go-mono-git
 ttf-ibm-plex
 ttf-iosevka-aile
+ttf-iosevka-fixed-ss05
 ttf-iosevka-term
 ttf-profont-iix
 udiskie
@@ -254,6 +255,7 @@ xorg-xvinfo
 xorg-xwd
 xorg-xwininfo
 xorg-xwud
+xsecurelock
 xsel
 xsettingsd
 xss-lock

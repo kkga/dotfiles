@@ -28,7 +28,13 @@ shift + XF86MonBrightness{Down,Up}
 # XF86AudioPrev exec playerctl previous
 
 super + shift + Return
-	alacritty
+	kitty 
+
+super + ctrl + l
+	kitty @ --to unix:/tmp/mykitty set-colors ~/.config/kitty/paper.conf
+
+super + ctrl + d
+	kitty @ --to unix:/tmp/mykitty set-colors ~/.config/kitty/apprentice.conf
 
 # super + d
 # 	dmenu_run -i

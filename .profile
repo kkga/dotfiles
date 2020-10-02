@@ -18,7 +18,7 @@ export PATH=$PATH:/var/lib/flatpak/exports/bin/
 export BROWSER=firefox
 export EDITOR=nvim
 export VISUAL=nvim
-export TERMINAL=alacritty
+# export TERMINAL=alacritty
 
 export MANGOHUD=1
 export ENABLE_VKBASALT=1
