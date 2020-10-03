@@ -5,7 +5,6 @@ success_symbol = "[❯](bold green)"
 error_symbol = "[X](bold red)"
 vicmd_symbol = "[❮](bold green)"
 
-
 # format = """\
 #   $directory\
 #   $git_branch\
