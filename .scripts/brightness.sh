@@ -5,5 +5,5 @@
 # Needs i2c_dev kernel module loaded
 # https://wiki.archlinux.org/index.php/Backlight#External_monitors
 
-sudo -A ddcutil -d 1 setvcp 10 $1
-sudo -A ddcutil -d 2 setvcp 10 $2
+doas ddcutil -d 1 setvcp 10 $1
+doas ddcutil -d 2 setvcp 10 $2

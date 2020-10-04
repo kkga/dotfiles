@@ -17,10 +17,10 @@ XF86AudioLowerVolume
 # XF86AudioMute 
 
 XF86MonBrightness{Down,Up}
-	sudo -A ddcutil -d 1 setvcp 10 {- 25, + 25}
+	doas ddcutil -d 1 setvcp 10 {- 25, + 25}
 
 shift + XF86MonBrightness{Down,Up}
-	sudo -A ddcutil -d 2 setvcp 10 {- 25, + 25}
+	doas ddcutil -d 2 setvcp 10 {- 25, + 25}
 
 # XF86AudioPlay exec playerctl play
 # XF86AudioPause exec playerctl pause
