@@ -28,7 +28,7 @@ shift + XF86MonBrightness{Down,Up}
 # XF86AudioPrev exec playerctl previous
 
 super + shift + Return
-	kitty 
+	kitty -d ~
 
 super + ctrl + l
 	kitty @ --to unix:/tmp/mykitty set-colors ~/.config/kitty/paper.conf
