@@ -52,10 +52,10 @@ chip = "amdgpu-*"
 # # interface_name_exclude = ["br\\-[0-9a-f]{12}", "docker\\d+"]
 # # interface_name_include = []
 
-[[block]]
-block = "keyboard_layout"
-driver = "sway"
-sway_kb_identifier = "65261:24672:ZSA_Planck_EZ_Keyboard"
+# [[block]]
+# block = "keyboard_layout"
+# driver = "sway"
+# sway_kb_identifier = "65261:24672:ZSA_Planck_EZ_Keyboard"
 
 [[block]]
 block = "time"

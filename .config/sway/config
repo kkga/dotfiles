@@ -1,12 +1,12 @@
 ### Autostart
-xwayland disable
 
+xwayland disable
+exec syncthing -no-browser
 exec wl-paste -t text --watch clipman store 1>> ~/tmp/clipman.log 2>&1
 exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 
 font pango:monospace 9
-
 
 # Read `man 5 sway` for a complete reference.
 
@@ -29,7 +29,7 @@ output * adaptive_sync on
 output DP-1 pos 0 0 scale 2 res 3840x2160 
 output DP-2 pos 1920 0 scale 2 res 3840x2160 
 # You can get the names of your outputs by running: swaymsg -t get_outputs
-#
+
 
 ### Idle configuration
 
@@ -43,6 +43,7 @@ exec swayidle -w \
 # resumed. It will also lock your screen before your computer goes to sleep.
 #
 
+
 ### Input configuration
 input * {
     xkb_layout "us,ru"
@@ -53,26 +54,25 @@ input "type:keyboard" repeat_rate 30
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
+
 ### Borders and gaps
 
 default_border pixel 2
 smart_borders on
 smart_gaps on
-gaps inner 4
+gaps inner 0
 gaps outer 0
 hide_edge_borders --i3 none
 
 
 ### Key bindings
 
-# System
+# Basics
     bindsym XF86AudioRaiseVolume exec pamixer -ui 2 && pamixer --get-volume > $SWAYSOCK.wob
     bindsym XF86AudioLowerVolume exec pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob
     bindsym XF86AudioMute exec pamixer --toggle-mute && ( pamixer --get-mute && echo 0 > $SWAYSOCK.wob ) || pamixer --get-volume > $SWAYSOCK.wob
-
     bindsym $mod+Ctrl+c exec clipman pick -t wofi
 
-# Basics
     bindsym $mod+Return exec $term
     bindsym $mod+Shift+q kill
     bindsym $mod+d exec $menu
@@ -84,9 +84,8 @@ hide_edge_borders --i3 none
     # mouse button for dragging.
     floating_modifier $mod normal
 
-    bindsym $mod+Shift+c reload
-
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Shift+BackSpace reload
+    bindsym $mod+Ctrl+Shift+BackSpace exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
 # Moving around
     # Move your focus around
@@ -95,11 +94,17 @@ hide_edge_borders --i3 none
     bindsym $mod+$up focus up
     bindsym $mod+$right focus right
 
+    # Move between outputs
+    bindsym $mod+Ctrl+h focus output left
+    bindsym $mod+Ctrl+l focus output right
+
     # Move the focused window with the same, but add Shift
     bindsym $mod+Shift+$left move left
     bindsym $mod+Shift+$down move down
     bindsym $mod+Shift+$up move up
     bindsym $mod+Shift+$right move right
+    bindsym $mod+Ctrl+Shift+h move output left
+    bindsym $mod+Ctrl+Shift+l move output right
 
 # Workspaces
     # Switch to workspace
@@ -109,10 +114,9 @@ hide_edge_borders --i3 none
     bindsym $mod+4 workspace number 4
     bindsym $mod+5 workspace number 5
     bindsym $mod+6 workspace number 6
-    bindsym $mod+7 workspace number 7
-    bindsym $mod+8 workspace number 8
-    bindsym $mod+9 workspace number 9
-    bindsym $mod+0 workspace number 10
+    bindsym $mod+tab workspace back_and_forth
+    bindsym $mod+Ctrl+j workspace next
+    bindsym $mod+Ctrl+k workspace prev
     # Move focused container to workspace
     bindsym $mod+Shift+1 move container to workspace number 1
     bindsym $mod+Shift+2 move container to workspace number 2
@@ -120,10 +124,6 @@ hide_edge_borders --i3 none
     bindsym $mod+Shift+4 move container to workspace number 4
     bindsym $mod+Shift+5 move container to workspace number 5
     bindsym $mod+Shift+6 move container to workspace number 6
-    bindsym $mod+Shift+7 move container to workspace number 7
-    bindsym $mod+Shift+8 move container to workspace number 8
-    bindsym $mod+Shift+9 move container to workspace number 9
-    bindsym $mod+Shift+0 move container to workspace number 10
     # Note: workspaces can have any name you want, not just numbers.
     # We just use 1-10 as the default.
 
@@ -131,13 +131,12 @@ hide_edge_borders --i3 none
     # You can "split" the current object of your focus with
     # $mod+b or $mod+v, for horizontal and vertical splits
     # respectively.
-    bindsym $mod+b splith
-    bindsym $mod+v splitv
+    bindsym $mod+v split toggle
 
     # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    bindsym $mod+z layout stacking
+    bindsym $mod+x layout tabbed
+    bindsym $mod+c layout toggle split
 
     # Make the current focus fullscreen
     bindsym $mod+f fullscreen
@@ -189,7 +188,7 @@ bar {
     colors {
         statusline #ffffff
         background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
+        inactive_workspace #323232 #323232 #999999
     }
 }
 
