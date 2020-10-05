@@ -2,6 +2,7 @@
 
 xwayland disable
 exec syncthing -no-browser
+exec gammastep -l 55:37
 exec wl-paste -t text --watch clipman store 1>> ~/tmp/clipman.log 2>&1
 exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
@@ -19,6 +20,7 @@ set $up k
 set $right l
 set $term kitty
 set $menu dmenu_path | wofi -d --gtk-dark | xargs swaymsg exec --
+set $lock swaylock -f -c 000000
 
 
 ### Output configuration
@@ -68,14 +70,26 @@ hide_edge_borders --i3 none
 ### Key bindings
 
 # Basics
+
+# volume
     bindsym XF86AudioRaiseVolume exec pamixer -ui 2 && pamixer --get-volume > $SWAYSOCK.wob
     bindsym XF86AudioLowerVolume exec pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob
     bindsym XF86AudioMute exec pamixer --toggle-mute && ( pamixer --get-mute && echo 0 > $SWAYSOCK.wob ) || pamixer --get-volume > $SWAYSOCK.wob
+
+# external display brightness
+    bindsym XF86MonBrightnessDown exec doas ddcutil -d 1 setvcp 10 - 25 && doas ddcutil -d 1 --brief getvcp 10 | awk '{print $4}' > $SWAYSOCK.wob
+    bindsym XF86MonBrightnessUp exec doas ddcutil -d 1 setvcp 10 + 25 && doas ddcutil -d 1 --brief getvcp 10 | awk '{print $4}' > $SWAYSOCK.wob
+    bindsym Shift+XF86MonBrightnessDown exec doas ddcutil -d 2 setvcp 10 - 25 && doas ddcutil -d 2 --brief getvcp 10 | awk '{print $4}' > $SWAYSOCK.wob
+    bindsym Shift+XF86MonBrightnessUp exec doas ddcutil -d 2 setvcp 10 + 25 && doas ddcutil -d 2 --brief getvcp 10 | awk '{print $4}' > $SWAYSOCK.wob
+
+# clipboard
     bindsym $mod+Ctrl+c exec clipman pick -t wofi
 
+# programs
     bindsym $mod+Return exec $term
-    bindsym $mod+Shift+q kill
     bindsym $mod+d exec $menu
+    bindsym $mod+Ctrl+BackSpace exec $lock
+    bindsym $mod+Shift+q kill
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
