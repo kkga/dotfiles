@@ -31,9 +31,13 @@ export LS_COLORS="di=0;35:ln=1;34:ex=1;30"
 
 if [[ "$(uname)" == "Linux" ]]; then
     export SUDO_ASKPASS=/usr/libexec/seahorse/ssh-askpass
-    export GDK_SCALE=2
-    export GDK_DPI_SCALE=0.5
-    export QT_AUTO_SCREEN_SCALE_FACTOR=1
+    export MOZ_ENABLE_WAYLAND=1
+    export QT_QPA_PLATFORM=wayland-egl
+    export QT_WAYLAND_FORCE_DPI=physical
+    export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+    # export GDK_SCALE=2
+    # export GDK_DPI_SCALE=0.5
+    # export QT_AUTO_SCREEN_SCALE_FACTOR=1
     # export QT_SCALE_FACTOR=2
 elif [[ "$(uname)" == "Darwin" ]]; then
     export RESTIC_REPOSITORY="sftp:gadzhi.synology.me:/home/restic-backup"

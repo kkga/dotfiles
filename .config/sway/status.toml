@@ -1,0 +1,63 @@
+[theme]
+name = "plain"
+
+[theme.overrides]
+idle_bg = "#323232"
+warning_bg = "#323232"
+critical_bg = "#323232"
+info_bg = "#323232"
+idle_fg = "#999999"
+separator_bg = "#323232"
+separator_fg = "#555555"
+separator = "/"
+
+[[block]]
+block = "cpu"
+interval = 10
+format = "{utilization}%"
+
+[[block]]
+block = "load"
+interval = 10
+format = "{1m}"
+
+[[block]]
+block = "sound"
+
+# [[block]]
+# block = "net"
+# device = "wlo1"
+# # interval = 5
+# # use_bits = false
+
+[[block]]
+block = "temperature"
+collapsed = false
+interval = 10
+# format = "{average}° avg"
+chip = "k10temp-*"
+# inputs = ["Tdie"]
+
+[[block]]
+block = "temperature"
+collapsed = false
+interval = 10
+# format = "{average}° avg"
+chip = "amdgpu-*"
+# inputs = ["Tdie"]
+
+# [[block]]
+# block = "networkmanager"
+# on_click = "kitty -e nmtui"
+# # interface_name_exclude = ["br\\-[0-9a-f]{12}", "docker\\d+"]
+# # interface_name_include = []
+
+[[block]]
+block = "keyboard_layout"
+driver = "sway"
+sway_kb_identifier = "65261:24672:ZSA_Planck_EZ_Keyboard"
+
+[[block]]
+block = "time"
+interval = 60
+format = "%a %d/%m %R"
