@@ -1,13 +1,14 @@
 ### Autostart
 
 xwayland disable
+exec mako
 exec syncthing -no-browser
 exec gammastep -l 55:37
 exec wl-paste -t text --watch clipman store 1>> ~/tmp/clipman.log 2>&1
 exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
+exec /usr/libexec/polkit-gnome-authentication-agent-1
 
-font pango:monospace 9
 
 # Read `man 5 sway` for a complete reference.
 
@@ -20,7 +21,7 @@ set $up k
 set $right l
 set $term kitty
 set $menu dmenu_path | wofi -d --gtk-dark | xargs swaymsg exec --
-set $lock swaylock -f -c 000000
+set $lock 'swaylock -f -c 333333'
 
 
 ### Output configuration
@@ -33,12 +34,29 @@ output DP-2 pos 1920 0 scale 2 res 3840x2160
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 
+### Borders and gaps
+
+default_border pixel 1
+smart_borders on
+smart_gaps on
+gaps inner 0
+gaps outer 0
+hide_edge_borders --i3 none
+
+
+### Misc settings
+
+font pango:monospace 9
+focus_wrapping yes
+
+
 ### Idle configuration
 
 exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
+         timeout 300 'swaylock -f -c 333333' \
          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock -f -c 000000'
+	 timeout 1200 'loginctl suspend' \
+         before-sleep 'swaylock -f -c 333333'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -56,15 +74,6 @@ input "type:keyboard" repeat_rate 30
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
-
-### Borders and gaps
-
-default_border pixel 2
-smart_borders on
-smart_gaps on
-gaps inner 0
-gaps outer 0
-hide_edge_borders --i3 none
 
 
 ### Key bindings
@@ -87,7 +96,7 @@ hide_edge_borders --i3 none
 
 # programs
     bindsym $mod+Return exec $term
-    bindsym $mod+d exec $menu
+    bindsym $mod+Space exec $menu
     bindsym $mod+Ctrl+BackSpace exec $lock
     bindsym $mod+Shift+q kill
 
@@ -100,6 +109,7 @@ hide_edge_borders --i3 none
 
     bindsym $mod+Shift+BackSpace reload
     bindsym $mod+Ctrl+Shift+BackSpace exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+BackSpace exec swaynag -t warning -m 'What do you want to do?' -b 'Reboot' 'loginctl reboot' -b 'Suspend' 'loginctl suspend' -b 'Shutdown' 'loginctl poweroff'
 
 # Moving around
     # Move your focus around
@@ -159,7 +169,7 @@ hide_edge_borders --i3 none
     bindsym $mod+Shift+space floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    bindsym $mod+Escape focus mode_toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
@@ -194,7 +204,7 @@ bindsym $mod+r mode "resize"
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     # swaybar_command waybar
-    position top
+    position bottom
     tray_output all
 
     status_command i3status-rs ~/.config/sway/status.toml

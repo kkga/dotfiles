@@ -38,6 +38,15 @@ if [[ "$(uname)" == "Linux" ]]; then
     # export GDK_DPI_SCALE=0.5
     # export QT_AUTO_SCREEN_SCALE_FACTOR=1
     # export QT_SCALE_FACTOR=2
+
+    eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+    export SSH_AUTH_SOCK
+
+    # If running from tty1 start sway
+    if [ "$(tty)" = "/dev/tty1" ]; then
+        exec dbus-run-session sway
+    fi
+
 elif [[ "$(uname)" == "Darwin" ]]; then
     export RESTIC_REPOSITORY="sftp:gadzhi.synology.me:/home/restic-backup"
     export RESTIC_PASSWORD_COMMAND="security find-generic-password -s backup-restic-repository -a restic_backup -w"

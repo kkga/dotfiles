@@ -17,7 +17,7 @@ separator = "|"
 # [[block]]
 # block = "cpu"
 # interval = 10
-# format = "{utilization}%"
+# format = "{utilization}% {frequency}"
 
 [[block]]
 block = "load"
@@ -39,8 +39,8 @@ interval = 5
 block = "networkmanager"
 device_format = "{typename} {ap} {ips}"
 
-[[block]]
-block = "uptime"
+# [[block]]
+# block = "uptime"
 
 [[block]]
 block = "sound"
@@ -48,6 +48,7 @@ block = "sound"
 [[block]]
 block = "keyboard_layout"
 driver = "sway"
+format = "KB {layout}"
 sway_kb_identifier = "65261:24672:ZSA_Planck_EZ_Keyboard"
 
 [[block]]
