@@ -9,7 +9,6 @@ exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/cli
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 exec /usr/libexec/polkit-gnome-authentication-agent-1
 
-font pango:monospace 9
 
 # Read `man 5 sway` for a complete reference.
 
@@ -37,7 +36,7 @@ output DP-2 pos 1920 0 scale 2 res 3840x2160
 
 ### Borders and gaps
 
-default_border pixel 2
+default_border pixel 1
 smart_borders on
 smart_gaps on
 gaps inner 0
@@ -47,6 +46,7 @@ hide_edge_borders --i3 none
 
 ### Misc settings
 
+font pango:monospace 9
 focus_wrapping yes
 
 
@@ -204,7 +204,7 @@ bindsym $mod+r mode "resize"
 # Read `man 5 sway-bar` for more information about this section.
 bar {
     # swaybar_command waybar
-    position top
+    position bottom
     tray_output all
 
     status_command i3status-rs ~/.config/sway/status.toml
