@@ -14,15 +14,15 @@ separator_bg = "#323232"
 separator_fg = "#777777"
 separator = "|"
 
-[[block]]
-block = "cpu"
-interval = 10
-format = "{utilization}% {frequency}"
-
 # [[block]]
-# block = "load"
+# block = "cpu"
 # interval = 10
-# format = "{1m}"
+# format = "{utilization}% {frequency}"
+
+[[block]]
+block = "load"
+interval = 10
+format = "{1m}"
 
 # [[block]]
 # block = "net"
