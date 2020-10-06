@@ -346,6 +346,7 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 " }}}
 " rust {{{
 let g:rustfmt_autosave = 1
+let g:rust_fold = 2
 " }}}
 " treesitter {{{
 " lua <<EOF
@@ -478,8 +479,8 @@ nmap <leader>8 <Plug>BufTabLine.Go(8)
 nmap <leader>9 <Plug>BufTabLine.Go(9)
 nmap <leader>0 <Plug>BufTabLine.Go(10)
 
-nnoremap <C-j> :bnext<CR>
-nnoremap <C-k> :bprev<CR>
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-p> :bprev<CR>
 
 " create a new buffer 
 nnoremap <leader>B :enew<cr>
