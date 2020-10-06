@@ -1,6 +1,7 @@
 alias vim 'nvim'
 alias ls 'exa'
 alias gg 'lazygit'
+alias hg 'kitty +kitten hyperlinked_grep'
 
 set fish_greeting
 set fish_color_command normal --bold

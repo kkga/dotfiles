@@ -9,5 +9,6 @@
             "filetypes": ["gdscript"],
             "port": 6008
         }
-    }
+    },
+    "rust-analyzer.checkOnSave.command": "clippy"
 }

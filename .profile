@@ -18,16 +18,13 @@ export PATH=$PATH:/var/lib/flatpak/exports/bin/
 export BROWSER=firefox
 export EDITOR=nvim
 export VISUAL=nvim
-# export TERMINAL=alacritty
-
-export MANGOHUD=1
-export ENABLE_VKBASALT=1
+export TERMINAL=kitty
 
 export FZF_DEFAULT_OPTS="--color bw"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export TTDL_FILENAME=$HOME/notes/todo.txt
 export BAT_THEME=ansi-light
-export LS_COLORS="di=0;35:ln=1;34:ex=1;30"
+# export LS_COLORS="di=0;35:ln=1;34:ex=1;30"
 
 if [[ "$(uname)" == "Linux" ]]; then
     export SUDO_ASKPASS=/usr/libexec/seahorse/ssh-askpass
@@ -35,6 +32,8 @@ if [[ "$(uname)" == "Linux" ]]; then
     export QT_QPA_PLATFORM=wayland-egl
     export QT_WAYLAND_FORCE_DPI=physical
     export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+    export MANGOHUD=1
+    export ENABLE_VKBASALT=1
     # export GDK_SCALE=2
     # export GDK_DPI_SCALE=0.5
     # export QT_AUTO_SCREEN_SCALE_FACTOR=1
