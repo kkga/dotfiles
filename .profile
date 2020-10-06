@@ -40,6 +40,9 @@ if [[ "$(uname)" == "Linux" ]]; then
     # export QT_AUTO_SCREEN_SCALE_FACTOR=1
     # export QT_SCALE_FACTOR=2
 
+    eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+    export SSH_AUTH_SOCK
+
     # If running from tty1 start sway
     if [ "$(tty)" = "/dev/tty1" ]; then
         exec dbus-run-session sway

@@ -1,6 +1,7 @@
 ### Autostart
 
 xwayland disable
+exec mako
 exec syncthing -no-browser
 exec gammastep -l 55:37
 exec wl-paste -t text --watch clipman store 1>> ~/tmp/clipman.log 2>&1
