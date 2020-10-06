@@ -39,6 +39,7 @@ if [[ "$(uname)" == "Linux" ]]; then
     # export QT_AUTO_SCREEN_SCALE_FACTOR=1
     # export QT_SCALE_FACTOR=2
 
+    # activate gnome keyring daemon so that SSH keys are unlocked automatically
     eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
     export SSH_AUTH_SOCK
 
