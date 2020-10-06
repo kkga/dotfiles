@@ -7,6 +7,7 @@ exec gammastep -l 55:37
 exec wl-paste -t text --watch clipman store 1>> ~/tmp/clipman.log 2>&1
 exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
+exec /usr/libexec/polkit-gnome-authentication-agent-1
 
 font pango:monospace 9
 
@@ -21,7 +22,7 @@ set $up k
 set $right l
 set $term kitty
 set $menu dmenu_path | wofi -d --gtk-dark | xargs swaymsg exec --
-set $lock swaylock -f -c 000000
+set $lock 'swaylock -f -c 333333'
 
 
 ### Output configuration
@@ -52,11 +53,10 @@ focus_wrapping yes
 ### Idle configuration
 
 exec swayidle -w \
-         timeout 300 'swaylock -f -c 000000' \
-         timeout 600 'swaymsg "output * dpms off"' \
+         timeout 300 'swaylock -f -c 333333' \
+         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
 	 timeout 1200 'loginctl suspend' \
-	     resume 'swaymsg "output * dpms on"' \
-         before-sleep 'swaylock -f -c 000000'
+         before-sleep 'swaylock -f -c 333333'
 #
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
