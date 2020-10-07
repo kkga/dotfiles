@@ -44,9 +44,9 @@ if [[ "$(uname)" == "Linux" ]]; then
     export SSH_AUTH_SOCK
 
     # If running from tty1 start sway
-    if [ "$(tty)" = "/dev/tty1" ]; then
-        exec dbus-run-session sway
-    fi
+    # if [ "$(tty)" = "/dev/tty1" ]; then
+    #     exec dbus-run-session sway
+    # fi
 
 elif [[ "$(uname)" == "Darwin" ]]; then
     export RESTIC_REPOSITORY="sftp:gadzhi.synology.me:/home/restic-backup"
