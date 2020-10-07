@@ -2,17 +2,17 @@
 name = "plain"
 
 [theme.overrides]
-idle_bg = "#323232"
-warning_bg = "#323232"
-critical_bg = "#323232"
-good_bg = "#323232"
-info_bg = "#323232"
+idle_bg = "#222222"
+warning_bg = "#222222"
+critical_bg = "#222222"
+good_bg = "#222222"
+info_bg = "#222222"
 idle_fg = "#999999"
 info_fg = "#999999"
 good_fg = "#999999"
-separator_bg = "#323232"
+separator_bg = "#222222"
 separator_fg = "#777777"
-separator = "|"
+separator = "┊"
 
 # [[block]]
 # block = "cpu"
@@ -45,11 +45,11 @@ device_format = "{typename} {ap} {ips}"
 [[block]]
 block = "sound"
 
-[[block]]
-block = "keyboard_layout"
-driver = "sway"
-format = "KB {layout}"
-sway_kb_identifier = "65261:24672:ZSA_Planck_EZ_Keyboard"
+# [[block]]
+# block = "keyboard_layout"
+# driver = "sway"
+# format = "KB {layout}"
+# sway_kb_identifier = "65261:24672:ZSA_Planck_EZ_Keyboard"
 
 [[block]]
 block = "time"

@@ -1,0 +1,72 @@
+// vim:ft=json
+
+{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 20, // Waybar height (to be removed for auto height)
+    // Choose the order of the modules
+    "modules-left": ["sway/workspaces", "sway/window"],
+    "modules-center": ["sway/mode"],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "temperature#cpu", "temperature#gpu","backlight", "clock", "tray"],
+
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "format": "{name}"
+    },
+    "sway/mode": {
+        "format": "{}"
+    },
+    "idle_inhibitor": {
+        "format": "ih: {status}"
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "cpu {usage}%",
+        "tooltip": true
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "temperature#cpu": {
+        "hwmon-path": "/sys/class/hwmon/hwmon3/temp2_input",
+        "critical-threshold": 60,
+        "format": "Tcpu {temperatureC}°C"
+    }, 
+    "temperature#gpu": {
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        "format": "Tgpu {temperatureC}°C"
+    }, 
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ⇡{bandwidthUpBits} ⇣{bandwidthDownBits}",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr}",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        "format": "vol {volume}%",
+        "on-click": "pavucontrol"
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8
+    },
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    }
+}
+
