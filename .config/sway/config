@@ -12,6 +12,7 @@ exec /usr/libexec/polkit-gnome-authentication-agent-1
 #}}}
 # Variables {{{
 set $mod Mod1
+set $modsys Mod4
 set $left h
 set $down j
 set $up k
@@ -28,10 +29,10 @@ set $ws5 workspace number 5
 set $ws6 workspace number 6
 # }}}
 # Colors {{{
-set $color_white  #FFFFFF
-set $color_gray #777777
-set $color_accent #216609
-set $color_black #000000
+# set $color_white  #FFFFFF
+# set $color_gray #777777
+# set $color_accent #216609
+# set $color_black #000000
 
 # Colors                  border                 background             text                   indicator            child_border
 # client.focused            $color_white  	 $color_black     	$color_black   	       $color_accent        $color_accent
@@ -59,13 +60,13 @@ input "type:keyboard" repeat_rate 30
 #
 # }}}
 # Settings {{{
+font pango:monospace 0
 default_border pixel 2
 smart_borders on
 smart_gaps on
-gaps inner 4
+gaps inner 0
 gaps outer 0
 hide_edge_borders --i3 none
-font pango:monospace 0
 focus_wrapping yes
 #}}}
 # Idle config {{{
@@ -86,17 +87,27 @@ exec swayidle -w \
     bindsym Shift+XF86MonBrightnessDown exec doas ddcutil -d 2 setvcp 10 - 25 && doas ddcutil -d 2 --brief getvcp 10 | awk '{print $4}' > $SWAYSOCK.wob
     bindsym Shift+XF86MonBrightnessUp exec doas ddcutil -d 2 setvcp 10 + 25 && doas ddcutil -d 2 --brief getvcp 10 | awk '{print $4}' > $SWAYSOCK.wob
 
-    bindsym $mod+Shift+BackSpace reload
-    bindsym $mod+Ctrl+Shift+BackSpace exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
-    bindsym $mod+BackSpace exec swaynag -t warning -m 'What do you want to do?' -b 'Reboot' 'loginctl reboot' -b 'Suspend' 'loginctl suspend' -b 'Shutdown' 'loginctl poweroff'
+    bindsym $modsys+BackSpace reload
 
-    bindsym $mod+Ctrl+c exec clipman pick -t wofi
-    bindsym $mod+Return exec $term
-    bindsym $mod+Space exec $menu
-    bindsym $mod+Ctrl+BackSpace exec $lock
+    bindsym $modsys+Ctrl+c exec clipman pick -t wofi
+    bindsym $modsys+Return exec $term
+    bindsym $modsys+d exec $menu
+
+set $Pause -- [L]ock -- [E]xit -- [S]uspend -- [R]eboot -- [P]oweroff --
+mode "$Pause" {
+    bindsym L       exec $lock,                 mode "default"
+    bindsym E       exec swaymsg exit,          mode "default"
+    bindsym S       exec loginctl suspend,      mode "default"
+    bindsym R       exec loginctl reboot,       mode "default"
+    bindsym P       exec loginctl poweroff -i,  mode "default"
+ 
+    bindsym Return  mode "default"
+    bindsym Escape  mode "default"
+}
+bindsym $modsys+Shift+BackSpace mode "$Pause" 
 # }}}
 # Windows {{{
-    bindsym $mod+Shift+c kill
+    bindsym $modsys+Shift+q kill
     floating_modifier $mod normal
 # }}}
 # Moving around {{{
@@ -145,18 +156,17 @@ exec swayidle -w \
     bindsym $mod+Shift+minus move scratchpad
     bindsym $mod+minus scratchpad show
 # }}}
-# Resizing containers {{{
-mode "resize" {
+# Resize mode  {{{
+mode "-- RESIZE --" {
     bindsym $left resize shrink width 20px
     bindsym $down resize grow height 20px
     bindsym $up resize shrink height 20px
     bindsym $right resize grow width 20px
 
-    # Return to default mode
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+r mode "resize"
+bindsym $mod+r mode "-- RESIZE --"
 # }}}
 # }}}
 # Status bar {{{
