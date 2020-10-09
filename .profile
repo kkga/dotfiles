@@ -27,21 +27,20 @@ export BAT_THEME=ansi-light
 # export LS_COLORS="di=0;35:ln=1;34:ex=1;30"
 
 if [[ "$(uname)" == "Linux" ]]; then
-    export SUDO_ASKPASS=/usr/libexec/seahorse/ssh-askpass
-    export MOZ_ENABLE_WAYLAND=1
-    export QT_QPA_PLATFORM=wayland-egl
-    export QT_WAYLAND_FORCE_DPI=physical
-    export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
-    export MANGOHUD=1
-    export ENABLE_VKBASALT=1
-    # export GDK_SCALE=2
-    # export GDK_DPI_SCALE=0.5
-    # export QT_AUTO_SCREEN_SCALE_FACTOR=1
-    # export QT_SCALE_FACTOR=2
-
-    # activate gnome keyring daemon so that SSH keys are unlocked automatically
     eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
     export SSH_AUTH_SOCK
+
+    export SUDO_ASKPASS=/usr/libexec/seahorse/ssh-askpass
+    # export MOZ_ENABLE_WAYLAND=1
+    # export QT_QPA_PLATFORM=wayland-egl
+    export QT_WAYLAND_FORCE_DPI=physical
+    export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+    # export GDK_SCALE=2
+    # export GDK_DPI_SCALE=0.5
+    export QT_AUTO_SCREEN_SCALE_FACTOR=1
+    export MANGOHUD=1
+    export ENABLE_VKBASALT=1
+
 
     # If running from tty1 start sway
     # if [ "$(tty)" = "/dev/tty1" ]; then

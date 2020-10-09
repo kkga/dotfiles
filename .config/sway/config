@@ -1,6 +1,6 @@
 # vim:foldmethod=marker:foldlevel=0
 
-# Autostart {{{
+# Autostart {{{1
 xwayland disable
 exec mako
 exec syncthing -no-browser
@@ -9,8 +9,8 @@ exec wl-paste -t text --watch clipman store 1>> ~/tmp/clipman.log 2>&1
 exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 exec /usr/libexec/polkit-gnome-authentication-agent-1
-#}}}
-# Variables {{{
+
+# Variables {{{1
 set $mod Mod1
 set $modsys Mod4
 set $left h
@@ -18,7 +18,9 @@ set $down j
 set $up k
 set $right l
 set $term kitty
-set $menu dmenu_path | wofi -d --gtk-dark | xargs swaymsg exec --
+# set $menu dmenu_path | wofi -d --gtk-dark | xargs swaymsg exec --
+set $menu fuzzel -T kitty -i Papirus-Dark -b 000000ff -t ffffffff -s 777777ff -C 000000ff -B 8 -r 0 -w 48 | xargs swaymsg exec --
+set $dmenu fuzzel -d -f monospace:size=10 -T kitty -i Papirus-Dark -b 000000ff -t ffffffff -s 777777ff -C 000000ff -B 8 -r 0 -w 80 | xargs swaymsg exec --
 set $lock 'swaylock -f -c 333333'
 
 set $ws1 workspace number 1
@@ -27,8 +29,8 @@ set $ws3 workspace number 3
 set $ws4 workspace number 4
 set $ws5 workspace number 5
 set $ws6 workspace number 6
-# }}}
-# Colors {{{
+
+# Colors {{{1
 # set $color_white  #FFFFFF
 # set $color_gray #777777
 # set $color_accent #216609
@@ -40,27 +42,34 @@ set $ws6 workspace number 6
 # client.unfocused          $color_black 		 $color_black           $color_black           $color_accent        $color_gray
 # client.urgent             $color_bright_yellow   $color_bright_yellow   $color_normal_black    $color_unused        $color_unused
 # client.placeholder        $color_unused          $color_unused          $color_unused          $color_unused        $color_unused
-# }}}
-# Rules {{{
+
+# Rules {{{1
 for_window 	[app_id="firefox"] 	move container to $ws1
-# }}}
-# Outputs {{{
+
+# Outputs {{{1
 output * bg "#000000" solid_color
 output * adaptive_sync on
 output DP-1 pos 0 0 scale 2 res 3840x2160 
 output DP-2 pos 1920 0 scale 2 res 3840x2160 
-# }}}
-# Inputs {{{
+
+# Inputs {{{1
 input * {
     xkb_layout "us,ru"
     xkb_options grp:shifts_toggle
 }
-input "type:keyboard" repeat_delay 200
+input "type:keyboard" repeat_delay 300
 input "type:keyboard" repeat_rate 30
-#
-# }}}
-# Settings {{{
-font pango:monospace 0
+
+input "type:pointer" {
+    accel_profile adaptive
+    natural_scroll disabled
+    scroll_factor 1
+}
+
+seat seat0 hide_cursor 5000
+
+# Settings {{{1
+font pango:monospace 10
 default_border pixel 2
 smart_borders on
 smart_gaps on
@@ -68,16 +77,17 @@ gaps inner 0
 gaps outer 0
 hide_edge_borders --i3 none
 focus_wrapping yes
-#}}}
-# Idle config {{{
+
+# Idle config {{{1
 exec swayidle -w \
          timeout 300 'swaylock -f -c 333333' \
-         timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+         timeout 600 'swaymsg "output * dpms off"' \
 	 timeout 1200 'loginctl suspend' \
+	 resume 'swaymsg "output * dpms on"' \
          before-sleep 'swaylock -f -c 333333'
-# }}}
-# Key bindings {{{
-# System & programs {{{
+
+# Key bindings {{{1
+# System & programs {{{2
     bindsym XF86AudioRaiseVolume exec pamixer -ui 2 && pamixer --get-volume > $SWAYSOCK.wob
     bindsym XF86AudioLowerVolume exec pamixer -ud 2 && pamixer --get-volume > $SWAYSOCK.wob
     bindsym XF86AudioMute exec pamixer --toggle-mute && ( pamixer --get-mute && echo 0 > $SWAYSOCK.wob ) || pamixer --get-volume > $SWAYSOCK.wob
@@ -89,7 +99,7 @@ exec swayidle -w \
 
     bindsym $modsys+BackSpace reload
 
-    bindsym $modsys+Ctrl+c exec clipman pick -t wofi
+    bindsym $modsys+Ctrl+c exec clipman pick -t STDOUT | $dmenu
     bindsym $modsys+Return exec $term
     bindsym $modsys+d exec $menu
 
@@ -105,12 +115,12 @@ mode "$Pause" {
     bindsym Escape  mode "default"
 }
 bindsym $modsys+Shift+BackSpace mode "$Pause" 
-# }}}
-# Windows {{{
+
+# Windows {{{2
     bindsym $modsys+Shift+q kill
     floating_modifier $mod normal
-# }}}
-# Moving around {{{
+
+# Moving around {{{2
     bindsym $mod+$left focus left
     bindsym $mod+$down focus down
     bindsym $mod+$up focus up
@@ -126,8 +136,8 @@ bindsym $modsys+Shift+BackSpace mode "$Pause"
 
     bindsym $mod+Ctrl+Shift+h move workspace to output left
     bindsym $mod+Ctrl+Shift+l move workspace to output right
-# }}}
-# Workspaces {{{
+
+# Workspaces {{{2
     bindsym $mod+q $ws1
     bindsym $mod+w $ws2
     bindsym $mod+e $ws3
@@ -144,19 +154,19 @@ bindsym $modsys+Shift+BackSpace mode "$Pause"
     bindsym $mod+Shift+a move container to $ws4
     bindsym $mod+Shift+s move container to $ws5
     bindsym $mod+Shift+d move container to $ws6
-# }}}
-# Layout stuff {{{
+
+# Layout stuff {{{2
     bindsym $mod+z split toggle
     bindsym $mod+c layout toggle split
     bindsym $mod+f fullscreen
     bindsym $mod+Shift+space floating toggle
     bindsym $mod+Escape focus mode_toggle
-# }}}
-# Scratchpad {{{
+
+# Scratchpad {{{2
     bindsym $mod+Shift+minus move scratchpad
     bindsym $mod+minus scratchpad show
-# }}}
-# Resize mode  {{{
+
+# Resize mode  {{{2
 mode "-- RESIZE --" {
     bindsym $left resize shrink width 20px
     bindsym $down resize grow height 20px
@@ -167,9 +177,8 @@ mode "-- RESIZE --" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "-- RESIZE --"
-# }}}
-# }}}
-# Status bar {{{
+
+# Status bar {{{1
 bar {
     swaybar_command waybar
     # position top
@@ -183,6 +192,5 @@ bar {
     #     inactive_workspace 	$color_black 	$color_black 	$color_gray
     # }
 }
-# }}}
 
 include /etc/sway/config.d/*
