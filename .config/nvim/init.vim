@@ -39,6 +39,8 @@ Plug 'lifepillar/vim-colortemplate'
 Plug 'lifepillar/vim-solarized8'
 Plug 'https://gitlab.com/yorickpeterse/vim-paper.git'
 Plug 'https://gitlab.com/yorickpeterse/happy_hacking.vim.git'
+Plug 'jsit/disco.vim'
+Plug 'pacha/vem-dark'
 
 " markdown and note-taking
 Plug 'plasticboy/vim-markdown'
@@ -88,8 +90,8 @@ let g:buftabline_numbers = 2
 let g:buftabline_indicators = 1
 let g:buftabline_separators = 0
 
-" hi link BufTabLine TabLine
-" hi link BufTabLineActive 
+hi link BufTabLine TabLine
+" hi link BufTabLineActive
 " BufTabLineHidden
 " BufTabLineFill
 
@@ -590,7 +592,7 @@ func! ZettelEdit(...)
   if len(a:000) > 0
     let l:sep = '-'
   endif
-  let l:fname = expand('~/Documents/Notes/') . strftime("%F-%H%M") . l:sep . join(a:000, '-') . '.md'
+  let l:fname = expand('~/notes/') . strftime("%F-%H%M") . l:sep . join(a:000, '-') . '.md'
 
   " edit the new file
   exec "e " . l:fname

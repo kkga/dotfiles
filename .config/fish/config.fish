@@ -3,6 +3,9 @@ alias ls 'exa'
 alias gg 'lazygit'
 alias hg 'kitty +kitten hyperlinked_grep'
 
+alias xbdump 'xpkg -m >> ~/void-pkglist.txt'
+alias xbli 'xpkg -m | fzf --preview "xbps-query -vR {}"'
+
 set fish_greeting
 set fish_color_command normal --bold
 set fish_color_param normal

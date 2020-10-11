@@ -1,13 +1,10 @@
 // vim:ft=json
 
 {
-    // "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 20, // Waybar height (to be removed for auto height)
-    // Choose the order of the modules
+    "height": 20, 
     "modules-left": ["sway/workspaces", "sway/window"],
     "modules-center": ["sway/mode"],
-    "modules-right": ["custom/xbps-updates", "pulseaudio", "network", "cpu", "temperature#cpu", "temperature#gpu", "custom/fan", "clock", "tray"],
+    "modules-right": ["custom/xbps-updates", "idle_inhibitor", "pulseaudio", "network", "cpu", "temperature#cpu", "temperature#gpu", "custom/fan", "clock", "tray"],
 
     "sway/workspaces": {
         "disable-scroll": true,
@@ -17,14 +14,18 @@
         "format": "{}"
     },
     "idle_inhibitor": {
-        "format": "ih: {status}"
+        "format": "ih: {icon}",
+        "format-icons": {
+            "activated": "ON",
+            "deactivated": "off"
+        }
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
     },
     "cpu": {
-        "format": "cpu {usage}%",
+        "format": "cpu {usage:2}%",
         "tooltip": true
     },
     "memory": {
@@ -32,7 +33,7 @@
     },
     "temperature#cpu": {
         "hwmon-path": "/sys/class/hwmon/hwmon3/temp2_input",
-        "critical-threshold": 60,
+        "critical-threshold": 65,
         "format": "Tcpu {temperatureC}°C"
     }, 
     "temperature#gpu": {
@@ -40,8 +41,13 @@
         "critical-threshold": 80,
         "format": "Tgpu {temperatureC}°C"
     }, 
+    "custom/fan": {
+        "exec": "sensors | awk '/fan1/ {printf $2}'",
+        "format": "Fgpu {:3} RPM",
+        "interval": 10
+    },
     "network": {
-        "format-wifi": "{essid} ({signalStrength}%) ⇡{bandwidthUpBits} ⇣{bandwidthDownBits}",
+        "format-wifi": "{essid} ({signalStrength}%) ↑{bandwidthUpBits} ↓{bandwidthDownBits}",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr}",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected",
@@ -58,11 +64,6 @@
         "exec": "doas xbps-install -nSu | wc -l",
         "format": "xbps {}",
         "interval": 600
-    },
-    "custom/fan": {
-        "exec": "sensors | awk '/fan1/ {printf $2}'",
-        "format": "Fgpu {} RPM",
-        "interval": 10
-    } 
+    }
 }
 

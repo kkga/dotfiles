@@ -19,6 +19,7 @@ export BROWSER=firefox
 export EDITOR=nvim
 export VISUAL=nvim
 export TERMINAL=kitty
+export PAGER=nvimpager
 
 export FZF_DEFAULT_OPTS="--color bw"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
@@ -29,7 +30,6 @@ export BAT_THEME=ansi-light
 if [[ "$(uname)" == "Linux" ]]; then
     eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
     export SSH_AUTH_SOCK
-
     export SUDO_ASKPASS=/usr/libexec/seahorse/ssh-askpass
     # export MOZ_ENABLE_WAYLAND=1
     # export QT_QPA_PLATFORM=wayland-egl
