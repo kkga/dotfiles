@@ -1,7 +1,7 @@
 # vim:foldmethod=marker:foldlevel=0
 
 # Autostart {{{1
-xwayland disable
+# xwayland disable
 exec mako
 exec syncthing -no-browser
 exec gammastep -l 55:37
@@ -18,17 +18,18 @@ set $down j
 set $up k
 set $right l
 set $term kitty
-# set $menu dmenu_path | wofi -d --gtk-dark | xargs swaymsg exec --
-set $menu fuzzel -T kitty -i Papirus-Dark -b 000000ff -t ffffffff -s 777777ff -C 000000ff -B 8 -r 0 -w 48 | xargs swaymsg exec --
-set $dmenu fuzzel -d -f monospace:size=10 -T kitty -i Papirus-Dark -b 000000ff -t ffffffff -s 777777ff -C 000000ff -B 8 -r 0 -w 80 | xargs swaymsg exec --
+set $menu dmenu_path | wofi -d --gtk-dark | xargs swaymsg exec --
+set $dmenu wofi -d --gtk-dark | xargs swaymsg exec --
+# set $menu fuzzel -T kitty -i Papirus-Dark -b 000000ff -t ffffffff -s 777777ff -C 000000ff -B 8 -r 0 -w 48 | xargs swaymsg exec --
+# set $dmenu fuzzel -d -f monospace:size=10 -T kitty -i Papirus-Dark -b 000000ff -t ffffffff -s 777777ff -C 000000ff -B 8 -r 0 -w 64 | xargs swaymsg exec --
 set $lock 'swaylock -f -c 333333'
 
-set $ws1 workspace number 1
-set $ws2 workspace number 2
-set $ws3 workspace number 3
-set $ws4 workspace number 4
-set $ws5 workspace number 5
-set $ws6 workspace number 6
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
 
 # Colors {{{1
 # set $color_white  #FFFFFF
@@ -44,13 +45,21 @@ set $ws6 workspace number 6
 # client.placeholder        $color_unused          $color_unused          $color_unused          $color_unused        $color_unused
 
 # Rules {{{1
-for_window 	[app_id="firefox"] 	move container to $ws1
+for_window 	[app_id="firefox"] 	move container to workspace number $ws1
 
 # Outputs {{{1
 output * bg "#000000" solid_color
 output * adaptive_sync on
+output * dpms on
 output DP-1 pos 0 0 scale 2 res 3840x2160 
 output DP-2 pos 1920 0 scale 2 res 3840x2160 
+
+workspace $ws1 output DP-1
+workspace $ws2 output DP-1
+workspace $ws3 output DP-1
+workspace $ws4 output DP-1
+workspace $ws5 output DP-2
+workspace $ws6 output DP-2
 
 # Inputs {{{1
 input * {
@@ -82,7 +91,7 @@ focus_wrapping yes
 exec swayidle -w \
          timeout 300 'swaylock -f -c 333333' \
          timeout 600 'swaymsg "output * dpms off"' \
-	 timeout 1200 'loginctl suspend' \
+	 timeout 1800 'loginctl suspend' \
 	 resume 'swaymsg "output * dpms on"' \
          before-sleep 'swaylock -f -c 333333'
 
@@ -138,25 +147,28 @@ bindsym $modsys+Shift+BackSpace mode "$Pause"
     bindsym $mod+Ctrl+Shift+l move workspace to output right
 
 # Workspaces {{{2
-    bindsym $mod+q $ws1
-    bindsym $mod+w $ws2
-    bindsym $mod+e $ws3
-    bindsym $mod+a $ws4
-    bindsym $mod+s $ws5
-    bindsym $mod+d $ws6
+    bindsym $mod+q workspace $ws1
+    bindsym $mod+w workspace $ws2
+    bindsym $mod+e workspace $ws3
+    bindsym $mod+a workspace $ws4
+    bindsym $mod+s workspace $ws5
+    bindsym $mod+d workspace $ws6
     bindsym $mod+tab workspace back_and_forth
-    bindsym $mod+Ctrl+j workspace next
-    bindsym $mod+Ctrl+k workspace prev
+    bindsym $mod+Ctrl+j workspace next_on_output
+    bindsym $mod+Ctrl+k workspace prev_on_output
 
-    bindsym $mod+Shift+q move container to $ws1
-    bindsym $mod+Shift+w move container to $ws2
-    bindsym $mod+Shift+e move container to $ws3
-    bindsym $mod+Shift+a move container to $ws4
-    bindsym $mod+Shift+s move container to $ws5
-    bindsym $mod+Shift+d move container to $ws6
+    bindsym $mod+Shift+q move container to workspace $ws1
+    bindsym $mod+Shift+w move container to workspace $ws2
+    bindsym $mod+Shift+e move container to workspace $ws3
+    bindsym $mod+Shift+a move container to workspace $ws4
+    bindsym $mod+Shift+s move container to workspace $ws5
+    bindsym $mod+Shift+d move container to workspace $ws6
+    bindsym $mod+Shift+Ctrl+j move container to workspace next_on_output
+    bindsym $mod+Shift+Ctrl+k move container to workspace prev_on_output
 
 # Layout stuff {{{2
     bindsym $mod+z split toggle
+    bindsym $mod+x layout toggle all
     bindsym $mod+c layout toggle split
     bindsym $mod+f fullscreen
     bindsym $mod+Shift+space floating toggle
@@ -168,10 +180,10 @@ bindsym $modsys+Shift+BackSpace mode "$Pause"
 
 # Resize mode  {{{2
 mode "-- RESIZE --" {
-    bindsym $left resize shrink width 20px
-    bindsym $down resize grow height 20px
-    bindsym $up resize shrink height 20px
-    bindsym $right resize grow width 20px
+    bindsym $left resize shrink width 10ppt
+    bindsym $down resize grow height 10ppt
+    bindsym $up resize shrink height 10ppt
+    bindsym $right resize grow width 10ppt
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
