@@ -1,8 +1,8 @@
 git:
   paging:
-    colorarg: always
-    useconfig: false
-    pager: delta --light --paging=never --24-bit-color=never
+    # colorarg: always
+    useconfig: true
+    # pager: delta --light --paging=never --24-bit-color=never
 gui:
   theme:
     lightTheme: true
@@ -10,5 +10,5 @@ gui:
       - black
       - bold
     inactiveBorderColor:
-      - black
+      - yellow
 startuppopupversion: 1
