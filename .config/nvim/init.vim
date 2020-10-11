@@ -45,7 +45,6 @@ Plug 'plasticboy/vim-markdown'
 Plug 'previm/previm/'
 Plug 'cweagans/vim-taskpaper'
 Plug 'https://gitlab.com/dbeniamine/todo.txt-vim'
-Plug 'fiatjaf/neuron.vim'
 
 " snippets
 Plug 'hrsh7th/vim-vsnip'
@@ -68,12 +67,10 @@ Plug 'preservim/tagbar'
 " Plug 'dense-analysis/ale'
 
 " lang
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 Plug 'habamax/vim-godot'
 Plug 'rust-lang/rust.vim'
 " Plug 'nvim-treesitter/nvim-treesitter'
-
-Plug 'ThePrimeagen/vim-be-good'
 
 call plug#end()
 "}}}
@@ -127,13 +124,13 @@ let g:ale_linters = {'rust': ['analyzer', 'cargo', 'rls']}
 " set shortmess+=c
 " }}}
 " solarized8 {{{
-let g:solarized_visibility = "low"
+" let g:solarized_visibility = "low"
 " let g:solarized_diffmode = "normal"
 " let g:solarized_termtrans = 1
-let g:solarized_statusline = "flat"
-let g:solarized_use16 = 0
-let g:solarized_extra_hi_groups = 1
-set termguicolors
+" let g:solarized_statusline = "flat"
+" let g:solarized_use16 = 1
+" let g:solarized_extra_hi_groups = 1
+" set termguicolors
 " set t_Co=256
 " }}}
 " markdown {{{
@@ -377,6 +374,7 @@ let g:rust_fold = 2
 
 filetype plugin indent on       " no idea
 syntax on
+set termguicolors
 colorscheme paper
 
 " various
@@ -446,7 +444,7 @@ set undolevels=1000             " Max # of changes that can be undone
 set undoreload=10000            " Max # of lines to save for undo on buf reload
 
 " statusline
-set statusline=%<%m%r\ %f 
+set statusline=%<\ %f\ %m%r
 set statusline+=\ %{coc#status()}
 set statusline+=%{&paste?'\ \ \|\ PASTE\ ':'\ '}
 set statusline+=%=%{fugitive#statusline()}\ [%{&filetype}]\ %3l/%3L\ (%2c\)\ 
@@ -458,6 +456,13 @@ set statusline+=%=%{fugitive#statusline()}\ [%{&filetype}]\ %3l/%3L\ (%2c\)\
 let mapleader = "\<space>"
 let maplocalleader = "\,"
 
+nnoremap <c-j> :m .+1<CR>==
+nnoremap <c-k> :m .-2<CR>==
+inoremap <c-j> <Esc>:m .+1<CR>==gi
+inoremap <c-k> <Esc>:m .-2<CR>==gi
+vnoremap <c-j> :m '>+1<CR>gv=gv
+vnoremap <c-k> :m '<-2<CR>gv=gv
+
 " esc alternative
 inoremap jj <esc>
 
@@ -465,6 +470,7 @@ inoremap jj <esc>
 nnoremap <leader>ff :Files<CR>
 nnoremap <leader>fg :Rg<CR>
 nnoremap <leader>fb :Buffers<CR>
+nnoremap <leader>fl :BLines<CR>
 nnoremap <leader>fn :NoteFiles<CR>
 
 " buffers
@@ -539,10 +545,10 @@ vnoremap J }
 vnoremap K {
 
 " easier one-off navigation in insert mode
-inoremap <C-k> <Up>
-inoremap <C-j> <Down>
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
+" inoremap <C-k> <Up>
+" inoremap <C-j> <Down>
+" inoremap <C-h> <Left>
+" inoremap <C-l> <Right>
 
 " use arrows to resize panes in normal mode
 nnoremap <Left> :vertical resize -1<CR>

@@ -1,9 +1,9 @@
 add_newline = false
 
 [character]     
-success_symbol = "[❯](bold green)"
+success_symbol = "[>](bold green)"
 error_symbol = "[X](bold red)"
-vicmd_symbol = "[❮](bold green)"
+vicmd_symbol = "[<](bold green)"
 
 # format = """\
 #   $directory\
@@ -41,7 +41,7 @@ truncate_to_repo = true
 format = "[$path]($style)[$lock_symbol]($lock_style) "
 
 [git_branch]
-format = "on [$symbol $branch]($style) "
+format = "on [$branch]($style) "
 style = "bold purple"
 symbol = ""
 truncation_length = 32
@@ -68,4 +68,4 @@ style = "bold red"
 
 [cmd_duration]
 min_time = 500
-format = "took [$duration]($style)"
+format = "[$duration]($style)"
