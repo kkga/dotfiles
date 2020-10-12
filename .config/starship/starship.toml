@@ -1,9 +1,9 @@
 add_newline = false
 
 [character]     
-success_symbol = "[>](bold green)"
+success_symbol = "[»](bold green)"
 error_symbol = "[X](bold red)"
-vicmd_symbol = "[<](bold green)"
+vicmd_symbol = "[«](bold green)"
 
 # format = """\
 #   $directory\
@@ -42,7 +42,7 @@ format = "[$path]($style)[$lock_symbol]($lock_style) "
 
 [git_branch]
 format = "on [$branch]($style) "
-style = "bold purple"
+style = "bold green"
 symbol = ""
 truncation_length = 32
 truncation_symbol = "…"

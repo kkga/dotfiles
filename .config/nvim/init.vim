@@ -1,4 +1,5 @@
 " vim:foldmethod=marker:foldlevel=0
+"
 
 " PLUGINS {{{
 
@@ -30,18 +31,29 @@ Plug 'junegunn/vim-easy-align'
 Plug 'mhinz/vim-startify'
 Plug 'cohama/lexima.vim'
 Plug 'kdheepak/lazygit.nvim'
+Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
+Plug 'liuchengxu/vista.vim'
 
 " themes
 Plug 'romainl/Apprentice'
-Plug 'caksoylar/vim-mysticaltutor'
-Plug 'lifepillar/vim-gruvbox8'
 Plug 'lifepillar/vim-colortemplate'
 Plug 'lifepillar/vim-solarized8'
 Plug 'https://gitlab.com/yorickpeterse/vim-paper.git'
 Plug 'https://gitlab.com/yorickpeterse/happy_hacking.vim.git'
-Plug 'jsit/disco.vim'
 Plug 'pacha/vem-dark'
+Plug 'yasukotelin/shirotelin'
 
+" markdown and note-taking
+Plug 'plasticboy/vim-markdown'
+Plug 'previm/previm/'
+Plug 'cweagans/vim-taskpaper'
+Plug 'https://gitlab.com/dbeniamine/todo.txt-vim'
+
+" snippets
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
+
+" file browsing
 " markdown and note-taking
 Plug 'plasticboy/vim-markdown'
 Plug 'previm/previm/'
@@ -406,8 +418,8 @@ set shiftwidth=4                " # of spaces to use for autoindent
 set linebreak                   " Wrap lines when convenient
 set nowrap                      " Wrap lines
 set autoindent                  " Minimal automatic indenting for any filetype
-set listchars=tab:>-\ ,
-set nolist
+set list
+set listchars=tab:»-,extends:»,precedes:«,space:.
 
 " lines and numbers
 set nonumber                      
