@@ -7,7 +7,7 @@ gui:
   theme:
     lightTheme: true
     activeBorderColor:
-      - black
+      - red
       - bold
     inactiveBorderColor:
       - yellow

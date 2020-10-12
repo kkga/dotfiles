@@ -113,6 +113,8 @@ exec swayidle -w \
     bindsym $modsys+Return exec $term
     bindsym $modsys+d exec $menu
 
+    bindsym $modsys+Escape exec makoctl dismiss
+
 set $Pause -- [L]ock -- [E]xit -- [S]uspend -- [R]eboot -- [P]oweroff --
 mode "$Pause" {
     bindsym L       exec $lock,                 mode "default"
