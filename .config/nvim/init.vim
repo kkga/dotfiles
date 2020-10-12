@@ -419,7 +419,7 @@ set linebreak                   " Wrap lines when convenient
 set nowrap                      " Wrap lines
 set autoindent                  " Minimal automatic indenting for any filetype
 set list
-set listchars=tab:»-,extends:»,precedes:«,space:.
+set listchars=tab:\|-,extends:»,precedes:«,space:.
 
 " lines and numbers
 set nonumber                      
