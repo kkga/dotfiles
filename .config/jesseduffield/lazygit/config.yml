@@ -1,8 +1,8 @@
 git:
   paging:
-    # colorarg: always
-    useconfig: true
-    # pager: delta --light --paging=never --24-bit-color=never
+    colorarg: always
+    # useconfig: true
+    pager: delta --light --paging=never --24-bit-color=never
 gui:
   theme:
     lightTheme: true

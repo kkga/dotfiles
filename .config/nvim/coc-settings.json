@@ -1,7 +1,7 @@
 {
     "diagnostic": {
         "errorSign": ">>",
-        "warningSign": "--"
+        "warningSign": "--",
     },
     "languageserver": {
         "godot": {
