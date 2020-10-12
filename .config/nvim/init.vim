@@ -15,8 +15,6 @@ Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-unimpaired'
-" Plug 'tpope/vim-endwise'
-" Plug 'rstacruz/vim-closer'
 Plug 'machakann/vim-highlightedyank'
 Plug 'junegunn/vim-peekaboo'
 Plug 'mbbill/undotree'
@@ -25,14 +23,12 @@ Plug 'lifepillar/vim-cheat40'
 Plug 'justinmk/vim-sneak'
 Plug 'rhysd/clever-f.vim'
 Plug 'ap/vim-buftabline'
-" Plug 'unblevable/quick-scope'
 Plug 'airblade/vim-gitgutter'
 Plug 'junegunn/vim-easy-align'
 Plug 'mhinz/vim-startify'
 Plug 'cohama/lexima.vim'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
-Plug 'liuchengxu/vista.vim'
 
 " themes
 Plug 'romainl/Apprentice'
@@ -40,7 +36,6 @@ Plug 'lifepillar/vim-colortemplate'
 Plug 'lifepillar/vim-solarized8'
 Plug 'https://gitlab.com/yorickpeterse/vim-paper.git'
 Plug 'https://gitlab.com/yorickpeterse/happy_hacking.vim.git'
-Plug 'pacha/vem-dark'
 Plug 'yasukotelin/shirotelin'
 
 " markdown and note-taking
@@ -77,7 +72,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'nvim-lua/completion-nvim'
 " Plug 'nvim-lua/diagnostic-nvim'
 
-Plug 'preservim/tagbar'
+Plug 'liuchengxu/vista.vim'
+" Plug 'preservim/tagbar'
 " Plug 'dense-analysis/ale'
 
 " lang
@@ -144,8 +140,6 @@ let g:ale_linters = {'rust': ['analyzer', 'cargo', 'rls']}
 " let g:solarized_statusline = "flat"
 " let g:solarized_use16 = 1
 " let g:solarized_extra_hi_groups = 1
-" set termguicolors
-" set t_Co=256
 " }}}
 " markdown {{{
 let g:vim_markdown_conceal = 1
@@ -389,7 +383,8 @@ let g:rust_fold = 2
 filetype plugin indent on       " no idea
 syntax on
 set termguicolors
-colorscheme paper
+set t_Co=256
+colorscheme shirotelin
 
 " various
 set encoding=utf8               " Set UTF-8 encoding
@@ -405,7 +400,7 @@ set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.o,.git,tmp,node_modules,*.pyc
 set backspace=indent,eol,start  " Allow backspace in insert mode
 set ttimeoutlen=2               " Exit insert/visual mode without ESC delay
 set inccommand=split            " Highlight search results and show in preview split
-set conceallevel=1              " Conceals markdown syntax
+set conceallevel=0              " Conceals markdown syntax
 set foldlevel=6
 set nospell
 set mouse=a
@@ -419,7 +414,7 @@ set linebreak                   " Wrap lines when convenient
 set nowrap                      " Wrap lines
 set autoindent                  " Minimal automatic indenting for any filetype
 set list
-set listchars=tab:»-,extends:»,precedes:«,space:.
+set listchars=tab:\|-,extends:»,precedes:«,space:.
 
 " lines and numbers
 set nonumber                      

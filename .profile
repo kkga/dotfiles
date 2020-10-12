@@ -20,6 +20,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 export TERMINAL=kitty
 export PAGER=nvimpager
+export GIT_PAGER=delta
 
 export FZF_DEFAULT_OPTS="--color bw"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
@@ -31,13 +32,11 @@ if [[ "$(uname)" == "Linux" ]]; then
     eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
     export SSH_AUTH_SOCK
     export SUDO_ASKPASS=/usr/libexec/seahorse/ssh-askpass
-    # export MOZ_ENABLE_WAYLAND=1
-    # export QT_QPA_PLATFORM=wayland-egl
     export QT_WAYLAND_FORCE_DPI=physical
     export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+    export QT_AUTO_SCREEN_SCALE_FACTOR=1
     # export GDK_SCALE=2
     # export GDK_DPI_SCALE=0.5
-    export QT_AUTO_SCREEN_SCALE_FACTOR=1
     export MANGOHUD=1
     export ENABLE_VKBASALT=1
 
