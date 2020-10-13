@@ -28,7 +28,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'mhinz/vim-startify'
 Plug 'cohama/lexima.vim'
 Plug 'kdheepak/lazygit.nvim'
-Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
+Plug 'airblade/vim-rooter'
 
 " themes
 Plug 'romainl/Apprentice'
@@ -162,21 +162,11 @@ let g:Todo_txt_prefix_creation_date=1
 let g:Todo_fold_char='+'
 " }}}
 " fzf {{{
-" let $FZF_DEFAULT_COMMAND = 'rg --files --follow'
 let g:fzf_action = {
   \ 'ctrl-t': 'tab split',
-  \ 'ctrl-x': 'split',
+  \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit' }
 let g:fzf_history_dir = '~/.local/share/fzf-history'
-
-let g:fzf_layout = {
-  \ 'window': {
-  \   'width': 0.7,
-  \   'height': 0.6,
-  \   'border': 'sharp',
-  \   'highlight': 'VertSplit'
-  \ }
-  \ }
 
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],

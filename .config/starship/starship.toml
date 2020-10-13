@@ -53,6 +53,7 @@ commit_hash_length = 4
 [git_status]
 ahead = "↑"
 behind = "↓"
+diverged = "↕"
 untracked = "?"
 modified = "M"
 renamed = "R"
