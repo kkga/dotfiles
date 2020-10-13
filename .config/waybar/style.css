@@ -2,13 +2,13 @@
     border: none;
     border-radius: 0;
     font-family: monospace;
-    font-size: 11px;
+    font-size: 13.5px;
     min-height: 0;
 }
 
 window#waybar {
     background: #000000;
-    color: #777777;
+    color: #999999;
 }
 
 #workspaces button {

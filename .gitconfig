@@ -12,8 +12,9 @@
 	b = branch
 	s = status
 	sl = status --long
-	d = diff
 	l = log --oneline
+	d = diff
+	dt = difftool --no-symlinks --dir-diff
 [color]
 	ui = auto
 [status]

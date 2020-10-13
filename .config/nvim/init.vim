@@ -28,7 +28,8 @@ Plug 'junegunn/vim-easy-align'
 Plug 'mhinz/vim-startify'
 Plug 'cohama/lexima.vim'
 Plug 'kdheepak/lazygit.nvim'
-Plug 'liuchengxu/vim-clap', { 'do': ':Clap install-binary' }
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tacahiroy/ctrlp-funky'
 
 " themes
 Plug 'romainl/Apprentice'
@@ -48,7 +49,6 @@ Plug 'https://gitlab.com/dbeniamine/todo.txt-vim'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 
-" file browsing
 " markdown and note-taking
 Plug 'plasticboy/vim-markdown'
 Plug 'previm/previm/'
@@ -89,6 +89,9 @@ call plug#end()
 let g:sleuth_automatic = 1
 let g:sneak#s_next = 1
 
+" " CtrlP {{{
+" let g:ctrlp_user_command = 'rg %s -type f'
+" " }}}
 " buftabline {{{
 let g:buftabline_show = 1
 let g:buftabline_numbers = 2
@@ -169,14 +172,14 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 
-let g:fzf_layout = {
-  \ 'window': {
-  \   'width': 0.7,
-  \   'height': 0.6,
-  \   'border': 'sharp',
-  \   'highlight': 'VertSplit'
-  \ }
-  \ }
+" let g:fzf_layout = {
+"   \ 'window': {
+"   \   'width': 0.7,
+"   \   'height': 0.6,
+"   \   'border': 'sharp',
+"   \   'highlight': 'VertSplit'
+"   \ }
+"   \ }
 
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
@@ -494,8 +497,8 @@ nmap <leader>8 <Plug>BufTabLine.Go(8)
 nmap <leader>9 <Plug>BufTabLine.Go(9)
 nmap <leader>0 <Plug>BufTabLine.Go(10)
 
-nnoremap <C-n> :bnext<CR>
-nnoremap <C-p> :bprev<CR>
+" nnoremap <C-n> :bnext<CR>
+" nnoremap <C-p> :bprev<CR>
 
 " create a new buffer 
 nnoremap <leader>B :enew<cr>

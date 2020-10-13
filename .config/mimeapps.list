@@ -10,3 +10,4 @@ application/pdf=org.pwmt.zathura.desktop
 [Added Associations]
 image/jpeg=feh.desktop;gimp.desktop;
 audio/flac=mpv.desktop;org.xfce.Parole.desktop;
+font/ttf=org.gnome.FontViewer.desktop;
