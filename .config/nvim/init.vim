@@ -28,11 +28,7 @@ Plug 'airblade/vim-rooter'
 Plug 'junegunn/vim-easy-align'
 Plug 'mhinz/vim-startify'
 Plug 'cohama/lexima.vim'
-<<<<<<< HEAD
-Plug 'kdheepak/lazygit.nvim'
 Plug 'airblade/vim-rooter'
-=======
->>>>>>> 441e350ba70dcc2a9827a7c2a3ed4472a26622f5
 
 " themes
 Plug 'romainl/Apprentice'
@@ -171,18 +167,6 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 
-<<<<<<< HEAD
-=======
-" let g:fzf_layout = {
-"   \ 'window': {
-"   \   'width': 0.7,
-"   \   'height': 0.6,
-"   \   'border': 'sharp',
-"   \   'highlight': 'VertSplit'
-"   \ }
-"   \ }
-
->>>>>>> 441e350ba70dcc2a9827a7c2a3ed4472a26622f5
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
