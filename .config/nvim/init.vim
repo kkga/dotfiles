@@ -453,10 +453,22 @@ set undolevels=1000             " Max # of changes that can be undone
 set undoreload=10000            " Max # of lines to save for undo on buf reload
 
 " statusline
+function! StatusDiagnostic() abort
+  let info = get(b:, 'coc_diagnostic_info', {})
+  if empty(info) | return '' | endif
+  let msgs = []
+  if get(info, 'error', 0)
+    call add(msgs, 'E' . info['error'])
+  endif
+  if get(info, 'warning', 0)
+    call add(msgs, 'W' . info['warning'])
+  endif
+  return join(msgs, ' '). ' ' . get(g:, 'coc_status', '')
+endfunction
+
 set statusline=%<\ %f\ %m%r
-set statusline+=\ %{coc#status()}
 set statusline+=%{&paste?'\ \ \|\ PASTE\ ':'\ '}
-set statusline+=%=%{fugitive#statusline()}\ [%{&filetype}]\ %3l/%3L\ (%2c\)\ 
+set statusline+=%=%{StatusDiagnostic()}\ %{fugitive#statusline()}\ [%{&filetype}]\ %3l/%3L\ (%2c\)\ 
 
 " }}}
 " MAPPINGS {{{
