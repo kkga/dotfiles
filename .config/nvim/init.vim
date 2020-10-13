@@ -24,12 +24,10 @@ Plug 'justinmk/vim-sneak'
 Plug 'rhysd/clever-f.vim'
 Plug 'ap/vim-buftabline'
 Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-rooter'
 Plug 'junegunn/vim-easy-align'
 Plug 'mhinz/vim-startify'
 Plug 'cohama/lexima.vim'
-Plug 'kdheepak/lazygit.nvim'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tacahiroy/ctrlp-funky'
 
 " themes
 Plug 'romainl/Apprentice'
@@ -72,7 +70,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'nvim-lua/completion-nvim'
 " Plug 'nvim-lua/diagnostic-nvim'
 
-Plug 'liuchengxu/vista.vim'
+" Plug 'liuchengxu/vista.vim'
 " Plug 'preservim/tagbar'
 " Plug 'dense-analysis/ale'
 
@@ -89,9 +87,6 @@ call plug#end()
 let g:sleuth_automatic = 1
 let g:sneak#s_next = 1
 
-" " CtrlP {{{
-" let g:ctrlp_user_command = 'rg %s -type f'
-" " }}}
 " buftabline {{{
 let g:buftabline_show = 1
 let g:buftabline_numbers = 2
