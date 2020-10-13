@@ -2,6 +2,7 @@ alias vim 'nvim'
 alias ls 'exa'
 alias gg 'lazygit'
 alias hg 'kitty +kitten hyperlinked_grep'
+alias d 'kitty +kitten diff'
 
 alias xbdump 'xpkg -m >> ~/void-pkglist.txt'
 alias xbli 'xpkg -m | fzf --preview "xbps-query -vR {}"'

@@ -24,11 +24,15 @@ Plug 'justinmk/vim-sneak'
 Plug 'rhysd/clever-f.vim'
 Plug 'ap/vim-buftabline'
 Plug 'airblade/vim-gitgutter'
+Plug 'airblade/vim-rooter'
 Plug 'junegunn/vim-easy-align'
 Plug 'mhinz/vim-startify'
 Plug 'cohama/lexima.vim'
+<<<<<<< HEAD
 Plug 'kdheepak/lazygit.nvim'
 Plug 'airblade/vim-rooter'
+=======
+>>>>>>> 441e350ba70dcc2a9827a7c2a3ed4472a26622f5
 
 " themes
 Plug 'romainl/Apprentice'
@@ -48,7 +52,6 @@ Plug 'https://gitlab.com/dbeniamine/todo.txt-vim'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
 
-" file browsing
 " markdown and note-taking
 Plug 'plasticboy/vim-markdown'
 Plug 'previm/previm/'
@@ -72,7 +75,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'nvim-lua/completion-nvim'
 " Plug 'nvim-lua/diagnostic-nvim'
 
-Plug 'liuchengxu/vista.vim'
+" Plug 'liuchengxu/vista.vim'
 " Plug 'preservim/tagbar'
 " Plug 'dense-analysis/ale'
 
@@ -168,6 +171,18 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 
+<<<<<<< HEAD
+=======
+" let g:fzf_layout = {
+"   \ 'window': {
+"   \   'width': 0.7,
+"   \   'height': 0.6,
+"   \   'border': 'sharp',
+"   \   'highlight': 'VertSplit'
+"   \ }
+"   \ }
+
+>>>>>>> 441e350ba70dcc2a9827a7c2a3ed4472a26622f5
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
@@ -414,7 +429,7 @@ set nocursorcolumn
 set foldcolumn=0
 set signcolumn=yes
 set synmaxcol=200
-let loaded_matchparen = 1
+" let loaded_matchparen = 1
 
 " splits
 set splitright                  " Splitting will put the new window right
@@ -496,8 +511,8 @@ nmap <leader>8 <Plug>BufTabLine.Go(8)
 nmap <leader>9 <Plug>BufTabLine.Go(9)
 nmap <leader>0 <Plug>BufTabLine.Go(10)
 
-nnoremap <C-n> :bnext<CR>
-nnoremap <C-p> :bprev<CR>
+" nnoremap <C-n> :bnext<CR>
+" nnoremap <C-p> :bprev<CR>
 
 " create a new buffer 
 nnoremap <leader>B :enew<cr>

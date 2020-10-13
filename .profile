@@ -20,7 +20,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 export TERMINAL=kitty
 export PAGER=nvimpager
-export GIT_PAGER=delta
+# export GIT_PAGER=less
 
 export FZF_DEFAULT_OPTS="--color bw"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
