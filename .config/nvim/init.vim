@@ -422,7 +422,7 @@ set nocursorcolumn
 set foldcolumn=0
 set signcolumn=yes
 set synmaxcol=200
-let loaded_matchparen = 1
+" let loaded_matchparen = 1
 
 " splits
 set splitright                  " Splitting will put the new window right
