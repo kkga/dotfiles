@@ -2,7 +2,6 @@
 "
 
 " PLUGINS {{{
-
 call plug#begin('~/.config/nvim/plugged')
 
 " utils
@@ -79,7 +78,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'sheerun/vim-polyglot'
 Plug 'habamax/vim-godot'
 Plug 'rust-lang/rust.vim'
-" Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter'
+
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-lua/telescope.nvim'
 
 call plug#end()
 "}}}
@@ -88,6 +91,9 @@ call plug#end()
 let g:sleuth_automatic = 1
 let g:sneak#s_next = 1
 
+" telescope {{{
+nnoremap <Leader>t <cmd>lua require'telescope.builtin'.git_files{}<CR>
+" }}}
 " buftabline {{{
 let g:buftabline_show = 1
 let g:buftabline_numbers = 2
@@ -343,27 +349,27 @@ let g:rustfmt_autosave = 1
 let g:rust_fold = 2
 " }}}
 " treesitter {{{
-" lua <<EOF
-" require'nvim-treesitter.configs'.setup {
-"   ensure_installed = "all",     -- one of "all", "language", or a list of languages
-"   highlight = {
-"     enable = true,              -- false will disable the whole extension
-"   },
-"   refactor = {
-"     highlight_definitions = { enable = true },
-"     -- highlight_current_scope = { enable = true },
-"     navigation = {
-"       enable = true,
-"       keymaps = {
-"         goto_definition = "gnd",
-"         list_definitions = "gnD",
-"         goto_next_usage = "<a-*>",
-"         goto_previous_usage = "<a-#>",
-"       },
-"     },
-"   },
-" }
-" EOF
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "all",     -- one of "all", "language", or a list of languages
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+  },
+  refactor = {
+    highlight_definitions = { enable = true },
+    -- highlight_current_scope = { enable = true },
+    navigation = {
+      enable = true,
+      keymaps = {
+        goto_definition = "gnd",
+        list_definitions = "gnD",
+        goto_next_usage = "<a-*>",
+        goto_previous_usage = "<a-#>",
+      },
+    },
+  },
+}
+EOF
 " }}}
 
 " }}}
@@ -395,13 +401,14 @@ set nospell
 set mouse=a
 
 " text, tabs and indents
-" set expandtab                   " Tabs are spaces
-" set softtabstop=4               " # of spaces in tab when editing
-" set tabstop=4                   " # of spaces that a tab counts for
-set shiftwidth=4                " # of spaces to use for autoindent
-set linebreak                   " Wrap lines when convenient
-set nowrap                      " Wrap lines
-set autoindent                  " Minimal automatic indenting for any filetype
+set expandtab                   
+set smartindent                 
+set softtabstop=4               
+set tabstop=4                   
+set shiftwidth=4                
+set linebreak                   
+set nowrap                      
+set autoindent                  
 set list
 set listchars=tab:\|-,extends:»,precedes:«,space:.
 
@@ -413,7 +420,7 @@ set nocursorcolumn
 set foldcolumn=0
 set signcolumn=yes
 set synmaxcol=200
-" let loaded_matchparen = 1
+set colorcolumn=80
 
 " splits
 set splitright                  " Splitting will put the new window right

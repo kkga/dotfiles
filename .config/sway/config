@@ -33,15 +33,15 @@ set $ws5 5
 set $ws6 6
 
 # Colors {{{1
-# set $color_white  #FFFFFF
-# set $color_gray #777777
-# set $color_accent #216609
-# set $color_black #000000
+set $color_white  #FFFFFF
+set $color_gray #000000
+set $color_accent #AF00AF
+set $color_black #000000
 
 # Colors                  border                 background             text                   indicator            child_border
-# client.focused            $color_white  	 $color_black     	$color_black   	       $color_accent        $color_accent
-# client.focused_inactive   $color_black           $color_black           $color_black           $color_accent        $color_gray
-# client.unfocused          $color_black 		 $color_black           $color_black           $color_accent        $color_gray
+client.focused            $color_white  	 $color_white     	$color_black   	       $color_accent        $color_white
+client.focused_inactive   $color_black           $color_black           $color_white           $color_black         $color_gray
+client.unfocused          $color_black 		 $color_black           $color_white           $color_accent        $color_gray
 # client.urgent             $color_bright_yellow   $color_bright_yellow   $color_normal_black    $color_unused        $color_unused
 # client.placeholder        $color_unused          $color_unused          $color_unused          $color_unused        $color_unused
 
@@ -49,7 +49,7 @@ set $ws6 6
 for_window 	[app_id="firefox"] 	move container to workspace number $ws1
 
 # Outputs {{{1
-output * bg "#000000" solid_color
+output * bg "#333333" solid_color
 output * adaptive_sync on
 output * dpms on
 output DP-1 pos 0 0 scale 2 res 3840x2160 
@@ -71,7 +71,8 @@ input "type:keyboard" repeat_delay 300
 input "type:keyboard" repeat_rate 30
 
 input "type:pointer" {
-    accel_profile adaptive
+    accel_profile flat
+    # pointer_accel 0.5
     natural_scroll disabled
     scroll_factor 1
 }
@@ -79,11 +80,11 @@ input "type:pointer" {
 seat seat0 hide_cursor 5000
 
 # Settings {{{1
-font pango:monospace 10
+font pango:monospace 9
 default_border pixel 2
 smart_borders on
 smart_gaps on
-gaps inner 0
+gaps inner 8
 gaps outer 0
 hide_edge_borders --i3 none
 focus_wrapping yes
