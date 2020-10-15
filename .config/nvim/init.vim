@@ -79,109 +79,108 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'sheerun/vim-polyglot'
 Plug 'habamax/vim-godot'
 Plug 'rust-lang/rust.vim'
-" Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter'
 
 call plug#end()
 "}}}
+" SETTINGS {{{
+
+filetype plugin indent on       " no idea
+syntax on
+set termguicolors
+set t_Co=256
+colorscheme shirotelin
+
+" various
+set encoding=utf8               " Set UTF-8 encoding
+set backspace=indent,eol,start  " Proper backspace behavior
+set hidden                      " Possibility to have more than one unsaved buffers
+set autoread                    " Reload files changed outside vim
+set incsearch                   " Incremental search, hit CR to stop
+set ignorecase                  " Ignore case when searching
+set lazyredraw                  " Don't redraw during macros
+set ruler                       " Shows the current line number at the bottom-right of the screen
+set wildmenu                    " Great command-line completion, use `<Tab>` to move aet wraound and CR to validate
+set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.o,.git,tmp,node_modules,*.pyc
+set backspace=indent,eol,start  " Allow backspace in insert mode
+set ttimeoutlen=2               " Exit insert/visual mode without ESC delay
+set inccommand=split            " Highlight search results and show in preview split
+set conceallevel=0              " Conceals markdown syntax
+set foldlevel=6
+set nospell
+set mouse=a
+
+" text, tabs and indents
+" set expandtab                   " Tabs are spaces
+" set softtabstop=4               " # of spaces in tab when editing
+" set tabstop=4                   " # of spaces that a tab counts for
+set shiftwidth=4                " # of spaces to use for autoindent
+set linebreak                   " Wrap lines when convenient
+set nowrap                      " Wrap lines
+set autoindent                  " Minimal automatic indenting for any filetype
+set list
+set listchars=tab:\|-,extends:»,precedes:«,space:.
+
+" lines and numbers
+set nonumber                      
+set norelativenumber             
+set nocursorline                
+set nocursorcolumn
+set colorcolumn=80
+set foldcolumn=0
+set signcolumn=yes
+set synmaxcol=200
+
+" splits
+set splitright                  " Splitting will put the new window right
+set splitbelow                  " Splitting will put the new window below
+
+" columns
+set nojoinspaces                " Set 1 space btwn lines/periods to be joined
+
+" scrollin
+set scrolloff=8               " Working line will always be in the center
+
+" fish doesn't always play nice in vim
+if &shell =~# 'fish$'
+  set shell=/bin/bash
+endif
+
+" disable backups and swap
+set nobackup
+set nowb
+set noswapfile
+
+" undo
+set undodir=$HOME/.vim/undodir  " Set persistent undodir path
+set undofile                    " Write changes to the undofile
+set undolevels=1000             " Max # of changes that can be undone
+set undoreload=10000            " Max # of lines to save for undo on buf reload
+
+" statusline
+function! StatusDiagnostic() abort
+  let info = get(b:, 'coc_diagnostic_info', {})
+  if empty(info) | return '' | endif
+  let msgs = []
+  if get(info, 'error', 0)
+    call add(msgs, 'E' . info['error'])
+  endif
+  if get(info, 'warning', 0)
+    call add(msgs, 'W' . info['warning'])
+  endif
+  return join(msgs, ' '). ' ' . get(g:, 'coc_status', '')
+endfunction
+
+set statusline=%<\ %f\ %m%r
+set statusline+=%{&paste?'\ \ \|\ PASTE\ ':'\ '}
+set statusline+=%=%{StatusDiagnostic()}\ %{fugitive#statusline()}\ [%{&filetype}]\ %3l/%3L\ (%2c\)\ 
+
+" }}}
 " PLUGIN SETTINGS {{{
 
 let g:sleuth_automatic = 1
 let g:sneak#s_next = 1
 
-" buftabline {{{
-let g:buftabline_show = 1
-let g:buftabline_numbers = 2
-let g:buftabline_indicators = 1
-let g:buftabline_separators = 0
-
-hi link BufTabLine TabLine
-" hi link BufTabLineActive
-" BufTabLineHidden
-" BufTabLineFill
-
-" }}}
-" ale {{{
-let g:ale_disable_lsp = 1
-let g:ale_linters = {'rust': ['analyzer', 'cargo', 'rls']}
-" }}}
-" nvim-lsp {{{
-" lua << EOF
-" local on_attach_vim = function(client)
-"   require'completion'.on_attach(client)
-"   require'diagnostic'.on_attach(client)
-" end
-" require'nvim_lsp'.gdscript.setup{on_attach=on_attach_vim}
-" EOF
-
-" autocmd BufEnter * lua require'completion'.on_attach()
-" let g:diagnostic_enable_virtual_text = 1
-" let g:completion_chain_complete_list = [
-"     \{'complete_items': ['lsp', 'snippet']},
-"     \{'mode': '<c-p>'},
-"     \{'mode': '<c-n>'}
-" \]
-" let g:completion_auto_change_source = 1
-
-" Use <Tab> and <S-Tab> to navigate through popup menu
-" inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-
-" Set completeopt to have a better completion experience
-" set completeopt=menuone,noinsert,noselect
-
-" Avoid showing message extra message when using completion
-" set shortmess+=c
-" }}}
-" solarized8 {{{
-" let g:solarized_visibility = "low"
-" let g:solarized_diffmode = "normal"
-" let g:solarized_termtrans = 1
-" let g:solarized_statusline = "flat"
-" let g:solarized_use16 = 1
-" let g:solarized_extra_hi_groups = 1
-" }}}
-" markdown {{{
-let g:vim_markdown_conceal = 1
-let g:vim_markdown_conceal_code_blocks = 0
-let g:vim_markdown_math = 1
-let g:vim_markdown_toml_frontmatter = 1
-let g:vim_markdown_frontmatter = 1
-let g:vim_markdown_strikethrough = 1
-let g:vim_markdown_autowrite = 1
-let g:vim_markdown_edit_url_in = 'tab'
-let g:vim_markdown_follow_anchor = 1
-let g:vim_markdown_folding_style_pythonic = 1
-let g:vim_markdown_folding_level = 6
-let g:vim_markdown_toc_autofit = 1
-
-let g:previm_open_cmd = 'open -a Min'
-" }}}
-" todo-txt {{{
-let g:Todo_txt_prefix_creation_date=1
-let g:Todo_fold_char='+'
-" }}}
-" fzf {{{
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-s': 'split',
-  \ 'ctrl-v': 'vsplit' }
-let g:fzf_history_dir = '~/.local/share/fzf-history'
-
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
-" }}}
 " coc {{{
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
@@ -215,11 +214,11 @@ endif
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
 " <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
-" if exists('*complete_info')
-"   inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
-" else
-"   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-" endif
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
@@ -338,6 +337,104 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " }}}
+" nvim-lsp {{{
+" lua << EOF
+" local on_attach_vim = function(client)
+"   require'completion'.on_attach(client)
+"   require'diagnostic'.on_attach(client)
+" end
+" require'nvim_lsp'.gdscript.setup{on_attach=on_attach_vim}
+" EOF
+
+" nnoremap <silent> <leader>d <cmd>lua vim.lsp.buf.hover()<CR>
+
+" " diagnostics
+" let g:diagnostic_enable_virtual_text = 0
+" call sign_define("LspDiagnosticsErrorSign", {"text" : ">>", "texthl" : "LspDiagnosticsError"})
+" call sign_define("LspDiagnosticsWarningSign", {"text" : "--", "texthl" : "LspDiagnosticsWarning"})
+" call sign_define("LspDiagnosticsInformationSign", {"text" : "-I", "texthl" : "LspDiagnosticsInformation"})
+" call sign_define("LspDiagnosticsHintSign", {"text" : "-H", "texthl" : "LspDiagnosticsHint"})
+
+" " completion
+" autocmd BufEnter * lua require'completion'.on_attach()
+" let g:completion_chain_complete_list = [
+"     \{'complete_items': ['lsp', 'snippet']},
+"     \{'mode': '<c-p>'},
+"     \{'mode': '<c-n>'}
+" \]
+" let g:completion_auto_change_source = 1
+" let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
+" inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+" set completeopt=menuone,noinsert,noselect
+" set shortmess+=c
+" }}}
+" buftabline {{{
+let g:buftabline_show = 1
+let g:buftabline_numbers = 2
+let g:buftabline_indicators = 1
+let g:buftabline_separators = 0
+
+hi link BufTabLine TabLine
+" hi link BufTabLineActive
+" BufTabLineHidden
+" BufTabLineFill
+
+" }}}
+" ale {{{
+let g:ale_disable_lsp = 1
+let g:ale_linters = {'rust': ['analyzer', 'cargo', 'rls']}
+" }}}
+" solarized8 {{{
+" let g:solarized_visibility = "low"
+" let g:solarized_diffmode = "normal"
+" let g:solarized_termtrans = 1
+" let g:solarized_statusline = "flat"
+" let g:solarized_use16 = 1
+" let g:solarized_extra_hi_groups = 1
+" }}}
+" markdown {{{
+let g:vim_markdown_conceal = 1
+let g:vim_markdown_conceal_code_blocks = 0
+let g:vim_markdown_math = 1
+let g:vim_markdown_toml_frontmatter = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_strikethrough = 1
+let g:vim_markdown_autowrite = 1
+let g:vim_markdown_edit_url_in = 'tab'
+let g:vim_markdown_follow_anchor = 1
+let g:vim_markdown_folding_style_pythonic = 1
+let g:vim_markdown_folding_level = 6
+let g:vim_markdown_toc_autofit = 1
+
+let g:previm_open_cmd = 'open -a Min'
+" }}}
+" todo-txt {{{
+let g:Todo_txt_prefix_creation_date=1
+let g:Todo_fold_char='+'
+" }}}
+" fzf {{{
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit' }
+let g:fzf_history_dir = '~/.local/share/fzf-history'
+
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+" }}}
 " rust {{{
 let g:rustfmt_autosave = 1
 let g:rust_fold = 2
@@ -365,99 +462,9 @@ let g:rust_fold = 2
 " }
 " EOF
 " }}}
-
+" colortemplate {{{
+let g:colortemplate_toolbar = 0
 " }}}
-" SETTINGS {{{
-
-filetype plugin indent on       " no idea
-syntax on
-set termguicolors
-set t_Co=256
-colorscheme shirotelin
-
-" various
-set encoding=utf8               " Set UTF-8 encoding
-set backspace=indent,eol,start  " Proper backspace behavior
-set hidden                      " Possibility to have more than one unsaved buffers
-set autoread                    " Reload files changed outside vim
-set incsearch                   " Incremental search, hit CR to stop
-set ignorecase                  " Ignore case when searching
-set lazyredraw                  " Don't redraw during macros
-set ruler                       " Shows the current line number at the bottom-right of the screen
-set wildmenu                    " Great command-line completion, use `<Tab>` to move aet wraound and CR to validate
-set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.o,.git,tmp,node_modules,*.pyc
-set backspace=indent,eol,start  " Allow backspace in insert mode
-set ttimeoutlen=2               " Exit insert/visual mode without ESC delay
-set inccommand=split            " Highlight search results and show in preview split
-set conceallevel=0              " Conceals markdown syntax
-set foldlevel=6
-set nospell
-set mouse=a
-
-" text, tabs and indents
-" set expandtab                   " Tabs are spaces
-" set softtabstop=4               " # of spaces in tab when editing
-" set tabstop=4                   " # of spaces that a tab counts for
-set shiftwidth=4                " # of spaces to use for autoindent
-set linebreak                   " Wrap lines when convenient
-set nowrap                      " Wrap lines
-set autoindent                  " Minimal automatic indenting for any filetype
-set list
-set listchars=tab:\|-,extends:»,precedes:«,space:.
-
-" lines and numbers
-set nonumber                      
-set norelativenumber             
-set nocursorline                
-set nocursorcolumn
-set colorcolumn=80
-set foldcolumn=0
-set signcolumn=yes
-set synmaxcol=200
-
-" splits
-set splitright                  " Splitting will put the new window right
-set splitbelow                  " Splitting will put the new window below
-
-" columns
-set nojoinspaces                " Set 1 space btwn lines/periods to be joined
-
-" scrollin
-set scrolloff=8               " Working line will always be in the center
-
-" fish doesn't always play nice in vim
-if &shell =~# 'fish$'
-  set shell=/bin/bash
-endif
-
-" disable backups and swap
-set nobackup
-set nowb
-set noswapfile
-
-" undo
-set undodir=$HOME/.vim/undodir  " Set persistent undodir path
-set undofile                    " Write changes to the undofile
-set undolevels=1000             " Max # of changes that can be undone
-set undoreload=10000            " Max # of lines to save for undo on buf reload
-
-" statusline
-function! StatusDiagnostic() abort
-  let info = get(b:, 'coc_diagnostic_info', {})
-  if empty(info) | return '' | endif
-  let msgs = []
-  if get(info, 'error', 0)
-    call add(msgs, 'E' . info['error'])
-  endif
-  if get(info, 'warning', 0)
-    call add(msgs, 'W' . info['warning'])
-  endif
-  return join(msgs, ' '). ' ' . get(g:, 'coc_status', '')
-endfunction
-
-set statusline=%<\ %f\ %m%r
-set statusline+=%{&paste?'\ \ \|\ PASTE\ ':'\ '}
-set statusline+=%=%{StatusDiagnostic()}\ %{fugitive#statusline()}\ [%{&filetype}]\ %3l/%3L\ (%2c\)\ 
 
 " }}}
 " MAPPINGS {{{

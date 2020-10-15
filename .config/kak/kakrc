@@ -5,9 +5,6 @@ plug "caksoylar/kakoune-mysticaltutor" theme %{ colorscheme mysticaltutor }
 plug "Skytrias/gdscript-kak"
 plug "andreyorst/fzf.kak"
 
-eval %sh{kak-lsp --kakoune -s $kak_session}
-lsp-enable
-
 map global normal <c-p> ': fzf-mode<ret>'
 
 hook global InsertChar j %{ try %{
@@ -24,3 +21,7 @@ hook global InsertChar j %{ try %{
 # ───────────────
  
 map global user n ':e ~/notes/'
+
+eval %sh{kak-lsp --kakoune -s $kak_session}
+lsp-enable
+
