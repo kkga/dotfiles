@@ -92,7 +92,7 @@ let g:sleuth_automatic = 1
 let g:sneak#s_next = 1
 
 " telescope {{{
-nnoremap <Leader>t <cmd>lua require'telescope.builtin'.git_files{}<CR>
+nnoremap <Leader>t <cmd>lua require'telescope.builtin'.git_files(require('telescope.themes').get_dropdown({}))<CR>
 " }}}
 " buftabline {{{
 let g:buftabline_show = 1
@@ -417,6 +417,7 @@ set nonumber
 set norelativenumber             
 set nocursorline                
 set nocursorcolumn
+set colorcolumn=80
 set foldcolumn=0
 set signcolumn=yes
 set synmaxcol=200
@@ -484,7 +485,8 @@ vnoremap <c-k> :m '<-2<CR>gv=gv
 inoremap jj <esc>
 
 " fzf mappings
-nnoremap <leader>ff :Files<CR>
+nnoremap <leader>ff :GitFiles<CR>
+nnoremap <leader>fF :Files<CR>
 nnoremap <leader>fg :Rg<CR>
 nnoremap <leader>fb :Buffers<CR>
 nnoremap <leader>fl :BLines<CR>
@@ -502,8 +504,8 @@ nmap <leader>8 <Plug>BufTabLine.Go(8)
 nmap <leader>9 <Plug>BufTabLine.Go(9)
 nmap <leader>0 <Plug>BufTabLine.Go(10)
 
-" nnoremap <C-n> :bnext<CR>
-" nnoremap <C-p> :bprev<CR>
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-p> :bprev<CR>
 
 " create a new buffer 
 nnoremap <leader>B :enew<cr>
@@ -568,10 +570,10 @@ vnoremap K {
 " inoremap <C-l> <Right>
 
 " use arrows to resize panes in normal mode
-nnoremap <Left> :vertical resize -1<CR>
-nnoremap <Right> :vertical resize +1<CR>
-nnoremap <Up> :resize -1<CR>
-nnoremap <Down> :resize +1<CR>
+nnoremap <Left> :vertical resize -8<CR>
+nnoremap <Right> :vertical resize +8<CR>
+nnoremap <Up> :resize -8<CR>
+nnoremap <Down> :resize +8<CR>
 
 " highlight last inserted text
 nnoremap gV `[v`]<Paste>
