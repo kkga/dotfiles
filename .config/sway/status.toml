@@ -2,15 +2,15 @@
 name = "plain"
 
 [theme.overrides]
-idle_bg = "#222222"
-warning_bg = "#222222"
-critical_bg = "#222222"
-good_bg = "#222222"
-info_bg = "#222222"
+idle_bg = "#000000"
+warning_bg = "#000000"
+critical_bg = "#000000"
+good_bg = "#000000"
+info_bg = "#000000"
 idle_fg = "#999999"
 info_fg = "#999999"
 good_fg = "#999999"
-separator_bg = "#222222"
+separator_bg = "#000000"
 separator_fg = "#777777"
 separator = "┊"
 
@@ -42,8 +42,8 @@ device_format = "{typename} {ap} {ips}"
 # [[block]]
 # block = "uptime"
 
-[[block]]
-block = "sound"
+# [[block]]
+# block = "sound"
 
 # [[block]]
 # block = "keyboard_layout"

@@ -12,5 +12,6 @@
             "port": 6008
         }
     },
-    "rust-analyzer.checkOnSave.command": "clippy"
+    "rust-analyzer.checkOnSave.command": "clippy",
+    "coc.preferences.extensionUpdateCheck": "never"
 }

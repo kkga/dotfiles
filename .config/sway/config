@@ -199,6 +199,7 @@ bar {
     swaybar_command waybar
     # position top
     # tray_output all
+    # font pango:monospace 9
 
     # status_command i3status-rs ~/.config/sway/status.toml
 
