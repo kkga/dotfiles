@@ -1,4 +1,4 @@
-=marker:foldlevel=0
+" vim:foldmethod=marker:foldlevel=0
 "
 
 " PLUGINS {{{
@@ -65,8 +65,6 @@ Plug 'habamax/vim-godot'
 Plug 'rust-lang/rust.vim'
 Plug 'nvim-treesitter/nvim-treesitter'
 
-Plug 'ThePrimeagen/vim-be-good'
- 
 call plug#end()
 "}}}
 " SETTINGS {{{
