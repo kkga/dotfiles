@@ -1,4 +1,5 @@
 #!/bin/sh
+xrdb -merge $HOME/.Xresources &
 
 # start gnome-keyring
 # for auto-unlocking ssh on login: https://wiki.archlinux.org/index.php/GNOME/Keyring#PAM_method
@@ -7,8 +8,7 @@ export SSH_AUTH_SOCK
 
 /usr/libexec/polkit-gnome-authentication-agent-1 &
 $HOME/.config/screenlayout/displays.sh &
-xrdb -merge $HOME/.Xresources &
-$HOME/.config/dwm-bar/dwm_bar.sh &
+$HOME/repos/dwm-bar/dwm_bar.sh &
 sxhkd &
 dunst &
 clipmenud &

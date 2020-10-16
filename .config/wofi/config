@@ -1,0 +1,5 @@
+width=640
+allow_images=true
+matching=contains
+insensitive=true
+gtk_dark=true
