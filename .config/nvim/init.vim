@@ -9,7 +9,6 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-eunuch'
@@ -19,7 +18,6 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'junegunn/vim-peekaboo'
 Plug 'mbbill/undotree'
 Plug 'nelstrom/vim-visual-star-search'
-Plug 'lifepillar/vim-cheat40'
 Plug 'justinmk/vim-sneak'
 Plug 'rhysd/clever-f.vim'
 Plug 'ap/vim-buftabline'
@@ -28,22 +26,13 @@ Plug 'airblade/vim-rooter'
 Plug 'junegunn/vim-easy-align'
 Plug 'mhinz/vim-startify'
 Plug 'cohama/lexima.vim'
-Plug 'airblade/vim-rooter'
 
 " themes
 Plug 'romainl/Apprentice'
 Plug 'lifepillar/vim-colortemplate'
-Plug 'lifepillar/vim-solarized8'
 Plug 'https://gitlab.com/yorickpeterse/vim-paper.git'
-Plug 'https://gitlab.com/yorickpeterse/happy_hacking.vim.git'
 Plug 'yasukotelin/shirotelin'
 
-" markdown and note-taking
-Plug 'plasticboy/vim-markdown'
-Plug 'previm/previm/'
-Plug 'cweagans/vim-taskpaper'
-Plug 'https://gitlab.com/dbeniamine/todo.txt-vim'
-
 " snippets
 Plug 'hrsh7th/vim-vsnip'
 Plug 'hrsh7th/vim-vsnip-integ'
@@ -54,11 +43,7 @@ Plug 'previm/previm/'
 Plug 'cweagans/vim-taskpaper'
 Plug 'https://gitlab.com/dbeniamine/todo.txt-vim'
 
-" snippets
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
-
-" file browsing
+" searching
 Plug 'justinmk/vim-dirvish'
 Plug 'dyng/ctrlsf.vim'
 Plug '/usr/local/opt/fzf'
@@ -81,6 +66,8 @@ Plug 'habamax/vim-godot'
 Plug 'rust-lang/rust.vim'
 Plug 'nvim-treesitter/nvim-treesitter'
 
+Plug 'ThePrimeagen/vim-be-good'
+ 
 call plug#end()
 "}}}
 " SETTINGS {{{
@@ -406,6 +393,7 @@ let g:vim_markdown_follow_anchor = 1
 let g:vim_markdown_folding_style_pythonic = 1
 let g:vim_markdown_folding_level = 6
 let g:vim_markdown_toc_autofit = 1
+let g:vim_markdown_new_list_item_indent = 0
 
 let g:previm_open_cmd = 'open -a Min'
 " }}}
@@ -419,7 +407,7 @@ let g:fzf_action = {
   \ 'ctrl-s': 'split',
   \ 'ctrl-v': 'vsplit' }
 let g:fzf_history_dir = '~/.local/share/fzf-history'
-
+" let g:fzf_layout = { 'down': '40%' }
 let g:fzf_colors =
 \ { 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
@@ -486,6 +474,7 @@ inoremap jj <esc>
 " fzf mappings
 nnoremap <leader>ff :GitFiles<CR>
 nnoremap <leader>fF :Files<CR>
+nnoremap <leader>fh :History<CR>
 nnoremap <leader>fg :Rg<CR>
 nnoremap <leader>fb :Buffers<CR>
 nnoremap <leader>fl :BLines<CR>
