@@ -14,7 +14,7 @@
         "format": "{}"
     },
     "idle_inhibitor": {
-        "format": "ih: {icon}",
+        "format": "ih {icon}",
         "format-icons": {
             "activated": "ON",
             "deactivated": "off"
@@ -33,7 +33,7 @@
     },
     "temperature#cpu": {
         "hwmon-path": "/sys/class/hwmon/hwmon3/temp2_input",
-        "critical-threshold": 65,
+        "critical-threshold": 80,
         "format": "Tcpu {temperatureC}°C"
     }, 
     "temperature#gpu": {
@@ -47,7 +47,7 @@
         "interval": 10
     },
     "network": {
-        "format-wifi": "{essid} ({signalStrength}%) ↑{bandwidthUpBits} ↓{bandwidthDownBits}",
+        "format-wifi": "net {essid} ({signalStrength}%)",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr}",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected",
