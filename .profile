@@ -39,7 +39,7 @@ if [[ "$(uname)" == "Linux" ]]; then
     # export GDK_DPI_SCALE=0.5
     export MANGOHUD=1
     export ENABLE_VKBASALT=1
-
+    export RADV_PERFTEST=aco
 
     # If running from tty1 start sway
     # if [ "$(tty)" = "/dev/tty1" ]; then

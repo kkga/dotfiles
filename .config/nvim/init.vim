@@ -129,7 +129,7 @@ set nonumber
 set norelativenumber             
 set nocursorline                
 set nocursorcolumn
-set colorcolumn=80
+set colorcolumn=100
 set foldcolumn=0
 set signcolumn=yes
 set synmaxcol=200
