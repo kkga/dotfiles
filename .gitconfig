@@ -4,7 +4,7 @@
 [core]
 	excludesfile = /Users/kkga/.gitignore
 	editor = nvim
-	pager = delta
+	; pager = delta
 [alias]
 	a = add
 	c = commit
