@@ -8,6 +8,7 @@ alias xbdump 'rm ~/void-pkglist.txt; xpkg -m >> ~/void-pkglist.txt'
 alias xbli 'xpkg -m | fzf --preview "xbps-query -vR {}"'
 
 abbr gs 'git status'
+abbr gc 'git checkout'
 abbr gps 'git push'
 abbr gpl 'git pull'
 abbr gl 'git log'
@@ -19,6 +20,9 @@ abbr xi 'doas xbps-install'
 abbr xr 'doas xbps-remove'
 abbr xup 'doas xbps-install -Suv'
 abbr xcl 'doas xbps-remove -Oo'
+
+set lucid_dirty_indicator '*'
+set lucid_clean_indicator ' '
 
 set fish_greeting
 set fish_color_command normal --bold
