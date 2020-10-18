@@ -17,7 +17,7 @@ abbr gdt 'git difftool'
 abbr xq 'xbps-query'
 abbr xi 'doas xbps-install'
 abbr xr 'doas xbps-remove'
-abbr xup 'doas xbps-install -Syu'
+abbr xup 'doas xbps-install -Suv'
 abbr xcl 'doas xbps-remove -Oo'
 
 set fish_greeting
