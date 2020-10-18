@@ -4,10 +4,9 @@ x-scheme-handler/http=firefox.desktop
 x-scheme-handler/https=firefox.desktop
 x-scheme-handler/about=firefox.desktop
 x-scheme-handler/unknown=firefox.desktop
-inode/directory=pcmanfm.desktop
 application/pdf=org.pwmt.zathura.desktop
 
 [Added Associations]
-image/jpeg=feh.desktop;gimp.desktop;
+image/jpeg=imv.desktop;gimp.desktop;
 audio/flac=mpv.desktop;org.xfce.Parole.desktop;
 font/ttf=org.gnome.FontViewer.desktop;
