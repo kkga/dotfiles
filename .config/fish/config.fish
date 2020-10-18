@@ -4,8 +4,21 @@ alias gg 'lazygit'
 alias hg 'kitty +kitten hyperlinked_grep'
 alias d 'kitty +kitten diff'
 
-alias xbdump 'xpkg -m >> ~/void-pkglist.txt'
+alias xbdump 'rm ~/void-pkglist.txt; xpkg -m >> ~/void-pkglist.txt'
 alias xbli 'xpkg -m | fzf --preview "xbps-query -vR {}"'
+
+abbr gs 'git status'
+abbr gps 'git push'
+abbr gpl 'git pull'
+abbr gl 'git log'
+abbr gd 'git diff'
+abbr gdt 'git difftool'
+
+abbr xq 'xbps-query'
+abbr xi 'doas xbps-install'
+abbr xr 'doas xbps-remove'
+abbr xup 'doas xbps-install -Syu'
+abbr xcl 'doas xbps-remove -Oo'
 
 set fish_greeting
 set fish_color_command normal --bold
@@ -34,5 +47,3 @@ if not functions -q fisher
 end
 
 zoxide init fish | source
-starship init fish | source
-
