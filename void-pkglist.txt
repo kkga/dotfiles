@@ -65,6 +65,7 @@ glmark2
 gnome-keyring
 gnome-settings-daemon
 gnome-themes-extra
+gnumeric
 godot
 gparted
 grimshot
@@ -112,6 +113,7 @@ mesa-vaapi
 mesa-vdpau
 mesa-vulkan-radeon
 mesa-vulkan-radeon-32bit
+meson
 mpv
 nano
 neofetch
@@ -164,6 +166,7 @@ tealdeer
 telegram-desktop
 terminus-font
 thunar-archive-plugin
+tokei
 topgrade
 trash-cli
 tuxc
@@ -171,6 +174,7 @@ udiskie
 ufw
 vim
 vkBasalt
+vkQuake
 void-repo-multilib
 void-repo-multilib-nonfree
 void-repo-nonfree
@@ -215,6 +219,7 @@ xtools
 yad
 yadm
 youtube-dl
+yquake2
 zathura
 zathura-pdf-poppler
 zig
