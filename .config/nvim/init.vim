@@ -63,7 +63,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'sheerun/vim-polyglot'
 Plug 'habamax/vim-godot'
 Plug 'rust-lang/rust.vim'
-Plug 'nvim-treesitter/nvim-treesitter'
+" Plug 'nvim-treesitter/nvim-treesitter'
 
 call plug#end()
 "}}}
@@ -425,27 +425,27 @@ let g:rustfmt_autosave = 1
 let g:rust_fold = 2
 " }}}
 " treesitter {{{
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  ensure_installed = "all",     -- one of "all", "language", or a list of languages
-  highlight = {
-    enable = true,              -- false will disable the whole extension
-  },
-  refactor = {
-    highlight_definitions = { enable = true },
-    -- highlight_current_scope = { enable = true },
-    navigation = {
-      enable = true,
-      keymaps = {
-        goto_definition = "gnd",
-        list_definitions = "gnD",
-        goto_next_usage = "<a-*>",
-        goto_previous_usage = "<a-#>",
-      },
-    },
-  },
-}
-EOF
+" lua <<EOF
+" require'nvim-treesitter.configs'.setup {
+"   ensure_installed = "all",     -- one of "all", "language", or a list of languages
+"   highlight = {
+"     enable = true,              -- false will disable the whole extension
+"   },
+"   refactor = {
+"     highlight_definitions = { enable = true },
+"     -- highlight_current_scope = { enable = true },
+"     navigation = {
+"       enable = true,
+"       keymaps = {
+"         goto_definition = "gnd",
+"         list_definitions = "gnD",
+"         goto_next_usage = "<a-*>",
+"         goto_previous_usage = "<a-#>",
+"       },
+"     },
+"   },
+" }
+" EOF
 " }}}
 " colortemplate {{{
 let g:colortemplate_toolbar = 0
