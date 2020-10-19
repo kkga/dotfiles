@@ -1,7 +1,6 @@
 #!/bin/sh
 xrdb -merge $HOME/.Xresources &
 
-# start gnome-keyring
 # for auto-unlocking ssh on login: https://wiki.archlinux.org/index.php/GNOME/Keyring#PAM_method
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
