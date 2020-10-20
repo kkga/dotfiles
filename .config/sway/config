@@ -36,16 +36,16 @@ set $dmenu wofi -d | xargs swaymsg exec --
 # set $dmenu fuzzel -d -f monospace:size=10 -T kitty -i Papirus-Dark -b 000000ff -t ffffffff -s 777777ff -C 000000ff -B 8 -r 0 -w 64 | xargs swaymsg exec --
 set $lock 'swaylock -f -c 333333'
 
-set $ws1 1
-set $ws2 2
-set $ws3 3
-set $ws4 4
-set $ws5 5
-set $ws6 6
+set $ws1 1:Q
+set $ws2 2:W
+set $ws3 3:E
+set $ws4 4:A
+set $ws5 5:S
+set $ws6 6:D
 
 # Colors {{{1
 set $color_white  #FFFFFF
-set $color_gray #000000
+set $color_gray #555555
 set $color_accent #AF00AF
 set $color_black #000000
 
@@ -58,6 +58,7 @@ client.unfocused          $color_black 		 $color_black           $color_white   
 
 # Rules {{{1
 for_window 	[app_id="firefox"] 	move container to workspace number $ws1
+for_window      [app_id="^launcher$"]   floating enable
 
 # Outputs {{{1
 output * bg "#333333" solid_color
@@ -207,18 +208,25 @@ bindsym $mod+r mode "-- RESIZE --"
 
 # Status bar {{{1
 bar {
-    swaybar_command waybar
-    # position top
-    # tray_output all
-    # font pango:monospace 9
+    # swaybar_command waybar
+    font pango:monospace 9
+    position top
+    tray_output all
+    icon_theme Papirus-Dark
+    strip_workspace_numbers yes
 
-    # status_command i3status-rs ~/.config/sway/status.toml
+    status_command i3status-rs ~/.config/sway/status.toml
 
-    # colors {
-    #     statusline 		$color_white
-    #     background 		$color_black
-    #     inactive_workspace 	$color_black 	$color_black 	$color_gray
-    # }
+    colors {
+        statusline 		$color_gray
+        background 		$color_black
+        focused_separator       $color_accent
+        focused_workspace 	$color_gray 	$color_gray 	$color_white
+        active_workspace 	$color_black 	$color_black 	$color_white
+        inactive_workspace 	$color_black 	$color_black 	$color_gray
+        urgent_workspace 	$color_accent 	$color_accent 	$color_white
+        binding_mode    	$color_accent 	$color_accent 	$color_white
+    }
 }
 
 include /etc/sway/config.d/*

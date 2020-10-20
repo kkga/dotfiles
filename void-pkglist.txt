@@ -52,7 +52,6 @@ font-go-ttf
 font-ibm-plex-ttf
 font-spleen
 fontmanager
-foot
 fuse-exfat
 fuzzel
 fzf
@@ -62,6 +61,7 @@ geoip
 git
 github-cli
 glmark2
+glu-devel
 gnome-keyring
 gnome-settings-daemon
 gnome-themes-extra
@@ -88,8 +88,11 @@ kmon
 lazygit
 lf
 libX11-devel
+libXcursor-devel
 libXft-devel
+libXi-devel
 libXinerama-devel
+libXrandr-devel
 libappindicator
 libcanberra
 libcanberra-gtk
@@ -101,6 +104,7 @@ libconfig++-devel
 libconfig-devel
 libevdev-devel
 libressl-devel
+llvm
 lm_sensors
 lutris
 lvm2
@@ -145,6 +149,7 @@ redshift-gtk
 ripgrep
 sakura
 scdoc
+scons
 seahorse
 skim
 snapper
@@ -172,7 +177,6 @@ trash-cli
 tuxc
 udiskie
 ufw
-vim
 vkBasalt
 vkQuake
 void-repo-multilib
