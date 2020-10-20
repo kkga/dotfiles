@@ -32,7 +32,7 @@
 #set_title = false
 
 # Cleanup temporary or old files
-#cleanup = true
+cleanup = true
 
 #[git]
 #max_concurrency = 5
@@ -56,11 +56,11 @@
 #"Emacs Snapshot" = "rm -rf ~/.emacs.d/elpa.bak && cp -rl ~/.emacs.d/elpa ~/.emacs.d/elpa.bak"
 
 # Custom commands
-#[commands]
-#"Python Environment" = "~/dev/.env/bin/pip install -i https://pypi.python.org/simple -U --upgrade-strategy eager jupyter"
+[commands]
+"YADM Status" = "yadm status"
 
-#[brew]
-#greedy_cask = true
+# [brew]
+# greedy_cask = true
 
 #[linux]
 # Arguments to pass yay when updating packages
