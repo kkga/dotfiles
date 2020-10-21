@@ -51,8 +51,8 @@ set $color_black #000000
 
 # Colors                  border                 background             text                   indicator            child_border
 client.focused            $color_white  	 $color_white     	$color_black   	       $color_accent        $color_white
-client.focused_inactive   $color_black           $color_black           $color_white           $color_black         $color_gray
-client.unfocused          $color_black 		 $color_black           $color_white           $color_accent        $color_gray
+client.focused_inactive   $color_black           $color_black           $color_white           $color_black         $color_black
+client.unfocused          $color_black 		 $color_black           $color_white           $color_accent        $color_black
 # client.urgent             $color_bright_yellow   $color_bright_yellow   $color_normal_black    $color_unused        $color_unused
 # client.placeholder        $color_unused          $color_unused          $color_unused          $color_unused        $color_unused
 
@@ -63,7 +63,6 @@ for_window      [app_id="^launcher$"]   floating enable
 # Outputs {{{1
 output * bg "#333333" solid_color
 output * adaptive_sync on
-output * dpms on
 output DP-1 pos 0 0 scale 2 res 3840x2160 
 output DP-2 pos 1920 0 scale 2 res 3840x2160 
 
@@ -105,8 +104,8 @@ focus_wrapping yes
 exec swayidle -w \
          timeout 300 'swaylock -f -c 333333' \
          timeout 600 'swaymsg "output * dpms off"' \
-	 timeout 900 'loginctl suspend' \
-	 resume 'swaymsg "output * dpms on"' \
+	 # timeout 900 'loginctl suspend' \
+              resume 'swaymsg "output * dpms on"' \
          before-sleep 'swaylock -f -c 333333'
 
 # Key bindings {{{1

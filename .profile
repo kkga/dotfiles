@@ -23,10 +23,7 @@ export PAGER=nvimpager
 # export GIT_PAGER=less
 
 export FZF_DEFAULT_OPTS="--color bw"
-export STARSHIP_CONFIG=~/.config/starship/starship.toml
-export TTDL_FILENAME=$HOME/notes/todo.txt
 export BAT_THEME=ansi-light
-# export LS_COLORS="di=0;35:ln=1;34:ex=1;30"
 
 if [[ "$(uname)" == "Linux" ]]; then
     eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
@@ -35,18 +32,11 @@ if [[ "$(uname)" == "Linux" ]]; then
     export QT_WAYLAND_FORCE_DPI=physical
     export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
     export QT_AUTO_SCREEN_SCALE_FACTOR=1
-    # export GDK_SCALE=2
-    # export GDK_DPI_SCALE=0.5
     export MANGOHUD=1
     export ENABLE_VKBASALT=1
-    export RADV_PERFTEST=aco
 
     # If running from tty1 start sway
     # if [ "$(tty)" = "/dev/tty1" ]; then
     #     exec dbus-run-session sway
     # fi
-
-elif [[ "$(uname)" == "Darwin" ]]; then
-    export RESTIC_REPOSITORY="sftp:gadzhi.synology.me:/home/restic-backup"
-    export RESTIC_PASSWORD_COMMAND="security find-generic-password -s backup-restic-repository -a restic_backup -w"
 fi
