@@ -12,3 +12,4 @@ audio/flac=mpv.desktop;org.xfce.Parole.desktop;
 font/ttf=org.gnome.FontViewer.desktop;
 text/plain=nvim.desktop;
 image/gif=imv.desktop;
+image/png=imv.desktop;ristretto.desktop;

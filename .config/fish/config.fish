@@ -15,6 +15,11 @@ abbr gl 'git log'
 abbr gd 'git diff'
 abbr gdt 'git difftool'
 
+abbr xbr 'doas xbps-remove'
+abbr xbi 'doas xbps-install'
+abbr xbq 'xbps-query'
+
+
 set lucid_dirty_indicator '*'
 set lucid_clean_indicator ' '
 
