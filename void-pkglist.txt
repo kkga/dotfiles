@@ -17,6 +17,7 @@ base-system
 bash-completion
 bat
 bc
+bemenu
 blueman
 bluez
 bluez-qt5
@@ -48,10 +49,13 @@ file-roller
 firefox
 fish-shell
 flatpak
+font-b612
+font-fantasque-sans-ttf
 font-go-ttf
 font-ibm-plex-ttf
 font-spleen
 fontmanager
+foot
 fuse-exfat
 fuzzel
 fzf
@@ -133,12 +137,14 @@ octoxbps
 opendoas
 pamixer
 papirus-icon-theme
+peek
 phoronix-test-suite
 pkg-config
 polkit-gnome
 procs
 protontricks
 pulseaudio
+python3-distro
 python3-pip
 qmk
 qt5ct
@@ -177,6 +183,7 @@ trash-cli
 tuxc
 udiskie
 ufw
+uni
 vkBasalt
 vkQuake
 void-repo-multilib
