@@ -17,6 +17,7 @@ abbr gdt 'git difftool'
 
 set lucid_dirty_indicator '*'
 set lucid_clean_indicator ' '
+set lucid_prompt_symbol '⋗'
 
 set fish_greeting
 set fish_color_command normal --bold
