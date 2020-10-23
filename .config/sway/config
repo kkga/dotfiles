@@ -1,7 +1,7 @@
 # vim:foldmethod=marker:foldlevel=0
 
 # Autostart {{{1
-xwayland disable
+# xwayland disable
 exec xrdb -load ~/.Xresources
 exec mako
 exec syncthing -no-browser
@@ -23,6 +23,7 @@ exec_always {
 }
 
 # Variables {{{1
+
 set $mod Mod1
 set $modsys Mod4
 set $left h
@@ -30,10 +31,8 @@ set $down j
 set $up k
 set $right l
 set $term kitty
-set $menu dmenu_path | wofi -d | xargs swaymsg exec --
-set $dmenu wofi -d | xargs swaymsg exec --
-# set $menu fuzzel -T kitty -i Papirus-Dark -b 000000ff -t ffffffff -s 777777ff -C 000000ff -B 8 -r 0 -w 48 | xargs swaymsg exec --
-# set $dmenu fuzzel -d -f monospace:size=10 -T kitty -i Papirus-Dark -b 000000ff -t ffffffff -s 777777ff -C 000000ff -B 8 -r 0 -w 64 | xargs swaymsg exec --
+set $launcher wofi --show=drun | xargs swaymsg exec --
+set $menu wofi -d | xargs swaymsg exec --
 set $lock 'swaylock -f -c 333333'
 
 set $ws1 1:Q
@@ -45,7 +44,7 @@ set $ws6 6:D
 
 # Colors {{{1
 set $color_white  #FFFFFF
-set $color_gray #555555
+set $color_gray #777777
 set $color_accent #AF00AF
 set $color_black #000000
 
@@ -104,7 +103,7 @@ focus_wrapping yes
 exec swayidle -w \
          timeout 300 'swaylock -f -c 333333' \
          timeout 600 'swaymsg "output * dpms off"' \
-	 # timeout 900 'loginctl suspend' \
+	 timeout 900 'loginctl suspend' \
               resume 'swaymsg "output * dpms on"' \
          before-sleep 'swaylock -f -c 333333'
 
@@ -121,9 +120,9 @@ exec swayidle -w \
 
     bindsym $modsys+BackSpace reload
 
-    bindsym $modsys+Ctrl+c exec clipman pick -t STDOUT | $dmenu
+    bindsym $modsys+Ctrl+c exec clipman pick -t wofi
     bindsym $modsys+Return exec $term
-    bindsym $modsys+d exec $menu
+    bindsym $modsys+d exec $launcher
 
     bindsym $modsys+Escape exec makoctl dismiss
 
@@ -160,6 +159,7 @@ bindsym $modsys+Shift+BackSpace mode "$Pause"
 
     bindsym $mod+Ctrl+Shift+h move workspace to output left
     bindsym $mod+Ctrl+Shift+l move workspace to output right
+    bindsym $mod+Shift+tab move container to workspace back_and_forth
 
 # Workspaces {{{2
     bindsym $mod+q workspace $ws1
@@ -188,6 +188,8 @@ bindsym $modsys+Shift+BackSpace mode "$Pause"
     bindsym $mod+f fullscreen
     bindsym $mod+Shift+space floating toggle
     bindsym $mod+Escape focus mode_toggle
+    bindsym $mod+o focus parent
+    bindsym $mod+i focus child
 
 # Scratchpad {{{2
     bindsym $mod+Shift+minus move scratchpad
@@ -207,25 +209,25 @@ bindsym $mod+r mode "-- RESIZE --"
 
 # Status bar {{{1
 bar {
-    # swaybar_command waybar
-    font pango:monospace 9
-    position top
-    tray_output all
-    icon_theme Papirus-Dark
-    strip_workspace_numbers yes
+    swaybar_command waybar
+    # font pango:monospace 9
+    # position top
+    # tray_output all
+    # icon_theme Papirus-Dark
+    # strip_workspace_numbers yes
 
-    status_command i3status-rs ~/.config/sway/status.toml
+    # status_command i3status-rs ~/.config/sway/status.toml
 
-    colors {
-        statusline 		$color_gray
-        background 		$color_black
-        focused_separator       $color_accent
-        focused_workspace 	$color_gray 	$color_gray 	$color_white
-        active_workspace 	$color_black 	$color_black 	$color_white
-        inactive_workspace 	$color_black 	$color_black 	$color_gray
-        urgent_workspace 	$color_accent 	$color_accent 	$color_white
-        binding_mode    	$color_accent 	$color_accent 	$color_white
-    }
+    # colors {
+    #     statusline 		$color_gray
+    #     background 		$color_black
+    #     focused_separator       $color_accent
+    #     focused_workspace 	$color_gray 	$color_gray 	$color_white
+    #     active_workspace 	$color_black 	$color_black 	$color_white
+    #     inactive_workspace 	$color_black 	$color_black 	$color_gray
+    #     urgent_workspace 	$color_accent 	$color_accent 	$color_white
+    #     binding_mode    	$color_accent 	$color_accent 	$color_white
+    # }
 }
 
 include /etc/sway/config.d/*

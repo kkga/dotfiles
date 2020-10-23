@@ -5,6 +5,8 @@ x-scheme-handler/https=firefox.desktop
 x-scheme-handler/about=firefox.desktop
 x-scheme-handler/unknown=firefox.desktop
 application/pdf=org.pwmt.zathura.desktop
+x-scheme-handler/discord-610508934456934412=discord-610508934456934412.desktop
+inode/directory=thunar.desktop
 
 [Added Associations]
 image/jpeg=imv.desktop;gimp.desktop;
@@ -13,3 +15,4 @@ font/ttf=org.gnome.FontViewer.desktop;
 text/plain=nvim.desktop;
 image/gif=imv.desktop;
 image/png=imv.desktop;ristretto.desktop;
+inode/directory=thunar.desktop;

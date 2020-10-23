@@ -28,9 +28,6 @@
         "format": "cpu {usage:2}%",
         "tooltip": true
     },
-    "memory": {
-        "format": "{}% "
-    },
     "temperature#cpu": {
         "hwmon-path": "/sys/class/hwmon/hwmon3/temp2_input",
         "critical-threshold": 80,
