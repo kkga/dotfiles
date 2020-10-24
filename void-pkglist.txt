@@ -1,7 +1,6 @@
 CPU-X
 MangoHud
 MangoHud-32bit
-NetworkManager
 PopCorn
 SDL2-devel
 Solaar
@@ -26,6 +25,10 @@ chromium
 clipman
 clipmenu
 cmake
+cmst
+connman
+connman-gtk
+connman-ui
 corectrl
 ddcutil
 delta
@@ -72,8 +75,8 @@ grub-x86_64-efi
 gvfs
 htop
 hyperfine
-i3status-rust
 imv
+iwd
 j4-dmenu-desktop
 kakoune
 kanshi
@@ -113,7 +116,6 @@ meson
 mpv
 neofetch
 neovim
-network-manager-applet
 nfs-utils
 nodejs
 noto-fonts-ttf
@@ -147,6 +149,7 @@ seahorse
 snapper
 snooze
 sound-theme-freedesktop
+spectrwm
 speedtest-cli
 spotify
 spotify-tui
@@ -165,6 +168,7 @@ thunar-archive-plugin
 tokei
 topgrade
 trash-cli
+trayer-srg
 tuxc
 udiskie
 ufw

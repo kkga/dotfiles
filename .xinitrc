@@ -8,7 +8,7 @@ export SSH_AUTH_SOCK
 /usr/libexec/polkit-gnome-authentication-agent-1 &
 $HOME/.config/screenlayout/displays.sh &
 $HOME/repos/dwm-bar/dwm_bar.sh &
-sxhkd &
+# sxhkd &
 dunst &
 clipmenud &
 redshift -l 55:37 &
@@ -16,4 +16,4 @@ xset s 600 &
 xset r rate 200 30 &
 xsetroot -solid "#1c1c1c" &
 xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock &
-exec dbus-launch --exit-with-session dwm
+exec dbus-launch --exit-with-session spectrwm
