@@ -45,7 +45,7 @@ set $ws6 6:D
 # Colors {{{1
 set $color_white  #FFFFFF
 set $color_gray #777777
-set $color_accent #AF00AF
+set $color_accent #00FFFF
 set $color_black #000000
 
 # Colors                  border                 background             text                   indicator            child_border
@@ -94,9 +94,9 @@ font pango:monospace 9
 default_border pixel 2
 smart_borders on
 smart_gaps on
-gaps inner 8
+gaps inner 4
 gaps outer 0
-hide_edge_borders --i3 none
+hide_edge_borders --i3 smart_no_gaps
 focus_wrapping yes
 
 # Idle config {{{1
@@ -119,11 +119,9 @@ exec swayidle -w \
     bindsym Shift+XF86MonBrightnessUp exec doas ddcutil -d 2 setvcp 10 + 25 && doas ddcutil -d 2 --brief getvcp 10 | awk '{print $4}' > $SWAYSOCK.wob
 
     bindsym $modsys+BackSpace reload
-
     bindsym $modsys+Ctrl+c exec clipman pick -t wofi
     bindsym $modsys+Return exec $term
     bindsym $modsys+d exec $launcher
-
     bindsym $modsys+Escape exec makoctl dismiss
 
 set $Pause -- [L]ock -- [E]xit -- [S]uspend -- [R]eboot -- [P]oweroff --

@@ -1,7 +1,7 @@
 // vim:ft=json
 
 {
-    "height": 20, 
+    "position": "bottom",
     "modules-left": ["sway/workspaces", "sway/window"],
     "modules-center": ["sway/mode"],
     "modules-right": ["custom/xbps-updates", "idle_inhibitor", "pulseaudio", "network", "cpu", "temperature#cpu", "temperature#gpu", "custom/fan", "clock", "tray"],
@@ -31,16 +31,16 @@
     "temperature#cpu": {
         "hwmon-path": "/sys/class/hwmon/hwmon3/temp2_input",
         "critical-threshold": 80,
-        "format": "Tcpu {temperatureC}°C"
+        "format": "Tc {temperatureC}°C"
     }, 
     "temperature#gpu": {
         "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
-        "format": "Tgpu {temperatureC}°C"
+        "format": "Tg {temperatureC}°C"
     }, 
     "custom/fan": {
         "exec": "sensors | awk '/fan1/ {printf $2}'",
-        "format": "Fgpu {:3} RPM",
+        "format": "Fg {:3} RPM",
         "interval": 10
     },
     "network": {

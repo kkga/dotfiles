@@ -2,7 +2,7 @@
     border: none;
     border-radius: 0;
     font-family: monospace;
-    font-size: 9pt;
+    font-size: 10pt;
     min-height: 0;
 }
 
@@ -53,7 +53,7 @@ window#waybar {
 #idle_inhibitor,
 #mpd {
     border-left: 1px dotted #555555;
-    padding: 0 12px;
+    padding: 0 8px;
 }
 
 #temperature.critical {

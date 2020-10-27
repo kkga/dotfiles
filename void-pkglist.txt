@@ -1,4 +1,5 @@
 CPU-X
+ImageMagick
 MangoHud
 MangoHud-32bit
 PopCorn
@@ -42,6 +43,7 @@ exa
 exercism
 exfat-utils
 fd
+ffsend
 file-roller
 firefox
 fish-shell
@@ -86,6 +88,7 @@ lf
 libX11-devel
 libXcomposite-devel
 libXdamage-devel
+libXft-devel
 libXrender-devel
 libXtst-devel
 libXxf86vm-devel
@@ -127,6 +130,7 @@ opendoas
 pamixer
 pandoc
 papirus-icon-theme
+patch
 peek
 phoronix-test-suite
 pixman-devel
@@ -151,9 +155,9 @@ snooze
 sound-theme-freedesktop
 spectrwm
 speedtest-cli
-spotify
 spotify-tui
 spotifyd
+stalonetray
 steam
 sv-netmount
 sway
@@ -173,6 +177,7 @@ tuxc
 udiskie
 ufw
 uni
+viu
 vkBasalt
 void-repo-multilib
 void-repo-multilib-nonfree
@@ -193,6 +198,7 @@ wget
 wine
 wine-32bit
 winetricks
+wireless_tools
 wob
 wofi
 xcursor-themes
@@ -203,6 +209,7 @@ xdg-user-dirs-gtk
 xdg-utils
 xf86-video-amdgpu
 xfce4
+xfce4-plugins
 xfce4-pulseaudio-plugin
 xfce4-sensors-plugin
 xinit
@@ -218,5 +225,6 @@ yadm
 youtube-dl
 zathura
 zathura-pdf-poppler
+zig
 zola
 zoxide
