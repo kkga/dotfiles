@@ -20,9 +20,9 @@ export EDITOR=nvim
 export VISUAL=nvim
 export TERMINAL=kitty
 export PAGER=nvimpager
-# export GIT_PAGER=less
+export GIT_PAGER=nvimpager
 
-export FZF_DEFAULT_OPTS="--color bw"
+# export FZF_DEFAULT_OPTS="--color bw"
 export BAT_THEME=ansi-light
 
 if [[ "$(uname)" == "Linux" ]]; then

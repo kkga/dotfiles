@@ -129,6 +129,8 @@ obs
 opendoas
 pamixer
 pandoc
+pango-devel
+pango-xft
 papirus-icon-theme
 patch
 peek
