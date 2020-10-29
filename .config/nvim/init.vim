@@ -23,8 +23,9 @@ Plug 'ap/vim-buftabline'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'junegunn/vim-easy-align'
-Plug 'mhinz/vim-startify'
+" Plug 'mhinz/vim-startify'
 Plug 'cohama/lexima.vim'
+Plug 'https://github.com/mhinz/vim-sayonara'
 
 " themes
 Plug 'romainl/Apprentice'
@@ -32,6 +33,7 @@ Plug 'lifepillar/vim-colortemplate'
 Plug 'https://gitlab.com/yorickpeterse/vim-paper.git'
 Plug 'yasukotelin/shirotelin'
 Plug 'habamax/vim-habanight'
+Plug 'pacha/vem-dark'
 
 " snippets
 Plug 'hrsh7th/vim-vsnip'
@@ -48,9 +50,8 @@ Plug 'justinmk/vim-dirvish'
 Plug 'dyng/ctrlsf.vim'
 Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
 Plug 'lotabout/skim.vim'
-Plug 'https://github.com/ctrlpvim/ctrlp.vim'
-" Plug '/usr/local/opt/fzf'
-" Plug 'junegunn/fzf.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'tacahiroy/ctrlp-funky'
 
 " necessary evil
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -169,19 +170,16 @@ set statusline+=%=%{StatusDiagnostic()}\ %{fugitive#statusline()}\ [%{&filetype}
 let g:sleuth_automatic = 1
 let g:sneak#s_next = 1
 
-" CtrlP {{{
-" let g:ctrlp_map = '<leader>f'
-let g:ctrlp_user_command = 'rg %s --files --hidden --color=never --glob ""'
+" ctrlp {{{
+let g:ctrlp_map = '<leader>ff'
+let g:ctrlp_user_command = 'fd --type f --color never "" %s'
+let g:ctrlp_by_filename = 1
 let g:ctrlp_use_caching = 0
-let g:ctrlp_custom_ignore = '\v[\/]\.(tres|tscn)$'
+" let g:ctrlp_match_window = 'bottom,order:btt,min:10,max:10,results:10'
 " }}}
 " coc {{{
 
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
 set updatetime=300
-
-" Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
 " Use tab for trigger completion with characters ahead and navigate.
@@ -480,11 +478,9 @@ inoremap jj <esc>
 " fzf mappings
 nnoremap <leader>ff :CtrlP<CR>
 nnoremap <leader>fn :CtrlP ~/notes/<CR>
-" nnoremap <leader>fF :Files<CR>
-nnoremap <leader>fh :History<CR>
-nnoremap <leader>fg :Rg<CR>
-nnoremap <leader>fb :Buffers<CR>
-nnoremap <leader>fl :BLines<CR>
+nnoremap <leader>fr :CtrlPMRU<CR>
+nnoremap <leader>fb :CtrlPBuffer<CR>
+nnoremap <leader>fl :CtrlPLine<CR>
 
 " buffers
 nmap <leader>1 <Plug>BufTabLine.Go(1)
