@@ -46,8 +46,11 @@ Plug 'https://gitlab.com/dbeniamine/todo.txt-vim'
 " searching
 Plug 'justinmk/vim-dirvish'
 Plug 'dyng/ctrlsf.vim'
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
+Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
+Plug 'lotabout/skim.vim'
+Plug 'https://github.com/ctrlpvim/ctrlp.vim'
+" Plug '/usr/local/opt/fzf'
+" Plug 'junegunn/fzf.vim'
 
 " necessary evil
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -166,6 +169,12 @@ set statusline+=%=%{StatusDiagnostic()}\ %{fugitive#statusline()}\ [%{&filetype}
 let g:sleuth_automatic = 1
 let g:sneak#s_next = 1
 
+" CtrlP {{{
+" let g:ctrlp_map = '<leader>f'
+let g:ctrlp_user_command = 'rg %s --files --hidden --color=never --glob ""'
+let g:ctrlp_use_caching = 0
+let g:ctrlp_custom_ignore = '\v[\/]\.(tres|tscn)$'
+" }}}
 " coc {{{
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
@@ -406,20 +415,20 @@ let g:fzf_action = {
   \ 'ctrl-v': 'vsplit' }
 let g:fzf_history_dir = '~/.local/share/fzf-history'
 let g:fzf_layout = { 'down': '40%' }
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }
+" let g:fzf_colors =
+" \ { 'fg':      ['fg', 'Normal'],
+"   \ 'bg':      ['bg', 'Normal'],
+"   \ 'hl':      ['fg', 'Comment'],
+"   \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+"   \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+"   \ 'hl+':     ['fg', 'Statement'],
+"   \ 'info':    ['fg', 'PreProc'],
+"   \ 'border':  ['fg', 'Ignore'],
+"   \ 'prompt':  ['fg', 'Conditional'],
+"   \ 'pointer': ['fg', 'Exception'],
+"   \ 'marker':  ['fg', 'Keyword'],
+"   \ 'spinner': ['fg', 'Label'],
+"   \ 'header':  ['fg', 'Comment'] }
 " }}}
 " rust {{{
 let g:rustfmt_autosave = 1
@@ -469,13 +478,13 @@ vnoremap <c-k> :m '<-2<CR>gv=gv
 inoremap jj <esc>
 
 " fzf mappings
-nnoremap <leader>ff :GitFiles<CR>
-nnoremap <leader>fF :Files<CR>
+nnoremap <leader>ff :CtrlP<CR>
+nnoremap <leader>fn :CtrlP ~/notes/<CR>
+" nnoremap <leader>fF :Files<CR>
 nnoremap <leader>fh :History<CR>
 nnoremap <leader>fg :Rg<CR>
 nnoremap <leader>fb :Buffers<CR>
 nnoremap <leader>fl :BLines<CR>
-nnoremap <leader>fn :NoteFiles<CR>
 
 " buffers
 nmap <leader>1 <Plug>BufTabLine.Go(1)
@@ -594,6 +603,7 @@ augroup end
 " }}}
 " NOTETAKING {{{
 " https://vimways.org/2019/personal-notetaking-in-vim/
+
 func! ZettelEdit(...)
 
   " build the file name
@@ -618,7 +628,7 @@ endfunc
 command! -nargs=* Zet call ZettelEdit(<f-args>)
 
 command! -bang -nargs=? -complete=dir NoteFiles
-    \ call fzf#vim#files('$HOME/notes/', {'options': ['--info=inline', '--preview', 'bat --plain {}']}, <bang>0)
+    \ call fzf#vim#files('$HOME/notes/', {'options': ['--color', 'bw', '--preview', 'bat --plain --color=always {}']}, <bang>0)
 
 let s:notes_folder = "~/notes"
 let s:notes_fileending = ".md"
@@ -696,7 +706,7 @@ command! -nargs=* FindNotes call fzf#run({
 
 command! -bang -nargs=* FindNotesWithPreview
   \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   'rg --column -line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
   \   fzf#vim#with_preview({'dir': s:notes_folder}, 'right:50%'),
   \   0,
   \ )

@@ -5,8 +5,10 @@ MangoHud-32bit
 PopCorn
 SDL2-devel
 Solaar
+Venom
 Vulkan-Tools
 Waybar
+acpi
 adwaita-qt
 aerc
 alacritty
@@ -140,10 +142,15 @@ pkg-config
 polkit-gnome
 procs
 protontricks
+protonvpn-cli
 pulseaudio
 python3-distro
 python3-pip
 qmk
+qt-qmake
+qt5-charts-devel
+qt5-qmake
+qt5-sensors
 qt5ct
 radeon-profile
 radeon-profile-daemon
@@ -157,6 +164,7 @@ snooze
 sound-theme-freedesktop
 spectrwm
 speedtest-cli
+spotify
 spotify-tui
 spotifyd
 stalonetray
