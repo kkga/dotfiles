@@ -31,6 +31,7 @@ Plug 'romainl/Apprentice'
 Plug 'lifepillar/vim-colortemplate'
 Plug 'https://gitlab.com/yorickpeterse/vim-paper.git'
 Plug 'yasukotelin/shirotelin'
+Plug 'habamax/vim-habanight'
 
 " snippets
 Plug 'hrsh7th/vim-vsnip'
