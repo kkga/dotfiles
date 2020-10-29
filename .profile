@@ -22,8 +22,10 @@ export TERMINAL=kitty
 export PAGER=nvimpager
 export GIT_PAGER=nvimpager
 
-# export FZF_DEFAULT_OPTS="--color bw"
-export BAT_THEME=ansi-light
+export SKIM_DEFAULT_OPTIONS='--height=40% --reverse --color=bw'
+# export FZF_DEFAULT_OPTS='--height=40% --color=light --info=inline --border=horizontal'
+export BAT_THEME='ansi-light'
+export BAT_STYLE='changes,header'
 
 if [[ "$(uname)" == "Linux" ]]; then
     eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)

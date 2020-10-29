@@ -58,6 +58,7 @@ cleanup = true
 # Custom commands
 [commands]
 "YADM Status" = "yadm status"
+"XBPS Check Restart" = "xcheckrestart"
 
 # [brew]
 # greedy_cask = true
