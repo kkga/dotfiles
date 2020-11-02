@@ -1,7 +1,3 @@
-if [ -f /usr/share/defaults/etc/profile ]; then
-    source /usr/share/defaults/etc/profile
-fi
-
 export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/.scripts
