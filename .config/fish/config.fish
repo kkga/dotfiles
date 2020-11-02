@@ -1,11 +1,13 @@
+set -gx SKIM_DEFAULT_OPTIONS '--height=40% --reverse --color=light'
+
 alias vim 'nvim'
 alias ls 'exa'
+alias cat 'bat'
 alias gg 'lazygit'
 alias hg 'kitty +kitten hyperlinked_grep'
 alias d 'kitty +kitten diff'
 alias fzf 'sk'
 
-alias xbdump 'rm ~/void-pkglist.txt; xpkg -m >> ~/void-pkglist.txt'
 alias xbli 'xpkg -m | fzf --preview "xbps-query -vR {}"'
 
 abbr gs 'git status'
@@ -19,7 +21,6 @@ abbr gdt 'git difftool'
 abbr xbr 'doas xbps-remove'
 abbr xbi 'doas xbps-install'
 abbr xbq 'xbps-query'
-
 
 set lucid_dirty_indicator '*'
 set lucid_clean_indicator ' '

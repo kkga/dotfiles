@@ -172,9 +172,10 @@ let g:sneak#s_next = 1
 " ctrlp {{{
 let g:ctrlp_map = '<leader>ff'
 let g:ctrlp_user_command = 'fd --type f --color never "" %s'
+" let g:ctrlp_user_command = 'rg %s --files --sort=modified --color=never --glob ""'
 let g:ctrlp_by_filename = 1
 let g:ctrlp_use_caching = 0
-" let g:ctrlp_match_window = 'bottom,order:btt,min:10,max:10,results:10'
+" let g:ctrlp_match_window = 'bottom,order:ttp,min:10,max:10,results:40'
 " }}}
 " coc {{{
 

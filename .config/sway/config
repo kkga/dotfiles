@@ -10,14 +10,15 @@ exec wl-paste -t text --watch clipman store 1>> ~/tmp/clipman.log 2>&1
 exec wl-paste -p -t text --watch clipman store -P --histpath="~/.local/share/clipman-primary.json"
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 exec /usr/libexec/polkit-gnome-authentication-agent-1
+exec autotiling
 
 # gtk apps don't pickup user settings under sway, so I'm setting them manually here
 # https://github.com/swaywm/wlroots/pull/1324
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'Adwaita'
-    gsettings set $gnome-schema icon-theme 'Papirus-Dark'
-    gsettings set $gnome-schema cursor-theme 'Adwaita'
+    gsettings set $gnome-schema gtk-theme 'Yaru'
+    gsettings set $gnome-schema icon-theme 'Yaru'
+    gsettings set $gnome-schema cursor-theme 'Yaru'
     gsettings set $gnome-schema font-name 'sans-serif 10'
     gsettings set $gnome-schema monospace-font-name 'monospace 10'
 }
@@ -55,7 +56,8 @@ client.unfocused          $color_black 		 $color_black           $color_white   
 # client.urgent             $color_bright_yellow   $color_bright_yellow   $color_normal_black    $color_unused        $color_unused
 # client.placeholder        $color_unused          $color_unused          $color_unused          $color_unused        $color_unused
 
-# Rules {{{1
+# Rule {{{1
+# for_window      [app_id=".*"]           split toggle
 for_window 	[app_id="firefox"] 	move container to workspace number $ws1
 for_window      [app_id="^launcher$"]   floating enable
 
