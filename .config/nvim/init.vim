@@ -48,8 +48,6 @@ Plug 'https://gitlab.com/dbeniamine/todo.txt-vim'
 " searching
 Plug 'justinmk/vim-dirvish'
 Plug 'dyng/ctrlsf.vim'
-Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
-Plug 'lotabout/skim.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
 
