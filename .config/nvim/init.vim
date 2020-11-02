@@ -31,8 +31,6 @@ Plug 'romainl/Apprentice'
 Plug 'lifepillar/vim-colortemplate'
 Plug 'https://gitlab.com/yorickpeterse/vim-paper.git'
 Plug 'yasukotelin/shirotelin'
-Plug 'habamax/vim-habanight'
-Plug 'pacha/vem-dark'
 Plug 'robertmeta/nofrils'
 
 " snippets
@@ -48,8 +46,6 @@ Plug 'https://gitlab.com/dbeniamine/todo.txt-vim'
 " searching
 Plug 'justinmk/vim-dirvish'
 Plug 'dyng/ctrlsf.vim'
-Plug 'lotabout/skim', { 'dir': '~/.skim', 'do': './install' }
-Plug 'lotabout/skim.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'tacahiroy/ctrlp-funky'
 
@@ -76,8 +72,8 @@ call plug#end()
 
 filetype plugin indent on       " no idea
 syntax on
-set termguicolors
-colorscheme shirotelin
+" set termguicolors
+colorscheme apprentice
 
 " various
 set encoding=utf8               " Set UTF-8 encoding
@@ -112,8 +108,8 @@ set listchars=tab:\|-,extends:»,precedes:«,space:.
 " lines and numbers
 set nonumber                      
 set norelativenumber             
-" set nocursorline                
-" set nocursorcolumn
+set cursorline                
+set nocursorcolumn
 set colorcolumn=100
 set foldcolumn=0
 set signcolumn=yes
@@ -131,7 +127,7 @@ set scrolloff=8               " Working line will always be in the center
 
 " fish doesn't always play nice in vim
 if &shell =~# 'fish$'
-  set shell=/bin/bash
+  set shell=/bin/dash
 endif
 
 " disable backups and swap
@@ -366,12 +362,6 @@ let g:buftabline_show = 1
 let g:buftabline_numbers = 2
 let g:buftabline_indicators = 1
 let g:buftabline_separators = 0
-
-hi link BufTabLine TabLine
-" hi link BufTabLineActive
-" BufTabLineHidden
-" BufTabLineFill
-
 " }}}
 " ale {{{
 let g:ale_disable_lsp = 1
@@ -405,28 +395,6 @@ let g:previm_open_cmd = 'open -a Min'
 " todo-txt {{{
 let g:Todo_txt_prefix_creation_date=1
 let g:Todo_fold_char='+'
-" }}}
-" fzf {{{
-let g:fzf_action = {
-  \ 'ctrl-t': 'tab split',
-  \ 'ctrl-s': 'split',
-  \ 'ctrl-v': 'vsplit' }
-let g:fzf_history_dir = '~/.local/share/fzf-history'
-let g:fzf_layout = { 'down': '40%' }
-" let g:fzf_colors =
-" \ { 'fg':      ['fg', 'Normal'],
-"   \ 'bg':      ['bg', 'Normal'],
-"   \ 'hl':      ['fg', 'Comment'],
-"   \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-"   \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-"   \ 'hl+':     ['fg', 'Statement'],
-"   \ 'info':    ['fg', 'PreProc'],
-"   \ 'border':  ['fg', 'Ignore'],
-"   \ 'prompt':  ['fg', 'Conditional'],
-"   \ 'pointer': ['fg', 'Exception'],
-"   \ 'marker':  ['fg', 'Keyword'],
-"   \ 'spinner': ['fg', 'Label'],
-"   \ 'header':  ['fg', 'Comment'] }
 " }}}
 " rust {{{
 let g:rustfmt_autosave = 1
