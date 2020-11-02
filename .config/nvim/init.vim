@@ -165,6 +165,9 @@ set statusline+=%=%{StatusDiagnostic()}\ %{fugitive#statusline()}\ [%{&filetype}
 let g:sleuth_automatic = 1
 let g:sneak#s_next = 1
 
+" colorscheme {{{
+hi Normal guibg=none ctermbg=none
+" }}}
 " ctrlp {{{
 let g:ctrlp_map = '<leader>ff'
 let g:ctrlp_user_command = 'fd --type f --color never "" %s'

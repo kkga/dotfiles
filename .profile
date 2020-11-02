@@ -12,10 +12,8 @@ export EDITOR=nvim
 export VISUAL=nvim
 export TERMINAL=kitty
 export PAGER=nvimpager
-# export GIT_PAGER=nvimpager
 
 export SKIM_DEFAULT_OPTIONS='--height=40% --reverse --color=bw'
-# export FZF_DEFAULT_OPTS='--height=40% --color=light --info=inline --border=horizontal'
 export BAT_THEME='ansi-light'
 export BAT_STYLE='changes,header'
 
@@ -29,9 +27,4 @@ if [[ "$(uname)" == "Linux" ]]; then
     export MANGOHUD=1
     export ENABLE_VKBASALT=1
     export BEMENU_SCALE=2
-
-    # If running from tty1 start sway
-    # if [ "$(tty)" = "/dev/tty1" ]; then
-    #     exec dbus-run-session sway
-    # fi
 fi
