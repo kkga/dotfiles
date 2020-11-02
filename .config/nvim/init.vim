@@ -23,7 +23,6 @@ Plug 'ap/vim-buftabline'
 Plug 'airblade/vim-gitgutter'
 Plug 'airblade/vim-rooter'
 Plug 'junegunn/vim-easy-align'
-" Plug 'mhinz/vim-startify'
 Plug 'cohama/lexima.vim'
 Plug 'https://github.com/mhinz/vim-sayonara'
 
@@ -34,6 +33,7 @@ Plug 'https://gitlab.com/yorickpeterse/vim-paper.git'
 Plug 'yasukotelin/shirotelin'
 Plug 'habamax/vim-habanight'
 Plug 'pacha/vem-dark'
+Plug 'robertmeta/nofrils'
 
 " snippets
 Plug 'hrsh7th/vim-vsnip'
@@ -77,8 +77,7 @@ call plug#end()
 filetype plugin indent on       " no idea
 syntax on
 set termguicolors
-set t_Co=256
-colorscheme shirotelin
+colorscheme vem-dark
 
 " various
 set encoding=utf8               " Set UTF-8 encoding
@@ -107,14 +106,14 @@ set shiftwidth=4                " # of spaces to use for autoindent
 set linebreak                   " Wrap lines when convenient
 set nowrap                      " Wrap lines
 set autoindent                  " Minimal automatic indenting for any filetype
-set list
+set nolist
 set listchars=tab:\|-,extends:»,precedes:«,space:.
 
 " lines and numbers
 set nonumber                      
 set norelativenumber             
-set nocursorline                
-set nocursorcolumn
+" set nocursorline                
+" set nocursorcolumn
 set colorcolumn=100
 set foldcolumn=0
 set signcolumn=yes
