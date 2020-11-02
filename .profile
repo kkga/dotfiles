@@ -20,7 +20,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 export TERMINAL=kitty
 export PAGER=nvimpager
-export GIT_PAGER=nvimpager
+# export GIT_PAGER=nvimpager
 
 export SKIM_DEFAULT_OPTIONS='--height=40% --reverse --color=bw'
 # export FZF_DEFAULT_OPTS='--height=40% --color=light --info=inline --border=horizontal'
