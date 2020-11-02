@@ -77,7 +77,7 @@ call plug#end()
 filetype plugin indent on       " no idea
 syntax on
 set termguicolors
-colorscheme vem-dark
+colorscheme shirotelin
 
 " various
 set encoding=utf8               " Set UTF-8 encoding
