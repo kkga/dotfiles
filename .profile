@@ -1,11 +1,3 @@
-if [ -f /usr/share/defaults/etc/profile ]; then
-    source /usr/share/defaults/etc/profile
-fi
-
-export LANG=en_US.UTF-8
-export LC_ALL=en_US.UTF-8
-export GPG_TTY=$(tty)
-
 export PATH=$PATH:/usr/local/sbin
 export PATH=$PATH:$HOME/go/bin
 export PATH=$PATH:$HOME/.scripts

@@ -14,9 +14,4 @@ SETUVAR _fish_abbr_gs:git\x20status
 SETUVAR _fish_abbr_xbi:doas\x20xbps\x2dinstall
 SETUVAR _fish_abbr_xbq:xbps\x2dquery
 SETUVAR _fish_abbr_xbr:doas\x20xbps\x2dremove
-SETUVAR _fish_abbr_za:zoxide\x20add
-SETUVAR _fish_abbr_zi:z\x20\x2di
-SETUVAR _fish_abbr_zq:zoxide\x20query
-SETUVAR _fish_abbr_zqi:zoxide\x20query\x20\x2di
-SETUVAR _fish_abbr_zr:zoxide\x20remove
 SETUVAR fish_key_bindings:fish_default_key_bindings
