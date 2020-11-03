@@ -18,13 +18,15 @@ export BAT_THEME='ansi-light'
 export BAT_STYLE='changes,header'
 
 if [[ "$(uname)" == "Linux" ]]; then
-    eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-    export SSH_AUTH_SOCK
-    export SUDO_ASKPASS=/usr/libexec/seahorse/ssh-askpass
+    # eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+    # export SSH_AUTH_SOCK
+    # export SUDO_ASKPASS=/usr/libexec/seahorse/ssh-askpass
     export QT_WAYLAND_FORCE_DPI=physical
     export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
     export QT_AUTO_SCREEN_SCALE_FACTOR=1
     export MANGOHUD=1
     export ENABLE_VKBASALT=1
     export BEMENU_SCALE=2
+    export GDK_SCALE=2
+    export GDK_DPI_SCALE=0.5
 fi

@@ -1,13 +1,15 @@
 #!/bin/sh
-xrdb -merge $HOME/.Xresources &
+xrdb -merge $HOME/.Xresources
 
 # for auto-unlocking ssh on login: https://wiki.archlinux.org/index.php/GNOME/Keyring#PAM_method
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
+export SUDO_ASKPASS=/usr/libexec/seahorse/ssh-askpass
 
 /usr/libexec/polkit-gnome-authentication-agent-1 &
 $HOME/.config/screenlayout/displays.sh &
-$HOME/.config/dwm-bar/dwm_bar.sh &
+$HOME/.scripts/baraction.sh &
+
 sxhkd &
 dunst &
 clipmenud &
@@ -16,4 +18,4 @@ xset s 600 &
 xset r rate 200 30 &
 xsetroot -solid "#1c1c1c" &
 xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock &
-exec dbus-launch --exit-with-session dwm
+exec dbus-run-session dwm
