@@ -8,7 +8,8 @@ export SUDO_ASKPASS=/usr/libexec/seahorse/ssh-askpass
 
 /usr/libexec/polkit-gnome-authentication-agent-1 &
 $HOME/.config/screenlayout/displays.sh &
-$HOME/.scripts/baraction.sh &
+$HOME/.config/dwm-bar/dwm_bar.sh &
+# $HOME/.scripts/baraction.sh &
 
 sxhkd &
 dunst &
@@ -18,4 +19,4 @@ xset s 600 &
 xset r rate 200 30 &
 xsetroot -solid "#1c1c1c" &
 xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock &
-exec dbus-run-session dwm
+exec dbus-launch --exit-with-session dwm

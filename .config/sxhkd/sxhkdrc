@@ -2,19 +2,25 @@
 # wm independent hotkeys
 #
 
+XF86AudioMute
+	volume.sh -t
+
 XF86AudioRaiseVolume
 	volume.sh -i 5
 
 XF86AudioLowerVolume
 	volume.sh -d 5
 
-# XF86Audio{Prev,Next}
-# 	mpc -q {prev,next}
+XF86Audio{Prev,Next}
+	playerctl {previous,next}
+
+XF86AudioPlay
+	playerctl play-pause
+
 
 # @XF86LaunchA
 # 	scrot -s -e 'image_viewer $f'
 
-# XF86AudioMute 
 
 XF86MonBrightness{Down,Up}
 	doas ddcutil -d 1 setvcp 10 {- 25, + 25}
@@ -22,10 +28,6 @@ XF86MonBrightness{Down,Up}
 shift + XF86MonBrightness{Down,Up}
 	doas ddcutil -d 2 setvcp 10 {- 25, + 25}
 
-# XF86AudioPlay exec playerctl play
-# XF86AudioPause exec playerctl pause
-# XF86AudioNext exec playerctl next
-# XF86AudioPrev exec playerctl previous
 
 super + shift + Return
 	kitty -d ~
