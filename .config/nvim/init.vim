@@ -1,73 +1,7 @@
 " vim:foldmethod=marker:foldlevel=0
-"
 
-" PLUGINS {{{
-call plug#begin('~/.config/nvim/plugged')
+lua require('plugins')
 
-" utils
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-sleuth'
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-obsession'
-Plug 'tpope/vim-unimpaired'
-Plug 'machakann/vim-highlightedyank'
-Plug 'junegunn/vim-peekaboo'
-Plug 'mbbill/undotree'
-Plug 'nelstrom/vim-visual-star-search'
-Plug 'justinmk/vim-sneak'
-Plug 'rhysd/clever-f.vim'
-Plug 'ap/vim-buftabline'
-Plug 'airblade/vim-gitgutter'
-Plug 'airblade/vim-rooter'
-Plug 'junegunn/vim-easy-align'
-Plug 'cohama/lexima.vim'
-Plug 'https://github.com/mhinz/vim-sayonara'
-
-" themes
-Plug 'romainl/Apprentice'
-Plug 'lifepillar/vim-colortemplate'
-Plug 'https://gitlab.com/yorickpeterse/vim-paper.git'
-Plug 'yasukotelin/shirotelin'
-Plug 'robertmeta/nofrils'
-
-" snippets
-Plug 'hrsh7th/vim-vsnip'
-Plug 'hrsh7th/vim-vsnip-integ'
-
-" markdown and note-taking
-Plug 'plasticboy/vim-markdown'
-Plug 'previm/previm/'
-Plug 'cweagans/vim-taskpaper'
-Plug 'https://gitlab.com/dbeniamine/todo.txt-vim'
-
-" searching
-Plug 'justinmk/vim-dirvish'
-Plug 'dyng/ctrlsf.vim'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'tacahiroy/ctrlp-funky'
-
-" necessary evil
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-" Plug 'neovim/nvim-lspconfig'
-" Plug 'nvim-lua/completion-nvim'
-" Plug 'nvim-lua/diagnostic-nvim'
-
-" Plug 'liuchengxu/vista.vim'
-" Plug 'preservim/tagbar'
-" Plug 'dense-analysis/ale'
-
-" lang
-" Plug 'sheerun/vim-polyglot'
-Plug 'habamax/vim-godot'
-Plug 'rust-lang/rust.vim'
-" Plug 'nvim-treesitter/nvim-treesitter'
-
-call plug#end()
-"}}}
 " SETTINGS {{{
 
 filetype plugin indent on       " no idea
