@@ -14,9 +14,11 @@ $HOME/.config/dwm-bar/dwm_bar.sh &
 sxhkd &
 dunst &
 clipmenud &
+xss-lock -n /usr/libexec/xsecurelock/dimmer -l -- xsecurelock &
 redshift -l 55:37 &
-xset s 600 &
-xset r rate 200 30 &
-xsetroot -solid "#1c1c1c" &
-xss-lock -n /usr/lib/xsecurelock/dimmer -l -- xsecurelock &
+
+xset s 600
+xset r rate 200 30
+xsetroot -solid "#1c1c1c"
+
 exec dbus-launch --exit-with-session dwm
