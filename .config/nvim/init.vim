@@ -72,8 +72,8 @@ call plug#end()
 
 filetype plugin indent on       " no idea
 syntax on
-" set termguicolors
-colorscheme apprentice
+set termguicolors
+colorscheme paper
 
 " various
 set encoding=utf8               " Set UTF-8 encoding
