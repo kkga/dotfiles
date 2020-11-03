@@ -4,7 +4,7 @@
 
 selection=$(
   echo "lock\nlogout\nshutdown\nreboot\nsuspend" |
-  bemenu -p "What would you like to do? " -l 10
+  dmenu -p "" -l 10 -b
 )
 
 case "$selection" in
