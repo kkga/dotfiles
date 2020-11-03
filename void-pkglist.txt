@@ -5,7 +5,6 @@ MangoHud-32bit
 PopCorn
 SDL2-devel
 Solaar
-Venom
 Vulkan-Tools
 Waybar
 acpi
@@ -22,7 +21,6 @@ bat
 bc
 bemenu
 bluez
-bluez-qt5
 bottom
 celluloid
 chrome-gnome-shell
@@ -30,8 +28,6 @@ chromium
 clipman
 clipmenu
 cmake
-connman
-connman-ui
 corectrl
 dconf-editor
 ddcutil
@@ -40,12 +36,14 @@ dkms
 dunst
 dust
 elogind
+elvish
 eudev-libudev
 eva
 exa
 exercism
 exfat-utils
 fd
+ffmpeg
 ffsend
 file-roller
 firefox
@@ -59,6 +57,7 @@ fontmanager
 foot
 fuse-exfat
 fuzzel
+fzf
 gamehub
 gammastep
 gcc
@@ -86,7 +85,6 @@ gvfs
 htop
 hyperfine
 imv
-iwd
 j4-dmenu-desktop
 kakoune
 kanshi
@@ -111,6 +109,7 @@ libinput-devel
 libxkbcommon-devel
 llvm
 lm_sensors
+lollypop
 lutris
 lvm2
 mako
@@ -132,7 +131,6 @@ nodejs
 noto-fonts-ttf
 ntfs-3g
 ntp
-numix-themes
 nvimpager
 obs
 opendoas
@@ -140,9 +138,7 @@ pamixer
 pandoc
 pango-devel
 pango-xft
-papirus-icon-theme
 patch
-peek
 phoronix-test-suite
 pipewire
 pixman-devel
@@ -163,7 +159,6 @@ qt5ct
 radeon-profile
 radeon-profile-daemon
 redshift
-redshift-gtk
 ripgrep
 scons
 seahorse
@@ -173,7 +168,6 @@ snooze
 sound-theme-freedesktop
 spectrwm
 speedtest-cli
-spotify
 spotify-tui
 spotifyd
 ssr
@@ -189,7 +183,6 @@ syncthing-gtk
 tealdeer
 telegram-desktop
 terminus-font
-tint2
 tokei
 topgrade
 trash-cli
@@ -242,6 +235,7 @@ xtools
 yad
 yadm
 yaru
+yaru-plus
 youtube-dl
 zathura
 zathura-pdf-poppler
