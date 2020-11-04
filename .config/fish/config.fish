@@ -1,4 +1,4 @@
-set -gx SKIM_DEFAULT_OPTIONS '--height=40% --reverse --color=light'
+set -gx SKIM_DEFAULT_OPTIONS '--height=40% --reverse'
 
 alias vim 'nvim'
 alias ls 'exa'
@@ -33,11 +33,11 @@ set fish_color_quote green
 set fish_color_cwd purple
 set fish_color_error red --bold
 set fish_color_status red
-set fish_color_comment 777777
+set fish_color_comment 6c6c6c
 set fish_color_operator normal
 set fish_color_redirection normal --bold
 set fish_color_end normal
-set fish_color_search_match --background=bfbcaf
+set fish_color_search_match white --background=333333
 set fish_color_match normal
 set fish_color_autosuggestion $fish_color_comment
 
