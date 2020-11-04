@@ -7,7 +7,7 @@ lua require('plugins')
 filetype plugin indent on       " no idea
 syntax on
 set termguicolors
-colorscheme paper
+colorscheme envy
 
 " various
 set encoding=utf8               " Set UTF-8 encoding
@@ -100,7 +100,7 @@ let g:sleuth_automatic = 1
 let g:sneak#s_next = 1
 
 " colorscheme {{{
-hi Normal guibg=none ctermbg=none
+" hi Normal guibg=none ctermbg=none
 " }}}
 " ctrlp {{{
 let g:ctrlp_map = '<leader>ff'

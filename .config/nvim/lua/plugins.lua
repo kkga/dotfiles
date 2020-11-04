@@ -9,6 +9,7 @@ return require('packer').startup(function()
   use 'yasukotelin/shirotelin'
   use 'robertmeta/nofrils'
   use 'https://gitlab.com/yorickpeterse/vim-paper.git'
+  use 'lifepillar/vim-colortemplate'
 
   -- utils
   use 'tpope/vim-surround'
