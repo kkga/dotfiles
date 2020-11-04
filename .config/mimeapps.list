@@ -45,12 +45,12 @@ video/x-theora=io.github.celluloid_player.Celluloid.desktop
 video/x-theora+ogg=io.github.celluloid_player.Celluloid.desktop
 
 [Added Associations]
-image/jpeg=imv.desktop;gimp.desktop;
-audio/flac=mpv.desktop;org.xfce.Parole.desktop;
+image/jpeg=imv.desktop;
+audio/flac=mpv.desktop;
 font/ttf=org.gnome.FontViewer.desktop;
 text/plain=nvim.desktop;
 image/gif=imv.desktop;
-image/png=imv.desktop;ristretto.desktop;
+image/png=imv.desktop;
 video/3gp=io.github.celluloid_player.Celluloid.desktop;
 video/3gpp=io.github.celluloid_player.Celluloid.desktop;
 video/3gpp2=io.github.celluloid_player.Celluloid.desktop;

@@ -11,14 +11,15 @@ $HOME/.config/screenlayout/displays.sh &
 $HOME/.config/dwm-bar/dwm_bar.sh &
 # $HOME/.scripts/baraction.sh &
 
-sxhkd &
-dunst &
-clipmenud &
-xss-lock -n /usr/libexec/xsecurelock/dimmer -l -- xsecurelock &
-redshift -l 55:37 &
-
-xset s 600
+xset s 300 600
 xset r rate 200 30
 xsetroot -solid "#1c1c1c"
 
-exec dbus-launch --exit-with-session dwm
+syncthing -no-browser &
+sxhkd &
+# dunst &
+clipmenud &
+xss-lock -- xsecurelock &
+gammastep -t 6500:4000 -m randr &
+
+exec dbus-run-session dwm
