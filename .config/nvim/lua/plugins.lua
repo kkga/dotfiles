@@ -9,12 +9,14 @@ return require('packer').startup(function()
   use 'yasukotelin/shirotelin'
   use 'robertmeta/nofrils'
   use 'https://gitlab.com/yorickpeterse/vim-paper.git'
+  use 'lifepillar/vim-colortemplate'
 
   -- utils
   use 'tpope/vim-surround'
   use 'tpope/vim-repeat'
   use 'tpope/vim-fugitive'
-  use 'tpope/vim-commentary'
+  -- use 'tpope/vim-commentary'
+  use 'tomtom/tcomment_vim'
   use 'tpope/vim-sleuth'
   use 'tpope/vim-eunuch'
   use 'tpope/vim-unimpaired'
@@ -41,9 +43,11 @@ return require('packer').startup(function()
   use 'https://gitlab.com/dbeniamine/todo.txt-vim'
 
   -- searching
+  -- use {'nvim-lua/telescope.nvim', requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'}}
   use 'justinmk/vim-dirvish'
   use 'dyng/ctrlsf.vim'
   use 'ctrlpvim/ctrlp.vim'
+  use {'mhinz/vim-grepper', cmd = 'Grepper'}
 
   -- lsp
   use {'neoclide/coc.nvim', branch = 'release'}

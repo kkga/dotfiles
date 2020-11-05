@@ -1,13 +1,14 @@
 " vim:foldmethod=marker:foldlevel=0
 
 lua require('plugins')
+autocmd BufWritePost plugins.lua PackerCompile
 
 " SETTINGS {{{
 
 filetype plugin indent on       " no idea
 syntax on
 set termguicolors
-colorscheme paper
+colorscheme envy
 
 " various
 set encoding=utf8               " Set UTF-8 encoding
@@ -100,7 +101,13 @@ let g:sleuth_automatic = 1
 let g:sneak#s_next = 1
 
 " colorscheme {{{
-hi Normal guibg=none ctermbg=none
+" hi Normal guibg=none ctermbg=none
+" }}}
+" telescope {{{
+" nnoremap <Leader>tt <cmd>lua require'telescope.builtin'.git_files{}<CR>
+" nnoremap <Leader>tf <cmd>lua require'telescope.builtin'.find_files{}<CR>
+" nnoremap <Leader>tc <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/.config/nvim/" }<CR>
+" nnoremap <Leader>tn <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/notes/" }<CR>
 " }}}
 " ctrlp {{{
 let g:ctrlp_map = '<leader>ff'
