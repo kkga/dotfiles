@@ -43,7 +43,7 @@ set listchars=tab:\|-,extends:»,precedes:«,space:.
 " lines and numbers
 set nonumber                      
 set norelativenumber             
-set cursorline                
+set nocursorline                
 set nocursorcolumn
 set colorcolumn=100
 set foldcolumn=0
@@ -100,15 +100,6 @@ set statusline+=%=%{StatusDiagnostic()}\ %{fugitive#statusline()}\ [%{&filetype}
 let g:sleuth_automatic = 1
 let g:sneak#s_next = 1
 
-" colorscheme {{{
-" hi Normal guibg=none ctermbg=none
-" }}}
-" telescope {{{
-" nnoremap <Leader>tt <cmd>lua require'telescope.builtin'.git_files{}<CR>
-" nnoremap <Leader>tf <cmd>lua require'telescope.builtin'.find_files{}<CR>
-" nnoremap <Leader>tc <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/.config/nvim/" }<CR>
-" nnoremap <Leader>tn <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/notes/" }<CR>
-" }}}
 " ctrlp {{{
 let g:ctrlp_map = '<leader>ff'
 let g:ctrlp_user_command = 'fd --type f --color never "" %s'

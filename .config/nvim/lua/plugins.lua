@@ -10,6 +10,7 @@ return require('packer').startup(function()
   use 'robertmeta/nofrils'
   use 'https://gitlab.com/yorickpeterse/vim-paper.git'
   use 'lifepillar/vim-colortemplate'
+  use 'kkga/vim-envy'
 
   -- utils
   use 'tpope/vim-surround'
