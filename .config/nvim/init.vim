@@ -42,7 +42,7 @@ set listchars=tab:\|-,extends:»,precedes:«,space:.
 " lines and numbers
 set nonumber                      
 set norelativenumber             
-set cursorline                
+set nocursorline                
 set nocursorcolumn
 set colorcolumn=100
 set foldcolumn=0

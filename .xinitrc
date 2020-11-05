@@ -8,8 +8,7 @@ export SUDO_ASKPASS=/usr/libexec/seahorse/ssh-askpass
 
 /usr/libexec/polkit-gnome-authentication-agent-1 &
 $HOME/.config/screenlayout/displays.sh &
-$HOME/.config/dwm-bar/dwm_bar.sh &
-# $HOME/.scripts/baraction.sh &
+$HOME/.scripts/baraction.sh &
 
 xset s 300 600
 xset r rate 200 30
