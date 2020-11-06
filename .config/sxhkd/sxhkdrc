@@ -3,13 +3,13 @@
 #
 
 XF86AudioMute
-	volume.sh -t
+	volume.sh toggle
 
 XF86AudioRaiseVolume
-	volume.sh -i 5
+	volume.sh 5%+
 
 XF86AudioLowerVolume
-	volume.sh -d 5
+	volume.sh 5%-
 
 XF86Audio{Prev,Next}
 	playerctl {previous,next}

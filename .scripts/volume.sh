@@ -1,13 +1,16 @@
 #!/bin/bash
-# changeVolume
+# Change volume using amixer and output current state to dunstify
 
 # Arbitrary but unique message id
 msgId="991049"
 
-pamixer "$@" > /dev/null
+amixer set Master $@ > /dev/null
 
-volume="$(pamixer --get-volume-human)"
-dunstify -a "changeVolume" -u low -i audio-volume-high -r "$msgId" \
-"Volume: ${volume}" 
+STATUS=$(amixer sget Master | tail -n1 | sed -r "s/.*\[(.*)\]/\1/")
+VOLUME=$(amixer get Master | tail -n1 | sed -r "s/.*\[(.*)%\].*/\1/")
 
-canberra-gtk-play -i audio-volume-change -d "changeVolume"
+if [ "$STATUS" = "off" ]; then
+	dunstify "Volume" "Mute" -r "$msgId"
+else
+	dunstify "Volume" "$VOLUME" -r "$msgId"
+fi

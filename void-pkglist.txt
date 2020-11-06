@@ -14,6 +14,7 @@ bluez
 bottom
 celluloid
 clipmenu
+cmake
 corectrl
 dbus-elogind
 ddcutil
@@ -43,6 +44,7 @@ godot
 grub-btrfs
 grub-terminus
 grub-x86_64-efi
+gvfs
 htop
 hyperfine
 imv
@@ -51,8 +53,16 @@ kakoune
 kitty
 lazygit
 lf
+libX11-devel
+libXft-devel
+libXinerama-devel
+libcanberra
+libcanberra-utils
+linux5.9
+linux5.9-headers
 lm_sensors
 lxappearance
+maim
 mesa
 mesa-dri
 mesa-dri-32bit
@@ -69,6 +79,7 @@ opendoas
 pamixer
 pandoc
 patch
+pcmanfm
 playerctl
 polkit-elogind
 polkit-gnome
@@ -81,6 +92,8 @@ sct
 seahorse
 setxkbmap
 skim
+slop
+slstatus
 snapper
 snooze
 socklog-void
@@ -89,6 +102,7 @@ speedtest-cli
 spotifyd
 steam
 strace
+surf
 sxhkd
 syncthing
 tealdeer
@@ -116,9 +130,11 @@ wine
 wine-32bit
 winetricks
 xbacklight
+xclip
 xdg-desktop-portal
 xdg-user-dirs
 xdg-utils
+xdotool
 xf86-video-amdgpu
 xinit
 xorg-minimal
