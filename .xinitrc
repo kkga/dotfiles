@@ -14,7 +14,7 @@ xset s 300 600
 xset r rate 200 30
 xsetroot -solid "#1c1c1c"
 
-syncthing -no-browser &
+syncthing -no-browser > /dev/null &
 sxhkd &
 # dunst &
 clipmenud &
