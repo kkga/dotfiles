@@ -21,7 +21,7 @@ while :; do
 	GPU_INFO_STR="GPU $GPU°/$GPU_MEM°/$GPU_FAN"
 	DATE_STR=`date +"%a %d %b %H:%M"`
 
-	xsetroot -name "$PLAYER_STR  |  $CPU_INFO_STR  |  $GPU_INFO_STR  |  $DATE_STR"
+	xsetroot -name " $PLAYER_STR  |  $CPU_INFO_STR  |  $GPU_INFO_STR  |  $DATE_STR "
 
 	sleep $SLEEP_SEC
 done
