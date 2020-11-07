@@ -11,12 +11,10 @@ $HOME/.config/screenlayout/displays.sh &
 $HOME/.scripts/baraction.sh &
 
 xset s 300 600
-# xset r rate 200 30
 xsetroot -solid "#1c1c1c"
 
 syncthing -no-browser > /dev/null &
 sxhkd &
-# dunst &
 clipmenud &
 xss-lock -- xsecurelock &
 gammastep -t 6500:4000 -m randr &

@@ -4,7 +4,7 @@
 
 selection=$(
   echo "lock\nlogout\nshutdown\nreboot\nsuspend" |
-  dmenu -p "" -l 10 -b
+  dmenu -p "" -l 10
 )
 
 case "$selection" in

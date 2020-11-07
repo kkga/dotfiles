@@ -15,4 +15,4 @@ else
 	dunstify "Volume" "$VOLUME" -r "$msgId"
 fi
 
-gsound-play -b alsa -i audio-volume-change -d "changeVolume"
+gsound-play -i audio-volume-change -d "changeVolume"
