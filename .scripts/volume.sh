@@ -1,18 +1,12 @@
 #!/bin/bash
-# Change volume using amixer and output current state to dunstify
+# changeVolume
 
 # Arbitrary but unique message id
-msgId="991049"
+ID="991049"
 
-amixer set Master -M $@ > /dev/null
+pamixer "$@" > /dev/null
 
-STATUS=$(amixer sget Master -M | tail -n1 | sed -r "s/.*\[(.*)\]/\1/")
-VOLUME=$(amixer get Master -M | tail -n1 | sed -r "s/.*\[(.*)%\].*/\1/")
-
-if [ "$STATUS" = "off" ]; then
-	dunstify "Volume" "Mute" -r "$msgId"
-else
-	dunstify "Volume" "$VOLUME" -r "$msgId"
-fi
+VOLUME="$(pamixer --get-volume-human)"
+dunstify -a "changeVolume" -u low -i audio-volume-high -r "$ID" "Volume" "${VOLUME}" 
 
 gsound-play -i audio-volume-change -d "changeVolume"
