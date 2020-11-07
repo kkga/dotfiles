@@ -33,18 +33,21 @@ set fish_color_quote green
 set fish_color_cwd purple
 set fish_color_error red --bold
 set fish_color_status red
-set fish_color_comment 6c6c6c
+set fish_color_comment brblack
 set fish_color_operator normal
 set fish_color_redirection normal --bold
 set fish_color_end normal
-set fish_color_search_match white --background=333333
-set fish_color_match normal
+set fish_color_search_match --background=white
+set fish_color_match brblack
 set fish_color_autosuggestion $fish_color_comment
 
 set fish_pager_color_prefix normal --bold
 set fish_pager_color_progress normal --bold
-set fish_pager_color_completion normal
+set fish_pager_color_completion brblack
+set fish_pager_color_background --background=background
 set fish_pager_color_description $fish_color_comment
+set fish_pager_color_selected_completion white
+set fish_pager_color_selected_description white
 
 if not functions -q fisher
     set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
