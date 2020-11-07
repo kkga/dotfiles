@@ -1,6 +1,3 @@
-[submodule ".config/ubersicht/widgets/nibar"]
-	path = .config/ubersicht/widgets/nibar
-	url = git@github.com:kkga/nibar.git
 [submodule ".config/dwm"]
 	path = .config/dwm
 	url = git@github.com:kkga/dwm.git
