@@ -12,6 +12,7 @@ return require('packer').startup(function()
   use 'lifepillar/vim-colortemplate'
   -- use 'kkga/vim-envy'
   use '~/repos/vim-envy'
+  use 'norcalli/nvim-colorizer.lua'
 
   -- utils
   use 'tpope/vim-surround'
