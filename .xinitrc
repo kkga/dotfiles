@@ -19,4 +19,4 @@ clipmenud &
 xss-lock -- xsecurelock &
 gammastep -t 6500:4000 -m randr &
 
-exec dbus-run-session dwm
+exec dbus-run-session dwm-run.sh
