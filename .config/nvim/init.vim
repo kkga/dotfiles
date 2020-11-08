@@ -37,7 +37,7 @@ set shiftwidth=4                " # of spaces to use for autoindent
 set linebreak                   " Wrap lines when convenient
 set nowrap                      " Wrap lines
 set autoindent                  " Minimal automatic indenting for any filetype
-set nolist
+set list
 set listchars=tab:\|-,extends:»,precedes:«,space:.
 
 " lines and numbers
@@ -100,6 +100,14 @@ set statusline+=%=%{StatusDiagnostic()}\ %{fugitive#statusline()}\ [%{&filetype}
 let g:sleuth_automatic = 1
 let g:sneak#s_next = 1
 
+" grepper {{{
+let g:grepper               = {}
+let g:grepper.tools         = ['rg', 'git', 'grep']
+let g:grepper.jump          = 1
+let g:grepper.next_tool     = '<leader>g'
+let g:grepper.prompt_text   = '$c>'
+let g:grepper.quickfix      = 1
+" }}}
 " ctrlp {{{
 let g:ctrlp_map = '<leader>ff'
 let g:ctrlp_user_command = 'fd --type f --color never "" %s'

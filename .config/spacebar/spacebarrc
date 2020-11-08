@@ -2,8 +2,8 @@
 
 spacebar -m config position           bottom
 spacebar -m config height             20
-spacebar -m config text_font          "Envy Code R:Regular:13.0"
-spacebar -m config icon_font          "Envy Code R:Regular:13.0"
+spacebar -m config text_font          "SF Mono:Regular:12.0"
+spacebar -m config icon_font          "SF Mono:Regular:12.0"
 spacebar -m config background_color   0xff000000
 spacebar -m config foreground_color   0xff999999
 spacebar -m config space_icon_color   0xffffffff

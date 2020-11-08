@@ -49,7 +49,7 @@ return require('packer').startup(function()
   use 'justinmk/vim-dirvish'
   use 'dyng/ctrlsf.vim'
   use 'ctrlpvim/ctrlp.vim'
-  use {'mhinz/vim-grepper', cmd = 'Grepper'}
+  use 'mhinz/vim-grepper'
 
   -- lsp
   use {'neoclide/coc.nvim', branch = 'release'}

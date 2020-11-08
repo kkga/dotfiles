@@ -8,8 +8,6 @@ alias hg 'kitty +kitten hyperlinked_grep'
 alias d 'kitty +kitten diff'
 alias fzf 'sk'
 
-alias xbli 'xpkg -m | fzf --preview "xbps-query -vR {}"'
-
 abbr gs 'git status'
 abbr gc 'git checkout'
 abbr gps 'git push'
@@ -18,6 +16,7 @@ abbr gl 'git log'
 abbr gd 'git diff'
 abbr gdt 'git difftool'
 
+alias xbli 'xpkg -m | fzf --preview "xbps-query -vR {}"'
 abbr xbr 'doas xbps-remove'
 abbr xbi 'doas xbps-install'
 abbr xbq 'xbps-query'
@@ -48,11 +47,5 @@ set fish_pager_color_background --background=background
 set fish_pager_color_description $fish_color_comment
 set fish_pager_color_selected_completion white
 set fish_pager_color_selected_description white
-
-if not functions -q fisher
-    set -q XDG_CONFIG_HOME; or set XDG_CONFIG_HOME ~/.config
-    curl https://git.io/fisher --create-dirs -sLo $XDG_CONFIG_HOME/fish/functions/fisher.fish
-    fish -c fisher
-end
 
 zoxide init fish | source
