@@ -7,15 +7,12 @@ alacritty
 alsa-firmware
 alsa-oss
 alsa-plugins-pulseaudio
-alsa-sndio
 alsa-utils
-alsaequal
-apulse
-aucatctl
 autorandr
 base-system
 bat
 bc
+bemenu
 bluez
 bottom
 clipmenu
@@ -57,6 +54,7 @@ htop
 hyperfine
 imv
 iwd
+j4-dmenu-desktop
 kakoune
 kitty
 lazygit
@@ -107,9 +105,7 @@ seahorse
 setxkbmap
 skim
 slop
-slstatus
 snapper
-sndio
 snooze
 socklog-void
 sound-theme-freedesktop
@@ -128,8 +124,6 @@ tokei
 topgrade
 trash-cli
 ttf-ubuntu-font-family
-tuxc
-udisks
 ufw
 vdpauinfo
 viu
@@ -137,6 +131,7 @@ vkBasalt
 void-repo-multilib
 void-repo-multilib-nonfree
 void-repo-nonfree
+volumeicon
 vpm
 vsv
 vulkan-loader
@@ -145,6 +140,7 @@ wget
 wine
 wine-32bit
 winetricks
+xarchiver
 xbacklight
 xclip
 xdg-desktop-portal

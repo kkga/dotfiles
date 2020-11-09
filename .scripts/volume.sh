@@ -7,6 +7,6 @@ ID="991049"
 pamixer "$@" > /dev/null
 
 VOLUME="$(pamixer --get-volume-human)"
-dunstify -a "changeVolume" -u low -i audio-volume-high -r "$ID" "Volume" "${VOLUME}" 
+dunstify -u low -r "$ID" "Volume" "${VOLUME}" 
 
 gsound-play -i audio-volume-change -d "changeVolume"
