@@ -16,10 +16,10 @@ XF86AudioPlay
 	playerctl play-pause
 
 XF86MonBrightness{Down,Up}
-	doas ddcutil -d 1 setvcp 10 {- 25, + 25}
+	brightness.sh -d ddcci4 s {10-, +10}
 
 shift + XF86MonBrightness{Down,Up}
-	doas ddcutil -d 2 setvcp 10 {- 25, + 25}
+	brightness.sh -d ddcci5 s {10-, +10}
 
 super + shift + Return
 	kitty -d ~

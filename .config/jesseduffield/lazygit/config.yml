@@ -10,5 +10,5 @@ gui:
       - black
       - bold
     inactiveBorderColor:
-      - yellow
+      - white
 startuppopupversion: 1
