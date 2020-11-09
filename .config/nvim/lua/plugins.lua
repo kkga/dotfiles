@@ -44,6 +44,7 @@ return require('packer').startup(function()
   use 'previm/previm'
   use 'cweagans/vim-taskpaper'
   use 'https://gitlab.com/dbeniamine/todo.txt-vim'
+  use 'lervag/wiki.vim'
 
   -- searching
   -- use {'nvim-lua/telescope.nvim', requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'}}
