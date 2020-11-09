@@ -5,7 +5,7 @@ autocmd BufWritePost plugins.lua PackerCompile
 
 " SETTINGS {{{
 
-filetype plugin indent on       " no idea
+filetype plugin indent on
 syntax on
 set termguicolors
 colorscheme envy
@@ -106,7 +106,7 @@ let g:grepper.tools         = ['rg', 'git', 'grep']
 let g:grepper.jump          = 1
 let g:grepper.next_tool     = '<leader>g'
 let g:grepper.prompt_text   = '$c>'
-let g:grepper.quickfix      = 1
+let g:grepper.quickfix      = 0
 " }}}
 " ctrlp {{{
 let g:ctrlp_map = '<leader>ff'
