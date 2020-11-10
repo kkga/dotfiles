@@ -22,16 +22,19 @@ shift + XF86MonBrightness{Down,Up}
 	brightness.sh -d ddcci5 s {10-, +10}
 
 super + shift + Return
-	kitty -d ~
+	kitty --single-instance --listen-on=unix:@mykitty
 
 super + ctrl + l
-	kitty @ --to unix:/tmp/mykitty set-colors ~/.config/kitty/paper.conf
+	kitty @ --to unix:@mykitty set-colors ~/.config/kitty/envy.conf
 
 super + ctrl + d
-	kitty @ --to unix:/tmp/mykitty set-colors ~/.config/kitty/apprentice.conf
+	kitty @ --to unix:@mykitty set-colors ~/.config/kitty/apprentice.conf
 
 super + d
 	dmenu_run -i
+
+super + shift + d
+	j4-dmenu-desktop --usage-log="tmp/j4-dmenu-desktop.log" --display-binary --dmenu="dmenu -i" --term="kitty"
 
 super + ctrl + c
 	clipmenu -i

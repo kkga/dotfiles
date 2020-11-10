@@ -100,6 +100,10 @@ set statusline+=%=%{StatusDiagnostic()}\ %{fugitive#statusline()}\ [%{&filetype}
 let g:sleuth_automatic = 1
 let g:sneak#s_next = 1
 
+" wiki {{{
+let g:wiki_root = '~/notes'
+let g:wiki_filetypes = ['md', 'txt', 'wiki']
+" }}}
 " grepper {{{
 let g:grepper               = {}
 let g:grepper.tools         = ['rg', 'git', 'grep']

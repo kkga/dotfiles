@@ -9,3 +9,9 @@ image/gif=imv.desktop;
 image/png=imv.desktop;
 application/pdf=org.pwmt.zathura.desktop
 inode/directory=lf.desktop
+x-scheme-handler/mailto=userapp-Thunderbird-NM5XT0.desktop
+message/rfc822=userapp-Thunderbird-NM5XT0.desktop
+
+[Added Associations]
+x-scheme-handler/mailto=userapp-Thunderbird-NM5XT0.desktop;
+message/rfc822=userapp-Thunderbird-NM5XT0.desktop;

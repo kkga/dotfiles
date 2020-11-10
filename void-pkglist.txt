@@ -3,6 +3,7 @@ MangoHud
 MangoHud-32bit
 PopCorn
 acpi
+aerc
 alacritty
 alsa-firmware
 alsa-oss
@@ -15,10 +16,13 @@ bc
 bemenu
 bluez
 bottom
+brightnessctl
 clipmenu
 cmake
 corectrl
+dante
 dbus-elogind
+ddcci-dkms
 ddcutil
 delta
 dkms
@@ -37,6 +41,7 @@ flatpak
 font-go-ttf
 font-ibm-plex-ttf
 fontmanager
+fwupd
 gammastep
 gcc
 geoclue2
@@ -79,6 +84,7 @@ mpv
 neofetch
 neovim
 nodejs
+noto-fonts-ttf
 nvimpager
 obs
 opendoas
@@ -136,6 +142,8 @@ vpm
 vsv
 vulkan-loader
 vulkan-loader-32bit
+w3m
+w3m-img
 wget
 wine
 wine-32bit
@@ -165,5 +173,6 @@ yaru-plus
 youtube-dl
 zathura
 zathura-pdf-poppler
+zig
 zola
 zoxide
