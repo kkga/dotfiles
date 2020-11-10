@@ -385,6 +385,9 @@ vnoremap <c-k> :m '<-2<CR>gv=gv
 
 " esc alternative
 inoremap jj <esc>
+inoremap kk <esc>
+inoremap jk <esc>
+inoremap kj <esc>
 
 " fzf mappings
 nnoremap <leader>ff :CtrlP<CR>
