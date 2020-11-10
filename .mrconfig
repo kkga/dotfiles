@@ -1,0 +1,3 @@
+
+[repos/void-packages]
+checkout = git clone 'git@github.com:kkga/void-packages.git' 'void-packages'

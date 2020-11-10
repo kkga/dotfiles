@@ -5,18 +5,29 @@ xrdb -merge $HOME/.Xresources
 eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
 export SSH_AUTH_SOCK
 export SUDO_ASKPASS=/usr/libexec/seahorse/ssh-askpass
-
 /usr/libexec/polkit-gnome-authentication-agent-1 &
-$HOME/.config/screenlayout/displays.sh &
-$HOME/.scripts/baraction.sh &
 
-xset s 300 600
+# statusbar script for dwm
+baraction.sh &
+
+# background color
 xsetroot -solid "#1c1c1c"
 
+# start syncthing
 syncthing -no-browser > /dev/null &
+
+# keyboard daemon
 sxhkd &
+
+# clipboard daemon
 clipmenud &
-xss-lock -- xsecurelock &
+
+# screensaver and screenlock
+xset s 300
+xss-lock -n /usr/libexec/xsecurelock/dimmer -l -- xsecurelock &
+
+# screen dimmer
 gammastep -t 6500:4000 -m randr &
 
+# start dbus session for dwm
 exec dbus-run-session dwm-run.sh
