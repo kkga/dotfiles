@@ -16,6 +16,7 @@ export PAGER=nvimpager
 export SKIM_DEFAULT_OPTIONS='--height=40% --reverse --color=bw'
 export BAT_THEME='ansi-light'
 export BAT_STYLE='changes,header'
+export LS_COLORS='di=1;30:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
 
 if [[ "$(uname)" == "Linux" ]]; then
     # eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)

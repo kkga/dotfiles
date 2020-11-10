@@ -14,8 +14,8 @@ SETUVAR _fish_abbr_gs:git\x20status
 SETUVAR _fish_abbr_xbi:doas\x20xbps\x2dinstall
 SETUVAR _fish_abbr_xbq:xbps\x2dquery
 SETUVAR _fish_abbr_xbr:doas\x20xbps\x2dremove
-SETUVAR _fisher_jorgebucaran_2F_fish_2D_bax_files:/home/kkga/\x2econfig/fish/functions/bax\x2efish
+SETUVAR _fisher_jorgebucaran_2F_bax_2E_fish_files:/home/kkga/\x2econfig/fish/functions/bax\x2efish
 SETUVAR _fisher_jorgebucaran_2F_fisher_files:/home/kkga/\x2econfig/fish/functions/fisher\x2efish\x1e/home/kkga/\x2econfig/fish/completions/fisher\x2efish
 SETUVAR _fisher_mattgreen_2F_lucid_2E_fish_files:/home/kkga/\x2econfig/fish/functions/fish_prompt\x2efish
-SETUVAR _fisher_plugins:jorgebucaran/fish\x2dbax\x1ejorgebucaran/fisher\x1emattgreen/lucid\x2efish
+SETUVAR _fisher_plugins:mattgreen/lucid\x2efish\x1ejorgebucaran/fisher\x1ejorgebucaran/bax\x2efish
 SETUVAR fish_key_bindings:fish_default_key_bindings

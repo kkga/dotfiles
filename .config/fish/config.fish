@@ -1,5 +1,3 @@
-set -gx SKIM_DEFAULT_OPTIONS '--height=40% --reverse --color=light'
-
 alias vim 'nvim'
 alias ls 'exa'
 alias cat 'bat'
