@@ -2,8 +2,8 @@
 
 lua require('plugins')
 autocmd BufWritePost plugins.lua PackerCompile
-
 " SETTINGS {{{
+
 
 filetype plugin indent on
 syntax on
@@ -101,13 +101,12 @@ let g:sleuth_automatic = 1
 let g:sneak#s_next = 1
 
 " telescope {{{
-nnoremap <C-g>g <cmd>lua require'telescope.builtin'.git_files{}<CR>
-nnoremap <C-g>f <cmd>lua require'telescope.builtin'.find_files{}<CR>
-nnoremap <C-g>c <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/.config/nvim/" }<CR>
-nnoremap <C-g>n <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/notes/" }<CR>
-nnoremap <C-g>r <cmd>lua require'telescope.builtin'.oldfiles{}<CR>
-nnoremap <C-g>h <cmd>lua require'telescope.builtin'.command_history{}<CR>
-
+" nnoremap <C-g>g <cmd>lua require'telescope.builtin'.git_files{}<CR>
+" nnoremap <C-g>f <cmd>lua require'telescope.builtin'.find_files{}<CR>
+" nnoremap <C-g>c <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/.config/nvim/" }<CR>
+" nnoremap <C-g>n <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/notes/" }<CR>
+" nnoremap <C-g>r <cmd>lua require'telescope.builtin'.oldfiles{}<CR>
+" nnoremap <C-g>h <cmd>lua require'telescope.builtin'.command_history{}<CR>
 " }}}
 " wiki {{{
 let g:wiki_root = '~/notes'
@@ -406,6 +405,8 @@ inoremap kj <esc>
 " fzf mappings
 nnoremap <leader>ff :CtrlP<CR>
 nnoremap <leader>fn :CtrlP ~/notes/<CR>
+nnoremap <leader>fw :CtrlPWiki<CR>
+nnoremap <leader>fc :CtrlP ~/.config/nvim/<CR>
 nnoremap <leader>fr :CtrlPMRU<CR>
 nnoremap <leader>fb :CtrlPBuffer<CR>
 nnoremap <leader>fl :CtrlPLine<CR>

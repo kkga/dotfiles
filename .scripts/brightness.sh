@@ -13,9 +13,9 @@
 
 ID="43290"
 
-doas brightnessctl "$@" > /dev/null
+brillo -q -s "$@" > /dev/null
 
-BRIGHTNESS_1="$(brightnessctl g -d ddcci4)"
-BRIGHTNESS_2="$(brightnessctl g -d ddcci5)"
+BRIGHTNESS_1="$(brillo -q -s ddcci4)"
+BRIGHTNESS_2="$(brillo -q -s ddcci5)"
 
 dunstify -u low -r "$ID" "Brightness" "1: ${BRIGHTNESS_1}\n2: ${BRIGHTNESS_2}"

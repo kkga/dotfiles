@@ -10,6 +10,7 @@ return require('packer').startup(function()
   use 'robertmeta/nofrils'
   use 'https://gitlab.com/yorickpeterse/vim-paper.git'
   use 'lifepillar/vim-colortemplate'
+
   -- use 'kkga/vim-envy'
   use '~/repos/vim-envy'
   use 'norcalli/nvim-colorizer.lua'
@@ -34,7 +35,6 @@ return require('packer').startup(function()
   use 'mbbill/undotree'
   use 'junegunn/vim-peekaboo'
   use 'machakann/vim-highlightedyank'
-  use 'kyazdani42/nvim-tree.lua'
 
   -- motions
   use 'justinmk/vim-sneak'
@@ -49,10 +49,10 @@ return require('packer').startup(function()
   use 'axvr/org.vim'
 
   -- searching
-  use {'nvim-lua/telescope.nvim', requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'}}
-  -- use 'justinmk/vim-dirvish'
+  -- use {'nvim-lua/telescope.nvim', requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'}}
+  use 'justinmk/vim-dirvish'
   use 'dyng/ctrlsf.vim'
-  -- use 'ctrlpvim/ctrlp.vim'
+  use 'ctrlpvim/ctrlp.vim'
   use 'mhinz/vim-grepper'
 
   -- lsp
@@ -60,7 +60,7 @@ return require('packer').startup(function()
   -- use 'neovim/nvim-lspconfig'                                                                             
   -- use 'nvim-lua/completion-nvim'                                                                          
   -- use 'nvim-lua/diagnostic-nvim'                                                                          
-  use 'nvim-treesitter/nvim-treesitter'
+  -- use 'nvim-treesitter/nvim-treesitter'
 
   -- lang
   use 'habamax/vim-godot'
