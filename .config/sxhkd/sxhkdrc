@@ -16,10 +16,10 @@ XF86AudioPlay
 	playerctl play-pause
 
 XF86MonBrightness{Down,Up}
-	brightness.sh -d ddcci4 s {10-, +10}
+	brightness.sh ddcci4 {-U 5, -A 5}
 
 shift + XF86MonBrightness{Down,Up}
-	brightness.sh -d ddcci5 s {10-, +10}
+	brightness.sh ddcci5 {-U 5, -A 5}
 
 super + shift + Return
 	kitty --single-instance --listen-on=unix:@mykitty
