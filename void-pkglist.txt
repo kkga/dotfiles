@@ -81,8 +81,10 @@ mesa-vdpau
 mesa-vulkan-radeon
 mesa-vulkan-radeon-32bit
 mpv
+myrepos
 neofetch
 neovim
+nfs-utils
 nodejs
 noto-fonts-ttf
 nvimpager
@@ -95,9 +97,11 @@ pango-xft
 patch
 pavucontrol
 pcmanfm
+pkg-config
 playerctl
 polkit-elogind
 polkit-gnome
+polybar
 powertop
 procs
 protontricks
@@ -115,6 +119,7 @@ snapper
 snooze
 socklog-void
 sound-theme-freedesktop
+spectrwm
 speedtest-cli
 spotify-tui
 spotifyd
