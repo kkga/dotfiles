@@ -100,9 +100,19 @@ set statusline+=%=%{StatusDiagnostic()}\ %{fugitive#statusline()}\ [%{&filetype}
 let g:sleuth_automatic = 1
 let g:sneak#s_next = 1
 
+" telescope {{{
+nnoremap <C-g>g <cmd>lua require'telescope.builtin'.git_files{}<CR>
+nnoremap <C-g>f <cmd>lua require'telescope.builtin'.find_files{}<CR>
+nnoremap <C-g>c <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/.config/nvim/" }<CR>
+nnoremap <C-g>n <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/notes/" }<CR>
+nnoremap <C-g>r <cmd>lua require'telescope.builtin'.oldfiles{}<CR>
+nnoremap <C-g>h <cmd>lua require'telescope.builtin'.command_history{}<CR>
+
+" }}}
 " wiki {{{
 let g:wiki_root = '~/notes'
 let g:wiki_filetypes = ['md', 'txt', 'wiki']
+let g:wiki_mappings_use_defaults = 'none'
 " }}}
 " grepper {{{
 let g:grepper               = {}

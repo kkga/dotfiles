@@ -34,6 +34,7 @@ return require('packer').startup(function()
   use 'mbbill/undotree'
   use 'junegunn/vim-peekaboo'
   use 'machakann/vim-highlightedyank'
+  use 'kyazdani42/nvim-tree.lua'
 
   -- motions
   use 'justinmk/vim-sneak'
@@ -45,12 +46,13 @@ return require('packer').startup(function()
   use 'cweagans/vim-taskpaper'
   use 'https://gitlab.com/dbeniamine/todo.txt-vim'
   use 'lervag/wiki.vim'
+  use 'axvr/org.vim'
 
   -- searching
-  -- use {'nvim-lua/telescope.nvim', requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'}}
-  use 'justinmk/vim-dirvish'
+  use {'nvim-lua/telescope.nvim', requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'}}
+  -- use 'justinmk/vim-dirvish'
   use 'dyng/ctrlsf.vim'
-  use 'ctrlpvim/ctrlp.vim'
+  -- use 'ctrlpvim/ctrlp.vim'
   use 'mhinz/vim-grepper'
 
   -- lsp
@@ -58,7 +60,7 @@ return require('packer').startup(function()
   -- use 'neovim/nvim-lspconfig'                                                                             
   -- use 'nvim-lua/completion-nvim'                                                                          
   -- use 'nvim-lua/diagnostic-nvim'                                                                          
-  -- use 'nvim-treesitter/nvim-treesitter'
+  use 'nvim-treesitter/nvim-treesitter'
 
   -- lang
   use 'habamax/vim-godot'

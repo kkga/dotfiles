@@ -7,6 +7,9 @@ export SSH_AUTH_SOCK
 export SUDO_ASKPASS=/usr/libexec/seahorse/ssh-askpass
 /usr/libexec/polkit-gnome-authentication-agent-1 &
 
+# simple settings daemon for gtk apps
+xsettingsd &
+
 # statusbar script for dwm
 baraction.sh &
 
