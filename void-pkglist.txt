@@ -17,6 +17,7 @@ bemenu
 bluez
 bottom
 brightnessctl
+brillo
 clipmenu
 cmake
 corectrl
@@ -41,7 +42,6 @@ flatpak
 font-go-ttf
 font-ibm-plex-ttf
 fontmanager
-fwupd
 gammastep
 gcc
 geoclue2
@@ -71,6 +71,7 @@ libXrandr-devel
 linux5.9
 linux5.9-headers
 lm_sensors
+luakit
 lxappearance
 maim
 mesa
@@ -139,6 +140,8 @@ ufw
 vdpauinfo
 viu
 vkBasalt
+void-docs
+void-docs-browse
 void-repo-multilib
 void-repo-multilib-nonfree
 void-repo-nonfree
@@ -157,7 +160,9 @@ xarchiver
 xbacklight
 xclip
 xdg-desktop-portal
+xdg-desktop-portal-gtk
 xdg-user-dirs
+xdg-user-dirs-gtk
 xdg-utils
 xdotool
 xev

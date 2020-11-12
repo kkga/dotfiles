@@ -4,12 +4,12 @@
 
 selection=$(
   echo "lock\nrestart-dwm\nkill-x\nshutdown\nreboot\nsuspend" |
-  dmenu -p "" -l 10
+  bemenu -p "" -l 10
 )
 
 case "$selection" in
        lock) loginctl lock-session;;
-restart-dwm) pkill dwm;;
+ restart-wm) pkill dwm;;
      kill-x) pkill xinit;;
    shutdown) loginctl poweroff;;
      reboot) loginctl reboot;;

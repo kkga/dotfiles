@@ -1,4 +1,6 @@
 #!/bin/sh
+
+# merge user resources for correct DPI setting in Xorg
 xrdb -merge $HOME/.Xresources
 
 # for auto-unlocking ssh on login: https://wiki.archlinux.org/index.php/GNOME/Keyring#PAM_method
@@ -19,8 +21,8 @@ xsetroot -solid "#1c1c1c"
 # start syncthing
 syncthing -no-browser > /dev/null &
 
-# keyboard daemon
-sxhkd &
+# keyboard daemon; not used with spectrwm
+# sxhkd &
 
 # clipboard daemon
 clipmenud &
@@ -32,5 +34,8 @@ xss-lock -n /usr/libexec/xsecurelock/dimmer -l -- xsecurelock &
 # screen dimmer
 gammastep -t 6500:4000 -m randr &
 
-# start dbus session for dwm
-exec dbus-run-session dwm-run.sh
+# start dbus session for dwm-loop (self-restarting on kill)
+# exec dbus-run-session dwm-run.sh
+
+# using spectrwm these days, it's pretty good
+exec dbus-run-session spectrwm
