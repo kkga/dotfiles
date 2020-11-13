@@ -10,6 +10,7 @@ return require('packer').startup(function()
   use 'robertmeta/nofrils'
   use 'https://gitlab.com/yorickpeterse/vim-paper.git'
   use 'lifepillar/vim-colortemplate'
+  use 'caksoylar/vim-mysticaltutor'
 
   -- use 'kkga/vim-envy'
   use '~/repos/vim-envy'
@@ -47,6 +48,7 @@ return require('packer').startup(function()
   use 'https://gitlab.com/dbeniamine/todo.txt-vim'
   use 'lervag/wiki.vim'
   use 'axvr/org.vim'
+  use 'junegunn/goyo.vim'
 
   -- searching
   -- use {'nvim-lua/telescope.nvim', requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'}}

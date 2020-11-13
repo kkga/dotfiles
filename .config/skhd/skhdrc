@@ -8,7 +8,7 @@ alt + ctrl - l : kitty @ --to unix:/tmp/mykitty set-colors ~/.config/kitty/paper
 alt + ctrl - d : kitty @ --to unix:/tmp/mykitty set-colors ~/.config/kitty/apprentice.conf
 
 # quick restart
-alt + ctrl - q : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+alt + ctrl + shift - q : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 
 
 # WINDOWS
@@ -85,10 +85,10 @@ alt - c : yabai -m space --layout stack
 # DISPLAYS
 
 # focus display
-ctrl + alt - q : yabai -m display --focus 1
-ctrl + alt - w : yabai -m display --focus 2
-ctrl + alt + shift - q : yabai -m window --display 1; yabai -m display --focus 1
-ctrl + alt + shift - w : yabai -m window --display 2; yabai -m display --focus 2
+ctrl + alt - h : yabai -m display --focus 1
+ctrl + alt - l : yabai -m display --focus 2
+ctrl + alt + shift - h : yabai -m window --display 1; yabai -m display --focus 1
+ctrl + alt + shift - l : yabai -m window --display 2; yabai -m display --focus 2
 ctrl + alt - tab  : yabai -m display --focus recent
 
 # send window to display and follow focus

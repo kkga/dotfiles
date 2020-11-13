@@ -112,7 +112,8 @@ let g:sneak#s_next = 1
 " wiki {{{
 let g:wiki_root = '~/notes'
 let g:wiki_filetypes = ['md']
-let g:wiki_mappings_use_defaults = 'none'
+let g:wiki_mappings_use_defaults = 'local'
+let g:wiki_list_todos = ['[ ]', '[x]']
 " }}}
 " grepper {{{
 let g:grepper               = {}
