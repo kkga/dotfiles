@@ -26,7 +26,7 @@ yabai -m config mouse_action2                resize
 # general space settings
 yabai -m config layout                       bsp
 yabai -m config window_gap                   4
-yabai -m config external_bar                 all:0:20
+yabai -m config external_bar                 all:20:0
 
 # space config
 yabai -m config --space 8 layout float
