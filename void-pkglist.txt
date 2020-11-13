@@ -41,7 +41,7 @@ fish-shell
 flatpak
 font-go-ttf
 font-ibm-plex-ttf
-fontmanager
+font-spleen
 gammastep
 gcc
 geoclue2
@@ -64,10 +64,6 @@ kakoune
 kitty
 lazygit
 lf
-libX11-devel
-libXft-devel
-libXinerama-devel
-libXrandr-devel
 linux5.9
 linux5.9-headers
 lm_sensors
@@ -93,8 +89,6 @@ obs
 opendoas
 pamixer
 pandoc
-pango-view
-pango-xft
 patch
 pavucontrol
 pcmanfm
@@ -129,12 +123,14 @@ strace
 surf
 sxhkd
 syncthing
+tailscale
 tealdeer
 telegram-desktop
 terminus-font
 tokei
 topgrade
 trash-cli
+trayer-srg
 ttf-ubuntu-font-family
 ufw
 vdpauinfo
@@ -145,7 +141,6 @@ void-docs-browse
 void-repo-multilib
 void-repo-multilib-nonfree
 void-repo-nonfree
-volumeicon
 vpm
 vsv
 vulkan-loader
@@ -156,6 +151,7 @@ wget
 wine
 wine-32bit
 winetricks
+wireguard-tools
 xarchiver
 xbacklight
 xclip

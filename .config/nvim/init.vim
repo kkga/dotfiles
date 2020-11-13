@@ -2,6 +2,7 @@
 
 lua require('plugins')
 autocmd BufWritePost plugins.lua PackerCompile
+
 " SETTINGS {{{
 
 
@@ -110,7 +111,7 @@ let g:sneak#s_next = 1
 " }}}
 " wiki {{{
 let g:wiki_root = '~/notes'
-let g:wiki_filetypes = ['md', 'txt', 'wiki']
+let g:wiki_filetypes = ['md']
 let g:wiki_mappings_use_defaults = 'none'
 " }}}
 " grepper {{{
