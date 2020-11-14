@@ -3,6 +3,7 @@ MangoHud
 MangoHud-32bit
 PopCorn
 acpi
+adwaita-qt
 aerc
 alacritty
 alsa-firmware
@@ -62,6 +63,7 @@ iwd
 j4-dmenu-desktop
 kakoune
 kitty
+kvantum
 lazygit
 lf
 linux5.9
@@ -103,6 +105,7 @@ protontricks
 pulseaudio
 python3-pip
 qmk
+qt5ct
 ripgrep
 ruby
 sct
@@ -116,6 +119,7 @@ socklog-void
 sound-theme-freedesktop
 spectrwm
 speedtest-cli
+spotify-qt
 spotify-tui
 spotifyd
 steam
@@ -125,13 +129,13 @@ sxhkd
 syncthing
 tailscale
 tealdeer
-telegram-desktop
 terminus-font
 tokei
 topgrade
 trash-cli
 trayer-srg
 ttf-ubuntu-font-family
+ufetch
 ufw
 vdpauinfo
 viu
@@ -164,8 +168,10 @@ xdotool
 xev
 xf86-video-amdgpu
 xinit
+xkb-switch
 xob
 xorg-minimal
+xprop
 xrdb
 xsecurelock
 xset

@@ -25,6 +25,8 @@ if [[ "$(uname)" == "Linux" ]]; then
     export QT_WAYLAND_FORCE_DPI=physical
     export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
     export QT_AUTO_SCREEN_SCALE_FACTOR=1
+    # export QT_QPA_PLATFORMTHEME=qt5ct
+    export QT_STYLE_OVERRIDE=kvantum
     export MANGOHUD=1
     export ENABLE_VKBASALT=1
     export BEMENU_SCALE=2
