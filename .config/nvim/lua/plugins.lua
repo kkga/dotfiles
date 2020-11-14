@@ -46,7 +46,7 @@ return require('packer').startup(function()
   use 'previm/previm'
   use 'cweagans/vim-taskpaper'
   use 'https://gitlab.com/dbeniamine/todo.txt-vim'
-  use 'lervag/wiki.vim'
+  -- use 'lervag/wiki.vim'
   use 'axvr/org.vim'
   use 'junegunn/goyo.vim'
 
@@ -56,6 +56,8 @@ return require('packer').startup(function()
   use 'dyng/ctrlsf.vim'
   use 'ctrlpvim/ctrlp.vim'
   use 'mhinz/vim-grepper'
+  use { 'lotabout/skim', run = 'cd ~/.skim && ./install' }
+  use 'lotabout/skim.vim'
 
   -- lsp
   use {'neoclide/coc.nvim', branch = 'release'}

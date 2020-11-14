@@ -110,10 +110,10 @@ let g:sneak#s_next = 1
 " nnoremap <C-g>h <cmd>lua require'telescope.builtin'.command_history{}<CR>
 " }}}
 " wiki {{{
-let g:wiki_root = '~/notes'
-let g:wiki_filetypes = ['md']
-let g:wiki_mappings_use_defaults = 'local'
-let g:wiki_list_todos = ['[ ]', '[x]']
+" let g:wiki_root = '~/notes'
+" let g:wiki_filetypes = ['md']
+" let g:wiki_mappings_use_defaults = 'local'
+" let g:wiki_list_todos = ['[ ]', '[x]']
 " }}}
 " grepper {{{
 let g:grepper               = {}
@@ -391,6 +391,7 @@ let g:colortemplate_toolbar = 0
 let mapleader = "\<space>"
 let maplocalleader = "\,"
 
+" move lines around
 nnoremap <c-j> :m .+1<CR>==
 nnoremap <c-k> :m .-2<CR>==
 inoremap <c-j> <Esc>:m .+1<CR>==gi
@@ -399,8 +400,6 @@ vnoremap <c-j> :m '>+1<CR>gv=gv
 vnoremap <c-k> :m '<-2<CR>gv=gv
 
 " esc alternative
-inoremap jj <esc>
-inoremap kk <esc>
 inoremap jk <esc>
 inoremap kj <esc>
 
