@@ -13,7 +13,7 @@ export SUDO_ASKPASS=/usr/libexec/seahorse/ssh-askpass
 xsettingsd &
 
 # statusbar script for dwm
-baraction.sh &
+# baraction.sh &
 
 # background color
 xsetroot -solid "#1c1c1c"
