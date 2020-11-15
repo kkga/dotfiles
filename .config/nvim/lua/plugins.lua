@@ -49,6 +49,7 @@ return require('packer').startup(function()
   -- use 'lervag/wiki.vim'
   use 'axvr/org.vim'
   use 'junegunn/goyo.vim'
+  use 'fiatjaf/neuron.vim'
 
   -- searching
   -- use {'nvim-lua/telescope.nvim', requires = {'nvim-lua/popup.nvim', 'nvim-lua/plenary.nvim'}}

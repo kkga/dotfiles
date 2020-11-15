@@ -18,12 +18,6 @@ baraction.sh &
 # background color
 xsetroot -solid "#1c1c1c"
 
-# start syncthing
-syncthing -no-browser > /dev/null &
-
-# keyboard daemon; not used with spectrwm
-# sxhkd &
-
 # clipboard daemon
 clipmenud &
 

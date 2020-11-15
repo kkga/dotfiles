@@ -3,6 +3,8 @@
 lua require('plugins')
 autocmd BufWritePost plugins.lua PackerCompile
 
+let g:neuron_dir = '~/repos/notes'
+
 " SETTINGS {{{
 
 

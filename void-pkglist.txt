@@ -135,7 +135,6 @@ topgrade
 trash-cli
 trayer-srg
 ttf-ubuntu-font-family
-ufetch
 ufw
 vdpauinfo
 viu
