@@ -47,6 +47,7 @@ gammastep
 gcc
 geoclue2
 geoip
+gettext
 git
 github-cli
 gnome-keyring
@@ -70,7 +71,9 @@ linux5.9
 linux5.9-headers
 lm_sensors
 luakit
+lutris
 lxappearance
+lxrandr
 maim
 mesa
 mesa-dri
@@ -89,6 +92,7 @@ noto-fonts-ttf
 nvimpager
 obs
 opendoas
+opera
 pamixer
 pandoc
 patch
@@ -103,10 +107,12 @@ powertop
 procs
 protontricks
 pulseaudio
+python3-distro
 python3-pip
 qmk
 qt5ct
 ripgrep
+rofi
 ruby
 sct
 seahorse
@@ -123,6 +129,7 @@ spotify-qt
 spotify-tui
 spotifyd
 steam
+steam-fonts
 strace
 surf
 sxhkd
@@ -136,6 +143,7 @@ trash-cli
 trayer-srg
 ttf-ubuntu-font-family
 ufw
+uni
 vdpauinfo
 viu
 vkBasalt
@@ -155,6 +163,8 @@ wine
 wine-32bit
 winetricks
 wireguard-tools
+wmctrl
+wofi
 xarchiver
 xbacklight
 xclip
@@ -187,3 +197,4 @@ zathura-pdf-poppler
 zig
 zola
 zoxide
+zrandr
