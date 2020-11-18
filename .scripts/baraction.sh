@@ -13,13 +13,12 @@ while :; do
 	fi
 
 	# keyboard
-	KBD=$(xkb-switch)
+	KBD_STR=$(xkb-switch)
 
 	# network
 	_IP=$(curl -s ifconfig.co/ip)
 	_COUNTRY=$(curl ifconfig.co/country-iso)
 	NET_STR="$_IP $_COUNTRY"
-
 
 	# system
 	CPU=$(sensors | grep Tdie | cut -c 16-17)
@@ -34,7 +33,7 @@ while :; do
 +@fg=2; | +@fg=0;$CPU_INFO_STR\
 +@fg=2; | +@fg=0;$GPU_INFO_STR\
 +@fg=2; | +@fg=0;$NET_STR\
-+@fg=2; | +@fg=0;$KBD\
++@fg=2; | +@fg=0;$KBD_STR\
 +@fg=2; | +@fg=0;$DATE_STR"
 
 	sleep $SLEEP_SEC

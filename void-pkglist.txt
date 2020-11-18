@@ -11,6 +11,7 @@ alsa-oss
 alsa-plugins-pulseaudio
 alsa-utils
 autorandr
+badwolf
 base-system
 bat
 bc
@@ -128,8 +129,8 @@ speedtest-cli
 spotify-qt
 spotify-tui
 spotifyd
+stalonetray
 steam
-steam-fonts
 strace
 surf
 sxhkd
@@ -137,6 +138,7 @@ syncthing
 tailscale
 tealdeer
 terminus-font
+tint2
 tokei
 topgrade
 trash-cli
@@ -178,6 +180,7 @@ xev
 xf86-video-amdgpu
 xinit
 xkb-switch
+xmobar
 xob
 xorg-minimal
 xprop
