@@ -11,7 +11,6 @@ alsa-oss
 alsa-plugins-pulseaudio
 alsa-utils
 autorandr
-badwolf
 base-system
 bat
 bc
@@ -34,6 +33,7 @@ dunst
 elogind
 eudev-libudev
 exa
+exercism
 fd
 ffmpeg
 ffscreencast
@@ -53,6 +53,7 @@ git
 github-cli
 gnome-keyring
 godot
+gpick
 grub-btrfs
 grub-terminus
 grub-x86_64-efi
@@ -63,6 +64,7 @@ hyperfine
 imv
 iwd
 j4-dmenu-desktop
+jq
 kakoune
 kitty
 kvantum
@@ -93,12 +95,12 @@ noto-fonts-ttf
 nvimpager
 obs
 opendoas
+openntpd
 opera
 pamixer
 pandoc
 patch
 pavucontrol
-pcmanfm
 pkg-config
 playerctl
 polkit-elogind
@@ -114,8 +116,6 @@ qmk
 qt5ct
 ripgrep
 rofi
-ruby
-sct
 seahorse
 setxkbmap
 skim
@@ -138,7 +138,6 @@ syncthing
 tailscale
 tealdeer
 terminus-font
-tint2
 tokei
 topgrade
 trash-cli
@@ -165,8 +164,8 @@ wine
 wine-32bit
 winetricks
 wireguard-tools
+wlroots
 wmctrl
-wofi
 xarchiver
 xbacklight
 xclip
@@ -181,6 +180,7 @@ xf86-video-amdgpu
 xinit
 xkb-switch
 xmobar
+xmonad
 xob
 xorg-minimal
 xprop
@@ -197,7 +197,6 @@ yaru-plus
 youtube-dl
 zathura
 zathura-pdf-poppler
-zig
 zola
 zoxide
 zrandr

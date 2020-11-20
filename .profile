@@ -30,6 +30,7 @@ if [[ "$(uname)" == "Linux" ]]; then
     export MANGOHUD=1
     export ENABLE_VKBASALT=1
     export BEMENU_SCALE=2
+    export BEMENU_OPTS="-i -l 12 -p '' -P '' --fn monospace 14 --hb=#282828 --hf=#ffffff"
     export GDK_SCALE=2
     export GDK_DPI_SCALE=0.5
 fi

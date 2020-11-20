@@ -31,13 +31,16 @@ super + ctrl + d
 	kitty @ --to unix:@mykitty set-colors ~/.config/kitty/apprentice.conf
 
 super + d
-	dmenu_run -i
+	bemenu-run
 
 super + shift + d
-	j4-dmenu-desktop --usage-log="tmp/j4-dmenu-desktop.log" --display-binary --dmenu="dmenu -i" --term="kitty"
+	j4-dmenu-desktop --usage-log="tmp/j4-dmenu-desktop.log" \
+	--display-binary \
+	--term="kitty" \
+	--dmenu="bemenu"
 
 super + ctrl + c
-	clipmenu -i
+	env CM_LAUNCHER=bemenu clipmenu
 
 super + Escape
 	pkill -USR1 -x sxhkd

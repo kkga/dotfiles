@@ -10,7 +10,7 @@ export SUDO_ASKPASS=/usr/libexec/seahorse/ssh-askpass
 /usr/libexec/polkit-gnome-authentication-agent-1 &
 
 # background color
-xsetroot -solid "#1c1c1c"
+xsetroot -solid "#000000"
 
 # simple settings daemon for gtk apps
 xsettingsd &
@@ -18,15 +18,15 @@ xsettingsd &
 # clipboard daemon
 clipmenud &
 
+# keyboard daemon
+sxhkd &
+
 # screensaver and screenlock
 xset s 300
 xss-lock -n /usr/libexec/xsecurelock/dimmer -l -- xsecurelock &
 
 # screen dimmer
 gammastep -t 6500:4000 -m randr &
-
-# start dbus session for dwm-loop (self-restarting on kill)
-# exec dbus-run-session dwm-run.sh
 
 # using spectrwm these days, it's pretty good
 exec dbus-run-session spectrwm
