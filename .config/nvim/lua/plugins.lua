@@ -25,6 +25,7 @@ return require('packer').startup(function()
   use 'tpope/vim-sleuth'
   use 'tpope/vim-eunuch'
   use 'tpope/vim-unimpaired'
+  use 'tpope/vim-endwise'
   use 'airblade/vim-rooter'
   use 'junegunn/vim-easy-align'
   use 'cohama/lexima.vim'
@@ -70,5 +71,6 @@ return require('packer').startup(function()
   -- lang
   use 'habamax/vim-godot'
   use 'rust-lang/rust.vim'
+  use 'ziglang/zig.vim'
 
 end)

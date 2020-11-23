@@ -10,7 +10,15 @@
                 "gdscript"
             ],
             "port": 6008
-        }
+        },
+       "zls" : {
+           "command": "/home/kkga/.local/bin/zls",
+           "filetypes": ["zig"]
+       },
+       "lua": {
+           "command": "/bin/lua-lsp",
+           "filetypes": ["lua"]
+       }
     },
     "rust-analyzer.checkOnSave.command": "clippy",
     "coc.preferences.extensionUpdateCheck": "never"

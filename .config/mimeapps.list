@@ -1,6 +1,6 @@
 [Default Applications]
-x-scheme-handler/http=firefox.desktop
-x-scheme-handler/https=firefox.desktop
+x-scheme-handler/http=userapp-Firefox-JUEFU0.desktop
+x-scheme-handler/https=userapp-Firefox-JUEFU0.desktop
 x-scheme-handler/about=firefox.desktop
 x-scheme-handler/unknown=firefox.desktop
 text/plain=nvim.desktop;
@@ -11,8 +11,27 @@ application/pdf=org.pwmt.zathura.desktop
 inode/directory=lf.desktop
 x-scheme-handler/mailto=userapp-Thunderbird-NM5XT0.desktop
 message/rfc822=userapp-Thunderbird-NM5XT0.desktop
+x-scheme-handler/ftp=userapp-Firefox-JUEFU0.desktop
+x-scheme-handler/chrome=userapp-Firefox-JUEFU0.desktop
+text/html=userapp-Firefox-JUEFU0.desktop
+application/x-extension-htm=userapp-Firefox-JUEFU0.desktop
+application/x-extension-html=userapp-Firefox-JUEFU0.desktop
+application/x-extension-shtml=userapp-Firefox-JUEFU0.desktop
+application/xhtml+xml=userapp-Firefox-JUEFU0.desktop
+application/x-extension-xhtml=userapp-Firefox-JUEFU0.desktop
+application/x-extension-xht=userapp-Firefox-JUEFU0.desktop
 
 [Added Associations]
 x-scheme-handler/mailto=userapp-Thunderbird-NM5XT0.desktop;
 message/rfc822=userapp-Thunderbird-NM5XT0.desktop;
-text/html=firefox.desktop;
+text/html=firefox.desktop;userapp-Firefox-JUEFU0.desktop;
+x-scheme-handler/http=userapp-Firefox-JUEFU0.desktop;
+x-scheme-handler/https=userapp-Firefox-JUEFU0.desktop;
+x-scheme-handler/ftp=userapp-Firefox-JUEFU0.desktop;
+x-scheme-handler/chrome=userapp-Firefox-JUEFU0.desktop;
+application/x-extension-htm=userapp-Firefox-JUEFU0.desktop;
+application/x-extension-html=userapp-Firefox-JUEFU0.desktop;
+application/x-extension-shtml=userapp-Firefox-JUEFU0.desktop;
+application/xhtml+xml=userapp-Firefox-JUEFU0.desktop;
+application/x-extension-xhtml=userapp-Firefox-JUEFU0.desktop;
+application/x-extension-xht=userapp-Firefox-JUEFU0.desktop;

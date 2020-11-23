@@ -11,6 +11,7 @@ alsa-oss
 alsa-plugins-pulseaudio
 alsa-utils
 autorandr
+awesome
 base-system
 bat
 bc
@@ -19,6 +20,7 @@ bluez
 bottom
 brightnessctl
 brillo
+chrony
 clipmenu
 cmake
 corectrl
@@ -31,6 +33,7 @@ dkms
 dmenu
 dunst
 elogind
+emptty
 eudev-libudev
 exa
 exercism
@@ -44,11 +47,11 @@ flatpak
 font-go-ttf
 font-ibm-plex-ttf
 font-spleen
+fzy
 gammastep
 gcc
 geoclue2
 geoip
-gettext
 git
 github-cli
 gnome-keyring
@@ -60,8 +63,8 @@ grub-x86_64-efi
 gsound
 gvfs
 htop
-hyperfine
 imv
+inxi
 iwd
 j4-dmenu-desktop
 jq
@@ -73,10 +76,10 @@ lf
 linux5.9
 linux5.9-headers
 lm_sensors
-luakit
+lua
+lua-devel
+luarocks
 lutris
-lxappearance
-lxrandr
 maim
 mesa
 mesa-dri
@@ -95,17 +98,18 @@ noto-fonts-ttf
 nvimpager
 obs
 opendoas
-openntpd
-opera
 pamixer
 pandoc
 patch
 pavucontrol
+pcre
+pcre-devel
+pick
+picom
 pkg-config
 playerctl
 polkit-elogind
 polkit-gnome
-polybar
 powertop
 procs
 protontricks
@@ -129,9 +133,7 @@ speedtest-cli
 spotify-qt
 spotify-tui
 spotifyd
-stalonetray
 steam
-strace
 surf
 sxhkd
 syncthing
@@ -145,7 +147,6 @@ trayer-srg
 ttf-ubuntu-font-family
 ufw
 uni
-vdpauinfo
 viu
 vkBasalt
 void-docs
@@ -153,6 +154,7 @@ void-docs-browse
 void-repo-multilib
 void-repo-multilib-nonfree
 void-repo-nonfree
+volumeicon
 vpm
 vsv
 vulkan-loader
@@ -179,9 +181,6 @@ xev
 xf86-video-amdgpu
 xinit
 xkb-switch
-xmobar
-xmonad
-xob
 xorg-minimal
 xprop
 xrdb
@@ -197,6 +196,7 @@ yaru-plus
 youtube-dl
 zathura
 zathura-pdf-poppler
+zig
 zola
 zoxide
 zrandr

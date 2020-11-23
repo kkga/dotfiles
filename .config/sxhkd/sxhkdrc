@@ -22,24 +22,24 @@ shift + XF86MonBrightness{Down,Up}
 	brightness.sh ddcci5 {-U 5, -A 5}
 
 super + shift + Return
-	kitty --single-instance --listen-on=unix:@mykitty
+	kitty
 
 super + ctrl + l
-	kitty @ --to unix:@mykitty set-colors ~/.config/kitty/envy.conf
+	kitty @ set-colors ~/.config/kitty/envy.conf
 
 super + ctrl + d
-	kitty @ --to unix:@mykitty set-colors ~/.config/kitty/apprentice.conf
+	kitty @ set-colors ~/.config/kitty/apprentice.conf
 
-super + d
+super + shift + p
 	bemenu-run
 
-super + shift + d
+super + p
 	j4-dmenu-desktop --usage-log="tmp/j4-dmenu-desktop.log" \
 	--display-binary \
 	--term="kitty" \
 	--dmenu="bemenu"
 
-super + ctrl + c
+super + ctrl + v
 	env CM_LAUNCHER=bemenu clipmenu
 
 super + Escape
