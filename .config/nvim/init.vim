@@ -170,7 +170,8 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'css': ['prettier'],
 \   'json': ['prettier'],
-\   'lua': ['luafmt']
+\   'lua': ['luafmt'],
+\   'markdown': ['remark-lint']
 \}
 let g:ale_linters = {'rust': ['analyzer', 'cargo', 'rls']}
 
