@@ -1,25 +1,23 @@
 {
-    "diagnostic": {
-        "errorSign": "> ",
-        "warningSign": "- "
+  "diagnostic": {
+    "errorSign": "> ",
+    "warningSign": "- "
+  },
+  "languageserver": {
+    "godot": {
+      "host": "127.0.0.1",
+      "filetypes": ["gdscript"],
+      "port": 6008
     },
-    "languageserver": {
-        "godot": {
-            "host": "127.0.0.1",
-            "filetypes": [
-                "gdscript"
-            ],
-            "port": 6008
-        },
-       "zls" : {
-           "command": "/home/kkga/.local/bin/zls",
-           "filetypes": ["zig"]
-       },
-       "lua": {
-           "command": "/usr/local/bin/lua-lsp",
-           "filetypes": ["lua"]
-       }
+    "zls": {
+      "command": "/home/kkga/.local/bin/zls",
+      "filetypes": ["zig"]
     },
-    "rust-analyzer.checkOnSave.command": "clippy",
-    "coc.preferences.extensionUpdateCheck": "never"
+    "lua": {
+      "command": "/bin/lua-lsp",
+      "filetypes": ["lua"]
+    }
+  },
+  "rust-analyzer.checkOnSave.command": "clippy",
+  "coc.preferences.extensionUpdateCheck": "never"
 }

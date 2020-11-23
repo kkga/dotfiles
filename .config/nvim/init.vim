@@ -54,124 +54,24 @@ function! PackInit() abort
   call minpac#add('neoclide/coc.nvim')
   call minpac#add('dense-analysis/ale')
 
+  " lang
   call minpac#add('habamax/vim-godot')
+  call minpac#add('euclidianAce/BetterLua.vim')
+  call minpac#add('tjdevries/manillua.nvim')
 
 endfunction
 
-" Plugin settings here.
-
-" Define user commands for updating/cleaning the plugins.
-" Each of them calls PackInit() to load minpac and register
-" the information of plugins, then performs the task.
-command! PackUpdate call PackInit() | call minpac#update()
-command! PackClean  call PackInit() | call minpac#clean()
-command! PackStatus packadd minpac | call minpac#status()
-"}}}
-" SETTINGS {{{
-
-
-filetype plugin indent on
-syntax on
-set termguicolors
-colorscheme envy
-
-" various
-set encoding=utf8               " Set UTF-8 encoding
-set backspace=indent,eol,start  " Proper backspace behavior
-set hidden                      " Possibility to have more than one unsaved buffers
-set autoread                    " Reload files changed outside vim
-set incsearch                   " Incremental search, hit CR to stop
-set ignorecase                  " Ignore case when searching
-set lazyredraw                  " Don't redraw during macros
-set ruler                       " Shows the current line number at the bottom-right of the screen
-set wildmenu                    " Great command-line completion, use `<Tab>` to move aet wraound and CR to validate
-set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.o,.git,tmp,node_modules,*.pyc
-set backspace=indent,eol,start  " Allow backspace in insert mode
-set ttimeoutlen=2               " Exit insert/visual mode without ESC delay
-set inccommand=split            " Highlight search results and show in preview split
-set conceallevel=0              " Conceals markdown syntax
-set foldlevel=6
-set nospell
-set mouse=a
-
-" text, tabs and indents
-" set expandtab                   " Tabs are spaces
-" set softtabstop=4               " # of spaces in tab when editing
-" set tabstop=4                   " # of spaces that a tab counts for
-set shiftwidth=4                " # of spaces to use for autoindent
-set linebreak                   " Wrap lines when convenient
-set nowrap                      " Wrap lines
-set autoindent                  " Minimal automatic indenting for any filetype
-set list
-set listchars=tab:\|-,extends:»,precedes:«,space:.
-
-" lines and numbers
-set nonumber
-set norelativenumber
-set cursorline
-set nocursorcolumn
-set colorcolumn=100
-set foldcolumn=0
-set signcolumn=yes
-set synmaxcol=200
-
-" splits
-set splitright                  " Splitting will put the new window right
-set splitbelow                  " Splitting will put the new window below
-
-" columns
-set nojoinspaces                " Set 1 space btwn lines/periods to be joined
-
-" scrollin
-set scrolloff=8               " Working line will always be in the center
-
-" fish doesn't always play nice in vim
-if &shell =~# 'fish$'
-  set shell=/bin/dash
-endif
-
-" disable backups and swap
-set nobackup
-set nowb
-set noswapfile
-
-" undo
-set undodir=$HOME/.vim/undodir  " Set persistent undodir path
-set undofile                    " Write changes to the undofile
-set undolevels=1000             " Max # of changes that can be undone
-set undoreload=10000            " Max # of lines to save for undo on buf reload
-
-" statusline
-function! StatusDiagnostic() abort
-  let info = get(b:, 'coc_diagnostic_info', {})
-  if empty(info) | return '' | endif
-  let msgs = []
-  if get(info, 'error', 0)
-    call add(msgs, 'E' . info['error'])
-  endif
-  if get(info, 'warning', 0)
-    call add(msgs, 'W' . info['warning'])
-  endif
-  return join(msgs, ' '). ' ' . get(g:, 'coc_status', '')
-endfunction
-
-set statusline=%<\ %f\ %m%r
-set statusline+=%{&paste?'\ \ \|\ PASTE\ ':'\ '}
-set statusline+=%=%{StatusDiagnostic()}\ %{fugitive#statusline()}\ [%{&filetype}]\ %3l/%3L\ (%2c\)\
-
-" }}}
-" PLUGIN SETTINGS {{{
-
+" sneak {{{
 let g:sleuth_automatic = 1
 let g:sneak#s_next = 1
-
+" }}}
 " ale {{{
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'css': ['prettier'],
 \   'json': ['prettier'],
 \   'lua': ['luafmt'],
-\   'markdown': ['remark-lint']
+\   'markdown': ['prettier']
 \}
 let g:ale_linters = {'rust': ['analyzer', 'cargo', 'rls']}
 
@@ -424,6 +324,103 @@ let g:rust_fold = 2
 " colortemplate {{{
 let g:colortemplate_toolbar = 0
 " }}}
+
+command! PackUpdate call PackInit() | call minpac#update()
+command! PackClean  call PackInit() | call minpac#clean()
+command! PackStatus packadd minpac | call minpac#status()
+
+"}}}
+" SETTINGS {{{
+
+filetype plugin indent on
+syntax on
+set termguicolors
+colorscheme envy
+
+" various
+set encoding=utf8               " Set UTF-8 encoding
+set backspace=indent,eol,start  " Proper backspace behavior
+set hidden                      " Possibility to have more than one unsaved buffers
+set autoread                    " Reload files changed outside vim
+set incsearch                   " Incremental search, hit CR to stop
+set ignorecase                  " Ignore case when searching
+set lazyredraw                  " Don't redraw during macros
+set ruler                       " Shows the current line number at the bottom-right of the screen
+set wildmenu                    " Great command-line completion, use `<Tab>` to move aet wraound and CR to validate
+set wildignore+=*.jpg,*.jpeg,*.png,*.gif,*.o,.git,tmp,node_modules,*.pyc
+set backspace=indent,eol,start  " Allow backspace in insert mode
+set ttimeoutlen=2               " Exit insert/visual mode without ESC delay
+set inccommand=split            " Highlight search results and show in preview split
+set conceallevel=0              " Conceals markdown syntax
+set foldlevel=6
+set nospell
+set mouse=a
+
+" text, tabs and indents
+" set expandtab                   " Tabs are spaces
+" set softtabstop=4               " # of spaces in tab when editing
+" set tabstop=4                   " # of spaces that a tab counts for
+set shiftwidth=4                " # of spaces to use for autoindent
+set linebreak                   " Wrap lines when convenient
+set nowrap                      " Wrap lines
+set autoindent                  " Minimal automatic indenting for any filetype
+set list
+set listchars=tab:\|-,extends:»,precedes:«,space:.
+
+" lines and numbers
+set nonumber
+set norelativenumber
+set cursorline
+set nocursorcolumn
+set colorcolumn=100
+set foldcolumn=0
+set signcolumn=yes
+set synmaxcol=200
+
+" splits
+set splitright                  " Splitting will put the new window right
+set splitbelow                  " Splitting will put the new window below
+
+" columns
+set nojoinspaces                " Set 1 space btwn lines/periods to be joined
+
+" scrollin
+set scrolloff=8               " Working line will always be in the center
+
+" fish doesn't always play nice in vim
+if &shell =~# 'fish$'
+  set shell=/bin/dash
+endif
+
+" disable backups and swap
+set nobackup
+set nowb
+set noswapfile
+
+" undo
+set undodir=$HOME/.vim/undodir  " Set persistent undodir path
+set undofile                    " Write changes to the undofile
+set undolevels=1000             " Max # of changes that can be undone
+set undoreload=10000            " Max # of lines to save for undo on buf reload
+
+" statusline
+function! StatusDiagnostic() abort
+  let info = get(b:, 'coc_diagnostic_info', {})
+  if empty(info) | return '' | endif
+  let msgs = []
+  if get(info, 'error', 0)
+    call add(msgs, 'E' . info['error'])
+  endif
+  if get(info, 'warning', 0)
+    call add(msgs, 'W' . info['warning'])
+  endif
+  return join(msgs, ' '). ' ' . get(g:, 'coc_status', '')
+endfunction
+
+set statusline=%<\ %f\ %m%r
+set statusline+=%{&paste?'\ \ \|\ PASTE\ ':'\ '}
+set statusline+=%=%{StatusDiagnostic()}\ %{fugitive#statusline()}\ [%{&filetype}]\ %3l/%3L\ (%2c\)\
+
 " }}}
 " MAPPINGS {{{
 
