@@ -1,8 +1,72 @@
 " vim:foldmethod=marker:foldlevel=0
 
-lua require('plugins')
-autocmd BufWritePost plugins.lua PackerCompile
+" PLUGINS {{{
+packadd minpac
+call minpac#init()
 
+function! PackInit() abort
+  packadd minpac
+
+  call minpac#init()
+  call minpac#add('k-takata/minpac', {'type': 'opt'})
+
+  call minpac#add('kkga/vim-envy')
+  call minpac#add('romainl/Apprentice')
+  call minpac#add('yasukotelin/shirotelin')
+  call minpac#add('robertmeta/nofrils')
+  call minpac#add('https://gitlab.com/yorickpeterse/vim-paper.git')
+  call minpac#add('lifepillar/vim-colortemplate')
+
+  call minpac#add('tpope/vim-surround')
+  call minpac#add('tpope/vim-repeat')
+  call minpac#add('tpope/vim-fugitive')
+  call minpac#add('tpope/vim-commentary')
+  call minpac#add('tomtom/tcomment_vim')
+  call minpac#add('tpope/vim-sleuth')
+  call minpac#add('tpope/vim-eunuch')
+  call minpac#add('tpope/vim-unimpaired')
+  call minpac#add('tpope/vim-endwise')
+  call minpac#add('airblade/vim-rooter')
+  call minpac#add('junegunn/vim-easy-align')
+  call minpac#add('cohama/lexima.vim')
+  call minpac#add('mhinz/vim-sayonara')
+
+  call minpac#add('airblade/vim-gitgutter')
+  call minpac#add('ap/vim-buftabline')
+  call minpac#add('mbbill/undotree')
+  call minpac#add('junegunn/vim-peekaboo')
+  call minpac#add('machakann/vim-highlightedyank')
+
+  call minpac#add('plasticboy/vim-markdown')
+  call minpac#add('previm/previm')
+  call minpac#add('cweagans/vim-taskpaper')
+  call minpac#add('https://gitlab.com/dbeniamine/todo.txt-vim')
+  call minpac#add('axvr/org.vim')
+  call minpac#add('junegunn/goyo.vim')
+  call minpac#add('godlygeek/tabular')
+
+  call minpac#add('justinmk/vim-dirvish')
+  call minpac#add('dyng/ctrlsf.vim')
+  call minpac#add('ctrlpvim/ctrlp.vim')
+  call minpac#add('mhinz/vim-grepper')
+  call minpac#add('lotabout/skim.vim')
+
+  call minpac#add('neoclide/coc.nvim')
+  call minpac#add('dense-analysis/ale')
+
+  call minpac#add('habamax/vim-godot')
+
+endfunction
+
+" Plugin settings here.
+
+" Define user commands for updating/cleaning the plugins.
+" Each of them calls PackInit() to load minpac and register
+" the information of plugins, then performs the task.
+command! PackUpdate call PackInit() | call minpac#update()
+command! PackClean  call PackInit() | call minpac#clean()
+command! PackStatus packadd minpac | call minpac#status()
+"}}}
 " SETTINGS {{{
 
 
@@ -42,9 +106,9 @@ set list
 set listchars=tab:\|-,extends:»,precedes:«,space:.
 
 " lines and numbers
-set nonumber                      
-set norelativenumber             
-set cursorline                
+set nonumber
+set norelativenumber
+set cursorline
 set nocursorcolumn
 set colorcolumn=100
 set foldcolumn=0
@@ -93,7 +157,7 @@ endfunction
 
 set statusline=%<\ %f\ %m%r
 set statusline+=%{&paste?'\ \ \|\ PASTE\ ':'\ '}
-set statusline+=%=%{StatusDiagnostic()}\ %{fugitive#statusline()}\ [%{&filetype}]\ %3l/%3L\ (%2c\)\ 
+set statusline+=%=%{StatusDiagnostic()}\ %{fugitive#statusline()}\ [%{&filetype}]\ %3l/%3L\ (%2c\)\
 
 " }}}
 " PLUGIN SETTINGS {{{
@@ -101,13 +165,22 @@ set statusline+=%=%{StatusDiagnostic()}\ %{fugitive#statusline()}\ [%{&filetype}
 let g:sleuth_automatic = 1
 let g:sneak#s_next = 1
 
-" telescope {{{
-" nnoremap <C-g>g <cmd>lua require'telescope.builtin'.git_files{}<CR>
-" nnoremap <C-g>f <cmd>lua require'telescope.builtin'.find_files{}<CR>
-" nnoremap <C-g>c <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/.config/nvim/" }<CR>
-" nnoremap <C-g>n <cmd>lua require'telescope.builtin'.find_files{ cwd = "~/notes/" }<CR>
-" nnoremap <C-g>r <cmd>lua require'telescope.builtin'.oldfiles{}<CR>
-" nnoremap <C-g>h <cmd>lua require'telescope.builtin'.command_history{}<CR>
+" ale {{{
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'css': ['prettier'],
+\   'json': ['prettier'],
+\   'lua': ['luafmt']
+\}
+let g:ale_linters = {'rust': ['analyzer', 'cargo', 'rls']}
+
+let g:ale_disable_lsp = 1
+let g:ale_fix_on_save = 1
+" let g:ale_sign_error = "🐛"
+" let g:ale_sign_warning = "⚠️"
+" let g:ale_sign_info = "ℹ"
+let g:ale_virtualtext_cursor = 1
+let g:ale_virtualtext_prefix = "!!! "
 " }}}
 " wiki {{{
 " let g:wiki_root = '~/notes'
@@ -283,38 +356,6 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 " }}}
-" nvim-lsp {{{
-" lua << EOF
-" local on_attach_vim = function(client)
-"   require'completion'.on_attach(client)
-"   require'diagnostic'.on_attach(client)
-" end
-" require'nvim_lsp'.gdscript.setup{on_attach=on_attach_vim}
-" EOF
-
-" nnoremap <silent> <leader>d <cmd>lua vim.lsp.buf.hover()<CR>
-
-" " diagnostics
-" let g:diagnostic_enable_virtual_text = 0
-" call sign_define("LspDiagnosticsErrorSign", {"text" : ">>", "texthl" : "LspDiagnosticsError"})
-" call sign_define("LspDiagnosticsWarningSign", {"text" : "--", "texthl" : "LspDiagnosticsWarning"})
-" call sign_define("LspDiagnosticsInformationSign", {"text" : "-I", "texthl" : "LspDiagnosticsInformation"})
-" call sign_define("LspDiagnosticsHintSign", {"text" : "-H", "texthl" : "LspDiagnosticsHint"})
-
-" " completion
-" autocmd BufEnter * lua require'completion'.on_attach()
-" let g:completion_chain_complete_list = [
-"     \{'complete_items': ['lsp', 'snippet']},
-"     \{'mode': '<c-p>'},
-"     \{'mode': '<c-n>'}
-" \]
-" let g:completion_auto_change_source = 1
-" let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy']
-" inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-" inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-" set completeopt=menuone,noinsert,noselect
-" set shortmess+=c
-" }}}
 " buftabline {{{
 let g:buftabline_show = 1
 let g:buftabline_numbers = 2
@@ -322,8 +363,6 @@ let g:buftabline_indicators = 1
 let g:buftabline_separators = 0
 " }}}
 " ale {{{
-let g:ale_disable_lsp = 1
-let g:ale_linters = {'rust': ['analyzer', 'cargo', 'rls']}
 " }}}
 " solarized8 {{{
 " let g:solarized_visibility = "low"
@@ -427,7 +466,7 @@ nmap <leader>0 <Plug>BufTabLine.Go(10)
 nnoremap <C-n> :bnext<CR>
 nnoremap <C-p> :bprev<CR>
 
-" create a new buffer 
+" create a new buffer
 nnoremap <leader>B :enew<cr>
 " close current buffer
 nnoremap <leader>bq :bp <bar> bd! #<cr>
@@ -642,4 +681,3 @@ command! -bang -nargs=* FindNotesWithPreview
 " nmap <silent> <leader>nw :FindNotesWithPreview<CR>
 
 " }}}
-

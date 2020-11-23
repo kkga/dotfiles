@@ -16,7 +16,7 @@
            "filetypes": ["zig"]
        },
        "lua": {
-           "command": "/bin/lua-lsp",
+           "command": "/usr/local/bin/lua-lsp",
            "filetypes": ["lua"]
        }
     },

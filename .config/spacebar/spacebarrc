@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 spacebar -m config position           top
-spacebar -m config height             20
+spacebar -m config height             16
 spacebar -m config text_font          "Essential PragmataPro:Regular:13.0"
 spacebar -m config icon_font          "Essential PragmataPro:Regular:13.0"
 spacebar -m config background_color   0xff000000
