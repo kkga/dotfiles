@@ -3,11 +3,8 @@
 XF86AudioMute
 	volume.sh -t
 
-XF86AudioRaiseVolume
-	volume.sh -i 5
-
-XF86AudioLowerVolume
-	volume.sh -d 5
+XF86Audio{Raise,Lower}Volume
+	volume.sh {-i 5,-d 5}
 
 XF86Audio{Prev,Next}
 	playerctl {previous,next}
@@ -39,8 +36,9 @@ super + p
 	--term="kitty" \
 	--dmenu="bemenu"
 
-super + ctrl + v
-	env CM_LAUNCHER=bemenu clipmenu
+super + g ; {c,b}
+	{env CM_LAUNCHER=bemenu clipmenu,\
+	firefox}
 
 super + Escape
 	pkill -USR1 -x sxhkd
