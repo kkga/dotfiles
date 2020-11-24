@@ -1,6 +1,7 @@
 " vim:foldmethod=marker:foldlevel=0
 
 " PLUGINS {{{
+" packages {{{
 packadd minpac
 call minpac#init()
 
@@ -10,6 +11,7 @@ function! PackInit() abort
   call minpac#init()
   call minpac#add('k-takata/minpac', {'type': 'opt'})
 
+  " themes
   call minpac#add('romainl/Apprentice')
   call minpac#add('yasukotelin/shirotelin')
   call minpac#add('robertmeta/nofrils')
@@ -17,6 +19,7 @@ function! PackInit() abort
   call minpac#add('lifepillar/vim-colortemplate')
   call minpac#add('kkga/vim-envy', {'branch': 'develop'})
 
+  " utils
   call minpac#add('tpope/vim-surround')
   call minpac#add('tpope/vim-repeat')
   call minpac#add('tpope/vim-fugitive')
@@ -26,17 +29,20 @@ function! PackInit() abort
   call minpac#add('tpope/vim-unimpaired')
   call minpac#add('tpope/vim-endwise')
   call minpac#add('rstacruz/vim-closer')
-  call minpac#add('airblade/vim-rooter')
-  call minpac#add('junegunn/vim-easy-align')
   call minpac#add('cohama/lexima.vim')
+  call minpac#add('airblade/vim-rooter')
   call minpac#add('mhinz/vim-sayonara')
+  call minpac#add('rhysd/clever-f.vim')
+  call minpac#add('justinmk/vim-sneak')
 
+  " ui
   call minpac#add('airblade/vim-gitgutter')
   call minpac#add('ap/vim-buftabline')
   call minpac#add('mbbill/undotree')
   call minpac#add('junegunn/vim-peekaboo')
   call minpac#add('machakann/vim-highlightedyank')
 
+  " notes
   call minpac#add('plasticboy/vim-markdown')
   call minpac#add('previm/previm')
   call minpac#add('cweagans/vim-taskpaper')
@@ -45,12 +51,14 @@ function! PackInit() abort
   call minpac#add('junegunn/goyo.vim')
   call minpac#add('godlygeek/tabular')
 
+  " searching
   call minpac#add('justinmk/vim-dirvish')
   call minpac#add('dyng/ctrlsf.vim')
   call minpac#add('ctrlpvim/ctrlp.vim')
   call minpac#add('mhinz/vim-grepper')
   call minpac#add('lotabout/skim.vim')
 
+  " lsp
   call minpac#add('neoclide/coc.nvim')
   call minpac#add('dense-analysis/ale')
 
@@ -60,7 +68,7 @@ function! PackInit() abort
   call minpac#add('tjdevries/manillua.nvim')
 
 endfunction
-
+" }}}
 
 " sneak {{{
 let g:sleuth_automatic = 1
@@ -74,7 +82,10 @@ let g:ale_fixers = {
 \   'lua': ['luafmt'],
 \   'markdown': ['prettier']
 \}
-let g:ale_linters = {'rust': ['analyzer', 'cargo', 'rls']}
+let g:ale_linters = {
+\   'rust': ['analyzer', 'cargo', 'rls'],
+\   'markdown': ['alex']
+\}
 
 let g:ale_disable_lsp = 1
 let g:ale_fix_on_save = 1

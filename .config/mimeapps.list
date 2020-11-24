@@ -9,6 +9,7 @@ image/gif=imv.desktop;
 image/png=imv.desktop;
 application/pdf=org.pwmt.zathura.desktop
 inode/directory=lf.desktop
+application/x-directory=lf.desktop
 x-scheme-handler/mailto=userapp-Thunderbird-NM5XT0.desktop
 message/rfc822=userapp-Thunderbird-NM5XT0.desktop
 x-scheme-handler/ftp=userapp-Firefox-JUEFU0.desktop
