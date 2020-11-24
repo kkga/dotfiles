@@ -10,12 +10,12 @@ function! PackInit() abort
   call minpac#init()
   call minpac#add('k-takata/minpac', {'type': 'opt'})
 
-  call minpac#add('kkga/vim-envy')
   call minpac#add('romainl/Apprentice')
   call minpac#add('yasukotelin/shirotelin')
   call minpac#add('robertmeta/nofrils')
   call minpac#add('https://gitlab.com/yorickpeterse/vim-paper.git')
   call minpac#add('lifepillar/vim-colortemplate')
+  call minpac#add('/home/kkga/repos/vim-envy')
 
   call minpac#add('tpope/vim-surround')
   call minpac#add('tpope/vim-repeat')
@@ -325,8 +325,8 @@ let g:rust_fold = 2
 let g:colortemplate_toolbar = 0
 " }}}
 
-command! PackUpdate call PackInit() | call minpac#update()
-command! PackClean  call PackInit() | call minpac#clean()
+command! PackUpdate source $MYVIMRC | call PackInit() | call minpac#update()
+command! PackClean  source $MYVIMRC | call PackInit() | call minpac#clean()
 command! PackStatus packadd minpac | call minpac#status()
 
 "}}}

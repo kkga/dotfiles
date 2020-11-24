@@ -7,7 +7,7 @@ widget = {
         f.close()
         local output
         if tonumber(res) > 0 then
-            output = string.format("XBPS %d", res)
+            output = string.format("⇪ %d", res)
         else
             output = nil
         end
