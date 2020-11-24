@@ -77,8 +77,8 @@ linux5.9
 linux5.9-headers
 lm_sensors
 lua
-lua-devel
 luarocks
+luastatus
 lutris
 maim
 mesa
@@ -191,11 +191,12 @@ xsettingsd
 xss-lock
 xtools
 yadm
+yarn
 yaru
 yaru-plus
 youtube-dl
 zathura
-zathura-pdf-poppler
+zathura-pdf-mupdf
 zig
 zola
 zoxide

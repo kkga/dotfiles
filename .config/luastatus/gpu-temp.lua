@@ -10,16 +10,16 @@ do
 end
 
 widget = {
-    plugin = 'timer',
+    plugin = "timer",
     opts = {period = 2},
     cb = function()
         local res = {}
         for _, p in ipairs(paths) do
-            local f = assert(io.open(p, 'r'))
-            local temp = f:read('*number') / 1000
-            table.insert(res, string.format('G %.0f°', temp))
+            local f = assert(io.open(p, "r"))
+            local temp = f:read("*number") / 1000
+            table.insert(res, string.format("G %.0f°", temp))
             f:close()
         end
         return res
-    end,
+    end
 }
