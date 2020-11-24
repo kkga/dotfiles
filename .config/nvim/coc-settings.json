@@ -1,7 +1,8 @@
 {
   "diagnostic": {
     "errorSign": "> ",
-    "warningSign": "- "
+    "warningSign": "- ",
+    "displayByAle": true
   },
   "languageserver": {
     "godot": {

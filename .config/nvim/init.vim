@@ -15,17 +15,17 @@ function! PackInit() abort
   call minpac#add('robertmeta/nofrils')
   call minpac#add('https://gitlab.com/yorickpeterse/vim-paper.git')
   call minpac#add('lifepillar/vim-colortemplate')
-  call minpac#add('/home/kkga/repos/vim-envy')
+  call minpac#add('kkga/vim-envy', {'branch': 'develop'})
 
   call minpac#add('tpope/vim-surround')
   call minpac#add('tpope/vim-repeat')
   call minpac#add('tpope/vim-fugitive')
   call minpac#add('tpope/vim-commentary')
-  call minpac#add('tomtom/tcomment_vim')
   call minpac#add('tpope/vim-sleuth')
   call minpac#add('tpope/vim-eunuch')
   call minpac#add('tpope/vim-unimpaired')
   call minpac#add('tpope/vim-endwise')
+  call minpac#add('rstacruz/vim-closer')
   call minpac#add('airblade/vim-rooter')
   call minpac#add('junegunn/vim-easy-align')
   call minpac#add('cohama/lexima.vim')
@@ -61,6 +61,7 @@ function! PackInit() abort
 
 endfunction
 
+
 " sneak {{{
 let g:sleuth_automatic = 1
 let g:sneak#s_next = 1
@@ -81,7 +82,7 @@ let g:ale_fix_on_save = 1
 " let g:ale_sign_warning = "⚠️"
 " let g:ale_sign_info = "ℹ"
 let g:ale_virtualtext_cursor = 1
-let g:ale_virtualtext_prefix = "!!! "
+" let g:ale_virtualtext_prefix = "!!! "
 " }}}
 " wiki {{{
 " let g:wiki_root = '~/notes'
