@@ -13,8 +13,6 @@ function! PackInit() abort
 
   " themes
   call minpac#add('romainl/Apprentice')
-  call minpac#add('yasukotelin/shirotelin')
-  call minpac#add('robertmeta/nofrils')
   call minpac#add('https://gitlab.com/yorickpeterse/vim-paper.git')
   call minpac#add('lifepillar/vim-colortemplate')
   call minpac#add('kkga/vim-envy', {'branch': 'develop'})
@@ -44,7 +42,7 @@ function! PackInit() abort
 
   " notes
   call minpac#add('plasticboy/vim-markdown')
-  call minpac#add('previm/previm')
+  call minpac#add('previm/previm', {'type': 'opt'})
   call minpac#add('cweagans/vim-taskpaper')
   call minpac#add('https://gitlab.com/dbeniamine/todo.txt-vim')
   call minpac#add('axvr/org.vim')
@@ -56,6 +54,7 @@ function! PackInit() abort
   call minpac#add('dyng/ctrlsf.vim')
   call minpac#add('ctrlpvim/ctrlp.vim')
   call minpac#add('mhinz/vim-grepper')
+  call minpac#add('lotabout/skim', { 'dir': '~/.skim', 'do': './install' })
   call minpac#add('lotabout/skim.vim')
 
   " lsp
@@ -431,7 +430,7 @@ endfunction
 
 set statusline=%<\ %f\ %m%r
 set statusline+=%{&paste?'\ \ \|\ PASTE\ ':'\ '}
-set statusline+=%=%{StatusDiagnostic()}\ %{fugitive#statusline()}\ [%{&filetype}]\ %3l/%3L\ (%2c\)\
+set statusline+=%=%{StatusDiagnostic()}\ %{fugitive#statusline()}\ [%{&filetype}]\ %3l/%3L\ (%2c\)
 
 " }}}
 " MAPPINGS {{{

@@ -10,7 +10,7 @@ export SUDO_ASKPASS=/usr/libexec/seahorse/ssh-askpass
 /usr/libexec/polkit-gnome-authentication-agent-1 &
 
 # background color
-xsetroot -solid "#000000"
+xsetroot -solid "#333333"
 
 # simple settings daemon for gtk apps
 xsettingsd &

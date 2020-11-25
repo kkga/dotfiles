@@ -1,5 +1,5 @@
 font:
-  size: 12.0
+  size: 10.5
 
 # draw_bold_text_with_bright_colors: true
 
@@ -12,3 +12,70 @@ key_bindings:
 cursor:
   style: Block
   vi_mode_style: Block
+
+color_schemes:
+  apprentice: &apprentice
+    primary:
+      background: '0x262626'
+      foreground: '0xbcbcbc'
+    normal:
+      black:   '0x1c1c1c'
+      red:     '0xaf5f5f'
+      green:   '0x5f875f'
+      yellow:  '0x87875f'
+      blue:    '0x5f87af'
+      magenta: '0x5f5f87'
+      cyan:    '0x5f8787'
+      white:   '0x6c6c6c'
+    bright:
+      black:   '0x444444'
+      red:     '0xff8700'
+      green:   '0x87af87'
+      yellow:  '0xffffaf'
+      blue:    '0x8fafd7'
+      magenta: '0x8787af'
+      cyan:    '0x5fafaf'
+      white:   '0xffffff'
+    indexed_colors: []
+  paper: &paper
+    primary:
+      foreground: '#000000'
+      background: '#f2eede'
+      #dim_foreground: '#828482'
+      #bright_foreground: '#eaeaea'
+    # cursor:
+    #   text: CellBackground
+    #   cursor: CellForeground
+    # vi_mode_cursor:
+    #   text: CellBackground
+    #   cursor: CellForeground
+    selection:
+      text: '#000000'
+      background: '#d8d5c7'
+    # search:
+    #   matches:
+    #     foreground: '#000000'
+    #     background: '#ffffff'
+    #   bar:
+    #     background: '#c5c8c6'
+    #     foreground: '#1d1f21'
+    normal:
+      black:   '#000000'
+      red:     '#cc3e28'
+      green:   '#216609'
+      yellow:  '#b58900'
+      blue:    '#1e6fcc'
+      magenta: '#5c21a5'
+      cyan:    '#158c86'
+      white:   '#ffffff'
+    bright:
+      black:   '#555555'
+      red:     '#cc3e28'
+      green:   '#216609'
+      yellow:  '#b58900'
+      blue:    '#1e6fcc'
+      magenta: '#5c21a5'
+      cyan:    '#158c86'
+      white:   '#ffffff'
+    indexed_colors: []
+colors: *paper
