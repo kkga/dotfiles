@@ -8,6 +8,8 @@ export PATH=$PATH:$HOME/Library/Python/3.7/bin
 export PATH=$PATH:/usr/local/opt/python@3.7/bin
 export PATH=$PATH:/var/lib/flatpak/exports/bin/
 
+export GOPATH=$HOME/go
+
 export BROWSER=firefox
 export EDITOR=nvim
 export VISUAL=nvim

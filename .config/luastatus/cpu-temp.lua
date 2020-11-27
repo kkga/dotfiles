@@ -1,6 +1,6 @@
 paths = {}
 do
-    local f = io.popen("printf '%s\n' /sys/class/hwmon/hwmon4/temp2_input")
+    local f = io.popen("printf '%s\n' /sys/class/hwmon/hwmon3/temp2_input")
     -- Replace "*" with "[^0]*" in the following line if your zeroeth thermal sensor is virtual (and
     -- thus useless):
     for p in f:lines() do

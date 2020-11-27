@@ -5,6 +5,11 @@
     "displayByAle": true
   },
   "languageserver": {
+    "golang": {
+      "command": "gopls",
+      "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+      "filetypes": ["go"]
+    },
     "godot": {
       "host": "127.0.0.1",
       "filetypes": ["gdscript"],

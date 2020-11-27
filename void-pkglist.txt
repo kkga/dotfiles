@@ -44,6 +44,7 @@ ffsend
 firefox
 fish-shell
 flatpak
+font-b612
 font-go-ttf
 font-ibm-plex-ttf
 font-spleen
@@ -55,6 +56,7 @@ geoip
 git
 github-cli
 gnome-keyring
+go
 godot
 gpick
 grub-btrfs
@@ -98,13 +100,13 @@ noto-fonts-ttf
 nvimpager
 obs
 opendoas
+opera
 pamixer
 pandoc
 patch
 pavucontrol
 pcre
 pcre-devel
-pick
 picom
 pkg-config
 playerctl
@@ -181,6 +183,7 @@ xev
 xf86-video-amdgpu
 xinit
 xkb-switch
+xob
 xorg-minimal
 xprop
 xrdb

@@ -26,7 +26,7 @@ function! PackInit() abort
   call minpac#add('tpope/vim-eunuch')
   call minpac#add('tpope/vim-unimpaired')
   call minpac#add('tpope/vim-endwise')
-  call minpac#add('rstacruz/vim-closer')
+  " call minpac#add('rstacruz/vim-closer')
   call minpac#add('cohama/lexima.vim')
   call minpac#add('airblade/vim-rooter')
   call minpac#add('mhinz/vim-sayonara')
@@ -54,8 +54,7 @@ function! PackInit() abort
   call minpac#add('dyng/ctrlsf.vim')
   call minpac#add('ctrlpvim/ctrlp.vim')
   call minpac#add('mhinz/vim-grepper')
-  call minpac#add('lotabout/skim', { 'dir': '~/.skim', 'do': './install' })
-  call minpac#add('lotabout/skim.vim')
+  call minpac#add('srstevenson/vim-picker')
 
   " lsp
   call minpac#add('neoclide/coc.nvim')
@@ -65,6 +64,7 @@ function! PackInit() abort
   call minpac#add('habamax/vim-godot')
   call minpac#add('euclidianAce/BetterLua.vim')
   call minpac#add('tjdevries/manillua.nvim')
+  call minpac#add('fatih/vim-go')
 
 endfunction
 " }}}
@@ -79,7 +79,8 @@ let g:ale_fixers = {
 \   'css': ['prettier'],
 \   'json': ['prettier'],
 \   'lua': ['luafmt'],
-\   'markdown': ['prettier']
+\   'markdown': ['prettier'],
+\   'go': ['gofmt']
 \}
 let g:ale_linters = {
 \   'rust': ['analyzer', 'cargo', 'rls'],
