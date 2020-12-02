@@ -26,6 +26,7 @@ function! PackInit() abort
   call minpac#add('tpope/vim-eunuch')
   call minpac#add('tpope/vim-unimpaired')
   call minpac#add('tpope/vim-endwise')
+  call minpac#add('tpope/vim-rsi')
   " call minpac#add('rstacruz/vim-closer')
   call minpac#add('cohama/lexima.vim')
   call minpac#add('airblade/vim-rooter')
@@ -69,6 +70,13 @@ function! PackInit() abort
 endfunction
 " }}}
 
+" vim-go {{{
+let g:go_fmt_autosave = 1
+let g:go_fmt_command = "goimports"
+let g:go_doc_keywordprg_enabled = 0
+let g:go_def_mapping_enabled = 0
+let g:go_fold_enable = ['block', 'import', 'varconst', 'package_comment']
+" }}}
 " sneak {{{
 let g:sleuth_automatic = 1
 let g:sneak#s_next = 1
@@ -80,7 +88,6 @@ let g:ale_fixers = {
 \   'json': ['prettier'],
 \   'lua': ['luafmt'],
 \   'markdown': ['prettier'],
-\   'go': ['gofmt']
 \}
 let g:ale_linters = {
 \   'rust': ['analyzer', 'cargo', 'rls'],
@@ -89,17 +96,15 @@ let g:ale_linters = {
 
 let g:ale_disable_lsp = 1
 let g:ale_fix_on_save = 1
+let g:ale_virtualtext_cursor = 1
 " let g:ale_sign_error = "🐛"
 " let g:ale_sign_warning = "⚠️"
 " let g:ale_sign_info = "ℹ"
-let g:ale_virtualtext_cursor = 1
 " let g:ale_virtualtext_prefix = "!!! "
-" }}}
-" wiki {{{
-" let g:wiki_root = '~/notes'
-" let g:wiki_filetypes = ['md']
-" let g:wiki_mappings_use_defaults = 'local'
-" let g:wiki_list_todos = ['[ ]', '[x]']
+
+nmap <silent> <C-k> <Plug>(ale_previous)
+nmap <silent> <C-j> <Plug>(ale_next)
+
 " }}}
 " grepper {{{
 let g:grepper               = {}
@@ -115,7 +120,24 @@ let g:ctrlp_user_command = 'fd --type f --color never "" %s'
 " let g:ctrlp_user_command = 'rg %s --files --sort=modified --color=never --glob ""'
 let g:ctrlp_by_filename = 1
 let g:ctrlp_use_caching = 0
-" let g:ctrlp_match_window = 'bottom,order:ttp,min:10,max:10,results:40'
+let g:ctrlp_match_window = 'bottom,order:ttp,min:10,max:10,results:40'
+
+nnoremap <leader>ff :CtrlP<CR>
+nnoremap <leader>fn :CtrlP ~/notes/<CR>
+nnoremap <leader>fw :CtrlPWiki<CR>
+nnoremap <leader>fc :CtrlP ~/.config/nvim/<CR>
+nnoremap <leader>fr :CtrlPMRU<CR>
+nnoremap <leader>fb :CtrlPBuffer<CR>
+nnoremap <leader>fl :CtrlPLine<CR>
+" }}}
+" ctrlsf {{{
+nmap     <C-F>f <Plug>CtrlSFPrompt
+vmap     <C-F>f <Plug>CtrlSFVwordPath
+vmap     <C-F>F <Plug>CtrlSFVwordExec
+nmap     <C-F>n <Plug>CtrlSFCwordPath
+nmap     <C-F>p <Plug>CtrlSFPwordPath
+nnoremap <C-F>o :CtrlSFOpen<CR>
+nnoremap <C-F>t :CtrlSFToggle<CR>
 " }}}
 " coc {{{
 
@@ -154,8 +176,8 @@ endif
 
 " Use `[g` and `]g` to navigate diagnostics
 " Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
-nmap <silent> [g <Plug>(coc-diagnostic-prev)
-nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+nnoremap <silent> <leader>ch :call CocAction('doHover')<CR>
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
@@ -250,6 +272,7 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " provide custom statusline: lightline.vim, vim-airline.
 " set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
+
 " Mappings for CoCList
 " Show all diagnostics.
 nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
@@ -274,6 +297,19 @@ let g:buftabline_show = 1
 let g:buftabline_numbers = 2
 let g:buftabline_indicators = 1
 let g:buftabline_separators = 0
+
+nmap <leader>1 <Plug>BufTabLine.Go(1)
+nmap <leader>2 <Plug>BufTabLine.Go(2)
+nmap <leader>3 <Plug>BufTabLine.Go(3)
+nmap <leader>4 <Plug>BufTabLine.Go(4)
+nmap <leader>5 <Plug>BufTabLine.Go(5)
+nmap <leader>6 <Plug>BufTabLine.Go(6)
+nmap <leader>7 <Plug>BufTabLine.Go(7)
+nmap <leader>8 <Plug>BufTabLine.Go(8)
+nmap <leader>9 <Plug>BufTabLine.Go(9)
+nmap <leader>0 <Plug>BufTabLine.Go(10)
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-p> :bprev<CR>
 " }}}
 " ale {{{
 " }}}
@@ -369,9 +405,9 @@ set nospell
 set mouse=a
 
 " text, tabs and indents
-" set expandtab                   " Tabs are spaces
-" set softtabstop=4               " # of spaces in tab when editing
-" set tabstop=4                   " # of spaces that a tab counts for
+set noexpandtab                 " Tabs are spaces
+set softtabstop=4               " # of spaces in tab when editing
+set tabstop=4                   " # of spaces that a tab counts for
 set shiftwidth=4                " # of spaces to use for autoindent
 set linebreak                   " Wrap lines when convenient
 set nowrap                      " Wrap lines
@@ -384,7 +420,7 @@ set nonumber
 set norelativenumber
 set cursorline
 set nocursorcolumn
-set colorcolumn=100
+set colorcolumn=80
 set foldcolumn=0
 set signcolumn=yes
 set synmaxcol=200
@@ -429,9 +465,22 @@ function! StatusDiagnostic() abort
   return join(msgs, ' '). ' ' . get(g:, 'coc_status', '')
 endfunction
 
+function! LinterStatus() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+
+    return l:counts.total == 0 ? 'OK' : printf(
+    \   '%dW/%dE',
+    \   all_non_errors,
+    \   all_errors
+    \)
+endfunction
+
 set statusline=%<\ %f\ %m%r
 set statusline+=%{&paste?'\ \ \|\ PASTE\ ':'\ '}
-set statusline+=%=%{StatusDiagnostic()}\ %{fugitive#statusline()}\ [%{&filetype}]\ %3l/%3L\ (%2c\)
+set statusline+=%=[%{LinterStatus()}]\ %{fugitive#statusline()}\ [%{&filetype}]\ %3l/%3L\ (%2c\)
 
 " }}}
 " MAPPINGS {{{
@@ -441,40 +490,16 @@ let mapleader = "\<space>"
 let maplocalleader = "\,"
 
 " move lines around
-nnoremap <c-j> :m .+1<CR>==
-nnoremap <c-k> :m .-2<CR>==
-inoremap <c-j> <Esc>:m .+1<CR>==gi
-inoremap <c-k> <Esc>:m .-2<CR>==gi
-vnoremap <c-j> :m '>+1<CR>gv=gv
-vnoremap <c-k> :m '<-2<CR>gv=gv
+" nnoremap <c-j> :m .+1<CR>==
+" nnoremap <c-k> :m .-2<CR>==
+" inoremap <c-j> <Esc>:m .+1<CR>==gi
+" inoremap <c-k> <Esc>:m .-2<CR>==gi
+" vnoremap <c-j> :m '>+1<CR>gv=gv
+" vnoremap <c-k> :m '<-2<CR>gv=gv
 
 " esc alternative
 inoremap jk <esc>
 inoremap kj <esc>
-
-" fzf mappings
-nnoremap <leader>ff :CtrlP<CR>
-nnoremap <leader>fn :CtrlP ~/notes/<CR>
-nnoremap <leader>fw :CtrlPWiki<CR>
-nnoremap <leader>fc :CtrlP ~/.config/nvim/<CR>
-nnoremap <leader>fr :CtrlPMRU<CR>
-nnoremap <leader>fb :CtrlPBuffer<CR>
-nnoremap <leader>fl :CtrlPLine<CR>
-
-" buffers
-nmap <leader>1 <Plug>BufTabLine.Go(1)
-nmap <leader>2 <Plug>BufTabLine.Go(2)
-nmap <leader>3 <Plug>BufTabLine.Go(3)
-nmap <leader>4 <Plug>BufTabLine.Go(4)
-nmap <leader>5 <Plug>BufTabLine.Go(5)
-nmap <leader>6 <Plug>BufTabLine.Go(6)
-nmap <leader>7 <Plug>BufTabLine.Go(7)
-nmap <leader>8 <Plug>BufTabLine.Go(8)
-nmap <leader>9 <Plug>BufTabLine.Go(9)
-nmap <leader>0 <Plug>BufTabLine.Go(10)
-
-nnoremap <C-n> :bnext<CR>
-nnoremap <C-p> :bprev<CR>
 
 " create a new buffer
 nnoremap <leader>B :enew<cr>
@@ -482,20 +507,6 @@ nnoremap <leader>B :enew<cr>
 nnoremap <leader>bq :bp <bar> bd! #<cr>
 " close all open buffers
 nnoremap <leader>ba :bufdo bd!<cr>
-
-
-" ctrlsf
-nmap     <C-F>f <Plug>CtrlSFPrompt
-vmap     <C-F>f <Plug>CtrlSFVwordPath
-vmap     <C-F>F <Plug>CtrlSFVwordExec
-nmap     <C-F>n <Plug>CtrlSFCwordPath
-nmap     <C-F>p <Plug>CtrlSFPwordPath
-nnoremap <C-F>o :CtrlSFOpen<CR>
-nnoremap <C-F>t :CtrlSFToggle<CR>
-inoremap <C-F>t <Esc>:CtrlSFToggle<CR>
-
-" coc
-nnoremap <silent> <leader>ch :call CocAction('doHover')<CR>
 
 " quick save
 nnoremap <leader>ww :w<cr>
@@ -532,20 +543,11 @@ nnoremap K {
 vnoremap J }
 vnoremap K {
 
-" easier one-off navigation in insert mode
-" inoremap <C-k> <Up>
-" inoremap <C-j> <Down>
-" inoremap <C-h> <Left>
-" inoremap <C-l> <Right>
-
 " use arrows to resize panes in normal mode
 nnoremap <Left> :vertical resize -8<CR>
 nnoremap <Right> :vertical resize +8<CR>
 nnoremap <Up> :resize -8<CR>
 nnoremap <Down> :resize +8<CR>
-
-" highlight last inserted text
-nnoremap gV `[v`]<Paste>
 
 " change/source config
 nnoremap <leader>vr :vsp $MYVIMRC<cr>
@@ -555,27 +557,6 @@ nnoremap <leader>sr :source $MYVIMRC<cr>
 nnoremap <leader>* :%s/\<<c-r><c-w>\>//g<left><left>
 
 "}}}
-" AUGROUPS {{{
-" todo {{{
-augroup todo
-  autocmd!
-  autocmd filetype todo setlocal omnifunc=todo#Complete
-  autocmd filetype todo imap <buffer> + +<C-X><C-O>
-  autocmd filetype todo imap <buffer> @ @<C-X><C-O>
-  autocmd filetype todo setlocal completeopt-=preview
-augroup END
-" }}}
-" godot {{{
-func! GodotSettings() abort
-    setlocal foldmethod=expr
-    setlocal tabstop=4
-    setlocal formatprg=gdformat\ \-
-endfunc
-augroup godot | au!
-    au FileType gdscript call GodotSettings()
-augroup end
-" }}}
-" }}}
 " NOTETAKING {{{
 " https://vimways.org/2019/personal-notetaking-in-vim/
 

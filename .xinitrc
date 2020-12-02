@@ -21,6 +21,9 @@ clipmenud &
 # keyboard daemon
 sxhkd &
 
+# hide cursor on idle
+unclutter &
+
 # screensaver and screenlock
 xset s 300
 xss-lock -n /usr/libexec/xsecurelock/dimmer -l -- xsecurelock &
