@@ -1,73 +1,139 @@
 " vim:foldmethod=marker:foldlevel=0
 
 " PLUGINS {{{
+" paq {{{
+lua << EOF
+vim.cmd 'packadd paq-nvim'
+local paq = require'paq-nvim'.paq
+paq{'savq/paq-nvim', opt=true}
+
+-- themes
+paq 'romainl/Apprentice'
+paq{'yorickpeterse/vim-paper', url='https://gitlab.com/yorickpeterse/vim-paper.git'}
+paq 'lifepillar/vim-colortemplate'
+paq{'kkga/vim-envy', branch='develop'}
+
+-- utils
+paq 'tpope/vim-surround'
+paq 'tpope/vim-repeat'
+paq 'tpope/vim-fugitive'
+paq 'tpope/vim-commentary'
+paq 'tpope/vim-sleuth'
+paq 'tpope/vim-eunuch'
+paq 'tpope/vim-unimpaired'
+paq 'tpope/vim-endwise'
+paq 'tpope/vim-rsi'
+-- call minpac#add('rstacruz/vim-closer')
+paq 'cohama/lexima.vim'
+paq 'airblade/vim-rooter'
+paq 'mhinz/vim-sayonara'
+paq 'rhysd/clever-f.vim'
+paq 'justinmk/vim-sneak'
+
+-- ui
+paq 'airblade/vim-gitgutter'
+paq 'ap/vim-buftabline'
+paq 'mbbill/undotree'
+paq 'junegunn/vim-peekaboo'
+paq 'machakann/vim-highlightedyank'
+
+-- notes
+--call minpac#add('previm/previm', {'type': 'opt'})
+--call minpac#add('iamcco/markdown-preview.nvim', {'do': 'packloadall! | call mkdp#util#install()'})
+paq 'plasticboy/vim-markdown'
+paq 'cweagans/vim-taskpaper'
+-- paq 'https://gitlab.com/dbeniamine/todo.txt-vim'
+paq 'axvr/org.vim'
+paq 'junegunn/goyo.vim'
+paq 'godlygeek/tabular'
+
+-- searching
+paq 'justinmk/vim-dirvish'
+paq 'dyng/ctrlsf.vim'
+paq 'ctrlpvim/ctrlp.vim'
+paq 'mhinz/vim-grepper'
+paq 'srstevenson/vim-picker'
+
+-- lsp
+paq 'neoclide/coc.nvim'
+paq 'dense-analysis/ale'
+
+-- lang
+paq 'habamax/vim-godot'
+paq 'euclidianAce/BetterLua.vim'
+paq 'tjdevries/manillua.nvim'
+paq 'fatih/vim-go'
+
+EOF
+"}}}
 " packages {{{
-packadd minpac
-call minpac#init()
-
-function! PackInit() abort
-  packadd minpac
-
-  call minpac#init()
-  call minpac#add('k-takata/minpac', {'type': 'opt'})
-
-  " themes
-  call minpac#add('romainl/Apprentice')
-  call minpac#add('https://gitlab.com/yorickpeterse/vim-paper.git')
-  call minpac#add('lifepillar/vim-colortemplate')
-  call minpac#add('kkga/vim-envy', {'branch': 'develop'})
-
-  " utils
-  call minpac#add('tpope/vim-surround')
-  call minpac#add('tpope/vim-repeat')
-  call minpac#add('tpope/vim-fugitive')
-  call minpac#add('tpope/vim-commentary')
-  call minpac#add('tpope/vim-sleuth')
-  call minpac#add('tpope/vim-eunuch')
-  call minpac#add('tpope/vim-unimpaired')
-  call minpac#add('tpope/vim-endwise')
-  call minpac#add('tpope/vim-rsi')
-  " call minpac#add('rstacruz/vim-closer')
-  call minpac#add('cohama/lexima.vim')
-  call minpac#add('airblade/vim-rooter')
-  call minpac#add('mhinz/vim-sayonara')
-  call minpac#add('rhysd/clever-f.vim')
-  call minpac#add('justinmk/vim-sneak')
-
-  " ui
-  call minpac#add('airblade/vim-gitgutter')
-  call minpac#add('ap/vim-buftabline')
-  call minpac#add('mbbill/undotree')
-  call minpac#add('junegunn/vim-peekaboo')
-  call minpac#add('machakann/vim-highlightedyank')
-
-  " notes
-  call minpac#add('plasticboy/vim-markdown')
-  call minpac#add('previm/previm', {'type': 'opt'})
-  call minpac#add('cweagans/vim-taskpaper')
-  call minpac#add('https://gitlab.com/dbeniamine/todo.txt-vim')
-  call minpac#add('axvr/org.vim')
-  call minpac#add('junegunn/goyo.vim')
-  call minpac#add('godlygeek/tabular')
-
-  " searching
-  call minpac#add('justinmk/vim-dirvish')
-  call minpac#add('dyng/ctrlsf.vim')
-  call minpac#add('ctrlpvim/ctrlp.vim')
-  call minpac#add('mhinz/vim-grepper')
-  call minpac#add('srstevenson/vim-picker')
-
-  " lsp
-  call minpac#add('neoclide/coc.nvim')
-  call minpac#add('dense-analysis/ale')
-
-  " lang
-  call minpac#add('habamax/vim-godot')
-  call minpac#add('euclidianAce/BetterLua.vim')
-  call minpac#add('tjdevries/manillua.nvim')
-  call minpac#add('fatih/vim-go')
-
-endfunction
+"packadd minpac
+"call minpac#init()
+"
+"function! PackInit() abort
+"  packadd minpac
+"
+"  call minpac#init()
+"  call minpac#add('k-takata/minpac', {'type': 'opt'})
+"
+"  " themes
+"  call minpac#add('romainl/Apprentice')
+"  call minpac#add('https://gitlab.com/yorickpeterse/vim-paper.git')
+"  call minpac#add('lifepillar/vim-colortemplate')
+"  call minpac#add('kkga/vim-envy', {'branch': 'develop'})
+"
+"  " utils
+"  call minpac#add('tpope/vim-surround')
+"  call minpac#add('tpope/vim-repeat')
+"  call minpac#add('tpope/vim-fugitive')
+"  call minpac#add('tpope/vim-commentary')
+"  call minpac#add('tpope/vim-sleuth')
+"  call minpac#add('tpope/vim-eunuch')
+"  call minpac#add('tpope/vim-unimpaired')
+"  call minpac#add('tpope/vim-endwise')
+"  call minpac#add('tpope/vim-rsi')
+"  " call minpac#add('rstacruz/vim-closer')
+"  call minpac#add('cohama/lexima.vim')
+"  call minpac#add('airblade/vim-rooter')
+"  call minpac#add('mhinz/vim-sayonara')
+"  call minpac#add('rhysd/clever-f.vim')
+"  call minpac#add('justinmk/vim-sneak')
+"
+"  " ui
+"  call minpac#add('airblade/vim-gitgutter')
+"  call minpac#add('ap/vim-buftabline')
+"  call minpac#add('mbbill/undotree')
+"  call minpac#add('junegunn/vim-peekaboo')
+"  call minpac#add('machakann/vim-highlightedyank')
+"
+"  " notes
+"  call minpac#add('plasticboy/vim-markdown')
+"  " call minpac#add('previm/previm', {'type': 'opt'})
+"  call minpac#add('iamcco/markdown-preview.nvim', {'do': 'packloadall! | call mkdp#util#install()'})
+"  call minpac#add('cweagans/vim-taskpaper')
+"  call minpac#add('https://gitlab.com/dbeniamine/todo.txt-vim')
+"  call minpac#add('axvr/org.vim')
+"  call minpac#add('junegunn/goyo.vim')
+"  call minpac#add('godlygeek/tabular')
+"
+"  " searching
+"  call minpac#add('justinmk/vim-dirvish')
+"  call minpac#add('dyng/ctrlsf.vim')
+"  call minpac#add('ctrlpvim/ctrlp.vim')
+"  call minpac#add('mhinz/vim-grepper')
+"  call minpac#add('srstevenson/vim-picker')
+"
+"  " lsp
+"  call minpac#add('neoclide/coc.nvim')
+"  call minpac#add('dense-analysis/ale')
+"
+"  " lang
+"  call minpac#add('habamax/vim-godot')
+"  call minpac#add('euclidianAce/BetterLua.vim')
+"  call minpac#add('tjdevries/manillua.nvim')
+"  call minpac#add('fatih/vim-go')
+"
+"endfunction
 " }}}
 
 " vim-go {{{
@@ -76,6 +142,9 @@ let g:go_fmt_command = "goimports"
 let g:go_doc_keywordprg_enabled = 0
 let g:go_def_mapping_enabled = 0
 let g:go_fold_enable = ['block', 'import', 'varconst', 'package_comment']
+let g:go_highlight_structs = 0
+let g:go_highlight_interfaces = 0
+let g:go_highlight_operators = 0
 " }}}
 " sneak {{{
 let g:sleuth_automatic = 1
@@ -102,8 +171,8 @@ let g:ale_virtualtext_cursor = 1
 " let g:ale_sign_info = "ℹ"
 " let g:ale_virtualtext_prefix = "!!! "
 
-nmap <silent> <C-k> <Plug>(ale_previous)
-nmap <silent> <C-j> <Plug>(ale_next)
+nmap <silent> <C-a>k <Plug>(ale_previous)
+nmap <silent> <C-a>j <Plug>(ale_next)
 
 " }}}
 " grepper {{{
@@ -196,15 +265,9 @@ function! s:show_documentation()
   endif
 endfunction
 
-" Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
 
-" Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -215,14 +278,10 @@ augroup mygroup
 augroup end
 
 " Highlight the symbol and its references when holding the cursor.
-autocmd CursorHold * silent call CocActionAsync('highlight')
+" autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
-
-" Formatting selected code.
-xmap <leader>f  <Plug>(coc-format-selected)
-nmap <leader>f  <Plug>(coc-format-selected)
 
 augroup mygroup
   autocmd!
@@ -373,9 +432,9 @@ let g:rust_fold = 2
 let g:colortemplate_toolbar = 0
 " }}}
 
-command! PackUpdate source $MYVIMRC | call PackInit() | call minpac#update()
-command! PackClean  source $MYVIMRC | call PackInit() | call minpac#clean()
-command! PackStatus packadd minpac | call minpac#status()
+"command! PackUpdate source $MYVIMRC | call PackInit() | call minpac#update()
+"command! PackClean  source $MYVIMRC | call PackInit() | call minpac#clean()
+"command! PackStatus packadd minpac | call minpac#status()
 
 "}}}
 " SETTINGS {{{
@@ -490,12 +549,12 @@ let mapleader = "\<space>"
 let maplocalleader = "\,"
 
 " move lines around
-nnoremap <c-j> :m .+1<CR>==
-nnoremap <c-k> :m .-2<CR>==
-inoremap <c-j> <Esc>:m .+1<CR>==gi
-inoremap <c-k> <Esc>:m .-2<CR>==gi
-vnoremap <c-j> :m '>+1<CR>gv=gv
-vnoremap <c-k> :m '<-2<CR>gv=gv
+" nnoremap <c-j> :m .+1<CR>==
+" nnoremap <c-k> :m .-2<CR>==
+" inoremap <c-j> <Esc>:m .+1<CR>==gi
+" inoremap <c-k> <Esc>:m .-2<CR>==gi
+" vnoremap <c-j> :m '>+1<CR>gv=gv
+" vnoremap <c-k> :m '<-2<CR>gv=gv
 
 " esc alternative
 inoremap jk <esc>

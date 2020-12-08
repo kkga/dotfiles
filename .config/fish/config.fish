@@ -5,6 +5,7 @@ alias gg 'lazygit'
 alias hg 'kitty +kitten hyperlinked_grep'
 alias d 'kitty +kitten diff'
 alias fzf 'sk'
+alias t 'togo'
 
 abbr gs 'git status'
 abbr gc 'git checkout'

@@ -36,3 +36,4 @@ application/x-extension-shtml=userapp-Firefox-JUEFU0.desktop;
 application/xhtml+xml=userapp-Firefox-JUEFU0.desktop;
 application/x-extension-xhtml=userapp-Firefox-JUEFU0.desktop;
 application/x-extension-xht=userapp-Firefox-JUEFU0.desktop;
+application/zip=org.mozilla.firefox.desktop;

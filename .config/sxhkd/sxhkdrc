@@ -1,4 +1,6 @@
+#
 # wm independent hotkeys
+#
 
 XF86AudioMute
 	volume.sh -t
