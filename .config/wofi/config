@@ -1,8 +1,0 @@
-width=640
-allow_images=true
-allow_markup=true
-location=top
-matching=contains
-insensitive=true
-gtk_dark=true
-display_generic=true
