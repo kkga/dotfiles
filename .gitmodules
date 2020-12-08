@@ -1,9 +1,0 @@
-[submodule ".config/dwm"]
-	path = .config/dwm
-	url = git@github.com:kkga/dwm.git
-[submodule ".config/dmenu"]
-	path = .config/dmenu
-	url = git@github.com:kkga/dmenu.git
-[submodule ".config/godot/text_editor_themes"]
-	path = .config/godot/text_editor_themes
-	url = git@github.com:kkga/godot-syntax-themes.git
