@@ -2,7 +2,6 @@
 	name = Gadzhi Kharkharov
 	email = me@kkga.me
 [core]
-	excludesfile = /Users/kkga/.gitignore
 	editor = nvim
 	pager = delta
 [alias]
@@ -25,11 +24,6 @@
 	rebase = false
 [log]
 	date = format:%Y-%m-%d %H:%M:%S %z (%A)
-[filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
 [diff]
 	tool = kitty
 	guitool = kitty.gui
@@ -44,9 +38,5 @@
 	diffFilter = delta --color-only
 [delta]
 	syntax-theme = ansi-light
-	; features = side-by-side line-numbers decorations
-	; whitespace-error-style = 22 reverse
-; [delta "decorations"]
-; 	commit-decoration-style = bold yellow box ul
-; 	file-style = bold yellow ul
-; 	file-decoration-style = none
+	side-by-side = true
+	line-numbers = false

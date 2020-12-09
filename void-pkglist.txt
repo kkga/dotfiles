@@ -21,6 +21,7 @@ chrony
 clipmenu
 cmake
 corectrl
+cwm
 dbus
 ddcci-dkms
 ddcutil
@@ -30,6 +31,7 @@ dmenu
 dunst
 dust
 elogind
+emptty
 eudev-libudev
 exa
 exercism
@@ -64,13 +66,14 @@ j4-dmenu-desktop
 jq
 kakoune
 kitty
-kvantum
 lazygit
 lf
 linux5.9
 linux5.9-headers
 lm_sensors
 luastatus
+lutris
+lxappearance
 maim
 mesa
 mesa-dri
@@ -94,7 +97,6 @@ pandoc
 papirus-icon-theme
 patch
 pavucontrol
-peco
 pkg-config
 playerctl
 polkit-elogind
@@ -110,7 +112,6 @@ qmk
 qt5-tools
 qt5ct
 ripgrep
-rofi
 seahorse
 setxkbmap
 skim
@@ -125,6 +126,7 @@ spotify-qt
 spotify-tui
 spotifyd
 steam
+sx
 sxhkd
 syncthing
 tailscale
@@ -185,6 +187,5 @@ youtube-dl
 zathura
 zathura-pdf-mupdf
 zig
-zola
 zoxide
 zrandr

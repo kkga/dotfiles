@@ -4,7 +4,6 @@ BROWSER							DEFAULT=firefox
 EDITOR							DEFAULT=nvim
 VISUAL							DEFAULT=nvim
 TERMINAL						DEFAULT=kitty
-PAGER							DEFAULT=nvimpager
 
 SKIM_DEFAULT_OPTIONS			DEFAULT="--height 40% --reverse --color bw"
 BEMENU_OPTS						DEFAULT="--ignorecase --list 12 -p '' -P >"
