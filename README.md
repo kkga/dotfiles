@@ -10,6 +10,7 @@ Relatively simple Linux config for desktop, managed with [yadm](https://github.c
 
 [void]: https://voidlinux.org
 [pkglist]: /void-pkglist.txt
+[spectrwm]: https://github.com/conformal/spectrwm
 [spectrwm.conf]: /.config/spectrwm/spectrwm.conf
 [fish]: https://fishshell.com
 [config.fish]: /.config/fish/config.fish
