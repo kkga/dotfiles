@@ -5,7 +5,7 @@ Relatively simple Linux config for desktop, managed with [yadm](https://github.c
 - shell: [fish][fish] ([config][config.fish])
 - editor: [neovim][neovim] ([config][init.vim])
 - menu: [bemenu][bemenu]
-- hotkey daemon: [sxhkd][sxhkd], ([config][sxhkdrc])
+- hotkey daemon: [sxhkd][sxhkd] ([config][sxhkdrc])
 
 
 [void]: https://voidlinux.org
