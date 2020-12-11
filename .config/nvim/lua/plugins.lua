@@ -1,10 +1,6 @@
--- This file can be loaded by calling `lua require('plugins')` from your init.vim
-
--- Only required if you have packer in your `opt` pack
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function()
-  -- Packer can manage itself as an optional plugin
   use {'wbthomason/packer.nvim', opt = true}
 
   -- themes
@@ -28,6 +24,7 @@ return require('packer').startup(function()
   use 'mhinz/vim-sayonara'
   use 'rhysd/clever-f.vim'
   use 'justinmk/vim-sneak'
+  use 'romainl/vim-tinyMRU'
 
   -- ui
   use 'airblade/vim-gitgutter'
@@ -40,14 +37,12 @@ return require('packer').startup(function()
   use 'plasticboy/vim-markdown'
   use 'cweagans/vim-taskpaper'
   use 'https://gitlab.com/dbeniamine/todo.txt-vim'
-  use 'axvr/org.vim'
   use 'junegunn/goyo.vim'
   use 'godlygeek/tabular'
   
   -- searching
   use 'justinmk/vim-dirvish'
   use 'dyng/ctrlsf.vim'
-  use 'ctrlpvim/ctrlp.vim'
   use 'mhinz/vim-grepper'
   use 'srstevenson/vim-picker'
   
@@ -57,8 +52,13 @@ return require('packer').startup(function()
   
   -- lang
   use 'habamax/vim-godot'
+  use 'axvr/org.vim'
   use 'euclidianAce/BetterLua.vim'
-  use 'tjdevries/manillua.nvim'
-  use 'fatih/vim-go'
+  use {
+    'fatih/vim-go',
+    run = ':GoUpdateBinaries',
+    opt = true,
+    ft = 'go'
+  }
 
 end)
