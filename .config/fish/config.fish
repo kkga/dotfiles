@@ -8,6 +8,7 @@ alias hg 'kitty +kitten hyperlinked_grep'
 alias d 'kitty +kitten diff'
 alias fzf 'sk'
 alias t 'togo'
+alias y 'yadm'
 
 abbr gs 'git status'
 abbr gc 'git checkout'

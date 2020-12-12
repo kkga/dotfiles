@@ -2,6 +2,7 @@ Relatively simple Linux config for desktop, managed with [yadm](https://github.c
 
 - OS: [Void Linux][void] ([package list][pkglist])
 - window manager: [spectrwm][spectrwm] ([config][spectrwm.conf])
+- display manager: [emptty][emptty] ([config][emptty.conf])
 - shell: [fish][fish] ([config][config.fish])
 - editor: [neovim][neovim] ([config][init.vim])
 - menu: [bemenu][bemenu]
@@ -11,6 +12,8 @@ Relatively simple Linux config for desktop, managed with [yadm](https://github.c
 [pkglist]: /void-pkglist.txt
 [spectrwm]: https://github.com/conformal/spectrwm
 [spectrwm.conf]: /.config/spectrwm/spectrwm.conf
+[emptty]: https://github.com/tvrzna/emptty
+[emptty.conf]: /.config/emptty
 [fish]: https://fishshell.com
 [config.fish]: /.config/fish/config.fish
 [neovim]: https://neovim.io
