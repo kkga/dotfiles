@@ -11,4 +11,8 @@ gui:
       - bold
     inactiveBorderColor:
       - white
+    selectedLineBgColor:
+      - reverse
+    selectedRangeBgColor:
+      - reverse
 startuppopupversion: 1
