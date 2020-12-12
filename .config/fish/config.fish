@@ -1,3 +1,5 @@
+set -gx EDITOR nvim
+
 alias vim 'nvim'
 alias ls 'exa'
 alias cat 'bat'
@@ -15,7 +17,6 @@ abbr gl 'git log'
 abbr gd 'git diff'
 abbr gdt 'git difftool'
 
-alias xbli 'xpkg -m | fzf --preview "xbps-query -vR {}"'
 abbr xbr 'doas xbps-remove'
 abbr xbi 'doas xbps-install'
 abbr xbq 'xbps-query'

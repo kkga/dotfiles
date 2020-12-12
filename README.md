@@ -7,7 +7,6 @@ Relatively simple Linux config for desktop, managed with [yadm](https://github.c
 - menu: [bemenu][bemenu]
 - hotkey daemon: [sxhkd][sxhkd] ([config][sxhkdrc])
 
-
 [void]: https://voidlinux.org
 [pkglist]: /void-pkglist.txt
 [spectrwm]: https://github.com/conformal/spectrwm
