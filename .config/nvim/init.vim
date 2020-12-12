@@ -51,17 +51,19 @@ let g:grepper.prompt_text   = '$c>'
 let g:grepper.quickfix      = 0
 " }}}
 " picker {{{
-nmap <C-p>e <Plug>(PickerEdit)
-nmap <C-p>s <Plug>(PickerSplit)
-nmap <C-p>t <Plug>(PickerTabedit)
-nmap <C-p>v <Plug>(PickerVsplit)
-nmap <C-p>b <Plug>(PickerBuffer)
-nmap <C-p>] <Plug>(PickerTag)
-nmap <C-p>w <Plug>(PickerStag)
-nmap <C-p>o <Plug>(PickerBufferTag)
-nmap <C-p>h <Plug>(PickerHelp)
-nmap <C-p>n :PickerEdit ~/notes/<CR>
-nmap <C-p>c :PickerEdit ~/.config/nvim/<CR>
+" let g:ctrlp_map = '<leader>ff'
+let g:ctrlp_user_command = 'fd --type f --color never "" %s'
+" let g:ctrlp_user_command = 'rg %s --files --sort=modified --color=never --glob ""'
+let g:ctrlp_by_filename = 1
+let g:ctrlp_use_caching = 0
+let g:ctrlp_match_window = 'bottom,order:ttp,min:10,max:10,results:40'
+
+nnoremap <C-p>p :CtrlP<CR>
+nnoremap <C-p>n :CtrlP ~/notes<CR>
+nnoremap <C-p>c :CtrlP ~/.config/nvim/<CR>
+nnoremap <C-p>r :CtrlPMRU<CR>
+nnoremap <C-p>b :CtrlPBuffer<CR>
+nnoremap <C-p>l :CtrlPLine<CR>
 " }}}
 " ctrlsf {{{
 nmap     <C-F>f <Plug>CtrlSFPrompt

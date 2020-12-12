@@ -35,6 +35,7 @@ return require('packer').startup(function()
   
   -- notes
   use 'plasticboy/vim-markdown'
+  use {'iamcco/markdown-preview.nvim', run = 'cd app & yarn install', cmd = 'MarkdownPreview'}
   use 'cweagans/vim-taskpaper'
   use 'https://gitlab.com/dbeniamine/todo.txt-vim'
   use 'junegunn/goyo.vim'
@@ -44,7 +45,8 @@ return require('packer').startup(function()
   use 'justinmk/vim-dirvish'
   use 'dyng/ctrlsf.vim'
   use 'mhinz/vim-grepper'
-  use 'srstevenson/vim-picker'
+  -- use 'srstevenson/vim-picker'
+  use 'ctrlpvim/ctrlp.vim'
   
   -- lsp
   use 'neoclide/coc.nvim'
