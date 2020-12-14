@@ -1,12 +1,13 @@
-set -gx EDITOR nvim
+set -Ux EDITOR nvim
+set -Ux FZF_DEFAULT_COMMAND 'fd --type f'
+set -Ux FZF_DEFAULT_OPTS '--color=bw --reverse --height=40% --border=horizontal'
+
+set -U fish_user_paths ~/.scripts ~/.local/bin ~/go/bin ~/.cargo/bin $fish_user_paths
 
 alias vim 'nvim'
 alias ls 'exa'
 alias cat 'bat'
 alias gg 'lazygit'
-alias hg 'kitty +kitten hyperlinked_grep'
-alias d 'kitty +kitten diff'
-alias fzf 'sk'
 alias t 'togo'
 alias y 'yadm'
 
