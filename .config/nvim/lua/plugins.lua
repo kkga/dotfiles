@@ -35,7 +35,7 @@ return require('packer').startup(function()
   
   -- notes
   use 'plasticboy/vim-markdown'
-  use {'iamcco/markdown-preview.nvim', run = 'cd app & yarn install', cmd = 'MarkdownPreview'}
+  use {'iamcco/markdown-preview.nvim', run = 'cd app & yarn install'}
   use 'cweagans/vim-taskpaper'
   use 'https://gitlab.com/dbeniamine/todo.txt-vim'
   use 'junegunn/goyo.vim'
