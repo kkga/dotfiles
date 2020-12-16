@@ -18,6 +18,17 @@ let g:sleuth_automatic = 1
 let g:sneak#s_next = 1
 " }}}
 " ale {{{
+let g:ale_disable_lsp = 1
+let g:ale_sign_error = '✖'
+let g:ale_sign_warning = '●'
+let g:ale_virtualtext_cursor = 1
+let g:ale_echo_msg_format = '[%linter%]: %s'
+let g:ale_lint_on_enter = 1
+let g:ale_fix_on_save = 1
+let g:ale_fix_on_enter = 0
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'css': ['prettier'],
@@ -29,14 +40,6 @@ let g:ale_linters = {
 \   'rust': ['analyzer', 'cargo', 'rls'],
 \   'markdown': ['alex']
 \}
-
-let g:ale_disable_lsp = 1
-let g:ale_fix_on_save = 1
-let g:ale_virtualtext_cursor = 1
-" let g:ale_sign_error = "🐛"
-" let g:ale_sign_warning = "⚠️"
-" let g:ale_sign_info = "ℹ"
-" let g:ale_virtualtext_prefix = "!!! "
 
 nmap <silent> <C-a>k <Plug>(ale_previous)
 nmap <silent> <C-a>j <Plug>(ale_next)
@@ -93,12 +96,8 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" " Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
@@ -108,9 +107,6 @@ if exists('*complete_info')
 else
   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
-
-" Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 
 nnoremap <silent> <leader>ch :call CocAction('doHover')<CR>
 
@@ -130,21 +126,6 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
-
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
-
-
-augroup mygroup
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder.
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
-
-" Highlight the symbol and its references when holding the cursor.
-" autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
@@ -192,12 +173,6 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
-" Add (Neo)Vim's native statusline support.
-" NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
-" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-
 " Mappings for CoCList
 " Show all diagnostics.
 nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
@@ -215,7 +190,6 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-
 " }}}
 " buftabline {{{
 let g:buftabline_show = 1
@@ -372,20 +346,6 @@ set undofile                    " Write changes to the undofile
 set undolevels=1000             " Max # of changes that can be undone
 set undoreload=10000            " Max # of lines to save for undo on buf reload
 
-" statusline
-function! StatusDiagnostic() abort
-  let info = get(b:, 'coc_diagnostic_info', {})
-  if empty(info) | return '' | endif
-  let msgs = []
-  if get(info, 'error', 0)
-    call add(msgs, 'E' . info['error'])
-  endif
-  if get(info, 'warning', 0)
-    call add(msgs, 'W' . info['warning'])
-  endif
-  return join(msgs, ' '). ' ' . get(g:, 'coc_status', '')
-endfunction
-
 function! LinterStatus() abort
     let l:counts = ale#statusline#Count(bufnr(''))
 
@@ -393,7 +353,7 @@ function! LinterStatus() abort
     let l:all_non_errors = l:counts.total - l:all_errors
 
     return l:counts.total == 0 ? 'OK' : printf(
-    \   '%dW/%dE',
+    \   'W:%d E:%d',
     \   all_non_errors,
     \   all_errors
     \)

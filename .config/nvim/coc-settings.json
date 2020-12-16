@@ -1,9 +1,5 @@
 {
-  "diagnostic": {
-    "errorSign": "> ",
-    "warningSign": "- ",
-    "displayByAle": true
-  },
+  "diagnostic.displayByAle": true,
   "languageserver": {
     "golang": {
       "command": "gopls",
