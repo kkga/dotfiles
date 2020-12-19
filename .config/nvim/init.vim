@@ -41,8 +41,8 @@ let g:ale_linters = {
 \   'markdown': ['alex']
 \}
 
-nmap <silent> <C-a>k <Plug>(ale_previous)
-nmap <silent> <C-a>j <Plug>(ale_next)
+nmap <silent> <leader>k <Plug>(ale_previous)
+nmap <silent> <leader>j <Plug>(ale_next)
 
 " }}}
 " grepper {{{
