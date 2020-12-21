@@ -51,6 +51,7 @@ return require('packer').startup(function()
   -- lsp
   use 'neoclide/coc.nvim'
   use 'dense-analysis/ale'
+  use 'preservim/tagbar'
   
   -- lang
   use 'habamax/vim-godot'

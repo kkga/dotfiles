@@ -12,6 +12,7 @@ let g:go_fold_enable = ['block', 'import', 'varconst', 'package_comment']
 let g:go_highlight_structs = 0
 let g:go_highlight_interfaces = 0
 let g:go_highlight_operators = 0
+let g:go_highlight_trailing_whitespace_error = 0
 " }}}
 " sneak {{{
 let g:sleuth_automatic = 1
@@ -365,6 +366,14 @@ set statusline+=%=[%{LinterStatus()}]\ %{fugitive#statusline()}\ [%{&filetype}]\
 
 " }}}
 " MAPPINGS {{{
+
+nmap <leader>hh :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
 
 " leader
 let mapleader = "\<space>"
