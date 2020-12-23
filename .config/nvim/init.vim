@@ -1,140 +1,7 @@
 " vim:foldmethod=marker:foldlevel=0
 
 " PLUGINS {{{
-" paq {{{
-lua << EOF
-vim.cmd 'packadd paq-nvim'
-local paq = require'paq-nvim'.paq
-paq{'savq/paq-nvim', opt=true}
-
--- themes
-paq 'romainl/Apprentice'
-paq{'yorickpeterse/vim-paper', url='https://gitlab.com/yorickpeterse/vim-paper.git'}
-paq 'lifepillar/vim-colortemplate'
-paq{'kkga/vim-envy', branch='develop'}
-
--- utils
-paq 'tpope/vim-surround'
-paq 'tpope/vim-repeat'
-paq 'tpope/vim-fugitive'
-paq 'tpope/vim-commentary'
-paq 'tpope/vim-sleuth'
-paq 'tpope/vim-eunuch'
-paq 'tpope/vim-unimpaired'
-paq 'tpope/vim-endwise'
-paq 'tpope/vim-rsi'
--- call minpac#add('rstacruz/vim-closer')
-paq 'cohama/lexima.vim'
-paq 'airblade/vim-rooter'
-paq 'mhinz/vim-sayonara'
-paq 'rhysd/clever-f.vim'
-paq 'justinmk/vim-sneak'
-
--- ui
-paq 'airblade/vim-gitgutter'
-paq 'ap/vim-buftabline'
-paq 'mbbill/undotree'
-paq 'junegunn/vim-peekaboo'
-paq 'machakann/vim-highlightedyank'
-
--- notes
---call minpac#add('previm/previm', {'type': 'opt'})
---call minpac#add('iamcco/markdown-preview.nvim', {'do': 'packloadall! | call mkdp#util#install()'})
-paq 'plasticboy/vim-markdown'
-paq 'cweagans/vim-taskpaper'
--- paq 'https://gitlab.com/dbeniamine/todo.txt-vim'
-paq 'axvr/org.vim'
-paq 'junegunn/goyo.vim'
-paq 'godlygeek/tabular'
-
--- searching
-paq 'justinmk/vim-dirvish'
-paq 'dyng/ctrlsf.vim'
-paq 'ctrlpvim/ctrlp.vim'
-paq 'mhinz/vim-grepper'
-paq 'srstevenson/vim-picker'
-
--- lsp
-paq 'neoclide/coc.nvim'
-paq 'dense-analysis/ale'
-
--- lang
-paq 'habamax/vim-godot'
-paq 'euclidianAce/BetterLua.vim'
-paq 'tjdevries/manillua.nvim'
-paq 'fatih/vim-go'
-
-EOF
-"}}}
-" packages {{{
-"packadd minpac
-"call minpac#init()
-"
-"function! PackInit() abort
-"  packadd minpac
-"
-"  call minpac#init()
-"  call minpac#add('k-takata/minpac', {'type': 'opt'})
-"
-"  " themes
-"  call minpac#add('romainl/Apprentice')
-"  call minpac#add('https://gitlab.com/yorickpeterse/vim-paper.git')
-"  call minpac#add('lifepillar/vim-colortemplate')
-"  call minpac#add('kkga/vim-envy', {'branch': 'develop'})
-"
-"  " utils
-"  call minpac#add('tpope/vim-surround')
-"  call minpac#add('tpope/vim-repeat')
-"  call minpac#add('tpope/vim-fugitive')
-"  call minpac#add('tpope/vim-commentary')
-"  call minpac#add('tpope/vim-sleuth')
-"  call minpac#add('tpope/vim-eunuch')
-"  call minpac#add('tpope/vim-unimpaired')
-"  call minpac#add('tpope/vim-endwise')
-"  call minpac#add('tpope/vim-rsi')
-"  " call minpac#add('rstacruz/vim-closer')
-"  call minpac#add('cohama/lexima.vim')
-"  call minpac#add('airblade/vim-rooter')
-"  call minpac#add('mhinz/vim-sayonara')
-"  call minpac#add('rhysd/clever-f.vim')
-"  call minpac#add('justinmk/vim-sneak')
-"
-"  " ui
-"  call minpac#add('airblade/vim-gitgutter')
-"  call minpac#add('ap/vim-buftabline')
-"  call minpac#add('mbbill/undotree')
-"  call minpac#add('junegunn/vim-peekaboo')
-"  call minpac#add('machakann/vim-highlightedyank')
-"
-"  " notes
-"  call minpac#add('plasticboy/vim-markdown')
-"  " call minpac#add('previm/previm', {'type': 'opt'})
-"  call minpac#add('iamcco/markdown-preview.nvim', {'do': 'packloadall! | call mkdp#util#install()'})
-"  call minpac#add('cweagans/vim-taskpaper')
-"  call minpac#add('https://gitlab.com/dbeniamine/todo.txt-vim')
-"  call minpac#add('axvr/org.vim')
-"  call minpac#add('junegunn/goyo.vim')
-"  call minpac#add('godlygeek/tabular')
-"
-"  " searching
-"  call minpac#add('justinmk/vim-dirvish')
-"  call minpac#add('dyng/ctrlsf.vim')
-"  call minpac#add('ctrlpvim/ctrlp.vim')
-"  call minpac#add('mhinz/vim-grepper')
-"  call minpac#add('srstevenson/vim-picker')
-"
-"  " lsp
-"  call minpac#add('neoclide/coc.nvim')
-"  call minpac#add('dense-analysis/ale')
-"
-"  " lang
-"  call minpac#add('habamax/vim-godot')
-"  call minpac#add('euclidianAce/BetterLua.vim')
-"  call minpac#add('tjdevries/manillua.nvim')
-"  call minpac#add('fatih/vim-go')
-"
-"endfunction
-" }}}
+lua require'plugins'
 
 " vim-go {{{
 let g:go_fmt_autosave = 1
@@ -145,12 +12,24 @@ let g:go_fold_enable = ['block', 'import', 'varconst', 'package_comment']
 let g:go_highlight_structs = 0
 let g:go_highlight_interfaces = 0
 let g:go_highlight_operators = 0
+let g:go_highlight_trailing_whitespace_error = 0
 " }}}
 " sneak {{{
 let g:sleuth_automatic = 1
 let g:sneak#s_next = 1
 " }}}
 " ale {{{
+let g:ale_disable_lsp = 1
+let g:ale_sign_error = '✖'
+let g:ale_sign_warning = '●'
+let g:ale_virtualtext_cursor = 1
+let g:ale_echo_msg_format = '[%linter%]: %s'
+let g:ale_lint_on_enter = 1
+let g:ale_fix_on_save = 1
+let g:ale_fix_on_enter = 0
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_insert_leave = 0
+
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'css': ['prettier'],
@@ -163,16 +42,8 @@ let g:ale_linters = {
 \   'markdown': ['alex']
 \}
 
-let g:ale_disable_lsp = 1
-let g:ale_fix_on_save = 1
-let g:ale_virtualtext_cursor = 1
-" let g:ale_sign_error = "🐛"
-" let g:ale_sign_warning = "⚠️"
-" let g:ale_sign_info = "ℹ"
-" let g:ale_virtualtext_prefix = "!!! "
-
-nmap <silent> <C-a>k <Plug>(ale_previous)
-nmap <silent> <C-a>j <Plug>(ale_next)
+nmap <silent> <leader>k <Plug>(ale_previous)
+nmap <silent> <leader>j <Plug>(ale_next)
 
 " }}}
 " grepper {{{
@@ -184,20 +55,19 @@ let g:grepper.prompt_text   = '$c>'
 let g:grepper.quickfix      = 0
 " }}}
 " ctrlp {{{
-let g:ctrlp_map = '<leader>ff'
+" let g:ctrlp_map = '<C-p>p'
 let g:ctrlp_user_command = 'fd --type f --color never "" %s'
 " let g:ctrlp_user_command = 'rg %s --files --sort=modified --color=never --glob ""'
 let g:ctrlp_by_filename = 1
 let g:ctrlp_use_caching = 0
 let g:ctrlp_match_window = 'bottom,order:ttp,min:10,max:10,results:40'
 
-nnoremap <leader>ff :CtrlP<CR>
-nnoremap <leader>fn :CtrlP ~/notes/<CR>
-nnoremap <leader>fw :CtrlPWiki<CR>
-nnoremap <leader>fc :CtrlP ~/.config/nvim/<CR>
-nnoremap <leader>fr :CtrlPMRU<CR>
-nnoremap <leader>fb :CtrlPBuffer<CR>
-nnoremap <leader>fl :CtrlPLine<CR>
+" nnoremap <C-p>p :CtrlP<CR>
+" nnoremap <C-p>n :CtrlP ~/notes<CR>
+" nnoremap <C-p>c :CtrlP ~/.config/nvim/<CR>
+" nnoremap <C-p>r :CtrlPMRU<CR>
+" nnoremap <C-p>b :CtrlPBuffer<CR>
+" nnoremap <C-p>l :CtrlPLine<CR>
 " }}}
 " ctrlsf {{{
 nmap     <C-F>f <Plug>CtrlSFPrompt
@@ -227,12 +97,8 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" " Use <c-space> to trigger completion.
-if has('nvim')
-  inoremap <silent><expr> <c-space> coc#refresh()
-else
-  inoremap <silent><expr> <c-@> coc#refresh()
-endif
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
 
 " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
 " position. Coc only does snippet and additional edit on confirm.
@@ -242,9 +108,6 @@ if exists('*complete_info')
 else
   inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 endif
-
-" Use `[g` and `]g` to navigate diagnostics
-" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
 
 nnoremap <silent> <leader>ch :call CocAction('doHover')<CR>
 
@@ -264,21 +127,6 @@ function! s:show_documentation()
     call CocAction('doHover')
   endif
 endfunction
-
-" Symbol renaming.
-nmap <leader>rn <Plug>(coc-rename)
-
-
-augroup mygroup
-  autocmd!
-  " Setup formatexpr specified filetype(s).
-  autocmd FileType typescript,json setl formatexpr=CocAction('formatSelected')
-  " Update signature help on jump placeholder.
-  autocmd User CocJumpPlaceholder call CocActionAsync('showSignatureHelp')
-augroup end
-
-" Highlight the symbol and its references when holding the cursor.
-" autocmd CursorHold * silent call CocActionAsync('highlight')
 
 " Symbol renaming.
 nmap <leader>rn <Plug>(coc-rename)
@@ -326,12 +174,6 @@ command! -nargs=? Fold :call     CocAction('fold', <f-args>)
 " Add `:OR` command for organize imports of the current buffer.
 command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
 
-" Add (Neo)Vim's native statusline support.
-" NOTE: Please see `:h coc-status` for integrations with external plugins that
-" provide custom statusline: lightline.vim, vim-airline.
-" set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
-
 " Mappings for CoCList
 " Show all diagnostics.
 nnoremap <silent><nowait> <space>a  :<C-u>CocList diagnostics<cr>
@@ -349,7 +191,6 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
-
 " }}}
 " buftabline {{{
 let g:buftabline_show = 1
@@ -367,8 +208,8 @@ nmap <leader>7 <Plug>BufTabLine.Go(7)
 nmap <leader>8 <Plug>BufTabLine.Go(8)
 nmap <leader>9 <Plug>BufTabLine.Go(9)
 nmap <leader>0 <Plug>BufTabLine.Go(10)
-nnoremap <C-n> :bnext<CR>
-nnoremap <C-p> :bprev<CR>
+nnoremap <C-j> :bnext<CR>
+nnoremap <C-k> :bprev<CR>
 " }}}
 " ale {{{
 " }}}
@@ -431,10 +272,6 @@ let g:rust_fold = 2
 " colortemplate {{{
 let g:colortemplate_toolbar = 0
 " }}}
-
-"command! PackUpdate source $MYVIMRC | call PackInit() | call minpac#update()
-"command! PackClean  source $MYVIMRC | call PackInit() | call minpac#clean()
-"command! PackStatus packadd minpac | call minpac#status()
 
 "}}}
 " SETTINGS {{{
@@ -510,20 +347,6 @@ set undofile                    " Write changes to the undofile
 set undolevels=1000             " Max # of changes that can be undone
 set undoreload=10000            " Max # of lines to save for undo on buf reload
 
-" statusline
-function! StatusDiagnostic() abort
-  let info = get(b:, 'coc_diagnostic_info', {})
-  if empty(info) | return '' | endif
-  let msgs = []
-  if get(info, 'error', 0)
-    call add(msgs, 'E' . info['error'])
-  endif
-  if get(info, 'warning', 0)
-    call add(msgs, 'W' . info['warning'])
-  endif
-  return join(msgs, ' '). ' ' . get(g:, 'coc_status', '')
-endfunction
-
 function! LinterStatus() abort
     let l:counts = ale#statusline#Count(bufnr(''))
 
@@ -531,7 +354,7 @@ function! LinterStatus() abort
     let l:all_non_errors = l:counts.total - l:all_errors
 
     return l:counts.total == 0 ? 'OK' : printf(
-    \   '%dW/%dE',
+    \   'W:%d E:%d',
     \   all_non_errors,
     \   all_errors
     \)
@@ -543,6 +366,14 @@ set statusline+=%=[%{LinterStatus()}]\ %{fugitive#statusline()}\ [%{&filetype}]\
 
 " }}}
 " MAPPINGS {{{
+
+nmap <leader>hh :call <SID>SynStack()<CR>
+function! <SID>SynStack()
+  if !exists("*synstack")
+    return
+  endif
+  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
+endfunc
 
 " leader
 let mapleader = "\<space>"

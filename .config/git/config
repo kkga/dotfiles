@@ -13,6 +13,8 @@
 	sl = status --long
 	l = log --oneline
 	d = diff
+	p = push
+	pl = pull
 	dt = difftool --no-symlinks --dir-diff
 [color]
 	ui = auto

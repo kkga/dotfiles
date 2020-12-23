@@ -1,28 +1,5 @@
-alias vim 'nvim'
-alias ls 'exa'
-alias cat 'bat'
-alias gg 'lazygit'
-alias hg 'kitty +kitten hyperlinked_grep'
-alias d 'kitty +kitten diff'
-alias fzf 'sk'
-alias t 'togo'
-
-abbr gs 'git status'
-abbr gc 'git checkout'
-abbr gps 'git push'
-abbr gpl 'git pull'
-abbr gl 'git log'
-abbr gd 'git diff'
-abbr gdt 'git difftool'
-
-alias xbli 'xpkg -m | fzf --preview "xbps-query -vR {}"'
-abbr xbr 'doas xbps-remove'
-abbr xbi 'doas xbps-install'
-abbr xbq 'xbps-query'
-
-set lucid_dirty_indicator '*'
-set lucid_clean_indicator ' '
-set lucid_prompt_symbol '$'
+set -x EDITOR nvim
+set -x LS_COLORS 'di=0;35:ln=1;34:ex=1;30'
 
 set fish_greeting
 set fish_color_command normal --bold
@@ -46,5 +23,7 @@ set fish_pager_color_background --background=background
 set fish_pager_color_description $fish_color_comment
 set fish_pager_color_selected_completion white
 set fish_pager_color_selected_description white
+
+bind \cr 'search_history'
 
 zoxide init fish | source

@@ -8,7 +8,6 @@ TERMINAL						DEFAULT=kitty
 SKIM_DEFAULT_OPTIONS			DEFAULT="--height 40% --reverse --color bw"
 BEMENU_OPTS						DEFAULT="--ignorecase --list 12 -p '' -P >"
 DMENU							DEFAULT=bemenu
-BAT_THEME						DEFAULT=ansi-light
 MANGOHUD						DEFAULT=1
 ENABLE_VKBASALT					DEFAULT=1
 BEMENU_SCALE					DEFAULT=2
