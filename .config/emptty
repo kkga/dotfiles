@@ -29,10 +29,10 @@ sxhkd &
 unclutter &
 
 # screensaver and screenlock
-xset s 300
+xset s 600
 xss-lock -n /usr/libexec/xsecurelock/dimmer -l -- xsecurelock &
 
 # screen dimmer
 gammastep -t 6500:4000 -m randr &
 
-exec dbus-launch spectrwm
+exec dbus-launch --exit-with-session spectrwm

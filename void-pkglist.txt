@@ -89,7 +89,6 @@ neovim
 nfs-utils
 nodejs
 noto-fonts-ttf
-nvimpager
 obs
 opendoas
 pamixer
