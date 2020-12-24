@@ -35,4 +35,4 @@ xss-lock -n /usr/libexec/xsecurelock/dimmer -l -- xsecurelock &
 # screen dimmer
 gammastep -t 6500:4000 -m randr &
 
-exec dbus-launch --exit-with-session spectrwm
+exec dbus-run-session spectrwm
