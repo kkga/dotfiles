@@ -41,7 +41,6 @@ ffscreencast
 ffsend
 firefox
 fish-shell
-flatpak
 fuzzypkg
 fwupd
 fzy
@@ -57,7 +56,6 @@ godot
 grub-terminus
 grub-x86_64-efi
 gsound
-gvfs
 htop
 imv
 inxi
@@ -68,6 +66,8 @@ kakoune
 kitty
 lazygit
 lf
+linux5.10
+linux5.10-headers
 linux5.9
 linux5.9-headers
 lm_sensors
@@ -83,10 +83,10 @@ mesa-vdpau
 mesa-vulkan-radeon
 mesa-vulkan-radeon-32bit
 mpv
+mtm
 myrepos
 neofetch
 neovim
-nfs-utils
 nodejs
 noto-fonts-ttf
 obs
@@ -96,7 +96,6 @@ pandoc
 papirus-icon-theme
 patch
 pavucontrol
-pkg-config
 playerctl
 polkit-elogind
 polkit-gnome
@@ -104,11 +103,8 @@ powertop
 procs
 protontricks
 pulseaudio
-python3-distro
 python3-pip
-python3-wheel
 qmk
-qt5-tools
 qt5ct
 ripgrep
 seahorse
@@ -131,6 +127,7 @@ syncthing
 tailscale
 tealdeer
 terminus-font
+tmux
 tokei
 topgrade
 trash-cli
@@ -146,7 +143,6 @@ void-docs-browse
 void-repo-multilib
 void-repo-multilib-nonfree
 void-repo-nonfree
-volumeicon
 vpm
 vsv
 vulkan-loader
@@ -158,10 +154,7 @@ winetricks
 wireguard-tools
 wmctrl
 xarchiver
-xbacklight
 xclip
-xdg-desktop-portal
-xdg-desktop-portal-gtk
 xdg-user-dirs
 xdg-user-dirs-gtk
 xdg-utils
@@ -170,7 +163,6 @@ xev
 xf86-video-amdgpu
 xinit
 xkb-switch
-xob
 xorg-minimal
 xprop
 xrdb
@@ -181,10 +173,7 @@ xsettingsd
 xss-lock
 xtools
 yadm
-yarn
 youtube-dl
 zathura
 zathura-pdf-mupdf
-zig
 zoxide
-zrandr
