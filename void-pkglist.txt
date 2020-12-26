@@ -17,11 +17,10 @@ blueman
 bluez
 bottom
 brillo
+cargo
 chrony
 clipmenu
-cmake
 corectrl
-cwm
 dbus
 ddcci-dkms
 ddcutil
@@ -126,6 +125,7 @@ sxhkd
 syncthing
 tailscale
 tealdeer
+telegram-desktop
 terminus-font
 tmux
 tokei
@@ -154,6 +154,7 @@ winetricks
 wireguard-tools
 wmctrl
 xarchiver
+xautolock
 xclip
 xdg-user-dirs
 xdg-user-dirs-gtk
@@ -173,6 +174,7 @@ xsettingsd
 xss-lock
 xtools
 yadm
+yarn
 youtube-dl
 zathura
 zathura-pdf-mupdf
