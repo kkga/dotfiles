@@ -2,17 +2,11 @@
 # wm independent hotkeys
 #
 
-XF86AudioMute
-	volume.sh -t
+XF86Audio{Mute,RaiseVolume,LowerVolume}
+	volume.sh {-t,-i 5,-d 5}
 
-XF86Audio{Raise,Lower}Volume
-	volume.sh {-i 5,-d 5}
-
-XF86Audio{Prev,Next}
-	playerctl {previous,next}
-
-XF86AudioPlay
-	playerctl play-pause
+XF86Audio{Play,Prev,Next}
+	playerctl {play-pause,previous,next}
 
 XF86MonBrightness{Down,Up}
 	brightness.sh ddcci4 {-U 5, -A 5}
@@ -22,12 +16,6 @@ shift + XF86MonBrightness{Down,Up}
 
 super + shift + Return
 	kitty
-
-super + ctrl + l
-	kitty @ set-colors ~/.config/kitty/envy.conf
-
-super + ctrl + d
-	kitty @ set-colors ~/.config/kitty/apprentice.conf
 
 super + shift + p
 	bemenu-run
@@ -47,7 +35,6 @@ super + Escape
 
 super + ctrl + BackSpace
 	loginctl lock-session
-
 
 super + ctrl + shift + BackSpace
 	power-menu.sh

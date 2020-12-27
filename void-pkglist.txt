@@ -5,7 +5,6 @@ Vulkan-Tools
 acpi
 alacritty
 alsa-firmware
-alsa-plugins-pulseaudio
 alsa-utils
 asciinema
 autorandr
@@ -49,12 +48,12 @@ geoclue2
 geoip
 git
 github-cli
-gnome-keyring
 go
 godot
 grub-terminus
 grub-x86_64-efi
 gsound
+gstreamer1-pipewire
 htop
 imv
 inxi
@@ -65,13 +64,13 @@ kakoune
 kitty
 lazygit
 lf
+libvdpau-va-gl
 linux5.10
 linux5.10-headers
 linux5.9
 linux5.9-headers
 lm_sensors
 luastatus
-lutris
 lxappearance
 maim
 mesa
@@ -90,11 +89,14 @@ nodejs
 noto-fonts-ttf
 obs
 opendoas
+opera
 pamixer
 pandoc
 papirus-icon-theme
+paprefs
 patch
 pavucontrol
+pipewire
 playerctl
 polkit-elogind
 polkit-gnome
@@ -106,7 +108,6 @@ python3-pip
 qmk
 qt5ct
 ripgrep
-seahorse
 setxkbmap
 skim
 slop
@@ -136,6 +137,7 @@ ttf-ubuntu-font-family
 ufw
 unclutter-xfixes
 uni
+vdpauinfo
 viu
 vkBasalt
 void-docs

@@ -4,11 +4,11 @@
 SLEEP_SEC=5
 while :; do
 	# music
-	PLAYER_STATUS=$(playerctl status)
-	PLAYER_ARTIST=$(playerctl metadata artist | cut -c 1-15)
-	PLAYER_TITLE=$(playerctl metadata title | cut -c 1-30)
 	PLAYER_STR=""
-	if [ $PLAYER_STATUS = "Playing" ]; then
+	PLAYER_STATUS=$(playerctl status)
+	if [ $PLAYER_STATUS == "Playing" ]; then
+		PLAYER_ARTIST=$(playerctl metadata artist | cut -c 1-15)
+		PLAYER_TITLE=$(playerctl metadata title | cut -c 1-30)
 		PLAYER_STR="$PLAYER_ARTIST - $PLAYER_TITLE"
 	fi
 
@@ -30,11 +30,11 @@ while :; do
 	DATE_STR=`date +"%a %d %b %H:%M"`
 
 	echo "$PLAYER_STR\
-+@fg=2; | +@fg=0;$CPU_INFO_STR\
-+@fg=2; | +@fg=0;$GPU_INFO_STR\
-+@fg=2; | +@fg=0;$NET_STR\
-+@fg=2; | +@fg=0;$KBD_STR\
-+@fg=2; | +@fg=0;$DATE_STR"
+ | $CPU_INFO_STR\
+ | $GPU_INFO_STR\
+ | $NET_STR\
+ | $KBD_STR\
+ | $DATE_STR"
 
 	sleep $SLEEP_SEC
 done
