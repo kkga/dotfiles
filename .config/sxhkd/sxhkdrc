@@ -15,7 +15,7 @@ shift + XF86MonBrightness{Down,Up}
 	brightness.sh ddcci5 {-U 5, -A 5}
 
 super + shift + Return
-	kitty
+	alacritty
 
 super + shift + p
 	bemenu-run

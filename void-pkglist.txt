@@ -1,7 +1,6 @@
 CPU-X
 MangoHud
 MangoHud-32bit
-Vulkan-Tools
 acpi
 alacritty
 alsa-firmware
@@ -105,8 +104,8 @@ procs
 protontricks
 pulseaudio
 python3-pip
+qemu
 qmk
-qt5ct
 ripgrep
 setxkbmap
 skim
@@ -126,7 +125,6 @@ sxhkd
 syncthing
 tailscale
 tealdeer
-telegram-desktop
 terminus-font
 tmux
 tokei

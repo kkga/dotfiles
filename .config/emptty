@@ -13,31 +13,31 @@ xrdb -merge $HOME/.Xresources
 # export SUDO_ASKPASS=/usr/libexec/seahorse/ssh-askpass
 
 # polkit agent
-/usr/libexec/polkit-gnome-authentication-agent-1 &
+# /usr/libexec/polkit-gnome-authentication-agent-1 &
 
 # background color
-xsetroot -solid "#333333"
+# xsetroot -solid "#333333"
 
 # simple settings daemon for gtk apps
-xsettingsd &
+# xsettingsd &
 
 # clipboard daemon
-clipmenud &
+# clipmenud &
 
 # keyboard daemon
-sxhkd &
+# sxhkd &
 
 # hide cursor on idle
-unclutter &
+# unclutter &
 
 # pulseaudio alternative
-pipewire &
+# pipewire &
 
 # screensaver and screenlock
-xset s 600
-xss-lock -n /usr/libexec/xsecurelock/dimmer -l -- xsecurelock &
+# xset s 600
+# xss-lock -n /usr/libexec/xsecurelock/dimmer -l -- xsecurelock &
 
 # screen dimmer
-gammastep -t 6500:4000 -m randr &
+# gammastep -t 6500:4000 -m randr &
 
 exec dbus-run-session spectrwm

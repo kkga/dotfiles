@@ -1,27 +1,36 @@
 colors:
-  # Default colors
   primary:
-    background: '0xeeeeee'
-    foreground: '0x000000'
+    background: '#eeeeee'
+    foreground: '#000000'
+  selection:
+    text:       '#000000'
+    background: '#afd7ff'
+  # search:
+    #matches:
+    #  foreground: '#000000'
+    #  background: '#ffffff'
+    #focused_match:
+    #  foreground: CellBackground
+    #  background: CellForeground
 
-  # Normal colors
+    #bar:
+    #  background: '#c5c8c6'
+    #  foreground: '#1d1f21'
   normal:
-    black:   '0x000000'
-    red:     '0xaf0000'
-    green:   '0x005f00'
-    yellow:  '0xd75f00'
-    blue:    '0x005fd7'
-    magenta: '0x5f00ff'
-    cyan:    '0x0087af'
-    white:   '0xb2b2b2'
-
-  # Bright colors
+    black:   '#000000'
+    red:     '#d70000'
+    green:   '#005f00'
+    yellow:  '#d75f00'
+    blue:    '#005fd7'
+    magenta: '#5f00d7'
+    cyan:    '#0087af'
+    white:   '#b2b2b2'
   bright:
-    black:   '0x585858'
-    red:     '0xaf0000'
-    green:   '0x005f00'
-    yellow:  '0xd75f00'
-    blue:    '0x005fd7'
-    magenta: '0x5f00ff'
-    cyan:    '0x0087af'
-    white:   '0xb2b2b2'
+    black:   '#585858'
+    red:     '#d70000'
+    green:   '#005f00'
+    yellow:  '#d75f00'
+    blue:    '#005fd7'
+    magenta: '#5f00d7'
+    cyan:    '#0087af'
+    white:   '#b2b2b2'
