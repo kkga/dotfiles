@@ -1,6 +1,5 @@
-#
-# wm independent hotkeys
-#
+super + Escape
+	pkill -USR1 -x sxhkd
 
 XF86Audio{Mute,RaiseVolume,LowerVolume}
 	volume.sh {-t,-i 5,-d 5}
@@ -14,27 +13,24 @@ XF86MonBrightness{Down,Up}
 shift + XF86MonBrightness{Down,Up}
 	brightness.sh ddcci5 {-U 5, -A 5}
 
-super + shift + Return
-	alacritty
-
-super + shift + p
-	bemenu-run
-
-super + p
-	j4-dmenu-desktop --usage-log="tmp/j4-dmenu-desktop.log" \
-	--display-binary \
-	--term="kitty" \
-	--dmenu="bemenu"
-
 super + g ; {c,b}
 	{env CM_LAUNCHER=bemenu clipmenu,\
 	firefox}
 
-super + Escape
-	pkill -USR1 -x sxhkd
+# super + shift + Return
+# 	alacritty
 
-super + ctrl + BackSpace
-	loginctl lock-session
+# super + shift + p
+# 	bemenu-run
 
-super + ctrl + shift + BackSpace
-	power-menu.sh
+# super + p
+# 	j4-dmenu-desktop --usage-log="tmp/j4-dmenu-desktop.log" \
+# 	--display-binary \
+# 	--term="alacritty" \
+# 	--dmenu="bemenu"
+
+# super + ctrl + BackSpace
+# 	loginctl lock-session
+
+# super + ctrl + shift + BackSpace
+# 	power-menu.sh

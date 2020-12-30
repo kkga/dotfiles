@@ -25,6 +25,7 @@ ddcutil
 delta
 dkms
 dmenu
+duf
 dunst
 dust
 elogind
@@ -154,7 +155,6 @@ winetricks
 wireguard-tools
 wmctrl
 xarchiver
-xautolock
 xclip
 xdg-user-dirs
 xdg-user-dirs-gtk
@@ -162,8 +162,10 @@ xdg-utils
 xdotool
 xev
 xf86-video-amdgpu
+xidle
 xinit
 xkb-switch
+xlockmore
 xorg-minimal
 xprop
 xrdb
