@@ -7,9 +7,10 @@ exec mako
 exec gammastep -l 55:37 -m wayland -t 5700:3500 -r
 exec pipewire
 exec syncthing -no-browser
+exec wl-paste -t text --watch clipman store
+exec clipman restore
 
 set $gnome-schema org.gnome.desktop.interface
-
 exec_always {
     gsettings set $gnome-schema gtk-theme 'Adwaita'
     gsettings set $gnome-schema icon-theme 'Adwaita'
@@ -36,7 +37,7 @@ set $up k
 set $right l
 
 set $term foot
-set $menu env BEMENU_SCALE=2 bemenu-run | xargs swaymsg exec --
+set $menu bemenu-run | xargs swaymsg exec --
 set $lock 'swaylock -f -c 333333'
 
 # Colors {{{1
@@ -135,7 +136,7 @@ input "type:touchpad" {
     bindsym $mod+Shift+c kill
 
     bindsym $mod+p exec $menu
-
+    bindsym $mod+c exec clipman pick -t bemenu
     floating_modifier $mod normal
 
     bindsym $mod+Shift+r reload
@@ -148,6 +149,9 @@ input "type:touchpad" {
     bindsym $mod+$down focus down
     bindsym $mod+$up focus up
     bindsym $mod+$right focus right
+
+    # bindsym $mod+j focus next
+    # bindsym $mod+k focus prev
 
     bindsym $mod+Shift+$left move left
     bindsym $mod+Shift+$down move down

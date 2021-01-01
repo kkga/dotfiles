@@ -68,7 +68,8 @@
         "interval": 10
     },
     "network": {
-        "format-wifi": "{essid} ({signalStrength}%)",
+        "format-wifi": "wifi",
+        "tooltip-format": "{essid} ({signalStrength}%)",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr}",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "NO NET",
