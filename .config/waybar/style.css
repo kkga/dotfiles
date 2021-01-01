@@ -2,7 +2,7 @@
     border: none;
     border-radius: 0;
     font-family: monospace;
-    font-size: 10pt;
+    font-size: 9pt;
     min-height: 0;
 }
 
@@ -12,7 +12,7 @@ window#waybar {
 }
 
 #workspaces button {
-    padding: 0 2px;
+    padding: 0 1px;
     background-color: transparent;
     font-weight: bold;
     color: inherit;

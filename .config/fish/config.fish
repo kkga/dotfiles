@@ -1,5 +1,11 @@
-set -x EDITOR nvim
 set -x LS_COLORS 'di=0;35:ln=1;34:ex=1;30'
+
+alias vim=nvim.appimage
+alias gg=lazygit
+alias ls=exa
+alias y=yadm
+
+alias xr='doas xbps-remove'
 
 set fish_greeting
 set fish_color_command normal --bold

@@ -4,7 +4,16 @@
     "position": "bottom",
     "modules-left": ["sway/workspaces", "sway/window"],
     "modules-center": ["sway/mode"],
-    "modules-right": ["custom/xbps-updates", "idle_inhibitor", "pulseaudio", "network", "cpu", "temperature#cpu", "temperature#gpu", "custom/fan", "clock", "tray"],
+    "modules-right": [
+		"custom/xbps-updates",
+		"idle_inhibitor",
+		"backlight",
+		"cpu",
+		"pulseaudio",
+		"network",
+		"battery", 
+		"clock",
+		"tray"],
 
     "sway/workspaces": {
         "disable-scroll": true,
@@ -20,6 +29,10 @@
             "deactivated": "off"
         }
     },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "light {percent}%"
+    },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
@@ -27,6 +40,17 @@
     "cpu": {
         "format": "cpu {usage:2}%",
         "tooltip": true
+    },
+    "battery": {
+            "interval": 60,
+            "states": {
+                    "warning": 30,
+                    "critical": 15
+            },
+            "format": "bat {capacity}% ({time})",
+            "format-charging": "bat++ {capacity}% ({time})",
+            "format-time": "{H}:{M}",
+            "max-length": 25
     },
     "temperature#cpu": {
         "hwmon-path": "/sys/class/hwmon/hwmon3/temp2_input",
@@ -44,14 +68,16 @@
         "interval": 10
     },
     "network": {
-        "format-wifi": "net {essid} ({signalStrength}%)",
+        "format-wifi": "{essid} ({signalStrength}%)",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr}",
         "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected",
+        "format-disconnected": "NO NET",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
-        "format": "vol {volume}%"
+        "format": "vol {volume}%",
+		"format-muted": "MUTE",
+		"on-click": "pavucontrol"
     },
     "tray": {
         "icon-size": 16,
