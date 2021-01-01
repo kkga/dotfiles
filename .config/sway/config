@@ -41,14 +41,16 @@ set $lock 'swaylock -f -c 333333'
 
 # Colors {{{1
 set $color_white  #FFFFFF
-set $color_gray #777777
+set $color_gray #888888
 set $color_accent #ff0000
 set $color_black #000000
+set $col_sel #d75f00
+set $col_bg #84998F
 
 # Colors                  border                 background             text                   indicator            child_border
-client.focused            $color_white  	 $color_white     	$color_black   	       $color_accent        $color_white
-client.focused_inactive   $color_black           $color_black           $color_white           $color_black         $color_black
-client.unfocused          $color_black 		 $color_black           $color_white           $color_accent        $color_black
+client.focused            $col_sel		 $color_white     	$color_black   	       $color_accent        $color_black
+client.focused_inactive   $color_black           $color_black           $color_white           $color_black         $color_gray
+client.unfocused          $color_black 		 $color_black           $color_white           $color_accent        $color_gray
 # client.urgent             $color_bright_yellow   $color_bright_yellow   $color_normal_black    $color_unused        $color_unused
 # client.placeholder        $color_unused          $color_unused          $color_unused          $color_unused        $color_unused
 
@@ -71,6 +73,8 @@ smart_gaps on
 hide_edge_borders --i3 smart_no_gaps
 focus_wrapping yes
 
+gaps inner 8
+
 font pango:monospace 9
 titlebar_border_thickness 0
 titlebar_padding 4 0
@@ -79,7 +83,7 @@ seat * xcursor_theme Adwaita 24
 
 # Output configuration {{{1
 
-output * bg #333333 solid_color
+output * bg $col_bg solid_color
 output * adaptive_sync on
 output eDP-1 resolution 2560x1600 scale 2
 

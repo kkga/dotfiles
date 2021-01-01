@@ -7,8 +7,8 @@
 }
 
 window#waybar {
-    background: #000000;
-    color: #999999;
+    background: #000;
+    color: #999;
 }
 
 #workspaces button {
@@ -23,10 +23,10 @@ window#waybar {
     background-color: transparent;
 }
 #workspaces button.visible {
-    color: #F2EEDE;
+    color: #eee;
 }
 #workspaces button.focused {
-    background: #555555;
+    background: #333;
 }
 #window {
     margin-left: 8px;

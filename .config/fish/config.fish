@@ -1,6 +1,6 @@
 set -x LS_COLORS 'di=0;35:ln=1;34:ex=1;30'
 
-alias vim=nvim.appimage
+alias vim=nvim
 alias gg=lazygit
 alias ls=exa
 alias y=yadm
