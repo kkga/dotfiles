@@ -88,6 +88,10 @@ output * bg $col_bg solid_color
 output * adaptive_sync on
 output eDP-1 resolution 2560x1600 scale 2
 
+# set $laptop <laptop_output_identifier>
+# bindswitch --reload --locked lid:on output $laptop disable
+# bindswitch --reload --locked lid:off output $laptop enable
+
 
 # Idle configuration {{{1
 
@@ -100,7 +104,7 @@ exec swayidle -w \
 
 input "type:keyboard" {
 	xkb_layout us,ru
-	xkb_options grp:shifts_toggle,ctrl:nocaps
+	xkb_options grp:shifts_toggle,ctrl:nocaps,altwin:swap_lalt_lwin
 	repeat_delay 300
 	repeat_rate 30
 }

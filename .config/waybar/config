@@ -5,13 +5,12 @@
     "modules-left": ["sway/workspaces", "sway/window"],
     "modules-center": ["sway/mode"],
     "modules-right": [
-		"custom/xbps-updates",
-		"idle_inhibitor",
-		"backlight",
 		"cpu",
+		"custom/xbps-updates",
+		"backlight",
 		"pulseaudio",
-		"network",
 		"battery", 
+		"network",
 		"clock",
 		"tray"],
 
@@ -23,22 +22,22 @@
         "format": "{}"
     },
     "idle_inhibitor": {
-        "format": "ih {icon}",
+        "format": "{icon}",
         "format-icons": {
-            "activated": "ON",
-            "deactivated": "off"
+            "activated": "",
+            "deactivated": ""
         }
     },
     "backlight": {
         "device": "intel_backlight",
-        "format": "light {percent}%"
+        "format": " {percent}%"
     },
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format": "{:%a %d %b %R}"
     },
     "cpu": {
-        "format": "cpu {usage:2}%",
+        "format": " {load}",
         "tooltip": true
     },
     "battery": {
@@ -47,9 +46,9 @@
                     "warning": 30,
                     "critical": 15
             },
-            "format": "bat {capacity}% ({time})",
-            "format-charging": "bat++ {capacity}% ({time})",
+            "format": "{icon} {capacity}% ({time})",
             "format-time": "{H}:{M}",
+            "format-icons": ["", "", "", "", ""],
             "max-length": 25
     },
     "temperature#cpu": {
@@ -68,15 +67,15 @@
         "interval": 10
     },
     "network": {
-        "format-wifi": "wifi",
-        "tooltip-format": "{essid} ({signalStrength}%)",
+        "format-wifi": " {essid}",
+        "tooltip-format": "{ifname}: {essid} ({signalStrength}%)",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr}",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "NO NET",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
-        "format": "vol {volume}%",
+        "format": " {volume}%",
 		"format-muted": "MUTE",
 		"on-click": "pavucontrol"
     },
@@ -86,7 +85,7 @@
     },
     "custom/xbps-updates": {
         "exec": "doas xbps-install -nSu | wc -l",
-        "format": "xbps {}",
+        "format": " {}",
         "interval": 600
     }
 }
