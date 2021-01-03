@@ -37,7 +37,7 @@
         "format": "{:%a %d %b %R}"
     },
     "cpu": {
-        "format": " {load}",
+        "format": " {usage}%",
         "tooltip": true
     },
     "battery": {

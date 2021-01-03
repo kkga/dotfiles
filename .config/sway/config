@@ -9,6 +9,7 @@ exec pipewire
 exec syncthing -no-browser
 exec wl-paste -t text --watch clipman store
 exec clipman restore
+exec foot -s
 
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
@@ -20,48 +21,10 @@ exec_always {
     gsettings set $gnome-schema monospace-font-name 'monospace 10'
 }
 
-
-# Variables {{{1
-
-set $ws1 1:1
-set $ws2 2:2
-set $ws3 3:3
-set $ws4 4:4
-set $ws5 5:5
-set $ws6 6:6
-
-set $mod Mod4
-set $left h
-set $down j
-set $up k
-set $right l
-
-set $term foot
-set $menu bemenu-run | xargs swaymsg exec --
-set $lock 'swaylock -f -c 333333'
-
-# Colors {{{1
-set $color_white  #FFFFFF
-set $color_gray #888888
-set $color_accent #ff0000
-set $color_black #000000
-set $col_sel #d75f00
-set $col_bg #84998F
-
-# Colors                  border                 background             text                   indicator            child_border
-client.focused            $col_sel		 $color_white     	$color_black   	       $color_accent        $color_black
-client.focused_inactive   $color_black           $color_black           $color_white           $color_black         $color_gray
-client.unfocused          $color_black 		 $color_black           $color_white           $color_accent        $color_gray
-# client.urgent             $color_bright_yellow   $color_bright_yellow   $color_normal_black    $color_unused        $color_unused
-# client.placeholder        $color_unused          $color_unused          $color_unused          $color_unused        $color_unused
-
-
-
-# Rules {{{1
-# for_window      [app_id=".*"]           split toggle
-#for_window 	[app_id="firefox"] 	move container to workspace number $ws1
-for_window      [app_id="^launcher$"]   floating enable
-
+exec swayidle -w \
+	timeout 300 'swaylock -f -c 333333' \
+	timeout 600 'loginctl suspend' \
+	before-sleep 'swaylock -f -c 333333'
 
 # General settings {{{1
 
@@ -82,7 +45,49 @@ titlebar_padding 4 0
 
 seat * xcursor_theme Adwaita 24
 
-# Output configuration {{{1
+# Variables {{{1
+
+set $ws1 1:1
+set $ws2 2:2
+set $ws3 3:3
+set $ws4 4:4
+set $ws5 5:5
+set $ws6 6:6
+
+set $mod Mod4
+set $left h
+set $down j
+set $up k
+set $right l
+
+set $term footclient
+set $menu bemenu-run | xargs swaymsg exec --
+set $lock 'swaylock -f -c 333333'
+
+# Colors {{{1
+set $color_white  #FFFFFF
+set $color_gray #666666
+set $color_accent #ff0000
+set $color_black #000000
+set $col_sel #d75f00
+set $col_bg #84998F
+
+# Colors                  border                 background             text                   indicator            child_border
+client.focused            $col_sel		 $color_white     	$color_black   	       $color_accent        $color_black
+client.focused_inactive   $color_black           $color_black           $color_white           $color_black         $color_gray
+client.unfocused          $color_black 		 $color_black           $color_white           $color_accent        $color_gray
+# client.urgent             $color_bright_yellow   $color_bright_yellow   $color_normal_black    $color_unused        $color_unused
+# client.placeholder        $color_unused          $color_unused          $color_unused          $color_unused        $color_unused
+
+
+
+# Rules {{{1
+# for_window      [app_id=".*"]           split toggle
+#for_window 	[app_id="firefox"] 	move container to workspace number $ws1
+for_window      [app_id="^launcher$"]   floating enable
+
+
+# Outputs {{{1
 
 output * bg $col_bg solid_color
 output * adaptive_sync on
@@ -93,36 +98,25 @@ output eDP-1 resolution 2560x1600 scale 2
 # bindswitch --reload --locked lid:off output $laptop enable
 
 
-# Idle configuration {{{1
 
-exec swayidle -w \
-	timeout 300 'swaylock -f -c 333333' \
-	timeout 600 'loginctl suspend' \
-	before-sleep 'swaylock -f -c 333333'
-
-# Input configuration {{{1
+# Input {{{1
 
 input "type:keyboard" {
-	xkb_layout us,ru
-	xkb_options grp:shifts_toggle,ctrl:nocaps,altwin:swap_lalt_lwin
-	repeat_delay 300
-	repeat_rate 30
+   xkb_layout us,ru
+   xkb_options grp:shifts_toggle,ctrl:nocaps,altwin:swap_lalt_lwin
+   repeat_delay 200
+   repeat_rate 30
 }
 
 input "type:touchpad" {
-    dwt enabled
+    dwt disabled
     tap enabled
     natural_scroll enabled
-    middle_emulation enabled
-    pointer_accel 0.3
+    middle_emulation disabled
     accel_profile adaptive
-    scroll_factor 1.1
-#	tap enabled
-#	natural_scroll enabled
-#	dwt enabled
-#	scroll_factor 0.5
-#	accel_profile adaptive
-#	pointer_accel 0.5
+    drag enabled
+    # pointer_accel 1
+    # scroll_factor 1
 }
 
 
@@ -144,7 +138,6 @@ input "type:touchpad" {
     floating_modifier $mod normal
 
     bindsym $mod+Shift+r reload
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 
 
 # Moving around {{{2
@@ -167,43 +160,34 @@ input "type:touchpad" {
 
     # Switch to workspace
     bindsym $mod+tab workspace back_and_forth
-    bindsym $mod+1 workspace $ws1
-    bindsym $mod+2 workspace $ws2
-    bindsym $mod+3 workspace $ws3
-    bindsym $mod+4 workspace $ws4
-    bindsym $mod+5 workspace $ws5
-    bindsym $mod+6 workspace $ws6
-    bindsym $mod+Shift+1 move container to workspace $ws1
-    bindsym $mod+Shift+2 move container to workspace $ws2
-    bindsym $mod+Shift+3 move container to workspace $ws3
-    bindsym $mod+Shift+4 move container to workspace $ws4
-    bindsym $mod+Shift+5 move container to workspace $ws5
-    bindsym $mod+Shift+6 move container to workspace $ws6
+    bindsym $mod+q workspace $ws1
+    bindsym $mod+w workspace $ws2
+    bindsym $mod+e workspace $ws3
+    bindsym $mod+a workspace $ws4
+    bindsym $mod+s workspace $ws5
+    bindsym $mod+d workspace $ws6
+    bindsym $mod+Shift+q move container to workspace $ws1
+    bindsym $mod+Shift+w move container to workspace $ws2
+    bindsym $mod+Shift+e move container to workspace $ws3
+    bindsym $mod+Shift+a move container to workspace $ws4
+    bindsym $mod+Shift+s move container to workspace $ws5
+    bindsym $mod+Shift+d move container to workspace $ws6
 
 
 # Layout stuff {{{2
 
-    # You can "split" the current object of your focus with
-    # $mod+b or $mod+v, for horizontal and vertical splits
-    # respectively.
     bindsym $mod+v splitt
 
-    # Switch the current container between different layout styles
-    bindsym $mod+s layout stacking
-    bindsym $mod+w layout tabbed
-    bindsym $mod+e layout toggle split
+    bindsym $mod+z layout tabbed
+    bindsym $mod+x layout toggle split
 
-    # Make the current focus fullscreen
     bindsym $mod+f fullscreen
 
-    # Toggle the current focus between tiling and floating mode
     bindsym $mod+Shift+space floating toggle
-
-    # Swap focus between the tiling area and the floating area
     bindsym $mod+space focus mode_toggle
 
-    # Move focus to the parent container
-    bindsym $mod+a focus parent
+    bindsym $mod+Ctrl+k focus parent
+    bindsym $mod+Ctrl+j focus child
 
 
 # Scratchpad {{{2
@@ -212,29 +196,52 @@ input "type:touchpad" {
     bindsym $mod+minus scratchpad show
 
 
-# Resizing containers {{{2
+# Resize mode {{{2
 
-    mode "resize" {
-	bindsym $left resize shrink width 10
-	bindsym $down resize grow height 10
-	bindsym $up resize shrink height 10
-	bindsym $right resize grow width 10
+mode "resize" {
+   bindsym $left resize shrink width 10
+   bindsym $down resize grow height 10
+   bindsym $up resize shrink height 10
+   bindsym $right resize grow width 10
 
-	# Return to default mode
-	bindsym Return mode "default"
-	bindsym Escape mode "default"
-    }
-    bindsym $mod+r mode "resize"
+   # Return to default mode
+   bindsym Return mode "default"
+   bindsym Escape mode "default"
+ }
+ bindsym $mod+r mode "resize"
 
+# Menu mode {{{2
+
+mode "[E]XIT -- [R]EBOOT -- [L]OCK" {
+   bindsym e exec swaymsg exit
+   bindsym r exec loginctl reboot
+   bindsym l exec $lock; mode "default"
+
+   # Return to default mode
+   bindsym Return mode "default"
+   bindsym Escape mode "default"
+}
+
+bindsym $mod+Shift+Backspace mode "[E]XIT -- [R]EBOOT -- [L]OCK"
 
 # Status Bar {{{1
 
 bar {
-	swaybar_command waybar
-#    font pango:monospace 9
-#    height 16
-#    position bottom
-#    status_command i3status-rs $HOME/.config/sway/status.toml
+	# swaybar_command waybar
+   font pango:monospace 9
+   height 14
+   position bottom
+   status_command i3status-rs $HOME/.config/sway/status.toml
+   strip_workspace_name yes
+   pango_markup enabled
+
+   colors {
+      focused_workspace #555555 #444444 #EEEEEE
+      inactive_workspace #333333 #222222 #888888
+      binding_mode $color_accent $color_accent #FFFFFF
+      separator $color_accent
+      statusline $color_accent
+   }
 }
 
 include /etc/sway/config.d/*
