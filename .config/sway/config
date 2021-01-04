@@ -29,8 +29,8 @@ exec swayidle -w \
 # General settings {{{1
 
 xwayland disable
-default_border pixel 1
-default_floating_border pixel 2
+default_border pixel
+default_floating_border pixel
 
 smart_borders on
 smart_gaps on
@@ -66,7 +66,7 @@ set $lock 'swaylock -f -c 333333'
 
 # Colors {{{1
 set $color_white  #FFFFFF
-set $color_gray #666666
+set $color_gray #00000033
 set $color_accent #ff0000
 set $color_black #000000
 set $col_sel #d75f00
@@ -74,8 +74,8 @@ set $col_bg #84998F
 
 # Colors                  border                 background             text                   indicator            child_border
 client.focused            $col_sel		 $color_white     	$color_black   	       $color_accent        $color_black
-client.focused_inactive   $color_black           $color_black           $color_white           $color_black         $color_gray
-client.unfocused          $color_black 		 $color_black           $color_white           $color_accent        $color_gray
+client.focused_inactive   $color_black           $color_black           $color_white           $color_gray         $color_gray
+client.unfocused          $color_black 		 $color_black           $color_white           $color_gray        $color_gray
 # client.urgent             $color_bright_yellow   $color_bright_yellow   $color_normal_black    $color_unused        $color_unused
 # client.placeholder        $color_unused          $color_unused          $color_unused          $color_unused        $color_unused
 
@@ -138,6 +138,9 @@ input "type:touchpad" {
     floating_modifier $mod normal
 
     bindsym $mod+Shift+r reload
+
+    bindsym $mod+Control+equal gaps inner current plus 5
+    bindsym $mod+Control+minus gaps inner current minus 4
 
 
 # Moving around {{{2
