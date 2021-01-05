@@ -1,3 +1,0 @@
-
-[repos/kkga]
-checkout = git clone 'git@github.com:kkga/kkga.git' 'kkga'

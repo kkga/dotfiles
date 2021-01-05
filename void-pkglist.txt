@@ -82,7 +82,6 @@ mesa-vulkan-radeon
 mesa-vulkan-radeon-32bit
 mpv
 mtm
-myrepos
 neofetch
 neovim
 nodejs
@@ -103,7 +102,6 @@ polkit-gnome
 powertop
 procs
 protontricks
-pulseaudio
 python3-pip
 qemu
 qmk
