@@ -15,7 +15,6 @@
 	d = diff
 	p = push
 	pl = pull
-	dt = difftool --no-symlinks --dir-diff
 [color]
 	ui = auto
 [status]
@@ -32,10 +31,6 @@
 [difftool]
 	prompt = false
 	trustExitCode = true
-[difftool "kitty"]
-	cmd = kitty +kitten diff $LOCAL $REMOTE
-[difftool "kitty.gui"]
-	cmd = kitty kitty +kitten diff $LOCAL $REMOTE
 [interactive]
 	diffFilter = delta --color-only
 [delta]

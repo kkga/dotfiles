@@ -5,7 +5,7 @@
 #disable = ["system", "emacs"]
 
 # Ignore failures for these steps
-#ignore_failures = ["powershell"]
+ignore_failures = ["go"]
 
 # Run specific steps - same options as the command line flag
 #only = ["system", "emacs"]
@@ -34,13 +34,12 @@
 # Cleanup temporary or old files
 cleanup = true
 
-#[git]
-#max_concurrency = 5
+[git]
+max_concurrency = 5
 # Additional git repositories to pull
-#repos = [
-#    "~/src/*/",
-#    "~/.config/something"
-#]
+repos = [
+    "~/repos/kkga"
+]
 
 # Don't pull the predefined git repos
 #predefined_repos = false
@@ -76,7 +75,7 @@ cleanup = true
 #accept_all_updates = false
 #open_remotes_in_new_terminal = true
 
-# Causes Topgrade to rename itself during the run to allow package managers 
+# Causes Topgrade to rename itself during the run to allow package managers
 # to upgrade it. Use this only if you installed Topgrade by using a package
 # manager such as Scoop to Cargo
 #self_rename = true
