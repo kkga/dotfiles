@@ -1,0 +1,46 @@
+[theme]
+name = "plain"
+[theme.overrides]
+separator = "  "
+idle_fg = "#999999"
+info_fg = "#999999"
+good_fg = "#999999"
+critical_fg = "#FFFFFF"
+critical_bg = "#D70000"
+warning_fg = "#D75F00"
+
+
+[[block]]
+block = "custom"
+command = ''' doas xbps-install -nSu | wc -l '''
+interval = 300
+on_click = "foot xi -Su"
+
+[[block]]
+block = "backlight"
+
+[[block]]
+block = "cpu"
+interval = 1
+format = "{utilization}% {frequency}GHz"
+on_click = "foot htop"
+
+[[block]]
+block = "net"
+device = "wlp0s20f3"
+format = "{ssid} ({signal_strength})"
+interval = 5
+use_bits = false
+
+[[block]]
+block = "sound"
+
+[[block]]
+block = "battery"
+interval = 10
+format = "{percentage}% ({time})"
+
+[[block]]
+block = "time"
+interval = 60
+format = "%a %d/%m %R"
