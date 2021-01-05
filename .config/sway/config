@@ -47,7 +47,7 @@ set $right l
 
 set $term 'footclient'
 set $run 'bemenu-run | xargs swaymsg exec --'
-set $drun 'j4-dmenu-desktop --usage-log=/home/tmp/j4.log --display-binary --term=footclient --dmenu=bemenu'
+set $drun 'j4-dmenu-desktop --no-generic --usage-log=tmp/j4.log --display-binary --term=footclient --dmenu=bemenu'
 set $lock 'swaylock -f -c 333333'
 set $clipboard 'clipman pick -t bemenu'
 
@@ -155,10 +155,12 @@ for_window      [title="^launcher$"]   floating enable
     bindsym XF86AudioRaiseVolume exec pamixer --increase 5
 
     bindsym $mod+Shift+c kill
-    bindsym $mod+Shift+r reload
+    bindsym $mod+Backspace reload
 
     bindsym $mod+Control+equal gaps inner current plus 4
     bindsym $mod+Control+minus gaps inner current minus 4
+
+    bindsym $mod+Escape makoctl dismiss
 
 # Moving around {{{2
 
@@ -183,15 +185,15 @@ for_window      [title="^launcher$"]   floating enable
     bindsym $mod+q workspace $ws1
     bindsym $mod+w workspace $ws2
     bindsym $mod+e workspace $ws3
-    bindsym $mod+a workspace $ws4
-    bindsym $mod+s workspace $ws5
-    bindsym $mod+d workspace $ws6
+    bindsym $mod+r workspace $ws4
+    bindsym $mod+t workspace $ws5
+    bindsym $mod+y workspace $ws6
     bindsym $mod+Shift+q move container to workspace $ws1
     bindsym $mod+Shift+w move container to workspace $ws2
     bindsym $mod+Shift+e move container to workspace $ws3
-    bindsym $mod+Shift+a move container to workspace $ws4
-    bindsym $mod+Shift+s move container to workspace $ws5
-    bindsym $mod+Shift+d move container to workspace $ws6
+    bindsym $mod+Shift+r move container to workspace $ws4
+    bindsym $mod+Shift+t move container to workspace $ws5
+    bindsym $mod+Shift+y move container to workspace $ws6
 
 
 # Layout stuff {{{2
@@ -228,7 +230,7 @@ mode "resize" {
    bindsym Return mode "default"
    bindsym Escape mode "default"
  }
- bindsym $mod+r mode "resize"
+ bindsym $mod+Control+r mode "resize"
 
 # Menu mode {{{2
 
