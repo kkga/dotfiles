@@ -80,7 +80,7 @@ input "type:keyboard" {
    repeat_rate 30
 }
 
-input "AT Translated Set 2 keyboard" {
+input "1:1:AT_Translated_Set_2_keyboard" {
    xkb_options grp:shifts_toggle,ctrl:nocaps,altwin:swap_lalt_lwin
 }
 
