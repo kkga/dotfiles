@@ -72,6 +72,35 @@ output $mon2 resolution 3840x2160 scale 2
 
 bindswitch lid:toggle exec $lock
 
+# Inputs {{{1
+
+input "type:keyboard" {
+   xkb_layout us,ru
+   repeat_delay 200
+   repeat_rate 30
+}
+
+input "AT Translated Set 2 keyboard" {
+   xkb_options grp:shifts_toggle,ctrl:nocaps,altwin:swap_lalt_lwin
+}
+
+input "type:touchpad" {
+    dwt disabled
+    tap enabled
+    natural_scroll enabled
+    middle_emulation disabled
+    accel_profile adaptive
+    drag enabled
+    # pointer_accel 1
+    # scroll_factor 1
+}
+
+input "type:pointer" {
+    accel_profile adaptive
+    pointer_accel 0
+}
+
+
 # General settings {{{1
 
 xwayland disable
@@ -106,30 +135,6 @@ client.unfocused          $col_gray_dark 	 $col_gray            $col_gray_light 
 # for_window      [app_id=".*"]           split toggle
 #for_window 	[app_id="firefox"] 	move container to workspace number $ws1
 for_window      [title="^launcher$"]   floating enable
-
-
-# Input {{{1
-
-input "type:keyboard" {
-   xkb_layout us,ru
-   repeat_delay 200
-   repeat_rate 30
-}
-
-input "AT Translated Set 2 keyboard" {
-   xkb_options grp:shifts_toggle,ctrl:nocaps,altwin:swap_lalt_lwin
-}
-
-input "type:touchpad" {
-    dwt disabled
-    tap enabled
-    natural_scroll enabled
-    middle_emulation disabled
-    accel_profile adaptive
-    drag enabled
-    # pointer_accel 1
-    # scroll_factor 1
-}
 
 
 # Key bindings {{{1
