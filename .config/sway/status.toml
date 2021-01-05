@@ -9,12 +9,19 @@ critical_fg = "#FFFFFF"
 critical_bg = "#D70000"
 warning_fg = "#D75F00"
 
+[icons]
+name = "none"
+[icons.overrides]
 
 [[block]]
 block = "custom"
 command = ''' doas xbps-install -nSu | wc -l '''
 interval = 300
 on_click = "foot xi -Su"
+
+[[block]]
+block = "bluetooth"
+mac = "DB:3C:B8:46:FA:4F"
 
 [[block]]
 block = "backlight"

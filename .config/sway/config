@@ -4,9 +4,9 @@
 
 exec xrdb -merge ~/.Xresources
 exec mako
-exec gammastep -l 55:37 -m wayland -t 5700:3500 -r
 exec pipewire
 exec syncthing -no-browser
+exec wlsunset -l 55 -L 37 -t 4000 -T 6500
 exec wl-paste -t text --watch clipman store
 exec clipman restore
 exec foot -s
@@ -46,7 +46,8 @@ set $up k
 set $right l
 
 set $term 'footclient'
-set $menu 'bemenu-run | xargs swaymsg exec --'
+set $run 'bemenu-run | xargs swaymsg exec --'
+set $drun 'j4-dmenu-desktop --usage-log=/home/tmp/j4.log --display-binary --term=footclient --dmenu=bemenu'
 set $lock 'swaylock -f -c 333333'
 set $clipboard 'clipman pick -t bemenu'
 
@@ -143,7 +144,8 @@ for_window      [title="^launcher$"]   floating enable
     floating_modifier $mod normal
 
     bindsym $mod+Return exec $term
-    bindsym $mod+p exec $menu
+    bindsym $mod+p exec $drun
+    bindsym $mod+Control+p exec $run
     bindsym $mod+Control+c exec $clipboard
 
     bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
