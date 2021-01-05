@@ -21,10 +21,51 @@ exec_always {
     gsettings set $gnome-schema monospace-font-name 'monospace 10'
 }
 
+# Variables {{{1
+
+set $col_white  #FFFFFF
+set $col_gray_light  #FFFFFF99
+set $col_gray #00000033
+set $col_gray_dark #00000066
+set $col_accent #ff0000
+set $col_black #000000
+set $col_sel #d75f00
+set $col_bg #84998F
+
+set $ws1 1:1
+set $ws2 2:2
+set $ws3 3:3
+set $ws4 4:4
+set $ws5 5:5
+set $ws6 6:6
+
+set $mod Mod4
+set $left h
+set $down j
+set $up k
+set $right l
+
+set $term 'footclient'
+set $menu 'bemenu-run | xargs swaymsg exec --'
+set $lock 'swaylock -f -c 333333'
+set $clipboard 'clipman pick -t bemenu'
+
+# Idle config {{{1
+
 exec swayidle -w \
 	timeout 300 'swaylock -f -c 333333' \
 	timeout 600 'loginctl suspend' \
 	before-sleep 'swaylock -f -c 333333'
+
+# Outputs {{{1
+
+set $laptop eDP-1
+
+output * bg $col_bg solid_color
+output * adaptive_sync on
+output $laptop resolution 2560x1600 scale 2
+
+bindswitch lid:toggle exec $lock
 
 # General settings {{{1
 
@@ -40,42 +81,17 @@ focus_wrapping yes
 gaps inner 8
 
 font pango:monospace 9
-titlebar_border_thickness 0
-titlebar_padding 4 0
+titlebar_border_thickness 1
+titlebar_padding 4 1
 
 seat * xcursor_theme Adwaita 24
 
-# Variables {{{1
-
-set $ws1 1:1
-set $ws2 2:2
-set $ws3 3:3
-set $ws4 4:4
-set $ws5 5:5
-set $ws6 6:6
-
-set $mod Mod4
-set $left h
-set $down j
-set $up k
-set $right l
-
-set $term footclient
-set $menu bemenu-run | xargs swaymsg exec --
-set $lock 'swaylock -f -c 333333'
-
 # Colors {{{1
-set $color_white  #FFFFFF
-set $color_gray #00000033
-set $color_accent #ff0000
-set $color_black #000000
-set $col_sel #d75f00
-set $col_bg #84998F
 
 # Colors                  border                 background             text                   indicator            child_border
-client.focused            $col_sel		 $color_white     	$color_black   	       $color_accent        $color_black
-client.focused_inactive   $color_black           $color_black           $color_white           $color_gray         $color_gray
-client.unfocused          $color_black 		 $color_black           $color_white           $color_gray        $color_gray
+client.focused            $col_black		 $col_black     	$col_white   	       $col_accent        $col_black
+client.focused_inactive   $col_gray_dark         $col_gray_dark            $col_white           $col_gray         $col_gray
+client.unfocused          $col_gray_dark 	 $col_gray            $col_gray_light           $col_gray        $col_gray
 # client.urgent             $color_bright_yellow   $color_bright_yellow   $color_normal_black    $color_unused        $color_unused
 # client.placeholder        $color_unused          $color_unused          $color_unused          $color_unused        $color_unused
 
@@ -84,19 +100,7 @@ client.unfocused          $color_black 		 $color_black           $color_white   
 # Rules {{{1
 # for_window      [app_id=".*"]           split toggle
 #for_window 	[app_id="firefox"] 	move container to workspace number $ws1
-for_window      [app_id="^launcher$"]   floating enable
-
-
-# Outputs {{{1
-
-output * bg $col_bg solid_color
-output * adaptive_sync on
-output eDP-1 resolution 2560x1600 scale 2
-
-# set $laptop <laptop_output_identifier>
-# bindswitch --reload --locked lid:on output $laptop disable
-# bindswitch --reload --locked lid:off output $laptop enable
-
+for_window      [title="^launcher$"]   floating enable
 
 
 # Input {{{1
@@ -123,7 +127,11 @@ input "type:touchpad" {
 # Key bindings {{{1
 
 # General {{{2
+    floating_modifier $mod normal
+
     bindsym $mod+Return exec $term
+    bindsym $mod+p exec $menu
+    bindsym $mod+Control+c exec $clipboard
 
     bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
     bindsym XF86MonBrightnessUp exec brightnessctl s 10%+
@@ -132,16 +140,10 @@ input "type:touchpad" {
     bindsym XF86AudioRaiseVolume exec pamixer --increase 5
 
     bindsym $mod+Shift+c kill
-
-    bindsym $mod+p exec $menu
-    bindsym $mod+c exec clipman pick -t bemenu
-    floating_modifier $mod normal
-
     bindsym $mod+Shift+r reload
 
-    bindsym $mod+Control+equal gaps inner current plus 5
+    bindsym $mod+Control+equal gaps inner current plus 4
     bindsym $mod+Control+minus gaps inner current minus 4
-
 
 # Moving around {{{2
 
@@ -241,9 +243,9 @@ bar {
    colors {
       focused_workspace #555555 #444444 #EEEEEE
       inactive_workspace #333333 #222222 #888888
-      binding_mode $color_accent $color_accent #FFFFFF
-      separator $color_accent
-      statusline $color_accent
+      binding_mode $col_accent $col_accent #FFFFFF
+      separator $col_accent
+      statusline $col_accent
    }
 }
 
