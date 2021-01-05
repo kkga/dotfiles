@@ -60,10 +60,15 @@ exec swayidle -w \
 # Outputs {{{1
 
 set $laptop eDP-1
+set $mon1 DP-1
+set $mon2 DP-2
 
 output * bg $col_bg solid_color
 output * adaptive_sync on
 output $laptop resolution 2560x1600 scale 2
+output $mon1 resolution 3840x2160 scale 2 position 1920 0
+output $mon2 resolution 3840x2160 scale 2
+
 
 bindswitch lid:toggle exec $lock
 
@@ -107,9 +112,12 @@ for_window      [title="^launcher$"]   floating enable
 
 input "type:keyboard" {
    xkb_layout us,ru
-   xkb_options grp:shifts_toggle,ctrl:nocaps,altwin:swap_lalt_lwin
    repeat_delay 200
    repeat_rate 30
+}
+
+input "AT Translated Set 2 keyboard" {
+   xkb_options grp:shifts_toggle,ctrl:nocaps,altwin:swap_lalt_lwin
 }
 
 input "type:touchpad" {
