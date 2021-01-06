@@ -2,14 +2,15 @@
 
 # Autostart {{{1
 
-exec xrdb -merge ~/.Xresources
 exec mako
 exec pipewire
 exec syncthing -no-browser
+exec light -S 50
 exec wlsunset -l 55 -L 37 -t 4000 -T 6500
 exec wl-paste -t text --watch clipman store
 exec clipman restore
 exec foot -s
+exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
 
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
@@ -23,6 +24,12 @@ exec_always {
 
 # Variables {{{1
 
+set $term 'footclient'
+set $run 'bemenu-run | xargs swaymsg exec --'
+set $drun 'j4-dmenu-desktop --no-generic --usage-log=tmp/j4.log --display-binary --term=footclient --dmenu=bemenu'
+set $lock 'swaylock -f -c 333333'
+set $clipboard 'clipman pick -t bemenu'
+
 set $col_white  #FFFFFF
 set $col_gray_light  #FFFFFF99
 set $col_gray #00000033
@@ -32,24 +39,18 @@ set $col_black #000000
 set $col_sel #d75f00
 set $col_bg #84998F
 
-set $ws1 1:1
-set $ws2 2:2
-set $ws3 3:3
-set $ws4 4:4
-set $ws5 5:5
-set $ws6 6:6
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
 
 set $mod Mod4
 set $left h
 set $down j
 set $up k
 set $right l
-
-set $term 'footclient'
-set $run 'bemenu-run | xargs swaymsg exec --'
-set $drun 'j4-dmenu-desktop --no-generic --usage-log=tmp/j4.log --display-binary --term=footclient --dmenu=bemenu'
-set $lock 'swaylock -f -c 333333'
-set $clipboard 'clipman pick -t bemenu'
 
 # Idle config {{{1
 
@@ -135,32 +136,33 @@ client.unfocused          $col_gray_dark 	 $col_gray            $col_gray_light 
 # Rules {{{1
 # for_window      [app_id=".*"]           split toggle
 #for_window 	[app_id="firefox"] 	move container to workspace number $ws1
-for_window      [title="^launcher$"]   floating enable
+for_window      [app_id="^launcher$"]   floating enable
 
 
 # Key bindings {{{1
 
 # General {{{2
-    floating_modifier $mod normal
+   floating_modifier $mod normal
 
-    bindsym $mod+Return exec $term
-    bindsym $mod+p exec $drun
-    bindsym $mod+Control+p exec $run
-    bindsym $mod+Control+c exec $clipboard
+   bindsym $mod+Return exec $term
+   bindsym $mod+p exec $drun
+   bindsym $mod+Control+p exec $run
+   bindsym $mod+Control+c exec $clipboard
 
-    bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
-    bindsym XF86MonBrightnessUp exec brightnessctl s 10%+
-    bindsym XF86AudioMute exec pamixer --toggle-mute
-    bindsym XF86AudioLowerVolume exec pamixer --decrease 5
-    bindsym XF86AudioRaiseVolume exec pamixer --increase 5
+   bindsym XF86MonBrightnessUp exec light -A 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
+   bindsym XF86MonBrightnessDown exec light -U 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
 
-    bindsym $mod+Shift+c kill
-    bindsym $mod+Backspace reload
+   bindsym XF86AudioRaiseVolume exec pamixer -ui 5 && pamixer --get-volume > $SWAYSOCK.wob
+   bindsym XF86AudioLowerVolume exec pamixer -ud 5 && pamixer --get-volume > $SWAYSOCK.wob
+   bindsym XF86AudioMute exec pamixer --toggle-mute && ( pamixer --get-mute && echo 0 > $SWAYSOCK.wob ) || pamixer --get-volume > $SWAYSOCK.wob
 
-    bindsym $mod+Control+equal gaps inner current plus 4
-    bindsym $mod+Control+minus gaps inner current minus 4
+   bindsym $mod+Shift+c kill
+   bindsym $mod+Backspace reload
 
-    bindsym $mod+Escape makoctl dismiss
+   bindsym $mod+Control+equal gaps inner current plus 4
+   bindsym $mod+Control+minus gaps inner current minus 4
+
+   bindsym $mod+Escape exec makoctl dismiss
 
 # Moving around {{{2
 

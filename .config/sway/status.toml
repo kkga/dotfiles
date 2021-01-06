@@ -19,12 +19,15 @@ command = ''' doas xbps-install -nSu | wc -l '''
 interval = 300
 on_click = "foot xi -Su"
 
-[[block]]
-block = "bluetooth"
-mac = "DB:3C:B8:46:FA:4F"
-
-[[block]]
-block = "backlight"
+#[[block]]
+#block = "bluetooth"
+#mac = "DB:3C:B8:46:FA:4F"
+#
+#[[block]]
+#block = "backlight"
+#
+#[[block]]
+#block = "sound"
 
 [[block]]
 block = "cpu"
@@ -38,9 +41,6 @@ device = "wlp0s20f3"
 format = "{ssid} ({signal_strength})"
 interval = 5
 use_bits = false
-
-[[block]]
-block = "sound"
 
 [[block]]
 block = "battery"
