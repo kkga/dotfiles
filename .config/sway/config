@@ -152,8 +152,8 @@ for_window      [app_id="^launcher$"]   floating enable
    bindsym XF86MonBrightnessUp exec light -A 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
    bindsym XF86MonBrightnessDown exec light -U 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
 
-   bindsym XF86AudioRaiseVolume exec pamixer -ui 5 && pamixer --get-volume > $SWAYSOCK.wob
-   bindsym XF86AudioLowerVolume exec pamixer -ud 5 && pamixer --get-volume > $SWAYSOCK.wob
+   bindsym XF86AudioRaiseVolume exec pamixer -ui 10 && pamixer --get-volume > $SWAYSOCK.wob
+   bindsym XF86AudioLowerVolume exec pamixer -ud 10 && pamixer --get-volume > $SWAYSOCK.wob
    bindsym XF86AudioMute exec pamixer --toggle-mute && ( pamixer --get-mute && echo 0 > $SWAYSOCK.wob ) || pamixer --get-volume > $SWAYSOCK.wob
 
    bindsym $mod+Shift+c kill
@@ -187,15 +187,15 @@ for_window      [app_id="^launcher$"]   floating enable
     bindsym $mod+q workspace $ws1
     bindsym $mod+w workspace $ws2
     bindsym $mod+e workspace $ws3
-    bindsym $mod+r workspace $ws4
-    bindsym $mod+t workspace $ws5
-    bindsym $mod+y workspace $ws6
+    bindsym $mod+a workspace $ws4
+    bindsym $mod+s workspace $ws5
+    bindsym $mod+d workspace $ws6
     bindsym $mod+Shift+q move container to workspace $ws1
     bindsym $mod+Shift+w move container to workspace $ws2
     bindsym $mod+Shift+e move container to workspace $ws3
-    bindsym $mod+Shift+r move container to workspace $ws4
-    bindsym $mod+Shift+t move container to workspace $ws5
-    bindsym $mod+Shift+y move container to workspace $ws6
+    bindsym $mod+Shift+a move container to workspace $ws4
+    bindsym $mod+Shift+s move container to workspace $ws5
+    bindsym $mod+Shift+d move container to workspace $ws6
 
 
 # Layout stuff {{{2
@@ -232,7 +232,7 @@ mode "resize" {
    bindsym Return mode "default"
    bindsym Escape mode "default"
  }
- bindsym $mod+Control+r mode "resize"
+ bindsym $mod+r mode "resize"
 
 # Menu mode {{{2
 
@@ -265,7 +265,7 @@ bar {
       inactive_workspace #333333 #222222 #888888
       binding_mode $col_accent $col_accent #FFFFFF
       separator #666666
-      statusline #cccccc
+      statusline #aaaaaa
    }
 }
 
