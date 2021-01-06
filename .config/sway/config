@@ -30,7 +30,7 @@ set $drun 'j4-dmenu-desktop --no-generic --usage-log=tmp/j4.log --display-binary
 set $lock 'swaylock -f -c 333333'
 set $clipboard 'clipman pick -t bemenu'
 
-set $col_white  #FFFFFF
+set $col_white  #EEEEEE
 set $col_gray_light  #FFFFFF99
 set $col_gray #00000033
 set $col_gray_dark #00000066
@@ -251,20 +251,21 @@ bindsym $mod+Shift+Backspace mode "[E]XIT -- [R]EBOOT -- [L]OCK"
 # Status Bar {{{1
 
 bar {
-	# swaybar_command waybar
+   status_command sway-luastatus.sh
+   # status_command i3status-rs $HOME/.config/sway/status.toml
    font pango:monospace 9
    height 14
    position bottom
-   status_command i3status-rs $HOME/.config/sway/status.toml
    strip_workspace_name yes
    pango_markup enabled
+   separator_symbol "|"
 
    colors {
       focused_workspace #555555 #444444 #EEEEEE
       inactive_workspace #333333 #222222 #888888
       binding_mode $col_accent $col_accent #FFFFFF
-      separator $col_accent
-      statusline $col_accent
+      separator #666666
+      statusline #cccccc
    }
 }
 
