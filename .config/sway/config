@@ -68,8 +68,7 @@ set $mon1 DP-1
 set $mon2 DP-2
 
 output * bg $col_bg solid_color
-output * adaptive_sync on
-output $laptop resolution 2560x1600 scale 2
+output $laptop scale 2
 output $mon1 resolution 3840x2160 scale 2 position 1920 0
 output $mon2 resolution 3840x2160 scale 2
 
@@ -95,8 +94,8 @@ input "type:touchpad" {
     middle_emulation disabled
     accel_profile adaptive
     drag enabled
+    scroll_factor 0.5
     # pointer_accel 1
-    # scroll_factor 1
 }
 
 input "type:pointer" {
@@ -123,6 +122,7 @@ titlebar_border_thickness 1
 titlebar_padding 4 1
 
 seat * xcursor_theme Adwaita 24
+seat * hide_cursor 5000
 
 # Colors {{{1
 
