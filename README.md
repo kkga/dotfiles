@@ -2,6 +2,7 @@ Relatively simple Linux config for desktop, managed with [yadm](https://github.c
 
 |                 |                                                                                                      |
 |-----------------|------------------------------------------------------------------------------------------------------|
+| OS              | [Void Linux][void] ([package list][pkglist])                                                         |
 | window manager  | [spectrwm][spectrwm] (Xorg) ([config][spectrwm.conf]), [sway][sway] (Wayland) ([config][swayconfig]) |
 | display manager | [emptty][emptty] ([config][emptty.conf])                                                             |
 | shell           | [fish][fish] ([config][config.fish])                                                                 |
