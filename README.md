@@ -1,15 +1,14 @@
 Relatively simple Linux config for desktop, managed with [yadm](https://github.com/TheLocehiliosan/yadm).
 
-- OS: [Void Linux][void] ([package list][pkglist])
-- window manager: 
-	- [spectrwm][spectrwm] (Xorg) ([config][spectrwm.conf])
-	- [sway][sway] (Wayland) ([config][swayconfig])
-- display manager: [emptty][emptty] ([config][emptty.conf])
-- shell: [fish][fish] ([config][config.fish])
-- editor: [neovim][neovim] ([config][init.vim])
-- menu: [bemenu][bemenu]
-- hotkey daemon: [sxhkd][sxhkd] ([config][sxhkdrc])
-- colors: [envy][envy]
+| ----------------- | ------------------------------------------------------------------------------------------------------ |
+|-------------------|--------------------------------------------------------------------------------------------------------|
+| window manager    | [spectrwm][spectrwm] (Xorg) ([config][spectrwm.conf]), [sway][sway] (Wayland) ([config][swayconfig])   |
+| display manager   | [emptty][emptty] ([config][emptty.conf])                                                               |
+| shell             | [fish][fish] ([config][config.fish])                                                                   |
+| editor            | [neovim][neovim] ([config][init.vim])                                                                  |
+| menu              | [bemenu][bemenu]                                                                                       |
+| hotkey daemon     | [sxhkd][sxhkd] ([config][sxhkdrc])                                                                     |
+| colors            | [envy][envy]                                                                                           |
 
 [void]: https://voidlinux.org
 [pkglist]: /void-pkglist.txt
