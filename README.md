@@ -1,6 +1,5 @@
 Relatively simple Linux config for desktop, managed with [yadm](https://github.com/TheLocehiliosan/yadm).
 
-| ----------------- | ------------------------------------------------------------------------------------------------------ |
 |-------------------|--------------------------------------------------------------------------------------------------------|
 | window manager    | [spectrwm][spectrwm] (Xorg) ([config][spectrwm.conf]), [sway][sway] (Wayland) ([config][swayconfig])   |
 | display manager   | [emptty][emptty] ([config][emptty.conf])                                                               |
