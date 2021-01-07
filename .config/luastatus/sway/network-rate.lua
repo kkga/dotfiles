@@ -27,7 +27,7 @@ local function get_block(line)
         local delta_recv = recv - prev_recv
         local delta_sent = sent - prev_sent
         local color 
-        if delta_recv > 1000000 then
+        if delta_recv > 10000000 then
             color = '#ff8888'
         end
         if (delta_recv >= 0 and delta_sent >= 0) and (recv > 0 and sent > 0) then
