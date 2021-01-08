@@ -5,12 +5,13 @@
 exec mako
 exec pipewire
 exec syncthing -no-browser
-exec light -S 50
-exec wlsunset -l 55 -L 37 -t 4000 -T 6500
+exec light -S 35
+# exec wlsunset -l 55 -L 37 -t 4000 -T 6500
+exec gammastep -m wayland -l 55:37
 exec wl-paste -t text --watch clipman store
 exec clipman restore
 exec foot -s
-exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob
+exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob -a top -a left -W 200 -H 20 -M 8 -o 2 -b 2 -p 2
 
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
@@ -30,8 +31,9 @@ set $drun 'j4-dmenu-desktop --no-generic --usage-log=tmp/j4.log --display-binary
 set $lock 'swaylock -f -c 333333'
 set $clipboard 'clipman pick -t bemenu'
 
+set $col_trans #FFFFFF00
 set $col_white  #EEEEEE
-set $col_gray_light  #FFFFFF99
+set $col_gray_light  #FFFFFFAA
 set $col_gray #00000033
 set $col_gray_dark #00000066
 set $col_accent #ff0000
@@ -66,10 +68,9 @@ set $mon1 DP-1
 set $mon2 DP-2
 
 output * bg $col_bg solid_color
-# output * adaptive_sync on
-output $laptop resolution 2560x1600 scale 2
-output $mon1 resolution 3840x2160 scale 2
-output $mon2 resolution 3840x2160 scale 2 position 1920 0
+output $laptop scale 2
+output $mon1 resolution 3840x2160 scale 2 position 1920 0
+output $mon2 resolution 3840x2160 scale 2
 
 bindswitch lid:toggle exec $lock
 
@@ -92,8 +93,8 @@ input "type:touchpad" {
     middle_emulation disabled
     accel_profile adaptive
     drag enabled
+    scroll_factor 0.5
     # pointer_accel 1
-    # scroll_factor 1
 }
 
 input "type:pointer" {
@@ -120,13 +121,14 @@ titlebar_border_thickness 1
 titlebar_padding 4 1
 
 seat * xcursor_theme Adwaita 24
+seat * hide_cursor 5000
 
 # Colors {{{1
 
 # Colors                  border                 background             text                   indicator            child_border
 client.focused            $col_black		 $col_black     	$col_white   	       $col_accent        $col_black
 client.focused_inactive   $col_gray_dark         $col_gray_dark            $col_white           $col_gray         $col_gray
-client.unfocused          $col_gray_dark 	 $col_gray            $col_gray_light           $col_gray        $col_gray
+client.unfocused          $col_gray	 	 $col_gray            $col_gray_light           $col_gray        $col_gray
 # client.urgent             $color_bright_yellow   $color_bright_yellow   $color_normal_black    $color_unused        $color_unused
 # client.placeholder        $color_unused          $color_unused          $color_unused          $color_unused        $color_unused
 
@@ -151,8 +153,8 @@ for_window      [app_id="^launcher$"]   floating enable
    bindsym XF86MonBrightnessUp exec light -A 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
    bindsym XF86MonBrightnessDown exec light -U 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
 
-   bindsym XF86AudioRaiseVolume exec pamixer -ui 10 && pamixer --get-volume > $SWAYSOCK.wob
-   bindsym XF86AudioLowerVolume exec pamixer -ud 10 && pamixer --get-volume > $SWAYSOCK.wob
+   bindsym XF86AudioRaiseVolume exec pamixer -ui 5 && pamixer --get-volume > $SWAYSOCK.wob
+   bindsym XF86AudioLowerVolume exec pamixer -ud 5 && pamixer --get-volume > $SWAYSOCK.wob
    bindsym XF86AudioMute exec pamixer --toggle-mute && ( pamixer --get-mute && echo 0 > $SWAYSOCK.wob ) || pamixer --get-volume > $SWAYSOCK.wob
 
    bindsym $mod+Shift+c kill
@@ -221,7 +223,8 @@ for_window      [app_id="^launcher$"]   floating enable
 
 # Resize mode {{{2
 
-mode "resize" {
+set $mode_resize "== RESIZE =="
+mode $mode_resize {
    bindsym $left resize shrink width 10
    bindsym $down resize grow height 10
    bindsym $up resize shrink height 10
@@ -231,7 +234,7 @@ mode "resize" {
    bindsym Return mode "default"
    bindsym Escape mode "default"
  }
- bindsym $mod+r mode "resize"
+ bindsym $mod+r mode $mode_resize
 
 # Menu mode {{{2
 
@@ -256,15 +259,17 @@ bar {
    height 14
    position bottom
    strip_workspace_name yes
-   pango_markup enabled
-   separator_symbol "|"
+   separator_symbol " | "
+   status_edge_padding 12
 
    colors {
-      focused_workspace #555555 #444444 #EEEEEE
-      inactive_workspace #333333 #222222 #888888
-      binding_mode $col_accent $col_accent #FFFFFF
-      separator #666666
-      statusline #aaaaaa
+      focused_workspace	    #565656 #454545 #EEEEEE
+      active_workspace	    #565656 #454545 #AAAAAA
+      inactive_workspace    #343434 #232323 #AAAAAA
+      binding_mode	    $col_accent $col_accent #FFFFFF
+      separator		    #444444
+      statusline	    #AAAAAA
+      background	    #000000
    }
 }
 
