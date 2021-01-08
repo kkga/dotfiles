@@ -106,7 +106,7 @@ input "type:pointer" {
 
 # General settings {{{1
 
-xwayland disable
+# xwayland disable
 default_border pixel
 default_floating_border pixel
 
@@ -146,7 +146,7 @@ for_window      [app_id="^launcher$"]   floating enable
 # General {{{2
    floating_modifier $mod normal
 
-   bindsym $mod+Return exec $term
+   bindsym $mod+Shift+Return exec $term
    bindsym $mod+p exec $drun
    bindsym $mod+Control+p exec $run
    bindsym $mod+Control+c exec $clipboard
@@ -269,7 +269,7 @@ bar {
       inactive_workspace    #343434 #232323 #AAAAAA
       binding_mode	    $col_accent $col_accent #FFFFFF
       separator		    #444444
-      statusline	    #AAAAAA
+      statusline	    #CCCCCC
       background	    #000000
    }
 }
