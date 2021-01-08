@@ -17,6 +17,7 @@ bottom
 brillo
 cargo
 chrony
+clipman
 clipmenu
 corectrl
 dbus
@@ -39,6 +40,7 @@ ffscreencast
 ffsend
 firefox
 fish-shell
+foot
 fuzzypkg
 fwupd
 fzy
@@ -50,21 +52,25 @@ git
 github-cli
 go
 godot
+grimshot
 grub-terminus
 grub-x86_64-efi
 gsound
 gstreamer1-pipewire
 htop
+i3status-rust
 imv
 inxi
 iwd
 j4-dmenu-desktop
 jq
 kakoune
+keychain
 kitty
 lazygit
 lf
 libvdpau-va-gl
+light
 linux5.10
 linux5.10-headers
 linux5.9
@@ -73,6 +79,7 @@ lm_sensors
 luastatus
 lxappearance
 maim
+mako
 mesa
 mesa-dri
 mesa-dri-32bit
@@ -105,6 +112,7 @@ protontricks
 python3-pip
 qemu
 qmk
+qt5-wayland
 ripgrep
 setxkbmap
 skim
@@ -119,6 +127,9 @@ spotify-qt
 spotify-tui
 spotifyd
 steam
+sway
+swayidle
+swaylock
 sx
 sxhkd
 syncthing
@@ -146,6 +157,7 @@ vpm
 vsv
 vulkan-loader
 vulkan-loader-32bit
+wev
 wget
 wine
 wine-32bit
@@ -173,6 +185,7 @@ xsetroot
 xsettingsd
 xss-lock
 xtools
+xurls
 yadm
 yarn
 youtube-dl

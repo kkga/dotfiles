@@ -19,7 +19,3 @@ export BEMENU_SCALE=2
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 
 eval $(keychain --eval --quiet --noask id_ed25519)
-
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
-  sway-run.sh
-fi
