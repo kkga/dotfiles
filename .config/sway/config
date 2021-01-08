@@ -72,7 +72,6 @@ output $laptop scale 2
 output $mon1 resolution 3840x2160 scale 2 position 1920 0
 output $mon2 resolution 3840x2160 scale 2
 
-
 bindswitch lid:toggle exec $lock
 
 # Inputs {{{1

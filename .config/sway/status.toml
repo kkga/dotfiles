@@ -12,6 +12,8 @@ warning_fg = "#D75F00"
 [icons]
 name = "none"
 [icons.overrides]
+net_down = ""
+volume_muted = "MUTE"
 
 [[block]]
 block = "custom"
@@ -38,14 +40,25 @@ on_click = "foot htop"
 [[block]]
 block = "net"
 device = "wlp0s20f3"
-format = "{ssid} ({signal_strength})"
+format = "{ssid} ({signal_strength} {speed_down})"
 interval = 5
 use_bits = false
+hide_missing = true
+
+[[block]]
+block = "net"
+device = "enp42s0"
+format = "{ip}{speed_down}"
+interval = 5
+use_bits = false
+hide_missing = true
 
 [[block]]
 block = "battery"
 interval = 10
 format = "{percentage}% ({time})"
+allow_missing = true
+hide_missing = true
 
 [[block]]
 block = "time"
