@@ -14,6 +14,7 @@ bemenu
 blueman
 bluez
 bottom
+brightnessctl
 brillo
 cargo
 chrony
@@ -109,6 +110,7 @@ polkit-gnome
 powertop
 procs
 protontricks
+pulseaudio
 python3-pip
 qemu
 qmk
@@ -164,6 +166,7 @@ wine-32bit
 winetricks
 wireguard-tools
 wmctrl
+wob
 xarchiver
 xclip
 xdg-user-dirs

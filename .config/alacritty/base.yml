@@ -4,8 +4,8 @@ font:
 window:
   decorations: none
 
-shell:
-  program: fish
+# shell:
+#   program: fish
 
 
 key_bindings:
