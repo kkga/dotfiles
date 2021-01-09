@@ -37,3 +37,5 @@
 	syntax-theme = ansi-light
 	side-by-side = true
 	line-numbers = false
+[init]
+	defaltBranch = main

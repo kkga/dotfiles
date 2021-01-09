@@ -9,7 +9,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 
 export SKIM_DEFAULT_OPTIONS="--height 40% --reverse --color bw"
-export BEMENU_OPTS="--ignorecase --list 8 -p '' -P ''\
+export BEMENU_OPTS="--ignorecase --list 12 -p '' -P ''\
 --fb=#000000 --ff=#eeeeee --nb=#111111\
 --nf=#888888 --hb=#444444 --hf=#ffffff"
 export DMENU=bemenu

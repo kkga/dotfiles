@@ -1,5 +1,25 @@
 # vim:foldmethod=marker:foldlevel=0
 
+# General settings {{{1
+
+# xwayland disable
+default_border pixel
+default_floating_border pixel
+
+smart_borders on
+smart_gaps on
+hide_edge_borders --i3 smart_no_gaps
+focus_wrapping yes
+
+gaps inner 8
+
+font pango:monospace 9
+titlebar_border_thickness 1
+titlebar_padding 4 1
+
+seat * xcursor_theme Adwaita 24
+seat * hide_cursor 5000
+
 # Autostart {{{1
 
 exec mako
@@ -36,9 +56,8 @@ set $col_white  #EEEEEE
 set $col_gray_light  #FFFFFFAA
 set $col_gray #00000033
 set $col_gray_dark #00000066
-set $col_accent #ff0000
+set $col_accent #d75f00
 set $col_black #000000
-set $col_sel #d75f00
 set $col_bg #84998F
 
 set $ws1 1
@@ -103,26 +122,6 @@ input "type:pointer" {
 }
 
 
-# General settings {{{1
-
-xwayland disable
-default_border pixel
-default_floating_border pixel
-
-smart_borders on
-smart_gaps on
-hide_edge_borders --i3 smart_no_gaps
-focus_wrapping yes
-
-gaps inner 8
-
-font pango:monospace 9
-titlebar_border_thickness 1
-titlebar_padding 4 1
-
-seat * xcursor_theme Adwaita 24
-seat * hide_cursor 5000
-
 # Colors {{{1
 
 # Colors                  border                 background             text                   indicator            child_border
@@ -135,7 +134,7 @@ client.unfocused          $col_gray	 	 $col_gray            $col_gray_light     
 
 
 # Rules {{{1
-# for_window      [app_id=".*"]           split toggle
+#for_window      [app_id=".*"]           split toggle
 #for_window 	[app_id="firefox"] 	move container to workspace number $ws1
 for_window      [app_id="^launcher$"]   floating enable
 
@@ -145,7 +144,7 @@ for_window      [app_id="^launcher$"]   floating enable
 # General {{{2
    floating_modifier $mod normal
 
-   bindsym $mod+Return exec $term
+   bindsym $mod+Shift+Return exec $term
    bindsym $mod+p exec $drun
    bindsym $mod+Control+p exec $run
    bindsym $mod+Control+c exec $clipboard
@@ -153,9 +152,9 @@ for_window      [app_id="^launcher$"]   floating enable
    bindsym XF86MonBrightnessUp exec light -A 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
    bindsym XF86MonBrightnessDown exec light -U 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
 
-   bindsym XF86AudioRaiseVolume exec pamixer -ui 5 && pamixer --get-volume > $SWAYSOCK.wob
-   bindsym XF86AudioLowerVolume exec pamixer -ud 5 && pamixer --get-volume > $SWAYSOCK.wob
-   bindsym XF86AudioMute exec pamixer --toggle-mute && ( pamixer --get-mute && echo 0 > $SWAYSOCK.wob ) || pamixer --get-volume > $SWAYSOCK.wob
+   bindsym XF86AudioRaiseVolume exec pamixer -ui 5 && pamixer --get-volume > $SWAYSOCK.wob && gsound-play -i audio-volume-change
+   bindsym XF86AudioLowerVolume exec pamixer -ud 5 && pamixer --get-volume > $SWAYSOCK.wob && gsound-play -i audio-volume-change
+   bindsym XF86AudioMute exec pamixer --toggle-mute && ( pamixer --get-mute && echo 0 > $SWAYSOCK.wob ) || pamixer --get-volume > $SWAYSOCK.wob && gsound-play -i audio-volume-change
 
    bindsym $mod+Shift+c kill
    bindsym $mod+Backspace reload
@@ -248,17 +247,15 @@ mode "[E]XIT -- [R]EBOOT -- [L]OCK" {
    bindsym Escape mode "default"
 }
 
-bindsym $mod+Shift+Backspace mode "[E]XIT -- [R]EBOOT -- [L]OCK"
+bindsym $mod+Control+Backspace mode "[E]XIT -- [R]EBOOT -- [L]OCK"
 
 # Status Bar {{{1
 
 bar {
    status_command sway-luastatus.sh
-   # status_command i3status-rs $HOME/.config/sway/status.toml
    font pango:monospace 9
-   height 14
+   height 12
    position bottom
-   strip_workspace_name yes
    separator_symbol " | "
    status_edge_padding 12
 
@@ -268,7 +265,7 @@ bar {
       inactive_workspace    #343434 #232323 #AAAAAA
       binding_mode	    $col_accent $col_accent #FFFFFF
       separator		    #444444
-      statusline	    #AAAAAA
+      statusline	    #CCCCCC
       background	    #000000
    }
 }
