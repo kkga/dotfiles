@@ -19,6 +19,7 @@ local function get_block(line)
     -- Alternatively, you can filter out unneeded interfaces here, e.g.
     --   if iface ~= 'wlp2s0' then return nil end
     if iface == 'lo' then return nil end
+    if iface == 'tailscale0' then return nil end
 
     recv, sent = tonumber(recv), tonumber(sent)
     local prev_recv, prev_sent = last_recv[iface], last_sent[iface]
