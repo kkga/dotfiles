@@ -1,5 +1,25 @@
 # vim:foldmethod=marker:foldlevel=0
 
+# General settings {{{1
+
+# xwayland disable
+default_border pixel
+default_floating_border pixel
+
+smart_borders on
+smart_gaps on
+hide_edge_borders --i3 smart_no_gaps
+focus_wrapping yes
+
+gaps inner 8
+
+font pango:monospace 9
+titlebar_border_thickness 1
+titlebar_padding 4 1
+
+seat * xcursor_theme Adwaita 24
+seat * hide_cursor 5000
+
 # Autostart {{{1
 
 exec mako
@@ -36,9 +56,8 @@ set $col_white  #EEEEEE
 set $col_gray_light  #FFFFFFAA
 set $col_gray #00000033
 set $col_gray_dark #00000066
-set $col_accent #ff0000
+set $col_accent #d75f00
 set $col_black #000000
-set $col_sel #d75f00
 set $col_bg #84998F
 
 set $ws1 1
@@ -103,26 +122,6 @@ input "type:pointer" {
 }
 
 
-# General settings {{{1
-
-# xwayland disable
-default_border pixel
-default_floating_border pixel
-
-smart_borders on
-smart_gaps on
-hide_edge_borders --i3 smart_no_gaps
-focus_wrapping yes
-
-gaps inner 8
-
-font pango:monospace 9
-titlebar_border_thickness 1
-titlebar_padding 4 1
-
-seat * xcursor_theme Adwaita 24
-seat * hide_cursor 5000
-
 # Colors {{{1
 
 # Colors                  border                 background             text                   indicator            child_border
@@ -135,7 +134,7 @@ client.unfocused          $col_gray	 	 $col_gray            $col_gray_light     
 
 
 # Rules {{{1
-# for_window      [app_id=".*"]           split toggle
+#for_window      [app_id=".*"]           split toggle
 #for_window 	[app_id="firefox"] 	move container to workspace number $ws1
 for_window      [app_id="^launcher$"]   floating enable
 
@@ -248,17 +247,15 @@ mode "[E]XIT -- [R]EBOOT -- [L]OCK" {
    bindsym Escape mode "default"
 }
 
-bindsym $mod+Shift+Backspace mode "[E]XIT -- [R]EBOOT -- [L]OCK"
+bindsym $mod+Control+Backspace mode "[E]XIT -- [R]EBOOT -- [L]OCK"
 
 # Status Bar {{{1
 
 bar {
    status_command sway-luastatus.sh
-   # status_command i3status-rs $HOME/.config/sway/status.toml
    font pango:monospace 9
-   height 14
+   height 12
    position bottom
-   strip_workspace_name yes
    separator_symbol " | "
    status_edge_padding 12
 
