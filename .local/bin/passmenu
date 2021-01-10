@@ -1,0 +1,2 @@
+#!/bin/bash
+gopass ls --flat | $DMENU | xargs --no-run-if-empty gopass show -c
