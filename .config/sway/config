@@ -80,7 +80,8 @@ set $laptop eDP-1
 set $mon1 DP-1
 set $mon2 DP-2
 
-output * bg $col_bg solid_color
+# output * bg $col_bg solid_color
+output * bg ~/.config/wallpaper/tiger.png fill
 output $laptop scale 2
 output $mon1 resolution 3840x2160 scale 2 position 1920 0
 output $mon2 resolution 3840x2160 scale 2
@@ -251,13 +252,13 @@ bar {
    status_edge_padding 12
 
    colors {
-      focused_workspace	    #565656 #454545 #EEEEEE
-      active_workspace	    #565656 #454545 #AAAAAA
-      inactive_workspace    #343434 #232323 #AAAAAA
+      focused_workspace	    #FFFFFF55 #FFFFFF44 #FFFFFFEE
+      active_workspace	    #565656 #454545 #CCCCCC
+      inactive_workspace    #FFFFFF22 #FFFFFF11 #FFFFFFBB
       binding_mode	    $col_accent $col_accent #FFFFFF
-      separator		    #444444
-      statusline	    #CCCCCC
-      background	    #000000
+      separator		    #FFFFFF44
+      statusline	    #FFFFFFBB
+      background	    #00000044
    }
 }
 
