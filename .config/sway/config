@@ -3,7 +3,7 @@
 # General settings {{{1
 
 xwayland disable
-default_border pixel
+default_border none
 default_floating_border pixel
 
 smart_borders on
@@ -24,14 +24,15 @@ seat * hide_cursor 5000
 
 exec mako
 exec pipewire
-exec syncthing -no-browser
-exec light -S 35
+# exec syncthing -no-browser
 # exec wlsunset -l 55 -L 37 -t 4000 -T 6500
+exec light -S 35
 exec gammastep -m wayland -l 55:37
 exec wl-paste -t text --watch clipman store
 exec clipman restore
 exec foot -s
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob -a top -a left -W 200 -H 20 -M 8 -o 2 -b 2 -p 2
+exec persway -a -w
 
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
@@ -60,13 +61,6 @@ set $col_accent #d75f00
 set $col_black #000000
 set $col_bg #84998F
 
-set $ws1 1
-set $ws2 2
-set $ws3 3
-set $ws4 4
-set $ws5 5
-set $ws6 6
-
 set $mod Mod4
 set $left h
 set $down j
@@ -86,7 +80,8 @@ set $laptop eDP-1
 set $mon1 DP-1
 set $mon2 DP-2
 
-output * bg $col_bg solid_color
+# output * bg $col_bg solid_color
+output * bg ~/.config/wallpaper/tiger.png fill
 output $laptop scale 2
 output $mon1 resolution 3840x2160 scale 2 position 1920 0
 output $mon2 resolution 3840x2160 scale 2
@@ -152,8 +147,8 @@ for_window      [app_id="^launcher$"]   floating enable
    bindsym XF86MonBrightnessUp exec light -A 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
    bindsym XF86MonBrightnessDown exec light -U 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
 
-   bindsym XF86AudioRaiseVolume exec pamixer -ui 5 && pamixer --get-volume > $SWAYSOCK.wob && gsound-play -i audio-volume-change
-   bindsym XF86AudioLowerVolume exec pamixer -ud 5 && pamixer --get-volume > $SWAYSOCK.wob && gsound-play -i audio-volume-change
+   bindsym XF86AudioRaiseVolume exec pamixer -ui 5 && gsound-play -i audio-volume-change && pamixer --get-volume > $SWAYSOCK.wob
+   bindsym XF86AudioLowerVolume exec pamixer -ud 5 && gsound-play -i audio-volume-change && pamixer --get-volume > $SWAYSOCK.wob
    bindsym XF86AudioMute exec pamixer --toggle-mute && ( pamixer --get-mute && echo 0 > $SWAYSOCK.wob ) || pamixer --get-volume > $SWAYSOCK.wob && gsound-play -i audio-volume-change
 
    bindsym $mod+Shift+c kill
@@ -163,6 +158,7 @@ for_window      [app_id="^launcher$"]   floating enable
    bindsym $mod+Control+minus gaps inner current minus 4
 
    bindsym $mod+Escape exec makoctl dismiss
+   bindsym $mod+Control+Escape exec makoctl dismiss -a
 
 # Moving around {{{2
 
@@ -171,31 +167,27 @@ for_window      [app_id="^launcher$"]   floating enable
     bindsym $mod+$up focus up
     bindsym $mod+$right focus right
 
-    # bindsym $mod+j focus next
-    # bindsym $mod+k focus prev
-
     bindsym $mod+Shift+$left move left
     bindsym $mod+Shift+$down move down
     bindsym $mod+Shift+$up move up
     bindsym $mod+Shift+$right move right
 
-
 # Workspaces {{{2
 
     # Switch to workspace
     bindsym $mod+tab workspace back_and_forth
-    bindsym $mod+q workspace $ws1
-    bindsym $mod+w workspace $ws2
-    bindsym $mod+e workspace $ws3
-    bindsym $mod+a workspace $ws4
-    bindsym $mod+s workspace $ws5
-    bindsym $mod+d workspace $ws6
-    bindsym $mod+Shift+q move container to workspace $ws1
-    bindsym $mod+Shift+w move container to workspace $ws2
-    bindsym $mod+Shift+e move container to workspace $ws3
-    bindsym $mod+Shift+a move container to workspace $ws4
-    bindsym $mod+Shift+s move container to workspace $ws5
-    bindsym $mod+Shift+d move container to workspace $ws6
+    bindsym $mod+q workspace number 1
+    bindsym $mod+w workspace number 2
+    bindsym $mod+e workspace number 3
+    bindsym $mod+a workspace number 4
+    bindsym $mod+s workspace number 5
+    bindsym $mod+d workspace number 6
+    bindsym $mod+Shift+q move container to workspace number 1
+    bindsym $mod+Shift+w move container to workspace number 2
+    bindsym $mod+Shift+e move container to workspace number 3
+    bindsym $mod+Shift+a move container to workspace number 4
+    bindsym $mod+Shift+s move container to workspace number 5
+    bindsym $mod+Shift+d move container to workspace number 6
 
 
 # Layout stuff {{{2
@@ -254,19 +246,19 @@ bindsym $mod+Control+Backspace mode "[E]XIT -- [R]EBOOT -- [L]OCK"
 bar {
    status_command sway-luastatus.sh
    font pango:monospace 9
-   height 12
+   height 16
    position bottom
    separator_symbol " | "
    status_edge_padding 12
 
    colors {
-      focused_workspace	    #565656 #454545 #EEEEEE
-      active_workspace	    #565656 #454545 #AAAAAA
-      inactive_workspace    #343434 #232323 #AAAAAA
+      focused_workspace	    #FFFFFF55 #FFFFFF44 #FFFFFFEE
+      active_workspace	    #565656 #454545 #CCCCCC
+      inactive_workspace    #FFFFFF22 #FFFFFF11 #FFFFFFBB
       binding_mode	    $col_accent $col_accent #FFFFFF
-      separator		    #444444
-      statusline	    #CCCCCC
-      background	    #000000
+      separator		    #FFFFFF44
+      statusline	    #FFFFFFBB
+      background	    #00000044
    }
 }
 

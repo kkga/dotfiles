@@ -42,3 +42,5 @@ settings:
     global: always
   tabs.show_switching_delay:
     global: 2000
+  window.title_format:
+    global: qutebrowser
