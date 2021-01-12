@@ -24,9 +24,9 @@ seat * hide_cursor 5000
 
 exec mako
 exec pipewire
-exec syncthing -no-browser
-exec light -S 35
+# exec syncthing -no-browser
 # exec wlsunset -l 55 -L 37 -t 4000 -T 6500
+exec light -S 35
 exec gammastep -m wayland -l 55:37
 exec wl-paste -t text --watch clipman store
 exec clipman restore
