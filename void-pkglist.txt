@@ -4,6 +4,7 @@ MangoHud-32bit
 acpi
 alacritty
 alsa-firmware
+alsa-plugins-pulseaudio
 alsa-utils
 asciinema
 autorandr
@@ -53,6 +54,7 @@ git
 github-cli
 go
 godot
+gopass
 grimshot
 grub-terminus
 grub-x86_64-efi
@@ -68,6 +70,7 @@ jq
 kakoune
 keychain
 kitty
+krita
 lazygit
 lf
 libvdpau-va-gl
@@ -115,6 +118,7 @@ python3-pip
 qemu
 qmk
 qt5-wayland
+qutebrowser
 ripgrep
 setxkbmap
 skim
@@ -145,6 +149,7 @@ trash-cli
 trayer-srg
 ttf-ubuntu-font-family
 ufw
+unar
 unclutter-xfixes
 uni
 vdpauinfo
