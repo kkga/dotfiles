@@ -2,7 +2,7 @@
 
 # General settings {{{1
 
-xwayland disable
+# xwayland disable
 default_border none
 default_floating_border pixel
 
@@ -141,7 +141,7 @@ for_window      [app_id="^launcher$"]   floating enable
 
    bindsym $mod+Shift+Return exec $term
    bindsym $mod+p exec $drun
-   bindsym $mod+Control+p exec $run
+   bindsym $mod+Shift+p exec $run
    bindsym $mod+Control+c exec $clipboard
 
    bindsym XF86MonBrightnessUp exec light -A 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
@@ -239,7 +239,7 @@ mode "[E]XIT -- [R]EBOOT -- [L]OCK" {
    bindsym Escape mode "default"
 }
 
-bindsym $mod+Control+Backspace mode "[E]XIT -- [R]EBOOT -- [L]OCK"
+bindsym $mod+Shift+Backspace mode "[E]XIT -- [R]EBOOT -- [L]OCK"
 
 # Status Bar {{{1
 
