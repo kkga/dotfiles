@@ -6,6 +6,7 @@ alacritty
 alsa-firmware
 alsa-plugins-pulseaudio
 alsa-utils
+arduino
 asciinema
 autorandr
 base-system
@@ -106,6 +107,7 @@ papirus-icon-theme
 paprefs
 patch
 pavucontrol
+pinentry-gnome
 pipewire
 playerctl
 polkit-elogind
