@@ -43,6 +43,7 @@ ffscreencast
 ffsend
 firefox
 fish-shell
+flatpak
 foot
 fuzzypkg
 fwupd
