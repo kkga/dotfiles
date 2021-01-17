@@ -4,7 +4,7 @@
 
 # xwayland disable
 default_border none
-default_floating_border pixel
+default_floating_border pixel 2
 
 smart_borders on
 smart_gaps on
