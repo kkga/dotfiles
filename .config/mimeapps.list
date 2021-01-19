@@ -1,8 +1,5 @@
 [Default Applications]
-x-scheme-handler/http=userapp-Firefox-JUEFU0.desktop
-x-scheme-handler/https=userapp-Firefox-JUEFU0.desktop
-x-scheme-handler/about=firefox.desktop
-x-scheme-handler/unknown=firefox.desktop
+x-scheme-handler/http=firefox.desktop
 text/plain=nvim.desktop;
 image/jpeg=imv.desktop;
 image/gif=imv.desktop;
@@ -10,30 +7,3 @@ image/png=imv.desktop;
 application/pdf=org.pwmt.zathura.desktop
 inode/directory=lf.desktop
 application/x-directory=lf.desktop
-message/rfc822=userapp-Thunderbird-NM5XT0.desktop
-x-scheme-handler/ftp=userapp-Firefox-JUEFU0.desktop
-x-scheme-handler/chrome=userapp-Firefox-JUEFU0.desktop
-text/html=userapp-Firefox-JUEFU0.desktop
-application/x-extension-htm=userapp-Firefox-JUEFU0.desktop
-application/x-extension-html=userapp-Firefox-JUEFU0.desktop
-application/x-extension-shtml=userapp-Firefox-JUEFU0.desktop
-application/xhtml+xml=userapp-Firefox-JUEFU0.desktop
-application/x-extension-xhtml=userapp-Firefox-JUEFU0.desktop
-application/x-extension-xht=userapp-Firefox-JUEFU0.desktop
-x-scheme-handler/tg=userapp-Telegram Desktop-4ZESW0.desktop
-
-[Added Associations]
-message/rfc822=userapp-Thunderbird-NM5XT0.desktop;
-text/html=firefox.desktop;userapp-Firefox-JUEFU0.desktop;
-x-scheme-handler/http=userapp-Firefox-JUEFU0.desktop;
-x-scheme-handler/https=userapp-Firefox-JUEFU0.desktop;
-x-scheme-handler/ftp=userapp-Firefox-JUEFU0.desktop;
-x-scheme-handler/chrome=userapp-Firefox-JUEFU0.desktop;
-application/x-extension-htm=userapp-Firefox-JUEFU0.desktop;
-application/x-extension-html=userapp-Firefox-JUEFU0.desktop;
-application/x-extension-shtml=userapp-Firefox-JUEFU0.desktop;
-application/xhtml+xml=userapp-Firefox-JUEFU0.desktop;
-application/x-extension-xhtml=userapp-Firefox-JUEFU0.desktop;
-application/x-extension-xht=userapp-Firefox-JUEFU0.desktop;
-application/zip=org.mozilla.firefox.desktop;
-x-scheme-handler/tg=userapp-Telegram Desktop-79Y6V0.desktop;userapp-Telegram Desktop-4ZESW0.desktop;

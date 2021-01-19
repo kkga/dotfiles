@@ -1,4 +1,5 @@
 CPU-X
+ImageMagick
 MangoHud
 MangoHud-32bit
 acpi
@@ -79,8 +80,6 @@ libvdpau-va-gl
 light
 linux5.10
 linux5.10-headers
-linux5.9
-linux5.9-headers
 lm_sensors
 luastatus
 lxappearance
