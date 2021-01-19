@@ -3,7 +3,7 @@
 # General settings {{{1
 
 # xwayland disable
-default_border none
+default_border pixel 1
 default_floating_border pixel 2
 
 smart_borders on
@@ -25,9 +25,8 @@ seat * hide_cursor 5000
 exec mako
 exec pipewire
 # exec syncthing -no-browser
-# exec wlsunset -l 55 -L 37 -t 4000 -T 6500
+exec wlsunset -l 55 -L 37 -t 4000 -T 6500
 exec light -S 35
-exec gammastep -m wayland -l 55:37
 exec wl-paste -t text --watch clipman store
 exec clipman restore
 exec foot -s
