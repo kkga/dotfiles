@@ -96,7 +96,7 @@ input "type:keyboard" {
 }
 
 input "1:1:AT_Translated_Set_2_keyboard" {
-   xkb_options grp:shifts_toggle,ctrl:nocaps,altwin:swap_lalt_lwin
+   xkb_options grp:alt_shift_toggle,ctrl:nocaps,altwin:swap_lalt_lwin
 }
 
 input "type:touchpad" {
