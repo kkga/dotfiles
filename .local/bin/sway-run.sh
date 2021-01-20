@@ -1,5 +1,6 @@
 #!/bin/sh
 
+export TERM=foot
 export MOZ_ENABLE_WAYLAND=1
 export MOZ_DBUS_REMOTE=1
 export QT_QPA_PLATFORM=wayland-egl
