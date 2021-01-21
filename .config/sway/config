@@ -35,6 +35,8 @@ exec persway -a -w
 
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
+    # test -e $SWAYSOCK.wob || mkfifo $SWAYSOCK.wob
+    # tail -f $SWAYSOCK.wob | wob -a top -a left -W 200 -H 20 -M 8 -o 2 -b 2 -p 2
     gsettings set $gnome-schema gtk-theme 'Adwaita'
     gsettings set $gnome-schema icon-theme 'Adwaita'
     gsettings set $gnome-schema cursor-theme 'Adwaita'
