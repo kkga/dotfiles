@@ -230,7 +230,9 @@ mode $mode_resize {
 
 # Menu mode {{{2
 
-mode "[E]XIT -- [R]EBOOT -- [L]OCK" {
+set $powermode "[E]xit | [R]eebot | [L]ock"
+
+mode $powermode {
    bindsym e exec swaymsg exit
    bindsym r exec loginctl reboot
    bindsym l exec $lock; mode "default"
@@ -240,7 +242,7 @@ mode "[E]XIT -- [R]EBOOT -- [L]OCK" {
    bindsym Escape mode "default"
 }
 
-bindsym $mod+Shift+Backspace mode "[E]XIT -- [R]EBOOT -- [L]OCK"
+bindsym $mod+Shift+Backspace mode $powermode
 
 # Status Bar {{{1
 
