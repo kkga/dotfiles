@@ -4,7 +4,7 @@ export PATH=$HOME/.yarn/bin:$PATH
 export PATH=$HOME/go/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 
-export GPG_TTY=$(tty)
+export XBPS_DISTDIR=$HOME/.void-packages
 
 export BROWSER=firefox
 export EDITOR=nvim
@@ -16,7 +16,8 @@ export BEMENU_OPTS="--ignorecase --list 12 -p '' -P ''\
 --fb=#000000 --ff=#eeeeee --nb=#111111\
 --nf=#888888 --hb=#444444 --hf=#ffffff"
 
-export KALEIDOSCOPE_DIR=${HOME}/repos/Kaleidoscope
-export XBPS_DISTDIR=$HOME/.void-packages
+eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+export SSH_AUTH_SOCK
+export SUDO_ASKPASS=/usr/libexec/seahorse/ssh-askpass
 
-# eval $(keychain --eval --quiet --noask --agents ssh,gpg)
+export GPG_TTY=$(tty)
