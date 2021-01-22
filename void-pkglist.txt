@@ -24,10 +24,15 @@ chrony
 clipman
 clipmenu
 corectrl
+cross-arm-none-eabi-binutils
+cross-arm-none-eabi-gcc
+cross-arm-none-eabi-newlib
 dbus
 ddcci-dkms
 ddcutil
 delta
+dfu-programmer
+dfu-util
 dkms
 dmenu
 duf
@@ -76,6 +81,7 @@ kitty
 krita
 lazygit
 lf
+libusb-compat-devel
 libvdpau-va-gl
 light
 linux5.10
@@ -118,7 +124,6 @@ protontricks
 pulseaudio
 python3-pip
 qemu
-qmk
 qt5-wayland
 qutebrowser
 ripgrep
@@ -143,6 +148,7 @@ sxhkd
 syncthing
 tailscale
 tealdeer
+teensy_loader_cli
 terminus-font
 tmux
 tokei
@@ -196,9 +202,11 @@ xsettingsd
 xss-lock
 xtools
 xurls
+xxd
 yadm
 yarn
 youtube-dl
 zathura
 zathura-pdf-mupdf
+zip
 zoxide

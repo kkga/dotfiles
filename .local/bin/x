@@ -1,3 +1,0 @@
-#!/bin/sh
-
-startx -- -ardelay 200 -arinterval 30

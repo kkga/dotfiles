@@ -17,4 +17,4 @@ export BEMENU_OPTS="--ignorecase --list 12 -p '' -P ''\
 export KALEIDOSCOPE_DIR=${HOME}/repos/Kaleidoscope
 export XBPS_DISTDIR=$HOME/.void-packages
 
-eval $(keychain --eval --quiet --noask id_ed25519)
+eval $(keychain --eval --quiet --noask --agents ssh,gpg)
