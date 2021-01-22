@@ -10,4 +10,4 @@ export XDG_SESSION_TYPE=wayland
 export XDG_SESSION_DESKTOP=sway
 export XDG_CURRENT_DESKTOP=sway
 
-exec dbus-run-session sway -d 2> ~/tmp/sway.log
+exec dbus-run-session sway $@

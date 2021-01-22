@@ -247,7 +247,7 @@ bindsym $mod+Shift+Backspace mode "[E]XIT -- [R]EBOOT -- [L]OCK"
 bar {
    status_command sway-luastatus.sh
    font pango:monospace 9
-   height 16
+   height 14
    position bottom
    separator_symbol " | "
    status_edge_padding 12
