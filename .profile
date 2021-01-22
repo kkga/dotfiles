@@ -4,6 +4,8 @@ export PATH=$HOME/.yarn/bin:$PATH
 export PATH=$HOME/go/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 
+export GPG_TTY=$(tty)
+
 export BROWSER=firefox
 export EDITOR=nvim
 export VISUAL=nvim
@@ -17,4 +19,4 @@ export BEMENU_OPTS="--ignorecase --list 12 -p '' -P ''\
 export KALEIDOSCOPE_DIR=${HOME}/repos/Kaleidoscope
 export XBPS_DISTDIR=$HOME/.void-packages
 
-eval $(keychain --eval --quiet --noask --agents ssh,gpg)
+# eval $(keychain --eval --quiet --noask --agents ssh,gpg)

@@ -39,3 +39,5 @@
 	line-numbers = false
 [init]
 	defaltBranch = main
+[credential]
+	helper = /usr/libexec/git-core/git-credential-libsecret
