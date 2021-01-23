@@ -248,7 +248,7 @@ bindsym $mod+Shift+Backspace mode $powermode
 # Status Bar {{{1
 
 bar {
-   status_command sway-luastatus.sh
+   status_command luastatus-sway.sh
    font pango:monospace 8.5
    height 14
    position bottom
