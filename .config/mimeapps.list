@@ -1,9 +1,0 @@
-[Default Applications]
-x-scheme-handler/http=firefox.desktop
-text/plain=nvim.desktop;
-image/jpeg=imv.desktop;
-image/gif=imv.desktop;
-image/png=imv.desktop;
-application/pdf=org.pwmt.zathura.desktop
-inode/directory=lf.desktop
-application/x-directory=lf.desktop
