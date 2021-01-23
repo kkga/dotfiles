@@ -39,7 +39,7 @@ end
 
 local BASE_URL = 'wttr.in'
 local LANG = 'en'
-local LOCATION = ''
+local LOCATION = 'Moscow, Russia'
 
 function get_weather(format)
     -- encoding is needed to allow usage of special use characters

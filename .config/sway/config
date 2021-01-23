@@ -24,19 +24,17 @@ seat * hide_cursor 5000
 
 exec mako
 exec pipewire
-# exec syncthing -no-browser
 exec wlsunset -l 55 -L 37 -t 4000 -T 6500
 exec light -S 35
 exec wl-paste -t text --watch clipman store
 exec clipman restore
 exec foot -s
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob -a top -a left -W 200 -H 20 -M 8 -o 2 -b 2 -p 2
-exec persway -a -w
+exec persway -a -w -o 0.9
+exec syncthing -no-browser
 
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
-    # test -e $SWAYSOCK.wob || mkfifo $SWAYSOCK.wob
-    # tail -f $SWAYSOCK.wob | wob -a top -a left -W 200 -H 20 -M 8 -o 2 -b 2 -p 2
     gsettings set $gnome-schema gtk-theme 'Adwaita'
     gsettings set $gnome-schema icon-theme 'Adwaita'
     gsettings set $gnome-schema cursor-theme 'Adwaita'
@@ -151,6 +149,9 @@ for_window      [app_id="^launcher$"]   floating enable
    bindsym XF86AudioRaiseVolume exec pamixer -ui 5 && gsound-play -i audio-volume-change && pamixer --get-volume > $SWAYSOCK.wob
    bindsym XF86AudioLowerVolume exec pamixer -ud 5 && gsound-play -i audio-volume-change && pamixer --get-volume > $SWAYSOCK.wob
    bindsym XF86AudioMute exec pamixer --toggle-mute && ( pamixer --get-mute && echo 0 > $SWAYSOCK.wob ) || pamixer --get-volume > $SWAYSOCK.wob && gsound-play -i audio-volume-change
+   # bindsym $mod+Ctrl+u exec amixer sset Master 5%+ | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $SWAYSOCK.wob
+   # bindsym XF86AudioLowerVolume exec amixer sset Master 5%- | sed -En 's/.*\[([0-9]+)%\].*/\1/p' | head -1 > $SWAYSOCK.wob
+   # bindsym XF86AudioMute exec amixer sset Master toggle | sed -En '/\[on\]/ s/.*\[([0-9]+)%\].*/\1/ p; /\[off\]/ s/.*/0/p' | head -1 > $SWAYSOCK.wob
 
    bindsym $mod+Shift+c kill
    bindsym $mod+Backspace reload
@@ -248,7 +249,7 @@ bindsym $mod+Shift+Backspace mode $powermode
 
 bar {
    status_command sway-luastatus.sh
-   font pango:monospace 9
+   font pango:monospace 8.5
    height 14
    position bottom
    separator_symbol " | "

@@ -7,7 +7,7 @@ widget = luastatus.require_plugin('battery-linux').widget{
         })[t.status] or ' '
 
         local color 
-        if t.capacity < 20 then
+        if t.capacity < 15 then
             color = '#ff8888'
         end
 
