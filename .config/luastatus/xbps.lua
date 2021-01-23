@@ -2,7 +2,7 @@ widget = {
     plugin = "timer",
     opts = {period = 5 * 60},
     cb = function()
-        os.execute("xbps-install -S")
+        os.execute("doas xbps-install -S")
         local f = assert(io.popen("doas xbps-install -un | wc -l"))
         local res = f:read("*all")
         local output

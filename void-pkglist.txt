@@ -59,7 +59,9 @@ gcc
 geoclue2
 geoip
 git
+git-libsecret
 github-cli
+gnome-keyring
 go
 godot
 gopass
@@ -76,7 +78,6 @@ iwd
 j4-dmenu-desktop
 jq
 kakoune
-keychain
 kitty
 krita
 lazygit
@@ -125,8 +126,10 @@ pulseaudio
 python3-pip
 qemu
 qt5-wayland
+qtpass
 qutebrowser
 ripgrep
+seahorse
 setxkbmap
 skim
 slop
