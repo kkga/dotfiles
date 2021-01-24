@@ -1,0 +1,13 @@
+[Default Applications]
+text/plain=text.desktop;
+x-scheme-handler/http=browser.desktop
+x-scheme-handler/https=browser.desktop
+text/html=browser.desktop
+image/jpeg=imv.desktop;
+image/gif=imv.desktop;
+image/png=imv.desktop;
+application/pdf=pdf.desktop
+inode/directory=file.desktop
+application/x-directory=lf.desktop
+x-scheme-handler/ftp=browser.desktop
+x-scheme-handler/chrome=browser.desktop
