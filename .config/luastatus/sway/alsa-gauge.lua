@@ -10,9 +10,9 @@ widget = {
     cb = function(t)
         local level = (t.vol.cur - t.vol.min) / (t.vol.max - t.vol.min)
         if t.mute then
-            return {full_text=mk_gauge(level, 'x', '-'), color='#e03838'}
+            return {full_text=mk_gauge(level, 'x', ' '), color='#ff8888'}
         else
-            return {full_text=mk_gauge(level, '=', '-'), color='#718ba6'}
+            return {full_text=mk_gauge(level, '=', ' ')}
         end
     end,
 }

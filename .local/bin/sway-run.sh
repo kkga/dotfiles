@@ -1,6 +1,6 @@
 #!/bin/sh
 
-. $HOME/.env-wayland
+. $HOME/.local/bin/env-wayland.sh
 
 export XDG_SESSION_TYPE=wayland
 export XDG_SESSION_DESKTOP=sway
