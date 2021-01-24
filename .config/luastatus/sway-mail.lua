@@ -24,9 +24,9 @@ widget = luastatus.require_plugin('imap').widget{
         if unseen == nil then
             return nil
         elseif unseen == 0 then
-            return {full_text = '', color = '#595959'}
+            return
         else
-            return {full_text = string.format('[%d unseen]', unseen)}
+            return {full_text = string.format('mail %d', unseen)}
         end
     end,
     event = [[
