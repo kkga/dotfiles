@@ -1,1 +1,2 @@
 .config/spotifyd/*
+.config/luastatus/credentials.lua
