@@ -2,9 +2,11 @@ CPU-X
 ImageMagick
 MangoHud
 MangoHud-32bit
+Vulkan-Tools
 acpi
 alacritty
 alsa-firmware
+alsa-pipewire
 alsa-plugins-pulseaudio
 alsa-utils
 arduino
@@ -16,10 +18,12 @@ bc
 bemenu
 blueman
 bluez
+bluez-alsa
 bottom
 brightnessctl
 brillo
 cargo
+chromium
 chrony
 clipman
 clipmenu
@@ -50,6 +54,7 @@ ffsend
 firefox
 fish-shell
 flatpak
+font-iosevka
 foot
 fuzzypkg
 fwupd
@@ -82,6 +87,7 @@ kitty
 krita
 lazygit
 lf
+libspa-bluetooth
 libusb-compat-devel
 libvdpau-va-gl
 light
@@ -107,7 +113,6 @@ nodejs
 noto-fonts-ttf
 obs
 opendoas
-opera
 pamixer
 pandoc
 papirus-icon-theme
@@ -172,6 +177,7 @@ void-repo-multilib
 void-repo-multilib-nonfree
 void-repo-nonfree
 vpm
+vpsm
 vsv
 vulkan-loader
 vulkan-loader-32bit
