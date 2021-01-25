@@ -3,6 +3,9 @@ font:
 
 window:
   decorations: none
+  dimensions:
+    columns: 100
+    lines: 32
 
 # shell:
 #   program: fish
