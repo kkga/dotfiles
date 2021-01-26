@@ -8,12 +8,18 @@ alsa-firmware
 alsa-plugins-pulseaudio
 alsa-utils
 autorandr
+avr-binutils
+avr-gcc
+avr-libc
+avrdude
 base-system
 bat
 bc
 bemenu
+blueman
 bluez
 bluez-alsa
+bluez-qt5
 bottom
 brightnessctl
 brillo
@@ -38,6 +44,7 @@ duf
 dunst
 dust
 elogind
+elvish
 emptty
 eudev-libudev
 exa
@@ -71,6 +78,7 @@ grub-terminus
 grub-x86_64-efi
 gsound
 gstreamer1-pipewire
+hidapi
 htop
 imv
 inxi
@@ -81,6 +89,7 @@ kakoune
 keyutils
 lazygit
 lf
+libX11-devel
 libspa-bluetooth
 libusb-compat-devel
 libvdpau-va-gl
@@ -120,6 +129,7 @@ pipewire
 playerctl
 polkit-elogind
 polkit-gnome
+polybar
 powertop
 procs
 protontricks
@@ -209,4 +219,5 @@ yarn
 youtube-dl
 zathura
 zathura-pdf-mupdf
+zip
 zoxide
