@@ -1,0 +1,11 @@
+mode=drun,run
+location=top
+term=foot
+gtk_dark=true
+
+cache=~/.cache/wofi
+
+insensitive=true
+/* hide_scroll=true */
+lines=12
+no_actions=true
