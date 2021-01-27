@@ -46,8 +46,9 @@ exec_always {
 # Variables {{{1
 
 set $term 'footclient'
-set $run 'bemenu-run | xargs swaymsg exec --'
-set $drun 'j4-dmenu-desktop --no-generic --usage-log=tmp/j4.log --display-binary --term=footclient --dmenu=bemenu'
+set $run 'bemenu-run -m -1 | xargs swaymsg exec --'
+# set $drun 'j4-dmenu-desktop --no-generic --usage-log=tmp/j4.log --display-binary --term=footclient --dmenu=bemenu'
+set $drun 'wofi --show drun'
 set $lock 'swaylock -f -c 333333'
 set $clipboard 'clipman pick -t bemenu'
 
@@ -93,6 +94,7 @@ input "type:keyboard" {
    xkb_layout us,ru
    repeat_delay 200
    repeat_rate 30
+   xkb_options grp:alt_space_toggle
 }
 
 input "1:1:AT_Translated_Set_2_keyboard" {
@@ -174,6 +176,12 @@ for_window  [app_id="mpv"               ] floating enable
     bindsym $mod+Shift+$down move down
     bindsym $mod+Shift+$up move up
     bindsym $mod+Shift+$right move right
+
+    bindsym $mod+comma focus output left
+    bindsym $mod+period focus output right
+
+    bindsym $mod+Shift+comma move output left
+    bindsym $mod+Shift+period move output right
 
 # Workspaces {{{2
 
@@ -258,7 +266,7 @@ bar {
 
    colors {
       focused_workspace	    #00000077 #00000077 #EEEEEE
-      active_workspace	    #000000FF #000000FF #CCCCCC
+      active_workspace	    #00000077 #000000FF #EEEEEE
       inactive_workspace    #000000FF #000000FF #FFFFFF99
       binding_mode	    $col_accent $col_accent #FFFFFF
       separator		    #00000044

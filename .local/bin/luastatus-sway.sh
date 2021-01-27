@@ -6,7 +6,8 @@ cd ~/.config/luastatus && exec luastatus-i3-wrapper\
 	sway-xbps.lua\
 	sway-cpu-usage.lua\
 	sway-alsa.lua\
-	sway-wireless.lua\
+	sway-network.lua\
 	sway-network-rate.lua\
+	sway-weather.lua\
 	sway-battery.lua\
 	sway-time-date.lua\
