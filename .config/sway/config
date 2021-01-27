@@ -31,7 +31,6 @@ exec clipman restore
 exec foot -s
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob -a top -a left -W 200 -H 20 -M 8 -o 2 -b 2 -p 2
 exec persway -a -w -o 0.9
-exec syncthing -no-browser
 exec /usr/libexec/polkit-gnome-authentication-agent-1
 
 set $gnome-schema org.gnome.desktop.interface
@@ -80,12 +79,11 @@ set $laptop eDP-1
 set $mon1 DP-1
 set $mon2 DP-2
 
-# output * bg $col_bg solid_color
-# output * bg ~/.local/share/backgrounds/tiger.png fill
-output * bg ~/.local/share/backgrounds/fuji.jpg fill
 output $laptop scale 2
 output $mon1 resolution 3840x2160 scale 2 position 1920 0
 output $mon2 resolution 3840x2160 scale 2
+
+output * bg #84998F solid_color
 
 bindswitch lid:toggle exec $lock
 
@@ -130,9 +128,12 @@ client.unfocused          $col_gray	 	 $col_gray            $col_gray_light     
 
 
 # Rules {{{1
-#for_window      [app_id=".*"]           split toggle
-#for_window 	[app_id="firefox"] 	move container to workspace number $ws1
-for_window      [app_id="^launcher$"]   floating enable
+#for_window [app_id=".*"                ] split toggle
+#for_window [app_id="firefox"           ] move container to workspace number $ws1
+for_window  [app_id="^launcher$"        ] floating enable
+for_window  [app_id="pavucontrol"       ] focus, floating enable
+for_window  [title="Picture-in-Picture" ] floating enable
+for_window  [app_id="mpv"               ] floating enable
 
 
 # Key bindings {{{1
@@ -256,13 +257,13 @@ bar {
    status_edge_padding 12
 
    colors {
-      focused_workspace	    #FFFFFF22 #FFFFFF11 #FFFFFFBB
-      active_workspace	    #00000044 #00000044 #CCCCCC
-      inactive_workspace    #00000044 #00000044 #FFFFFF99
+      focused_workspace	    #00000077 #00000077 #EEEEEE
+      active_workspace	    #000000FF #000000FF #CCCCCC
+      inactive_workspace    #000000FF #000000FF #FFFFFF99
       binding_mode	    $col_accent $col_accent #FFFFFF
-      separator		    #FFFFFF44
-      statusline	    #FFFFFFBB
-      background	    #00000044
+      separator		    #00000044
+      statusline	    #CCCCCC
+      background	    #000000FF
    }
 }
 
