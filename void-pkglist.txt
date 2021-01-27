@@ -90,6 +90,7 @@ keyutils
 lazygit
 lf
 libX11-devel
+libgpg-error-devel
 libspa-bluetooth
 libusb-compat-devel
 libvdpau-va-gl
@@ -113,6 +114,7 @@ mesa-vdpau
 mesa-vulkan-radeon
 mesa-vulkan-radeon-32bit
 mpv
+nautilus
 neofetch
 neovim
 nodejs
@@ -126,6 +128,7 @@ patch
 pavucontrol
 pinentry-gnome
 pipewire
+pkg-config
 playerctl
 polkit-elogind
 polkit-gnome
@@ -166,6 +169,7 @@ terminus-font
 tmux
 tokei
 topgrade
+trash-cli
 trayer-srg
 ttf-ubuntu-font-family
 unar

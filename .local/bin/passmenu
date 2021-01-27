@@ -1,2 +1,2 @@
 #!/bin/bash
-gopass ls --flat | $DMENU | xargs --no-run-if-empty gopass show -c
+prs ls | $DMENU | xargs --no-run-if-empty prs c
