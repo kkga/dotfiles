@@ -46,11 +46,10 @@ exec_always {
 # Variables {{{1
 
 set $term 'footclient'
-set $run 'bemenu-run -m -1 | xargs swaymsg exec --'
 # set $drun 'j4-dmenu-desktop --no-generic --usage-log=tmp/j4.log --display-binary --term=footclient --dmenu=bemenu'
-set $drun 'wofi --show drun'
-set $lock 'swaylock -f -c 333333'
-set $clipboard 'clipman pick -t bemenu'
+set $drun 'wofi'
+set $lock 'swaylock -f -c 000000'
+set $clipboard 'clipman pick -t wofi'
 
 set $col_trans #FFFFFF00
 set $col_white  #EEEEEE
@@ -70,9 +69,11 @@ set $right l
 # Idle config {{{1
 
 exec swayidle -w \
-	timeout 300 'swaylock -f -c 333333' \
-	timeout 600 'loginctl suspend' \
-	before-sleep 'swaylock -f -c 333333'
+	timeout 600 'swaylock -f -c 000000' \
+	timeout 1200 'loginctl suspend' \
+	before-sleep 'swaylock -f -c 000000'
+
+bindswitch lid:toggle exec $lock
 
 # Outputs {{{1
 
@@ -85,8 +86,6 @@ output $mon1 resolution 3840x2160 scale 2 position 1920 0
 output $mon2 resolution 3840x2160 scale 2
 
 output * bg #84998F solid_color
-
-bindswitch lid:toggle exec $lock
 
 # Inputs {{{1
 
@@ -145,15 +144,14 @@ for_window  [app_id="mpv"               ] floating enable
 
    bindsym $mod+Shift+Return exec $term
    bindsym $mod+p exec $drun
-   bindsym $mod+Shift+p exec $run
    bindsym $mod+Control+c exec $clipboard
 
    bindsym XF86MonBrightnessUp exec light -A 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
    bindsym XF86MonBrightnessDown exec light -U 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
 
    bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-   bindsym XF86AudioRaiseVolume exec pamixer --allow-boost -ui 2 && dc -e "[`pamixer --get-volume`]sM 100d `pamixer --get-volume`<Mp" > $SWAYSOCK.wob
-   bindsym XF86AudioLowerVolume exec pamixer --allow-boost -ud 2 && dc -e "[`pamixer --get-volume`]sM 100d `pamixer --get-volume`<Mp" > $SWAYSOCK.wob
+   bindsym XF86AudioRaiseVolume exec pamixer -ui 2 && dc -e "[`pamixer --get-volume`]sM 100d `pamixer --get-volume`<Mp" > $SWAYSOCK.wob
+   bindsym XF86AudioLowerVolume exec pamixer -ud 2 && dc -e "[`pamixer --get-volume`]sM 100d `pamixer --get-volume`<Mp" > $SWAYSOCK.wob
    bindsym XF86AudioMute exec pamixer --toggle-mute && ( pamixer --get-mute && echo 0 > $SWAYSOCK.wob ) || dc -e "[`pamixer --get-volume`]sM 100d `pamixer --get-volume`<Mp" > $SWAYSOCK.wob
 
    bindsym XF86AudioPlay exec playerctl play-pause
@@ -270,11 +268,11 @@ bar {
 
    colors {
       focused_workspace	    #00000077 #00000077 #EEEEEE
-      active_workspace	    #00000077 #000000FF #EEEEEE
-      inactive_workspace    #000000FF #000000FF #FFFFFF99
+      active_workspace	    #000000FF #000000FF #EEEEEE
+      inactive_workspace    #000000FF #000000FF #999999
       binding_mode	    $col_accent $col_accent #FFFFFF
       separator		    #00000044
-      statusline	    #CCCCCC
+      statusline	    #999999
       background	    #000000FF
    }
 }

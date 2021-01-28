@@ -74,6 +74,7 @@ go
 godot
 gopass
 grimshot
+grub-btrfs
 grub-terminus
 grub-x86_64-efi
 gsound
@@ -175,6 +176,7 @@ ttf-ubuntu-font-family
 unar
 unclutter-xfixes
 uni
+upower
 vdpauinfo
 viu
 vkBasalt
@@ -189,13 +191,16 @@ vsv
 vulkan-loader
 vulkan-loader-32bit
 wev
+wf-recorder
 wget
 wine
 wine-32bit
 winetricks
 wireguard-tools
+wlsunset
 wmctrl
 wob
+wofi
 xarchiver
 xclip
 xdg-desktop-portal-gtk
