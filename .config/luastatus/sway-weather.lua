@@ -68,6 +68,8 @@ widget = {
             luastatus.plugin.push_period(60) -- retry in 60 seconds
             text = "......"
         end
-        return {full_text = text}
+        return {
+            full_text = text
+        }
     end
 }
