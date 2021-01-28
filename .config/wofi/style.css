@@ -1,0 +1,15 @@
+#outer-box {
+	background: #000000;
+	border: 2px solid #000000;
+	color: #eeeeee;
+}
+
+#input {
+	background: #000000;
+	color: #eeeeee;
+}
+
+#text {
+	margin-left: 1em;
+}
+
