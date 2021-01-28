@@ -3,3 +3,5 @@ term=foot
 insensitive=true
 no_actions=true
 width=512
+allow_markup=true
+dmenu-parse_action=true
