@@ -47,8 +47,8 @@ exec_always {
 
 set $term 'footclient'
 set $run 'bemenu-run -m -1 | xargs swaymsg exec --'
-# set $drun 'j4-dmenu-desktop --no-generic --usage-log=tmp/j4.log --display-binary --term=footclient --dmenu=bemenu'
-set $drun 'wofi --show drun'
+set $drun 'j4-dmenu-desktop --no-generic --usage-log=tmp/j4.log --display-binary --term=footclient --dmenu=bemenu'
+# set $drun 'wofi --show drun'
 set $lock 'swaylock -f -c 333333'
 set $clipboard 'clipman pick -t bemenu'
 
