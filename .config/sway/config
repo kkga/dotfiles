@@ -39,8 +39,8 @@ exec_always {
     gsettings set $gnome-schema icon-theme 'Adwaita'
     gsettings set $gnome-schema cursor-theme 'Adwaita'
     gsettings set $gnome-schema cursor-size 24
-    gsettings set $gnome-schema font-name 'sans-serif 10'
-    gsettings set $gnome-schema monospace-font-name 'monospace 10'
+    gsettings set $gnome-schema font-name 'sans-serif 9'
+    gsettings set $gnome-schema monospace-font-name 'monospace 9'
 }
 
 # Variables {{{1
@@ -260,8 +260,8 @@ bindsym $mod+Shift+Backspace mode $powermode
 
 bar {
    status_command luastatus-sway.sh
-   font pango:monospace 8.5
-   height 14
+   font pango:monospace bold 8
+   height 16
    position bottom
    separator_symbol " | "
    status_edge_padding 12
@@ -269,10 +269,10 @@ bar {
    colors {
       focused_workspace	    #00000077 #00000077 #EEEEEE
       active_workspace	    #000000FF #000000FF #EEEEEE
-      inactive_workspace    #000000FF #000000FF #999999
+      inactive_workspace    #000000FF #000000FF #BBBBBB
       binding_mode	    $col_accent $col_accent #FFFFFF
       separator		    #00000044
-      statusline	    #999999
+      statusline	    #BBBBBB
       background	    #000000FF
    }
 }
