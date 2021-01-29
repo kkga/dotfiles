@@ -148,6 +148,8 @@ for_window  [app_id="mpv"               ] floating enable
 
    bindsym XF86MonBrightnessUp exec light -A 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
    bindsym XF86MonBrightnessDown exec light -U 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
+   bindsym Mod1+XF86MonBrightnessUp exec light -s sysfs/backlight/ddcci5 -A 5 && light -s sysfs/backlight/ddcci5 -G | cut -d'.' -f1 > $SWAYSOCK.wob
+   bindsym Mod1+XF86MonBrightnessDown exec light -s sysfs/backlight/ddcci5 -U 5 && light -s sysfs/backlight/ddcci5 -G | cut -d'.' -f1 > $SWAYSOCK.wob
 
    bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
    bindsym XF86AudioRaiseVolume exec pamixer -ui 2 && dc -e "[`pamixer --get-volume`]sM 100d `pamixer --get-volume`<Mp" > $SWAYSOCK.wob
