@@ -15,7 +15,7 @@ ID="43290"
 
 brillo -q -s "$@" > /dev/null
 
-BRIGHTNESS_1="$(brillo -s ddcci4)"
-BRIGHTNESS_2="$(brillo -s ddcci5)"
+BRIGHTNESS_1="$(light -s ddcci4)"
+BRIGHTNESS_2="$(light -s ddcci5)"
 
 dunstify -u low -r "$ID" "Brightness" "1: ${BRIGHTNESS_1}\n2: ${BRIGHTNESS_2}"

@@ -2,6 +2,7 @@ CPU-X
 ImageMagick
 MangoHud
 MangoHud-32bit
+Solaar
 Vulkan-Tools
 alacritty
 alsa-firmware
