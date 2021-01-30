@@ -269,13 +269,14 @@ bar {
    status_edge_padding 12
 
    colors {
-      focused_workspace	    #00000077 #00000077 #EEEEEE
-      active_workspace	    #000000FF #000000FF #EEEEEE
-      inactive_workspace    #000000FF #000000FF #BBBBBB
+      focused_workspace	    #00000077 #00000077 #FFFFFF99
+      active_workspace	    #00000099 #00000099 #FFFFFF99
+      inactive_workspace    #000000FF #000000FF #FFFFFF66
       binding_mode	    $col_accent $col_accent #FFFFFF
       separator		    #00000044
-      statusline	    #BBBBBB
-      background	    #000000FF
+      statusline	    #FFFFFF66
+      background	    #00000099
+      focused_background    #000000FF
    }
 }
 
