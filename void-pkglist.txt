@@ -2,7 +2,6 @@ CPU-X
 ImageMagick
 MangoHud
 MangoHud-32bit
-Solaar
 Vulkan-Tools
 alacritty
 alsa-firmware
@@ -143,6 +142,7 @@ python3-pip
 qemu
 qt5-wayland
 qtpass
+radeontop
 ripgrep
 seahorse
 setxkbmap

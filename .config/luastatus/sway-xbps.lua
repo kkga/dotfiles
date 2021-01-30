@@ -10,7 +10,8 @@ widget = {
         local color = "#ff8888"
         if tonumber(res) > 0 then
             return {
-                full_text = string.format("⇪ %d", res), color = color
+                full_text = string.format("↓ %d", res),
+                color = color
             }
         end
     end
