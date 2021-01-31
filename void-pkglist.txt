@@ -56,6 +56,7 @@ ffsend
 firefox
 fish-shell
 flatpak
+font-ibm-plex-ttf
 font-iosevka
 foot
 fuzzypkg
