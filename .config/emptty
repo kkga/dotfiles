@@ -1,5 +1,5 @@
 #!/bin/sh
-Environment=xorg
+Selection=true
 
 . /etc/profile
 . $HOME/.profile
