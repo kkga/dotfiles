@@ -27,9 +27,9 @@ settings:
   fonts.default_family:
     global: monospace
   fonts.default_size:
-    global: 9pt
+    global: 8pt
   fonts.web.family.sans_serif:
-    global: ubuntu
+    global: null
   qt.highdpi:
     global: true
   scrolling.smooth:
@@ -44,3 +44,5 @@ settings:
     global: 2000
   window.title_format:
     global: qutebrowser
+  zoom.default:
+    global: 90%
