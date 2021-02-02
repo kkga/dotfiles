@@ -22,13 +22,11 @@ bind n findnext 1
 bind N findnext -1
 " Remove search highlighting.
 bind ,<Space> nohlsearch
-" Use sensitive case. Smart case would be nice here, but it doesn't work.
-set findcase sensitive
+set findcase smart
 
 " Smooth scrolling, yes please. This is still a bit janky in Tridactyl.
 set smoothscroll true
 
-" The default jump of 10 is a bit much.
 bind j scrollline 10
 bind k scrollline -10
 
@@ -41,12 +39,5 @@ bind x tabclose
 " because the web site has its own keybindings.
 autocmd DocStart mail.google.com mode ignore
 autocmd DocStart fastmail.com mode ignore
-
-" Sometimes the status bar in the bottom left corner overlaps the Tridactyl
-" command line, so set an option to move the status bar to the right.
-guiset_quiet hoverlink right
-
-
-blacklistadd fastmail.com
-blacklistadd keybr.com
-blacklistadd agilefingers.com
+autocmd DocStart keybr.com mode ignore
+autocmd DocStart agilefingers.com mode ignore

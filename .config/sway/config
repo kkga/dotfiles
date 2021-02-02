@@ -116,26 +116,25 @@ input "type:pointer" {
     pointer_accel 0
 }
 
-
 # Colors {{{1
 
-# Colors                  border                 background             text                   indicator            child_border
-client.focused            $col_black		 $col_black     	$col_white   	       $col_accent        $col_black
-client.focused_inactive   $col_gray_dark         $col_gray_dark            $col_white           $col_gray         $col_gray
-client.unfocused          $col_gray	 	 $col_gray            $col_gray_light           $col_gray        $col_gray
+# Colors                border         background     text            indicato    child_border
+client.focused          $col_black     $col_black     $col_white      $col_accent $col_black
+client.focused_inactive $col_gray_dark $col_gray_dark $col_white      $col_gray   $col_gray
+client.unfocused        $col_gray      $col_gray      $col_gray_light $col_gray   $col_gray
 # client.urgent             $color_bright_yellow   $color_bright_yellow   $color_normal_black    $color_unused        $color_unused
 # client.placeholder        $color_unused          $color_unused          $color_unused          $color_unused        $color_unused
 
-
-
 # Rules {{{1
-#for_window [app_id=".*"                ] split toggle
-#for_window [app_id="firefox"           ] move container to workspace number $ws1
-for_window  [app_id="^launcher$"        ] floating enable
-for_window  [app_id="pavucontrol"       ] focus, floating enable
-for_window  [title="Picture-in-Picture" ] floating enable
-for_window  [app_id="mpv"               ] floating enable
 
+# for_window [ class="^.*"                ] inhibit_idle fullscreen
+# for_window [ app_id="^.*"               ] inhibit_idle fullscreen
+for_window [ class="^Firefox$"          ] inhibit_idle fullscreen
+for_window [ app_id="^firefox$"         ] inhibit_idle fullscreen
+for_window [ app_id="^launcher$"        ] floating enable
+for_window [ app_id="pavucontrol"       ] focus, floating enable
+for_window [ title="Picture-in-Picture" ] floating enable
+for_window [ app_id="mpv"               ] floating enable
 
 # Key bindings {{{1
 
@@ -229,7 +228,7 @@ for_window  [app_id="mpv"               ] floating enable
 
 # Resize mode {{{2
 
-set $mode_resize "== RESIZE =="
+set $mode_resize "=== RESIZE ==="
 mode $mode_resize {
    bindsym $left resize shrink width 10
    bindsym $down resize grow height 10
@@ -244,7 +243,7 @@ mode $mode_resize {
 
 # Menu mode {{{2
 
-set $powermode "=== [E]xit | [R]eebot | [L]ock ==="
+set $powermode "===  [E]xit  [R]eebot  [L]ock  ==="
 
 mode $powermode {
    bindsym e exec swaymsg exit
@@ -262,10 +261,10 @@ bindsym $mod+Shift+Backspace mode $powermode
 
 bar {
    status_command luastatus-sway.sh
-   font pango:monospace 8
-   height 16
+   font pango:monospace 7.5
+   height 12
    position bottom
-   separator_symbol " | "
+   separator_symbol " == "
    status_edge_padding 12
 
    colors {
