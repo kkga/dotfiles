@@ -3,6 +3,7 @@ ImageMagick
 MangoHud
 MangoHud-32bit
 Vulkan-Tools
+Waybar
 alacritty
 alsa-firmware
 alsa-plugins-pulseaudio
@@ -59,6 +60,7 @@ flatpak
 font-ibm-plex-ttf
 font-iosevka
 foot
+fuzzel
 fuzzypkg
 fwupd
 fzy
@@ -175,6 +177,7 @@ topgrade
 trash-cli
 trayer-srg
 ttf-ubuntu-font-family
+ttfautohint
 unar
 unclutter-xfixes
 uni
@@ -226,6 +229,7 @@ xss-lock
 xtools
 xurls
 yadm
+yambar
 yarn
 youtube-dl
 zathura
