@@ -261,10 +261,10 @@ bindsym $mod+Shift+Backspace mode $powermode
 
 bar {
    status_command luastatus-sway.sh
-   font pango:monospace 7.5
-   height 12
+   font pango:monospace 8
+   height 16
    position bottom
-   separator_symbol " == "
+   separator_symbol " | "
    status_edge_padding 12
 
    colors {
