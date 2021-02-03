@@ -142,25 +142,23 @@ for_window [ app_id="mpv"               ] floating enable
    floating_modifier $mod normal
 
    bindsym $mod+Shift+Return exec $term
-   bindsym $mod+p exec $drun
+   bindsym $mod+d exec $drun
    bindsym $mod+Control+c exec $clipboard
+
+   bindsym $mod+Shift+q kill
+   bindsym $mod+Shift+r reload
 
    bindsym XF86MonBrightnessUp exec light -A 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
    bindsym XF86MonBrightnessDown exec light -U 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
    bindsym Mod1+XF86MonBrightnessUp exec light -s sysfs/backlight/ddcci5 -A 5 && light -s sysfs/backlight/ddcci5 -G | cut -d'.' -f1 > $SWAYSOCK.wob
    bindsym Mod1+XF86MonBrightnessDown exec light -s sysfs/backlight/ddcci5 -U 5 && light -s sysfs/backlight/ddcci5 -G | cut -d'.' -f1 > $SWAYSOCK.wob
-
    bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
    bindsym XF86AudioRaiseVolume exec pamixer -ui 2 && dc -e "[`pamixer --get-volume`]sM 100d `pamixer --get-volume`<Mp" > $SWAYSOCK.wob
    bindsym XF86AudioLowerVolume exec pamixer -ud 2 && dc -e "[`pamixer --get-volume`]sM 100d `pamixer --get-volume`<Mp" > $SWAYSOCK.wob
    bindsym XF86AudioMute exec pamixer --toggle-mute && ( pamixer --get-mute && echo 0 > $SWAYSOCK.wob ) || dc -e "[`pamixer --get-volume`]sM 100d `pamixer --get-volume`<Mp" > $SWAYSOCK.wob
-
    bindsym XF86AudioPlay exec playerctl play-pause
    bindsym XF86AudioPrev exec playerctl previous
    bindsym XF86AudioNext exec playerctl next
-
-   bindsym $mod+Shift+c kill
-   bindsym $mod+Backspace reload
 
    bindsym $mod+Control+equal gaps inner current plus 4
    bindsym $mod+Control+minus gaps inner current minus 4
@@ -208,7 +206,6 @@ for_window [ app_id="mpv"               ] floating enable
     bindsym $mod+Shift+7 move container to workspace number 7
     bindsym $mod+Shift+8 move container to workspace number 8
     bindsym $mod+Shift+9 move container to workspace number 9
-
 
 # Layout stuff {{{2
 
