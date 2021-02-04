@@ -2,6 +2,7 @@ CPU-X
 ImageMagick
 MangoHud
 MangoHud-32bit
+SDL2-devel
 Vulkan-Tools
 Waybar
 alacritty
@@ -29,6 +30,7 @@ chromium
 chrony
 clipman
 clipmenu
+cmake
 corectrl
 cross-arm-none-eabi-binutils
 cross-arm-none-eabi-gcc
@@ -94,10 +96,19 @@ keyutils
 lazygit
 lf
 libX11-devel
+libXcomposite-devel
+libXdamage-devel
+libXrender-devel
+libXtst-devel
+libXxf86vm-devel
+libcap-devel
+libdrm-devel
 libgpg-error-devel
+libinput-devel
 libspa-bluetooth
 libusb-compat-devel
 libvdpau-va-gl
+libxkbcommon-devel
 light
 linux5.10
 linux5.10-headers
@@ -117,6 +128,7 @@ mesa-vaapi
 mesa-vdpau
 mesa-vulkan-radeon
 mesa-vulkan-radeon-32bit
+meson
 mpv
 nautilus
 neofetch
@@ -132,6 +144,7 @@ patch
 pavucontrol
 pinentry-gnome
 pipewire
+pixman-devel
 pkg-config
 playerctl
 polkit-elogind
@@ -195,6 +208,8 @@ vpsm
 vsv
 vulkan-loader
 vulkan-loader-32bit
+wayland-devel
+wayland-protocols
 wev
 wf-recorder
 wget
@@ -202,6 +217,7 @@ wine
 wine-32bit
 winetricks
 wireguard-tools
+wlroots-devel
 wlsunset
 wmctrl
 wob
