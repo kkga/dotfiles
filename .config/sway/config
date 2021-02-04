@@ -13,7 +13,7 @@ focus_wrapping yes
 
 gaps inner 8
 
-font pango:monospace 9
+font pango:monospace 8
 titlebar_border_thickness 1
 titlebar_padding 4 1
 
@@ -24,7 +24,8 @@ seat * hide_cursor 5000
 
 exec mako
 exec pipewire
-exec wlsunset -l 55 -L 37 -t 4000 -T 6500
+# exec wlsunset -l 55 -L 37 -t 4000 -T 6500
+exec gammastep -l 55:37
 exec light -S 35
 exec wl-paste -t text --watch clipman store
 exec clipman restore
@@ -145,7 +146,7 @@ for_window [ app_id="mpv"               ] floating enable
    bindsym $mod+d exec $drun
    bindsym $mod+Control+c exec $clipboard
 
-   bindsym $mod+Shift+q kill
+   bindsym $mod+Shift+c kill
    bindsym $mod+Shift+r reload
 
    bindsym XF86MonBrightnessUp exec light -A 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
