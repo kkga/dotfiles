@@ -185,6 +185,9 @@ for_window [ app_id="mpv"               ] floating enable
     bindsym $mod+Shift+comma move output left
     bindsym $mod+Shift+period move output right
 
+    bindsym $mod+Ctrl+k focus parent
+    bindsym $mod+Ctrl+j focus child
+
 # Workspaces {{{2
 
     # Switch to workspace
@@ -212,17 +215,14 @@ for_window [ app_id="mpv"               ] floating enable
 
     bindsym $mod+v splitt
 
-    bindsym $mod+z layout tabbed
-    bindsym $mod+x layout toggle split
+    bindsym $mod+w layout tabbed
+    bindsym $mod+s layout stacking
+    bindsym $mod+e layout toggle split
 
     bindsym $mod+f fullscreen
 
     bindsym $mod+Shift+space floating toggle
     bindsym $mod+space focus mode_toggle
-
-    bindsym $mod+Ctrl+k focus parent
-    bindsym $mod+Ctrl+j focus child
-
 
 # Scratchpad {{{2
 
