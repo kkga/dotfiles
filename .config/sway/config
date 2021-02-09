@@ -24,7 +24,6 @@ seat * hide_cursor 5000
 
 exec mako
 exec pipewire
-# exec wlsunset -l 55 -L 37 -t 4000 -T 6500
 exec gammastep -l 55:37
 exec light -S 35
 exec wl-paste -t text --watch clipman store
@@ -147,7 +146,7 @@ for_window [ app_id="mpv"               ] floating enable
    bindsym $mod+Control+c exec $clipboard
 
    bindsym $mod+Shift+c kill
-   bindsym $mod+Shift+r reload
+   bindsym $mod+Backspace reload
 
    bindsym XF86MonBrightnessUp exec light -A 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
    bindsym XF86MonBrightnessDown exec light -U 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob

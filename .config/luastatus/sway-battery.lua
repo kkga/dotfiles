@@ -9,7 +9,7 @@ widget =
         local symbol =
             ({
             Charging = "↑",
-            Discharging = "↓"
+            Discharging = ""
         })[t.status] or " "
 
         local color
