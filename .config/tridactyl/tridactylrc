@@ -35,9 +35,8 @@ bind K tabprev
 bind J tabnext
 bind x tabclose
 
-" Don't run Tridactyl on some web sites because it doesn't work well, or
-" because the web site has its own keybindings.
 autocmd DocStart mail.google.com mode ignore
 autocmd DocStart fastmail.com mode ignore
 autocmd DocStart keybr.com mode ignore
 autocmd DocStart agilefingers.com mode ignore
+autocmd DocStart evgeny-nadymov.github.io mode ignore

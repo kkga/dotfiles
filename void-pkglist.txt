@@ -25,6 +25,7 @@ bluez-qt5
 bottom
 brightnessctl
 brillo
+cadaver
 cargo
 chromium
 chrony
@@ -35,6 +36,7 @@ corectrl
 cross-arm-none-eabi-binutils
 cross-arm-none-eabi-gcc
 cross-arm-none-eabi-newlib
+davfs2
 dbus
 ddcci-dkms
 ddcutil
@@ -84,6 +86,7 @@ grub-terminus
 grub-x86_64-efi
 gsound
 gstreamer1-pipewire
+gvfs
 hidapi
 htop
 imv
@@ -164,6 +167,7 @@ seahorse
 setxkbmap
 skim
 slop
+smbclient
 snapper
 snooze
 socklog-void
