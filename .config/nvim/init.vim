@@ -33,12 +33,15 @@ let g:ale_lint_on_insert_leave = 0
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'css': ['prettier'],
+\   'html': ['prettier'],
+\   'javascript': ['prettier'],
 \   'json': ['prettier'],
 \   'lua': ['luafmt'],
 \   'markdown': ['prettier'],
 \}
 let g:ale_linters = {
 \   'rust': ['analyzer', 'cargo', 'rls'],
+\   'javascript': ['eslint'],
 \   'markdown': ['alex']
 \}
 
@@ -210,8 +213,6 @@ nmap <leader>9 <Plug>BufTabLine.Go(9)
 nmap <leader>0 <Plug>BufTabLine.Go(10)
 nnoremap <C-j> :bnext<CR>
 nnoremap <C-k> :bprev<CR>
-" }}}
-" ale {{{
 " }}}
 " solarized8 {{{
 " let g:solarized_visibility = "low"

@@ -9,6 +9,7 @@ alacritty
 alsa-firmware
 alsa-plugins-pulseaudio
 alsa-utils
+astyle
 autorandr
 avr-binutils
 avr-gcc
@@ -29,6 +30,7 @@ cadaver
 cargo
 chromium
 chrony
+clang-tools-extra
 clipman
 clipmenu
 cmake
