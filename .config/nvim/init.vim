@@ -36,12 +36,14 @@ let g:ale_fixers = {
 \   'html': ['prettier'],
 \   'javascript': ['prettier'],
 \   'json': ['prettier'],
+\   'javascript': ['prettier'],
+\   'html': ['prettier'],
 \   'lua': ['luafmt'],
 \   'markdown': ['prettier'],
 \}
 let g:ale_linters = {
 \   'rust': ['analyzer', 'cargo', 'rls'],
-\   'javascript': ['eslint'],
+\   'html': ['prettier'],
 \   'markdown': ['alex']
 \}
 
