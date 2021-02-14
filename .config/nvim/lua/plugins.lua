@@ -5,10 +5,13 @@ return require("packer").startup(
         use {"wbthomason/packer.nvim", opt = true}
 
         -- themes
+        use "~/repos/vim-envy"
         use "romainl/Apprentice"
         use {"yorickpeterse/vim-paper", url = "https://gitlab.com/yorickpeterse/vim-paper.git"}
         use "lifepillar/vim-colortemplate"
-        use "~/repos/vim-envy"
+        use  "https://gitlab.com/protesilaos/tempus-themes-vim.git"
+        use  "jonathanfilip/vim-lucius"
+
 
         -- utils
         use "tpope/vim-surround"

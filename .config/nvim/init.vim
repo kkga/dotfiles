@@ -34,11 +34,14 @@ let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'css': ['prettier'],
 \   'json': ['prettier'],
+\   'javascript': ['prettier'],
+\   'html': ['prettier'],
 \   'lua': ['luafmt'],
 \   'markdown': ['prettier'],
 \}
 let g:ale_linters = {
 \   'rust': ['analyzer', 'cargo', 'rls'],
+\   'html': ['prettier'],
 \   'markdown': ['alex']
 \}
 
