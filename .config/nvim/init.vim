@@ -36,8 +36,6 @@ let g:ale_fixers = {
 \   'html': ['prettier'],
 \   'javascript': ['prettier'],
 \   'json': ['prettier'],
-\   'javascript': ['prettier'],
-\   'html': ['prettier'],
 \   'lua': ['luafmt'],
 \   'markdown': ['prettier'],
 \}

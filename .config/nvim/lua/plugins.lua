@@ -9,7 +9,6 @@ return require("packer").startup(
         use "romainl/Apprentice"
         use {"yorickpeterse/vim-paper", url = "https://gitlab.com/yorickpeterse/vim-paper.git"}
         use "lifepillar/vim-colortemplate"
-        use  "https://gitlab.com/protesilaos/tempus-themes-vim.git"
         use  "jonathanfilip/vim-lucius"
 
 
