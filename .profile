@@ -11,6 +11,7 @@ export BROWSER=firefox
 export EDITOR=nvim
 export VISUAL=nvim
 export DMENU=bemenu
+export PAGER=nvimpager
 
 export SKIM_DEFAULT_OPTIONS="--height 40% --reverse --color bw"
 export BEMENU_OPTS="--ignorecase --list 12 -p '' -P ''\
