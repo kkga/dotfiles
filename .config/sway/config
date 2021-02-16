@@ -3,7 +3,7 @@
 # General settings {{{1
 
 # xwayland disable
-default_border pixel 1
+default_border pixel
 default_floating_border pixel 2
 
 smart_borders on

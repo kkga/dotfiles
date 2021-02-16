@@ -60,6 +60,7 @@ return require("packer").startup(
         use "habamax/vim-godot"
         use "axvr/org.vim"
         use "euclidianAce/BetterLua.vim"
+        use "evanleck/vim-svelte"
         use {
             "fatih/vim-go",
             run = ":GoUpdateBinaries",
