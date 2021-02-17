@@ -48,13 +48,12 @@ return require("packer").startup(
         use "justinmk/vim-dirvish"
         use "dyng/ctrlsf.vim"
         use "mhinz/vim-grepper"
-        -- use 'srstevenson/vim-picker'
-        use "ctrlpvim/ctrlp.vim"
+        use 'srstevenson/vim-picker'
+        -- use "ctrlpvim/ctrlp.vim"
 
         -- lsp
         use "neoclide/coc.nvim"
         use "dense-analysis/ale"
-        use "preservim/tagbar"
 
         -- lang
         use "habamax/vim-godot"

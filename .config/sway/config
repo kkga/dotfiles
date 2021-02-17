@@ -51,14 +51,15 @@ set $drun 'wofi'
 set $lock 'swaylock -f -c 000000'
 set $clipboard 'clipman pick -t wofi'
 
-set $col_trans #FFFFFF00
-set $col_white  #EEEEEE
-set $col_gray_light  #FFFFFFAA
-set $col_gray #00000033
-set $col_gray_dark #00000066
-set $col_accent #d75f00
-set $col_black #000000
-set $col_bg #84998F
+set $col_trans      #FFFFFF00
+set $col_white      #EEEEEE
+set $col_gray_light #FFFFFFAA
+set $col_gray_mid   #00000099
+set $col_gray       #00000033
+set $col_gray_dark  #00000066
+set $col_accent     #d75f00
+set $col_black      #000000
+set $col_bg         #84998F
 
 set $mod Mod4
 set $left h
@@ -121,7 +122,7 @@ input "type:pointer" {
 # Colors                border         background     text            indicato    child_border
 client.focused          $col_black     $col_black     $col_white      $col_accent $col_black
 client.focused_inactive $col_gray_dark $col_gray_dark $col_white      $col_gray   $col_gray
-client.unfocused        $col_gray      $col_gray      $col_gray_light $col_gray   $col_gray
+client.unfocused        $col_gray_mid      $col_gray_mid      $col_gray_light $col_gray   $col_gray
 # client.urgent             $color_bright_yellow   $color_bright_yellow   $color_normal_black    $color_unused        $color_unused
 # client.placeholder        $color_unused          $color_unused          $color_unused          $color_unused        $color_unused
 

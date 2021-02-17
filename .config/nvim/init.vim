@@ -57,20 +57,16 @@ let g:grepper.next_tool     = '<leader>g'
 let g:grepper.prompt_text   = '$c>'
 let g:grepper.quickfix      = 0
 " }}}
-" ctrlp {{{
-" let g:ctrlp_map = '<C-p>p'
-let g:ctrlp_user_command = 'fd --type f --color never "" %s'
-" let g:ctrlp_user_command = 'rg %s --files --sort=modified --color=never --glob ""'
-let g:ctrlp_by_filename = 1
-let g:ctrlp_use_caching = 0
-let g:ctrlp_match_window = 'bottom,order:ttp,min:10,max:10,results:40'
-
-" nnoremap <C-p>p :CtrlP<CR>
-" nnoremap <C-p>n :CtrlP ~/notes<CR>
-" nnoremap <C-p>c :CtrlP ~/.config/nvim/<CR>
-" nnoremap <C-p>r :CtrlPMRU<CR>
-" nnoremap <C-p>b :CtrlPBuffer<CR>
-" nnoremap <C-p>l :CtrlPLine<CR>
+" picker {{{
+nmap <unique> <leader><space>e <Plug>(PickerEdit)
+nmap <unique> <leader><space>s <Plug>(PickerSplit)
+nmap <unique> <leader><space>t <Plug>(PickerTabedit)
+nmap <unique> <leader><space>v <Plug>(PickerVsplit)
+nmap <unique> <leader><space>b <Plug>(PickerBuffer)
+nmap <unique> <leader><space>] <Plug>(PickerTag)
+nmap <unique> <leader><space>w <Plug>(PickerStag)
+nmap <unique> <leader><space>o <Plug>(PickerBufferTag)
+nmap <unique> <leader><space>h <Plug>(PickerHelp)
 " }}}
 " ctrlsf {{{
 nmap     <C-F>f <Plug>CtrlSFPrompt
@@ -380,14 +376,6 @@ endfunc
 let mapleader = "\<space>"
 let maplocalleader = "\,"
 
-" move lines around
-" nnoremap <c-j> :m .+1<CR>==
-" nnoremap <c-k> :m .-2<CR>==
-" inoremap <c-j> <Esc>:m .+1<CR>==gi
-" inoremap <c-k> <Esc>:m .-2<CR>==gi
-" vnoremap <c-j> :m '>+1<CR>gv=gv
-" vnoremap <c-k> :m '<-2<CR>gv=gv
-
 " esc alternative
 inoremap jk <esc>
 inoremap kj <esc>
@@ -411,10 +399,10 @@ map <silent> Q: :q<Cr>
 nnoremap Q nop
 
 " yank/put to system clipboard
-vnoremap <leader>y "+y
-nnoremap <leader>y "+y
-nnoremap <leader>p "+p
-vnoremap <leader>p "+p
+" vnoremap <leader>y "+y
+" nnoremap <leader>y "+y
+" nnoremap <leader>p "+p
+" vnoremap <leader>p "+p
 
 " motion across wrapped lines
 nnoremap <silent>j gj
@@ -448,118 +436,3 @@ nnoremap <leader>sr :source $MYVIMRC<cr>
 nnoremap <leader>* :%s/\<<c-r><c-w>\>//g<left><left>
 
 "}}}
-" NOTETAKING {{{
-" https://vimways.org/2019/personal-notetaking-in-vim/
-
-func! ZettelEdit(...)
-
-  " build the file name
-  let l:sep = ''
-  if len(a:000) > 0
-    let l:sep = '-'
-  endif
-  let l:fname = expand('~/notes/') . strftime("%F-%H%M") . l:sep . join(a:000, '-') . '.md'
-
-  " edit the new file
-  exec "e " . l:fname
-
-  " enter the title and timestamp (using ultisnips) in the new file
-  if len(a:000) > 0
-    exec "normal ggO\<c-r>=strftime('%Y-%m-%d %H:%M')\<cr> " . join(a:000) . "\<cr>\<esc>G"
-  else
-    exec "normal ggO\<c-r>=strftime('%Y-%m-%d %H:%M')\<cr>\<cr>\<esc>G"
-  endif
-endfunc
-
-" new note creation
-command! -nargs=* Zet call ZettelEdit(<f-args>)
-
-command! -bang -nargs=? -complete=dir NoteFiles
-    \ call fzf#vim#files('$HOME/notes/', {'options': ['--color', 'bw', '--preview', 'bat --plain --color=always {}']}, <bang>0)
-
-let s:notes_folder = "~/notes"
-let s:notes_fileending = ".md"
-
-" This is either called with
-" 0 lines, which means there's no result and no query
-" 1 line, which means there's no result, but a user query
-"         in this case: create a new file, based on user query
-" 2 lines, which means there are results, so open them
-"
-function! s:note_handler(lines)
-  if len(a:lines) < 1 | return | endif
-
-  if len(a:lines) == 1
-    let query = a:lines[0]
-    let new_filename = fnameescape(query . s:notes_fileending)
-    let new_title = "# " . query
-
-    execute "edit " . new_filename
-
-    " Append the new title and an empty line
-    let failed = append(0, [new_title, ''])
-    if (failed)
-      echo "Unable to insert title file!"
-    else
-      let &modified = 1
-    endif
-  else
-    execute "edit " fnameescape(a:lines[1])
-  endif
-endfunction
-
-command! -nargs=* Notes call fzf#run({
-\ 'sink*':   function('<sid>note_handler'),
-\ 'options': '--print-query ',
-\ 'dir':     s:notes_folder
-\ })
-
-function! s:rg_to_quickfix(line)
-  let parts = split(a:line, ':')
-  return {'filename': parts[0], 'lnum': parts[1], 'col': parts[2],
-        \ 'text': join(parts[3:], ':')}
-endfunction
-
-function! s:find_notes_handler(lines)
-  if len(a:lines) < 2 | return | endif
-
-  let cmd = get({'ctrl-x': 'split',
-               \ 'ctrl-v': 'vertical split',
-               \ 'ctrl-t': 'tabe'}, a:lines[0], 'e')
-  let list = map(a:lines[1:], 's:rg_to_quickfix(v:val)')
-
-  let first = list[0]
-  execute cmd escape(first.filename, ' %#\')
-  execute first.lnum
-  execute 'normal!' first.col.'|zz'
-
-  if len(list) > 1
-    call setqflist(list)
-    copen
-    wincmd p
-  endif
-endfunction
-
-command! -nargs=* FindNotes call fzf#run({
-\ 'source':  printf('rg --column --color=always "%s"',
-\                   escape(empty(<q-args>) ? '' : <q-args>, '"\')),
-\ 'sink*':    function('<sid>find_notes_handler'),
-\ 'options': '--ansi --expect=ctrl-t,ctrl-v,ctrl-x --delimiter : --nth 4.. '.
-\            '--multi --bind=ctrl-a:select-all,ctrl-d:deselect-all '.
-\            '--color hl:68,hl+:110',
-\ 'down':    '50%',
-\ 'dir':     s:notes_folder
-\ })
-
-command! -bang -nargs=* FindNotesWithPreview
-  \ call fzf#vim#grep(
-  \   'rg --column -line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
-  \   fzf#vim#with_preview({'dir': s:notes_folder}, 'right:50%'),
-  \   0,
-  \ )
-
-" nmap <silent> <leader>nn :Notes<CR>
-" nmap <silent> <leader>fn :FindNotes<CR>
-" nmap <silent> <leader>nw :FindNotesWithPreview<CR>
-
-" }}}
