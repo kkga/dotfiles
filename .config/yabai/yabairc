@@ -4,7 +4,7 @@ sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
 # global settings
-yabai -m config mouse_follows_focus          on
+yabai -m config mouse_follows_focus          off
 yabai -m config focus_follows_mouse          off
 yabai -m config window_placement             second_child
 yabai -m config window_topmost               on
@@ -27,10 +27,10 @@ yabai -m config mouse_action2                resize
 # general space settings
 yabai -m config layout                       bsp
 yabai -m config window_gap                   4
-yabai -m config external_bar                 all:20:0
+yabai -m config external_bar                 all:16:0
 
 # space config
-yabai -m config --space 8 layout float
+yabai -m config --space 9 layout float
 
 # rules for apps
 yabai -m rule --add app="^System Preferences$" manage=off
