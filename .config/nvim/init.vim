@@ -58,15 +58,15 @@ let g:grepper.prompt_text   = '$c>'
 let g:grepper.quickfix      = 0
 " }}}
 " picker {{{
-nmap <unique> <leader><space>e <Plug>(PickerEdit)
-nmap <unique> <leader><space>s <Plug>(PickerSplit)
-nmap <unique> <leader><space>t <Plug>(PickerTabedit)
-nmap <unique> <leader><space>v <Plug>(PickerVsplit)
-nmap <unique> <leader><space>b <Plug>(PickerBuffer)
-nmap <unique> <leader><space>] <Plug>(PickerTag)
-nmap <unique> <leader><space>w <Plug>(PickerStag)
-nmap <unique> <leader><space>o <Plug>(PickerBufferTag)
-nmap <unique> <leader><space>h <Plug>(PickerHelp)
+nmap <unique> <C-p>e <Plug>(PickerEdit)
+nmap <unique> <C-p>s <Plug>(PickerSplit)
+nmap <unique> <C-p>t <Plug>(PickerTabedit)
+nmap <unique> <C-p>v <Plug>(PickerVsplit)
+nmap <unique> <C-p>b <Plug>(PickerBuffer)
+nmap <unique> <C-p>] <Plug>(PickerTag)
+nmap <unique> <C-p>w <Plug>(PickerStag)
+nmap <unique> <C-p>o <Plug>(PickerBufferTag)
+nmap <unique> <C-p>h <Plug>(PickerHelp)
 " }}}
 " ctrlsf {{{
 nmap     <C-F>f <Plug>CtrlSFPrompt

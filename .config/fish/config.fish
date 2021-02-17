@@ -7,6 +7,9 @@ alias y=yadm
 
 alias xr='doas xbps-remove'
 
+set --global hydro_symbol_prompt '→'
+set --global hydro_symbol_git_dirty '*'
+
 set fish_greeting
 set fish_color_command normal --bold
 set fish_color_param normal
