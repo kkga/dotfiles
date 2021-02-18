@@ -59,6 +59,7 @@ return require("packer").startup(
         use "habamax/vim-godot"
         use "axvr/org.vim"
         use "euclidianAce/BetterLua.vim"
+        use "HerringtonDarkholme/yats.vim"
         use "evanleck/vim-svelte"
         use "pangloss/vim-javascript"
         use {
