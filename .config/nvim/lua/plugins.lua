@@ -11,7 +11,6 @@ return require("packer").startup(
         use "lifepillar/vim-colortemplate"
         use  "jonathanfilip/vim-lucius"
 
-
         -- utils
         use "tpope/vim-surround"
         use "tpope/vim-repeat"
@@ -52,8 +51,17 @@ return require("packer").startup(
         -- use "ctrlpvim/ctrlp.vim"
 
         -- lsp
-        use "neoclide/coc.nvim"
-        use "dense-analysis/ale"
+        -- use "neoclide/coc.nvim"
+        -- use "dense-analysis/ale"
+        use 'prabirshrestha/asyncomplete.vim'
+        use 'prabirshrestha/asyncomplete-lsp.vim'
+        use "prabirshrestha/vim-lsp"
+        use "mattn/vim-lsp-settings"
+        use { 'prettier/vim-prettier', run = 'yarn install' }
+
+        -- snippets
+        -- use 'hrsh7th/vim-vsnip'
+        -- use 'hrsh7th/vim-vsnip-integ'
 
         -- lang
         use "habamax/vim-godot"
