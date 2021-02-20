@@ -1,5 +1,5 @@
 {
-  "diagnostic.displayByAle": true,
+  "diagnostic.displayByAle": false,
   "languageserver": {
     "golang": {
       "command": "gopls",
@@ -24,5 +24,6 @@
     }
   },
   "rust-analyzer.checkOnSave.command": "clippy",
-  "coc.preferences.extensionUpdateCheck": "never"
+  "coc.preferences.extensionUpdateCheck": "never",
+    "coc.preferences.formatOnSaveFiletypes": ["typescript", "typescriptreact", "json", "javascript"]
 }
