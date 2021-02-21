@@ -24,6 +24,15 @@
     }
   },
   "rust-analyzer.checkOnSave.command": "clippy",
+  "coc.preferences.extensionUpdateCheck": "daily",
   "coc.preferences.extensionUpdateCheck": "never",
-    "coc.preferences.formatOnSaveFiletypes": ["typescript", "typescriptreact", "json", "javascript"]
+  "coc.preferences.formatOnSaveFiletypes": [
+    "typescript",
+    "typescriptreact",
+    "json",
+    "javascript",
+    "css",
+    "markdown",
+    "svelte"
+  ]
 }

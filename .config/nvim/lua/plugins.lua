@@ -10,11 +10,11 @@ return require("packer").startup(
         use {"yorickpeterse/vim-paper", url = "https://gitlab.com/yorickpeterse/vim-paper.git"}
         use "lifepillar/vim-colortemplate"
         use  "jonathanfilip/vim-lucius"
+        use "axvr/photon.vim"
 
         -- utils
         use "tpope/vim-surround"
         use "tpope/vim-repeat"
-        use "tpope/vim-fugitive"
         use "tpope/vim-commentary"
         use "tpope/vim-sleuth"
         use "tpope/vim-eunuch"
@@ -23,17 +23,14 @@ return require("packer").startup(
         use "tpope/vim-rsi"
         use "cohama/lexima.vim"
         use "airblade/vim-rooter"
-        use "mhinz/vim-sayonara"
         use "rhysd/clever-f.vim"
         use "justinmk/vim-sneak"
-        use "romainl/vim-tinyMRU"
 
         -- ui
         use "airblade/vim-gitgutter"
         use "ap/vim-buftabline"
         use "mbbill/undotree"
         use "junegunn/vim-peekaboo"
-        use "machakann/vim-highlightedyank"
 
         -- notes
         use "plasticboy/vim-markdown"
@@ -52,13 +49,10 @@ return require("packer").startup(
 
         -- lsp
         use "neoclide/coc.nvim"
-        -- use "dense-analysis/ale"
-
 
         -- lang
         use "habamax/vim-godot"
         use "axvr/org.vim"
-        use "euclidianAce/BetterLua.vim"
         use "HerringtonDarkholme/yats.vim"
         use "evanleck/vim-svelte"
         use "pangloss/vim-javascript"
