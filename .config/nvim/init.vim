@@ -3,82 +3,18 @@
 " PLUGINS {{{
 lua require'plugins'
 
-" vim-go {{{
-let g:go_fmt_autosave = 1
-let g:go_fmt_command = "goimports"
-let g:go_doc_keywordprg_enabled = 0
-let g:go_def_mapping_enabled = 0
-let g:go_fold_enable = ['block', 'import', 'varconst', 'package_comment']
-let g:go_highlight_structs = 0
-let g:go_highlight_interfaces = 0
-let g:go_highlight_operators = 0
-let g:go_highlight_trailing_whitespace_error = 0
-" }}}
-" sneak {{{
-let g:sleuth_automatic = 1
-let g:sneak#s_next = 1
-" }}}
-" ale {{{
-" let g:ale_disable_lsp = 1
-" let g:ale_sign_error = '✖'
-" let g:ale_sign_warning = '●'
-" let g:ale_virtualtext_cursor = 1
-" let g:ale_echo_msg_format = '[%linter%]: %s'
-" let g:ale_lint_on_enter = 1
-" let g:ale_fix_on_save = 1
-" let g:ale_fix_on_enter = 0
-" let g:ale_lint_on_text_changed = 'never'
-" let g:ale_lint_on_insert_leave = 0
-
-" let g:ale_fixers = {
-" \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-" \   'css': ['prettier'],
-" \   'html': ['prettier'],
-" \   'javascript': ['prettier'],
-" \   'typescript': ['prettier'],
-" \   'json': ['prettier'],
-" \   'lua': ['luafmt'],
-" \   'markdown': ['prettier'],
-" \}
-" let g:ale_linters = {
-" \   'rust': ['analyzer', 'cargo', 'rls'],
-" \   'html': ['prettier'],
-" \   'markdown': ['alex']
-" \}
-
-" nmap <silent> <leader>k <Plug>(ale_previous)
-" nmap <silent> <leader>j <Plug>(ale_next)
-
-" }}}
-" grepper {{{
-let g:grepper               = {}
-let g:grepper.tools         = ['rg', 'git', 'grep']
-let g:grepper.jump          = 1
-let g:grepper.next_tool     = '<leader>g'
-let g:grepper.prompt_text   = '$c>'
-let g:grepper.quickfix      = 0
-" }}}
-" picker {{{
-nmap <C-p>e <Plug>(PickerEdit)
-nmap <C-p>s <Plug>(PickerSplit)
-nmap <C-p>t <Plug>(PickerTabedit)
-nmap <C-p>v <Plug>(PickerVsplit)
-nmap <C-p>b <Plug>(PickerBuffer)
-nmap <C-p>] <Plug>(PickerTag)
-nmap <C-p>w <Plug>(PickerStag)
-nmap <C-p>o <Plug>(PickerBufferTag)
-nmap <C-p>h <Plug>(PickerHelp)
-" }}}
-" ctrlsf {{{
-nmap     <C-F>f <Plug>CtrlSFPrompt
-vmap     <C-F>f <Plug>CtrlSFVwordPath
-vmap     <C-F>F <Plug>CtrlSFVwordExec
-nmap     <C-F>n <Plug>CtrlSFCwordPath
-nmap     <C-F>p <Plug>CtrlSFPwordPath
-nnoremap <C-F>o :CtrlSFOpen<CR>
-nnoremap <C-F>t :CtrlSFToggle<CR>
-" }}}
 " coc {{{
+
+let g:coc_global_extensions = [
+      \  'coc-prettier',
+      \  'coc-tsserver', 
+      \  'coc-html', 
+      \  'coc-css', 
+      \  'coc-json', 
+      \  'coc-git',
+      \  'coc-lists',
+      \  'coc-yank',
+      \]
 
 set updatetime=300
 set shortmess+=c
@@ -91,6 +27,7 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
 function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
@@ -99,10 +36,9 @@ endfunction
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
-" Make <CR> auto-select the first completion item and notify coc.nvim to
-" format on enter, <cr> could be remapped by other vim plugin
 inoremap <silent><expr> <cr> pumvisible() ? coc#_select_confirm()
-                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+                \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
 
 " Mappings
 nmap <silent> gd <Plug>(coc-definition)
@@ -180,6 +116,81 @@ nnoremap <silent><nowait> <space>ls  :<C-u>CocList -I symbols<cr>
 nnoremap <silent><nowait> <space>lj  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>lk  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>lr  :<C-u>CocListResume<CR>
+" }}}
+" vim-go {{{
+let g:go_fmt_autosave = 1
+let g:go_fmt_command = "goimports"
+let g:go_doc_keywordprg_enabled = 0
+let g:go_def_mapping_enabled = 0
+let g:go_fold_enable = ['block', 'import', 'varconst', 'package_comment']
+let g:go_highlight_structs = 0
+let g:go_highlight_interfaces = 0
+let g:go_highlight_operators = 0
+let g:go_highlight_trailing_whitespace_error = 0
+" }}}
+" sneak {{{
+let g:sleuth_automatic = 1
+let g:sneak#s_next = 1
+" }}}
+" ale {{{
+" let g:ale_disable_lsp = 1
+" let g:ale_sign_error = '✖'
+" let g:ale_sign_warning = '●'
+" let g:ale_virtualtext_cursor = 1
+" let g:ale_echo_msg_format = '[%linter%]: %s'
+" let g:ale_lint_on_enter = 1
+" let g:ale_fix_on_save = 1
+" let g:ale_fix_on_enter = 0
+" let g:ale_lint_on_text_changed = 'never'
+" let g:ale_lint_on_insert_leave = 0
+
+" let g:ale_fixers = {
+" \   '*': ['remove_trailing_lines', 'trim_whitespace'],
+" \   'css': ['prettier'],
+" \   'html': ['prettier'],
+" \   'javascript': ['prettier'],
+" \   'typescript': ['prettier'],
+" \   'json': ['prettier'],
+" \   'lua': ['luafmt'],
+" \   'markdown': ['prettier'],
+" \}
+" let g:ale_linters = {
+" \   'rust': ['analyzer', 'cargo', 'rls'],
+" \   'html': ['prettier'],
+" \   'markdown': ['alex']
+" \}
+
+" nmap <silent> <leader>k <Plug>(ale_previous)
+" nmap <silent> <leader>j <Plug>(ale_next)
+
+" }}}
+" grepper {{{
+let g:grepper               = {}
+let g:grepper.tools         = ['rg', 'git', 'grep']
+let g:grepper.jump          = 1
+let g:grepper.next_tool     = '<leader>g'
+let g:grepper.prompt_text   = '$c>'
+let g:grepper.quickfix      = 0
+" }}}
+" picker {{{
+nmap <C-p>e <Plug>(PickerEdit)
+nmap <C-p>s <Plug>(PickerSplit)
+nmap <C-p>t <Plug>(PickerTabedit)
+nmap <C-p>v <Plug>(PickerVsplit)
+nmap <C-p>b <Plug>(PickerBuffer)
+nmap <C-p>] <Plug>(PickerTag)
+nmap <C-p>w <Plug>(PickerStag)
+nmap <C-p>o <Plug>(PickerBufferTag)
+nmap <C-p>h <Plug>(PickerHelp)
+" }}}
+" ctrlsf {{{
+nmap     <C-F>f <Plug>CtrlSFPrompt
+vmap     <C-F>f <Plug>CtrlSFVwordPath
+vmap     <C-F>F <Plug>CtrlSFVwordExec
+nmap     <C-F>n <Plug>CtrlSFCwordPath
+nmap     <C-F>p <Plug>CtrlSFPwordPath
+nnoremap <C-F>o :CtrlSFOpen<CR>
+nnoremap <C-F>t :CtrlSFToggle<CR>
 " }}}
 " buftabline {{{
 let g:buftabline_show = 1

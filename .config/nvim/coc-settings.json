@@ -25,7 +25,7 @@
   },
   "rust-analyzer.checkOnSave.command": "clippy",
   "coc.preferences.extensionUpdateCheck": "daily",
-  "coc.preferences.extensionUpdateCheck": "never",
+  "coc.preferences.formatOnType": true,
   "coc.preferences.formatOnSaveFiletypes": [
     "typescript",
     "typescriptreact",

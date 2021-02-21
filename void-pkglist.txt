@@ -180,6 +180,7 @@ spotify-qt
 spotify-tui
 spotifyd
 steam
+sublime-text3
 sway
 swayidle
 swaylock
