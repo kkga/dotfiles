@@ -13,7 +13,7 @@ focus_wrapping yes
 
 gaps inner 8
 
-font pango:monospace 8
+font terminus bold 10
 titlebar_border_thickness 1
 titlebar_padding 4 1
 
@@ -265,7 +265,6 @@ bindsym $mod+Shift+Backspace mode $powermode
 
 bar {
    status_command luastatus-sway.sh
-   font pango:monospace 8
    height 16
    position bottom
    separator_symbol " | "
@@ -277,7 +276,7 @@ bar {
       inactive_workspace    #000000FF #000000FF #FFFFFF66
       binding_mode	    $col_accent $col_accent #FFFFFF
       separator		    #00000044
-      statusline	    #FFFFFF66
+      statusline	    #999999
       background	    #000000FF
       focused_background    #000000FF
    }

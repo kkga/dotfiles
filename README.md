@@ -1,7 +1,7 @@
 Relatively simple Linux config for desktop, managed with [yadm](https://github.com/TheLocehiliosan/yadm).
 
 |                 |                                                                                                    |
-|-----------------|----------------------------------------------------------------------------------------------------|
+| --------------- | -------------------------------------------------------------------------------------------------- |
 | OS              | [Void Linux][void] ([package list][pkglist])                                                       |
 | window manager  | Xorg: [spectrwm][spectrwm] ([config][spectrwm.conf]), Wayland: [sway][sway] ([config][swayconfig]) |
 | status bar      | [luastatus][luastatus]                                                                             |
