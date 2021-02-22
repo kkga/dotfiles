@@ -1,3 +1,14 @@
+[language.typescript]
+filetypes = ["typescript"]
+roots = ["package.json"]
+command = "typescript-language-server"
+args = ["--stdio"]
+
+[language.javascript]
+filetypes = ["javascript"]
+roots = ["package.json"]
+command = "typescript-language-server"
+
 [language.svelte]
 filetypes = ["svelte"]
 roots = ["package.json"]

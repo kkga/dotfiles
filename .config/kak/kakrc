@@ -1,8 +1,5 @@
-eval %sh{kak-lsp --kakoune -s $kak_session}
-lsp-enable
-
 # Set the colour scheme
-colorscheme default
+colorscheme kaleidoscope-dark
 
 # Width of a tab
 set-option global tabstop 4
@@ -31,3 +28,7 @@ map -docstring "paste the clipboard" global user p "<a-!> xsel<ret>"
 
 # Shortcut to quickly exit the editor
 define-command -docstring "save and quit" x "write-all; quit"
+
+# LSP
+eval %sh{kak-lsp --kakoune -s $kak_session}
+lsp-enable

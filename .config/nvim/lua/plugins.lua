@@ -11,7 +11,6 @@ return require("packer").startup(
         use "lifepillar/vim-colortemplate"
         use  "jonathanfilip/vim-lucius"
         use "axvr/photon.vim"
-        use 'yanisdb/primer-dark.vim'
         use 'caksoylar/vim-mysticaltutor'
 
         -- utils

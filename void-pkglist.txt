@@ -65,6 +65,7 @@ fish-shell
 flatpak
 font-ibm-plex-ttf
 font-iosevka
+fontmanager
 foot
 fuzzel
 fuzzypkg
@@ -96,6 +97,7 @@ inxi
 iwd
 j4-dmenu-desktop
 jq
+kak-lsp
 kakoune
 keyutils
 lazygit
