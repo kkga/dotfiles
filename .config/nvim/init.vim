@@ -6,6 +6,7 @@ lua require'plugins'
 " coc {{{
 
 let g:coc_global_extensions = [
+      \  'coc-svelte',
       \  'coc-prettier',
       \  'coc-tsserver', 
       \  'coc-html', 
