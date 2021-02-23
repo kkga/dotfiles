@@ -21,7 +21,7 @@ return require("packer").startup(
         use "tpope/vim-eunuch"
         use "tpope/vim-unimpaired"
         use "tpope/vim-rsi"
-        -- use "cohama/lexima.vim"
+        use "cohama/lexima.vim"
         use "airblade/vim-rooter"
         use "rhysd/clever-f.vim"
         use "justinmk/vim-sneak"
@@ -45,7 +45,7 @@ return require("packer").startup(
         use "dyng/ctrlsf.vim"
         use "mhinz/vim-grepper"
         use 'srstevenson/vim-picker'
-        -- use "ctrlpvim/ctrlp.vim"
+        use { 'junegunn/fzf', run = function() vim.fn['fzf#install']() end  }
 
         -- lsp
         use "neoclide/coc.nvim"
