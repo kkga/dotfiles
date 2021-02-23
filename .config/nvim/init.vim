@@ -3,6 +3,11 @@
 " PLUGINS {{{
 lua require'plugins'
 
+" fzf-preview {{{
+" let g:fzf_preview_command = 'bat --color=always --theme=ansi-light --plain {-1}' " Installed bat
+" let g:fzf_preview_lines_command = 'bat --color=always --theme=ansi-light --plain --number' " Installed bat
+
+" }}}
 " coc {{{
 
 let g:coc_global_extensions = [
@@ -331,9 +336,8 @@ set nojoinspaces                " Set 1 space btwn lines/periods to be joined
 set scrolloff=8               " Working line will always be in the center
 
 " fish doesn't always play nice in vim
-if &shell =~# 'fish$'
-  set shell=/bin/dash
-endif
+set shell=/bin/bash
+let $SHELL = "/bin/bash"
 
 " disable backups and swap
 set nobackup
@@ -367,6 +371,34 @@ set statusline+=%=%{coc#status()}\ [%{&filetype}]\ %3l/%3L\ (%2c\)
 " }}}
 " MAPPINGS {{{
 
+
+" leader
+let mapleader = "\<space>"
+let maplocalleader = "\,"
+
+" fzf-preview {{{
+nmap <leader>f [fzf-p]
+xmap <leader>f [fzf-p]
+
+nnoremap <silent> [fzf-p]p     :<C-u>CocCommand fzf-preview.FromResources project_mru git<CR>
+nnoremap <silent> [fzf-p]d     :<C-u>CocCommand fzf-preview.DirectoryFiles<CR>
+nnoremap <silent> [fzf-p]n     :<C-u>CocCommand fzf-preview.DirectoryFiles ~/notes<CR>
+nnoremap <silent> [fzf-p]gs    :<C-u>CocCommand fzf-preview.GitStatus<CR>
+nnoremap <silent> [fzf-p]ga    :<C-u>CocCommand fzf-preview.GitActions<CR>
+nnoremap <silent> [fzf-p]b     :<C-u>CocCommand fzf-preview.Buffers<CR>
+nnoremap <silent> [fzf-p]B     :<C-u>CocCommand fzf-preview.AllBuffers<CR>
+nnoremap <silent> [fzf-p]o     :<C-u>CocCommand fzf-preview.FromResources buffer project_mru<CR>
+nnoremap <silent> [fzf-p]<C-o> :<C-u>CocCommand fzf-preview.Jumps<CR>
+nnoremap <silent> [fzf-p]g;    :<C-u>CocCommand fzf-preview.Changes<CR>
+nnoremap <silent> [fzf-p]/     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'"<CR>
+nnoremap <silent> [fzf-p]*     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'<C-r>=expand('<cword>')<CR>"<CR>
+nnoremap          [fzf-p]gr    :<C-u>CocCommand fzf-preview.ProjectGrep<Space>
+xnoremap          [fzf-p]gr    "sy:CocCommand   fzf-preview.ProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<CR>"
+nnoremap <silent> [fzf-p]t     :<C-u>CocCommand fzf-preview.BufferTags<CR>
+nnoremap <silent> [fzf-p]q     :<C-u>CocCommand fzf-preview.QuickFix<CR>
+nnoremap <silent> [fzf-p]l     :<C-u>CocCommand fzf-preview.LocationList<CR>
+" }}}
+
 nmap <leader>hh :call <SID>SynStack()<CR>
 function! <SID>SynStack()
   if !exists("*synstack")
@@ -374,10 +406,6 @@ function! <SID>SynStack()
   endif
   echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
 endfunc
-
-" leader
-let mapleader = "\<space>"
-let maplocalleader = "\,"
 
 " esc alternative
 inoremap jk <esc>
