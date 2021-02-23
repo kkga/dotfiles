@@ -3,10 +3,24 @@
 " PLUGINS {{{
 lua require'plugins'
 
-" fzf-preview {{{
-" let g:fzf_preview_command = 'bat --color=always --theme=ansi-light --plain {-1}' " Installed bat
-" let g:fzf_preview_lines_command = 'bat --color=always --theme=ansi-light --plain --number' " Installed bat
+" Telescope {{{
+lua << EOF
+local actions = require('telescope.actions')
+require('telescope').setup{
+  defaults = {
+    mappings = {
+      i = {
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
 
+      },
+      n = {
+        ["<esc>"] = actions.close,
+      },
+    },
+  }
+}
+EOF
 " }}}
 " coc {{{
 
@@ -377,27 +391,37 @@ set statusline+=%=%{coc#status()}\ [%{&filetype}]\ %3l/%3L\ (%2c\)
 let mapleader = "\<space>"
 let maplocalleader = "\,"
 
-" fzf-preview {{{
-nmap <leader>f [fzf-p]
-xmap <leader>f [fzf-p]
+" telescope {{{
+nmap <leader>f [find]
+xmap <leader>f [find]
 
-nnoremap <silent> [fzf-p]p     :<C-u>CocCommand fzf-preview.FromResources project_mru git<CR>
-nnoremap <silent> [fzf-p]d     :<C-u>CocCommand fzf-preview.DirectoryFiles<CR>
-nnoremap <silent> [fzf-p]n     :<C-u>CocCommand fzf-preview.DirectoryFiles ~/notes<CR>
-nnoremap <silent> [fzf-p]gs    :<C-u>CocCommand fzf-preview.GitStatus<CR>
-nnoremap <silent> [fzf-p]ga    :<C-u>CocCommand fzf-preview.GitActions<CR>
-nnoremap <silent> [fzf-p]b     :<C-u>CocCommand fzf-preview.Buffers<CR>
-nnoremap <silent> [fzf-p]B     :<C-u>CocCommand fzf-preview.AllBuffers<CR>
-nnoremap <silent> [fzf-p]o     :<C-u>CocCommand fzf-preview.FromResources buffer project_mru<CR>
-nnoremap <silent> [fzf-p]<C-o> :<C-u>CocCommand fzf-preview.Jumps<CR>
-nnoremap <silent> [fzf-p]g;    :<C-u>CocCommand fzf-preview.Changes<CR>
-nnoremap <silent> [fzf-p]/     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'"<CR>
-nnoremap <silent> [fzf-p]*     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'<C-r>=expand('<cword>')<CR>"<CR>
-nnoremap          [fzf-p]gr    :<C-u>CocCommand fzf-preview.ProjectGrep<Space>
-xnoremap          [fzf-p]gr    "sy:CocCommand   fzf-preview.ProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<CR>"
-nnoremap <silent> [fzf-p]t     :<C-u>CocCommand fzf-preview.BufferTags<CR>
-nnoremap <silent> [fzf-p]q     :<C-u>CocCommand fzf-preview.QuickFix<CR>
-nnoremap <silent> [fzf-p]l     :<C-u>CocCommand fzf-preview.LocationList<CR>
+" Find files using Telescope command-line sugar.
+" nnoremap <leader>ff <cmd>Telescope find_files<cr>
+" nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+" nnoremap <leader>fb <cmd>Telescope buffers<cr>
+" nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+nnoremap <silent> [find]f <cmd>Telescope find_files<cr>
+nnoremap <silent> [find]n <cmd>Telescope find_files ~/notes<cr>
+nnoremap <silent> [find]g <cmd>Telescope live_grep<cr>
+nnoremap <silent> [find]b <cmd>Telescope buffers<cr>
+nnoremap <silent> [find]h <cmd>Telescope help_tags<cr>
+" nnoremap <silent> [find]d     :<C-u>CocCommand fzf-preview.DirectoryFiles<CR>
+" nnoremap <silent> [find]n     :<C-u>CocCommand fzf-preview.DirectoryFiles ~/notes<CR>
+" nnoremap <silent> [find]gs    :<C-u>CocCommand fzf-preview.GitStatus<CR>
+" nnoremap <silent> [find]ga    :<C-u>CocCommand fzf-preview.GitActions<CR>
+" nnoremap <silent> [find]b     :<C-u>CocCommand fzf-preview.Buffers<CR>
+" nnoremap <silent> [find]B     :<C-u>CocCommand fzf-preview.AllBuffers<CR>
+" nnoremap <silent> [find]o     :<C-u>CocCommand fzf-preview.FromResources buffer project_mru<CR>
+" nnoremap <silent> [find]<C-o> :<C-u>CocCommand fzf-preview.Jumps<CR>
+" nnoremap <silent> [find]g;    :<C-u>CocCommand fzf-preview.Changes<CR>
+" nnoremap <silent> [find]/     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'"<CR>
+" nnoremap <silent> [find]*     :<C-u>CocCommand fzf-preview.Lines --add-fzf-arg=--no-sort --add-fzf-arg=--query="'<C-r>=expand('<cword>')<CR>"<CR>
+" nnoremap          [find]gr    :<C-u>CocCommand fzf-preview.ProjectGrep<Space>
+" xnoremap          [find]gr    "sy:CocCommand   fzf-preview.ProjectGrep<Space>-F<Space>"<C-r>=substitute(substitute(@s, '\n', '', 'g'), '/', '\\/', 'g')<CR>"
+" nnoremap <silent> [find]t     :<C-u>CocCommand fzf-preview.BufferTags<CR>
+" nnoremap <silent> [find]q     :<C-u>CocCommand fzf-preview.QuickFix<CR>
+" nnoremap <silent> [find]l     :<C-u>CocCommand fzf-preview.LocationList<CR>
 " }}}
 
 nmap <leader>hh :call <SID>SynStack()<CR>

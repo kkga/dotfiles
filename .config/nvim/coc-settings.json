@@ -1,5 +1,9 @@
 {
   "diagnostic.displayByAle": false,
+  "diagnostic.infoSign": ">>",
+  "diagnostic.hintSign": ">>",
+  "diagnostic.warningSign": ">>",
+  "diagnostic.errorSign": ">>",
   "languageserver": {
     "golang": {
       "command": "gopls",
@@ -23,7 +27,6 @@
       "filetypes": ["lua"]
     }
   },
-  "rust-analyzer.checkOnSave.command": "clippy",
   "coc.preferences.extensionUpdateCheck": "daily",
   "coc.preferences.formatOnType": true,
   "coc.preferences.formatOnSaveFiletypes": [

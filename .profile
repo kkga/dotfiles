@@ -10,7 +10,7 @@ export XBPS_DISTDIR=$HOME/.void-packages
 export BROWSER=firefox
 export EDITOR=nvim
 export VISUAL=nvim
-export DMENU=bemenu
+export DMENU='wofi --dmenu'
 
 export FZF_PREVIEW_PREVIEW_BAT_THEME='ansi-dark'
 export FZF_DEFAULT_COMMAND='fd --type f'

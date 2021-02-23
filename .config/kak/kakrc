@@ -1,5 +1,5 @@
 # Set the colour scheme
-colorscheme kaleidoscope-dark
+colorscheme lucius
 
 # Width of a tab
 set-option global tabstop 4
