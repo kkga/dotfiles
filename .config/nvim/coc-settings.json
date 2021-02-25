@@ -1,5 +1,4 @@
 {
-  "diagnostic.displayByAle": false,
   "diagnostic.infoSign": ">>",
   "diagnostic.hintSign": ">>",
   "diagnostic.warningSign": ">>",
@@ -28,7 +27,7 @@
     }
   },
   "coc.preferences.extensionUpdateCheck": "daily",
-  "coc.preferences.formatOnType": true,
+  "coc.preferences.formatOnType": false,
   "coc.preferences.formatOnSaveFiletypes": [
     "typescript",
     "typescriptreact",
