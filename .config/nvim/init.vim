@@ -351,8 +351,8 @@ set nojoinspaces                " Set 1 space btwn lines/periods to be joined
 set scrolloff=8               " Working line will always be in the center
 
 " fish doesn't always play nice in vim
-set shell=/bin/bash
-let $SHELL = "/bin/bash"
+set shell=/bin/dash
+let $SHELL = "/bin/dash"
 
 " disable backups and swap
 set nobackup
@@ -395,6 +395,7 @@ nmap <leader>f [find]
 xmap <leader>f [find]
 
 nnoremap <silent> [find]f <cmd>Telescope find_files<cr>
+nnoremap <silent> [find]F <cmd>Telescope file_browser<cr>
 nnoremap <silent> [find]n <cmd>Telescope file_browser cwd=~/notes/<cr>
 nnoremap <silent> [find]c <cmd>Telescope find_files cwd=~/.config/<cr>
 nnoremap <silent> [find]r <cmd>Telescope oldfiles<cr>
