@@ -1,26 +1,26 @@
 " vim:foldmethod=marker:foldlevel=0
 
 " PLUGINS {{{
-lua require'plugins'
+lua require('plugins')
 
 " Telescope {{{
-lua << EOF
-local actions = require('telescope.actions')
-require('telescope').setup{
-  defaults = {
-    mappings = {
-      i = {
-        ["<C-j>"] = actions.move_selection_next,
-        ["<C-k>"] = actions.move_selection_previous,
-
-      },
-      n = {
-        ["<esc>"] = actions.close,
-      },
-    },
-  }
-}
-EOF
+"lua << EOF
+"local actions = require('telescope.actions')
+"require('telescope').setup{
+"  defaults = {
+"    mappings = {
+"      i = {
+"        ["<C-j>"] = actions.move_selection_next,
+"        ["<C-k>"] = actions.move_selection_previous,
+"
+"      },
+"      n = {
+"        ["<esc>"] = actions.close,
+"      },
+"    },
+"  }
+"}
+"EOF
 " }}}
 " coc {{{
 

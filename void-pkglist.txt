@@ -119,6 +119,7 @@ libxkbcommon-devel
 light
 linux5.10
 linux5.10-headers
+linux5.11
 lm_sensors
 lua-devel
 luarocks
