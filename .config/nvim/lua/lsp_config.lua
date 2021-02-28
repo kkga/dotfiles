@@ -24,3 +24,6 @@ lsp.html.setup{
 lsp.svelte.setup{
     on_attach = custom_attach
 }
+lsp.cssls.setup{
+    on_attach = custom_attach
+}

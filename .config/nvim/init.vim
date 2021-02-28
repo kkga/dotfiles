@@ -15,23 +15,23 @@ set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 " }}}
 " Telescope {{{
-"lua << EOF
-"local actions = require('telescope.actions')
-"require('telescope').setup{
-"  defaults = {
-"    mappings = {
-"      i = {
-"        ["<C-j>"] = actions.move_selection_next,
-"        ["<C-k>"] = actions.move_selection_previous,
-"
-"      },
-"      n = {
-"        ["<esc>"] = actions.close,
-"      },
-"    },
-"  }
-"}
-"EOF
+lua << EOF
+local actions = require('telescope.actions')
+require('telescope').setup{
+  defaults = {
+    mappings = {
+      i = {
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
+
+      },
+      n = {
+        ["<esc>"] = actions.close,
+      },
+    },
+  }
+}
+EOF
 " }}}
 " vim-go {{{
 let g:go_fmt_autosave = 1
