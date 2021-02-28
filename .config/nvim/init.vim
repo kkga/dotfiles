@@ -299,29 +299,6 @@ nnoremap <silent> [find]h <cmd>Telescope help_tags<cr>
 nnoremap <silent> [find]l <cmd>Telescope current_buffer_fuzzy_find<cr>
 " }}}
 
-nmap <leader>hh :call <SID>SynStack()<CR>
-function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
-
-" esc alternative
-inoremap jk <esc>
-inoremap kj <esc>
-
-" create a new buffer
-nnoremap <leader>B :enew<cr>
-" close current buffer
-nnoremap <leader>bq :bp <bar> bd! #<cr>
-" close all open buffers
-nnoremap <leader>ba :bufdo bd!<cr>
-
-" quick save
-nnoremap <leader>ww :w<cr>
-nnoremap <leader>wq :w<cr>
-
 " ¯\_(ツ)_/¯
 map <silent> q: :q<Cr>
 map <silent> Q: :q<Cr>
