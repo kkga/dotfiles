@@ -22,6 +22,7 @@ return require("packer").startup(
         use "airblade/vim-rooter"
         use "rhysd/clever-f.vim"
         use "justinmk/vim-sneak"
+        use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
 
         -- ui
         use "airblade/vim-gitgutter"
@@ -52,6 +53,7 @@ return require("packer").startup(
         -- lsp
         use 'neovim/nvim-lspconfig'
         use 'nvim-lua/completion-nvim'
+        use 'nvim-lua/lsp-status.nvim'
 
         -- lang
         use "habamax/vim-godot"

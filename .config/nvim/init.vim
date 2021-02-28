@@ -3,6 +3,10 @@
 " PLUGINS {{{
 lua require('lua_config')
 
+" lsp {{{
+set updatetime=300
+autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
+" }}}
 " completion {{{
 " Use <Tab> and <S-Tab> to navigate through popup menu
 inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
@@ -260,11 +264,16 @@ set undofile                    " Write changes to the undofile
 set undolevels=1000             " Max # of changes that can be undone
 set undoreload=10000            " Max # of lines to save for undo on buf reload
 
+function! LspStatus() abort
+  if luaeval('#vim.lsp.buf_get_clients() > 0')
+    return luaeval("require('lsp-status').status()")
+  endif
+  return ''
+endfunction
 
 set statusline=%<\ %f\ %m%r
 set statusline+=%{&paste?'\ \ \|\ PASTE\ ':'\ '}
-" set statusline+=%=[%{LinterStatus()}]\ %{fugitive#statusline()}\ [%{&filetype}]\ %3l/%3L\ (%2c\)
-set statusline+=%=[%{&filetype}]\ %3l/%3L\ (%2c\)
+set statusline+=%=%{LspStatus()}\ [%{&filetype}]\ %3l/%3L\ (%2c\)
 
 " }}}
 " MAPPINGS {{{
@@ -283,33 +292,12 @@ nnoremap <silent> [find]n <cmd>Telescope file_browser cwd=~/notes/<cr>
 nnoremap <silent> [find]c <cmd>Telescope find_files cwd=~/.config/<cr>
 nnoremap <silent> [find]r <cmd>Telescope oldfiles<cr>
 nnoremap <silent> [find]g <cmd>Telescope live_grep<cr>
+nnoremap <silent> [find]R <cmd>Telescope lsp_references<cr>
+nnoremap <silent> [find]S <cmd>Telescope lsp_document_symbols<cr>
 nnoremap <silent> [find]b <cmd>Telescope buffers<cr>
 nnoremap <silent> [find]h <cmd>Telescope help_tags<cr>
 nnoremap <silent> [find]l <cmd>Telescope current_buffer_fuzzy_find<cr>
 " }}}
-
-nmap <leader>hh :call <SID>SynStack()<CR>
-function! <SID>SynStack()
-  if !exists("*synstack")
-    return
-  endif
-  echo map(synstack(line('.'), col('.')), 'synIDattr(v:val, "name")')
-endfunc
-
-" esc alternative
-inoremap jk <esc>
-inoremap kj <esc>
-
-" create a new buffer
-nnoremap <leader>B :enew<cr>
-" close current buffer
-nnoremap <leader>bq :bp <bar> bd! #<cr>
-" close all open buffers
-nnoremap <leader>ba :bufdo bd!<cr>
-
-" quick save
-nnoremap <leader>ww :w<cr>
-nnoremap <leader>wq :w<cr>
 
 " ¯\_(ツ)_/¯
 map <silent> q: :q<Cr>
