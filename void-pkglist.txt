@@ -83,8 +83,10 @@ gnome-themes-extra
 go
 godot
 gopass
+gpgme
 grimshot
 grub-btrfs
+grub-btrfs-runit
 grub-terminus
 grub-x86_64-efi
 gsound
@@ -119,7 +121,6 @@ libxkbcommon-devel
 light
 linux5.10
 linux5.10-headers
-linux5.11
 lm_sensors
 lua-devel
 luarocks
@@ -241,6 +242,7 @@ xdg-utils
 xdotool
 xev
 xf86-video-amdgpu
+xfce4
 xidle
 xinit
 xkb-switch
@@ -261,4 +263,5 @@ youtube-dl
 zathura
 zathura-pdf-mupdf
 zip
+zola
 zoxide

@@ -53,6 +53,7 @@ return require("packer").startup(
         -- lsp
         use 'neovim/nvim-lspconfig'
         use 'nvim-lua/completion-nvim'
+        use 'nvim-lua/lsp-status.nvim'
 
         -- lang
         use "habamax/vim-godot"
