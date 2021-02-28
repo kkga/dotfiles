@@ -51,7 +51,8 @@ return require("packer").startup(
             }
 
         -- lsp
-        use "neoclide/coc.nvim"
+        use 'neovim/nvim-lspconfig'
+        use 'nvim-lua/completion-nvim'
 
         -- lang
         use "habamax/vim-godot"
