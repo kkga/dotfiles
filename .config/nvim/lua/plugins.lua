@@ -7,11 +7,8 @@ return require("packer").startup(
         -- themes
         use "~/repos/vim-envy"
         use "romainl/Apprentice"
-        use {"yorickpeterse/vim-paper", url = "https://gitlab.com/yorickpeterse/vim-paper.git"}
         use "lifepillar/vim-colortemplate"
         use  "jonathanfilip/vim-lucius"
-        use "axvr/photon.vim"
-        use 'caksoylar/vim-mysticaltutor'
 
         -- utils
         use "tpope/vim-surround"
