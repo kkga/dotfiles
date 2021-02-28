@@ -25,6 +25,7 @@ return require("packer").startup(
         use "airblade/vim-rooter"
         use "rhysd/clever-f.vim"
         use "justinmk/vim-sneak"
+        use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
 
         -- ui
         use "airblade/vim-gitgutter"
