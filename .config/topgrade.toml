@@ -5,7 +5,7 @@
 #disable = ["system", "emacs"]
 
 # Ignore failures for these steps
-ignore_failures = ["go"]
+#ignore_failures = ["go"]
 
 # Run specific steps - same options as the command line flag
 #only = ["system", "emacs"]
@@ -35,11 +35,11 @@ ignore_failures = ["go"]
 cleanup = true
 
 [git]
-max_concurrency = 5
+#max_concurrency = 5
 # Additional git repositories to pull
-repos = [
-    "~/repos/kkga"
-]
+#repos = [
+#    "~/repos/kkga"
+#]
 
 # Don't pull the predefined git repos
 #predefined_repos = false
