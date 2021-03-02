@@ -4,8 +4,8 @@ spacebar -m config position           top
 spacebar -m config height             16
 spacebar -m config spacing_left       16
 spacebar -m config spacing_right      16
-spacebar -m config text_font          "SF Mono:Regular:11.0"
-spacebar -m config icon_font          "SF Mono:Regular:11.0"
+spacebar -m config text_font          "Essential PragmataPro:Regular:12.0"
+spacebar -m config icon_font          "Essential PragmataPro:Regular:12.0"
 spacebar -m config background_color   0xff000000
 spacebar -m config foreground_color   0xffaaaaaa
 spacebar -m config space_icon_color   0xffffffff

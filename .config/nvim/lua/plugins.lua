@@ -52,8 +52,11 @@ return require("packer").startup(
 
         -- lsp
         use 'neovim/nvim-lspconfig'
-        use 'nvim-lua/completion-nvim'
+        -- use 'nvim-lua/completion-nvim'
         use 'nvim-lua/lsp-status.nvim'
+        use 'hrsh7th/nvim-compe'
+        use 'hrsh7th/vim-vsnip'
+        use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
         -- lang
         use "habamax/vim-godot"

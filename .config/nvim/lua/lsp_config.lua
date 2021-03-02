@@ -1,5 +1,4 @@
 local lsp = require('lspconfig')
-local completion = require('completion')
 local status = require('lsp-status')
 
 local mapper = function(mode, key, result)
@@ -33,18 +32,28 @@ status.config({
   spinner_frames = { '⣾', '⣽', '⣻', '⢿', '⡿', '⣟', '⣯', '⣷' },
 })
 
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
 lsp.gopls.setup{
-  on_attach = custom_attach
+  on_attach = custom_attach,
+  capabilities = capabilities
 }
 lsp.tsserver.setup{
-  on_attach = custom_attach
+  on_attach = custom_attach,
+  capabilities = capabilities
 }
 lsp.html.setup{
-  on_attach = custom_attach
+  on_attach = custom_attach,
+  capabilities = capabilities
 }
 lsp.svelte.setup{
   on_attach = custom_attach,
-  capabilities = status.capabilities
+  capabilities = capabilities
+}
+lsp.cssls.setup{
+  on_attach = custom_attach,
+  capabilities = capabilities
 }
 lsp.cssls.setup{
   on_attach = custom_attach,
