@@ -156,6 +156,7 @@ pipewire
 pixman-devel
 pkg-config
 playerctl
+plex-media-player
 polkit-elogind
 polkit-gnome
 polybar
@@ -258,7 +259,6 @@ xtools
 xurls
 yadm
 yambar
-yarn
 youtube-dl
 zathura
 zathura-pdf-mupdf

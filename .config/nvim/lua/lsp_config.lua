@@ -46,3 +46,7 @@ lsp.svelte.setup{
   on_attach = custom_attach,
   capabilities = status.capabilities
 }
+lsp.cssls.setup{
+  on_attach = custom_attach,
+  capabilities = status.capabilities
+}
