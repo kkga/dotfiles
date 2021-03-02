@@ -33,6 +33,10 @@ widget = {
                 r[#r + 1] = {
                     full_text = string.format("%s", iface)
                 }
+            elseif (iface ~= 'lo') then 
+                r[#r + 1] = {
+                    full_text = string.format("%s", iface)
+                }
             end
             ::skip::
         end

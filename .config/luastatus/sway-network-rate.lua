@@ -17,10 +17,7 @@ local function get_block(line)
 
     -- Alternatively, you can filter out unneeded interfaces here, e.g.
     --   if iface ~= 'wlp2s0' then return nil end
-    if iface == "lo" then
-        return nil
-    end
-    if iface == "tailscale0" then
+    if (iface == "lo" or iface == "tailscale0" or iface == "mlvd-fi1") then
         return nil
     end
 
