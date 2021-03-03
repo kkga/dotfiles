@@ -7,7 +7,7 @@ end
 
 local custom_attach = function(client, bufnr)
   print("LSP started");
-  completion.on_attach(client, bufnr)
+  -- completion.on_attach(client, bufnr)
   status.on_attach(client, bufnr)
 
   -- Move cursor to the next and previous diagnostic
