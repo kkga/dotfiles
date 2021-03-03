@@ -22,7 +22,6 @@ return require("packer").startup(
         use "airblade/vim-rooter"
         use "rhysd/clever-f.vim"
         use "justinmk/vim-sneak"
-        use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
 
         -- ui
         use "airblade/vim-gitgutter"
@@ -42,7 +41,6 @@ return require("packer").startup(
         use "justinmk/vim-dirvish"
         use "dyng/ctrlsf.vim"
         use "mhinz/vim-grepper"
-        use 'srstevenson/vim-picker'
         use { 'junegunn/fzf', run = function() vim.fn['fzf#install']() end  }
         use 'junegunn/fzf.vim'
         use {
@@ -50,12 +48,12 @@ return require("packer").startup(
               requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
             }
 
-        -- lsp
+        -- lsp & completion
         use 'neovim/nvim-lspconfig'
-        -- use 'nvim-lua/completion-nvim'
         use 'nvim-lua/lsp-status.nvim'
         use 'hrsh7th/nvim-compe'
         use 'hrsh7th/vim-vsnip'
+        use 'hrsh7th/vim-vsnip-integ'
         use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
         -- lang
