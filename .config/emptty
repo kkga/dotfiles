@@ -12,6 +12,13 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export GDK_SCALE=2
 export GDK_DPI_SCALE=0.5
 
+
+# eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+# export SSH_AUTH_SOCK
+# export SUDO_ASKPASS=/usr/libexec/seahorse/ssh-askpass
+
+# export GPG_TTY=$(tty)
+
 # merge user resources for correct DPI setting in Xorg
 xrdb -merge $HOME/.Xresources
 
