@@ -62,6 +62,17 @@ lua << EOF
 local actions = require('telescope.actions')
 require('telescope').setup{
   defaults = {
+      sorting_strategy = "ascending",
+      results_height = 20,
+      layout_strategy = "center",
+      results_title = false,
+      preview_title = false,
+      borderchars = {
+	{ '─', '│', '─', '│', '╭', '╮', '╯', '╰'},
+	  prompt = {"─", "│", " ", "│", "╭", "╮", "│", "│"},
+	  results = {"─", "│", "─", "│", "├", "┤", "╯", "╰"},
+	  preview = { '─', '│', '─', '│', '╭', '╮', '╯', '╰'},
+	},
     mappings = {
       i = {
         ["<C-j>"] = actions.move_selection_next,
