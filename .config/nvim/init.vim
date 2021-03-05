@@ -63,6 +63,7 @@ local actions = require('telescope.actions')
 require('telescope').setup{
   defaults = {
       sorting_strategy = "ascending",
+      preview_cutout = 1,
       results_height = 20,
       layout_strategy = "center",
       results_title = false,
