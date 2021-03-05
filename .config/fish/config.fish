@@ -7,7 +7,7 @@ alias y=yadm
 
 alias xr='doas xbps-remove'
 
-set --global hydro_symbol_prompt '→'
+set --global hydro_symbol_prompt '>'
 set --global hydro_symbol_git_dirty '*'
 
 set fish_greeting
@@ -32,7 +32,5 @@ set fish_pager_color_background --background=background
 set fish_pager_color_description $fish_color_comment
 set fish_pager_color_selected_completion white
 set fish_pager_color_selected_description white
-
-bind \cr 'search_history'
 
 zoxide init fish | source
