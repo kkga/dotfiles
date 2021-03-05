@@ -12,7 +12,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 export DMENU='wofi --dmenu'
 
-export FZF_PREVIEW_PREVIEW_BAT_THEME='ansi-dark'
+# export FZF_PREVIEW_PREVIEW_BAT_THEME='github'
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_DEFAULT_OPTS="--height 40% --reverse --color light"
 export BEMENU_OPTS="--ignorecase --list 12 -p '' -P ''\
