@@ -1,3 +1,4 @@
-require('plugins')
-require('lsp_config')
-require('completion_config')
+require("plugins")
+require("lsp_config")
+require("telescope_config")
+require("completion_config")

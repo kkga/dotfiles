@@ -72,37 +72,6 @@ inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 " inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 " }}}
-" Telescope {{{
-lua << EOF
-local actions = require('telescope.actions')
-require('telescope').setup{
-defaults = {
-sorting_strategy = "ascending",
-preview_cutout = 1,
-results_height = 20,
-layout_strategy = "center",
-results_title = false,
-preview_title = false,
-borderchars = {
-{ '─', '│', '─', '│', '╭', '╮', '╯', '╰'},
-prompt = {"─", "│", " ", "│", "╭", "╮", "│", "│"},
-results = {"─", "│", "─", "│", "├", "┤", "╯", "╰"},
-preview = { '─', '│', '─', '│', '╭', '╮', '╯', '╰'},
-},
-mappings = {
-i = {
-["<C-j>"] = actions.move_selection_next,
-["<C-k>"] = actions.move_selection_previous,
-
-},
-n = {
-["<esc>"] = actions.close,
-},
-},
-}
-}
-EOF
-" }}}
 " vim-go {{{
 let g:go_fmt_autosave = 1
 let g:go_fmt_command = "goimports"

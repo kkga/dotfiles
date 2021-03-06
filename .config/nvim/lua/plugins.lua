@@ -50,7 +50,11 @@ return require("packer").startup(
         use "junegunn/fzf.vim"
         use {
             "nvim-telescope/telescope.nvim",
-            requires = {{"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}}
+            requires = {
+                {"nvim-lua/popup.nvim"},
+                {"nvim-lua/plenary.nvim"},
+                {"nvim-telescope/telescope-fzy-native.nvim"}
+            }
         }
 
         -- lsp & completion
@@ -68,11 +72,6 @@ return require("packer").startup(
         use "HerringtonDarkholme/yats.vim"
         use "evanleck/vim-svelte"
         use "pangloss/vim-javascript"
-        use {
-            "fatih/vim-go",
-            run = ":GoUpdateBinaries",
-            opt = true,
-            ft = "go"
-        }
+        use {"fatih/vim-go", run = ":GoUpdateBinaries", opt = true, ft = "go"}
     end
 )
