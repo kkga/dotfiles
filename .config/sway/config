@@ -149,13 +149,13 @@ for_window [ app_id="mpv"               ] floating enable
    bindsym $mod+Shift+c kill
    bindsym $mod+Backspace reload
 
-   bindsym XF86MonBrightnessUp exec light -A 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
-   bindsym XF86MonBrightnessDown exec light -U 5 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
-   bindsym Mod1+XF86MonBrightnessUp exec light -s sysfs/backlight/ddcci5 -A 5 && light -s sysfs/backlight/ddcci5 -G | cut -d'.' -f1 > $SWAYSOCK.wob
-   bindsym Mod1+XF86MonBrightnessDown exec light -s sysfs/backlight/ddcci5 -U 5 && light -s sysfs/backlight/ddcci5 -G | cut -d'.' -f1 > $SWAYSOCK.wob
+   bindsym XF86MonBrightnessUp exec light -A 10 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
+   bindsym XF86MonBrightnessDown exec light -U 10 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
+   bindsym Mod1+XF86MonBrightnessUp exec light -s sysfs/backlight/ddcci5 -A 10 && light -s sysfs/backlight/ddcci5 -G | cut -d'.' -f1 > $SWAYSOCK.wob
+   bindsym Mod1+XF86MonBrightnessDown exec light -s sysfs/backlight/ddcci5 -U 10 && light -s sysfs/backlight/ddcci5 -G | cut -d'.' -f1 > $SWAYSOCK.wob
    bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-   bindsym XF86AudioRaiseVolume exec pamixer -ui 2 && dc -e "[`pamixer --get-volume`]sM 100d `pamixer --get-volume`<Mp" > $SWAYSOCK.wob
-   bindsym XF86AudioLowerVolume exec pamixer -ud 2 && dc -e "[`pamixer --get-volume`]sM 100d `pamixer --get-volume`<Mp" > $SWAYSOCK.wob
+   bindsym XF86AudioRaiseVolume exec pamixer -ui 5 && dc -e "[`pamixer --get-volume`]sM 100d `pamixer --get-volume`<Mp" > $SWAYSOCK.wob
+   bindsym XF86AudioLowerVolume exec pamixer -ud 5 && dc -e "[`pamixer --get-volume`]sM 100d `pamixer --get-volume`<Mp" > $SWAYSOCK.wob
    bindsym XF86AudioMute exec pamixer --toggle-mute && ( pamixer --get-mute && echo 0 > $SWAYSOCK.wob ) || dc -e "[`pamixer --get-volume`]sM 100d `pamixer --get-volume`<Mp" > $SWAYSOCK.wob
    bindsym XF86AudioPlay exec playerctl play-pause
    bindsym XF86AudioPrev exec playerctl previous
