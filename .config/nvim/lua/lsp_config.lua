@@ -7,10 +7,8 @@ end
 
 local custom_attach = function(client, bufnr)
     print("LSP started")
-    -- completion.on_attach(client, bufnr)
     status.on_attach(client, bufnr)
 
-    -- Move cursor to the next and previous diagnostic
     mapper("n", "gj", "vim.lsp.diagnostic.goto_next()")
     mapper("n", "gk", "vim.lsp.diagnostic.goto_prev()")
     mapper("n", "gd", "vim.lsp.buf.definition()")
@@ -41,14 +39,14 @@ lsp.gopls.setup {
     on_attach = custom_attach,
     capabilities = capabilities
 }
--- lsp.tsserver.setup {
---     on_attach = custom_attach,
---     capabilities = capabilities
--- }
-lsp.denols.setup {
+lsp.tsserver.setup {
     on_attach = custom_attach,
     capabilities = capabilities
 }
+-- lsp.denols.setup {
+--     on_attach = custom_attach,
+--     capabilities = capabilities
+-- }
 lsp.html.setup {
     on_attach = custom_attach,
     capabilities = capabilities
@@ -61,7 +59,16 @@ lsp.cssls.setup {
     on_attach = custom_attach,
     capabilities = capabilities
 }
-lsp.cssls.setup {
-    on_attach = custom_attach,
-    capabilities = status.capabilities
-}
+-- lsp.efm.setup {
+--     on_attach = custom_attach,
+--     capabilities = status.capabilities,
+--     init_options = {documentFormatting = true},
+--     settings = {
+--         rootMarkers = {".git/"},
+--         languages = {
+--             lua = {
+--                 {formatCommand = "lua-format -i", formatStdin = true}
+--             }
+--         }
+--     }
+-- }
