@@ -3,7 +3,7 @@
 # General settings {{{1
 
 # xwayland disable
-default_border pixel 1
+# default_border pixel
 default_floating_border pixel 2
 
 smart_borders on
@@ -14,7 +14,7 @@ focus_wrapping yes
 gaps inner 8
 
 font monospace 9
-titlebar_border_thickness 1
+titlebar_border_thickness 0
 titlebar_padding 4 1
 
 seat * xcursor_theme Adwaita 24
@@ -30,7 +30,6 @@ exec wl-paste -t text --watch clipman store
 exec clipman restore
 exec foot -s
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob -a top -a left -W 200 -H 20 -M 8 -o 2 -b 2 -p 2
-exec persway -a -w -o 0.9
 exec /usr/libexec/polkit-gnome-authentication-agent-1
 
 set $gnome-schema org.gnome.desktop.interface
@@ -120,9 +119,9 @@ input "type:pointer" {
 # Colors {{{1
 
 # Colors                border		    background		text		    indicator	    child_border
-client.focused          $col_black	    $col_black		$col_white	    $col_accent	    $col_black
-client.focused_inactive $col_gray_mid	    $col_gray_mid	$col_white	    $col_gray	    $col_gray
-client.unfocused        $col_gray_dark	    $col_gray_dark	$col_gray_light	    $col_gray	    $col_gray
+# client.focused          $col_black	    $col_black		$col_white	    $col_accent	    $col_black
+# client.focused_inactive $col_gray_mid	    $col_gray_mid	$col_white	    $col_gray	    $col_gray
+# client.unfocused        $col_gray_dark	    $col_gray_dark	$col_gray_light	    $col_gray	    $col_gray
 # client.urgent             $color_bright_yellow   $color_bright_yellow   $color_normal_black    $color_unused        $color_unused
 # client.placeholder        $color_unused          $color_unused          $color_unused          $color_unused        $color_unused
 
