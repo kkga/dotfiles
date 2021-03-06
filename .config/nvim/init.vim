@@ -3,6 +3,21 @@
 " PLUGINS {{{
 lua require('lua_config')
 
+" neoformatter {{{
+augroup fmt
+	autocmd!
+	autocmd BufWritePre * undojoin | Neoformat
+augroup END
+
+" Enable alignment
+let g:neoformat_basic_format_align = 1
+
+" Enable tab to spaces conversion
+let g:neoformat_basic_format_retab = 1
+
+" Enable trimmming of trailing whitespace
+let g:neoformat_basic_format_trim = 1
+" }}}
 " lsp {{{
 set updatetime=300
 autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
@@ -61,30 +76,30 @@ inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
 lua << EOF
 local actions = require('telescope.actions')
 require('telescope').setup{
-  defaults = {
-      sorting_strategy = "ascending",
-      preview_cutout = 1,
-      results_height = 20,
-      layout_strategy = "center",
-      results_title = false,
-      preview_title = false,
-      borderchars = {
-	{ '─', '│', '─', '│', '╭', '╮', '╯', '╰'},
-	  prompt = {"─", "│", " ", "│", "╭", "╮", "│", "│"},
-	  results = {"─", "│", "─", "│", "├", "┤", "╯", "╰"},
-	  preview = { '─', '│', '─', '│', '╭', '╮', '╯', '╰'},
-	},
-    mappings = {
-      i = {
-        ["<C-j>"] = actions.move_selection_next,
-        ["<C-k>"] = actions.move_selection_previous,
+defaults = {
+sorting_strategy = "ascending",
+preview_cutout = 1,
+results_height = 20,
+layout_strategy = "center",
+results_title = false,
+preview_title = false,
+borderchars = {
+{ '─', '│', '─', '│', '╭', '╮', '╯', '╰'},
+prompt = {"─", "│", " ", "│", "╭", "╮", "│", "│"},
+results = {"─", "│", "─", "│", "├", "┤", "╯", "╰"},
+preview = { '─', '│', '─', '│', '╭', '╮', '╯', '╰'},
+},
+mappings = {
+i = {
+["<C-j>"] = actions.move_selection_next,
+["<C-k>"] = actions.move_selection_previous,
 
-      },
-      n = {
-        ["<esc>"] = actions.close,
-      },
-    },
-  }
+},
+n = {
+["<esc>"] = actions.close,
+},
+},
+}
 }
 EOF
 " }}}
@@ -102,38 +117,6 @@ let g:go_highlight_trailing_whitespace_error = 0
 " sneak {{{
 let g:sleuth_automatic = 1
 let g:sneak#s_next = 1
-" }}}
-" ale {{{
-" let g:ale_disable_lsp = 1
-" let g:ale_sign_error = '✖'
-" let g:ale_sign_warning = '●'
-" let g:ale_virtualtext_cursor = 1
-" let g:ale_echo_msg_format = '[%linter%]: %s'
-" let g:ale_lint_on_enter = 1
-" let g:ale_fix_on_save = 1
-" let g:ale_fix_on_enter = 0
-" let g:ale_lint_on_text_changed = 'never'
-" let g:ale_lint_on_insert_leave = 0
-
-" let g:ale_fixers = {
-" \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-" \   'css': ['prettier'],
-" \   'html': ['prettier'],
-" \   'javascript': ['prettier'],
-" \   'typescript': ['prettier'],
-" \   'json': ['prettier'],
-" \   'lua': ['luafmt'],
-" \   'markdown': ['prettier'],
-" \}
-" let g:ale_linters = {
-" \   'rust': ['analyzer', 'cargo', 'rls'],
-" \   'html': ['prettier'],
-" \   'markdown': ['alex']
-" \}
-
-" nmap <silent> <leader>k <Plug>(ale_previous)
-" nmap <silent> <leader>j <Plug>(ale_next)
-
 " }}}
 " grepper {{{
 let g:grepper               = {}
@@ -316,10 +299,10 @@ set undolevels=1000             " Max # of changes that can be undone
 set undoreload=10000            " Max # of lines to save for undo on buf reload
 
 function! LspStatus() abort
-  if luaeval('#vim.lsp.buf_get_clients() > 0')
-    return luaeval("require('lsp-status').status()")
-  endif
-  return ''
+	if luaeval('#vim.lsp.buf_get_clients() > 0')
+		return luaeval("require('lsp-status').status()")
+	endif
+	return ''
 endfunction
 
 set statusline=%<\ %f\ %m%r

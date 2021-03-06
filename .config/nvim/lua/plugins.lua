@@ -8,7 +8,7 @@ return require("packer").startup(
         use "~/repos/vim-envy"
         use "romainl/Apprentice"
         use "lifepillar/vim-colortemplate"
-        use  "jonathanfilip/vim-lucius"
+        use "jonathanfilip/vim-lucius"
 
         -- utils
         use "tpope/vim-surround"
@@ -41,20 +41,26 @@ return require("packer").startup(
         use "justinmk/vim-dirvish"
         use "dyng/ctrlsf.vim"
         use "mhinz/vim-grepper"
-        use { 'junegunn/fzf', run = function() vim.fn['fzf#install']() end  }
-        use 'junegunn/fzf.vim'
         use {
-              'nvim-telescope/telescope.nvim',
-              requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
-            }
+            "junegunn/fzf",
+            run = function()
+                vim.fn["fzf#install"]()
+            end
+        }
+        use "junegunn/fzf.vim"
+        use {
+            "nvim-telescope/telescope.nvim",
+            requires = {{"nvim-lua/popup.nvim"}, {"nvim-lua/plenary.nvim"}}
+        }
 
         -- lsp & completion
-        use 'neovim/nvim-lspconfig'
-        use 'nvim-lua/lsp-status.nvim'
-        use 'hrsh7th/nvim-compe'
-        use 'hrsh7th/vim-vsnip'
-        use 'hrsh7th/vim-vsnip-integ'
-        use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+        use "neovim/nvim-lspconfig"
+        use "nvim-lua/lsp-status.nvim"
+        use "hrsh7th/nvim-compe"
+        use "hrsh7th/vim-vsnip"
+        use "hrsh7th/vim-vsnip-integ"
+        use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
+        use "sbdchd/neoformat"
 
         -- lang
         use "habamax/vim-godot"
