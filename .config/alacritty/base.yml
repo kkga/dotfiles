@@ -1,6 +1,6 @@
 font:
   family: monospace
-  size: 10.5
+  size: 10
 
 window:
   decorations: none
@@ -10,7 +10,6 @@ window:
 
 # shell:
 #   program: fish
-
 
 key_bindings:
   - { key: Return, mods: Control|Shift, action: SpawnNewInstance }

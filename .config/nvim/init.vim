@@ -90,17 +90,6 @@ let g:grepper.next_tool     = '<leader>g'
 let g:grepper.prompt_text   = '$c>'
 let g:grepper.quickfix      = 0
 " }}}
-" picker {{{
-nmap <C-p>e <Plug>(PickerEdit)
-nmap <C-p>s <Plug>(PickerSplit)
-nmap <C-p>t <Plug>(PickerTabedit)
-nmap <C-p>v <Plug>(PickerVsplit)
-nmap <C-p>b <Plug>(PickerBuffer)
-nmap <C-p>] <Plug>(PickerTag)
-nmap <C-p>w <Plug>(PickerStag)
-nmap <C-p>o <Plug>(PickerBufferTag)
-nmap <C-p>h <Plug>(PickerHelp)
-" }}}
 " ctrlsf {{{
 nmap     <C-F>f <Plug>CtrlSFPrompt
 vmap     <C-F>f <Plug>CtrlSFVwordPath
@@ -126,16 +115,8 @@ nmap <leader>7 <Plug>BufTabLine.Go(7)
 nmap <leader>8 <Plug>BufTabLine.Go(8)
 nmap <leader>9 <Plug>BufTabLine.Go(9)
 nmap <leader>0 <Plug>BufTabLine.Go(10)
-nnoremap <C-j> :bnext<CR>
-nnoremap <C-k> :bprev<CR>
-" }}}
-" solarized8 {{{
-" let g:solarized_visibility = "low"
-" let g:solarized_diffmode = "normal"
-" let g:solarized_termtrans = 1
-" let g:solarized_statusline = "flat"
-" let g:solarized_use16 = 1
-" let g:solarized_extra_hi_groups = 1
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-p> :bprev<CR>
 " }}}
 " markdown {{{
 let g:vim_markdown_conceal = 1
@@ -157,10 +138,6 @@ let g:previm_open_cmd = 'open -a Min'
 " todo-txt {{{
 let g:Todo_txt_prefix_creation_date=1
 let g:Todo_fold_char='+'
-" }}}
-" rust {{{
-let g:rustfmt_autosave = 1
-let g:rust_fold = 2
 " }}}
 " treesitter {{{
 " lua <<EOF

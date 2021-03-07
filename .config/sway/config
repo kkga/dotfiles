@@ -14,7 +14,7 @@ focus_wrapping yes
 gaps inner 8
 
 font monospace 9
-titlebar_border_thickness 1
+titlebar_border_thickness 0
 titlebar_padding 4 1
 
 seat * xcursor_theme Adwaita 24
@@ -30,7 +30,6 @@ exec wl-paste -t text --watch clipman store
 exec clipman restore
 exec foot -s
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob -a top -a left -W 200 -H 20 -M 8 -o 2 -b 2 -p 2
-exec persway -a -w -o 0.9
 exec /usr/libexec/polkit-gnome-authentication-agent-1
 
 set $gnome-schema org.gnome.desktop.interface
