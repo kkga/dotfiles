@@ -121,6 +121,8 @@ libxkbcommon-devel
 light
 linux5.10
 linux5.10-headers
+linux5.11
+linux5.11-headers
 lm_sensors
 lua-devel
 luarocks
@@ -164,8 +166,10 @@ powertop
 procs
 protontricks
 pulseaudio
+python3-attrs
 python3-pip
 qemu
+qmk
 qt5-wayland
 qtpass
 radeontop
@@ -217,6 +221,7 @@ void-repo-multilib-nonfree
 void-repo-nonfree
 vpm
 vpsm
+vscode
 vsv
 vulkan-loader
 vulkan-loader-32bit
@@ -243,7 +248,6 @@ xdg-utils
 xdotool
 xev
 xf86-video-amdgpu
-xfce4
 xidle
 xinit
 xkb-switch
@@ -259,6 +263,7 @@ xtools
 xurls
 yadm
 yambar
+yarn
 youtube-dl
 zathura
 zathura-pdf-mupdf

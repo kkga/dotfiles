@@ -261,17 +261,25 @@ let maplocalleader = "\,"
 nmap <leader>f [find]
 xmap <leader>f [find]
 
+" general
 nnoremap <silent> [find]f <cmd>Telescope find_files<cr>
 nnoremap <silent> [find]F <cmd>Telescope file_browser<cr>
-nnoremap <silent> [find]n <cmd>Telescope file_browser cwd=~/notes/<cr>
-nnoremap <silent> [find]c <cmd>Telescope find_files cwd=~/.config/<cr>
-nnoremap <silent> [find]r <cmd>Telescope oldfiles<cr>
+nnoremap <silent> [find]o <cmd>Telescope oldfiles<cr>
 nnoremap <silent> [find]g <cmd>Telescope live_grep<cr>
-nnoremap <silent> [find]R <cmd>Telescope lsp_references<cr>
-nnoremap <silent> [find]S <cmd>Telescope lsp_document_symbols<cr>
 nnoremap <silent> [find]b <cmd>Telescope buffers<cr>
 nnoremap <silent> [find]h <cmd>Telescope help_tags<cr>
 nnoremap <silent> [find]l <cmd>Telescope current_buffer_fuzzy_find<cr>
+
+" specific
+nnoremap <silent> [find]n <cmd>Telescope file_browser cwd=~/notes/<cr>
+nnoremap <silent> [find]c <cmd>Telescope find_files cwd=~/.config/<cr>
+
+" lsp
+nnoremap <silent> [find]r <cmd>Telescope lsp_references<cr>
+nnoremap <silent> [find]s <cmd>Telescope lsp_document_symbols<cr>
+nnoremap <silent> [find]S <cmd>Telescope lsp_workspace_symbols<cr>
+nnoremap <silent> [find]d <cmd>Telescope lsp_document_diagnostics<cr>
+nnoremap <silent> [find]D <cmd>Telescope lsp_workspace_diagnostics<cr>
 " }}}
 
 " ¯\_(ツ)_/¯
