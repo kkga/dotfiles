@@ -102,6 +102,7 @@ jq
 kak-lsp
 kakoune
 keyutils
+kitty
 lazygit
 lf
 libX11-devel

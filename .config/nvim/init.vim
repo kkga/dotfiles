@@ -4,10 +4,10 @@
 lua require('lua_config')
 
 " neoformatter {{{
-augroup fmt
-	autocmd!
-	autocmd BufWritePre * Neoformat
-augroup END
+" augroup fmt
+" 	autocmd!
+" 	autocmd BufWritePre * Neoformat
+" augroup END
 
 " let g:neoformat_basic_format_align = 1
 " let g:neoformat_basic_format_retab = 1
@@ -15,7 +15,7 @@ augroup END
 " }}}
 " lsp {{{
 set updatetime=300
-autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
+" autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
 " }}}
 " completion {{{
 " set completeopt=menuone,noinsert,noselect
@@ -205,8 +205,8 @@ set list
 set listchars=tab:\|-,extends:»,precedes:«,space:.
 
 " lines and numbers
-set nonumber
-set norelativenumber
+set number
+set relativenumber
 set cursorline
 set nocursorcolumn
 set colorcolumn=80
