@@ -42,13 +42,6 @@ return require("packer").startup(
         use "dyng/ctrlsf.vim"
         use "mhinz/vim-grepper"
         use {
-            "junegunn/fzf",
-            run = function()
-                vim.fn["fzf#install"]()
-            end
-        }
-        use "junegunn/fzf.vim"
-        use {
             "nvim-telescope/telescope.nvim",
             requires = {
                 {"nvim-lua/popup.nvim"},
