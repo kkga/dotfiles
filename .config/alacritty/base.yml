@@ -1,6 +1,11 @@
 font:
-  family: monospace
-  size: 10
+  # normal:
+  #   family: envy code r
+  #   style: regular
+  # bold:
+  #   family: terminus
+  #   style: bold
+  size: 10.5
 
 window:
   decorations: none
