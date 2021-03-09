@@ -79,6 +79,7 @@ git
 git-libsecret
 github-cli
 gnome-keyring
+gnome-terminal
 gnome-themes-extra
 go
 godot
@@ -175,6 +176,8 @@ qt5-wayland
 qtpass
 radeontop
 ripgrep
+roxterm
+sakura
 seahorse
 setxkbmap
 skim
