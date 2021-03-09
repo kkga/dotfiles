@@ -1,7 +1,7 @@
 local nvim_lsp = require("lspconfig")
 local status = require("lsp-status")
 
-local saga = require "lspsaga"
+-- local saga = require "lspsaga"
 
 -- add your config value here
 -- default value
@@ -38,7 +38,7 @@ local saga = require "lspsaga"
 --   your custom option here
 -- }
 
-saga.init_lsp_saga()
+-- saga.init_lsp_saga()
 
 local mapper = function(mode, key, result)
     vim.api.nvim_buf_set_keymap(0, mode, key, "<cmd>lua " .. result .. "<cr>", {noremap = true, silent = true})
