@@ -5,4 +5,4 @@ simple: true
 ntimepoints: 10
 flash-on-focus: true
 flash-fullscreen: false
-flash-lone-windows: 'always'
+flash-lone-windows: 'never'

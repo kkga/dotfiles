@@ -58,7 +58,8 @@ return require("packer").startup(
         use "hrsh7th/vim-vsnip"
         use "hrsh7th/vim-vsnip-integ"
         use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
-        use "sbdchd/neoformat"
+        -- use "sbdchd/neoformat"
+        use "prettier/vim-prettier"
 
         -- lang
         use "habamax/vim-godot"

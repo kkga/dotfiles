@@ -3,6 +3,14 @@
 " PLUGINS {{{
 lua require('lua_config')
 
+" prettier {{{
+let g:prettier#quickfix_enabled = 0
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+let g:prettier#exec_cmd_async = 1
+autocmd BufWritePre *.svelte,*.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+" autocmd BufWritePre,TextChanged,InsertLeave *.svelte,*.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
+" }}}
 " neoformatter {{{
 " augroup fmt
 " 	autocmd!
