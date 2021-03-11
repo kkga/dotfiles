@@ -1,2 +1,2 @@
 #!/bin/bash
-prs ls | $DMENU | xargs --no-run-if-empty prs c
+prs ls -l | $DMENU | xargs --no-run-if-empty prs c

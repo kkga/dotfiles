@@ -67,6 +67,6 @@ return require("packer").startup(
         use "HerringtonDarkholme/yats.vim"
         use "evanleck/vim-svelte"
         use "pangloss/vim-javascript"
-        use {"fatih/vim-go", run = ":GoUpdateBinaries", opt = true, ft = "go"}
+        -- use {"fatih/vim-go", run = ":GoUpdateBinaries", opt = true, ft = "go"}
     end
 )
