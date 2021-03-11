@@ -75,6 +75,8 @@ gammastep
 gcc
 geoclue2
 geoip
+gifski
+gimp
 git
 git-libsecret
 github-cli
@@ -149,12 +151,14 @@ neovim
 nodejs
 noto-fonts-ttf
 opendoas
+openssl-devel
 pamixer
 pandoc
 papirus-icon-theme
 paprefs
 patch
 pavucontrol
+peek
 pinentry-gnome
 pipewire
 pixman-devel
@@ -246,6 +250,7 @@ wofi
 xarchiver
 xclip
 xdg-desktop-portal-gtk
+xdg-desktop-portal-wlr
 xdg-user-dirs
 xdg-user-dirs-gtk
 xdg-utils
