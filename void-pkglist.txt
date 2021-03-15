@@ -136,6 +136,7 @@ luastatus
 lxappearance
 maim
 mako
+mercurial
 mesa
 mesa-dri
 mesa-dri-32bit
@@ -150,6 +151,8 @@ neofetch
 neovim
 nodejs
 noto-fonts-ttf
+obs
+obs-devel
 opendoas
 openssl-devel
 pamixer
@@ -273,6 +276,7 @@ xurls
 yadm
 yambar
 yarn
+yaru
 youtube-dl
 zathura
 zathura-pdf-mupdf
