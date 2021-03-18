@@ -233,7 +233,7 @@ for_window [ app_id="mpv"               ] floating enable
 
 # Resize mode {{{2
 
-set $mode_resize "=== RESIZE ==="
+set $mode_resize "<< RESIZE >>"
 mode $mode_resize {
    bindsym $left resize shrink width 10
    bindsym $down resize grow height 10
@@ -248,7 +248,7 @@ mode $mode_resize {
 
 # Menu mode {{{2
 
-set $powermode "===  [E]xit  [R]eebot  [L]ock  ==="
+set $powermode "<< [e]xit  [r]eebot  [l]ock  >>"
 
 mode $powermode {
    bindsym e exec swaymsg exit
@@ -265,22 +265,23 @@ bindsym $mod+Shift+Backspace mode $powermode
 # Status Bar {{{1
 
 bar {
-   status_command luastatus-sway.sh
-   height 16
-   position bottom
-   separator_symbol " | "
-   status_edge_padding 12
+   swaybar_command waybar
+   # status_command luastatus-sway.sh
+   # height 16
+   # position bottom
+   # separator_symbol " | "
+   # status_edge_padding 12
 
-   colors {
-      focused_workspace	    #00000066 #00000077 #FFFFFF99
-      active_workspace	    #000000FF #000000FF #FFFFFF99
-      inactive_workspace    #000000FF #000000FF #FFFFFF66
-      binding_mode	    $col_accent $col_accent #FFFFFF
-      separator		    #00000044
-      statusline	    #999999
-      background	    #000000FF
-      focused_background    #000000FF
-   }
+   # colors {
+   #    focused_workspace	    #00000066 #00000077 #FFFFFF99
+   #    active_workspace	    #000000FF #000000FF #FFFFFF99
+   #    inactive_workspace    #000000FF #000000FF #FFFFFF66
+   #    binding_mode	    $col_accent $col_accent #FFFFFF
+   #    separator		    #00000044
+   #    statusline	    #999999
+   #    background	    #000000FF
+   #    focused_background    #000000FF
+   # }
 }
 
 include /etc/sway/config.d/*

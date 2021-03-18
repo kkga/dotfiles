@@ -1,15 +1,17 @@
 @define-color background #000;
 @define-color foreground #999;
-@define-color highlight  #555;
-@define-color accent     #fabd2f;
-@define-color red        #fb4934;
-@define-color green      #b8bb26;
+@define-color bg-dim     #333;
+@define-color text-bright #eee;
+@define-color bg-red     #500;
+@define-color text-red   #f90;
+@define-color bg-green   #030;
+@define-color text-green #0c0;
 
 * {
   border: none;
   border-radius: 0;
-  font-family: monospace;
-  font-size: 13px;
+  font-family: "jetbrains mono";
+  font-size: 11px;
   min-height: 0;
 }
 
@@ -21,29 +23,31 @@ window#waybar {
 }
 
 #workspaces button {
-  padding: 0 4px;
-  background: transparent;
+  padding: 0;
+  margin: 0;
   font-weight: bold;
   color: @foreground;
+  box-shadow: inset -1px 0 0 0 @bg-dim;
 }
 
 #workspaces button.focused {
-  background: @highlight;
-  color: white;
+  background: @bg-dim;
+  color: @text-bright;
 }
 
-#workspaces button.urgent {
-  background: @accent;
-  border-bottom: 3px solid @yellow;
-  color: white;
+#workspaces button.urgent,
+#battery.critical,
+#mode,
+#pulseaudio.muted,
+#cpu.warning {
+  background: @bg-red;
+  color: @text-red;
 }
 
-#mode {
-  background-color: @accent;
-}
-
+#custom-vpn.connected,
 #battery.charging {
-  border-bottom: 3px solid @green;
+  background: @bg-green;
+  color: @text-green;
 }
 
 #mode,
@@ -54,12 +58,20 @@ window#waybar {
 #custom-systemd,
 #custom-updates,
 #custom-mail,
+#custom-vpn,
+#custom-media,
 #network,
 #cpu,
 #memory,
 #backlight,
 #battery,
+#language,
 #clock {
-  padding: 0 4px;
-  margin: 0 8px;
+  padding: 0 8px;
+  border-left: 1px solid @bg-dim;
+  border-right: 1px solid @bg-dim;
+}
+
+#window {
+  margin-left: 8px;
 }

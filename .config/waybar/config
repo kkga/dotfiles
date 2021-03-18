@@ -1,26 +1,48 @@
 {
     "layer": "top",
+	"position": "bottom",
     "height": 16,
     "modules-left": [
         "sway/workspaces",
-        "sway/mode"
+		"sway/window",
     ],
+	"modules-center":[
+        "sway/mode"
+	],
     "modules-right": [
+        "custom/media",
         "custom/updates",
         "cpu",
         "pulseaudio",
         "network",
+        "custom/vpn",
         "battery",
+		"sway/language",
         "clock",
         "tray"
     ],
 
+	"sway/window": {
+		"format": "{}",
+		"max-length": 80
+	},
     "custom/updates": {
         "exec": "xbps-check-updates.sh",
         "signal": 1,
         "on-click-right": "waybar-updates refresh",
         "interval": "once"
     },
+	"custom/media": {
+		"format": "{icon}{}",
+		"return-type": "json",
+		"format-icons": {
+		  "Playing": " ",
+		  "Paused": " ",
+		},
+		"max-length":70,
+		"exec": "playerctl metadata --format '{\"text\": \"{{title}}\", \"tooltip\": \"{{playerName}} : {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+		"on-click": "playerctl play-pause",
+	},
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": "{:%a %d %b %H:%M}"
@@ -28,7 +50,7 @@
     "cpu": {
         "format": "{usage:2}%",
         "states": {
-            "warning": 70,
+            "warning": 50,
             "critical": 90
         }
     },
@@ -36,7 +58,7 @@
         "bat": "BAT0",
         "states": {
             "warning": 30,
-            "critical": 15
+            "critical": 20
         },
         "format": "{capacity}%",
         "format-charging": "{capacity}%",
@@ -52,11 +74,18 @@
         "format-disconnected": "  ",
         "tooltip-format": "{ifname}: {ipaddr}/{cidr}\n {bandwidthDownBits}\n {bandwidthUpBits}"
     },
+	"custom/vpn": {
+		"format": "VPN",
+		"exec": "echo '{\"class\": \"connected\"}'",
+		"exec-if": "test -d /proc/sys/net/ipv4/conf/tailscale0",
+		"return-type": "json",
+		"interval": 5
+	},
     "pulseaudio": {
-        "format": "{volume}%   {format_source}",
+        // "format": "{volume}%   {format_source}",
         "format-bluetooth": "{icon} {volume}%   {format_source}",
         "format-bluetooth-muted": " {icon}   {format_source}",
-        "format-muted": "MUT   {format_source}",
+        "format-muted": "MUT",
         "format-source": "{volume}%",
         "format-source-muted": "",
         "format-icons": {
@@ -69,5 +98,9 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
-    }
+    },
+	"sway/language": {
+		"format": "{}",
+		"max-length": 50
+	}
 }
