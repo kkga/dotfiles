@@ -27,6 +27,7 @@ bottom
 brightnessctl
 brillo
 cadaver
+cairo-devel
 cargo
 chromium
 chrony
@@ -102,6 +103,7 @@ inxi
 iwd
 j4-dmenu-desktop
 jq
+json-c-devel
 kak-lsp
 kakoune
 keyutils
@@ -157,6 +159,7 @@ opendoas
 openssl-devel
 pamixer
 pandoc
+pango-devel
 papirus-icon-theme
 paprefs
 patch
