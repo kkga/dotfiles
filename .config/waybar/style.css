@@ -1,0 +1,65 @@
+@define-color background #000;
+@define-color foreground #999;
+@define-color highlight  #555;
+@define-color accent     #fabd2f;
+@define-color red        #fb4934;
+@define-color green      #b8bb26;
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: monospace;
+  font-size: 13px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: @background;
+  color: @foreground;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+#workspaces button {
+  padding: 0 4px;
+  background: transparent;
+  font-weight: bold;
+  color: @foreground;
+}
+
+#workspaces button.focused {
+  background: @highlight;
+  color: white;
+}
+
+#workspaces button.urgent {
+  background: @accent;
+  border-bottom: 3px solid @yellow;
+  color: white;
+}
+
+#mode {
+  background-color: @accent;
+}
+
+#battery.charging {
+  border-bottom: 3px solid @green;
+}
+
+#mode,
+#pulseaudio,
+#custom-usbguard,
+#custom-yubikey,
+#custom-decrypted,
+#custom-systemd,
+#custom-updates,
+#custom-mail,
+#network,
+#cpu,
+#memory,
+#backlight,
+#battery,
+#clock {
+  padding: 0 4px;
+  margin: 0 8px;
+}

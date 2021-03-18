@@ -111,5 +111,5 @@ cmd jump ${{
    elif [ -d "$res" ]; then
      cmd="cd"
    fi
-lf -remote "send $id $cmd \"$res\""
+   lf -remote "send $id $cmd \"$res\""
 }}
