@@ -27,6 +27,7 @@ bottom
 brightnessctl
 brillo
 cadaver
+cairo-devel
 cargo
 chromium
 chrony
@@ -102,6 +103,7 @@ inxi
 iwd
 j4-dmenu-desktop
 jq
+json-c-devel
 kak-lsp
 kakoune
 keyutils
@@ -136,6 +138,7 @@ luastatus
 lxappearance
 maim
 mako
+mercurial
 mesa
 mesa-dri
 mesa-dri-32bit
@@ -150,10 +153,13 @@ neofetch
 neovim
 nodejs
 noto-fonts-ttf
+obs
+obs-devel
 opendoas
 openssl-devel
 pamixer
 pandoc
+pango-devel
 papirus-icon-theme
 paprefs
 patch
@@ -273,6 +279,7 @@ xurls
 yadm
 yambar
 yarn
+yaru
 youtube-dl
 zathura
 zathura-pdf-mupdf
