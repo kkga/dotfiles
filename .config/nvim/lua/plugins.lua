@@ -53,12 +53,10 @@ return require("packer").startup(
         -- lsp & completion
         use "neovim/nvim-lspconfig"
         use "nvim-lua/lsp-status.nvim"
-        use "glepnir/lspsaga.nvim"
         use "hrsh7th/nvim-compe"
         use "hrsh7th/vim-vsnip"
         use "hrsh7th/vim-vsnip-integ"
         use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
-        -- use "sbdchd/neoformat"
         use "prettier/vim-prettier"
 
         -- lang
