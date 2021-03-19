@@ -13,8 +13,10 @@
         "custom/media",
         "custom/updates",
         "cpu",
+        "temperature",
         "pulseaudio",
         "network",
+        "custom/tailscale",
         "custom/vpn",
         "battery",
 		"sway/language",
@@ -27,11 +29,12 @@
 		"max-length": 80
 	},
     "custom/updates": {
-		"format": "✶ {}",
+		"format": "⇡ {}",
         "exec": "xbps-check-updates.sh",
         "signal": 1,
-        "on-click-right": "waybar-updates refresh",
-        "interval": "3600"
+        "on-click-right": "xbps-check-updates",
+        "on-click": "alacritty -e topgrade",
+        "interval": "once"
     },
 	"custom/media": {
 		"format": "{icon}{}",
@@ -41,7 +44,7 @@
 		  "Paused": " ",
 		},
 		"max-length":70,
-		"exec": "playerctl metadata --format '{\"text\": \"{{title}}\", \"tooltip\": \"{{playerName}} : {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+		"exec": "playerctl metadata --format '{\"text\": \"{{artist}} - {{title}}\", \"tooltip\": \"{{playerName}}: {{artist}} - {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
 		"on-click": "playerctl play-pause",
 	},
     "clock": {
@@ -55,6 +58,13 @@
             "critical": 90
         }
     },
+	 "temperature": {
+		// "thermal-zone": 0,
+		"hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
+		"critical-threshold": 80,
+		// "format-critical": "{temperatureC}°",
+		"format": "CPU {temperatureC}°"
+	},
     "battery": {
         "bat": "BAT0",
         "states": {
@@ -70,7 +80,7 @@
         "interval": 2,
         // "interface": "wlan0",
         "format-wifi": "{essid}",
-        "format-ethernet": "{ifname}",
+        "format-ethernet": "ETH",
         "format-linked": "{ifname}",
         "format-disconnected": " ✗ ",
         "tooltip-format": "{ifname}: {ipaddr}/{cidr}\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}"
@@ -78,17 +88,36 @@
 	"custom/vpn": {
 		"format": "VPN",
 		"exec": "echo '{\"class\": \"connected\"}'",
+		"exec-if": "test -d /proc/sys/net/ipv4/conf/mlvd*",
+		"return-type": "json",
+		"interval": 5
+	},
+	"custom/tailscale": {
+		"format": "TS",
+		"exec": "echo '{\"class\": \"connected\"}'",
 		"exec-if": "test -d /proc/sys/net/ipv4/conf/tailscale0",
 		"return-type": "json",
 		"interval": 5
 	},
+	"custom/weather": {
+		"exec": "curl 'https://wttr.in/?format=%t+%C'",
+		"interval": 3600
+	},
+	"custom/scratch": {
+		"interval": 3,
+		"return-type": "json",
+		"exec": "swaymsg -t get_tree | jq --unbuffered --compact-output '( select(.name == \"root\") | .nodes[] | select(.name == \"__i3\") | .nodes[] | select(.name == \"__i3_scratch\") | .focus) as $scratch_ids | [..  | (.nodes? + .floating_nodes?) // empty | .[] | select(.id |IN($scratch_ids[]))] as $scratch_nodes | { text: \"\\($scratch_nodes | length)\", tooltip: $scratch_nodes | map(\"\\(.app_id // .window_properties.class) (\\(.id)): \\(.name)\") | join(\"\\n\") }'",
+		"format": "{}",
+		"on-click": "exec swaymsg 'scratchpad show'",
+		"on-click-right": "exec swaymsg 'move scratchpad'"
+	},
     "pulseaudio": {
-        // "format": "{volume}%   {format_source}",
-        "format-bluetooth": "{icon} {volume}%   {format_source}",
-        "format-bluetooth-muted": " {icon}   {format_source}",
-        "format-muted": "MUT",
-        "format-source": "{volume}%",
-        "format-source-muted": "",
+        "format": "VOL {volume}%",
+        "format-bluetooth": "BT {volume}% {format_source}",
+        "format-bluetooth-muted": "BT MUT {format_source}",
+        "format-muted": "MUT {volume}%",
+        "format-source": "VOL {volume}%",
+        "format-source-muted": "MUT {volume}",
         "format-icons": {
             "headphone": "",
             "hands-free": "",

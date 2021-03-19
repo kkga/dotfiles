@@ -11,7 +11,7 @@
   border: none;
   border-radius: 0;
   font-family: "jetbrains mono";
-  font-size: 11px;
+  font-size: 12px;
   min-height: 0;
 }
 
@@ -39,12 +39,15 @@ window#waybar {
 #battery.critical,
 #mode,
 #pulseaudio.muted,
-#cpu.warning {
+#cpu.warning,
+#network.disconnected {
   background: @bg-red;
   color: @text-red;
 }
 
 #custom-vpn.connected,
+#custom-tailscale.connected,
+#custom-updates,
 #battery.charging {
   background: @bg-green;
   color: @text-green;
@@ -60,12 +63,15 @@ window#waybar {
 #custom-mail,
 #custom-vpn,
 #custom-media,
+#custom-weather,
+#custom-tailscale,
 #network,
 #cpu,
 #memory,
 #backlight,
 #battery,
 #language,
+#temperature,
 #clock {
   padding: 0 8px;
   border-left: 1px solid @bg-dim;

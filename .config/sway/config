@@ -13,7 +13,7 @@ focus_wrapping yes
 
 gaps inner 8
 
-font monospace 10
+font monospace 9
 titlebar_border_thickness 0
 titlebar_padding 4 0
 
