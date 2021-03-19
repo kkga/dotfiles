@@ -27,10 +27,11 @@
 		"max-length": 80
 	},
     "custom/updates": {
+		"format": "✶ {}",
         "exec": "xbps-check-updates.sh",
         "signal": 1,
         "on-click-right": "waybar-updates refresh",
-        "interval": "once"
+        "interval": "3600"
     },
 	"custom/media": {
 		"format": "{icon}{}",
@@ -61,7 +62,7 @@
             "critical": 20
         },
         "format": "{capacity}%",
-        "format-charging": "{capacity}%",
+        "format-charging": "⚡ {capacity}%",
         "format-alt": "{time} {icon}",
         "format-icons": ["", "", "", "", ""]
     },
@@ -71,8 +72,8 @@
         "format-wifi": "{essid}",
         "format-ethernet": "{ifname}",
         "format-linked": "{ifname}",
-        "format-disconnected": "  ",
-        "tooltip-format": "{ifname}: {ipaddr}/{cidr}\n {bandwidthDownBits}\n {bandwidthUpBits}"
+        "format-disconnected": " ✗ ",
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr}\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}"
     },
 	"custom/vpn": {
 		"format": "VPN",
