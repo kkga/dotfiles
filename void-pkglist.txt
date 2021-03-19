@@ -46,6 +46,7 @@ ddcutil
 delta
 dfu-programmer
 dfu-util
+dina-font
 dkms
 dmenu
 duf
@@ -64,6 +65,7 @@ ffsend
 firefox
 fish-shell
 flatpak
+font-cozette
 font-ibm-plex-ttf
 font-iosevka
 fontmanager
@@ -83,7 +85,6 @@ git-libsecret
 github-cli
 gnome-keyring
 gnome-terminal
-gnome-themes-extra
 go
 godot
 gopass
@@ -151,6 +152,7 @@ mpv
 nautilus
 neofetch
 neovim
+nnn
 nodejs
 noto-fonts-ttf
 obs
@@ -219,7 +221,6 @@ tokei
 topgrade
 trash-cli
 trayer-srg
-ttf-ubuntu-font-family
 ttfautohint
 unar
 unclutter-xfixes
@@ -248,7 +249,6 @@ wine
 wine-32bit
 winetricks
 wireguard-tools
-wlroots-devel
 wlsunset
 wmctrl
 wob
