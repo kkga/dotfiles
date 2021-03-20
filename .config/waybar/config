@@ -32,7 +32,7 @@
 		"format": "⇡ {}",
         "exec": "xbps-check-updates.sh",
         "signal": 1,
-        "on-click-right": "xbps-check-updates",
+        "on-click-right": "xbps-check-updates.sh",
         "on-click": "alacritty -e topgrade",
         "interval": "once"
     },
@@ -53,6 +53,7 @@
     },
     "cpu": {
         "format": "{usage:2}%",
+		"interval": 2,
         "states": {
             "warning": 50,
             "critical": 90
@@ -69,21 +70,21 @@
         "bat": "BAT0",
         "states": {
             "warning": 30,
-            "critical": 20
+            "critical": 10
         },
-        "format": "{capacity}%",
+		"format-time": "{H}:{M:2}",
+        "format": "{capacity}% ({time})",
         "format-charging": "⚡ {capacity}%",
-        "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", ""]
     },
     "network": {
         "interval": 2,
         // "interface": "wlan0",
-        "format-wifi": "{essid}",
+        "format-wifi": "WIFI",
         "format-ethernet": "ETH",
         "format-linked": "{ifname}",
         "format-disconnected": " ✗ ",
-        "tooltip-format": "{ifname}: {ipaddr}/{cidr}\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}"
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}",
+        "tooltip-format": "{ifname}\n{ipaddr}/{cidr}\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}"
     },
 	"custom/vpn": {
 		"format": "VPN",
