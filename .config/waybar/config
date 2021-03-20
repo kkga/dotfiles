@@ -81,9 +81,11 @@
             "warning": 30,
             "critical": 10
         },
-		"format-time": "{H}:{M:2}",
-        "format": "{capacity}% ({time})",
+		"format-time": "{H}h {M}m",
+        "format": "{capacity}%",
         "format-charging": "⚡ {capacity}%",
+		"format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+		"tooltip-format": "{capacity}% {power} {timeTo}"
     },
     "network": {
         "interval": 2,
