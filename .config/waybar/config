@@ -72,7 +72,7 @@
             "critical": 20
         },
         "format": "{capacity}%",
-        "format-charging": "{capacity}%",
+        "format-charging": "⚡ {capacity}%",
         "format-alt": "{time} {icon}",
         "format-icons": ["", "", "", "", ""]
     },
@@ -82,8 +82,8 @@
         "format-wifi": "{essid}",
         "format-ethernet": "ETH",
         "format-linked": "{ifname}",
-        "format-disconnected": " X ",
-        "tooltip-format": "{ifname}: {ipaddr}/{cidr}\n {bandwidthDownBits}\n {bandwidthUpBits}"
+        "format-disconnected": " ✗ ",
+        "tooltip-format": "{ifname}: {ipaddr}/{cidr}\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}"
     },
 	"custom/vpn": {
 		"format": "VPN",
