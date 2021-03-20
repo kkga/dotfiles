@@ -12,6 +12,7 @@
     "modules-right": [
         "custom/media",
         "custom/updates",
+        "custom/yadm",
         "cpu",
         "temperature",
         "pulseaudio",
@@ -35,6 +36,14 @@
         "on-click-right": "xbps-check-updates.sh",
         "on-click": "alacritty -e topgrade",
         "interval": "once"
+    },
+    "custom/yadm": {
+		"format": "{}",
+        "exec": "waybar-yadm-status.sh",
+        "signal": 1,
+        "on-click-right": "waybar-yadm-status.sh",
+        "on-click": "alacritty -e yadm c -a",
+        "interval": "3600"
     },
 	"custom/media": {
 		"format": "{icon}{}",

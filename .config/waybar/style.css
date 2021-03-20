@@ -40,6 +40,7 @@ window#waybar {
 #mode,
 #pulseaudio.muted,
 #cpu.warning,
+#custom-yadm,
 #network.disconnected {
   background: @bg-red;
   color: @text-red;
@@ -60,6 +61,7 @@ window#waybar {
 #custom-decrypted,
 #custom-systemd,
 #custom-updates,
+#custom-yadm,
 #custom-mail,
 #custom-vpn,
 #custom-media,

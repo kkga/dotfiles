@@ -1,6 +1,6 @@
 #!/bin/bash
 
-UPDATES=$(doas xbps-install -nSu | wc -l)
+UPDATES=$(doas xbps-install -nu | wc -l)
 
 if [ $UPDATES != "0" ]; then
 	echo "$UPDATES"
