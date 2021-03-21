@@ -78,7 +78,6 @@ window#waybar {
 #clock {
   padding: 0 8px;
   border-left: 1px solid @bg-dim;
-  border-right: 1px solid @bg-dim;
 }
 
 #window {
