@@ -24,7 +24,21 @@
         "clock",
         "tray"
     ],
-
+	"sway/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": true,
+		"format": "{index}",
+		"format-icons": {
+			"1": "🯱",
+			"2": "🯲",
+			"3": "🯳",
+			"4": "🯴",
+			"5": "",
+			"urgent": "",
+			"focused": "",
+			"default": ""
+		}
+	},
 	"sway/window": {
 		"format": "{}",
 		"max-length": 80
@@ -35,7 +49,7 @@
         "signal": 1,
         "on-click-right": "~/.config/waybar/modules/xbps.sh",
         "on-click": "alacritty -e topgrade",
-        "interval": "once"
+        "interval": "3600"
     },
     "custom/yadm": {
 		"format": "{}",
@@ -49,8 +63,8 @@
 		"format": "{icon}{}",
 		"return-type": "json",
 		"format-icons": {
-		  "Playing": " ",
-		  "Paused": " ",
+		  "Playing": "|| ",
+		  "Paused": "|> ",
 		},
 		"max-length":70,
 		"exec": "playerctl metadata --format '{\"text\": \"{{artist}} - {{title}}\", \"tooltip\": \"{{playerName}}: {{artist}} - {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
@@ -61,7 +75,7 @@
         "format": "{:%a %d %b %H:%M}"
     },
     "cpu": {
-        "format": "{usage:2}%",
+        "format": "C {usage:2}%",
 		"interval": 2,
         "states": {
             "warning": 50,
@@ -73,7 +87,7 @@
 		"hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
 		"critical-threshold": 80,
 		// "format-critical": "{temperatureC}°",
-		"format": "CPU {temperatureC}°"
+		"format": "T {temperatureC}°"
 	},
     "battery": {
         "bat": "BAT0",
@@ -90,26 +104,26 @@
     "network": {
         "interval": 2,
         // "interface": "wlan0",
-        "format-wifi": "WIFI",
-        "format-ethernet": "ETH",
+        "format-wifi": "▼",
+        "format-ethernet": "▲",
         "format-linked": "{ifname}",
         "format-disconnected": " ✗ ",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}",
         "tooltip-format": "{ifname}\n{ipaddr}/{cidr}\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}"
     },
 	"custom/vpn": {
-		"format": "VPN",
-		"exec": "echo '{\"class\": \"connected\"}'",
+		"format": "◆",
+		"exec": "echo '{\"class\": \"connected\", \"tooltip\": \"VPN\"}'",
 		"exec-if": "test -d /proc/sys/net/ipv4/conf/mlvd*",
 		"return-type": "json",
 		"interval": 5
 	},
 	"custom/tailscale": {
-		"format": "TS",
-		"exec": "echo '{\"class\": \"connected\"}'",
+		"format": "◩",
+		"exec": "echo '{\"class\": \"connected\", \"tooltip\": \"TAILSCALE\"}'",
 		"exec-if": "test -d /proc/sys/net/ipv4/conf/tailscale0",
 		"return-type": "json",
-		"interval": 5
+		"interval": 5,
 	},
 	"custom/weather": {
 		"exec": "curl 'https://wttr.in/?format=%t+%C'",
@@ -124,7 +138,7 @@
 		"on-click-right": "exec swaymsg 'move scratchpad'"
 	},
     "pulseaudio": {
-        "format": "VOL {volume}%",
+        "format": "V {volume}%",
         "format-bluetooth": "BT {volume}% {format_source}",
         "format-bluetooth-muted": "BT MUT {format_source}",
         "format-muted": "MUT {volume}%",

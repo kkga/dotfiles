@@ -4,4 +4,6 @@ insensitive=true
 no_actions=true
 width=512
 allow_markup=true
+allow_images=true
+image_size=24
 dmenu-parse_action=true
