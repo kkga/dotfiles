@@ -12,6 +12,7 @@
     "modules-right": [
         "custom/media",
         "custom/updates",
+        "custom/yadm",
         "cpu",
         "temperature",
         "pulseaudio",
@@ -43,11 +44,19 @@
 		"max-length": 80
 	},
     "custom/updates": {
-		"format": "⇡{}",
-        "exec": "xbps-check-updates.sh",
+		"format": "⇡ {}",
+        "exec": "~/.config/waybar/modules/xbps.sh",
         "signal": 1,
-        "on-click-right": "xbps-check-updates",
+        "on-click-right": "~/.config/waybar/modules/xbps.sh",
         "on-click": "alacritty -e topgrade",
+        "interval": "3600"
+    },
+    "custom/yadm": {
+		"format": "{}",
+        "exec": "~/.config/waybar/modules/yadm.sh",
+        "signal": 1,
+        "on-click-right": "~/.config/waybar/modules/yadm.sh",
+        "on-click": "alacritty -e yadm c -a",
         "interval": "3600"
     },
 	"custom/media": {
@@ -67,6 +76,7 @@
     },
     "cpu": {
         "format": "{usage:2}%",
+		"interval": 2,
         "states": {
             "warning": 50,
             "critical": 90
@@ -83,12 +93,13 @@
         "bat": "BAT0",
         "states": {
             "warning": 30,
-            "critical": 20
+            "critical": 10
         },
+		"format-time": "{H}h {M}m",
         "format": "{capacity}%",
         "format-charging": "⚡ {capacity}%",
-        "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", ""]
+		"format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+		"tooltip-format": "{capacity}% {power} {timeTo}"
     },
     "network": {
         "interval": 2,
@@ -97,7 +108,8 @@
         "format-ethernet": "▲",
         "format-linked": "{ifname}",
         "format-disconnected": " ✗ ",
-        "tooltip-format": "{ifname}: {ipaddr}/{cidr}\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}"
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}",
+        "tooltip-format": "{ifname}\n{ipaddr}/{cidr}\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}"
     },
 	"custom/vpn": {
 		"format": "◆",

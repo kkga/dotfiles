@@ -1,5 +1,5 @@
 @define-color background #000;
-@define-color foreground #999;
+@define-color foreground #aaa;
 @define-color bg-dim     #333;
 @define-color text-bright #eee;
 @define-color bg-red     #500;
@@ -13,13 +13,12 @@
   font-family: "jetbrains mono";
   font-size: 12px;
   min-height: 0;
+  transition: none;
 }
 
 window#waybar {
   background: @background;
   color: @foreground;
-  transition-property: background-color;
-  transition-duration: 0.5s;
 }
 
 #workspaces button {
@@ -28,6 +27,8 @@ window#waybar {
   font-weight: bold;
   color: @foreground;
   box-shadow: inset -1px 0 0 0 @bg-dim;
+}
+#workspace button:hover {
 }
 
 #workspaces button.focused {
@@ -40,6 +41,7 @@ window#waybar {
 #mode,
 #pulseaudio.muted,
 #cpu.warning,
+#custom-yadm,
 #network.disconnected {
   background: @bg-red;
   color: @text-red;
@@ -60,6 +62,7 @@ window#waybar {
 #custom-decrypted,
 #custom-systemd,
 #custom-updates,
+#custom-yadm,
 #custom-mail,
 #custom-vpn,
 #custom-media,
