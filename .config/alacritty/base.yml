@@ -24,6 +24,8 @@ window:
 
 key_bindings:
   - { key: Return, mods: Control|Shift, action: SpawnNewInstance }
+  - { key: K, mods: Control|Shift, action: ScrollPageUp }
+  - { key: J, mods: Control|Shift, action: ScrollPageDown }
 
 use_thin_strokes: true
 
