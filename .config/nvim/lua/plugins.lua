@@ -59,12 +59,13 @@ return require("packer").startup(
         use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"}
         use "prettier/vim-prettier"
 
-        -- lang
+        -- ft
         use "habamax/vim-godot"
         use "axvr/org.vim"
         use "HerringtonDarkholme/yats.vim"
         use "evanleck/vim-svelte"
         use "pangloss/vim-javascript"
         -- use {"fatih/vim-go", run = ":GoUpdateBinaries", opt = true, ft = "go"}
+        use 'Shougo/context_filetype.vim'
     end
 )

@@ -13,13 +13,12 @@
   font-family: "jetbrains mono";
   font-size: 12px;
   min-height: 0;
+  transition: none;
 }
 
 window#waybar {
   background: @background;
   color: @foreground;
-  transition-property: background-color;
-  transition-duration: 0.5s;
 }
 
 #workspaces button {
@@ -28,6 +27,8 @@ window#waybar {
   font-weight: bold;
   color: @foreground;
   box-shadow: inset -1px 0 0 0 @bg-dim;
+}
+#workspace button:hover {
 }
 
 #workspaces button.focused {

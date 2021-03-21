@@ -3,6 +3,32 @@
 " PLUGINS {{{
 lua require('lua_config')
 
+" svelte {{{
+let g:svelte_preprocessor_tags = [
+  \ { 'name': 'ts', 'tag': 'script', 'as': 'typescript' }
+  \ ]
+let g:svelte_preprocessors = ['ts']
+let g:svelte_indent_script = 0
+let g:svelte_indent_style = 0
+" }}}
+" context filetype {{{
+if !exists('g:context_filetype#same_filetypes')
+  let g:context_filetype#filetypes = {}
+endif
+
+let g:context_filetype#filetypes.svelte =
+\ [
+\   {'filetype' : 'javascript', 'start' : '<script>', 'end' : '</script>'},
+\   {
+\     'filetype': 'typescript',
+\     'start': '<script\%( [^>]*\)\? \%(ts\|lang="\%(ts\|typescript\)"\)\%( [^>]*\)\?>',
+\     'end': '',
+\   },
+\   {'filetype' : 'css', 'start' : '<style \?.*>', 'end' : '</style>'},
+\ ]
+
+let g:ft = ''
+" }}}
 " prettier {{{
 let g:prettier#quickfix_enabled = 0
 let g:prettier#autoformat = 1
@@ -11,16 +37,6 @@ let g:prettier#exec_cmd_async = 1
 " let g:prettier#exec_cmd_path = "prettier --plugin-search-dir=."
 autocmd BufWritePre *.svelte,*.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 " autocmd BufWritePre,TextChanged,InsertLeave *.svelte,*.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
-" }}}
-" neoformatter {{{
-" augroup fmt
-" 	autocmd!
-" 	autocmd BufWritePre * Neoformat
-" augroup END
-
-" let g:neoformat_basic_format_align = 1
-" let g:neoformat_basic_format_retab = 1
-" let g:neoformat_basic_format_trim = 1
 " }}}
 " lsp {{{
 set updatetime=300
@@ -66,9 +82,6 @@ inoremap <silent><expr> <CR>      compe#confirm(lexima#expand('<LT>CR>', 'i'))
 inoremap <silent><expr> <C-e>     compe#close('<C-e>')
 inoremap <silent><expr> <C-f>     compe#scroll({ 'delta': +4 })
 inoremap <silent><expr> <C-d>     compe#scroll({ 'delta': -4 })
-
-
-
 
 " autocmd BufEnter * lua require'completion'.on_attach()
 " Use <Tab> and <S-Tab> to navigate through popup menu
@@ -210,6 +223,7 @@ set shiftwidth=4                " # of spaces to use for autoindent
 set linebreak                   " Wrap lines when convenient
 set nowrap                      " Wrap lines
 set autoindent                  " Minimal automatic indenting for any filetype
+" set smartindent
 set list
 set listchars=tab:\|-,extends:»,precedes:«,space:.
 
