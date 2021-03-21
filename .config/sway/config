@@ -28,7 +28,7 @@ exec gammastep -l 55:37
 exec light -S 35
 exec wl-paste -t text --watch clipman store
 exec clipman restore
-# exec foot -s
+exec foot -s
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob -a top -a left -W 200 -H 20 -M 8 -o 2 -b 2 -p 2
 exec /usr/libexec/polkit-gnome-authentication-agent-1
 
@@ -46,7 +46,7 @@ exec_always {
 
 # Variables {{{1
 
-set $term 'alacritty'
+set $term 'footclient'
 # set $drun 'j4-dmenu-desktop --no-generic --usage-log=tmp/j4.log --display-binary --term=footclient --dmenu=bemenu'
 set $drun 'wofi'
 set $lock 'swaylock -f -c 000000'
