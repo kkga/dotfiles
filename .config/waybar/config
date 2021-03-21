@@ -23,7 +23,21 @@
         "clock",
         "tray"
     ],
-
+	"sway/workspaces": {
+		"disable-scroll": true,
+		"all-outputs": true,
+		"format": "{index}",
+		"format-icons": {
+			"1": "🯱",
+			"2": "🯲",
+			"3": "🯳",
+			"4": "🯴",
+			"5": "",
+			"urgent": "",
+			"focused": "",
+			"default": ""
+		}
+	},
 	"sway/window": {
 		"format": "{}",
 		"max-length": 80
@@ -40,8 +54,8 @@
 		"format": "{icon}{}",
 		"return-type": "json",
 		"format-icons": {
-		  "Playing": " ",
-		  "Paused": " ",
+		  "Playing": "|| ",
+		  "Paused": "|> ",
 		},
 		"max-length":70,
 		"exec": "playerctl metadata --format '{\"text\": \"{{artist}} - {{title}}\", \"tooltip\": \"{{playerName}}: {{artist}} - {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
@@ -63,7 +77,7 @@
 		"hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
 		"critical-threshold": 80,
 		// "format-critical": "{temperatureC}°",
-		"format": "CPU {temperatureC}°"
+		"format": "◌ {temperatureC}°"
 	},
     "battery": {
         "bat": "BAT0",
@@ -79,21 +93,21 @@
     "network": {
         "interval": 2,
         // "interface": "wlan0",
-        "format-wifi": "{essid}",
-        "format-ethernet": "ETH",
+        "format-wifi": "▼",
+        "format-ethernet": "▲",
         "format-linked": "{ifname}",
         "format-disconnected": " ✗ ",
         "tooltip-format": "{ifname}: {ipaddr}/{cidr}\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}"
     },
 	"custom/vpn": {
-		"format": "VPN",
+		"format": "◆",
 		"exec": "echo '{\"class\": \"connected\"}'",
 		"exec-if": "test -d /proc/sys/net/ipv4/conf/mlvd*",
 		"return-type": "json",
 		"interval": 5
 	},
 	"custom/tailscale": {
-		"format": "TS",
+		"format": "◩",
 		"exec": "echo '{\"class\": \"connected\"}'",
 		"exec-if": "test -d /proc/sys/net/ipv4/conf/tailscale0",
 		"return-type": "json",

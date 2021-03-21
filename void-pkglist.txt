@@ -278,7 +278,6 @@ xtools
 xurls
 yadm
 yambar
-yarn
 yaru
 youtube-dl
 zathura
