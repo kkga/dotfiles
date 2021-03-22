@@ -1,11 +1,11 @@
-@define-color background #000;
-@define-color foreground #aaa;
-@define-color bg-dim     #333;
+@define-color background  #000;
+@define-color foreground  #aaa;
+@define-color bg-dim      #333;
 @define-color text-bright #eee;
-@define-color bg-red     #500;
-@define-color text-red   #f90;
-@define-color bg-green   #030;
-@define-color text-green #0c0;
+@define-color bg-red      #500;
+@define-color text-red    #f90;
+@define-color bg-green    #030;
+@define-color text-green  #0c0;
 
 * {
   border: none;
@@ -22,7 +22,7 @@ window#waybar {
 }
 
 #workspaces button {
-  padding: 0;
+  padding: 0 2px;
   margin: 0;
   font-weight: bold;
   color: @foreground;

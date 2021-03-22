@@ -9,12 +9,13 @@ return require("packer").startup(
         use "romainl/Apprentice"
         use "lifepillar/vim-colortemplate"
         use "jonathanfilip/vim-lucius"
+        use 'lifepillar/vim-solarized8'
 
         -- utils
         use "tpope/vim-surround"
         use "tpope/vim-repeat"
         use "tpope/vim-commentary"
-        use "tpope/vim-sleuth"
+        -- use "tpope/vim-sleuth"
         use "tpope/vim-eunuch"
         use "tpope/vim-unimpaired"
         use "tpope/vim-rsi"
