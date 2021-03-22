@@ -28,7 +28,11 @@ window#waybar {
   color: @foreground;
   box-shadow: inset -1px 0 0 0 @bg-dim;
 }
-#workspace button:hover {
+#workspaces button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  background: @background;
+  border: none;
 }
 
 #workspaces button.focused {
