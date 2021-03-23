@@ -10,8 +10,8 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: "jetbrains mono";
-  font-size: 12px;
+  font-family: "monospace";
+  font-size: 13px;
   min-height: 0;
   transition: none;
 }
