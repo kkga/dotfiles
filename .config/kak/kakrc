@@ -1,3 +1,17 @@
+evaluate-commands %sh{
+    plugins="$HOME/.config/kak/plugins"
+    mkdir -p $plugins
+    [ ! -e "$plugins/plug.kak" ] && \
+        git clone -q https://github.com/andreyorst/plug.kak "$plugins/plug.kak"
+    printf "%s\n" "source '$plugins/plug.kak/rc/plug.kak'"
+}
+plug "andreyorst/plug.kak" noload
+plug "andreyorst/fzf.kak"
+
+evaluate-commands %sh{
+        find -L "path/to/fzf.kak/modules/" -type f -name '*.kak' -exec printf 'source "%s"\n' {} \;
+}
+
 # Set the colour scheme
 colorscheme lucius
 
@@ -28,6 +42,18 @@ map -docstring "paste the clipboard" global user p "<a-!> xsel<ret>"
 
 # Shortcut to quickly exit the editor
 define-command -docstring "save and quit" x "write-all; quit"
+
+define-command files -docstring 'Open one or many files' %{ evaluate-commands %sh{
+    FILES=$(rg --hidden --files | wofi -d)
+    for file in $FILES; do
+        printf 'eval -client %%{%s} edit %%{%s}\n' "$kak_client" "$file" | kak -p "$kak_session"
+    done
+} }
+
+define-command buffers -docstring 'Switch to a buffer' %{ evaluate-commands %sh{
+    BUFFER=$(eval set -- "$kak_buflist"; for buf in "$@"; do echo "$buf"; done | wofi -d)
+    [ -n "$BUFFER" ] && echo "eval -client '$kak_client' 'buffer $BUFFER'" | kak -p "$kak_session"
+} }
 
 # LSP
 eval %sh{kak-lsp --kakoune -s $kak_session}
