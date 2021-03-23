@@ -248,8 +248,8 @@ set nojoinspaces                " Set 1 space btwn lines/periods to be joined
 set scrolloff=8               " Working line will always be in the center
 
 " fish doesn't always play nice in vim
-set shell=/bin/dash
-let $SHELL = "/bin/dash"
+set shell=/bin/bash
+let $SHELL = "/bin/bash"
 
 " disable backups and swap
 set nobackup

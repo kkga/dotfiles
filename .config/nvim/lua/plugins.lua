@@ -54,6 +54,7 @@ return require("packer").startup(
 
         -- lsp & completion
         use "neovim/nvim-lspconfig"
+        use 'kabouzeid/nvim-lspinstall'
         use "nvim-lua/lsp-status.nvim"
         use "hrsh7th/nvim-compe"
         use "hrsh7th/vim-vsnip"

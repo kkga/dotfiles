@@ -4,7 +4,7 @@
     "height": 16,
     "modules-left": [
         "sway/workspaces",
-		"sway/window",
+		"sway/window"
     ],
 	"modules-center":[
         "sway/mode"
@@ -64,11 +64,11 @@
 		"return-type": "json",
 		"format-icons": {
 		  "Playing": "|| ",
-		  "Paused": "|> ",
+		  "Paused": "|> "
 		},
 		"max-length":70,
 		"exec": "playerctl metadata --format '{\"text\": \"{{artist}} - {{title}}\", \"tooltip\": \"{{playerName}}: {{artist}} - {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-		"on-click": "playerctl play-pause",
+		"on-click": "playerctl play-pause"
 	},
     "clock": {
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
@@ -123,7 +123,7 @@
 		"exec": "echo '{\"class\": \"connected\", \"tooltip\": \"TAILSCALE\"}'",
 		"exec-if": "test -d /proc/sys/net/ipv4/conf/tailscale0",
 		"return-type": "json",
-		"interval": 5,
+		"interval": 5
 	},
 	"custom/weather": {
 		"exec": "curl 'https://wttr.in/?format=%t+%C'",
