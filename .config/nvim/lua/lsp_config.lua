@@ -9,11 +9,27 @@ local custom_attach = function(client, bufnr)
     print("LSP started")
     status.on_attach(client, bufnr)
 
+    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
+      vim.lsp.diagnostic.on_publish_diagnostics, {
+        virtual_text = {
+          prefix = "»",
+          spacing = 4,
+        },
+        signs = true,
+        update_in_insert = false,
+      }
+    )
+
+    vim.fn.sign_define('LspDiagnosticsSignError', { text = "E" })
+    vim.fn.sign_define('LspDiagnosticsSignWarning', { text = "W" })
+    vim.fn.sign_define('LspDiagnosticsSignInformation', { text = "I" })
+    vim.fn.sign_define('LspDiagnosticsSignHint', { text = "H" })
+
     mapper("n", "gj", "vim.lsp.diagnostic.goto_next()")
     mapper("n", "gk", "vim.lsp.diagnostic.goto_prev()")
     mapper("n", "gd", "vim.lsp.buf.definition()")
     mapper("n", "gD", "vim.lsp.buf.declaration()")
-      mapper("n", "gh", "vim.lsp.buf.hover()")
+    mapper("n", "gh", "vim.lsp.buf.hover()")
     mapper("n", "gR", "vim.lsp.buf.rename()")
     mapper("n", "gr", "vim.lsp.buf.references()")
     mapper("n", "gF", "vim.lsp.buf.formatting()")
@@ -23,15 +39,15 @@ local custom_attach = function(client, bufnr)
     if client.resolved_capabilities.document_highlight then
         vim.api.nvim_exec(
             [[
-      hi LspReferenceRead cterm=bold ctermbg=red guibg=LightYellow
-      hi LspReferenceText cterm=bold ctermbg=red guibg=LightYellow
-      hi LspReferenceWrite cterm=bold ctermbg=red guibg=LightYellow
-      augroup lsp_document_highlight
-        autocmd! * <buffer>
-        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-      augroup END
-    ]],
+              hi LspReferenceRead cterm=bold ctermbg=red guibg=LightYellow
+              hi LspReferenceText cterm=bold ctermbg=red guibg=LightYellow
+              hi LspReferenceWrite cterm=bold ctermbg=red guibg=LightYellow
+              augroup lsp_document_highlight
+                autocmd! * <buffer>
+                autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
+                autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
+              augroup END
+            ]],
             false
         )
     end
@@ -76,11 +92,12 @@ local function setup_servers()
       config.init_options = {documentFormatting = true}
       config.filetypes = {"markdown", "lua"}
       config.settings = {
-        rootMarkers = {".git/"},
+        rootMarkers = {".git/", ".package.json"},
         languages = {
-          lua = {
-            {formatCommand = "lua-format -i", formatStdin = true}
-          }
+          lua = {stylua}
+          -- lua = {
+          --   {formatCommand = "stylua", formatStdin = true}
+          -- }
         }
       }
     end
@@ -96,38 +113,3 @@ require'lspinstall'.post_install_hook = function ()
   setup_servers() -- reload installed servers
   vim.cmd("bufdo e") -- this triggers the FileType autocmd that starts the server
 end
-
-
--- local servers = {"gopls", "svelte", "cssls", "html", "tsserver"}
-
--- for _, lsp in ipairs(servers) do
---     nvim_lsp[lsp].setup {
---         on_attach = custom_attach,
---         capabilities = capabilities
---     }
--- end
-
--- local eslint = {
---     lintCommand = "eslint_d -f unix --stdin --stdin-filename ${INPUT}",
---     lintStdin = true,
---     lintFormats = {"%f:%l:%c: %m"},
---     lintIgnoreExitCode = true,
---     formatCommand = "eslint_d --fix-to-stdout --stdin --stdin-filename=${INPUT}",
---     formatStdin = true
--- }
-
--- require "lspconfig".efm.setup {
---     init_options = {documentFormatting = true},
---     filetypes = {"javascript", "typescript"},
---     -- root_dir = function(fname)
---     --     return util.root_pattern("tsconfig.json")(fname) or util.root_pattern(".eslintrc.js", ".git")(fname)
---     -- end,
---     init_options = {documentFormatting = true},
---     settings = {
---         rootMarkers = {".eslintrc.js", ".git/"},
---         languages = {
---             javascript = {eslint},
---             typescript = {eslint}
---         }
---     }
--- }
