@@ -228,8 +228,8 @@ set list
 set listchars=tab:\|-,extends:»,precedes:«,space:.
 
 " lines and numbers
-set number
-set relativenumber
+set nonumber
+set norelativenumber
 set cursorline
 set nocursorcolumn
 set colorcolumn=80
@@ -262,16 +262,16 @@ set undofile                    " Write changes to the undofile
 set undolevels=1000             " Max # of changes that can be undone
 set undoreload=10000            " Max # of lines to save for undo on buf reload
 
-" function! LspStatus() abort
-" 	if luaeval('#vim.lsp.buf_get_clients() > 0')
-" 		return luaeval("require('lsp-status').status()")
-" 	endif
-" 	return ''
-" endfunction
+function! LspStatus() abort
+	if luaeval('#vim.lsp.buf_get_clients() > 0')
+		return luaeval("require('lsp-status').status()")
+	endif
+	return ''
+endfunction
 
-" set statusline=%<\ %f\ %m%r
-" set statusline+=%{&paste?'\ \ \|\ PASTE\ ':'\ '}
-" set statusline+=%=%{LspStatus()}\ [%{&filetype}]\ %3l/%3L\ (%2c\)
+set statusline=%<\ %f\ %m%r
+set statusline+=%{&paste?'\ \ \|\ PASTE\ ':'\ '}
+set statusline+=%=%{LspStatus()}\ [%{&filetype}]\ %3l/%3L\ (%2c\)
 
 " }}}
 " MAPPINGS {{{
@@ -313,10 +313,10 @@ map <silent> Q: :q<Cr>
 nnoremap Q nop
 
 " yank/put to system clipboard
-" vnoremap <leader>y "+y
-" nnoremap <leader>y "+y
-" nnoremap <leader>p "+p
-" vnoremap <leader>p "+p
+vnoremap <leader>y "+y
+nnoremap <leader>y "+y
+nnoremap <leader>p "+p
+vnoremap <leader>p "+p
 
 " motion across wrapped lines
 nnoremap <silent>j gj
