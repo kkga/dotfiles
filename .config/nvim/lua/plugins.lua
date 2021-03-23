@@ -22,6 +22,7 @@ return require("packer").startup(
         use "airblade/vim-rooter"
         use "rhysd/clever-f.vim"
         use "justinmk/vim-sneak"
+        use 'mattn/emmet-vim'
 
         -- ui
         use "airblade/vim-gitgutter"
