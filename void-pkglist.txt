@@ -64,6 +64,7 @@ ffscreencast
 ffsend
 firefox
 fish-shell
+flameshot
 flatpak
 font-cozette
 font-ibm-plex-ttf
@@ -187,6 +188,7 @@ qmk
 qt5-wayland
 qtpass
 radeontop
+redshift
 ripgrep
 roxterm
 sakura
@@ -206,6 +208,7 @@ spotify-tui
 spotifyd
 steam
 sublime-text3
+sunwait
 sway
 swayidle
 swaylock

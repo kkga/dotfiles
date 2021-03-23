@@ -23,6 +23,7 @@ return require("packer").startup(
         use "airblade/vim-rooter"
         use "rhysd/clever-f.vim"
         use "justinmk/vim-sneak"
+        use 'mattn/emmet-vim'
 
         -- ui
         use "airblade/vim-gitgutter"
@@ -53,6 +54,7 @@ return require("packer").startup(
 
         -- lsp & completion
         use "neovim/nvim-lspconfig"
+        use 'kabouzeid/nvim-lspinstall'
         use "nvim-lua/lsp-status.nvim"
         use "hrsh7th/nvim-compe"
         use "hrsh7th/vim-vsnip"
