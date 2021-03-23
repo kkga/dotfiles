@@ -97,7 +97,7 @@
         },
 		"format-time": "{H}h {M}m",
         "format": "{capacity}%",
-        "format-charging": "⚡ {capacity}%",
+        "format-charging": "{capacity}%",
 		"format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
 		"tooltip-format": "{capacity}% {power} {timeTo}"
     },
