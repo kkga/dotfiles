@@ -133,10 +133,11 @@ client.unfocused        $col_gray_dark	    $col_gray_dark	$col_gray_light	    $c
 # for_window [ app_id="^.*"               ] inhibit_idle fullscreen
 for_window [ class="^Firefox$"          ] inhibit_idle fullscreen
 for_window [ app_id="^firefox$"         ] inhibit_idle fullscreen
-for_window [ app_id="^launcher$"        ] floating enable
 for_window [ app_id="pavucontrol"       ] focus, floating enable
 for_window [ title="Picture-in-Picture" ] floating enable
 for_window [ app_id="mpv"               ] floating enable
+for_window [ app_id="^launcher$"        ] floating enable
+for_window [ app_id="dmenu.*"           ] floating enable, resize set width 60ppt height 80ppt
 
 # Key bindings {{{1
 
