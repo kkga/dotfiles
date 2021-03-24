@@ -44,8 +44,12 @@ let g:prettier#exec_cmd_async = 1
 set updatetime=300
 " autocmd CursorHold * lua vim.lsp.diagnostic.show_line_diagnostics()
 " }}}
+" vsnip {{{
+let g:vsnip_snippet_dir = "~/.config/nvim/vsnip"
+imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+" }}}
 " completion {{{
-" set completeopt=menuone,noinsert,noselect
 set completeopt=menuone,noselect
 set shortmess+=c
 
