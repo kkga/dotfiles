@@ -3,6 +3,9 @@
 " PLUGINS {{{
 lua require('lua_config')
 
+" indent {{{
+let g:indent_blankline_use_treesitter = v:true
+" }}}
 " svelte {{{
 let g:svelte_preprocessor_tags = [
   \ { 'name': 'ts', 'tag': 'script', 'as': 'typescript' }
@@ -223,8 +226,8 @@ set linebreak                   " Wrap lines when convenient
 set nowrap                      " Wrap lines
 set autoindent                  " Minimal automatic indenting for any filetype
 set smartindent
-set list
-set listchars=tab:\|-,extends:»,precedes:«,space:.
+set nolist
+" set listchars=tab:\|-,extends:»,precedes:«,space:.
 
 " lines and numbers
 set nonumber

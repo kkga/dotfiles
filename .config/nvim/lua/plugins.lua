@@ -25,10 +25,17 @@ return require("packer").startup(function()
 	use("mattn/emmet-vim")
 
 	-- ui
-	use("airblade/vim-gitgutter")
+	-- use("airblade/vim-gitgutter")
 	use("ap/vim-buftabline")
 	use("mbbill/undotree")
 	use("junegunn/vim-peekaboo")
+	use({ "lukas-reineke/indent-blankline.nvim", branch = "lua" })
+	use({
+		"lewis6991/gitsigns.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim",
+		},
+	})
 
 	-- notes
 	use("plasticboy/vim-markdown")

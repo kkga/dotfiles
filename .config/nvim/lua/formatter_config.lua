@@ -41,26 +41,25 @@ local formatterConfig = {
 }
 
 local commonFT = {
-  "css",
-  "scss",
-  "html",
-  "java",
-  "javascript",
-  "typescript",
-  "typescriptreact",
-  "markdown",
-  "markdown.mdx",
-  "json"
+	"css",
+	"scss",
+	"html",
+	"svelte",
+	"java",
+	"javascript",
+	"typescript",
+	"typescriptreact",
+	"markdown",
+	"markdown.mdx",
+	"json",
 }
 for _, ft in ipairs(commonFT) do
-  formatterConfig[ft] = {
-    prettierConfig
-  }
+	formatterConfig[ft] = {
+		prettierConfig,
+	}
 end
 -- Setup functions
-formatter.setup(
-  {
-    logging = false,
-    filetype = formatterConfig
-  }
-)
+formatter.setup({
+	logging = false,
+	filetype = formatterConfig,
+})
