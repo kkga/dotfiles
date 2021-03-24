@@ -9,11 +9,11 @@ plug "andreyorst/plug.kak" noload
 plug "andreyorst/fzf.kak"
 
 evaluate-commands %sh{
-        find -L "path/to/fzf.kak/modules/" -type f -name '*.kak' -exec printf 'source "%s"\n' {} \;
+    find -L "path/to/fzf.kak/modules/" -type f -name '*.kak' -exec printf 'source "%s"\n' {} \;
 }
 
 # Set the colour scheme
-colorscheme lucius
+colorscheme github
 
 # Width of a tab
 set-option global tabstop 4
@@ -37,8 +37,8 @@ add-highlighter global/ regex \h+$ 0:Error
 add-highlighter global/ wrap -word -indent
 
 # Clipboard management mappings
-map -docstring "yank the selection into the clipboard" global user y "<a-|> xsel -i<ret>"
-map -docstring "paste the clipboard" global user p "<a-!> xsel<ret>"
+map global user y "<a-|> wl-copy -i<ret>" -docstring "yank the selection into the clipboard"
+map global user p "<a-!> wl-copy<ret>"	-docstring "paste the clipboard"
 
 # Shortcut to quickly exit the editor
 define-command -docstring "save and quit" x "write-all; quit"

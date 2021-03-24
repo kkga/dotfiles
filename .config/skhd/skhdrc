@@ -38,8 +38,8 @@ alt + shift - space : yabai -m window --toggle float;\
 # SPACES
 
 # fast focus desktop
-alt - n : yabai -m space  --focus next
-alt - p : yabai -m space  --focus prev
+cmd + ctrl - n : yabai -m space  --focus next
+cmd + ctrl - p : yabai -m space  --focus prev
 alt - tab : yabai -m space --focus recent
 alt - 1 : yabai -m space --focus 1
 alt - 2 : yabai -m space --focus 2
