@@ -1,9 +1,3 @@
-eval %sh{kak-lsp --kakoune -s $kak_session}
-lsp-enable
-lsp-auto-hover-insert-mode-enable
-
-set-option global lsp_auto_highlight_references true
-
 set-option global grepcmd 'rg --hidden --follow --smart-case --with-filename --column'
 
 # autoformatting
