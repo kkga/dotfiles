@@ -68,6 +68,10 @@ plug "andreyorst/fzf.kak" config %{
     }
 }
 
+plug "TeddyDD/kakoune-wiki" config %{
+    wiki-setup %sh{ echo $HOME/notes }
+}
+
 plug "andreyorst/smarttab.kak" defer smarttab %{
     # when `backspace' is pressed, 4 spaces are deleted at once
     set-option global softtabstop 4
