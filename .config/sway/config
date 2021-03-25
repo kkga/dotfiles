@@ -22,9 +22,9 @@ seat * hide_cursor 5000
 
 # Autostart {{{1
 
-# exec mako
+exec mako
 exec pipewire
-exec gammastep -l 55:37
+exec gammastep
 exec light -S 35
 exec wl-paste -t text --watch clipman store --max-items=50
 exec clipman restore
