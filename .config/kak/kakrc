@@ -1,6 +1,6 @@
 source "%val{config}/plugins/plug.kak/rc/plug.kak"
 plug "andreyorst/plug.kak" noload
-plug "caksoylar/kakoune-mysticaltutor" theme
+plug "caksoylar/kakoune-mysticaltutor" theme; colorscheme mysticaltutor
 
 plug "lePerdu/kakboard" %{
     hook global WinCreate .* %{ kakboard-enable }
