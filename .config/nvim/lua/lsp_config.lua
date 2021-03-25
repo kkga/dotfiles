@@ -61,6 +61,27 @@ status.config({
 	spinner_frames = { "⣾", "⣽", "⣻", "⢿", "⡿", "⣟", "⣯", "⣷" },
 })
 
+local lua_settings = {
+	Lua = {
+		runtime = {
+			-- LuaJIT in the case of Neovim
+			version = "LuaJIT",
+			path = vim.split(package.path, ";"),
+		},
+		diagnostics = {
+			-- Get the language server to recognize the `vim` global
+			globals = { "vim", "use" },
+		},
+		workspace = {
+			-- Make the server aware of Neovim runtime files
+			library = {
+				[vim.fn.expand("$VIMRUNTIME/lua")] = true,
+				[vim.fn.expand("$VIMRUNTIME/lua/vim/lsp")] = true,
+			},
+		},
+	},
+}
+
 local function make_config()
 	local capabilities = vim.lsp.protocol.make_client_capabilities()
 	capabilities.textDocument.completion.completionItem.snippetSupport = true
@@ -79,6 +100,9 @@ local function setup_servers()
 
 	for _, server in pairs(servers) do
 		local config = make_config()
+		if server == "lua" then
+			config.settings = lua_settings
+		end
 
 		-- language specific config
 		if server == "tailwindcss" then
@@ -90,7 +114,7 @@ local function setup_servers()
 			config.settings = {
 				rootMarkers = { ".git/", ".package.json" },
 				languages = {
-					lua = { stylua },
+					lua = { "stylua" },
 				-- lua = {
 				--   {formatCommand = "stylua", formatStdin = true}
 				-- }
@@ -98,7 +122,7 @@ local function setup_servers()
 			}
 		end
 
-		require("lspconfig")[server].setup(config)
+		nvim_lsp[server].setup(config)
 	end
 end
 
