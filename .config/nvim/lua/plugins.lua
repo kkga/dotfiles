@@ -23,10 +23,12 @@ return require("packer").startup(function()
 	use("rhysd/clever-f.vim")
 	use("justinmk/vim-sneak")
 	use("mattn/emmet-vim")
+	use("phaazon/hop.nvim")
+	use("TimUntersberger/neogit")
 
 	-- ui
-	-- use("airblade/vim-gitgutter")
 	use("ap/vim-buftabline")
+	use("kyazdani42/nvim-tree.lua")
 	use("mbbill/undotree")
 	use("junegunn/vim-peekaboo")
 	use({ "lukas-reineke/indent-blankline.nvim", branch = "lua" })

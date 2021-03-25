@@ -286,6 +286,15 @@ set statusline+=%=%{LspStatus()}\ [%{&filetype}]\ %3l/%3L\ (%2c\)
 let mapleader = "\<space>"
 let maplocalleader = "\,"
 
+" hop {{{
+nmap <leader>h [hop]
+nnoremap <silent> [hop]w <cmd>HopWord<cr>
+nnoremap <silent> [hop]p <cmd>HopPattern<cr>
+nnoremap <silent> [hop]l <cmd>HopLine<cr>
+nnoremap <silent> [hop]c <cmd>HopChar1<cr>
+nnoremap <silent> [hop]C <cmd>HopChar2<cr>
+" }}}
+
 " telescope {{{
 nmap <leader>f [find]
 xmap <leader>f [find]
