@@ -150,6 +150,7 @@ mesa-vulkan-radeon
 mesa-vulkan-radeon-32bit
 meson
 mpv
+myrepos
 nautilus
 neofetch
 neovim

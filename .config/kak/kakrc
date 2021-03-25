@@ -1,3 +1,52 @@
+# plugins
+source "%val{config}/plugins/plug.kak/rc/plug.kak"
+plug "andreyorst/plug.kak" noload
+plug "caksoylar/kakoune-mysticaltutor" theme
+
+plug "andreyorst/fzf.kak" config %{
+    map -docstring 'fzf mode' global normal '<c-p>' ': fzf-mode<ret>'
+} defer "fzf" %{
+    set-option global fzf_preview_width '65%'
+    set-option global fzf_project_use_tilda true
+    evaluate-commands %sh{
+        if [ -n "$(command -v fd)" ]; then
+            echo "set-option global fzf_file_command %{fd .  --no-ignore --type f --follow --hidden --exclude .git --exclude .svn}"
+        else
+            echo "set-option global fzf_file_command %{find .  \( -path '*/.svn*' -o -path '*/.git*' \) -prune -o -type f -follow -print}"
+        fi
+        [ -n "$(command -v bat)" ] && echo "set-option global fzf_highlight_command bat"
+        [ -n "${kak_opt_grepcmd}" ] && echo "set-option global fzf_sk_grep_command %{${kak_opt_grepcmd}}"
+    }
+}
+        
+
+plug "andreyorst/smarttab.kak" defer smarttab %{
+    # when `backspace' is pressed, 4 spaces are deleted at once
+    set-option global softtabstop 4
+    } config %{
+    # these languages will use `expandtab' behavior
+    hook global WinSetOption filetype=(rust|markdown|kak|lisp|scheme|sh|perl) expandtab
+    # these languages will use `noexpandtab' behavior
+    hook global WinSetOption filetype=(makefile|gas) noexpandtab
+    # these languages will use `smarttab' behavior
+    hook global WinSetOption filetype=(c|cpp) smarttab
+}
+
+plug "alexherbo2/move-line.kak" config %{
+    map global normal <down> ': move-line-below<ret>'
+    map global normal <up> ': move-line-above<ret>'
+}
+
+plug "alexherbo2/auto-pairs.kak" defer "auto-pairs" %{
+    auto-pairs-enable
+}
+
+plug "occivink/kakoune-vertical-selection" config %{
+    # map global user v     ': vertical-selection-down<ret>'
+    # map global user <a-v> ': vertical-selection-up<ret>'
+    # map global user V     ': vertical-selection-up-and-down<ret>'
+}
+
 define-command -docstring "save and quit" x "write-all; quit"
 
 define-command files -docstring 'Open one or many files' %{ evaluate-commands %sh{
@@ -12,10 +61,6 @@ define-command buffers -docstring 'Switch to a buffer' %{ evaluate-commands %sh{
     [ -n "$BUFFER" ] && echo "eval -client '$kak_client' 'buffer $BUFFER'" | kak -p "$kak_session"
 } }
 
-
-source "~/.config/kak/auto-pairs.kak/rc/auto-pairs.kak"; require-module auto-pairs
-source "~/.config/kak/surround.kak/rc/surround.kak"; require-module surround
-source "~/.config/kak/vertical-selection/vertical-selection.kak"; 
 source "~/.config/kak/mappings.kak"
 source "~/.config/kak/coding.kak"
 source "~/.config/kak/ui.kak"
