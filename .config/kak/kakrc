@@ -43,6 +43,7 @@ plug-old kakboard https://github.com/lePerdu/kakboard %{
 }
 plug-old vertical-selection https://github.com/occivink/kakoune-vertical-selection
 plug-old buffers https://github.com/Delapouite/kakoune-buffers
+plug-old palette https://github.com/Delapouite/kakoune-palette
 plug-old lsp https://github.com/kak-lsp/kak-lsp %{
   hook global WinSetOption filetype=(typescript|svelte|javascript) %{
       lsp-auto-hover-enable
