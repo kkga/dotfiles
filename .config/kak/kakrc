@@ -31,7 +31,7 @@ plug connect https://github.com/kakounedotcom/connect.kak %{
     alias global popup alacritty-terminal-popup
 }
 nop plug auto-pairs https://github.com/alexherbo2/auto-pairs.kak %{
-	auto-pairs-enable
+    auto-pairs-enable
 }
 plug yank-ring https://github.com/alexherbo2/yank-ring.kak %{
     yank-ring-enable
