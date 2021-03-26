@@ -1,103 +1,101 @@
-source "%val{config}/plugins/plug.kak/rc/plug.kak"
-plug "andreyorst/plug.kak" noload
-plug "caksoylar/kakoune-mysticaltutor" theme; colorscheme mysticaltutor
+require-module plug
 
-plug "lePerdu/kakboard" %{
+plug plug https://github.com/alexherbo2/plug.kak %{
+    define-command plug-upgrade -docstring 'plug-upgrade' %{
+        plug-install
+        plug-execute lsp cargo build --release
+    }
+}
+
+plug-core %{
+    set-option global makecmd 'make -j 8'
+    set-option global grepcmd 'rg --column --with-filename'
+
+    alias global u enter-user-mode
+}
+
+plug-old lsp https://github.com/kak-lsp/kak-lsp %{
+  lsp-enable
+
+  map -docstring 'lsp definition' global goto d '<esc>: lsp-definition<ret>'
+  map -docstring 'lsp implementation' global goto D '<esc>: lsp-implementation<ret>'
+}
+
+plug alacritty https://github.com/alexherbo2/alacritty.kak
+
+plug prelude https://github.com/kakounedotcom/prelude.kak
+plug connect https://github.com/kakounedotcom/connect.kak %{
+    require-module connect-fzf
+    alias global terminal alacritty-terminal
+    alias global popup alacritty-terminal-popup
+}
+
+plug auto-pairs https://github.com/alexherbo2/auto-pairs.kak %{
+	auto-pairs-enable
+}
+
+plug surround https://github.com/alexherbo2/surround.kak
+
+plug move-line https://github.com/alexherbo2/move-line.kak %{
+  map -docstring 'Move selected lines below' global normal <down> ': move-line-below<ret>'
+  map -docstring 'Move selected lines above' global normal <up> ': move-line-above<ret>'
+}
+
+
+plug-old kakboard https://github.com/lePerdu/kakboard %{
     hook global WinCreate .* %{ kakboard-enable }
 }
 
-plug "ul/kak-lsp" do %{
-    cargo build --release --locked
-    cargo install --force --path .
-} config %{
-    # uncomment to enable debugging
-    # eval %sh{echo ${kak_opt_lsp_cmd} >> /tmp/kak-lsp.log}
-    # set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
+plug-old vertical-selection https://github.com/occivink/kakoune-vertical-selection
 
-    # this is not necessary; the `lsp-enable-window` will take care of it
-    # eval %sh{${kak_opt_lsp_cmd} --kakoune -s $kak_session}
+plug-old buffers https://github.com/Delapouite/kakoune-buffers
 
-    set global lsp_diagnostic_line_error_sign '║'
-    set global lsp_diagnostic_line_warning_sign '┊'
 
-    lsp-auto-hover-insert-mode-enable
+# plug "ul/kak-lsp" do %{
+#     cargo build --release --locked
+#     cargo install --force --path .
+# } config %{
+#     # uncomment to enable debugging
+#     # eval %sh{echo ${kak_opt_lsp_cmd} >> /tmp/kak-lsp.log}
+#     # set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
 
-    set-option global lsp_auto_highlight_references true
+#     # this is not necessary; the `lsp-enable-window` will take care of it
+#     # eval %sh{${kak_opt_lsp_cmd} --kakoune -s $kak_session}
 
-    define-command ne -docstring 'go to next error/warning from lsp' %{ lsp-find-error --include-warnings }
-    define-command pe -docstring 'go to previous error/warning from lsp' %{ lsp-find-error --previous --include-warnings }
-    define-command ee -docstring 'go to current error/warning from lsp' %{ lsp-find-error --include-warnings; lsp-find-error --previous --include-warnings }
+#     set global lsp_diagnostic_line_error_sign '║'
+#     set global lsp_diagnostic_line_warning_sign '┊'
 
-    define-command lsp-restart -docstring 'restart lsp server' %{ lsp-stop; lsp-start }
-    hook global WinSetOption filetype=(c|cpp|cc|rust|javascript|typescript) %{
-        set-option window lsp_auto_highlight_references true
-        set-option window lsp_hover_anchor false
-        lsp-auto-hover-enable
-        echo -debug "Enabling LSP for filtetype %opt{filetype}"
-        lsp-enable-window
-    }
+#     lsp-auto-hover-insert-mode-enable
 
-    hook global WinSetOption filetype=(rust) %{
-        set window lsp_server_configuration rust.clippy_preference="on"
-    }
+#     set-option global lsp_auto_highlight_references true
 
-    hook global WinSetOption filetype=rust %{
-        hook window BufWritePre .* %{
-            evaluate-commands %sh{
-                test -f rustfmt.toml && printf lsp-formatting-sync
-            }
-        }
-    }
+#     define-command ne -docstring 'go to next error/warning from lsp' %{ lsp-find-error --include-warnings }
+#     define-command pe -docstring 'go to previous error/warning from lsp' %{ lsp-find-error --previous --include-warnings }
+#     define-command ee -docstring 'go to current error/warning from lsp' %{ lsp-find-error --include-warnings; lsp-find-error --previous --include-warnings }
 
-    hook global KakEnd .* lsp-exit
-}
+#     define-command lsp-restart -docstring 'restart lsp server' %{ lsp-stop; lsp-start }
+#     hook global WinSetOption filetype=(c|cpp|cc|rust|javascript|typescript) %{
+#         set-option window lsp_auto_highlight_references true
+#         set-option window lsp_hover_anchor false
+#         lsp-auto-hover-enable
+#         echo -debug "Enabling LSP for filtetype %opt{filetype}"
+#         lsp-enable-window
+#     }
 
-plug "andreyorst/fzf.kak" config %{
-    map -docstring 'fzf mode' global normal '<c-p>' ': fzf-mode<ret>'
-} defer "fzf" %{
-    set-option global fzf_preview_width '65%'
-    set-option global fzf_project_use_tilda true
-    evaluate-commands %sh{
-        if [ -n "$(command -v fd)" ]; then
-            echo "set-option global fzf_file_command %{fd .  --no-ignore --type f --follow --hidden --exclude .git --exclude .svn}"
-        else
-            echo "set-option global fzf_file_command %{find .  \( -path '*/.svn*' -o -path '*/.git*' \) -prune -o -type f -follow -print}"
-        fi
-        [ -n "$(command -v bat)" ] && echo "set-option global fzf_highlight_command bat"
-        [ -n "${kak_opt_grepcmd}" ] && echo "set-option global fzf_sk_grep_command %{${kak_opt_grepcmd}}"
-    }
-}
+#     hook global WinSetOption filetype=(rust) %{
+#         set window lsp_server_configuration rust.clippy_preference="on"
+#     }
 
-plug "TeddyDD/kakoune-wiki" config %{
-    wiki-setup %sh{ echo $HOME/notes }
-}
+#     hook global WinSetOption filetype=rust %{
+#         hook window BufWritePre .* %{
+#             evaluate-commands %sh{
+#                 test -f rustfmt.toml && printf lsp-formatting-sync
+#             }
+#         }
+#     }
 
-plug "andreyorst/smarttab.kak" defer smarttab %{
-    # when `backspace' is pressed, 4 spaces are deleted at once
-    set-option global softtabstop 4
-    } config %{
-    # these languages will use `expandtab' behavior
-    hook global WinSetOption filetype=(rust|markdown|kak|lisp|scheme|sh|perl) expandtab
-    # these languages will use `noexpandtab' behavior
-    hook global WinSetOption filetype=(makefile|gas) noexpandtab
-    # these languages will use `smarttab' behavior
-    hook global WinSetOption filetype=(c|cpp) smarttab
-}
-
-plug "alexherbo2/move-line.kak" config %{
-    map global normal <down> ': move-line-below<ret>'
-    map global normal <up> ': move-line-above<ret>'
-}
-
-plug "alexherbo2/auto-pairs.kak" defer "auto-pairs" %{
-    auto-pairs-enable
-}
-
-plug "occivink/kakoune-vertical-selection" config %{
-    # map global user v     ': vertical-selection-down<ret>'
-    # map global user <a-v> ': vertical-selection-up<ret>'
-    # map global user V     ': vertical-selection-up-and-down<ret>'
-}
+#     hook global KakEnd .* lsp-exit
+# }
 
 define-command -docstring "save and quit" x "write-all; quit"
 

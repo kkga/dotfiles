@@ -4,8 +4,8 @@ map global normal -docstring 'format buffer'          =      :format<ret>
 map global normal -docstring 'comment word'          '#'     :comment-line<ret>
 map global normal -docstring 'comment block'         '<a-#>' :comment-block<ret>
 
-map global goto -docstring 'previous buffer'          p      ': bp<ret>'
-map global goto -docstring 'next buffer'              n      ': bn<ret>'
+map global goto -docstring 'previous buffer'          p      '<esc>: bp<ret>'
+map global goto -docstring 'next buffer'              n      '<esc>: bn<ret>'
 
 map global user -docstring 'clip-paste (before)'      p      'o<esc>!wl-paste|dos2unix<ret><a-d>'
 map global user -docstring 'clip-paste (after)'       P      'O<esc><a-!>wl-paste|dos2unix<ret><a-d>'
@@ -25,7 +25,7 @@ map global user -docstring 'surround'                 s      ': enter-user-mode 
 map global user -docstring 'select down'              V      ': vertical-selection-down<ret>'
 map global user -docstring 'select up'                <a-v>  ': vertical-selection-up<ret>'
 map global user -docstring 'select up and down'       v      ': vertical-selection-up-and-down<ret>'
-map global user -docstring 'new terminal in cwd'      n      ': kitty-terminal zsh<ret>'
+map global user -docstring 'new terminal in cwd'      n      ': terminal fish<ret>'
 map global user -docstring 'disable autoformat'       d      ': disable-autoformat<ret>'
 map global user -docstring 'LSP mode'                 l      ': enter-user-mode lsp<ret>'
 
