@@ -1,17 +1,15 @@
 Relatively simple Linux config for desktop, managed with [yadm](https://github.com/TheLocehiliosan/yadm).
 
-|                 |                                                                                                    |
-| --------------- | -------------------------------------------------------------------------------------------------- |
-| OS              | [Void Linux][void] ([package list][pkglist])                                                       |
-| window manager  | Xorg: [spectrwm][spectrwm] ([config][spectrwm.conf]), Wayland: [sway][sway] ([config][swayconfig]) |
-| status bar      | [luastatus][luastatus]                                                                             |
-| display manager | [emptty][emptty] ([config][emptty.conf])                                                           |
-| shell           | [fish][fish] ([config][config.fish])                                                               |
-| terminal        | [foot][foot] ([config][foot.ini])                                                                  |
-| editor          | [neovim][neovim] ([config][init.vim])                                                              |
-| menu            | [bemenu][bemenu]                                                                                   |
-| hotkey daemon   | [sxhkd][sxhkd] ([config][sxhkdrc])                                                                 |
-| colors          | [envy][envy]                                                                                       |
+- OS              : [Void Linux][void] ([package list][pkglist
+- window manager  : Xorg: [spectrwm][spectrwm] ([config][spectrwm.conf]), Wayland: [sway][sway] ([config][swayconfig
+- status bar      : [luastatus][luastatus
+- display manager : [emptty][emptty] ([config][emptty.conf
+- shell           : [fish][fish] ([config][config.fish
+- terminal        : [foot][foot] ([config][foot.ini
+- editor          : [neovim][neovim] ([config][init.vim
+- menu            : [bemenu][bemenu
+- hotkey daemon   : [sxhkd][sxhkd] ([config][sxhkdrc
+- colors          : [envy][envy
 
 [void]: https://voidlinux.org
 [pkglist]: /void-pkglist.txt
