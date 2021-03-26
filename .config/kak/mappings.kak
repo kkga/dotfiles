@@ -1,6 +1,11 @@
-map global normal '#'     ': comment-line<ret>'
-map global normal <left>  ': bp<ret>'
-map global normal <right> ': bn<ret>'
+map global normal -docstring 'delete to end of line'  D      '<a-l>d'
+map global normal -docstring 'yank to end of line'    Y      '<a-l>y'
+map global normal -docstring 'format buffer'          =      :format<ret>
+map global normal -docstring 'comment word'          '#'     :comment-line<ret>
+map global normal -docstring 'comment block'         '<a-#>' :comment-block<ret>
+
+map global goto -docstring 'previous buffer'          p      ': bp<ret>'
+map global goto -docstring 'next buffer'              n      ': bn<ret>'
 
 map global user -docstring 'clip-paste (before)'      p      'o<esc>!wl-paste|dos2unix<ret><a-d>'
 map global user -docstring 'clip-paste (after)'       P      'O<esc><a-!>wl-paste|dos2unix<ret><a-d>'

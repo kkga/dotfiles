@@ -28,7 +28,6 @@ return require("packer").startup(function()
 
 	-- ui
 	use("ap/vim-buftabline")
-	use("kyazdani42/nvim-tree.lua")
 	use("mbbill/undotree")
 	use("junegunn/vim-peekaboo")
 	use({ "lukas-reineke/indent-blankline.nvim", branch = "lua" })
@@ -41,7 +40,6 @@ return require("packer").startup(function()
 
 	-- notes
 	use("plasticboy/vim-markdown")
-	use({ "iamcco/markdown-preview.nvim", run = "cd app & yarn install" })
 	use("cweagans/vim-taskpaper")
 	use("https://gitlab.com/dbeniamine/todo.txt-vim")
 	use("junegunn/goyo.vim")
@@ -50,7 +48,6 @@ return require("packer").startup(function()
 	-- searching
 	use("justinmk/vim-dirvish")
 	use("dyng/ctrlsf.vim")
-	use("mhinz/vim-grepper")
 	use({
 		"nvim-telescope/telescope.nvim",
 		requires = {
@@ -80,5 +77,4 @@ return require("packer").startup(function()
 	use("evanleck/vim-svelte")
 	use("pangloss/vim-javascript")
 	-- use {"fatih/vim-go", run = ":GoUpdateBinaries", opt = true, ft = "go"}
-	use("Shougo/context_filetype.vim")
 end)
