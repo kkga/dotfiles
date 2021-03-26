@@ -15,10 +15,11 @@ plug-core %{
 }
 
 plug-old lsp https://github.com/kak-lsp/kak-lsp %{
-  lsp-enable
-
-  map -docstring 'lsp definition' global goto d '<esc>: lsp-definition<ret>'
-  map -docstring 'lsp implementation' global goto D '<esc>: lsp-implementation<ret>'
+  hook global WinSetOption filetype=(typescript|svelte|javascript) %{
+      lsp-auto-hover-enable
+      lsp-enable-window
+      set-option global lsp_hover_anchor true
+  }
 }
 
 plug alacritty https://github.com/alexherbo2/alacritty.kak
@@ -52,18 +53,19 @@ plug-old vertical-selection https://github.com/occivink/kakoune-vertical-selecti
 plug-old buffers https://github.com/Delapouite/kakoune-buffers
 
 
+
 # plug "ul/kak-lsp" do %{
 #     cargo build --release --locked
 #     cargo install --force --path .
 # } config %{
 #     # uncomment to enable debugging
 #     # eval %sh{echo ${kak_opt_lsp_cmd} >> /tmp/kak-lsp.log}
-#     # set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
-
-#     # this is not necessary; the `lsp-enable-window` will take care of it
-#     # eval %sh{${kak_opt_lsp_cmd} --kakoune -s $kak_session}
-
-#     set global lsp_diagnostic_line_error_sign '║'
+#     # set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"hook global WinSetOption filetype=(typescript|svelte|javascript) %{
+    #     lsp-auto-hover-enable
+    #     lsp-enable-window
+    #     set-option global lsp_hover_anchor true
+    
+#     }
 #     set global lsp_diagnostic_line_warning_sign '┊'
 
 #     lsp-auto-hover-insert-mode-enable
