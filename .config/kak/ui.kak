@@ -1,9 +1,9 @@
-colorscheme primer
+colorscheme default-custom
 
 set-option global tabstop 4
 set-option global indentwidth 4
 set-option global scrolloff 1,3
-set-option global ui_options ncurses_status_on_top=true ncurses_assistant=off
+set-option global ui_options ncurses_status_on_top=true ncurses_assistant=cat
 
 # modeline
 define-command update-status %{ evaluate-commands %sh{
