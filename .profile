@@ -9,8 +9,8 @@ export PATH=$HOME/.deno/bin:$PATH
 export XBPS_DISTDIR=$HOME/.void-packages
 
 export BROWSER=firefox
-export EDITOR=nvim
-export VISUAL=nvim
+export EDITOR=kak-desktop
+export VISUAL=kak-desktop
 export DMENU='wofi --dmenu'
 
 # export FZF_PREVIEW_PREVIEW_BAT_THEME='github'
