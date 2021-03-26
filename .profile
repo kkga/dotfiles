@@ -14,11 +14,11 @@ export VISUAL=kak-desktop
 export DMENU='wofi --dmenu'
 
 # export FZF_PREVIEW_PREVIEW_BAT_THEME='github'
-export FZF_DEFAULT_COMMAND='fd --type f'
-export FZF_DEFAULT_OPTS="--height 40% --reverse --color light"
-export BEMENU_OPTS="--ignorecase --list 12 -p '' -P ''\
---fb=#000000 --ff=#eeeeee --nb=#111111\
---nf=#888888 --hb=#444444 --hf=#ffffff"
+# export FZF_DEFAULT_COMMAND='fd --type f'
+# export FZF_DEFAULT_OPTS="--height 40% --reverse --color light"
+# export BEMENU_OPTS="--ignorecase --list 12 -p '' -P ''\
+# --fb=#000000 --ff=#eeeeee --nb=#111111\
+# --nf=#888888 --hb=#444444 --hf=#ffffff"
 
 if [ $(uname) == "Linux" ]
 then
