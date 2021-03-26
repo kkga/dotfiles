@@ -3,7 +3,7 @@
 # General settings {{{1
 
 xwayland disable
-default_border pixel 1
+default_border pixel 2
 default_floating_border pixel 2
 
 smart_borders on
@@ -11,7 +11,7 @@ smart_gaps on
 hide_edge_borders --i3 smart_no_gaps
 focus_wrapping yes
 
-gaps inner 8
+gaps inner 0
 
 font monospace 10
 titlebar_border_thickness 0
@@ -121,9 +121,9 @@ input "type:pointer" {
 # Colors {{{1
 
 # Colors                border		    background		text		    indicator	    child_border
-client.focused          $col_black	    $col_black		$col_white	    $col_accent	    $col_black
-client.focused_inactive $col_gray_mid	    $col_gray_mid	$col_white	    $col_gray	    $col_gray
-client.unfocused        $col_gray_dark	    $col_gray_dark	$col_gray_light	    $col_gray	    $col_gray
+# client.focused          $col_black	    $col_black		$col_white	    $col_accent	    $col_black
+# client.focused_inactive $col_gray_mid	    $col_gray_mid	$col_white	    $col_gray	    $col_gray
+# client.unfocused        $col_gray_dark	    $col_gray_dark	$col_gray_light	    $col_gray	    $col_gray
 # client.urgent             $color_bright_yellow   $color_bright_yellow   $color_normal_black    $color_unused        $color_unused
 # client.placeholder        $color_unused          $color_unused          $color_unused          $color_unused        $color_unused
 

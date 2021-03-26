@@ -25,12 +25,12 @@ set fish_color_search_match --background=white
 set fish_color_match brblack
 set fish_color_autosuggestion $fish_color_comment
 
-set fish_pager_color_prefix normal --bold
-set fish_pager_color_progress normal --bold
-set fish_pager_color_completion brblack
-set fish_pager_color_background --background=background
-set fish_pager_color_description $fish_color_comment
-set fish_pager_color_selected_completion white
-set fish_pager_color_selected_description white
+# set fish_pager_color_prefix normal --bold
+# set fish_pager_color_progress normal --bold
+# set fish_pager_color_completion brblack
+# set fish_pager_color_background --background=background
+# set fish_pager_color_description $fish_color_comment
+# set fish_pager_color_selected_completion white
+# set fish_pager_color_selected_description white
 
 zoxide init fish | source

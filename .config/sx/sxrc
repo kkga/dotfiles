@@ -1,9 +1,0 @@
-#!/bin/sh
-
-xrdb -merge $HOME/.Xresources
-. $HOME/.local/bin/env-xorg.sh
-
-xset r rate 200 30
-xsetroot -solid '#84998F'
-
-exec dbus-run-session spectrwm
