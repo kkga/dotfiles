@@ -1,3 +1,5 @@
+colorscheme primer
+
 set-option global tabstop 4
 set-option global indentwidth 4
 set-option global scrolloff 1,3

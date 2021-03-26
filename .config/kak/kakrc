@@ -22,32 +22,33 @@ plug-old lsp https://github.com/kak-lsp/kak-lsp %{
 }
 
 plug alacritty https://github.com/alexherbo2/alacritty.kak
-
 plug prelude https://github.com/kakounedotcom/prelude.kak
 plug connect https://github.com/kakounedotcom/connect.kak %{
     require-module connect-fzf
+    require-module yank-ring-connect
     alias global terminal alacritty-terminal
     alias global popup alacritty-terminal-popup
 }
-
-plug auto-pairs https://github.com/alexherbo2/auto-pairs.kak %{
+nop plug auto-pairs https://github.com/alexherbo2/auto-pairs.kak %{
 	auto-pairs-enable
 }
-
+plug yank-ring https://github.com/alexherbo2/yank-ring.kak %{
+    yank-ring-enable
+}
 plug surround https://github.com/alexherbo2/surround.kak
-
+plug change-directory https://github.com/alexherbo2/change-directory.kak
+plug current-word-highlighter https://github.com/alexherbo2/current-word-highlighter.kak %{
+    current-word-highlighter-enable
+}
 plug move-line https://github.com/alexherbo2/move-line.kak %{
   map -docstring 'Move selected lines below' global normal <down> ': move-line-below<ret>'
   map -docstring 'Move selected lines above' global normal <up> ': move-line-above<ret>'
 }
 
-
 plug-old kakboard https://github.com/lePerdu/kakboard %{
     hook global WinCreate .* %{ kakboard-enable }
 }
-
 plug-old vertical-selection https://github.com/occivink/kakoune-vertical-selection
-
 plug-old buffers https://github.com/Delapouite/kakoune-buffers
 
 
