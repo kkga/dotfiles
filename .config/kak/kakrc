@@ -52,6 +52,8 @@ plug-old kakboard https://github.com/lePerdu/kakboard %{
     hook global WinCreate .* %{ kakboard-enable }
 }
 
+
+plug-old sudo-write https://github.com/occivink/kakoune-sudo-write
 plug-old vertical-selection https://github.com/occivink/kakoune-vertical-selection
 plug-old buffers https://github.com/Delapouite/kakoune-buffers
 plug-old palette https://github.com/Delapouite/kakoune-palette
