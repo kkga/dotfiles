@@ -14,19 +14,26 @@ plug-core %{
     alias global u enter-user-mode
 }
 
-plug alacritty https://github.com/alexherbo2/alacritty.kak
-plug prelude https://github.com/kakounedotcom/prelude.kak
-plug connect https://github.com/kakounedotcom/connect.kak %{
-    require-module connect-fzf
-    require-module yank-ring-connect
+plug alacritty https://github.com/alexherbo2/alacritty.kak %{
     alias global terminal alacritty-terminal
     alias global popup alacritty-terminal-popup
 }
-nop plug auto-pairs https://github.com/alexherbo2/auto-pairs.kak %{
+
+nop plug prelude https://github.com/kakounedotcom/prelude.kak
+nop plug connect https://github.com/kakounedotcom/connect.kak %{
+    require-module connect-fzf
+    require-module yank-ring-connect
+}
+plug auto-pairs https://github.com/alexherbo2/auto-pairs.kak %{
     auto-pairs-enable
 }
 plug yank-ring https://github.com/alexherbo2/yank-ring.kak %{
     yank-ring-enable
+}
+plug explore https://github.com/alexherbo2/explore.kak %{
+    define-command explore-files -params .. '+ kcr-fzf-files %arg{@}'
+    define-command explore-buffers -params .. '+ kcr-fzf-buffers %arg{@}'
+    explore-enable
 }
 plug surround https://github.com/alexherbo2/surround.kak
 plug change-directory https://github.com/alexherbo2/change-directory.kak
@@ -34,8 +41,8 @@ nop plug current-word-highlighter https://github.com/alexherbo2/current-word-hig
     current-word-highlighter-enable
 }
 plug move-line https://github.com/alexherbo2/move-line.kak %{
-  map -docstring 'Move selected lines below' global normal <down> ': move-line-below<ret>'
-  map -docstring 'Move selected lines above' global normal <up> ': move-line-above<ret>'
+    map -docstring 'Move selected lines below' global normal <down> ': move-line-below<ret>'
+    map -docstring 'Move selected lines above' global normal <up> ': move-line-above<ret>'
 }
 
 plug-old kakboard https://github.com/lePerdu/kakboard %{
@@ -45,11 +52,15 @@ plug-old vertical-selection https://github.com/occivink/kakoune-vertical-selecti
 plug-old buffers https://github.com/Delapouite/kakoune-buffers
 plug-old palette https://github.com/Delapouite/kakoune-palette
 plug-old lsp https://github.com/kak-lsp/kak-lsp %{
-  hook global WinSetOption filetype=(typescript|svelte|javascript) %{
-      lsp-auto-hover-enable
-      lsp-enable-window
-      set-option global lsp_hover_anchor true
-  }
+    hook global WinSetOption filetype=(typescript|svelte|javascript) %{
+        lsp-auto-hover-enable
+        lsp-enable-window
+        set-option global lsp_hover_anchor true
+    }
+}
+
+evaluate-commands %sh{
+    kcr init kakoune
 }
 
 # plug "ul/kak-lsp" do %{
@@ -98,16 +109,4 @@ plug-old lsp https://github.com/kak-lsp/kak-lsp %{
 #     hook global KakEnd .* lsp-exit
 # }
 
-define-command -docstring "save and quit" x "write-all; quit"
 
-define-command files -docstring 'Open one or many files' %{ evaluate-commands %sh{
-    FILES=$(rg --hidden --files | wofi -d)
-    for file in $FILES; do
-        printf 'eval -client %%{%s} edit %%{%s}\n' "$kak_client" "$file" | kak -p "$kak_session"
-    done
-} }
-
-define-command buffers -docstring 'Switch to a buffer' %{ evaluate-commands %sh{
-    BUFFER=$(eval set -- "$kak_buflist"; for buf in "$@"; do echo "$buf"; done | wofi -d)
-    [ -n "$BUFFER" ] && echo "eval -client '$kak_client' 'buffer $BUFFER'" | kak -p "$kak_session"
-} }

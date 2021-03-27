@@ -6,6 +6,8 @@ alias ls=exa
 alias y=yadm
 alias xr='doas xbps-remove'
 
+alias K=kcr-fzf-shell
+
 set --global hydro_symbol_prompt '>'
 set --global hydro_symbol_git_dirty '*'
 

@@ -32,8 +32,6 @@ exec clipman restore
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob -a top -a left -W 200 -H 20 -M 8 -o 2 -b 2 -p 2
 exec /usr/libexec/polkit-gnome-authentication-agent-1
 
-exec_always flashfocus
-
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
     gsettings set $gnome-schema gtk-theme 'Yaru-light'

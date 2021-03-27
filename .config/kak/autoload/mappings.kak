@@ -1,35 +1,36 @@
 map global normal -docstring 'delete to end of line'  D      '<a-l>d'
 map global normal -docstring 'yank to end of line'    Y      '<a-l>y'
 map global normal -docstring 'format buffer'          =      :format<ret>
-map global normal -docstring 'comment word'          '#'     :comment-line<ret>
+map global normal -docstring 'comment line'          '#'     :comment-line<ret>
 map global normal -docstring 'comment block'         '<a-#>' :comment-block<ret>
 
 map global goto -docstring 'previous buffer'          p      '<esc>: bp<ret>'
 map global goto -docstring 'next buffer'              n      '<esc>: bn<ret>'
+# TODO lint navigation in goto
 
 map global user -docstring 'clip-paste (before)'      p      'o<esc>!wl-paste|dos2unix<ret><a-d>'
 map global user -docstring 'clip-paste (after)'       P      'O<esc><a-!>wl-paste|dos2unix<ret><a-d>'
 map global user -docstring 'clip-replace'             R      '|wl-paste|dos2unix<ret>'
 map global user -docstring 'clip-yank'                y      '<a-|>wl-copy<ret>'
+
 map global user -docstring 'save buffer'              w      ': w<ret>'
 map global user -docstring 'close buffer'             c      ': db<ret>'
 map global user -docstring 'kill buffer'              C      ': db!<ret>'
 map global user -docstring 'save all and exit'        q      ': waq<ret>'
 map global user -docstring 'exit without save'        Q      ': q!<ret>'
-map global user -docstring 'buffers'                  b      ': buffers<ret>'
-map global user -docstring 'files'                    f      ': files<ret>'
-map global user -docstring 'edit kakrc'               e      ': e ~/.config/kak/kakrc<ret>'
-map global user -docstring 'lsp hover'                h      ': lsp-hover<ret>'
-map global user -docstring 'codepoint'                i      ': echo %sh{ printf "codepoint: U+%04x" "$kak_cursor_char_value" }<ret>'
+map global user -docstring 'buffers'                  b      ': + kcr-fzf-buffers<ret>'
+map global user -docstring 'files'                    f      ': + kcr-fzf-files<ret>'
+map global user -docstring 'configs'                  e      ': + kcr-fzf-files /home/kkga/.config/<ret>'
+map global user -docstring 'notes'                    n      ': + kcr-fzf-files /home/kkga/notes/<ret>'
+# map global user -docstring 'codepoint'                i      ': echo %sh{ printf "codepoint: U+%04x" "$kak_cursor_char_value" }<ret>'
 map global user -docstring 'surround'                 s      ': enter-user-mode surround<ret>'
 map global user -docstring 'select down'              V      ': vertical-selection-down<ret>'
 map global user -docstring 'select up'                <a-v>  ': vertical-selection-up<ret>'
 map global user -docstring 'select up and down'       v      ': vertical-selection-up-and-down<ret>'
-map global user -docstring 'new terminal in cwd'      n      ': terminal fish<ret>'
 map global user -docstring 'disable autoformat'       d      ': disable-autoformat<ret>'
 map global user -docstring 'LSP mode'                 l      ': enter-user-mode lsp<ret>'
 
 # autocomplete with tab
 hook global InsertCompletionShow .* %{ map window insert <tab> <c-n> }
-hook global InsertCompletionShow .* %{ map window insert <s-tab> <c-p> }
 hook global InsertCompletionHide .* %{ map window insert <tab> <tab> }
+hook global InsertCompletionShow .* %{ map window insert <s-tab> <c-p> }

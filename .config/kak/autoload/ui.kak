@@ -14,7 +14,7 @@ define-command update-status %{ evaluate-commands %sh{
   if [ "$kak_opt_lsp_diagnostic_warning_count" -ne 0 ]; then
     printf %s '{DiagnosticWarning}%opt{lsp_diagnostic_warning_count}!{Default} '
   fi
-  printf %s '{{context_info}} {{mode_info}} '
+  printf %s '{{context_info}} {{mode_info}}'
   printf %s ' · %val{bufname} [%opt{filetype}]'
   printf %s ' · %val{cursor_line}:%val{cursor_char_column}/%val{buf_line_count}'
   case "$kak_client" in client*) ;; *) printf %s " · $kak_client";; esac
