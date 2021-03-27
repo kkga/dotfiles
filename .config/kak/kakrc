@@ -19,23 +19,13 @@ plug alacritty https://github.com/alexherbo2/alacritty.kak %{
     alias global popup alacritty-terminal-popup
 }
 
-nop plug prelude https://github.com/kakounedotcom/prelude.kak
-
 plug auto-pairs https://github.com/alexherbo2/auto-pairs.kak %{
     auto-pairs-enable
 }
 
-plug yank-ring https://github.com/alexherbo2/yank-ring.kak %{
-    yank-ring-enable
-}
-
-plug explore https://github.com/alexherbo2/explore.kak %{
-    define-command explore-files -params .. '+ kcr-fzf-files %arg{@}'
-    define-command explore-buffers -params .. '+ kcr-fzf-buffers %arg{@}'
-    explore-enable
-}
-
 plug surround https://github.com/alexherbo2/surround.kak
+
+plug toggle-highlighter https://github.com/alexherbo2/toggle-highlighter.kak
 
 plug change-directory https://github.com/alexherbo2/change-directory.kak
 
@@ -63,16 +53,16 @@ evaluate-commands %sh{
 }
 
 
-# UI ----------------------------------------------------------------------
+# ui ----------------------------------------------------------------------
 
 colorscheme lucius
 
 set-option global tabstop 4
 set-option global indentwidth 4
-set-option global scrolloff 1,3
+set-option global scrolloff 8,4
 set-option global ui_options ncurses_status_on_top=true ncurses_assistant=none
 
-add-highlighter global/ number-lines -hlcursor
+# add-highlighter global/ number-lines -hlcursor
 add-highlighter global/ regex \h+$ 0:Error
 add-highlighter global/ wrap -word -indent
 add-highlighter global/ show-matching
@@ -106,7 +96,7 @@ alias global bo buffer-only
 alias global bo! buffer-only-force
 
 
-# CODING ----------------------------------------------------------------------
+# coding ----------------------------------------------------------------------
 
 # set-option global grepcmd 'rg --hidden --follow --smart-case --with-filename --column'
 
@@ -147,33 +137,36 @@ hook global WinSetOption filetype=markdown|asciidoc %{
 }
 
 
-# MAPPINGS ----------------------------------------------------------------------
+# mappings ----------------------------------------------------------------------
 
-map global normal -docstring 'format buffer'          =      :format<ret>
-map global normal -docstring 'comment line'          '#'     :comment-line<ret>
-map global normal -docstring 'comment block'         '<a-#>' :comment-block<ret>
+map global normal -docstring 'format buffer'                 =       :format<ret>
+map global normal -docstring 'comment line'                  '#'     :comment-line<ret>
+map global normal -docstring 'comment block'                 '<a-#>' :comment-block<ret>
 
-map global user -docstring 'clip-paste (before)'      p      'o<esc>!wl-paste|dos2unix<ret><a-d>'
-map global user -docstring 'clip-paste (after)'       P      'O<esc><a-!>wl-paste|dos2unix<ret><a-d>'
-map global user -docstring 'clip-replace'             R      '|wl-paste|dos2unix<ret>'
-map global user -docstring 'clip-yank'                y      '<a-|>wl-copy<ret>'
+map global user -docstring 'toggle number-lines'             L      ': toggle-highlighter global/number-lines number-lines<ret>'
+map global user -docstring 'toggle wrap'                     W      ': toggle-highlighter global/wrap wrap -word<ret>'
 
-map global user -docstring 'save buffer'              w      ': w<ret>'
-map global user -docstring 'close buffer'             c      ': db<ret>'
-map global user -docstring 'kill buffer'              C      ': db!<ret>'
-map global user -docstring 'save all and exit'        q      ': waq<ret>'
-map global user -docstring 'exit without save'        Q      ': q!<ret>'
-map global user -docstring 'buffers'                  b      ': + kcr-fzf-buffers<ret>'
-map global user -docstring 'files'                    f      ': + kcr-fzf-files<ret>'
-map global user -docstring 'configs'                  e      ': + kcr-fzf-files /home/kkga/.config/<ret>'
-map global user -docstring 'notes'                    n      ': + kcr-fzf-files /home/kkga/notes/<ret>'
-# map global user -docstring 'codepoint'                i      ': echo %sh{ printf "codepoint: U+%04x" "$kak_cursor_char_value" }<ret>'
-map global user -docstring 'surround'                 s      ': enter-user-mode surround<ret>'
-map global user -docstring 'select down'              V      ': vertical-selection-down<ret>'
-map global user -docstring 'select up'                <a-v>  ': vertical-selection-up<ret>'
-map global user -docstring 'select up and down'       v      ': vertical-selection-up-and-down<ret>'
-map global user -docstring 'disable autoformat'       d      ': disable-autoformat<ret>'
-map global user -docstring 'LSP mode'                 l      ': enter-user-mode lsp<ret>'
+map global user -docstring 'clip-paste (before)'             p      'o<esc>!wl-paste|dos2unix<ret><a-d>'
+map global user -docstring 'clip-paste (after)'              P      'O<esc><a-!>wl-paste|dos2unix<ret><a-d>'
+map global user -docstring 'clip-replace'                    R      '|wl-paste|dos2unix<ret>'
+map global user -docstring 'clip-yank'                       y      '<a-|>wl-copy<ret>'
+
+map global user -docstring 'save buffer'                     w      ': w<ret>'
+map global user -docstring 'close buffer'                    c      ': db<ret>'
+map global user -docstring 'kill buffer'                     C      ': db!<ret>'
+map global user -docstring 'save all and exit'               q      ': waq<ret>'
+map global user -docstring 'exit without save'               Q      ': q!<ret>'
+map global user -docstring 'buffers'                         b      ': + kcr-fzf-buffers<ret>'
+map global user -docstring 'files'                           f      ': + kcr-fzf-files<ret>'
+map global user -docstring 'configs'                         e      ': + kcr-fzf-files /home/kkga/.config/<ret>'
+map global user -docstring 'notes'                           n      ': + kcr-fzf-files /home/kkga/notes/<ret>'
+# map global user -docstring 'codepoint'                     i      ': echo %sh{ printf "codepoint: U+%04x" "$kak_cursor_char_value" }<ret>'
+map global user -docstring 'surround'                        s      ': enter-user-mode surround<ret>'
+map global user -docstring 'select down'                     V      ': vertical-selection-down<ret>'
+map global user -docstring 'select up'                       <a-v>  ': vertical-selection-up<ret>'
+map global user -docstring 'select up and down'              v      ': vertical-selection-up-and-down<ret>'
+map global user -docstring 'disable autoformat'              d      ': disable-autoformat<ret>'
+map global user -docstring 'LSP mode'                        l      ': enter-user-mode lsp<ret>'
 
 # autocomplete with tab
 hook global InsertCompletionShow .* %{ map window insert <tab> <c-n> }
