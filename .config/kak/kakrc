@@ -27,6 +27,8 @@ plug surround https://github.com/alexherbo2/surround.kak
 
 plug toggle-highlighter https://github.com/alexherbo2/toggle-highlighter.kak
 
+plug palette https://github.com/alexherbo2/palette.kak
+
 plug change-directory https://github.com/alexherbo2/change-directory.kak
 
 plug current-word-highlighter https://github.com/alexherbo2/current-word-highlighter.kak %{
@@ -46,7 +48,7 @@ plug-old kakboard https://github.com/lePerdu/kakboard %{
 plug-old sudo-write https://github.com/occivink/kakoune-sudo-write
 plug-old vertical-selection https://github.com/occivink/kakoune-vertical-selection
 plug-old buffers https://github.com/Delapouite/kakoune-buffers
-plug-old palette https://github.com/Delapouite/kakoune-palette
+# plug-old palette https://github.com/Delapouite/kakoune-palette
 
 evaluate-commands %sh{
     kcr init kakoune
