@@ -1,3 +1,6 @@
+snippet_support = true
+verbosity = 2
+
 [language.typescript]
 filetypes = ["typescript"]
 roots = ["package.json"]
@@ -13,4 +16,21 @@ command = "typescript-language-server"
 filetypes = ["svelte", "html"]
 roots = ["package.json"]
 command = "svelteserver"
+args = ["--stdio"]
+
+[language.crystal]
+filetypes = ["crystal"]
+roots = ["shard.yml"]
+command = "scry"
+
+[language.css]
+filetypes = ["css"]
+roots = ["package.json"]
+command = "css-languageserver"
+args = ["--stdio"]
+
+[language.html]
+filetypes = ["html"]
+roots = ["package.json"]
+command = "html-languageserver"
 args = ["--stdio"]
