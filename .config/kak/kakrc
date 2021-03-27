@@ -20,26 +20,29 @@ plug alacritty https://github.com/alexherbo2/alacritty.kak %{
 }
 
 nop plug prelude https://github.com/kakounedotcom/prelude.kak
-nop plug connect https://github.com/kakounedotcom/connect.kak %{
-    require-module connect-fzf
-    require-module yank-ring-connect
-}
+
 plug auto-pairs https://github.com/alexherbo2/auto-pairs.kak %{
     auto-pairs-enable
 }
+
 plug yank-ring https://github.com/alexherbo2/yank-ring.kak %{
     yank-ring-enable
 }
+
 plug explore https://github.com/alexherbo2/explore.kak %{
     define-command explore-files -params .. '+ kcr-fzf-files %arg{@}'
     define-command explore-buffers -params .. '+ kcr-fzf-buffers %arg{@}'
     explore-enable
 }
+
 plug surround https://github.com/alexherbo2/surround.kak
+
 plug change-directory https://github.com/alexherbo2/change-directory.kak
-nop plug current-word-highlighter https://github.com/alexherbo2/current-word-highlighter.kak %{
+
+plug current-word-highlighter https://github.com/alexherbo2/current-word-highlighter.kak %{
     current-word-highlighter-enable
 }
+
 plug move-line https://github.com/alexherbo2/move-line.kak %{
     map -docstring 'Move selected lines below' global normal <down> ': move-line-below<ret>'
     map -docstring 'Move selected lines above' global normal <up> ': move-line-above<ret>'
@@ -48,6 +51,7 @@ plug move-line https://github.com/alexherbo2/move-line.kak %{
 plug-old kakboard https://github.com/lePerdu/kakboard %{
     hook global WinCreate .* %{ kakboard-enable }
 }
+
 plug-old vertical-selection https://github.com/occivink/kakoune-vertical-selection
 plug-old buffers https://github.com/Delapouite/kakoune-buffers
 plug-old palette https://github.com/Delapouite/kakoune-palette
