@@ -62,6 +62,132 @@ evaluate-commands %sh{
     kcr init kakoune
 }
 
+
+# UI ----------------------------------------------------------------------
+
+colorscheme lucius
+
+set-option global tabstop 4
+set-option global indentwidth 4
+set-option global scrolloff 1,3
+set-option global ui_options ncurses_status_on_top=true ncurses_assistant=none
+
+add-highlighter global/ number-lines -hlcursor
+add-highlighter global/ regex \h+$ 0:Error
+add-highlighter global/ wrap -word -indent
+add-highlighter global/ show-matching
+
+# modeline
+define-command update-status %{ evaluate-commands %sh{
+  printf %s 'set-option buffer modelinefmt %{'
+  if [ "$kak_opt_lsp_diagnostic_error_count" -ne 0 ]; then
+    printf %s '{DiagnosticError}%opt{lsp_diagnostic_error_count}!{Default} '
+  fi
+  if [ "$kak_opt_lsp_diagnostic_warning_count" -ne 0 ]; then
+    printf %s '{DiagnosticWarning}%opt{lsp_diagnostic_warning_count}!{Default} '
+  fi
+  printf %s '{{context_info}} {{mode_info}}'
+  printf %s ' · %val{bufname} [%opt{filetype}]'
+  printf %s ' · %val{cursor_line}:%val{cursor_char_column}/%val{buf_line_count}'
+  case "$kak_client" in client*) ;; *) printf %s " · $kak_client";; esac
+  case "$kak_session" in ''|*[!0-9]*) printf %s " @$kak_session";; esac
+  printf %s '}'
+}}
+hook global WinDisplay .* update-status
+hook global BufSetOption lsp_diagnostic_error_count=.* update-status
+hook global BufSetOption lsp_diagnostic_warning_count=.* update-status
+
+# buffers
+hook global WinDisplay .* info-buffers
+alias global bd delete-buffer
+alias global bf buffer-first
+alias global bl buffer-last
+alias global bo buffer-only
+alias global bo! buffer-only-force
+
+
+# CODING ----------------------------------------------------------------------
+
+# set-option global grepcmd 'rg --hidden --follow --smart-case --with-filename --column'
+
+eval %sh{kak-lsp --kakoune -s $kak_session}
+hook global WinSetOption filetype=(crystal|html|css|json|rust|python|go|typescript|svelte|javascript) %{
+    lsp-auto-hover-enable
+    lsp-enable-window
+    set-option global lsp_hover_anchor true
+}
+
+def -hidden insert-c-n %{
+    try %{
+        lsp-snippets-select-next-placeholders
+        exec '<a-;>d'
+    } catch %{
+        exec -with-hooks '<c-n>'
+    }
+}
+map global insert <c-n> "<a-;>: insert-c-n<ret>"
+
+hook global WinSetOption filetype=(svelte|javascript|typescript|css|scss|json|markdown|yaml|html) %{
+    set-option buffer formatcmd "prettier --stdin-filepath=%val{buffile}"
+    hook buffer -group format BufWritePre .* format
+}
+
+hook global WinSetOption filetype=markdown|asciidoc %{
+    set-option window lintcmd "proselint"
+    hook buffer -group format BufWritePost .* lint
+    hook buffer -group format ModeChange .* lint
+}
+
+
+# MAPPINGS ----------------------------------------------------------------------
+
+map global normal -docstring 'format buffer'          =      :format<ret>
+map global normal -docstring 'comment line'          '#'     :comment-line<ret>
+map global normal -docstring 'comment block'         '<a-#>' :comment-block<ret>
+
+map global user -docstring 'clip-paste (before)'      p      'o<esc>!wl-paste|dos2unix<ret><a-d>'
+map global user -docstring 'clip-paste (after)'       P      'O<esc><a-!>wl-paste|dos2unix<ret><a-d>'
+map global user -docstring 'clip-replace'             R      '|wl-paste|dos2unix<ret>'
+map global user -docstring 'clip-yank'                y      '<a-|>wl-copy<ret>'
+
+map global user -docstring 'save buffer'              w      ': w<ret>'
+map global user -docstring 'close buffer'             c      ': db<ret>'
+map global user -docstring 'kill buffer'              C      ': db!<ret>'
+map global user -docstring 'save all and exit'        q      ': waq<ret>'
+map global user -docstring 'exit without save'        Q      ': q!<ret>'
+map global user -docstring 'buffers'                  b      ': + kcr-fzf-buffers<ret>'
+map global user -docstring 'files'                    f      ': + kcr-fzf-files<ret>'
+map global user -docstring 'configs'                  e      ': + kcr-fzf-files /home/kkga/.config/<ret>'
+map global user -docstring 'notes'                    n      ': + kcr-fzf-files /home/kkga/notes/<ret>'
+# map global user -docstring 'codepoint'                i      ': echo %sh{ printf "codepoint: U+%04x" "$kak_cursor_char_value" }<ret>'
+map global user -docstring 'surround'                 s      ': enter-user-mode surround<ret>'
+map global user -docstring 'select down'              V      ': vertical-selection-down<ret>'
+map global user -docstring 'select up'                <a-v>  ': vertical-selection-up<ret>'
+map global user -docstring 'select up and down'       v      ': vertical-selection-up-and-down<ret>'
+map global user -docstring 'disable autoformat'       d      ': disable-autoformat<ret>'
+map global user -docstring 'LSP mode'                 l      ': enter-user-mode lsp<ret>'
+
+# autocomplete with tab
+hook global InsertCompletionShow .* %{ map window insert <tab> <c-n> }
+hook global InsertCompletionHide .* %{ map window insert <tab> <tab> }
+hook global InsertCompletionShow .* %{ map window insert <s-tab> <c-p> }
+
+# ciao macros: q, w and e are now together
+map global normal ^ q
+map global normal <a-^> Q
+
+map global normal q b
+map global normal Q B
+map global normal <a-q> <a-b>
+map global normal <a-Q> <a-B>
+
+map global normal b ':enter-buffers-mode<ret>'              -docstring 'buffers…'
+map global normal B ':enter-user-mode -lock buffers<ret>'   -docstring 'buffers (lock)…'
+
+
+
+
+
 # plug "ul/kak-lsp" do %{
 #     cargo build --release --locked
 #     cargo install --force --path .
