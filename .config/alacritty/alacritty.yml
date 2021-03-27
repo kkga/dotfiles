@@ -32,3 +32,6 @@ use_thin_strokes: true
 cursor:
   style: Block
   vi_mode_style: Block
+
+import:
+  - /home/kkga/.config/alacritty/colors/lucius.yml
