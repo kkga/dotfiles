@@ -2,7 +2,7 @@
 	name = Gadzhi Kharkharov
 	email = me@kkga.me
 [core]
-	editor = nvim
+	editor = kak
 	pager = delta
 [alias]
 	a = add
@@ -34,7 +34,7 @@
 [interactive]
 	diffFilter = delta --color-only
 [delta]
-	syntax-theme = ansi-light
+	syntax-theme = ansi-dark
 	side-by-side = true
 	line-numbers = false
 [init]

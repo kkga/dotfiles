@@ -13,12 +13,8 @@ export EDITOR=kak-desktop
 export VISUAL=kak-desktop
 export DMENU='wofi --dmenu'
 
-# export FZF_PREVIEW_PREVIEW_BAT_THEME='github'
 export FZF_DEFAULT_COMMAND='fd --type f'
-export FZF_DEFAULT_OPTS="--border=horizontal --layout=reverse --inline-info --height 40"
-# export BEMENU_OPTS="--ignorecase --list 12 -p '' -P ''\
-# --fb=#000000 --ff=#eeeeee --nb=#111111\
-# --nf=#888888 --hb=#444444 --hf=#ffffff"
+export FZF_DEFAULT_OPTS="--border=bottom --layout=reverse --inline-info --height 40"
 
 if [ $(uname) == "Linux" ]
 then
@@ -26,7 +22,6 @@ then
 	export SSH_AUTH_SOCK
 	export SUDO_ASKPASS=/usr/libexec/seahorse/ssh-askpass
 	export SSH_ASKPASS=/usr/libexec/seahorse/ssh-askpass
-
 	export GPG_TTY=$(tty)
 fi
 
