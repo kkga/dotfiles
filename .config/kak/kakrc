@@ -111,7 +111,3 @@ define-command buffers -docstring 'Switch to a buffer' %{ evaluate-commands %sh{
     BUFFER=$(eval set -- "$kak_buflist"; for buf in "$@"; do echo "$buf"; done | wofi -d)
     [ -n "$BUFFER" ] && echo "eval -client '$kak_client' 'buffer $BUFFER'" | kak -p "$kak_session"
 } }
-
-source "~/.config/kak/mappings.kak"
-source "~/.config/kak/coding.kak"
-source "~/.config/kak/ui.kak"

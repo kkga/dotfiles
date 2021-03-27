@@ -5,3 +5,7 @@ set-option global grepcmd 'rg --hidden --follow --smart-case --with-filename --c
 #     set-option buffer formatcmd "prettier --stdin-filepath=%val{buffile}"
 #     hook buffer -group format BufWritePre .* format
 # }
+
+hook global WinSetOption filetype=markdown|asciidoc %{
+    set-option window lintcmd "proselint"
+}
