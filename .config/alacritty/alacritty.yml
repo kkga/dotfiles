@@ -21,7 +21,6 @@ window:
 
 # shell:
 #   program: fish
-
 key_bindings:
   - { key: Return, mods: Control|Shift, action: SpawnNewInstance }
   - { key: K, mods: Control|Shift, action: ScrollPageUp }
@@ -36,4 +35,5 @@ cursor:
 
 import:
   - /home/kkga/.config/alacritty/colors/lucius.yml
+  # - /home/kkga/.config/alacritty/colors/apprentice.yml
   # - /home/kkga/.config/alacritty/colors/modus.yml

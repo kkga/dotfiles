@@ -3,7 +3,7 @@ require-module plug
 plug plug https://github.com/alexherbo2/plug.kak %{
     define-command plug-upgrade -docstring 'plug-upgrade' %{
         plug-install
-        plug-execute lsp cargo build --release
+        # plug-execute lsp cargo build --release
     }
 }
 
@@ -36,8 +36,8 @@ plug palette https://github.com/alexherbo2/palette.kak
 
 plug change-directory https://github.com/alexherbo2/change-directory.kak
 
-plug sleuth https://github.com/alexherbo2/sleuth.kak %{
-    sleuth-enable
+nop plug sleuth https://github.com/alexherbo2/sleuth.kak %{
+    # sleuth-enable
 }
 
 plug current-word-highlighter https://github.com/alexherbo2/current-word-highlighter.kak %{
