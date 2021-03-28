@@ -90,6 +90,7 @@ define-command update-status %{ evaluate-commands %sh{
   printf %s '{{context_info}} {{mode_info}}'
   printf %s ' · %val{bufname} [%opt{filetype}]'
   printf %s ' · %val{cursor_line}:%val{cursor_char_column}/%val{buf_line_count}'
+  printf %s " · {green}$kak_client{default}@{cyan}$kak_session"
   case "$kak_client" in client*) ;; *) printf %s " · $kak_client";; esac
   case "$kak_session" in ''|*[!0-9]*) printf %s " @$kak_session";; esac
   printf %s '}'
@@ -199,7 +200,7 @@ map global user -docstring 'buffers'                         b      ': + kcr-fzf
 map global user -docstring 'files'                           f      ': + kcr-fzf-files<ret>'
 map global user -docstring 'configs'                         e      ': + kcr-fzf-files /home/kkga/.config/<ret>'
 map global user -docstring 'grep'                            g      ': + kcr-fzf-grep<ret>'
-map global user -docstring 'grep buffer'                     G      ': + kcr-fzf-grep %val{bufname}<ret>'
+map global user -docstring 'grep buffer'                     G      ': + kcr-fzf-grep %val{buffile}<ret>'
 map global user -docstring 'notes'                           n      ': + kcr-fzf-files /home/kkga/notes/<ret>'
 map global user -docstring 'grep notes'                      N      ': + kcr-fzf-grep /home/kkga/notes/<ret>'
 
