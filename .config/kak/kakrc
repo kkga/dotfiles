@@ -127,15 +127,25 @@ def -hidden insert-c-n %{
 }
 map global insert <c-n> "<a-;>: insert-c-n<ret>"
 
+# formatting
 hook global WinSetOption filetype=(svelte|javascript|typescript|css|scss|json|markdown|yaml|html) %{
     set-option buffer formatcmd "prettier --stdin-filepath=%val{buffile}"
     hook buffer -group format BufWritePre .* format
 }
+define-command disable-autoformat -docstring 'disable auto-format' %{
+	unset-option buffer formatcmd
+	remove-hooks buffer format
+}
 
+# linting
 hook global WinSetOption filetype=markdown|asciidoc %{
     set-option window lintcmd "proselint"
     hook buffer -group format BufWritePost .* lint
     hook buffer -group format ModeChange .* lint
+}
+define-command disable-autolint -docstring 'disable auto-lint' %{
+	unset-option buffer lintcmd
+	remove-hooks buffer lint
 }
 
 

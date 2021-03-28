@@ -50,6 +50,7 @@ dfu-util
 dina-font
 dkms
 dmenu
+dos2unix
 duf
 dunst
 dust
@@ -140,6 +141,7 @@ luastatus
 lxappearance
 maim
 mako
+meld
 mercurial
 mesa
 mesa-dri
@@ -150,13 +152,12 @@ mesa-vulkan-radeon
 mesa-vulkan-radeon-32bit
 meson
 mpv
-myrepos
-nautilus
 neofetch
 neovim
 nnn
 nodejs
 noto-fonts-ttf
+nushell
 obs
 obs-devel
 opendoas
@@ -185,6 +186,7 @@ protontricks
 pulseaudio
 python3-attrs
 python3-pip
+python3-proselint
 qemu
 qmk
 qt5-wayland
@@ -208,6 +210,7 @@ speedtest-cli
 spotify-qt
 spotify-tui
 spotifyd
+starship
 steam
 sublime-text3
 sunwait

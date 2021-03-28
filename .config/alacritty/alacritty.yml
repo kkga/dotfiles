@@ -17,7 +17,7 @@ window:
   decorations: none
   dimensions:
     columns: 100
-    lines: 32
+    lines: 40
 
 # shell:
 #   program: fish
@@ -35,3 +35,4 @@ cursor:
 
 import:
   - /home/kkga/.config/alacritty/colors/lucius.yml
+  # - /home/kkga/.config/alacritty/colors/modus.yml
