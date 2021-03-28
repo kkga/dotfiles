@@ -161,6 +161,12 @@ define-command disable-autolint -docstring 'disable auto-lint' %{
 
 # mappings ----------------------------------------------------------------------
 
+# jj to exit
+hook global InsertChar j %{ try %{
+  exec -draft hH <a-k>jj<ret> d
+  exec <esc>
+}}
+
 # ciao macros: q, w and e are now together
 map global normal ^ q
 map global normal <a-^> Q
