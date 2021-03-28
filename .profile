@@ -9,8 +9,8 @@ export PATH=$HOME/.deno/bin:$PATH
 export XBPS_DISTDIR=$HOME/.void-packages
 
 export BROWSER=firefox
-export EDITOR=kak-desktop
-export VISUAL=kak-desktop
+export EDITOR="kcr edit"
+export VISUAL="kcr edit"
 export DMENU='wofi --dmenu'
 
 export FZF_DEFAULT_COMMAND='fd --type f'
