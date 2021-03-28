@@ -23,6 +23,11 @@ plug auto-pairs https://github.com/alexherbo2/auto-pairs.kak %{
     auto-pairs-enable
 }
 
+plug explore https://github.com/alexherbo2/explore.kak %{
+    define-command explore-files -params .. '+ kcr-fzf-files %arg{@}'
+    define-command explore-buffers -params .. '+ kcr-fzf-buffers %arg{@}'
+}
+
 plug surround https://github.com/alexherbo2/surround.kak
 
 plug toggle-highlighter https://github.com/alexherbo2/toggle-highlighter.kak
@@ -30,6 +35,10 @@ plug toggle-highlighter https://github.com/alexherbo2/toggle-highlighter.kak
 plug palette https://github.com/alexherbo2/palette.kak
 
 plug change-directory https://github.com/alexherbo2/change-directory.kak
+
+plug sleuth https://github.com/alexherbo2/sleuth.kak %{
+    sleuth-enable
+}
 
 plug current-word-highlighter https://github.com/alexherbo2/current-word-highlighter.kak %{
     current-word-highlighter-enable
@@ -141,7 +150,7 @@ define-command disable-autoformat -docstring 'disable auto-format' %{
 hook global WinSetOption filetype=markdown|asciidoc %{
     set-option window lintcmd "proselint"
     hook buffer -group format BufWritePost .* lint
-    hook buffer -group format ModeChange .* lint
+    hook buffer -group format InsertIdle .* lint
 }
 define-command disable-autolint -docstring 'disable auto-lint' %{
 	unset-option buffer lintcmd
@@ -150,40 +159,6 @@ define-command disable-autolint -docstring 'disable auto-lint' %{
 
 
 # mappings ----------------------------------------------------------------------
-
-map global normal -docstring 'format buffer'                 =       :format<ret>
-map global normal -docstring 'comment line'                  '#'     :comment-line<ret>
-map global normal -docstring 'comment block'                 '<a-#>' :comment-block<ret>
-
-map global user -docstring 'toggle number-lines'             L      ': toggle-highlighter global/number-lines number-lines<ret>'
-map global user -docstring 'toggle wrap'                     W      ': toggle-highlighter global/wrap wrap -word<ret>'
-
-map global user -docstring 'clip-paste (before)'             p      'o<esc>!wl-paste|dos2unix<ret><a-d>'
-map global user -docstring 'clip-paste (after)'              P      'O<esc><a-!>wl-paste|dos2unix<ret><a-d>'
-map global user -docstring 'clip-replace'                    R      '|wl-paste|dos2unix<ret>'
-map global user -docstring 'clip-yank'                       y      '<a-|>wl-copy<ret>'
-
-map global user -docstring 'save buffer'                     w      ': w<ret>'
-map global user -docstring 'close buffer'                    c      ': db<ret>'
-map global user -docstring 'kill buffer'                     C      ': db!<ret>'
-map global user -docstring 'save all and exit'               q      ': waq<ret>'
-map global user -docstring 'exit without save'               Q      ': q!<ret>'
-map global user -docstring 'buffers'                         b      ': + kcr-fzf-buffers<ret>'
-map global user -docstring 'files'                           f      ': + kcr-fzf-files<ret>'
-map global user -docstring 'configs'                         e      ': + kcr-fzf-files /home/kkga/.config/<ret>'
-map global user -docstring 'notes'                           n      ': + kcr-fzf-files /home/kkga/notes/<ret>'
-# map global user -docstring 'codepoint'                     i      ': echo %sh{ printf "codepoint: U+%04x" "$kak_cursor_char_value" }<ret>'
-map global user -docstring 'surround'                        s      ': enter-user-mode surround<ret>'
-map global user -docstring 'select down'                     V      ': vertical-selection-down<ret>'
-map global user -docstring 'select up'                       <a-v>  ': vertical-selection-up<ret>'
-map global user -docstring 'select up and down'              v      ': vertical-selection-up-and-down<ret>'
-map global user -docstring 'disable autoformat'              d      ': disable-autoformat<ret>'
-map global user -docstring 'LSP mode'                        l      ': enter-user-mode lsp<ret>'
-
-# autocomplete with tab
-hook global InsertCompletionShow .* %{ map window insert <tab> <c-n> }
-hook global InsertCompletionHide .* %{ map window insert <tab> <tab> }
-hook global InsertCompletionShow .* %{ map window insert <s-tab> <c-p> }
 
 # ciao macros: q, w and e are now together
 map global normal ^ q
@@ -196,3 +171,50 @@ map global normal <a-Q> <a-B>
 
 map global normal b ':enter-buffers-mode<ret>'              -docstring 'buffers…'
 map global normal B ':enter-user-mode -lock buffers<ret>'   -docstring 'buffers (lock)…'
+
+# normal commands
+map global normal -docstring 'format buffer'                 =       ': format<ret>'
+map global normal -docstring 'comment line'                  '#'     ': comment-line<ret>'
+map global normal -docstring 'comment block'                 '<a-#>' ': comment-block<ret>'
+
+# options
+map global user -docstring 'toggle number-lines'             L      ': toggle-highlighter global/number-lines number-lines<ret>'
+map global user -docstring 'toggle wrap'                     W      ': toggle-highlighter global/wrap wrap -word<ret>'
+
+# clipboard
+# map global user -docstring 'clip-paste (before)'             p      'o<esc>!wl-paste|dos2unix<ret><a-d>'
+# map global user -docstring 'clip-paste (after)'              P      'O<esc><a-!>wl-paste|dos2unix<ret><a-d>'
+# map global user -docstring 'clip-replace'                    R      '|wl-paste|dos2unix<ret>'
+# map global user -docstring 'clip-yank'                       y      '<a-|>wl-copy<ret>'
+
+# buffer
+map global user -docstring 'save buffer'                     w      ': w<ret>'
+map global user -docstring 'close buffer'                    c      ': db<ret>'
+map global user -docstring 'kill buffer'                     C      ': db!<ret>'
+map global user -docstring 'save all and exit'               q      ': waq<ret>'
+map global user -docstring 'exit without save'               Q      ': q!<ret>'
+
+# search
+map global user -docstring 'buffers'                         b      ': + kcr-fzf-buffers<ret>'
+map global user -docstring 'files'                           f      ': + kcr-fzf-files<ret>'
+map global user -docstring 'configs'                         e      ': + kcr-fzf-files /home/kkga/.config/<ret>'
+map global user -docstring 'grep'                            g      ': + kcr-fzf-grep<ret>'
+map global user -docstring 'grep buffer'                     G      ': + kcr-fzf-grep %val{bufname}<ret>'
+map global user -docstring 'notes'                           n      ': + kcr-fzf-files /home/kkga/notes/<ret>'
+map global user -docstring 'grep notes'                      N      ': + kcr-fzf-grep /home/kkga/notes/<ret>'
+
+# tools
+map global user -docstring 'surround'                        s      ': enter-user-mode surround<ret>'
+map global user -docstring 'select down'                     V      ': vertical-selection-down<ret>'
+map global user -docstring 'select up'                       <a-v>  ': vertical-selection-up<ret>'
+map global user -docstring 'select up and down'              v      ': vertical-selection-up-and-down<ret>'
+map global user -docstring 'disable autoformat'              d      ': disable-autoformat<ret>'
+map global user -docstring 'LSP mode'                        l      ': enter-user-mode lsp<ret>'
+# map global user -docstring 'codepoint'                     i      ': echo %sh{ printf "codepoint: U+%04x" "$kak_cursor_char_value" }<ret>'
+
+# autocomplete with tab
+hook global InsertCompletionShow .* %{ map window insert <tab> <c-n> }
+hook global InsertCompletionHide .* %{ map window insert <tab> <tab> }
+hook global InsertCompletionShow .* %{ map window insert <s-tab> <c-p> }
+
+
