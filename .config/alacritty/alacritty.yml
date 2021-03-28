@@ -27,6 +27,7 @@ key_bindings:
   - { key: K, mods: Control|Shift, action: ScrollPageUp }
   - { key: J, mods: Control|Shift, action: ScrollPageDown }
 
+draw_bold_text_with_bright_colors: true
 use_thin_strokes: true
 
 cursor:
