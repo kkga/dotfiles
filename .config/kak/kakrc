@@ -138,7 +138,7 @@ map global insert <c-n> "<a-;>: insert-c-n<ret>"
 
 # formatting
 hook global WinSetOption filetype=(svelte|javascript|typescript|css|scss|json|markdown|yaml|html) %{
-    set-option buffer formatcmd "prettier --stdin-filepath=%val{buffile}"
+    set-option buffer formatcmd "prettier --prose-wrap=always --stdin-filepath=%val{buffile}"
     hook buffer -group format BufWritePre .* format
 }
 define-command disable-autoformat -docstring 'disable auto-format' %{
