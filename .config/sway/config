@@ -108,12 +108,6 @@ input "type:pointer" {
 
 # Colors {{{1
 
-set $col_trans      #FFFFFF00
-set $col_white      #EEEEEE
-set $col_gray_light #FFFFFFAA
-set $col_gray       #00000033
-set $col_gray_dark  #00000066
-set $col_gray_mid   #00000099
 set $col_hl         #87d7ff88
 set $col_hl_br      #87d7ff
 set $col_bg         #303030
