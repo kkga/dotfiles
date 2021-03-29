@@ -6,7 +6,6 @@ plug plug https://github.com/alexherbo2/plug.kak %{
         # plug-execute lsp cargo build --release
     }
 }
-
 plug-core %{
     set-option global makecmd 'make -j 8'
     set-option global grepcmd 'rg --column --with-filename'
@@ -18,37 +17,30 @@ plug alacritty https://github.com/alexherbo2/alacritty.kak %{
     alias global terminal alacritty-terminal
     alias global popup alacritty-terminal-popup
 }
-
 plug auto-pairs https://github.com/alexherbo2/auto-pairs.kak %{
     auto-pairs-enable
 }
-
 plug explore https://github.com/alexherbo2/explore.kak %{
     define-command explore-files -params .. '+ kcr-fzf-files %arg{@}'
     define-command explore-buffers -params .. '+ kcr-fzf-buffers %arg{@}'
 }
-
-plug surround https://github.com/alexherbo2/surround.kak
-
-plug toggle-highlighter https://github.com/alexherbo2/toggle-highlighter.kak
-
-plug palette https://github.com/alexherbo2/palette.kak
-
-plug change-directory https://github.com/alexherbo2/change-directory.kak
-
-nop plug sleuth https://github.com/alexherbo2/sleuth.kak %{
-    # sleuth-enable
+plug manual-indent https://github.com/alexherbo2/manual-indent.kak %{
+    manual-indent-enable
 }
-
+plug surround https://github.com/alexherbo2/surround.kak
+plug toggle-highlighter https://github.com/alexherbo2/toggle-highlighter.kak
+plug palette https://github.com/alexherbo2/palette.kak
+plug change-directory https://github.com/alexherbo2/change-directory.kak
+plug sleuth https://github.com/alexherbo2/sleuth.kak %{
+    sleuth-enable
+}
 plug current-word-highlighter https://github.com/alexherbo2/current-word-highlighter.kak %{
     current-word-highlighter-enable
 }
-
 plug move-line https://github.com/alexherbo2/move-line.kak %{
     map -docstring 'Move selected lines below' global normal <down> ': move-line-below<ret>'
     map -docstring 'Move selected lines above' global normal <up> ': move-line-above<ret>'
 }
-
 plug-old kakboard https://github.com/lePerdu/kakboard %{
     hook global WinCreate .* %{ kakboard-enable }
 }
@@ -57,7 +49,6 @@ plug-old kakboard https://github.com/lePerdu/kakboard %{
 plug-old sudo-write https://github.com/occivink/kakoune-sudo-write
 plug-old vertical-selection https://github.com/occivink/kakoune-vertical-selection
 plug-old buffers https://github.com/Delapouite/kakoune-buffers
-# plug-old palette https://github.com/Delapouite/kakoune-palette
 
 evaluate-commands %sh{
     kcr init kakoune
