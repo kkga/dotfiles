@@ -6,6 +6,9 @@ alias ls=exa
 alias y=yadm
 alias xr='doas xbps-remove'
 
+# https://github.com/andreafrancia/trash-cli
+alias rm='echo "This is not the command you are looking for."; false'
+
 alias K=kcr-fzf-shell
 
 set --global hydro_symbol_prompt '>'
