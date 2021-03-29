@@ -57,7 +57,7 @@ evaluate-commands %sh{
 
 # ui ----------------------------------------------------------------------
 
-colorscheme lucius
+colorscheme lucius-custom
 
 set-option global tabstop 4
 set-option global indentwidth 4
@@ -176,7 +176,7 @@ map global normal -docstring 'comment line'                  '#'     ': comment-
 map global normal -docstring 'comment block'                 '<a-#>' ': comment-block<ret>'
 
 # options
-map global user -docstring 'toggle number-lines'             L      ': toggle-highlighter global/number-lines number-lines<ret>'
+map global user -docstring 'toggle number-lines'             L      ': toggle-highlighter global/number-lines number-lines -hlcursor<ret>'
 map global user -docstring 'toggle wrap'                     W      ': toggle-highlighter global/wrap wrap -word<ret>'
 
 # clipboard
