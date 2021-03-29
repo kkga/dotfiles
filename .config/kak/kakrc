@@ -87,7 +87,7 @@ map global insert <c-n> "<a-;>: insert-c-n<ret>"
 
 # formatting
 hook global WinSetOption filetype=(svelte|javascript|typescript|css|scss|json|markdown|yaml|html) %{
-    set-option buffer formatcmd "prettier --prose-wrap=always --stdin-filepath=%val{buffile}"
+    set-option buffer formatcmd "prettier --prose-wrap=always --stdin-filepath='%val{buffile}'"
     hook buffer -group format BufWritePre .* format
 }
 define-command disable-autoformat -docstring 'disable auto-format' %{
@@ -182,7 +182,7 @@ set-option global indentwidth 4
 set-option global scrolloff 8,4
 set-option global ui_options ncurses_status_on_top=true ncurses_assistant=none
 
-add-highlighter global/ number-lines -hlcursor
+# add-highlighter global/ number-lines -hlcursor
 add-highlighter global/ regex \h+$ 0:Error
 add-highlighter global/ wrap -word -indent
 add-highlighter global/ show-matching

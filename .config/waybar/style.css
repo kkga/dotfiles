@@ -10,8 +10,8 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: "monospace";
-  font-size: 12px;
+  font-family: "inconsolata";
+  font-size: 14px;
   min-height: 0;
   transition: none;
 }

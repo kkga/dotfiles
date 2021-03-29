@@ -1,11 +1,11 @@
 font:
   normal:
-    family: cascadia mono
-    # style: semilight
+    family: Inconsolata
+    # style: Light
   bold:
-    family: cascadia mono
+    family: Inconsolata
     # style: semibold
-  size: 9.5
+  size: 11
   # offset:
   #   x: 0
   #   y: -1
