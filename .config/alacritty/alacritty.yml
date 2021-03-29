@@ -1,11 +1,11 @@
 font:
-  # normal:
-  #   family: envy code r
-  #   style: regular
-  # bold:
-  #   family: terminus
-  #   style: bold
-  size: 10.5
+  normal:
+    family: cascadia mono
+    # style: semilight
+  bold:
+    family: cascadia mono
+    # style: semibold
+  size: 9.5
   # offset:
   #   x: 0
   #   y: -1
