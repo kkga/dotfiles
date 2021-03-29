@@ -81,6 +81,7 @@ gammastep
 gcc
 geoclue2
 geoip
+gettext
 gifski
 gimp
 git
@@ -141,6 +142,7 @@ luastatus
 lxappearance
 maim
 mako
+mdp
 meld
 mercurial
 mesa
@@ -237,6 +239,7 @@ upower
 vdpauinfo
 viu
 vkBasalt
+vmdfmt
 void-docs
 void-docs-browse
 void-repo-multilib
