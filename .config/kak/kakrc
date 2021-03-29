@@ -98,8 +98,8 @@ define-command disable-autoformat -docstring 'disable auto-format' %{
 # linting
 hook global WinSetOption filetype=markdown|asciidoc %{
     set-option window lintcmd "proselint"
-    hook buffer -group format BufWritePost .* lint
-    hook buffer -group format InsertIdle .* lint
+    # hook buffer -group format BufWritePost .* lint
+    # hook buffer -group format InsertIdle .* lint
 }
 define-command disable-autolint -docstring 'disable auto-lint' %{
 	unset-option buffer lintcmd

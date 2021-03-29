@@ -10,6 +10,7 @@ alias xr='doas xbps-remove'
 alias rm='echo "This is not the command you are looking for."; false'
 
 alias K=kcr-fzf-shell
+alias dateshort='date "+%Y-%m-%d% %H:%M:%S"'
 
 set --global hydro_symbol_prompt '>'
 set --global hydro_symbol_git_dirty '*'
