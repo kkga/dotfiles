@@ -8,9 +8,6 @@ plug plug https://github.com/alexherbo2/plug.kak %{
 }
 plug-core %{
     set-option global makecmd 'make -j 8'
-    set-option global grepcmd 'rg -Hn'
-
-    alias global u enter-user-mode
 }
 
 
@@ -18,15 +15,15 @@ plug alacritty https://github.com/alexherbo2/alacritty.kak %{
     alias global terminal alacritty-terminal
     alias global popup alacritty-terminal-popup
 }
-plug terminal-mode https://github.com/alexherbo2/terminal-mode.kak
 
+plug terminal-mode https://github.com/alexherbo2/terminal-mode.kak
 hook global ModuleLoaded kitty %{
     alias global terminal kitty-terminal
     alias global popup kitty-terminal
 }
 
 plug auto-pairs https://github.com/alexherbo2/auto-pairs.kak %{
-    # auto-pairs-enable
+    auto-pairs-enable
 }
 plug explore https://github.com/alexherbo2/explore.kak %{
     define-command explore-files -params .. '+ kcr-fzf-files %arg{@}'
@@ -52,21 +49,36 @@ plug move-line https://github.com/alexherbo2/move-line.kak %{
     map -docstring 'Move selected lines below' global normal <down> ': move-line-below<ret>'
     map -docstring 'Move selected lines above' global normal <up> ': move-line-above<ret>'
 }
+
 plug-old kakboard https://github.com/lePerdu/kakboard %{
     hook global WinCreate .* %{ kakboard-enable }
 }
-
 plug-old sudo-write https://github.com/occivink/kakoune-sudo-write
 plug-old vertical-selection https://github.com/occivink/kakoune-vertical-selection
 plug-old buffers https://github.com/Delapouite/kakoune-buffers
+plug-old state-save https://gitlab.com/Screwtapello/kakoune-state-save %{
+  hook global KakBegin .* %{
+    state-save-reg-load colon
+    state-save-reg-load pipe
+    state-save-reg-load slash
+  }
+  hook global KakEnd .* %{
+    state-save-reg-save colon
+    state-save-reg-save pipe
+    state-save-reg-save slash
+  }
+}
 
 evaluate-commands %sh{
     kcr init kakoune
 }
 
+# setup ----------------------------------------------------------------------
+# 
+
 # coding ----------------------------------------------------------------------
 
-# set-option global grepcmd 'rg --hidden --follow --smart-case --with-filename --column'
+set-option global grepcmd 'rg --hidden --follow --smart-case --with-filename'
 
 eval %sh{kak-lsp --kakoune -s $kak_session}
 hook global WinSetOption filetype=(crystal|html|css|json|rust|python|go|typescript|svelte|javascript) %{

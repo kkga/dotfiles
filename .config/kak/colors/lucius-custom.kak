@@ -30,7 +30,7 @@ evaluate-commands %sh{
         face global module ${lucius_green}
         face global function ${lucius_light_blue}
         face global string ${lucius_light_green}
-        face global keyword ${lucius_lighter_grey}+b
+        face global keyword ${lucius_blue}
         face global operator ${lucius_green}
         face global attribute ${lucius_light_blue}
         face global comment ${lucius_grey}

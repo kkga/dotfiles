@@ -74,6 +74,6 @@ args = ["--stdio"]
 
 [language.bash]
 filetypes = ["sh"]
-# roots = [".git", ".hg"]
+roots = [".git", ".hg"]
 command = "bash-language-server"
 args = ["start"]
