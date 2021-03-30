@@ -77,7 +77,7 @@ evaluate-commands %sh{
 
 # coding ----------------------------------------------------------------------
 
-set-option global grepcmd 'rg --column --with-filename'
+set-option global grepcmd 'rg --smart-case --column --with-filename'
 
 eval %sh{kak-lsp --kakoune -s $kak_session}
 hook global WinSetOption filetype=(crystal|html|css|json|rust|python|go|typescript|svelte|javascript) %{
