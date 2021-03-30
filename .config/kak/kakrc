@@ -27,6 +27,8 @@ plug explore https://github.com/alexherbo2/explore.kak %{
 plug manual-indent https://github.com/alexherbo2/manual-indent.kak %{
     manual-indent-enable
 }
+plug objectify https://github.com/alexherbo2/objectify.kak
+plug text-objects https://github.com/alexherbo2/text-objects.kak
 plug jq https://github.com/alexherbo2/jq.kak
 plug surround https://github.com/alexherbo2/surround.kak
 plug toggle-highlighter https://github.com/alexherbo2/toggle-highlighter.kak
@@ -54,7 +56,6 @@ plug-old buffers https://github.com/Delapouite/kakoune-buffers
 evaluate-commands %sh{
     kcr init kakoune
 }
-
 
 # coding ----------------------------------------------------------------------
 
@@ -127,10 +128,12 @@ map global normal <a-Q> <a-B>
 map global normal b ':enter-buffers-mode<ret>'              -docstring 'buffers…'
 map global normal B ':enter-user-mode -lock buffers<ret>'   -docstring 'buffers (lock)…'
 
-# normal commands
 map global normal -docstring 'format buffer'                 =       ': format<ret>'
 map global normal -docstring 'comment line'                  '#'     ': comment-line<ret>'
 map global normal -docstring 'comment block'                 '<a-#>' ': comment-block<ret>'
+
+map global goto -docstring 'next paragraph' 				 n       '<esc>]p'
+map global goto -docstring 'prev paragraph' 				 p       '<esc>[p'
 
 # options
 map global user -docstring 'toggle number-lines'             L      ': toggle-highlighter global/number-lines number-lines -hlcursor<ret>'
@@ -191,15 +194,15 @@ add-highlighter global/ show-matching
 define-command update-status %{ evaluate-commands %sh{
   printf %s 'set-option buffer modelinefmt %{'
   if [ "$kak_opt_lsp_diagnostic_error_count" -ne 0 ]; then
-    printf %s '{DiagnosticError}%opt{lsp_diagnostic_error_count}!{Default} '
+    printf %s '{DiagnosticError}*%opt{lsp_diagnostic_error_count}{default} '
   fi
   if [ "$kak_opt_lsp_diagnostic_warning_count" -ne 0 ]; then
-    printf %s '{DiagnosticWarning}%opt{lsp_diagnostic_warning_count}!{Default} '
+    printf %s '{DiagnosticWarning}!%opt{lsp_diagnostic_warning_count}{default} · '
   fi
   printf %s '{{context_info}} {{mode_info}}'
   printf %s ' · %val{bufname} [%opt{filetype}]'
   printf %s ' · %val{cursor_line}:%val{cursor_char_column}/%val{buf_line_count}'
-  printf %s " · {green}$kak_client{default}@{cyan}$kak_session"
+# printf %s " · {green}$kak_client{default}@{cyan}$kak_session"
   case "$kak_client" in client*) ;; *) printf %s " · $kak_client";; esac
   case "$kak_session" in ''|*[!0-9]*) printf %s " @$kak_session";; esac
   printf %s '}'

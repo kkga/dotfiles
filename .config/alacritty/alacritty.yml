@@ -1,9 +1,9 @@
 font:
   normal:
-    family: Inconsolata
+    family: monospace
     # style: Light
   bold:
-    family: Inconsolata
+    family: monospace
     # style: semibold
   size: 11
   # offset:

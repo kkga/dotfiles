@@ -30,7 +30,7 @@ evaluate-commands %sh{
         face global module ${lucius_green}
         face global function ${lucius_light_blue}
         face global string ${lucius_light_green}
-        face global keyword ${lucius_light_blue}+b
+        face global keyword ${lucius_lighter_grey}+b
         face global operator ${lucius_green}
         face global attribute ${lucius_light_blue}
         face global comment ${lucius_grey}
@@ -55,8 +55,8 @@ evaluate-commands %sh{
         face global SecondaryCursor ${lucius_darker_grey},${lucius_lighter_grey}+fg
         face global PrimaryCursorEol ${lucius_darker_grey},${lucius_dark_green}+fg
         face global SecondaryCursorEol ${lucius_darker_grey},${lucius_dark_green}+fg
-        face global LineNumbers ${lucius_grey},${lucius_darker_grey}
-        face global LineNumberCursor ${lucius_light_grey},${lucius_dark_grey}
+        face global LineNumbers ${lucius_grey},${lucius_dark_grey}
+        face global LineNumberCursor ${lucius_lighter_grey},${lucius_grey}
         face global LineNumbersWrapped ${lucius_dark_grey},${lucius_darker_grey}
         face global MenuForeground ${lucius_blue},${lucius_dark_blue}
         face global MenuBackground ${lucius_darker_grey},${lucius_light_grey}
@@ -72,6 +72,10 @@ evaluate-commands %sh{
         face global MatchingChar ${lucius_lighter_grey},${lucius_bright_green}
         face global BufferPadding ${lucius_green},${lucius_darker_grey}
         face global Whitespace ${lucius_grey}+f
+        face global LineFlagErrors ${lucius_light_red},${lucius_dark_grey}
+        face global Reference default,${lucius_dark_grey}
+        face global DiagnosticError red,default+u
+        face global DiagnosticWarning yellow,default+u
 
         # https://github.com/alexherbo2/current-word-highlighter.kak
         face global CurrentWord default,${lucius_dark_grey}
