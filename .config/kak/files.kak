@@ -9,10 +9,3 @@ define-command buffers -docstring 'Switch to a buffer' %{ evaluate-commands %sh{
     BUFFER=$(eval set -- "$kak_buflist"; for buf in "$@"; do echo "$buf"; done | dmenu -k -p buffer)
     [ -n "$BUFFER" ] && echo "eval -client '$kak_client' 'buffer $BUFFER'" | kak -p "$kak_session"
 } }
-
-define-command grep-files -docstring 'Grep files' %{ evaluate-commands %sh{
-    FILES=$(rg -nH . | dmenu -k -p grep)
-    for file in $FILES; do
-        printf 'eval -client %%{%s} edit %%{%s}\n' "$kak_client" "$file" | kak -p "$kak_session"
-    done
-} }
