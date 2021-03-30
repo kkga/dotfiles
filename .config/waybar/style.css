@@ -31,6 +31,7 @@ window#waybar {
 #workspaces button:hover {
   box-shadow: inherit;
   text-shadow: inherit;
+
   background: @background;
   border: none;
 }
