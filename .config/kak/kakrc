@@ -12,11 +12,17 @@ plug-core %{
 
 
 plug alacritty https://github.com/alexherbo2/alacritty.kak %{
-    alias global terminal alacritty-terminal
-    alias global popup alacritty-terminal-popup
+    # alias global terminal alacritty-terminal
+    # alias global popup alacritty-terminal-popup
 }
-
-
+hook -group windowing-detection global ClientCreate '.*' %{
+  evaluate-commands %sh{
+    [ "$WAYLAND_DISPLAY" ] && {
+      echo alias global terminal alacritty-terminal
+      echo alias global popup alacritty-terminal-popup
+    }
+  }
+}
 
 plug terminal-mode https://github.com/alexherbo2/terminal-mode.kak
 hook global ModuleLoaded kitty %{
@@ -154,8 +160,8 @@ map global goto -docstring 'next paragraph' 				 n       '<esc>]p'
 map global goto -docstring 'prev paragraph' 				 p       '<esc>[p'
 
 # options
-map global user -docstring 'toggle number-lines'             L      ': toggle-highlighter global/number-lines number-lines -hlcursor<ret>'
-map global user -docstring 'toggle wrap'                     W      ': toggle-highlighter global/wrap wrap -word<ret>'
+map global user -docstring 'toggle number-lines'             L      ': toggle-highlighter global/ number-lines number-lines -hlcursor<ret>'
+map global user -docstring 'toggle wrap'                     W      ': toggle-highlighter global/wrap wrap<ret>'
 
 # clipboard
 # map global user -docstring 'clip-paste (before)'             p      'o<esc>!wl-paste|dos2unix<ret><a-d>'
@@ -181,12 +187,9 @@ map global user -docstring 'grep notes'                      N      ': + kcr-fzf
 
 # tools
 map global user -docstring 'surround'                        s      ': enter-user-mode surround<ret>'
-map global user -docstring 'select down'                     V      ': vertical-selection-down<ret>'
-map global user -docstring 'select up'                       <a-v>  ': vertical-selection-up<ret>'
-map global user -docstring 'select up and down'              v      ': vertical-selection-up-and-down<ret>'
 map global user -docstring 'disable autoformat'              d      ': disable-autoformat<ret>'
 map global user -docstring 'LSP mode'                        l      ': enter-user-mode lsp<ret>'
-# map global user -docstring 'codepoint'                     i      ': echo %sh{ printf "codepoint: U+%04x" "$kak_cursor_char_value" }<ret>'
+map global user -docstring 'codepoint'                       i      ': echo %sh{ printf "codepoint: U+%04x" "$kak_cursor_char_value" }<ret>'
 
 # autocomplete with tab
 hook global InsertCompletionShow .* %{ map window insert <tab> <c-n> }
