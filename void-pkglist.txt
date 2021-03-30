@@ -70,6 +70,7 @@ flameshot
 flatpak
 font-cozette
 font-ibm-plex-ttf
+font-inconsolata-otf
 font-iosevka
 fontmanager
 foot
@@ -156,6 +157,7 @@ meson
 mpv
 neofetch
 neovim
+nmap
 nnn
 nodejs
 noto-fonts-ttf
