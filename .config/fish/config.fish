@@ -9,13 +9,26 @@ alias xr='doas xbps-remove'
 # https://github.com/andreafrancia/trash-cli
 alias rm='echo "This is not the command you are looking for."; false'
 
-alias K=kcr-fzf-shell
 alias dateshort='date "+%Y-%m-%d% %H:%M:%S"'
 
-set --global hydro_symbol_prompt '>'
-set --global hydro_symbol_git_dirty '*'
+alias k='kcr edit'
+alias K='kcr-fzf-shell'
+alias KK='K --working-directory .'
+alias ks='kcr shell --session'
+alias kl='kcr list'
+alias a='kcr attach'
+alias :='kcr send'
+alias :br='KK broot'
+alias :cat='kcr cat --raw'
 
-set fish_greeting					       ''
+alias val='kcr get --value'
+alias opt='kcr get --option'
+alias reg='kcr get --register'
+
+set --global hydro_symbol_prompt           '>'
+set --global hydro_symbol_git_dirty        '*'
+
+set fish_greeting					       ' '
 set fish_color_autosuggestion              normal
 set fish_color_cancel                      -r
 set fish_color_command                     brgreen
