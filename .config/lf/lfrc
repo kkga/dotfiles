@@ -24,7 +24,7 @@ map X !$f
 # map o &mimeopen $f
 # map O $mimeopen --ask $f
 
-# kakoune navigation
+# kakoune-like navigation
 map gk top
 map gj bottom
 
