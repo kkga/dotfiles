@@ -63,9 +63,9 @@ evaluate-commands %sh{
         face global MenuInfo ${lucius_grey}
         face global Information ${lucius_lighter_grey},${lucius_dark_green}
         face global Error ${lucius_light_red},${lucius_dark_red}
-        face global StatusLine ${lucius_lighter_grey},${lucius_dark_grey}
+        face global StatusLine ${lucius_lighter_grey},${lucius_darker_grey}
         face global StatusLineMode ${lucius_lighter_grey},${lucius_dark_green}+b
-        face global StatusLineInfo ${lucius_dark_grey},${lucius_lighter_grey}
+        face global StatusLineInfo ${lucius_light_green},${lucius_darker_grey}
         face global StatusLineValue ${lucius_lighter_grey}
         face global StatusCursor default,${lucius_blue}
         face global Prompt ${lucius_lighter_grey}
