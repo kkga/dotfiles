@@ -1,5 +1,8 @@
 # APPS
 
+cmd + ctrl - t : kitty -d=$HOME --single-instance --listen-on=unix:/tmp/mykitty
+
+
 # quick restart
 alt + ctrl + shift - q : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
 

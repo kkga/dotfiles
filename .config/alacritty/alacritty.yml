@@ -25,6 +25,10 @@ key_bindings:
   - { key: Return, mods: Control|Shift, action: SpawnNewInstance }
   - { key: K, mods: Control|Shift, action: ScrollPageUp }
   - { key: J, mods: Control|Shift, action: ScrollPageDown }
+  # - { key: J, mods: Control, chars: "\u24D9" }
+  # - { key: H, mods: Control, chars: "\u24D7" }
+  # - { key: M, mods: Control, chars: "\u24DC" }
+  # - { key: I, mods: Control, chars: "\u24D8" }
 
 draw_bold_text_with_bright_colors: true
 use_thin_strokes: true

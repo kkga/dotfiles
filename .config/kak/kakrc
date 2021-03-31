@@ -11,9 +11,14 @@ plug-core %{
 }
 
 
-plug alacritty https://github.com/alexherbo2/alacritty.kak %{
-    alias global terminal alacritty-terminal
-    alias global popup alacritty-terminal-popup
+plug alacritty https://github.com/alexherbo2/alacritty.kak
+hook -group windowing-detection global ClientCreate '.*' %{
+  evaluate-commands %sh{
+    [ "$WAYLAND_DISPLAY" ] && {
+      echo alias global terminal alacritty-terminal
+      echo alias global popup alacritty-terminal-popup
+    }
+  }
 }
 
 plug terminal-mode https://github.com/alexherbo2/terminal-mode.kak
@@ -73,179 +78,8 @@ evaluate-commands %sh{
     kcr init kakoune
 }
 
-# coding ----------------------------------------------------------------------
-
-set-option global grepcmd 'rg -Hn'
-
-eval %sh{kak-lsp --kakoune -s $kak_session}
-hook global WinSetOption filetype=(crystal|html|css|json|rust|python|go|typescript|svelte|javascript) %{
-    lsp-auto-hover-enable
-    lsp-auto-hover-insert-mode-enable
-    lsp-enable-window
-    set-option global lsp_auto_highlight_references true
-    set-option global lsp_hover_anchor true
-}
-hook global KakEnd .* lsp-exit
-
-define-command lsp-restart -docstring 'restart lsp server' %{ lsp-stop; lsp-start }
-define-command ne -docstring 'go to next error/warning from lsp' %{ lsp-find-error --include-warnings }
-define-command pe -docstring 'go to previous error/warning from lsp' %{ lsp-find-error --previous --include-warnings }
-define-command ee -docstring 'go to current error/warning from lsp' %{ lsp-find-error --include-warnings; lsp-find-error --previous --include-warnings }
-
-def -hidden insert-c-n %{
-    try %{
-        lsp-snippets-select-next-placeholders
-        exec '<a-;>d'
-    } catch %{
-        exec -with-hooks '<c-n>'
-    }
-}
-map global insert <c-n> "<a-;>: insert-c-n<ret>"
-
-# formatting
-hook global WinSetOption filetype=(svelte|javascript|typescript|css|scss|json|markdown|yaml|html) %{
-    set-option buffer formatcmd "prettier --prose-wrap=always --stdin-filepath='%val{buffile}'"
-    hook buffer -group format BufWritePre .* format
-}
-define-command disable-autoformat -docstring 'disable auto-format' %{
-	unset-option buffer formatcmd
-	remove-hooks buffer format
-}
-
-# linting
-hook global WinSetOption filetype=markdown|asciidoc %{
-    set-option window lintcmd "proselint"
-    # hook buffer -group format BufWritePost .* lint
-    # hook buffer -group format InsertIdle .* lint
-}
-define-command disable-autolint -docstring 'disable auto-lint' %{
-	unset-option buffer lintcmd
-	remove-hooks buffer lint
-}
-
-
-# mappings ----------------------------------------------------------------------
-
-# jj to exit
-hook global InsertChar j %{ try %{
-  exec -draft hH <a-k>jj<ret> d
-  exec <esc>
-}}
-
-# ciao macros: q, w and e are now together
-map global normal ^ q
-map global normal <a-^> Q
-
-map global normal q b
-map global normal Q B
-map global normal <a-q> <a-b>
-map global normal <a-Q> <a-B>
-
-map global normal b ':enter-buffers-mode<ret>'              -docstring 'buffers…'
-map global normal B ':enter-user-mode -lock buffers<ret>'   -docstring 'buffers (lock)…'
-
-map global normal -docstring 'format buffer'                 =       ': format<ret>'
-map global normal -docstring 'comment line'                  '#'     ': comment-line<ret>'
-map global normal -docstring 'comment block'                 '<a-#>' ': comment-block<ret>'
-
-map global goto -docstring 'next paragraph' 				 n       '<esc>]p'
-map global goto -docstring 'prev paragraph' 				 p       '<esc>[p'
-
-# options
-map global user -docstring 'toggle number-lines'             L      ': toggle-highlighter global/number-lines number-lines -hlcursor<ret>'
-map global user -docstring 'toggle wrap'                     W      ': toggle-highlighter global/wrap wrap -word<ret>'
-
-# clipboard
-# map global user -docstring 'clip-paste (before)'             p      'o<esc>!wl-paste|dos2unix<ret><a-d>'
-# map global user -docstring 'clip-paste (after)'              P      'O<esc><a-!>wl-paste|dos2unix<ret><a-d>'
-# map global user -docstring 'clip-replace'                    R      '|wl-paste|dos2unix<ret>'
-# map global user -docstring 'clip-yank'                       y      '<a-|>wl-copy<ret>'
-
-# buffer
-map global user -docstring 'save buffer'                     w      ': w<ret>'
-map global user -docstring 'close buffer'                    c      ': db<ret>'
-map global user -docstring 'kill buffer'                     C      ': db!<ret>'
-map global user -docstring 'save all and exit'               q      ': waq<ret>'
-map global user -docstring 'exit without save'               Q      ': q!<ret>'
-
-# search
-map global user -docstring 'buffers'                         b      ': explore-buffers<ret>'
-map global user -docstring 'files'                           f      ': explore-files<ret>'
-map global user -docstring 'configs'                         e      ': explore-files /home/kkga/.config/<ret>'
-map global user -docstring 'notes'                           n      ': explore-files /home/kkga/notes/<ret>'
-map global user -docstring 'grep'                            g      ': + kcr-fzf-grep<ret>'
-map global user -docstring 'grep buffer'                     G      ': + kcr-fzf-grep %val{buffile}<ret>'
-map global user -docstring 'grep notes'                      N      ': + kcr-fzf-grep /home/kkga/notes/<ret>'
-
-# tools
-map global user -docstring 'surround'                        s      ': enter-user-mode surround<ret>'
-map global user -docstring 'select down'                     V      ': vertical-selection-down<ret>'
-map global user -docstring 'select up'                       <a-v>  ': vertical-selection-up<ret>'
-map global user -docstring 'select up and down'              v      ': vertical-selection-up-and-down<ret>'
-map global user -docstring 'disable autoformat'              d      ': disable-autoformat<ret>'
-map global user -docstring 'LSP mode'                        l      ': enter-user-mode lsp<ret>'
-# map global user -docstring 'codepoint'                     i      ': echo %sh{ printf "codepoint: U+%04x" "$kak_cursor_char_value" }<ret>'
-
-# autocomplete with tab
-hook global InsertCompletionShow .* %{ map window insert <tab> <c-n> }
-hook global InsertCompletionHide .* %{ map window insert <tab> <tab> }
-hook global InsertCompletionShow .* %{ map window insert <s-tab> <c-p> }
-
-
-# ui ----------------------------------------------------------------------
-
-colorscheme lucius-custom
-
-set-option global tabstop 4
-set-option global indentwidth 4
-set-option global scrolloff 8,4
-set-option global ui_options ncurses_status_on_top=true ncurses_assistant=none
-
-# add-highlighter global/ number-lines -hlcursor
-add-highlighter global/ regex \h+$ 0:Error
-add-highlighter global/ wrap -word -indent
-add-highlighter global/ show-matching
-add-highlighter global/ regex \b(TODO|FIXME|XXX|NOTE)\b 0:default+rb
-add-highlighter global/ regex @\b(todo|fixme|xxx|note)\b 0:default+rb
-
-# modeline
-# define-command update-status %{ evaluate-commands %sh{
-#   printf %s 'set-option buffer modelinefmt %{'
-#   if [ "$kak_opt_lsp_diagnostic_error_count" -ne 0 ]; then
-#     printf %s '{DiagnosticError}*%opt{lsp_diagnostic_error_count}{default} '
-#   fi
-#   if [ "$kak_opt_lsp_diagnostic_warning_count" -ne 0 ]; then
-#     printf %s '{DiagnosticWarning}!%opt{lsp_diagnostic_warning_count}{default} · '
-#   fi
-#   printf %s '{{context_info}} {{mode_info}}'
-#   printf %s ' · %val{bufname} [%opt{filetype}]'
-#   printf %s ' · %val{cursor_line}:%val{cursor_char_column}/%val{buf_line_count}'
-# # printf %s " · {green}$kak_client{default}@{cyan}$kak_session"
-#   case "$kak_client" in client*) ;; *) printf %s " · $kak_client";; esac
-#   case "$kak_session" in ''|*[!0-9]*) printf %s " @$kak_session";; esac
-#   printf %s '}'
-# }}
-# hook global WinDisplay .* update-status
-# hook global BufSetOption lsp_diagnostic_error_count=.* update-status
-# hook global BufSetOption lsp_diagnostic_warning_count=.* update-status
-
-evaluate-commands %sh{
-    cwd='at {cyan}%sh{ pwd | sed "s|^$HOME|~|" }{default}'
-    bufname='in {green}%val{bufname}{default}'
-    modified='{yellow+b}%sh{ $kak_modified && echo "[+] " }{default}'
-    ft='as {magenta}%sh{ echo "${kak_opt_filetype:-noft}" }{default}'
-    eol='with {yellow}%val{opt_eolformat}{default}'
-    cursor='on {cyan}%val{cursor_line}{default}:{cyan}%val{cursor_char_column}{default}'
-    readonly='{red+b}%sh{ [ -f "$kak_buffile" ] && [ ! -w "$kak_buffile" ] && echo "[] " }{default}'
-    echo set global modelinefmt "'{{mode_info}} ${cwd} ${bufname} ${readonly}${modified}${ft} ${eol} ${cursor}'"
-}
-
-# buffers
-hook global WinDisplay .* info-buffers
-alias global bd delete-buffer
-alias global bf buffer-first
-alias global bl buffer-last
-alias global bo buffer-only
-alias global bo! buffer-only-force
-
-
+source "~/.config/kak/ui.kak"
+source "~/.config/kak/coding.kak"
+source "~/.config/kak/mappings.kak"
+source "~/.config/kak/asterisk.kak"
+source "~/.config/kak/files.kak"
