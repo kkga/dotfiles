@@ -14,7 +14,7 @@ export VISUAL="kcr edit"
 export DMENU='wofi --dmenu'
 
 export FZF_DEFAULT_COMMAND='fd --type f'
-export FZF_DEFAULT_OPTS="--multi --border=bottom --layout=reverse --inline-info --height 40 --preview-window=down:60%"
+export FZF_DEFAULT_OPTS="--border=bottom --layout=reverse --inline-info --height=40 --preview-window=down:60%:sharp"
 
 if [ $(uname) == "Linux" ]
 then
