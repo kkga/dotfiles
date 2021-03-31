@@ -11,10 +11,7 @@ plug-core %{
 }
 
 
-plug alacritty https://github.com/alexherbo2/alacritty.kak %{
-    # alias global terminal alacritty-terminal
-    # alias global popup alacritty-terminal-popup
-}
+plug alacritty https://github.com/alexherbo2/alacritty.kak
 hook -group windowing-detection global ClientCreate '.*' %{
   evaluate-commands %sh{
     [ "$WAYLAND_DISPLAY" ] && {
