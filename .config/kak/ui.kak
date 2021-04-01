@@ -5,12 +5,20 @@ set-option global indentwidth 4
 set-option global scrolloff 8,4
 set-option global ui_options ncurses_status_on_top=true ncurses_assistant=none
 
-# add-highlighter global/ number-lines -hlcursor
+add-highlighter global/ number-lines -hlcursor -separator ' '
 add-highlighter global/ regex \h+$ 0:Error
 add-highlighter global/ wrap -word -indent
 add-highlighter global/ show-matching
 add-highlighter global/ regex \b(TODO|FIXME|XXX|NOTE)\b 0:default+rb
-add-highlighter global/ regex @\b(todo|fixme|xxx|note)\b 0:default+rb
+# add-highlighter global/ regex @\b(todo|fixme|xxx|note)\b 0:default+rb
+
+define-command open -params 1 %{
+    terminal sh -c %sh{
+        printf '%s | sed -E -e "s/^/evaluate-commands -client %s edit / ;
+            s/:([0-9]+).*/\\nexecute-keys -client %s \\1g/" | kak -p "%s"' \
+            "$1" "$kak_client" "$kak_client" "$kak_session"
+    }
+}
 
 # modeline
 define-command update-status %{ evaluate-commands %sh{

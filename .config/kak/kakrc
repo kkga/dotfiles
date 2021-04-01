@@ -3,23 +3,12 @@ require-module plug
 plug plug https://github.com/alexherbo2/plug.kak %{
     define-command plug-upgrade -docstring 'plug-upgrade' %{
         plug-install
-        # plug-execute lsp cargo build --release
     }
 }
 plug-core %{
     set-option global makecmd 'make -j 8'
 }
 
-
-# plug alacritty https://github.com/alexherbo2/alacritty.kak
-# hook -group windowing-detection global ClientCreate '.*' %{
-#   evaluate-commands %sh{
-#     [ "$WAYLAND_DISPLAY" ] && {
-#       echo alias global terminal alacritty-terminal
-#       echo alias global popup alacritty-terminal-popup
-#     }
-#   }
-# }
 
 plug foot repos/foot.kak
 hook -group windowing-detection global ClientCreate '.*' %{
