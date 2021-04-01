@@ -25,7 +25,7 @@ define-command update-status %{ evaluate-commands %sh{
     printf %s ' · %val{bufname} [%opt{filetype}]'
     printf %s ' · %val{cursor_line}:%val{cursor_char_column}/%val{buf_line_count}'
     printf %s ' {{context_info}} {{mode_info}}'
-    # printf %s " · {green}$kak_client{default}@{cyan}$kak_session"
+    printf %s " · {green}$kak_client{default}@{cyan}$kak_session"
     # case "$kak_client" in client*) ;; *) printf %s " · $kak_client";; esac
     # case "$kak_session" in ''|*[!0-9]*) printf %s " @$kak_session";; esac
     printf %s '}'

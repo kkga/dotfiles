@@ -5,6 +5,7 @@ MangoHud-32bit
 SDL2-devel
 Vulkan-Tools
 Waybar
+abduco
 alacritty
 alsa-firmware
 alsa-plugins-pulseaudio
@@ -155,6 +156,7 @@ mesa-vulkan-radeon
 mesa-vulkan-radeon-32bit
 meson
 mpv
+myrepos
 neofetch
 neovim
 nmap
@@ -176,6 +178,7 @@ pastel
 patch
 pavucontrol
 peek
+pick
 pinentry-gnome
 pipewire
 pixman-devel
