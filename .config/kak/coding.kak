@@ -9,13 +9,13 @@ eval %sh{kak-lsp --kakoune -s $kak_session}
 hook global WinSetOption filetype=(crystal|html|css|json|rust|python|go|typescript|svelte|javascript) %{
     lsp-auto-hover-insert-mode-enable
     lsp-enable-window
-    set-option global lsp_auto_highlight_references true
+    # set-option global lsp_auto_highlight_references true
     set-option global lsp_hover_anchor true
 }
 hook global KakEnd .* lsp-exit
 
 # uncomment for lsp debug
-# set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
+set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
 
 define-command lsp-restart -docstring 'restart lsp server' %{ lsp-stop; lsp-start }
 define-command ne -docstring 'go to next error/warning from lsp' %{ lsp-find-error --include-warnings }
@@ -52,7 +52,7 @@ hook global WinDisplay   .* %{ evaluate-commands %sh{
 
 # formatting
 hook global WinSetOption filetype=(svelte|javascript|typescript|css|scss|json|markdown|yaml|html) %{
-    set-option buffer formatcmd "prettier --prose-wrap=always --stdin-filepath='%val{buffile}'"
+    set-option buffer formatcmd "prettier --prose-wrap=always --stdin-filepath=%val{buffile}"
     hook buffer -group format BufWritePre .* format
 }
 define-command disable-autoformat -docstring 'disable auto-format' %{
