@@ -75,7 +75,7 @@ output $laptop scale 2
 output $mon1 resolution 3840x2160 scale 2 position 1920 0
 output $mon2 resolution 3840x2160 scale 2
 
-output * bg #000000 solid_color
+output * bg #222222 solid_color
 
 # Inputs {{{1
 
@@ -131,8 +131,8 @@ for_window [ app_id="pavucontrol"       ] focus, floating enable
 for_window [ title="Picture-in-Picture" ] floating enable
 for_window [ app_id="mpv"               ] floating enable
 for_window [ app_id="^launcher$"        ] floating enable
-for_window [ app_id="dmenu.*"           ] floating enable 
-for_window [ app_id="^popup$"           ] floating enable 
+for_window [ app_id="dmenu.*"           ] floating enable
+for_window [ app_id="^popup$"           ] floating enable
 
 # Key bindings {{{1
 

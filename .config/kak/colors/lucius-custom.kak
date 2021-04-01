@@ -55,8 +55,8 @@ evaluate-commands %sh{
         face global SecondaryCursor ${lucius_darker_grey},${lucius_lighter_grey}+fg
         face global PrimaryCursorEol ${lucius_darker_grey},${lucius_dark_green}+fg
         face global SecondaryCursorEol ${lucius_darker_grey},${lucius_dark_green}+fg
-        face global LineNumbers ${lucius_grey},${lucius_dark_grey}
-        face global LineNumberCursor ${lucius_lighter_grey},${lucius_grey}
+        face global LineNumbers ${lucius_grey},${lucius_darker_grey}
+        face global LineNumberCursor ${lucius_grey},${lucius_darker_grey}+r
         face global LineNumbersWrapped ${lucius_dark_grey},${lucius_darker_grey}
         face global MenuForeground ${lucius_blue},${lucius_dark_blue}
         face global MenuBackground ${lucius_darker_grey},${lucius_light_grey}
