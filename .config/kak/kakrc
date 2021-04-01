@@ -1,5 +1,9 @@
 require-module plug
 
+evaluate-commands %sh{
+    kcr init kakoune
+}
+
 plug plug https://github.com/alexherbo2/plug.kak %{
     define-command plug-upgrade -docstring 'plug-upgrade' %{
         plug-install
@@ -8,7 +12,6 @@ plug plug https://github.com/alexherbo2/plug.kak %{
 plug-core %{
     set-option global makecmd 'make -j 8'
 }
-
 
 plug foot repos/foot.kak
 hook -group windowing-detection global ClientCreate '.*' %{
@@ -19,13 +22,11 @@ hook -group windowing-detection global ClientCreate '.*' %{
     }
   }
 }
-
 plug terminal-mode https://github.com/alexherbo2/terminal-mode.kak
 hook global ModuleLoaded kitty %{
     alias global terminal kitty-terminal
     alias global popup kitty-terminal
 }
-
 plug auto-pairs https://github.com/alexherbo2/auto-pairs.kak %{
     auto-pairs-enable
 }
@@ -44,9 +45,6 @@ plug palette https://github.com/alexherbo2/palette.kak
 plug change-directory https://github.com/alexherbo2/change-directory.kak
 plug sleuth https://github.com/alexherbo2/sleuth.kak %{
     sleuth-enable
-}
-plug current-word-highlighter https://github.com/alexherbo2/current-word-highlighter.kak %{
-    current-word-highlighter-enable
 }
 plug move-line https://github.com/alexherbo2/move-line.kak %{
     map -docstring 'Move selected lines below' global normal <down> ': move-line-below<ret>'
@@ -70,10 +68,6 @@ plug-old state-save https://gitlab.com/Screwtapello/kakoune-state-save %{
     state-save-reg-save pipe
     state-save-reg-save slash
   }
-}
-
-evaluate-commands %sh{
-    kcr init kakoune
 }
 
 source "~/.config/kak/ui.kak"
