@@ -25,6 +25,7 @@ seat * hide_cursor 5000
 exec mako
 exec pipewire
 exec gammastep
+exec foot --server
 exec light -S 35
 exec wl-paste -t text --watch clipman store --max-items=50
 exec clipman restore
