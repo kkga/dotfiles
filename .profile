@@ -19,12 +19,10 @@ export FLOATING_TERMINAL='foot -f monospace:size=12 -a launcher'
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --height=40 --preview-window=down:60%:sharp"
 
-if [ $(uname) == "Linux" ]
-then
-	eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
-	export SSH_AUTH_SOCK
-	export SUDO_ASKPASS=/usr/libexec/seahorse/ssh-askpass
-	export SSH_ASKPASS=/usr/libexec/seahorse/ssh-askpass
-	export GPG_TTY=$(tty)
+if [ $(uname) == "Linux" ]; then
+    eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
+    export SSH_AUTH_SOCK
+    export SUDO_ASKPASS=/usr/libexec/seahorse/ssh-askpass
+    export SSH_ASKPASS=/usr/libexec/seahorse/ssh-askpass
+    export GPG_TTY=$(tty)
 fi
-
