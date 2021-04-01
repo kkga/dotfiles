@@ -1,8 +1,12 @@
 set-option global grepcmd 'rg --smart-case --column --with-filename'
+# set-option global grepcmd 'rg --hidden --follow --smart-case --with-filename --column'
+
+
+# lsp
+# ---
 
 eval %sh{kak-lsp --kakoune -s $kak_session}
 hook global WinSetOption filetype=(crystal|html|css|json|rust|python|go|typescript|svelte|javascript) %{
-    lsp-auto-hover-enable
     lsp-auto-hover-insert-mode-enable
     lsp-enable-window
     set-option global lsp_auto_highlight_references true
@@ -10,8 +14,8 @@ hook global WinSetOption filetype=(crystal|html|css|json|rust|python|go|typescri
 }
 hook global KakEnd .* lsp-exit
 
-# lsp debug  
-set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
+# uncomment for lsp debug
+# set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
 
 define-command lsp-restart -docstring 'restart lsp server' %{ lsp-stop; lsp-start }
 define-command ne -docstring 'go to next error/warning from lsp' %{ lsp-find-error --include-warnings }
@@ -27,6 +31,24 @@ def -hidden insert-c-n %{
     }
 }
 map global insert <c-n> "<a-;>: insert-c-n<ret>"
+
+
+# hooks
+# -----
+
+# TODO https://github.com/maximbaz/dotfiles/blob/master/.config/kak/coding.kak
+
+hook global BufOpenFile  .* modeline-parse
+hook global BufWritePost .* %{ git show-diff }
+hook global BufReload    .* %{ git show-diff }
+
+hook global WinDisplay   .* %{ evaluate-commands %sh{
+    cd "$(dirname "$kak_buffile")"
+    project_dir="$(git rev-parse --show-toplevel 2>/dev/null)"
+    [ -n "$project_dir" ] && dir="$project_dir" || dir="${PWD%/.git}"
+    printf "cd %%{%s}\n" "$dir"
+    [ -n "$project_dir" ] && [ "$kak_buffile" = "${kak_buffile#\*}" ] && printf "git show-diff"
+} }
 
 # formatting
 hook global WinSetOption filetype=(svelte|javascript|typescript|css|scss|json|markdown|yaml|html) %{
