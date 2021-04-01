@@ -13,6 +13,9 @@ export EDITOR="kcr edit"
 export VISUAL="kcr edit"
 export DMENU='wofi --dmenu'
 
+export DMENU_PROGRAM='term-dmenu'
+export FLOATING_TERMINAL='foot -f monospace:size=12 -a launcher'
+
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_DEFAULT_OPTS="--border=bottom --layout=reverse --inline-info --height=40 --preview-window=down:60%:sharp"
 

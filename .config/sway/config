@@ -107,7 +107,7 @@ input "type:pointer" {
 
 # Colors {{{1
 
-set $col_hl         #87d7ff88
+set $col_hl         #87d7ff99
 set $col_hl_br      #87d7ff
 set $col_bg         #303030
 set $col_bg_br      #444444
@@ -130,9 +130,7 @@ for_window [ app_id="pavucontrol"       ] focus, floating enable
 for_window [ title="Picture-in-Picture" ] floating enable
 for_window [ app_id="mpv"               ] floating enable
 for_window [ app_id="^launcher$"        ] floating enable
-for_window [ app_id="Alacritty · Popup" ] floating enable
-for_window [ app_id="foot-popup"        ] floating enable
-for_window [ app_id="dmenu.*"           ] floating enable, resize set width 60ppt height 80ppt
+for_window [ app_id="dmenu.*"           ] floating enable 
 
 # Key bindings {{{1
 
@@ -142,6 +140,7 @@ for_window [ app_id="dmenu.*"           ] floating enable, resize set width 60pp
    bindsym $mod+Shift+Return exec $term
    bindsym $mod+d exec $drun
    bindsym $mod+Control+c exec $clipboard
+   bindsym Mod1+Tab exec window-switcher
 
    bindsym $mod+Shift+c kill
    bindsym $mod+Backspace reload

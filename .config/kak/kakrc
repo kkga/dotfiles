@@ -11,12 +11,22 @@ plug-core %{
 }
 
 
-plug alacritty https://github.com/alexherbo2/alacritty.kak
+# plug alacritty https://github.com/alexherbo2/alacritty.kak
+# hook -group windowing-detection global ClientCreate '.*' %{
+#   evaluate-commands %sh{
+#     [ "$WAYLAND_DISPLAY" ] && {
+#       echo alias global terminal alacritty-terminal
+#       echo alias global popup alacritty-terminal-popup
+#     }
+#   }
+# }
+
+plug foot repos/foot.kak
 hook -group windowing-detection global ClientCreate '.*' %{
   evaluate-commands %sh{
     [ "$WAYLAND_DISPLAY" ] && {
-      echo alias global terminal alacritty-terminal
-      echo alias global popup alacritty-terminal-popup
+      echo alias global terminal foot-terminal
+      echo alias global popup foot-terminal-popup
     }
   }
 }
@@ -31,8 +41,7 @@ plug auto-pairs https://github.com/alexherbo2/auto-pairs.kak %{
     auto-pairs-enable
 }
 plug explore https://github.com/alexherbo2/explore.kak %{
-    define-command explore-files -params .. '+ kcr-fzf-files %arg{@}'
-    define-command explore-buffers -params .. '+ kcr-fzf-buffers %arg{@}'
+    explore-enable
 }
 plug manual-indent https://github.com/alexherbo2/manual-indent.kak %{
     manual-indent-enable

@@ -44,14 +44,18 @@ map global user -docstring 'kill buffer'                     C      ': db!<ret>'
 map global user -docstring 'save all and exit'               q      ': waq<ret>'
 map global user -docstring 'exit without save'               Q      ': q!<ret>'
 
+
+define-command explore-files -params .. '+ kcr-fzy-files %arg{@}'
+define-command explore-buffers -params .. '+ kcr-fzy-buffers %arg{@}'
+
 # search
 map global user -docstring 'buffers'                         b      ': explore-buffers<ret>'
 map global user -docstring 'files'                           f      ': explore-files<ret>'
 map global user -docstring 'configs'                         e      ': explore-files /home/kkga/.config/<ret>'
 map global user -docstring 'notes'                           n      ': explore-files /home/kkga/notes/<ret>'
-map global user -docstring 'grep'                            g      ': + kcr-fzf-grep<ret>'
-map global user -docstring 'grep buffer'                     G      ': + kcr-fzf-grep %val{buffile}<ret>'
-map global user -docstring 'grep notes'                      N      ': + kcr-fzf-grep /home/kkga/notes/<ret>'
+map global user -docstring 'grep'                            g      ': + kcr-fzy-grep<ret>'
+map global user -docstring 'grep buffer'                     G      ': + kcr-fzy-grep %val{buffile}<ret>'
+map global user -docstring 'grep notes'                      N      ': + kcr-fzy-grep /home/kkga/notes/<ret>'
 
 # tools
 map global user -docstring 'surround'                        s      ': enter-user-mode surround<ret>'

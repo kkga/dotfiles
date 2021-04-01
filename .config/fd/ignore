@@ -1,1 +1,10 @@
 node_modules
+.void-packages
+.pnpm-store
+.npm
+.mail
+.gem
+yarn
+.git
+.cache
+*.bak
