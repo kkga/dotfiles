@@ -73,8 +73,8 @@ cmd zip ${{
     rm -rf $1
 }}
 
-cmd fzf_jump ${{
-    res="$(fd . -H -d 4 | fzf --reverse --header='Jump to location' | sed 's/\\/\\\\/g;s/"/\\"/g')"
+cmd jump ${{
+    res="$(fd . -H -d 4 | fzy | sed 's/\\/\\\\/g;s/"/\\"/g')"
     if [ -d "$res" ]; then
         cmd="cd"
     else
@@ -82,4 +82,4 @@ cmd fzf_jump ${{
     fi
     lf -remote "send $id $cmd \"$res\""
 }}
-map <c-f> :fzf_jump
+map <c-f> :jump
