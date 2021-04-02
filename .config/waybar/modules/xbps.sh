@@ -1,7 +1,9 @@
 #!/bin/bash
 
-UPDATES=$(doas xbps-install -nu | wc -l)
+updates=$(xbps-install -un | cut -d' ' -f2 | sort | uniq -c | xargs)
 
-if [ $UPDATES != "0" ]; then
-	echo "$UPDATES"
+if [ -z "$updates" ]; then
+    echo ""
+else
+    echo "$updates""s"
 fi
