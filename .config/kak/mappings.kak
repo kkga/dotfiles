@@ -29,7 +29,7 @@ map global goto -docstring 'prev paragraph' 				 p       '<esc>[p;'
 
 # options
 map global user -docstring 'toggle number-lines'             L      ': toggle-highlighter global/ number-lines -hlcursor<ret>'
-map global user -docstring 'toggle wrap'                     W      ': toggle-highlighter global/wrap <ret>'
+map global user -docstring 'toggle wrap'                     W      ': toggle-highlighter global/ wrap -word <ret>'
 
 # clipboard
 # map global user -docstring 'clip-paste (before)'             p      'o<esc>!wl-paste|dos2unix<ret><a-d>'

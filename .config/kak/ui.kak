@@ -4,9 +4,9 @@ set-option global tabstop 4
 set-option global indentwidth 4
 set-option global scrolloff 8,4
 set-option global ui_options ncurses_status_on_top=true ncurses_assistant=none
-add-highlighter global/ number-lines -hlcursor -separator ' '
+add-highlighter global/ number-lines -hlcursor
+add-highlighter global/ wrap -word
 add-highlighter global/ regex \h+$ 0:Error
-add-highlighter global/ wrap -word -indent
 add-highlighter global/ show-matching
 add-highlighter global/ regex \b(TODO|FIXME|XXX|NOTE)\b 0:default+rb
 
