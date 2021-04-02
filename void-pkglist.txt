@@ -124,6 +124,7 @@ libXtst-devel
 libXxf86vm-devel
 libcap-devel
 libdrm-devel
+libev-devel
 libgpg-error-devel
 libinput-devel
 libspa-bluetooth

@@ -10,7 +10,7 @@ hook global WinSetOption filetype=(crystal|html|css|json|rust|python|go|typescri
 hook global KakEnd .* lsp-exit
 
 # uncomment for lsp debug
-# set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
+set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
 
 define-command lsp-restart -docstring 'restart lsp server' %{ lsp-stop; lsp-start }
 define-command ne -docstring 'go to next error/warning from lsp' %{ lsp-find-error --include-warnings }

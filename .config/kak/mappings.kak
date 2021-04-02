@@ -4,9 +4,9 @@ hook global InsertChar j %{ try %{
   exec <esc>
 }}
 
-# map global normal <a-C> J 
-# map global normal C     j 
-
+# navigate by paragraphs
+map global normal <c-n> ']p;'                                 -docstring 'next paragraph'
+map global normal <c-p> '[p;'                                 -docstring 'previous paragraph'
 
 # ciao macros: q, w and e are now together
 map global normal ^ q
@@ -24,8 +24,8 @@ map global normal -docstring 'format buffer'                 =       ': format<r
 map global normal -docstring 'comment line'                  '#'     ': comment-line<ret>'
 map global normal -docstring 'comment block'                 '<a-#>' ': comment-block<ret>'
 
-map global goto -docstring 'next paragraph' 				 n       '<esc>]p'
-map global goto -docstring 'prev paragraph' 				 p       '<esc>[p'
+map global goto -docstring 'next paragraph' 				 n       '<esc>]p;'
+map global goto -docstring 'prev paragraph' 				 p       '<esc>[p;'
 
 # options
 map global user -docstring 'toggle number-lines'             L      ': toggle-highlighter global/ number-lines -hlcursor<ret>'
