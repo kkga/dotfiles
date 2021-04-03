@@ -12,6 +12,8 @@ export BROWSER=firefox
 export EDITOR="kcr edit"
 export VISUAL="kcr edit"
 export DMENU='wofi --dmenu'
+
+export MANPAGER=most
 export MOST_INITFILE=$HOME/.config/most/mostrc
 
 export DMENU_PROGRAM='term-dmenu'
