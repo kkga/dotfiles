@@ -10,8 +10,8 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: "monospace";
-  font-size: 13px;
+  font-family: "Cozette Vector";
+  font-size: 12px;
   min-height: 0;
   transition: none;
 }
@@ -26,7 +26,6 @@ window#waybar {
   margin: 0;
   font-weight: bold;
   color: @foreground;
-  box-shadow: inset -1px 0 0 0 @bg-dim;
 }
 #workspaces button:hover {
   box-shadow: inherit;
@@ -48,7 +47,6 @@ window#waybar {
 #cpu.warning,
 #custom-yadm,
 #network.disconnected {
-  background: @bg-red;
   color: @text-red;
 }
 
@@ -56,7 +54,6 @@ window#waybar {
 #custom-tailscale.connected,
 #custom-updates,
 #battery.charging {
-  background: @bg-green;
   color: @text-green;
 }
 
@@ -81,8 +78,8 @@ window#waybar {
 #language,
 #temperature,
 #clock {
-  padding: 0 8px;
-  border-left: 1px solid @bg-dim;
+  padding: 2 8px;
+  margin: 0 4px;
 }
 
 #window {

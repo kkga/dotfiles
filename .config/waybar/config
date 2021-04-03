@@ -3,7 +3,6 @@
 {
     "layer": "top",
 	"position": "bottom",
-    "height": 16,
     "modules-left": [
         "sway/workspaces",
 		"sway/window"
@@ -46,7 +45,7 @@
 		"max-length": 80
 	},
     "custom/updates": {
-		"format": "⇡{}",
+		"format": "{}",
         "exec": "~/.config/waybar/modules/xbps.sh",
         "signal": 1,
         "on-click-right": "~/.config/waybar/modules/xbps.sh",
@@ -54,7 +53,7 @@
         "interval": "1600"
     },
     "custom/yadm": {
-		"format": "{}",
+		"format": " {}",
         "exec": "~/.config/waybar/modules/yadm.sh",
         "signal": 1,
         "on-click-right": "~/.config/waybar/modules/yadm.sh",
@@ -77,7 +76,7 @@
         "format": "{:%a %d %b %H:%M}"
     },
     "cpu": {
-        "format": "C {usage:2}%",
+        "format": " {usage:02}%",
 		"interval": 2,
         "states": {
             "warning": 50,
@@ -89,7 +88,7 @@
 		"hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
 		"critical-threshold": 80,
 		// "format-critical": "{temperatureC}°",
-		"format": "T {temperatureC}°"
+		"format": " {temperatureC}°"
 	},
     "battery": {
         "bat": "BAT0",
@@ -106,15 +105,15 @@
     "network": {
         "interval": 2,
         // "interface": "wlan0",
-        "format-wifi": "▼",
-        "format-ethernet": "▲",
+        "format-wifi": "直",
+        "format-ethernet": "✜",
         "format-linked": "{ifname}",
-        "format-disconnected": " ✗ ",
+        "format-disconnected": "睊",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}",
         "tooltip-format": "{ifname}\n{ipaddr}/{cidr}\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}"
     },
 	"custom/vpn": {
-		"format": "◆",
+		"format": "",
 		"exec": "echo '{\"class\": \"connected\", \"tooltip\": \"VPN\"}'",
 		"exec-if": "test -d /proc/sys/net/ipv4/conf/mlvd*",
 		"return-type": "json",
@@ -140,10 +139,10 @@
 		"on-click-right": "exec swaymsg 'move scratchpad'"
 	},
     "pulseaudio": {
-        "format": "V {volume}%",
+        "format": " {volume}%",
         "format-bluetooth": "BT {volume}% {format_source}",
+        "format-muted": "婢 {volume}%",
         "format-bluetooth-muted": "BT MUT {format_source}",
-        "format-muted": "MUT {volume}%",
         "format-source": "VOL {volume}%",
         "format-source-muted": "MUT {volume}",
         "format-icons": {
