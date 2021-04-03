@@ -13,7 +13,7 @@ focus_wrapping yes
 
 gaps inner 0
 
-font monospace 10
+font monospace 9
 titlebar_border_thickness 0
 titlebar_padding 6 1
 
@@ -262,7 +262,13 @@ bindsym $mod+Shift+Backspace mode $powermode
 # Status Bar {{{1
 
 bar {
-   swaybar_command waybar
+    swaybar_command waybar
+ #   status_command ~/.local/bin/luastatus-sway.sh
+ #   separator_symbol "  "
+ #   height 16
+ #   colors {
+	# statusline $col_fg
+ #   }
 }
 
 include /etc/sway/config.d/*

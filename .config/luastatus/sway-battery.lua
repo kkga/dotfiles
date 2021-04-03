@@ -8,8 +8,8 @@ widget =
 
         local symbol =
             ({
-            Charging = "↑",
-            Discharging = ""
+            Charging = "",
+            Discharging = ""
         })[t.status] or " "
 
         local color
@@ -20,7 +20,7 @@ widget =
         local h = math.floor(t.rem_time)
         local m = math.floor(60 * (t.rem_time - h))
         return {
-            {full_text = string.format("%d%%%s (%d:%02d)", t.capacity, symbol, h, m), color = color}
+            {full_text = string.format("%s %d%% (%d:%02d)", symbol, t.capacity, h, m), color = color}
         }
     end
 }

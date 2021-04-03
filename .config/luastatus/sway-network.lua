@@ -1,6 +1,6 @@
 widget = {
     plugin = "network-linux",
-    opts = {
+        opts = {
         wireless = true,
         ethernet = true,
         timeout = 10
@@ -23,7 +23,7 @@ widget = {
                     end
                 end
                 r[#r + 1] = {
-                    full_text = string.format("%s%s", name, weak_label)
+                    full_text = string.format(" %s%s", name, weak_label)
                 }
             elseif params.ethernet then
                 -- if iface == "tailscale0" then
@@ -33,7 +33,7 @@ widget = {
                 r[#r + 1] = {
                     full_text = string.format("%s", iface)
                 }
-            elseif (iface ~= 'lo') then 
+            elseif (iface ~= 'lo') then
                 r[#r + 1] = {
                     full_text = string.format("%s", iface)
                 }

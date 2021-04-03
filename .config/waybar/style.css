@@ -2,7 +2,8 @@
 @define-color foreground  #aaa;
 @define-color bg-dim      #333;
 @define-color text-bright #eee;
-@define-color bg-red      #500;
+@define-color text-dim    #777;
+@define-color bg-red      #300;
 @define-color text-red    #f90;
 @define-color bg-green    #030;
 @define-color text-green  #0c0;
@@ -10,8 +11,8 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: "Cozette Vector";
-  font-size: 12px;
+  font-family: monospace;
+  font-size: 12;
   min-height: 0;
   transition: none;
 }
@@ -22,22 +23,25 @@ window#waybar {
 }
 
 #workspaces button {
-  padding: 0 2px;
+  padding: 0 0px;
   margin: 0;
-  font-weight: bold;
   color: @foreground;
 }
 #workspaces button:hover {
   box-shadow: inherit;
   text-shadow: inherit;
-
   background: @background;
   border: none;
 }
-
 #workspaces button.focused {
+  font-weight: bold;
   background: @bg-dim;
   color: @text-bright;
+}
+#window {
+  padding-left: 8px;
+  border-left: 1px solid #222;
+  color: @text-dim;
 }
 
 #workspaces button.urgent,
@@ -48,6 +52,7 @@ window#waybar {
 #custom-yadm,
 #network.disconnected {
   color: @text-red;
+  background: @bg-red;
 }
 
 #custom-vpn.connected,
@@ -78,10 +83,6 @@ window#waybar {
 #language,
 #temperature,
 #clock {
-  padding: 2 8px;
+  padding: 0 8px;
   margin: 0 4px;
-}
-
-#window {
-  margin-left: 8px;
 }

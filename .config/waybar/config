@@ -3,13 +3,14 @@
 {
     "layer": "top",
 	"position": "bottom",
+	"height": 16,
     "modules-left": [
         "sway/workspaces",
 		"sway/window"
     ],
 	"modules-center":[
         "sway/mode"
-	],
+    	],
     "modules-right": [
         "custom/media",
         "custom/updates",
@@ -45,7 +46,7 @@
 		"max-length": 80
 	},
     "custom/updates": {
-		"format": "{}",
+		"format": "XBPS {}",
         "exec": "~/.config/waybar/modules/xbps.sh",
         "signal": 1,
         "on-click-right": "~/.config/waybar/modules/xbps.sh",
@@ -53,7 +54,7 @@
         "interval": "1600"
     },
     "custom/yadm": {
-		"format": " {}",
+		"format": "YADM {}",
         "exec": "~/.config/waybar/modules/yadm.sh",
         "signal": 1,
         "on-click-right": "~/.config/waybar/modules/yadm.sh",
@@ -76,7 +77,7 @@
         "format": "{:%a %d %b %H:%M}"
     },
     "cpu": {
-        "format": " {usage:02}%",
+        "format": "{usage:02}%",
 		"interval": 2,
         "states": {
             "warning": 50,
@@ -88,7 +89,7 @@
 		"hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
 		"critical-threshold": 80,
 		// "format-critical": "{temperatureC}°",
-		"format": " {temperatureC}°"
+		"format": "T {temperatureC}°"
 	},
     "battery": {
         "bat": "BAT0",
@@ -97,30 +98,30 @@
             "critical": 10
         },
 		"format-time": "{H}h {M}m",
-      "format": "{capacity}%",
-      "format-charging": "{capacity}%",
-		"format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+        "format": "{capacity}%",
+        "format-charging": "+ {capacity}%",
+		"format-icons": ["", "", "", "", "", ""],
 		"tooltip-format": "{capacity}% {power} {timeTo}"
     },
     "network": {
         "interval": 2,
         // "interface": "wlan0",
-        "format-wifi": "直",
-        "format-ethernet": "✜",
+        "format-wifi": "WIFI",
+        "format-ethernet": "ETH",
         "format-linked": "{ifname}",
         "format-disconnected": "睊",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}",
         "tooltip-format": "{ifname}\n{ipaddr}/{cidr}\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}"
     },
 	"custom/vpn": {
-		"format": "",
+		"format": "VPN",
 		"exec": "echo '{\"class\": \"connected\", \"tooltip\": \"VPN\"}'",
 		"exec-if": "test -d /proc/sys/net/ipv4/conf/mlvd*",
 		"return-type": "json",
 		"interval": 5
 	},
 	"custom/tailscale": {
-		"format": "◩",
+		"format": "TS",
 		"exec": "echo '{\"class\": \"connected\", \"tooltip\": \"TAILSCALE\"}'",
 		"exec-if": "test -d /proc/sys/net/ipv4/conf/tailscale0",
 		"return-type": "json",
@@ -130,18 +131,10 @@
 		"exec": "curl 'https://wttr.in/?format=%t+%C'",
 		"interval": 3600
 	},
-	"custom/scratch": {
-		"interval": 3,
-		"return-type": "json",
-		"exec": "swaymsg -t get_tree | jq --unbuffered --compact-output '( select(.name == \"root\") | .nodes[] | select(.name == \"__i3\") | .nodes[] | select(.name == \"__i3_scratch\") | .focus) as $scratch_ids | [..  | (.nodes? + .floating_nodes?) // empty | .[] | select(.id |IN($scratch_ids[]))] as $scratch_nodes | { text: \"\\($scratch_nodes | length)\", tooltip: $scratch_nodes | map(\"\\(.app_id // .window_properties.class) (\\(.id)): \\(.name)\") | join(\"\\n\") }'",
-		"format": "{}",
-		"on-click": "exec swaymsg 'scratchpad show'",
-		"on-click-right": "exec swaymsg 'move scratchpad'"
-	},
     "pulseaudio": {
-        "format": " {volume}%",
+        "format": "VOL {volume}%",
         "format-bluetooth": "BT {volume}% {format_source}",
-        "format-muted": "婢 {volume}%",
+        "format-muted": "MUT {volume}%",
         "format-bluetooth-muted": "BT MUT {format_source}",
         "format-source": "VOL {volume}%",
         "format-source-muted": "MUT {volume}",

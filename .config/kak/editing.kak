@@ -63,6 +63,10 @@ hook global WinSetOption filetype=(svelte|javascript|typescript|css|scss|json|ma
     set-option buffer formatcmd "prettier --prose-wrap=always --stdin-filepath='%val{buffile}'"
     hook buffer -group format BufWritePre .* format
 }
+hook global WinSetOption filetype=lua %{
+    set-option buffer formatcmd "stylua -"
+    hook buffer -group format BufWritePre .* format
+}
 hook global WinSetOption filetype=sh %{
     set-option buffer formatcmd 'shfmt -i 4 -ci -sr'
     hook buffer -group format BufWritePre .* format
