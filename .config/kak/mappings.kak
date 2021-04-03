@@ -31,11 +31,18 @@ map global goto -docstring 'prev paragraph' 				 p       '<esc>[p;'
 map global user -docstring 'toggle number-lines'             L      ': toggle-highlighter global/ number-lines -hlcursor<ret>'
 map global user -docstring 'toggle wrap'                     W      ': toggle-highlighter global/ wrap -word <ret>'
 
+
 # clipboard
-# map global user -docstring 'clip-paste (before)'             p      'o<esc>!wl-paste|dos2unix<ret><a-d>'
-# map global user -docstring 'clip-paste (after)'              P      'O<esc><a-!>wl-paste|dos2unix<ret><a-d>'
-# map global user -docstring 'clip-replace'                    R      '|wl-paste|dos2unix<ret>'
-# map global user -docstring 'clip-yank'                       y      '<a-|>wl-copy<ret>'
+evaluate-commands %sh{
+    case $(uname) in
+        Linux) copy="wl-copy"; paste="wl-paste|dos2unix" ;;
+        Darwin)  copy="pbcopy"; paste="pbpaste" ;;
+    esac
+    printf "map global user -docstring 'paste (after) from clipboard' p '<a-!>%s<ret>'\n" "$paste"
+    printf "map global user -docstring 'paste (before) from clipboard' P '!%s<ret>'\n" "$paste"
+    printf "map global user -docstring 'yank to clipboard' y '<a-|>%s<ret>:echo -markup %%{{Information}copied selection clipboard}<ret>'\n" "$copy"
+    printf "map global user -docstring 'replace from clipboard' R '|%s<ret>'\n" "$paste"
+}
 
 # buffer
 map global user -docstring 'save buffer'                     w      ': w<ret>'
@@ -44,11 +51,9 @@ map global user -docstring 'kill buffer'                     C      ': db!<ret>'
 map global user -docstring 'save all and exit'               q      ': waq<ret>'
 map global user -docstring 'exit without save'               Q      ': q!<ret>'
 
-
+# search
 define-command explore-files -params .. '+ kcr-fzy-files %arg{@}'
 define-command explore-buffers -params .. '+ kcr-fzy-buffers %arg{@}'
-
-# search
 map global user -docstring 'buffers'                         b      ': explore-buffers<ret>'
 map global user -docstring 'files'                           f      ': explore-files<ret>'
 map global user -docstring 'configs'                         e      ': explore-files /home/kkga/.config/<ret>'

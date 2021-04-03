@@ -51,9 +51,6 @@ plug move-line https://github.com/alexherbo2/move-line.kak %{
     map -docstring 'Move selected lines above' global normal <up> ': move-line-above<ret>'
 }
 
-plug-old kakboard https://github.com/lePerdu/kakboard %{
-    hook global WinCreate .* %{ kakboard-enable }
-}
 plug-old sudo-write https://github.com/occivink/kakoune-sudo-write
 plug-old vertical-selection https://github.com/occivink/kakoune-vertical-selection
 plug-old buffers https://github.com/Delapouite/kakoune-buffers
