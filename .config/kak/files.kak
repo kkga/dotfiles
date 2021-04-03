@@ -9,3 +9,11 @@ define-command buffers -docstring 'Switch to a buffer' %{ evaluate-commands %sh{
     BUFFER=$(eval set -- "$kak_buflist"; for buf in "$@"; do echo "$buf"; done | $DMENU_PROGRAM)
     [ -n "$BUFFER" ] && echo "eval -client '$kak_client' 'buffer $BUFFER'" | kak -p "$kak_session"
 } }
+
+
+define-command fuzzy-open-file %{
+    try %sh{
+        foot -f 'monospace:size=12' --app-id=popup sh -c "kak_open_file.sh $kak_session $kak_client"
+    }
+}
+

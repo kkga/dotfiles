@@ -13,7 +13,7 @@ plug-core %{
     set-option global makecmd 'make -j 8'
 }
 
-plug foot repos/foot.kak
+plug foot projects/foot.kak
 hook -group windowing-detection global ClientCreate '.*' %{
   evaluate-commands %sh{
     [ "$WAYLAND_DISPLAY" ] && {
@@ -46,10 +46,7 @@ plug change-directory https://github.com/alexherbo2/change-directory.kak
 plug sleuth https://github.com/alexherbo2/sleuth.kak %{
     sleuth-enable
 }
-plug move-line https://github.com/alexherbo2/move-line.kak %{
-    map -docstring 'Move selected lines below' global normal <down> ': move-line-below<ret>'
-    map -docstring 'Move selected lines above' global normal <up> ': move-line-above<ret>'
-}
+plug move-line https://github.com/alexherbo2/move-line.kak
 
 plug-old sudo-write https://github.com/occivink/kakoune-sudo-write
 plug-old vertical-selection https://github.com/occivink/kakoune-vertical-selection
