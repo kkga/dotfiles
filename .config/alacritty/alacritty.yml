@@ -1,10 +1,10 @@
 font:
-  normal:
-    family: monospace
-    # style: Light
-  bold:
-    family: monospace
-    # style: semibold
+  # normal:
+  #   family: agave
+  # style: Light
+  # bold:
+  #   family: agave
+  # style: semibold
   size: 10.5
   # offset:
   #   x: 0
