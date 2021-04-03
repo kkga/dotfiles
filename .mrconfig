@@ -14,3 +14,6 @@ checkout = git clone 'https://github.com/xwmx/nb' 'nb'
 
 [repos/kakoune]
 checkout = git clone 'https://github.com/mawww/kakoune' 'kakoune'
+
+[repos/kakoune.cr]
+checkout = git clone 'https://github.com/alexherbo2/kakoune.cr' 'kakoune.cr'
