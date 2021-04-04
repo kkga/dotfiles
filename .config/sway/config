@@ -113,6 +113,7 @@ set $col_hl_br      #87d7ff
 set $col_bg         #303030
 set $col_bg_br      #444444
 set $col_fg         #d7d7d7
+set $col_fg_dim     #999999
 
 # Colors                 border		 background	 text	  indicator	  child_border
 client.focused           $col_hl     $col_hl     $col_fg  $col_hl_br  $col_hl
@@ -263,12 +264,13 @@ bindsym $mod+Shift+Backspace mode $powermode
 
 bar {
     swaybar_command waybar
- #   status_command ~/.local/bin/luastatus-sway.sh
- #   separator_symbol "  "
- #   height 16
- #   colors {
-	# statusline $col_fg
- #   }
+    # status_command ~/.local/bin/luastatus-sway.sh
+    # status_command i3status-rs
+    # separator_symbol ""
+    # height 16
+    # colors {
+    #     statusline $col_fg_dim
+    # }
 }
 
 include /etc/sway/config.d/*

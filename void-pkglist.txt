@@ -10,6 +10,7 @@ alacritty
 alsa-firmware
 alsa-plugins-pulseaudio
 alsa-utils
+anki
 astyle
 autorandr
 avr-binutils
@@ -72,6 +73,7 @@ flatpak
 font-cozette
 font-ibm-plex-ttf
 font-iosevka
+font-tamzen
 fontmanager
 foot
 fuzzel
@@ -156,6 +158,7 @@ mesa-vdpau
 mesa-vulkan-radeon
 mesa-vulkan-radeon-32bit
 meson
+most
 mpv
 myrepos
 neofetch
@@ -260,6 +263,7 @@ vulkan-loader
 vulkan-loader-32bit
 wayland-devel
 wayland-protocols
+wdisplays
 wev
 wf-recorder
 wget
@@ -303,3 +307,4 @@ zathura-pdf-mupdf
 zip
 zola
 zoxide
+zsh

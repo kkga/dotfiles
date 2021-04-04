@@ -1,12 +1,11 @@
 @define-color background  #000;
-@define-color foreground  #aaa;
-@define-color bg-dim      #333;
-@define-color text-bright #eee;
-@define-color text-dim    #777;
-@define-color bg-red      #300;
-@define-color text-red    #f90;
-@define-color bg-green    #030;
-@define-color text-green  #0c0;
+@define-color foreground  rgba(255,255,255,0.6);
+@define-color bg-dim      rgba(255,255,255,0.2);
+@define-color text-bright rgba(255,255,255,1);
+@define-color bg-yellow   rgba(255,200,0,0.1);
+@define-color text-yellow rgba(255,200,0,0.6);
+@define-color bg-green    rgba(0,255,0,0.1);
+@define-color text-green  rgba(0,255,0,0.6);
 
 * {
   border: none;
@@ -40,8 +39,7 @@ window#waybar {
 }
 #window {
   padding-left: 8px;
-  border-left: 1px solid #222;
-  color: @text-dim;
+  border-left: 1px solid @bg-dim;
 }
 
 #workspaces button.urgent,
@@ -51,8 +49,8 @@ window#waybar {
 #cpu.warning,
 #custom-yadm,
 #network.disconnected {
-  color: @text-red;
-  background: @bg-red;
+  color: @text-yellow;
+  background: @bg-yellow;
 }
 
 #custom-vpn.connected,
@@ -60,6 +58,7 @@ window#waybar {
 #custom-updates,
 #battery.charging {
   color: @text-green;
+  background: @bg-green;
 }
 
 #mode,
