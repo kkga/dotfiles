@@ -1,5 +1,3 @@
-// vim: ft=json:
-
 {
     "layer": "top",
 	"position": "bottom",
@@ -109,7 +107,7 @@
         "format-wifi": "WIFI",
         "format-ethernet": "ETH",
         "format-linked": "{ifname}",
-        "format-disconnected": "睊",
+        "format-disconnected": "xxx",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}",
         "tooltip-format": "{ifname}\n{ipaddr}/{cidr}\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}"
     },
@@ -154,3 +152,4 @@
 		"max-length": 50
 	}
 }
+// vim: ft=json:
