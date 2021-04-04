@@ -132,20 +132,20 @@
 		"interval": 3600
 	},
     "pulseaudio": {
-        "format": "VOL {volume}%",
+        "format": "{icon} VOL {volume}%",
         "format-bluetooth": "BT {volume}% {format_source}",
         "format-muted": "MUT {volume}%",
         "format-bluetooth-muted": "BT MUT {format_source}",
         "format-source": "VOL {volume}%",
         "format-source-muted": "MUT {volume}",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
+            "headphone": "HEADPHONE",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ""
         },
         "on-click": "pavucontrol"
     },
