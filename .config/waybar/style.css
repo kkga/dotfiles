@@ -44,7 +44,6 @@ window#waybar {
 
 #workspaces button.urgent,
 #battery.critical,
-#mode,
 #pulseaudio.muted,
 #cpu.warning,
 #custom-yadm,
@@ -54,6 +53,8 @@ window#waybar {
 }
 #mode {
   font-weight: bold;
+  color: @text-bright;
+  background: @text-orange;
 }
 
 #custom-vpn.connected,
