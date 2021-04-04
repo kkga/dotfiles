@@ -13,6 +13,8 @@ export EDITOR="kcr edit"
 export VISUAL="kcr edit"
 export DMENU='wofi --dmenu'
 
+export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
+
 export MANPAGER=most
 export MOST_INITFILE=$HOME/.config/most/mostrc
 
@@ -29,8 +31,7 @@ if [ $(uname -s) == "Linux" ]; then
     export SSH_ASKPASS=/usr/libexec/seahorse/ssh-askpass
     export GPG_TTY=$(tty)
 
-    if [[ -z $WAYLAND_DISPLAY && $(tty) = "/dev/tty1" ]]; then
-    	exec sway-run.sh
+    if [[ -z $WAYLAND_DISPLAY && $(tty) == "/dev/tty1" ]]; then
+        exec sway-run.sh
     fi
 fi
-

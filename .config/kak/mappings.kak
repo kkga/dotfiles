@@ -47,7 +47,7 @@ hook global InsertCompletionShow .* %{ map window insert <s-tab> <c-p> }
 # clipboard
 evaluate-commands %sh{
     case $(uname) in
-        Linux) copy="wl-copy"; paste="wl-paste|dos2unix" ;;
+        Linux) copy="wl-copy"; paste="wl-paste" ;;
         Darwin)  copy="pbcopy"; paste="pbpaste" ;;
     esac
     printf "map global user -docstring 'paste (after) from clipboard' p '<a-!>%s<ret>'\n" "$paste"
