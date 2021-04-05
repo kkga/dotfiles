@@ -63,7 +63,7 @@
         "interval": "3600"
     },
 	"custom/media": {
-		"format": "{icon} {}",
+		"format": "{icon}",
 		"return-type": "json",
 		"format-icons": {
 		  "Playing": "",
