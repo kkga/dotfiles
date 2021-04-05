@@ -47,7 +47,7 @@
         "max-length": 50
 	},
     "custom/updates": {
-		"format": "",
+		"format": "",
         "exec": "~/.config/waybar/modules/xbps.sh",
         "signal": 1,
         "on-click-right": "~/.config/waybar/modules/xbps.sh",
@@ -63,11 +63,11 @@
         "interval": "3600"
     },
 	"custom/media": {
-		"format": "{icon}{}",
+		"format": "{icon} {}",
 		"return-type": "json",
 		"format-icons": {
-		  "Playing": "|| ",
-		  "Paused": "|> "
+		  "Playing": "",
+		  "Paused": ""
 		},
 		"max-length":70,
 		"exec": "playerctl metadata --format '{\"text\": \"{{artist}} - {{title}}\", \"tooltip\": \"{{playerName}}: {{artist}} - {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
@@ -78,7 +78,7 @@
         "format": "{:%a %d %b %H:%M}"
     },
     "cpu": {
-        "format": "",
+        "format": "",
 		"interval": 10,
         "states": {
             "warning": 10,
@@ -98,8 +98,8 @@
     "network": {
         "interval": 2,
         // "interface": "wlan0",
-        "format-wifi": " {essid}",
-        "format-ethernet": "",
+        "format-wifi": " ",
+        "format-ethernet": "",
         "format-linked": "{ifname}",
         "format-disconnected": "",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}",
