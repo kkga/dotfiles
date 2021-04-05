@@ -76,29 +76,26 @@
     },
     "cpu": {
         "format": "{usage:02}%",
-		"interval": 2,
+		"interval": 10,
         "states": {
-            "warning": 50,
+            "warning": 10,
             "critical": 90
         }
     },
 	 "temperature": {
 		// "thermal-zone": 0,
 		"hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
-		"critical-threshold": 80,
-		// "format-critical": "{temperatureC}°",
-		"format": "T {temperatureC}°"
+		"critical-threshold": 70,
+		"format": "{temperatureC}°"
 	},
     "battery": {
-        "bat": "BAT0",
         "states": {
-            "warning": 30,
+            "warning": 25,
             "critical": 10
         },
 		"format-time": "{H}h {M}m",
         "format": "{capacity}%",
         "format-charging": "+ {capacity}%",
-		"format-icons": ["", "", "", "", "", ""],
 		"tooltip-format": "{capacity}% {power} {timeTo}"
     },
     "network": {
