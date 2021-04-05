@@ -90,14 +90,14 @@
             "critical": 10
         },
 		"format-time": "{H}h {M}m",
-        "format": " {capacity}%",
-        "format-charging": " {capacity}%",
+        "format": "{capacity}%",
+        "format-charging": "{capacity}%",
 		"tooltip-format": "{capacity}% {power} {timeTo}"
     },
     "network": {
         "interval": 2,
         // "interface": "wlan0",
-        "format-wifi": " ",
+        "format-wifi": "",
         "format-ethernet": "",
         "format-linked": "{ifname}",
         "format-disconnected": "",
