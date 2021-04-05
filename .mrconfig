@@ -6,9 +6,6 @@ checkout = git clone 'https://github.com/Seirdy/term-dmenu' 'term-dmenu'
 [repos/connect.kak]
 checkout = git clone 'https://github.com/kakounedotcom/connect.kak' 'connect.kak'
 
-[repos/vim-envy]
-checkout = git clone 'git@github.com:kkga/vim-envy.git' 'vim-envy'
-
 [repos/nb]
 checkout = git clone 'https://github.com/xwmx/nb' 'nb'
 
