@@ -1,12 +1,10 @@
 # set -x LS_COLORS 'di=0;35:ln=1;34:ex=1;30'
 
-alias vim=nvim
-alias gg=lazygit
-alias ls=exa
-alias y=yadm
+alias vim="nvim"
+alias gg="lazygit"
+alias ls="exa --group --git --group-directories-first"
+alias y="yadm"
 alias xr='doas xbps-remove'
-
-alias dateshort='date "+%Y-%m-%d% %H:%M:%S"'
 
 alias k='kcr edit'
 alias K='kcr-fzf-shell'

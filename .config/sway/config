@@ -231,7 +231,7 @@ for_window [ app_id="^popup$"           ] floating enable
 
 # Resize mode {{{2
 
-set $mode_resize "<-- RESIZE -->"
+set $mode_resize "RESIZE"
 mode $mode_resize {
    bindsym $left resize shrink width 10
    bindsym $down resize grow height 10
@@ -246,7 +246,7 @@ mode $mode_resize {
 
 # Menu mode {{{2
 
-set $powermode "<-- [e]xit  [r]eebot  [l]ock  -->"
+set $powermode "[E]xit  [R]eebot  [L]ock"
 
 mode $powermode {
    bindsym e exec swaymsg exit

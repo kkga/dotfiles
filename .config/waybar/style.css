@@ -10,7 +10,7 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: monospace;
+  font-family: monospace, "Material Icons";
   font-size: 12;
   min-height: 0;
   transition: none;
@@ -87,5 +87,5 @@ window#waybar {
 #temperature,
 #clock {
   padding: 0 4px;
-  margin: 0 8px;
+  margin: 0 4px;
 }
