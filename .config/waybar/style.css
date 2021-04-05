@@ -3,14 +3,14 @@
 @define-color bg-dim      rgba(255,255,255,0.2);
 @define-color text-bright rgba(255,255,255,1);
 @define-color bg-orange   rgba(255,165,0,0.2);
-@define-color text-orange rgba(255,165,0,0.6);
+@define-color text-orange rgba(255,165,0,0.8);
 @define-color bg-blue     rgba(173,216,230,0.2);
-@define-color text-blue   rgba(173,216,230,0.6);
+@define-color text-blue   rgba(173,216,230,0.8);
 
 * {
   border: none;
   border-radius: 0;
-  font-family: monospace;
+  font-family: monospace, "Material Icons";
   font-size: 12;
   min-height: 0;
   transition: none;
@@ -86,6 +86,6 @@ window#waybar {
 #language,
 #temperature,
 #clock {
-  padding: 0 8px;
+  padding: 0 4px;
   margin: 0 4px;
 }
