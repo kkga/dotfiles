@@ -106,6 +106,7 @@ gstreamer1-pipewire
 gvfs
 hidapi
 htop
+i3status-rust
 imv
 inotify-tools
 inxi
@@ -144,9 +145,11 @@ luarocks
 luasec
 luasocket
 luastatus
+lutris
 lxappearance
 maim
 mako
+massren
 mdp
 meld
 mercurial
@@ -166,6 +169,7 @@ neovim
 nmap
 nnn
 nodejs
+noto-fonts-emoji
 noto-fonts-ttf
 nushell
 obs

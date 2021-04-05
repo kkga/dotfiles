@@ -47,7 +47,7 @@
         "max-length": 50
 	},
     "custom/updates": {
-		"format": " {}",
+		"format": "",
         "exec": "~/.config/waybar/modules/xbps.sh",
         "signal": 1,
         "on-click-right": "~/.config/waybar/modules/xbps.sh",
@@ -55,7 +55,7 @@
         "interval": "1600"
     },
     "custom/yadm": {
-		"format": " {}",
+		"format": "",
         "exec": "~/.config/waybar/modules/yadm.sh",
         "signal": 1,
         "on-click-right": "~/.config/waybar/modules/yadm.sh",
@@ -78,7 +78,7 @@
         "format": "{:%a %d %b %H:%M}"
     },
     "cpu": {
-        "format": " {usage:02}%",
+        "format": "",
 		"interval": 10,
         "states": {
             "warning": 10,
@@ -99,7 +99,7 @@
         "interval": 2,
         // "interface": "wlan0",
         "format-wifi": " {essid}",
-        "format-ethernet": "",
+        "format-ethernet": "",
         "format-linked": "{ifname}",
         "format-disconnected": "",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}",
@@ -124,9 +124,9 @@
 		"interval": 3600
 	},
     "pulseaudio": {
-        "format": "{icon} {volume}%",
+        "format": "{icon}",
         "format-bluetooth": "BT {volume}% {format_source}",
-        "format-muted": " {volume}%",
+        "format-muted": "",
         "format-bluetooth-muted": "BT MUT {format_source}",
         "format-source": "VOL {volume}%",
         "format-source-muted": "MUT {volume}",
