@@ -31,5 +31,5 @@ define-command toggle-todo %{
 } -docstring 'toggle todo'
 
 define-command insert-date %{
-    execute-keys -draft "!date +%%Y-%%m-%%d<ret>"
+    execute-keys -draft "|date +%%Y-%%m-%%d<ret>"
 } -docstring 'insert current date'
