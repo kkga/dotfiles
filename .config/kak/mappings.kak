@@ -20,6 +20,12 @@ map global normal Q B
 map global normal <a-q> <a-b>
 map global normal <a-Q> <a-B>
 
+# Search case-insensitive by default
+map global normal "/" "/(?i)"
+map global normal "?" "?(?i)"
+map global normal "<a-/>" "<a-/>(?i)"
+map global normal "<a-?>" "<a-?>(?i)"
+
 map global normal -docstring 'move selected lines below' <down>  ': move-line-below<ret>'
 map global normal -docstring 'move selected lines above' <up>    ': move-line-above<ret>'
 
