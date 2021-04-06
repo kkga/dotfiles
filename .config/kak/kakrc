@@ -67,5 +67,3 @@ plug-old state-save https://gitlab.com/Screwtapello/kakoune-state-save %{
 source "~/.config/kak/ui.kak"
 source "~/.config/kak/editing.kak"
 source "~/.config/kak/mappings.kak"
-source "~/.config/kak/asterisk.kak"
-source "~/.config/kak/files.kak"
