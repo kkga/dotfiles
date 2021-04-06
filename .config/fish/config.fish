@@ -4,6 +4,7 @@ alias vim="nvim"
 alias gg="lazygit"
 alias ls="exa --group --git --group-directories-first"
 alias y="yadm"
+alias cat="bat"
 alias xr='doas xbps-remove'
 
 alias k='kcr edit'

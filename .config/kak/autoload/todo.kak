@@ -16,7 +16,7 @@ define-command toggle-checkbox %{
     } catch %{
 		echo -markup "{Information}Should be on a list item"
     }
-} -docstring 'toggle checkbox state'
+} -docstring 'toggle checkbox'
 
 define-command toggle-todo %{
     try %{
@@ -28,4 +28,8 @@ define-command toggle-todo %{
     } catch %{
 		echo -markup "{Information}Should be on a list item"
     }
-}
+} -docstring 'toggle todo'
+
+define-command insert-date %{
+    execute-keys -draft "|date +%%Y-%%m-%%d<ret>"
+} -docstring 'insert current date'
