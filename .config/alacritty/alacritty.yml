@@ -1,11 +1,11 @@
 font:
-  normal:
-    family: iosevka custom
+  # normal:
+  # family: iosevka custom
   # style: Light
   # bold:
   #   family: agave
   # style: semibold
-  size: 11
+  size: 10.5
   # offset:
   #   x: 0
   #   y: -1
