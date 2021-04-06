@@ -1,4 +1,4 @@
-# set -x LS_COLORS 'di=0;35:ln=1;34:ex=1;30'
+set -x LS_COLORS "$LS_COLORS:ow=1;7;34:st=30;44:su=30;41"
 
 alias vim="nvim"
 alias gg="lazygit"
