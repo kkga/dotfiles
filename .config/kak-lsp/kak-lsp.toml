@@ -46,8 +46,9 @@ args = ["--stdio"]
 
 [language.javascript]
 filetypes = ["javascript"]
-roots = ["package.json"]
+roots = ["package.json", ".git"]
 command = "typescript-language-server"
+args = ["--stdio"]
 
 [language.svelte]
 filetypes = ["svelte"]
