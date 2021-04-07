@@ -1,6 +1,7 @@
 @define-color background  #303030;
 @define-color foreground  rgba(255,255,255,0.7);
 @define-color bg-dim      rgba(255,255,255,0.2);
+@define-color border      rgba(255,255,255,0.1);
 @define-color text-bright rgba(255,255,255,1);
 @define-color bg-orange   rgba(255,165,0,0.2);
 @define-color text-orange rgba(255,165,0,1);
@@ -19,6 +20,7 @@
 window#waybar {
   background: @background;
   color: @foreground;
+  box-shadow: inset 0 1px 0 @border;
 }
 
 #workspaces button {
