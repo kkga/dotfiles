@@ -69,7 +69,7 @@ face global StatusLineInfo ${lucius_orange},${lucius_dark_grey}+rb
 face global StatusLineValue ${lucius_lighter_grey}
 face global StatusCursor default,${lucius_blue}
 face global Prompt ${lucius_lighter_grey}
-face global MatchingChar ${lucius_lighter_grey},${lucius_grey}
+face global MatchingChar default,${lucius_grey}
 face global BufferPadding ${lucius_grey},${lucius_darker_grey}
 face global Whitespace ${lucius_grey}+f
 face global LineFlagErrors ${lucius_light_red},${lucius_dark_grey}

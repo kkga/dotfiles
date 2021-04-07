@@ -5,6 +5,7 @@ eval %sh{kak-lsp --kakoune -s $kak_session}
 hook global WinSetOption filetype=(crystal|html|css|json|rust|python|go|typescript|svelte|javascript) %{
     lsp-auto-hover-insert-mode-enable
     lsp-enable-window
+    set-option global lsp_auto_highlight_references false
     set-option global lsp_hover_anchor true
 }
 hook global KakEnd .* lsp-exit
