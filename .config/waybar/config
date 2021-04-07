@@ -77,8 +77,8 @@
         "format": "{:%a %d %b %H:%M}"
     },
     "cpu": {
-        "format": " {}%",
-		"interval": 10,
+        "format": " {usage}%",
+		"interval": 5,
         "states": {
             "warning": 10,
             "critical": 90
