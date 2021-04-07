@@ -78,7 +78,6 @@ map global user -docstring 'find configs'          e ': + kcr-fzf-files /home/kk
 map global user -docstring 'find notes'            n ': + kcr-fzf-files /home/kkga/notes/<ret>'
 map global user -docstring 'grep'                  g ': + kcr-fzf-grep<ret>'
 map global user -docstring 'grep buffer'           G ': + kcr-fzf-grep %val{buffile}<ret>'
-map global user -docstring 'grep notes'            N ': + kcr-fzf-grep /home/kkga/notes/<ret>'
 
 # tools
 map global user -docstring 'disable autoformat'    d ': disable-autoformat<ret>'
