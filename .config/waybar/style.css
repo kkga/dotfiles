@@ -1,16 +1,16 @@
-@define-color background  #000;
+@define-color background  #303030;
 @define-color foreground  rgba(255,255,255,0.7);
 @define-color bg-dim      rgba(255,255,255,0.2);
 @define-color text-bright rgba(255,255,255,1);
 @define-color bg-orange   rgba(255,165,0,0.2);
-@define-color text-orange rgba(255,165,0,0.8);
+@define-color text-orange rgba(255,165,0,1);
 @define-color bg-blue     rgba(173,216,230,0.2);
-@define-color text-blue   rgba(173,216,230,0.8);
+@define-color text-blue   rgba(173,216,230,1);
 
 * {
   border: none;
   border-radius: 0;
-  font-family: monospace, "Material Icons";
+  font-family: monospace, microns;
   font-size: 12px;
   min-height: 0;
   transition: none;
@@ -53,7 +53,7 @@ window#waybar {
 }
 #mode {
   font-weight: bold;
-  color: @text-bright;
+  color: @background;
   background: @text-orange;
 }
 
