@@ -1,6 +1,8 @@
 mode=drun,run
 term=foot
+gtk_dark=true
 insensitive=true
+dynamic_lines=true
 no_actions=true
 width=512
 allow_markup=true
