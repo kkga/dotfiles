@@ -13,8 +13,6 @@ export EDITOR="kcr edit"
 export VISUAL="kcr edit"
 export DMENU='wofi --dmenu'
 
-export NNN_PLUG='f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
-
 export MANPAGER=most
 export MOST_INITFILE=$HOME/.config/most/mostrc
 
@@ -22,7 +20,7 @@ export DMENU_PROGRAM='term-dmenu'
 export FLOATING_TERMINAL='foot -f monospace:size=12 -a popup'
 
 export FZF_DEFAULT_COMMAND='fd --type f'
-export FZF_DEFAULT_OPTS="--color=bw --layout=reverse --inline-info --height=40 --preview-window=down:60%:noborder"
+export FZF_DEFAULT_OPTS="--color=bw --layout=reverse --inline-info --height=40 --preview-window=down:60%:border-horizontal"
 
 if [ $(uname -s) == "Linux" ]; then
     eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)

@@ -140,7 +140,7 @@ for_window [ app_id="^popup$"           ] floating enable
 # General {{{2
    floating_modifier $mod             normal
 
-   bindsym $mod+Return                exec $term
+   bindsym $mod+Shift+Return          exec $term
    bindsym $mod+d                     exec $drun
    bindsym $mod+c                     exec $clipboard
    bindsym Mod1+Tab                   exec window-switcher
