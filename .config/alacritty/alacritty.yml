@@ -38,4 +38,4 @@ cursor:
   vi_mode_style: Block
 
 import:
-  - /home/kkga/.config/alacritty/colors/selenized-dark.yml
+  - /home/kkga/.config/alacritty/colors/lucius.yml

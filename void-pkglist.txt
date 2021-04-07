@@ -245,6 +245,7 @@ tokei
 topgrade
 trash-cli
 trayer-srg
+ttf-material-icons
 ttfautohint
 unar
 unclutter-xfixes

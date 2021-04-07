@@ -42,7 +42,7 @@
 		"max-length": 80
 	},
 	"sway/mode": {
-	    "format": "   {}    ",
+	    "format": " ---  {}  ---  ",
         "max-length": 50
 	},
     "custom/updates": {
@@ -54,7 +54,7 @@
         "interval": "1600"
     },
     "custom/yadm": {
-		"format": "",
+		"format": " {}",
         "exec": "~/.config/waybar/modules/yadm.sh",
         "signal": 1,
         "on-click-right": "~/.config/waybar/modules/yadm.sh",
@@ -65,8 +65,8 @@
 		"format": "{icon}",
 		"return-type": "json",
 		"format-icons": {
-		  "Playing": "",
-		  "Paused": ""
+		  "Playing": "",
+		  "Paused": ""
 		},
 		"max-length":70,
 		"exec": "playerctl metadata --format '{\"text\": \"{{artist}} - {{title}}\", \"tooltip\": \"{{playerName}}: {{artist}} - {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
@@ -77,7 +77,7 @@
         "format": "{:%a %d %b %H:%M}"
     },
     "cpu": {
-        "format": "",
+        "format": " {}%",
 		"interval": 10,
         "states": {
             "warning": 10,
@@ -97,22 +97,22 @@
     "network": {
         "interval": 2,
         // "interface": "wlan0",
-        "format-wifi": "",
-        "format-ethernet": "",
+        "format-wifi": "",
+        "format-ethernet": "",
         "format-linked": "{ifname}",
-        "format-disconnected": "",
+        "format-disconnected": "",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}",
         "tooltip-format": "{ifname}\n{ipaddr}/{cidr}\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}"
     },
 	"custom/vpn": {
-		"format": "",
+		"format": "",
 		"exec": "echo '{\"class\": \"connected\", \"tooltip\": \"VPN\"}'",
 		"exec-if": "test -d /proc/sys/net/ipv4/conf/mlvd*",
 		"return-type": "json",
 		"interval": 5
 	},
 	"custom/tailscale": {
-		"format": "TS",
+		"format": "",
 		"exec": "echo '{\"class\": \"connected\", \"tooltip\": \"TAILSCALE\"}'",
 		"exec-if": "test -d /proc/sys/net/ipv4/conf/tailscale0",
 		"return-type": "json",
@@ -123,20 +123,20 @@
 		"interval": 3600
 	},
     "pulseaudio": {
-        "format": "{icon}",
+        "format": "{icon} {volume}",
         "format-bluetooth": "BT {volume}% {format_source}",
-        "format-muted": "",
+        "format-muted": " {volume}",
         "format-bluetooth-muted": "BT MUT {format_source}",
         "format-source": "VOL {volume}%",
         "format-source-muted": "MUT {volume}",
         "format-icons": {
-            "headphone": "",
+            "headphone": "",
             "hands-free": "",
             "headset": "",
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ""
+            "default": ""
         },
         "on-click": "pavucontrol"
     },

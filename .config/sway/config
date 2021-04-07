@@ -246,7 +246,7 @@ mode $mode_resize {
 
 # Menu mode {{{2
 
-set $powermode "[E]xit  [R]eebot  [L]ock"
+set $powermode "[E]xit - [R]eebot - [L]ock"
 
 mode $powermode {
    bindsym e exec swaymsg exit
@@ -264,13 +264,6 @@ bindsym $mod+Shift+Backspace mode $powermode
 
 bar {
     swaybar_command waybar
-    # status_command ~/.local/bin/luastatus-sway.sh
-    # status_command i3status-rs
-    # separator_symbol ""
-    # height 16
-    # colors {
-    #     statusline $col_fg_dim
-    # }
 }
 
 include /etc/sway/config.d/*
