@@ -60,7 +60,7 @@ hook global WinSetOption filetype=.* %{
         try %{ execute-keys -draft '%s\u000d<ret>d' }
     }
 }
-hook global WinSetOption filetype=(svelte|javascript|typescript|css|scss|json|markdown|yaml|html) %{
+hook global WinSetOption filetype=(svelte|javascript|typescript|css|scss|json|yaml|html) %{
     set-option buffer formatcmd "prettier --prose-wrap=always --stdin-filepath='%val{buffile}'"
     hook buffer -group format BufWritePre .* format
 }
@@ -81,8 +81,11 @@ define-command disable-autolint -docstring 'disable auto-lint' %{
 	unset-option buffer lintcmd
 	remove-hooks buffer lint
 }
-hook global WinSetOption filetype=markdown|asciidoc %{
-    set-option window lintcmd "proselint"
-    # hook buffer -group format BufWritePost .* lint
+hook global WinSetOption filetype=markdown %{
+    set-option buffer lintcmd "proselint"
+    # set-option buffer formatcmd "prettier --prose-wrap=always --stdin-filepath='%val{buffile}'"
+    set-option buffer formatcmd "mdformat --wrap 80 -"
+    hook buffer -group format BufWritePre .* format
+    hook buffer -group format BufWritePost .* lint
     # hook buffer -group format InsertIdle .* lint
 }
