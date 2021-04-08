@@ -61,7 +61,7 @@ hook global WinSetOption filetype=.* %{
     }
 }
 hook global WinSetOption filetype=(svelte|javascript|typescript|css|scss|json|yaml|html) %{
-    set-option buffer formatcmd "prettier --prose-wrap=always --stdin-filepath='%val{buffile}'"
+    set-option buffer formatcmd "prettier --stdin-filepath='%val{buffile}'"
     hook buffer -group format BufWritePre .* format
 }
 hook global WinSetOption filetype=lua %{
@@ -83,9 +83,7 @@ define-command disable-autolint -docstring 'disable auto-lint' %{
 }
 hook global WinSetOption filetype=markdown %{
     set-option buffer lintcmd "proselint"
-    # set-option buffer formatcmd "prettier --prose-wrap=always --stdin-filepath='%val{buffile}'"
-    set-option buffer formatcmd "mdformat --wrap 80 -"
+    set-option buffer formatcmd "prettier --prose-wrap=always --stdin-filepath='%val{buffile}'"
     hook buffer -group format BufWritePre .* format
     hook buffer -group format BufWritePost .* lint
-    # hook buffer -group format InsertIdle .* lint
 }
