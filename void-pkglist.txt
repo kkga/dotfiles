@@ -260,6 +260,7 @@ void-docs-browse
 void-repo-multilib
 void-repo-multilib-nonfree
 void-repo-nonfree
+void-updates
 vpm
 vpsm
 vscode

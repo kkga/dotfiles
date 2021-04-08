@@ -3,12 +3,14 @@
 	"position": "bottom",
     "modules-left": [
         "sway/workspaces",
+        "sway/mode",
 		"sway/window"
     ],
 	"modules-center":[
-        "sway/mode"
-    	],
+        "clock"
+	],
     "modules-right": [
+        "custom/recording",
         "custom/media",
         "custom/updates",
         "custom/yadm",
@@ -19,13 +21,12 @@
         "custom/vpn",
         "battery",
 		"sway/language",
-        "clock",
         "tray"
     ],
 	"sway/workspaces": {
 		"disable-scroll": true,
 		"all-outputs": true,
-		"format": "{index}",
+		"format": "{name}",
 		"format-icons": {
 			"1": "🯱",
 			"2": "🯲",
@@ -62,7 +63,7 @@
         "interval": "3600"
     },
 	"custom/media": {
-		"format": "{icon}",
+		"format": "{icon} {}",
 		"return-type": "json",
 		"format-icons": {
 		  "Playing": "",
@@ -98,7 +99,7 @@
         "interval": 2,
         // "interface": "wlan0",
         "format-wifi": "",
-        "format-ethernet": "",
+        "format-ethernet": " ",
         "format-linked": "{ifname}",
         "format-disconnected": "",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}",
