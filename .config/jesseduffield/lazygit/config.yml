@@ -11,8 +11,8 @@ git:
 #       - bold
 #     inactiveBorderColor:
 #       - white
-    # selectedLineBgColor:
-    #   - reverse
-    # selectedRangeBgColor:
-    #   - reverse
+# selectedLineBgColor:
+#   - reverse
+# selectedRangeBgColor:
+#   - reverse
 startuppopupversion: 1
