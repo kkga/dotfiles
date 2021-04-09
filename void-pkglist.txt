@@ -94,7 +94,6 @@ gnome-keyring
 gnome-terminal
 go
 godot
-gopass
 gpgme
 grimshot
 grub-btrfs
@@ -132,6 +131,7 @@ libgpg-error-devel
 libinput-devel
 libspa-bluetooth
 libusb-compat-devel
+libva-vdpau-driver
 libvdpau-va-gl
 libxkbcommon-devel
 light
@@ -198,6 +198,7 @@ polkit-gnome
 polybar
 powertop
 procs
+progress
 protontricks
 pulseaudio
 python3-attrs
@@ -211,6 +212,7 @@ radeontop
 redshift
 ripgrep
 roxterm
+safeeyes
 sakura
 seahorse
 setxkbmap
