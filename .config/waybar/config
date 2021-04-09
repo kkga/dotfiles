@@ -69,7 +69,7 @@
 		  "Playing": "",
 		  "Paused": ""
 		},
-		"max-length":70,
+		"max-length":50,
 		"exec": "playerctl metadata --format '{\"text\": \"{{artist}} - {{title}}\", \"tooltip\": \"{{playerName}}: {{artist}} - {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
 		"on-click": "playerctl play-pause"
 	},

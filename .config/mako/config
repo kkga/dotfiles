@@ -3,7 +3,6 @@ width=300
 padding=10
 margin=16
 border-size=2
-border-radius=8
 default-timeout=15000
 
 background-color=#ffffff
