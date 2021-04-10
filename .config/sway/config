@@ -25,9 +25,9 @@ seat * hide_cursor 5000
 exec mako
 exec pipewire
 exec pipewire-pulse
-exec gammastep
 exec foot --server
 exec light -S 35
+exec gammastep
 exec wl-paste -t text --watch clipman store --max-items=50
 exec clipman restore
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob -a top -a left -W 200 -H 20 -M 8 -o 2 -b 2 -p 2
