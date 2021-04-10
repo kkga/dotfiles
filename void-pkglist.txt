@@ -43,7 +43,7 @@ cross-arm-none-eabi-binutils
 cross-arm-none-eabi-gcc
 cross-arm-none-eabi-newlib
 davfs2
-dbus
+dbus-elogind
 ddcci-dkms
 ddcutil
 delta
@@ -215,6 +215,7 @@ roxterm
 safeeyes
 sakura
 seahorse
+seatd
 setxkbmap
 skim
 slop
