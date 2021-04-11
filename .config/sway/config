@@ -223,7 +223,7 @@ for_window [ app_id="^popup$"           ] floating enable
     bindsym $mod+f                    fullscreen
 
     bindsym $mod+Shift+t              floating toggle
-    bindsym $mod+t                    focu mode_toggle
+    bindsym $mod+t                    focus mode_toggle
 
 # Scratchpad {{{2
 
