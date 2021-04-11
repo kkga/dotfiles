@@ -78,3 +78,15 @@ filetypes = ["sh"]
 roots = [".git", ".hg"]
 command = "bash-language-server"
 args = ["start"]
+
+[language.elixir]
+filetypes = ["elixir"]
+roots = ["mix.exs"]
+command = "elixir-ls"
+
+[language.gdscript]
+filetypes = ["gd", "gdscript"]
+roots = [".import"]
+command = "nc"
+args = ["localhost", "6008"]
+
