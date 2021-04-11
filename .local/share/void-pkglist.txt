@@ -44,6 +44,7 @@ cross-arm-none-eabi-gcc
 cross-arm-none-eabi-newlib
 davfs2
 dbus-elogind
+dconf-editor
 ddcci-dkms
 ddcutil
 delta
@@ -90,6 +91,7 @@ gimp
 git
 git-libsecret
 github-cli
+gnome
 gnome-keyring
 gnome-terminal
 go

@@ -99,7 +99,7 @@
         "interval": 2,
         // "interface": "wlan0",
         "format-wifi": "",
-        "format-ethernet": " ",
+        "format-ethernet": "",
         "format-linked": "{ifname}",
         "format-disconnected": "",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}",
