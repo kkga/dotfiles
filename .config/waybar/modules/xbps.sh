@@ -1,6 +1,10 @@
 #!/bin/bash
 
-UPDATES=$(doas xbps-install -Sun | cut -d' ' -f2 | sort | uniq -c | xargs)
+doas xbps-install -S > /dev/null
+
+UPDATES=$(
+    xbps-install -un | cut -d' ' -f2 | sort | uniq -c | xargs
+)
 
 if [ -z "$UPDATES" ]; then
     echo ""
