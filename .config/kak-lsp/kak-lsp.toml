@@ -50,6 +50,10 @@ args = ["--stdio"]
 # command = "deno"
 # args = ["lsp"]
 
+# [language.deno.initialization_options]
+# enable = true
+# lint = true
+
 [language.svelte]
 filetypes = ["svelte"]
 roots = ["package.json"]
