@@ -36,7 +36,7 @@ exec /usr/libexec/polkit-gnome-authentication-agent-1
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
     gsettings set $gnome-schema gtk-theme 'Adwaita'
-    gsettings set $gnome-schema icon-theme 'Adwaita'
+    gsettings set $gnome-schema icon-theme 'Adwaita++'
     gsettings set $gnome-schema cursor-theme 'Yaru'
     gsettings set $gnome-schema cursor-size 24
     gsettings set $gnome-schema font-name 'sans-serif 9'

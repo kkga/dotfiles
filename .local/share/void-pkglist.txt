@@ -57,6 +57,7 @@ dos2unix
 duf
 dunst
 dust
+elixir
 elogind
 elvish
 emptty
@@ -137,11 +138,10 @@ libva-vdpau-driver
 libvdpau-va-gl
 libxkbcommon-devel
 light
-linux5.10
-linux5.10-headers
 linux5.11
 linux5.11-headers
 lm_sensors
+lowdown
 lua-devel
 luarocks
 luasec
@@ -152,6 +152,7 @@ lxappearance
 maim
 mako
 massren
+mdbook-linkcheck
 mdp
 meld
 mercurial
@@ -171,8 +172,10 @@ neovim
 nmap
 nnn
 nodejs
+noto-fonts-cjk
 noto-fonts-emoji
 noto-fonts-ttf
+noto-fonts-ttf-extra
 nushell
 obs
 obs-devel
@@ -203,6 +206,7 @@ procs
 progress
 protontricks
 pulseaudio
+python3-adblock
 python3-attrs
 python3-pip
 python3-proselint
@@ -210,6 +214,7 @@ qemu
 qmk
 qt5-wayland
 qtpass
+qutebrowser
 radeontop
 redshift
 ripgrep
