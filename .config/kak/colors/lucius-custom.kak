@@ -24,13 +24,13 @@ lucius_light_blue="rgb:87d7ff"
 
 echo "
 # then we map them to code
-face global value ${lucius_orange}
+face global value ${lucius_light_red}
 face global type ${lucius_blue}
 face global variable ${lucius_green}
 face global module ${lucius_green}
 face global function ${lucius_light_blue}
-face global string ${lucius_light_green}
-face global keyword ${lucius_light_blue}
+face global string ${lucius_green}
+face global keyword ${lucius_blue}
 face global operator ${lucius_green}
 face global attribute ${lucius_light_blue}
 face global comment ${lucius_grey}

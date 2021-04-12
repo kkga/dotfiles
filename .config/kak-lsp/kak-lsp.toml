@@ -38,17 +38,17 @@ readonly = "default+d"
 # set to 0 to disable
 timeout = 1800 # seconds = 30 minutes
 
-[language.typescript]
-filetypes = ["typescript"]
-roots = ["package.json"]
-command = "typescript-language-server"
-args = ["--stdio"]
-
-[language.javascript]
-filetypes = ["javascript"]
+[language.theia]
+filetypes = ["typescript", "javascript"]
 roots = ["package.json", ".git"]
 command = "typescript-language-server"
 args = ["--stdio"]
+
+# [language.deno]
+# filetypes = ["typescript", "javascript"]
+# roots = [".git"]
+# command = "deno"
+# args = ["lsp"]
 
 [language.svelte]
 filetypes = ["svelte"]
