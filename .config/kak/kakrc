@@ -27,9 +27,7 @@ hook global ModuleLoaded kitty %{
     alias global terminal kitty-terminal
     alias global popup kitty-terminal
 }
-plug auto-pairs https://github.com/alexherbo2/auto-pairs.kak %{
-    auto-pairs-enable
-}
+plug auto-pairs https://github.com/alexherbo2/auto-pairs.kak
 plug explore https://github.com/alexherbo2/explore.kak %{
     explore-enable
 }
