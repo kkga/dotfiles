@@ -43,7 +43,8 @@ cross-arm-none-eabi-binutils
 cross-arm-none-eabi-gcc
 cross-arm-none-eabi-newlib
 davfs2
-dbus
+dbus-elogind
+dconf-editor
 ddcci-dkms
 ddcutil
 delta
@@ -90,11 +91,11 @@ gimp
 git
 git-libsecret
 github-cli
+gnome
 gnome-keyring
 gnome-terminal
 go
 godot
-gopass
 gpgme
 grimshot
 grub-btrfs
@@ -132,6 +133,7 @@ libgpg-error-devel
 libinput-devel
 libspa-bluetooth
 libusb-compat-devel
+libva-vdpau-driver
 libvdpau-va-gl
 libxkbcommon-devel
 light
@@ -198,6 +200,7 @@ polkit-gnome
 polybar
 powertop
 procs
+progress
 protontricks
 pulseaudio
 python3-attrs
@@ -211,8 +214,10 @@ radeontop
 redshift
 ripgrep
 roxterm
+safeeyes
 sakura
 seahorse
+seatd
 setxkbmap
 skim
 slop

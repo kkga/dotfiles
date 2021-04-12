@@ -3,7 +3,6 @@ hook global WinSetOption filetype=markdown %{
     map buffer normal <a-ret> %{: toggle-todo<ret>} -docstring "toggle todo"
     add-highlighter buffer/ regex '\[ \]' 0:yellow+b
     add-highlighter buffer/ regex '\[x\]' 0:green+d
-
 }
 
 define-command toggle-checkbox %{

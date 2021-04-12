@@ -27,7 +27,9 @@ settings:
   fonts.default_family:
     global: monospace
   fonts.default_size:
-    global: 8pt
+    global: 10pt
+  fonts.downloads:
+    global: default_size default_family
   fonts.web.family.sans_serif:
     global: null
   qt.highdpi:

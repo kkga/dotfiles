@@ -24,9 +24,10 @@ seat * hide_cursor 5000
 
 exec mako
 exec pipewire
-exec gammastep
+exec pipewire-pulse
 exec foot --server
 exec light -S 35
+exec gammastep
 exec wl-paste -t text --watch clipman store --max-items=50
 exec clipman restore
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob -a top -a left -W 200 -H 20 -M 8 -o 2 -b 2 -p 2
@@ -34,18 +35,17 @@ exec /usr/libexec/polkit-gnome-authentication-agent-1
 
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
-    gsettings set $gnome-schema gtk-theme 'Yaru-light'
-    gsettings set $gnome-schema icon-theme 'Yaru'
+    gsettings set $gnome-schema gtk-theme 'Adwaita'
+    gsettings set $gnome-schema icon-theme 'Adwaita'
     gsettings set $gnome-schema cursor-theme 'Yaru'
     gsettings set $gnome-schema cursor-size 24
-    gsettings set $gnome-schema font-name 'sans-serif 10'
+    gsettings set $gnome-schema font-name 'sans-serif 9'
     gsettings set $gnome-schema monospace-font-name 'monospace 10'
 }
 
 # Variables {{{1
 
 set $term 'footclient'
-# set $drun 'j4-dmenu-desktop --no-generic --usage-log=tmp/j4.log --display-binary --term=footclient --dmenu=bemenu'
 set $drun 'wofi'
 set $lock 'swaylock -f -c 303030'
 set $clipboard 'clipman pick -t wofi'
@@ -59,9 +59,9 @@ set $right l
 # Idle config {{{1
 
 exec swayidle -w \
-	timeout 600 'swaylock -f -c 000000' \
+	timeout 600 $lock \
 	timeout 1200 'loginctl suspend' \
-	before-sleep 'swaylock -f -c 000000'
+	before-sleep $lock
 
 bindswitch lid:toggle exec $lock
 
@@ -130,6 +130,8 @@ for_window [ class="^Firefox$"          ] inhibit_idle fullscreen
 for_window [ app_id="^firefox$"         ] inhibit_idle fullscreen
 for_window [ app_id="pavucontrol"       ] focus, floating enable
 for_window [ title="Picture-in-Picture" ] floating enable
+for_window [ class="Jitsi Meet"         ] floating enable
+for_window [ app_id="spot"              ] floating enable
 for_window [ app_id="mpv"               ] floating enable
 for_window [ app_id="^launcher$"        ] floating enable
 for_window [ app_id="dmenu.*"           ] floating enable
@@ -221,7 +223,7 @@ for_window [ app_id="^popup$"           ] floating enable
     bindsym $mod+f                    fullscreen
 
     bindsym $mod+Shift+t              floating toggle
-    bindsym $mod+t                    focu mode_toggle
+    bindsym $mod+t                    focus mode_toggle
 
 # Scratchpad {{{2
 
