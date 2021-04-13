@@ -2,7 +2,7 @@ git:
   paging:
     colorarg: always
     # useconfig: true
-    pager: delta --paging=never --24-bit-color=never
+    pager: delta --paging=never
 # gui:
 #   theme:
 #     lightTheme: true

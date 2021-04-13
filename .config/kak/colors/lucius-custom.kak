@@ -49,7 +49,7 @@ face global list ${lucius_blue}
 
 # and built in faces
 face global Default ${lucius_lighter_grey}
-face global PrimarySelection ${lucius_darker_grey},${lucius_orange}+fg
+face global PrimarySelection ${lucius_darker_grey},${lucius_light_blue}+fg
 face global SecondarySelection  ${lucius_lighter_grey},${lucius_dark_blue}+fg
 face global PrimaryCursor ${lucius_darker_grey},${lucius_lighter_grey}+fg
 face global SecondaryCursor ${lucius_darker_grey},${lucius_lighter_grey}+fg
@@ -58,12 +58,12 @@ face global SecondaryCursorEol ${lucius_darker_grey},${lucius_dark_green}+fg
 face global LineNumbers ${lucius_grey}
 face global LineNumberCursor ${lucius_grey},${lucius_darker_grey}+r
 face global LineNumbersWrapped ${lucius_dark_grey}
-face global MenuForeground ${lucius_light_blue},${lucius_dark_blue}
-face global MenuBackground ${lucius_darker_grey},${lucius_grey}
+face global MenuForeground ${lucius_darker_grey},${lucius_lighter_grey}
+face global MenuBackground ${lucius_lighter_grey},${lucius_grey}
 face global MenuInfo ${lucius_dark_grey}
 face global Information ${lucius_lighter_grey},${lucius_dark_green}
 face global Error ${lucius_light_red},${lucius_dark_red}
-face global StatusLine ${lucius_lighter_grey},${lucius_darker_grey}
+face global StatusLine ${lucius_light_grey},${lucius_dark_grey}
 face global StatusLineMode ${lucius_light_green},${lucius_dark_green}+b
 face global StatusLineInfo ${lucius_orange},${lucius_dark_grey}+rb
 face global StatusLineValue ${lucius_lighter_grey}
