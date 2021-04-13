@@ -6,6 +6,7 @@ SDL2-devel
 Vulkan-Tools
 Waybar
 abduco
+adwaita-plus
 alacritty
 alsa-firmware
 alsa-plugins-pulseaudio
@@ -57,6 +58,7 @@ dos2unix
 duf
 dunst
 dust
+dutree
 elixir
 elogind
 elvish
@@ -272,6 +274,7 @@ void-repo-multilib-nonfree
 void-repo-nonfree
 void-updates
 vpm
+vpnd
 vpsm
 vscode
 vsv
@@ -314,6 +317,7 @@ xsettingsd
 xss-lock
 xtools
 xurls
+yad
 yadm
 yambar
 yaru
