@@ -59,9 +59,15 @@ set $right l
 # Idle config {{{1
 
 exec swayidle -w \
-	timeout 600 $lock \
-	timeout 1200 'loginctl suspend' \
-	before-sleep $lock
+          timeout 300 'swaylock -f -c 000000' \
+          timeout 600 'swaymsg "output * dpms off"' \
+          resume 'swaymsg "output * dpms on"' \
+          before-sleep 'swaylock -f -c 000000'
+
+# exec swayidle -w \
+# 	timeout 600 $lock \
+# 	timeout 1200 'loginctl suspend' \
+# 	before-sleep $lock
 
 bindswitch lid:toggle exec $lock
 
