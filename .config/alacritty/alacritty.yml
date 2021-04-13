@@ -1,6 +1,6 @@
 font:
-  # normal:
-  #   family: "fantasque sans mono"
+  normal:
+    family: "input"
   # style: Light
   # bold:
   #   family: agave
