@@ -81,7 +81,7 @@ output $laptop scale 2
 output $mon1 resolution 3840x2160 scale 2 position 1920 0
 output $mon2 resolution 3840x2160 scale 2
 
-output * bg #303030 solid_color
+output * bg #202020 solid_color
 
 # Inputs {{{1
 
@@ -117,7 +117,7 @@ input "type:pointer" {
 set $col_hl         #87d7ff99
 set $col_hl_br      #87d7ff
 set $col_bg         #303030
-set $col_bg_br      #585858
+set $col_bg_br      #444444
 set $col_fg         #d7d7d7
 set $col_fg_dim     #999999
 
