@@ -38,5 +38,4 @@ cursor:
   vi_mode_style: Block
 
 import:
-  - /home/kkga/.config/alacritty/colors/envy.yml
-  # - /home/kkga/.config/alacritty/colors/alchemist.yml
+  - /home/kkga/.config/alacritty/colors/lucius.yml

@@ -14,9 +14,7 @@ alias ks='kcr shell --session'
 alias kl='kcr list'
 alias a='kcr attach'
 alias :='kcr send'
-alias :br='KK broot'
 alias :cat='kcr cat --raw'
-
 alias val='kcr get --value'
 alias opt='kcr get --option'
 alias reg='kcr get --register'
@@ -27,7 +25,7 @@ set --global hydro_symbol_git_dirty        '*'
 set fish_greeting					       ' '
 set fish_color_autosuggestion              normal
 set fish_color_cancel                      -r
-set fish_color_command                     brgreen
+set fish_color_command                     --bold
 set fish_color_comment                     brmagenta
 set fish_color_cwd                         green
 set fish_color_cwd_root                    red
