@@ -1,5 +1,7 @@
-font=sans-serif 10
-width=300
+layer=overlay
+anchor=bottom-right
+font=sans-serif 9
+width=240
 padding=8
 margin=16
 border-size=1
@@ -11,3 +13,6 @@ text-color=#282a33
 
 [urgency=high]
 ignore-timeout=1
+
+[grouped]
+format=(%g) <b>%s</b>\n\n\n%b
