@@ -1,12 +1,8 @@
 mode=drun,run
-term=foot
-gtk_dark=true
+term=footclient
 insensitive=true
-dynamic_lines=true
 no_actions=true
-width=512
-height=360
-allow_markup=true
-allow_images=true
+width=440
+# allow_images=true
 image_size=32
 dmenu-parse_action=true

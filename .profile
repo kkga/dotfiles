@@ -1,4 +1,4 @@
-
+export VOLTA_HOME="$HOME/.volta"
 export PATH=/usr/local/bin/:$PATH
 export PATH=/var/lib/flatpak/exports/bin/:$PATH
 export PATH=$HOME/go/bin:$PATH
@@ -6,6 +6,7 @@ export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.yarn/bin:$PATH
 export PATH=$HOME/.npm-global/bin:$PATH
 export PATH=$HOME/.deno/bin:$PATH
+export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH=$HOME/.local/bin:$PATH
 
 export XBPS_DISTDIR=$HOME/.void-packages
