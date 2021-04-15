@@ -26,8 +26,9 @@ exec mako
 exec pipewire
 exec pipewire-pulse
 exec foot --server
+# exec gammastep
+exec wlsunset -l 55.0 -L 37.0 -t 4000 -T 6500
 exec light -S 35
-exec gammastep
 exec wl-paste -t text --watch clipman store --max-items=50
 exec clipman restore
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob -a top -a left -W 200 -H 20 -M 8 -o 2 -b 2 -p 2
@@ -39,7 +40,7 @@ exec_always {
     gsettings set $gnome-schema icon-theme 'Adwaita++'
     gsettings set $gnome-schema cursor-theme 'Yaru'
     gsettings set $gnome-schema cursor-size 24
-    gsettings set $gnome-schema font-name 'sans-serif 9'
+    gsettings set $gnome-schema font-name 'sans-serif 10'
     gsettings set $gnome-schema monospace-font-name 'monospace 10'
 }
 
@@ -47,7 +48,7 @@ exec_always {
 
 set $term 'footclient'
 set $drun 'wofi'
-set $lock 'swaylock -f -c 303030'
+set $lock 'swaylock -f -c 222222'
 set $clipboard 'clipman pick -t wofi'
 
 set $mod Mod4
