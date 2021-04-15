@@ -1,148 +1,148 @@
 {
-    "layer": "top",
-	"position": "bottom",
-    "modules-left": [
-        "sway/workspaces",
-        "sway/mode",
-		"sway/window"
-    ],
-	"modules-center":[
-        "clock"
-	],
-    "modules-right": [
-        "custom/recording",
-        "custom/media",
-        "custom/updates",
-        "custom/yadm",
-        "cpu",
-        "pulseaudio",
-        "network",
-        "custom/tailscale",
-        "custom/vpn",
-        "battery",
-		"sway/language",
-        "tray"
-    ],
-	"sway/workspaces": {
-		"disable-scroll": true,
-		"all-outputs": true,
-		"format": "{name}",
-		"format-icons": {
-			"1": "🯱",
-			"2": "🯲",
-			"3": "🯳",
-			"4": "🯴",
-			"5": "",
-			"urgent": "",
-			"focused": "",
-			"default": ""
-		}
-	},
-	"sway/window": {
-		"format": "{}",
-		"max-length": 80
-	},
-	"sway/mode": {
-	    "format": " ---  {}  ---  ",
-        "max-length": 50
-	},
-    "custom/updates": {
-		"format": " {}",
-        "exec": "~/.config/waybar/modules/xbps.sh",
-        "signal": 1,
-        "on-click-right": "~/.config/waybar/modules/xbps.sh",
-        "on-click": "alacritty -e topgrade",
-        "interval": "600"
+  "layer": "top",
+  "position": "bottom",
+  "modules-left": [
+    "sway/workspaces",
+    "sway/mode",
+    "sway/window"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "custom/recording",
+    "custom/media",
+    "custom/updates",
+    "custom/yadm",
+    "cpu",
+    "pulseaudio",
+    "network",
+    "custom/tailscale",
+    "custom/vpn",
+    "battery",
+    "sway/language",
+    "tray"
+  ],
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{name}",
+    "format-icons": {
+      "1": "🯱",
+      "2": "🯲",
+      "3": "🯳",
+      "4": "🯴",
+      "5": "",
+      "urgent": "",
+      "focused": "",
+      "default": ""
+    }
+  },
+  "sway/window": {
+    "format": "{}",
+    "max-length": 80
+  },
+  "sway/mode": {
+    "format": " ---  {}  ---  ",
+    "max-length": 50
+  },
+  "custom/updates": {
+    "format": " {}",
+    "exec": "~/.config/waybar/modules/xbps.sh",
+    "signal": 1,
+    "on-click-right": "~/.config/waybar/modules/xbps.sh",
+    "on-click": "alacritty -e topgrade",
+    "interval": "600"
+  },
+  "custom/yadm": {
+    "format": " {}",
+    "exec": "~/.config/waybar/modules/yadm.sh",
+    "signal": 1,
+    "on-click-right": "~/.config/waybar/modules/yadm.sh",
+    "on-click": "alacritty -e yadm c -a",
+    "interval": "3600"
+  },
+  "custom/media": {
+    "format": "{icon} {}",
+    "return-type": "json",
+    "format-icons": {
+      "Playing": "",
+      "Paused": ""
     },
-    "custom/yadm": {
-		"format": " {}",
-        "exec": "~/.config/waybar/modules/yadm.sh",
-        "signal": 1,
-        "on-click-right": "~/.config/waybar/modules/yadm.sh",
-        "on-click": "alacritty -e yadm c -a",
-        "interval": "3600"
+    "max-length": 50,
+    "exec": "playerctl metadata --format '{\"text\": \"{{artist}} - {{title}}\", \"tooltip\": \"{{playerName}}: {{artist}} - {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+    "on-click": "playerctl play-pause"
+  },
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format": "{:%a %d %b %H:%M}"
+  },
+  "cpu": {
+    "format": " {usage}%",
+    "interval": 5,
+    "states": {
+      "warning": 10,
+      "critical": 90
+    }
+  },
+  "battery": {
+    "states": {
+      "warning": 25,
+      "critical": 10
     },
-	"custom/media": {
-		"format": "{icon} {}",
-		"return-type": "json",
-		"format-icons": {
-		  "Playing": "",
-		  "Paused": ""
-		},
-		"max-length":50,
-		"exec": "playerctl metadata --format '{\"text\": \"{{artist}} - {{title}}\", \"tooltip\": \"{{playerName}}: {{artist}} - {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-		"on-click": "playerctl play-pause"
-	},
-    "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format": "{:%a %d %b %H:%M}"
+    "format-time": "{H}h {M}m",
+    "format": "{capacity}%",
+    "format-charging": "{capacity}%",
+    "tooltip-format": "{capacity}% {power} {timeTo}"
+  },
+  "network": {
+    "interval": 2,
+    // "interface": "wlan0",
+    "format-wifi": "",
+    "format-ethernet": "",
+    "format-linked": "{ifname}",
+    "format-disconnected": "",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}",
+    "tooltip-format": "{ifname}\n{ipaddr}/{cidr}\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}"
+  },
+  "custom/vpn": {
+    "format": "",
+    "exec": "echo '{\"class\": \"connected\", \"tooltip\": \"VPN\"}'",
+    "exec-if": "test -d /proc/sys/net/ipv4/conf/mlvd*",
+    "return-type": "json",
+    "interval": 5
+  },
+  "custom/tailscale": {
+    "format": "",
+    "exec": "echo '{\"class\": \"connected\", \"tooltip\": \"TAILSCALE\"}'",
+    "exec-if": "test -d /proc/sys/net/ipv4/conf/tailscale0",
+    "return-type": "json",
+    "interval": 5
+  },
+  "custom/weather": {
+    "exec": "curl 'https://wttr.in/?format=%t+%C'",
+    "interval": 3600
+  },
+  "pulseaudio": {
+    "format": "{icon} {volume}",
+    "format-bluetooth": "BT {volume}% {format_source}",
+    "format-muted": " {volume}",
+    "format-bluetooth-muted": "BT MUT {format_source}",
+    "format-source": "VOL {volume}%",
+    "format-source-muted": "MUT {volume}",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ""
     },
-    "cpu": {
-        "format": " {usage}%",
-		"interval": 5,
-        "states": {
-            "warning": 10,
-            "critical": 90
-        }
-    },
-    "battery": {
-        "states": {
-            "warning": 25,
-            "critical": 10
-        },
-		"format-time": "{H}h {M}m",
-        "format": "{capacity}%",
-        "format-charging": "{capacity}%",
-		"tooltip-format": "{capacity}% {power} {timeTo}"
-    },
-    "network": {
-        "interval": 2,
-        // "interface": "wlan0",
-        "format-wifi": "",
-        "format-ethernet": "",
-        "format-linked": "{ifname}",
-        "format-disconnected": "",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%)\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}",
-        "tooltip-format": "{ifname}\n{ipaddr}/{cidr}\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}"
-    },
-	"custom/vpn": {
-		"format": "",
-		"exec": "echo '{\"class\": \"connected\", \"tooltip\": \"VPN\"}'",
-		"exec-if": "test -d /proc/sys/net/ipv4/conf/mlvd*",
-		"return-type": "json",
-		"interval": 5
-	},
-	"custom/tailscale": {
-		"format": "",
-		"exec": "echo '{\"class\": \"connected\", \"tooltip\": \"TAILSCALE\"}'",
-		"exec-if": "test -d /proc/sys/net/ipv4/conf/tailscale0",
-		"return-type": "json",
-		"interval": 5
-	},
-	"custom/weather": {
-		"exec": "curl 'https://wttr.in/?format=%t+%C'",
-		"interval": 3600
-	},
-    "pulseaudio": {
-        "format": "{icon} {volume}",
-        "format-bluetooth": "BT {volume}% {format_source}",
-        "format-muted": " {volume}",
-        "format-bluetooth-muted": "BT MUT {format_source}",
-        "format-source": "VOL {volume}%",
-        "format-source-muted": "MUT {volume}",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ""
-        },
-        "on-click": "pavucontrol"
-    },
-	"sway/language": {
-		"format": "{}"
-	}
+    "on-click": "pavucontrol"
+  },
+  "sway/language": {
+    "format": "{}"
+  }
 }
 // vim: ft=json:

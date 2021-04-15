@@ -7,32 +7,32 @@
 --         }
 --     }
 --]]
-credentials = require 'credentials'
+credentials = require("credentials")
 
-widget = luastatus.require_plugin('imap').widget{
-    verbose = false,
-    host = "imap.fastmail.com",
-    port = 993,
-    mailbox = 'Inbox',
-    use_ssl = true,
-    timeout = 2 * 60,
-    handshake_timeout = 10,
-    login = credentials.fastmail.login,
-    password = credentials.fastmail.password,
-    error_sleep_period = 60,
-    cb = function(unseen)
-        if unseen == nil then
-            return nil
-        elseif unseen == 0 then
-            return
-        else
-            return {full_text = string.format('mail %d', unseen)}
-        end
-    end,
-    event = [[
+widget = luastatus.require_plugin("imap").widget({
+	verbose = false,
+	host = "imap.fastmail.com",
+	port = 993,
+	mailbox = "Inbox",
+	use_ssl = true,
+	timeout = 2 * 60,
+	handshake_timeout = 10,
+	login = credentials.fastmail.login,
+	password = credentials.fastmail.password,
+	error_sleep_period = 60,
+	cb = function(unseen)
+		if unseen == nil then
+			return nil
+		elseif unseen == 0 then
+			return
+		else
+			return { full_text = string.format("mail %d", unseen) }
+		end
+	end,
+	event = [[
         local t = ...
         if t.button == 1 then
             os.execute('xdg-open https://gmail.com &')
         end
     ]],
-}
+})
