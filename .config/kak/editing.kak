@@ -46,21 +46,24 @@ hook global WinDisplay   .* %{ evaluate-commands %sh{
     [ -n "$project_dir" ] && [ "$kak_buffile" = "${kak_buffile#\*}" ] && printf "git show-diff"
 } }
 
-# formatting
+# formatting and linting
 define-command disable-autoformat -docstring 'disable auto-format' %{
 	unset-option buffer formatcmd
 	remove-hooks buffer format
 }
+define-command disable-autolint -docstring 'disable auto-lint' %{
+	unset-option buffer lintcmd
+	remove-hooks buffer lint
+}
 hook global WinSetOption filetype=.* %{
-    disable-autoformat
-    disable-autolint
-
+    # disable-autoformat
+    # disable-autolint
     hook buffer -group format BufWritePre .* %{
         try %{ execute-keys -draft '%s\h+$<ret>d' }
         try %{ execute-keys -draft '%s\u000d<ret>d' }
     }
 }
-hook global WinSetOption filetype=(svelte|javascript|typescript|css|scss|json|yaml|html) %{
+hook global WinSetOption filetype=(svelte|javascript|typescript|css|scss|yaml|html) %{
     set-option buffer formatcmd "prettier --stdin-filepath='%val{buffile}'"
     hook buffer -group format BufWritePre .* format
 }
@@ -71,19 +74,16 @@ hook global WinSetOption filetype=lua %{
 hook global WinSetOption filetype=sh %{
     set-option buffer formatcmd 'shfmt -i 4 -ci -sr'
     hook buffer -group format BufWritePre .* format
-
-    set-option buffer lintcmd 'shellcheck -x -fgcc'
-    lint
 }
-
-# linting
-define-command disable-autolint -docstring 'disable auto-lint' %{
-	unset-option buffer lintcmd
-	remove-hooks buffer lint
+hook global WinSetOption filetype=json %{
+    set-option buffer formatcmd "deno fmt --ext json -"
+    hook buffer -group format BufWritePre .* format
 }
 hook global WinSetOption filetype=markdown %{
     set-option buffer lintcmd "proselint"
-    set-option buffer formatcmd "prettier --prose-wrap=always --stdin-filepath='%val{buffile}'"
+    set-option buffer formatcmd "deno fmt --ext md -"
+    # set-option buffer formatcmd "prettier --prose-wrap=always --stdin-filepath='%val{buffile}'"
     hook buffer -group format BufWritePre .* format
     hook buffer -group format BufWritePost .* lint
 }
+
