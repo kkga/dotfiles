@@ -92,8 +92,10 @@ gettext
 gifski
 gimp
 git
+git-extras
 git-libsecret
 github-cli
+glmark2
 gnome
 gnome-keyring
 gnome-terminal
@@ -135,6 +137,7 @@ libev-devel
 libgpg-error-devel
 libinput-devel
 libspa-bluetooth
+libspa-vulkan
 libusb-compat-devel
 libva-vdpau-driver
 libvdpau-va-gl
@@ -232,6 +235,7 @@ smbclient
 snapper
 snooze
 socklog-void
+sof-firmware
 sound-theme-freedesktop
 spectrwm
 speedtest-cli
@@ -262,10 +266,12 @@ ttfautohint
 unar
 unclutter-xfixes
 uni
+unicode-emoji
 upower
 vdpauinfo
 viu
 vkBasalt
+vkQuake
 vmdfmt
 void-docs
 void-docs-browse
@@ -273,6 +279,7 @@ void-repo-multilib
 void-repo-multilib-nonfree
 void-repo-nonfree
 void-updates
+volta
 vpm
 vpnd
 vpsm
