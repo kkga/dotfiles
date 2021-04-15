@@ -4,8 +4,8 @@ Relatively simple Linux config for desktop, managed with [yadm].
 - window manager: [sway] ([config])
 - shell: [fish] ([config][1])
 - terminal: [foot] ([config][2])
-- editor: [neovim] ([config][3])
-- menu: [bemenu]
+- editor: [kakoune] ([config][3])
+- menu: [wofi]
 - colors: [envy]
 
 [yadm]: https://github.com/TheLocehiliosan/yadm
@@ -17,7 +17,7 @@ Relatively simple Linux config for desktop, managed with [yadm].
 [1]: /.config/fish/config.fish
 [foot]: https://codeberg.org/dnkl/foot
 [2]: /.config/foot/foot.ini
-[neovim]: https://neovim.io
-[3]: /.config/nvim/init.vim
-[bemenu]: https://github.com/Cloudef/bemenu
+[kakoune]: https://kakoune.org
+[3]: /.config/kak/
+[wofi]: https://hg.sr.ht/~scoopta/wofi
 [envy]: https://github.com/kkga/vim-envy
