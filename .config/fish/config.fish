@@ -1,5 +1,3 @@
-set -x LS_COLORS "$LS_COLORS:ow=1;7;34:st=30;44:su=30;41"
-
 alias vim="nvim"
 alias gg="lazygit"
 alias ls="exa --group --git --group-directories-first"
@@ -11,7 +9,6 @@ alias k='kcr edit'
 alias K='kcr-fzf-shell'
 alias KK='K --working-directory .'
 alias ks='kcr shell --session'
-alias kl='kcr list'
 alias a='kcr attach'
 alias :='kcr send'
 alias :cat='kcr cat --raw'
@@ -22,7 +19,9 @@ alias reg='kcr get --register'
 set --global hydro_symbol_prompt           '>'
 set --global hydro_symbol_git_dirty        '*'
 
-set fish_greeting					       ' '
+set -x LS_COLORS "$LS_COLORS:ow=1;7;34:st=30;44:su=30;41"
+
+set fish_greeting					       ''
 set fish_color_autosuggestion              normal
 set fish_color_cancel                      -r
 set fish_color_command                     --bold
