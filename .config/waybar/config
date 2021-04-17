@@ -92,8 +92,7 @@
     },
     "format-time": "{H}h {M}m",
     "format": "{capacity}%",
-    "format-charging": "{capacity}%",
-    "tooltip-format": "{capacity}% {power} {timeTo}"
+    "format-charging": "{capacity}%"
   },
   "network": {
     "interval": 2,
