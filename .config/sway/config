@@ -49,7 +49,7 @@ exec_always {
 
 set $term 'footclient'
 set $drun 'wofi'
-set $lock 'swaylock -f -c 222222'
+set $lock 'swaylock -K -e -f -c 222222'
 set $clipboard 'clipman pick -t wofi'
 
 set $mod Mod4
