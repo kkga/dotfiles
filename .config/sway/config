@@ -49,7 +49,7 @@ exec_always {
 
 set $term 'footclient'
 set $drun 'wofi'
-set $lock 'swaylock -f -c 222222'
+set $lock 'swaylock -K -e -f -c 222222'
 set $clipboard 'clipman pick -t wofi'
 
 set $mod Mod4
@@ -170,9 +170,6 @@ for_window [ app_id="^popup$"           ] floating enable
    bindsym XF86AudioPrev              exec playerctl previous
    bindsym XF86AudioNext              exec playerctl next
 
-   bindsym $mod+Control+equal         gaps inner current plus 4
-   bindsym $mod+Control+minus         gaps inner current minus 4
-
    bindsym $mod+Escape                exec makoctl dismiss
    bindsym $mod+Control+Escape        exec makoctl dismiss -a
 
@@ -247,6 +244,8 @@ mode $mode_resize {
    bindsym $down                      resize grow height 10
    bindsym $up                        resize shrink height 10
    bindsym $right                     resize grow width 10
+   bindsym minus                      gaps inner current minus 5px
+   bindsym equal                      gaps inner current plus 5px
    bindsym Return                     mode "default"
    bindsym Escape                     mode "default"
 }
