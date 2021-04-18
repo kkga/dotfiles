@@ -47,4 +47,4 @@ settings:
   window.title_format:
     global: qutebrowser
   zoom.default:
-    global: 90%
+    global: 100%
