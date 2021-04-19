@@ -1,6 +1,6 @@
 font:
-  normal:
-    family: "input"
+  # normal:
+  # family: "input"
   # style: Light
   # bold:
   #   family: agave

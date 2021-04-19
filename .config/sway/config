@@ -27,7 +27,8 @@ exec pipewire
 exec pipewire-pulse
 exec foot --server
 # exec gammastep
-exec wlsunset -l 55.0 -L 37.0 -t 4000 -T 6500
+# exec wlsunset -l 55.0 -L 37.0 -t 4000 -T 6500
+exec wlsunset
 exec light -S 35
 exec wl-paste -t text --watch clipman store --max-items=50
 exec clipman restore
@@ -37,8 +38,8 @@ exec /usr/libexec/polkit-gnome-authentication-agent-1
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
     gsettings set $gnome-schema gtk-theme 'Adwaita'
-    gsettings set $gnome-schema icon-theme 'Adwaita++'
-    gsettings set $gnome-schema cursor-theme 'Yaru'
+    gsettings set $gnome-schema icon-theme 'Adwaita'
+    gsettings set $gnome-schema cursor-theme 'Adwaita'
     gsettings set $gnome-schema cursor-size 24
     gsettings set $gnome-schema font-name 'sans-serif 10'
     gsettings set $gnome-schema monospace-font-name 'monospace 10'
@@ -48,7 +49,7 @@ exec_always {
 
 set $term 'footclient'
 set $drun 'wofi'
-set $lock 'swaylock -f -c 222222'
+set $lock 'swaylock -K -e -f -c 222222'
 set $clipboard 'clipman pick -t wofi'
 
 set $mod Mod4
@@ -60,10 +61,10 @@ set $right l
 # Idle config {{{1
 
 exec swayidle -w \
-          timeout 300 'swaylock -f -c 000000' \
+          timeout 300 $lock \
           timeout 600 'swaymsg "output * dpms off"' \
           resume 'swaymsg "output * dpms on"' \
-          before-sleep 'swaylock -f -c 000000'
+          before-sleep $lock
 
 # exec swayidle -w \
 # 	timeout 600 $lock \
@@ -169,9 +170,6 @@ for_window [ app_id="^popup$"           ] floating enable
    bindsym XF86AudioPrev              exec playerctl previous
    bindsym XF86AudioNext              exec playerctl next
 
-   bindsym $mod+Control+equal         gaps inner current plus 4
-   bindsym $mod+Control+minus         gaps inner current minus 4
-
    bindsym $mod+Escape                exec makoctl dismiss
    bindsym $mod+Control+Escape        exec makoctl dismiss -a
 
@@ -246,6 +244,8 @@ mode $mode_resize {
    bindsym $down                      resize grow height 10
    bindsym $up                        resize shrink height 10
    bindsym $right                     resize grow width 10
+   bindsym minus                      gaps inner current minus 5px
+   bindsym equal                      gaps inner current plus 5px
    bindsym Return                     mode "default"
    bindsym Escape                     mode "default"
 }

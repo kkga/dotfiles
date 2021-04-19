@@ -39,6 +39,7 @@ clang-tools-extra
 clipman
 clipmenu
 cmake
+cmus
 corectrl
 cross-arm-none-eabi-binutils
 cross-arm-none-eabi-gcc
@@ -178,7 +179,6 @@ nmap
 nnn
 nodejs
 noto-fonts-cjk
-noto-fonts-emoji
 noto-fonts-ttf
 noto-fonts-ttf-extra
 nushell
