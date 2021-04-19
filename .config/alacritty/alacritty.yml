@@ -1,17 +1,17 @@
-font:
-  normal:
-    family: iosevka
-  # style: Light
-  # bold:
-  #   family: agave
-  # style: semibold
-  size: 10.5
-  # offset:
-  #   x: 0
-  #   y: -1
-  # glyph_offset:
-  #   x: 0
-  #   y: -1
+# font:
+# normal:
+# family: inconsolata semicondensed
+# style: Narrow Regular
+# bold:
+#   family: agave
+# style: semibold
+# size: 12
+# offset:
+#   x: 0
+#   y: -1
+# glyph_offset:
+#   x: 0
+#   y: -1
 
 window:
   decorations: none
