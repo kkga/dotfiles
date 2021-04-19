@@ -30,7 +30,6 @@ bottom
 brightnessctl
 brillo
 broot
-cadaver
 cairo-devel
 cargo
 chromium
@@ -97,7 +96,6 @@ git-extras
 git-libsecret
 github-cli
 glmark2
-gnome
 gnome-keyring
 gnome-terminal
 go
@@ -125,6 +123,7 @@ kak-lsp
 keyutils
 kitty
 lazygit
+ldm
 lf
 libX11-devel
 libXcomposite-devel
@@ -184,6 +183,7 @@ noto-fonts-ttf-extra
 nushell
 obs
 obs-devel
+oil
 opendoas
 openssl-devel
 pamixer
@@ -226,6 +226,7 @@ ripgrep
 roxterm
 safeeyes
 sakura
+scons
 seahorse
 seatd
 setxkbmap
@@ -263,6 +264,7 @@ trash-cli
 trayer-srg
 ttf-material-icons
 ttfautohint
+udiskie
 unar
 unclutter-xfixes
 uni

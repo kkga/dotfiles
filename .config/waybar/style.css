@@ -11,8 +11,8 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: monospace, microns;
-  font-size: 12px;
+  font-family: "iosevka comfy", monospace, microns;
+  font-size: 11px;
   min-height: 0;
   transition: none;
 }
