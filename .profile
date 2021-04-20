@@ -21,8 +21,8 @@ export DMENU='wofi --dmenu'
 export MANPAGER=most
 export MOST_INITFILE=$HOME/.config/most/mostrc
 
-export DMENU_PROGRAM='term-dmenu'
-export FLOATING_TERMINAL='foot -f monospace:size=12 -a popup'
+# export DMENU_PROGRAM='term-dmenu'
+# export FLOATING_TERMINAL='foot -f monospace:size=12 -a popup'
 
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_DEFAULT_OPTS="--color=bw --layout=reverse --inline-info --height=40 --preview-window=down:60%:border-horizontal"

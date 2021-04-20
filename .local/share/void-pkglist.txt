@@ -76,7 +76,6 @@ flameshot
 flatpak
 font-cozette
 font-ibm-plex-ttf
-font-iosevka
 font-tamzen
 fontmanager
 foot

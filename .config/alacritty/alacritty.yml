@@ -1,11 +1,11 @@
-# font:
-# normal:
-# family: inconsolata semicondensed
-# style: Narrow Regular
-# bold:
-#   family: agave
-# style: semibold
-# size: 12
+font:
+  # normal:
+  # family: inconsolata semicondensed
+  # style: Narrow Regular
+  # bold:
+  #   family: agave
+  # style: semibold
+  size: 11
 # offset:
 #   x: 0
 #   y: -1
