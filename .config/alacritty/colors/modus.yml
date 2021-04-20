@@ -1,0 +1,87 @@
+# Colors (Modus)
+schemes:
+modus-vivendi: &dark # Default colors
+  primary:
+    background: "#191a1b"
+    foreground: "#a8a8a8"
+
+  cursor:
+    text: "#000000"
+    background: "#777777"
+
+  # Normal colors (except green it is from intense colors -- not anymore)
+  normal:
+    black: "#000000"
+    red: "#ff8059"
+    green: "#44bc44"
+    yellow: "#eecc00"
+    blue: "#29aeff"
+    magenta: "#feacd0"
+    cyan: "#00d3d0"
+    white: "#eeeeee"
+
+  # Bright colors [all the faint colors in the modus theme]
+  bright:
+    black: "#555555"
+    red: "#ffa0a0"
+    green: "#88cf88"
+    yellow: "#d2b580"
+    blue: "#92baff"
+    magenta: "#e0b2d6"
+    cyan: "#a0bfdf"
+    white: "#ffffff"
+
+  # dim [all the intense colors in modus theme]
+  dim:
+    black: "#222222"
+    red: "#fb6859"
+    green: "#00fc50"
+    yellow: "#ffdd00"
+    blue: "#00a2ff"
+    magenta: "#ff8bd4"
+    cyan: "#30ffc0"
+    white: "#dddddd"
+
+modus-operandi: &light # Default colors
+  primary:
+    background: "#ffffff"
+    foreground: "#000000"
+
+  cursor:
+    text: "#ffffff"
+    background: "#777777"
+
+  # Normal colors (except green it is from intense colors)
+  normal:
+    black: "#000000"
+    red: "#a60000"
+    green: "#006800"
+    yellow: "#813e00"
+    blue: "#0030a6"
+    magenta: "#721045"
+    cyan: "#00538b"
+    white: "#eeeeee"
+
+  # Bright colors [all the faint colors in the modus theme]
+  bright:
+    black: "#555555"
+    red: "#7f1010"
+    green: "#104410"
+    yellow: "#5f4400"
+    blue: "#002f88"
+    magenta: "#752f50"
+    cyan: "#12506f"
+    white: "#ffffff"
+
+  # dim [all the intense colors in modus theme]
+  dim:
+    black: "#222222"
+    red: "#b60000"
+    green: "#006800"
+    yellow: "#904200"
+    blue: "#1111ee"
+    magenta: "#7000e0"
+    cyan: "#205b93"
+    white: "#dddddd"
+
+colors: *dark
