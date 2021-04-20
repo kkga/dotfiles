@@ -1,27 +1,50 @@
+import:
+  - /home/kkga/.config/alacritty/colors/modus.yml
+  # - /home/kkga/.config/alacritty/alacritty-extended-keys/keys.yml
+
 font:
   # normal:
-  # family: "input"
-  # style: Light
+  # family: inconsolata semicondensed
+  # style: Narrow Regular
   # bold:
   #   family: agave
   # style: semibold
-  size: 10.5
-  # offset:
-  #   x: 0
-  #   y: -1
-  # glyph_offset:
-  #   x: 0
-  #   y: -1
+  size: 11.0
+# offset:
+#   x: 0
+#   y: -1
+# glyph_offset:
+#   x: 0
+#   y: -1
+
+draw_bold_text_with_bright_colors: true
+use_thin_strokes: true
 
 window:
   decorations: none
   dimensions:
-    columns: 100
-    lines: 40
+    columns: 80
+    lines: 24
+
+cursor:
+  style:
+    blinking: On
 
 # shell:
 #   program: fish
 key_bindings:
+  - {
+      key: F1,
+      mods: Shift,
+      command:
+        {
+          program: firefox,
+          args:
+            [
+              "https://github.com/alacritty/alacritty/blob/master/alacritty.yml",
+            ],
+        },
+    }
   - { key: Return, mods: Control|Shift, action: SpawnNewInstance }
   - { key: K, mods: Control|Shift, action: ScrollPageUp }
   - { key: J, mods: Control|Shift, action: ScrollPageDown }
@@ -30,12 +53,6 @@ key_bindings:
   # - { key: M, mods: Control, chars: "\u24DC" }
   # - { key: I, mods: Control, chars: "\u24D8" }
 
-draw_bold_text_with_bright_colors: true
-use_thin_strokes: true
-
 cursor:
   style: Block
   vi_mode_style: Block
-
-import:
-  - /home/kkga/.config/alacritty/colors/lucius.yml

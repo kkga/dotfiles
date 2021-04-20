@@ -25,10 +25,8 @@ seat * hide_cursor 5000
 exec mako
 exec pipewire
 exec pipewire-pulse
-exec foot --server
-# exec gammastep
-# exec wlsunset -l 55.0 -L 37.0 -t 4000 -T 6500
-exec wlsunset
+# exec foot --server
+exec gammastep
 exec light -S 35
 exec wl-paste -t text --watch clipman store --max-items=50
 exec clipman restore
@@ -47,7 +45,7 @@ exec_always {
 
 # Variables {{{1
 
-set $term 'footclient'
+set $term 'alacritty'
 set $drun 'wofi'
 set $lock 'swaylock -K -e -f -c 222222'
 set $clipboard 'clipman pick -t wofi'
@@ -144,6 +142,8 @@ for_window [ app_id="mpv"               ] floating enable
 for_window [ app_id="^launcher$"        ] floating enable
 for_window [ app_id="dmenu.*"           ] floating enable
 for_window [ app_id="^popup$"           ] floating enable
+for_window [ app_id="Alacritty · Popup" ] floating enable
+
 
 # Key bindings {{{1
 
