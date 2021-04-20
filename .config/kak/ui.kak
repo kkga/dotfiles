@@ -30,16 +30,3 @@ define-command update-status %{ evaluate-commands %sh{
 hook global WinDisplay .* update-status
 hook global BufSetOption lsp_diagnostic_error_count=.* update-status
 hook global BufSetOption lsp_diagnostic_warning_count=.* update-status
-
-# buffers
-alias global bd delete-buffer
-alias global bf buffer-first
-alias global bl buffer-last
-alias global bo buffer-only
-alias global bo! buffer-only-force
-
-# find files
-define-command find -docstring "find a file in cwd" -params 1 -menu -shell-script-candidates %{
-    fd --type file
-    } %{ edit %arg{1} }
-alias global f find
