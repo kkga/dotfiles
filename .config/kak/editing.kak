@@ -67,12 +67,8 @@ hook global WinSetOption filetype=(svelte|javascript|typescript|css|scss|yaml|ht
     set-option buffer formatcmd "prettier --stdin-filepath='%val{buffile}'"
     hook buffer -group format BufWritePre .* format
 }
-hook global WinSetOption filetype=lua %{
-    set-option buffer formatcmd "stylua -"
-    hook buffer -group format BufWritePre .* format
-}
-hook global WinSetOption filetype=sh %{
-    set-option buffer formatcmd 'shfmt -i 4 -ci -sr'
+hook global WinSetOption filetype=(javascript|typescript) %{
+    set-option buffer formatcmd "deno fmt -"
     hook buffer -group format BufWritePre .* format
 }
 hook global WinSetOption filetype=json %{
@@ -85,5 +81,13 @@ hook global WinSetOption filetype=markdown %{
     # set-option buffer formatcmd "prettier --prose-wrap=always --stdin-filepath='%val{buffile}'"
     hook buffer -group format BufWritePre .* format
     hook buffer -group format BufWritePost .* lint
+}
+hook global WinSetOption filetype=lua %{
+    set-option buffer formatcmd "stylua -"
+    hook buffer -group format BufWritePre .* format
+}
+hook global WinSetOption filetype=sh %{
+    set-option buffer formatcmd 'shfmt -i 4 -ci -sr'
+    hook buffer -group format BufWritePre .* format
 }
 
