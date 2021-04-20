@@ -1,7 +1,6 @@
 export VOLTA_HOME="$HOME/.volta"
 export GOPATH="$HOME/.go"
 
-export PATH=/usr/local/bin/:$PATH
 export PATH=/var/lib/flatpak/exports/bin/:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.yarn/bin:$PATH
