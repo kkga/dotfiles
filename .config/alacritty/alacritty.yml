@@ -1,5 +1,5 @@
 import:
-  - /home/kkga/.config/alacritty/colors/modus.yml
+  - /home/kkga/.config/alacritty/colors/lucius.yml
   # - /home/kkga/.config/alacritty/alacritty-extended-keys/keys.yml
 
 font:
