@@ -3,12 +3,11 @@
   "height": 16,
   "position": "bottom",
   "modules-left": [
-    "sway/workspaces",
     "sway/mode",
-    "sway/window"
+    "clock"
   ],
   "modules-center": [
-    "clock"
+    "sway/workspaces"
   ],
   "modules-right": [
     "custom/recording",

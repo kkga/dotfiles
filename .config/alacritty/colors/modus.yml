@@ -3,7 +3,7 @@ schemes:
 modus-vivendi: &dark # Default colors
   primary:
     background: "#191a1b"
-    foreground: "#a8a8a8"
+    foreground: "#e0e6f0"
 
   cursor:
     text: "#000000"
