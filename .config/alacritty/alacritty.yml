@@ -1,10 +1,9 @@
 import:
-  - /home/kkga/.config/alacritty/colors/modus.yml
-  # - /home/kkga/.config/alacritty/alacritty-extended-keys/keys.yml
+  - /home/kkga/.config/alacritty/colors/lucius.yml
 
 font:
-  # normal:
-  # family: inconsolata semicondensed
+  normal:
+    family: monospace
   # style: Narrow Regular
   # bold:
   #   family: agave
