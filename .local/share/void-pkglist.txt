@@ -65,6 +65,7 @@ elvish
 emptty
 eudev-libudev
 exa
+execline
 exercism
 fd
 ffmpeg
@@ -77,7 +78,6 @@ flatpak
 font-cozette
 font-ibm-plex-ttf
 font-tamzen
-fontmanager
 foot
 fuzzel
 fuzzypkg
@@ -214,6 +214,7 @@ python3-adblock
 python3-attrs
 python3-pip
 python3-proselint
+python3-xdg
 qemu
 qmk
 qt5-wayland
