@@ -26,17 +26,7 @@
   "sway/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
-    "format": "{name}",
-    "format-icons": {
-      "1": "🯱",
-      "2": "🯲",
-      "3": "🯳",
-      "4": "🯴",
-      "5": "",
-      "urgent": "",
-      "focused": "",
-      "default": ""
-    }
+    "format": "{index}:{name}"
   },
   "sway/window": {
     "format": "{}",
