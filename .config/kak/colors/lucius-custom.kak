@@ -61,7 +61,7 @@ face global LineNumbersWrapped ${lucius_dark_grey}
 face global MenuForeground ${lucius_light_blue},${lucius_dark_blue}
 face global MenuBackground ${lucius_light_grey},${lucius_dark_grey}
 face global MenuInfo ${lucius_grey}
-face global Information ${lucius_lighter_grey},${lucius_dark_green}
+face global Information ${lucius_light_blue},${lucius_dark_blue}
 face global Error ${lucius_light_red},${lucius_dark_red}
 face global StatusLine ${lucius_light_grey}
 face global StatusLineMode ${lucius_darker_grey},${lucius_green}+b
