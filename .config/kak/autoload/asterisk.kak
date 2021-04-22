@@ -2,7 +2,7 @@ map global normal '*'     ': star-auto-select *<ret>'
 map global normal '<a-*>' ': star-auto-select <lt>a-*><ret>'
 
 hook global NormalKey [/?*nN]|<a-[/?*nN]> %{ try %{
-    add-highlighter window/search-results-highlighter dynregex '%reg{/}' '0:black,blue'
+    add-highlighter window/search-results-highlighter dynregex '%reg{/}' '0:MatchingChar'
 }}
 
 hook global NormalKey <esc> %{ try %{

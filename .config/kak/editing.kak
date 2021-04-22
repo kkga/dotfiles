@@ -1,6 +1,7 @@
 set-option global grepcmd 'rg --smart-case --column --with-filename'
 
-# lsp
+# lsp -------------------------------------------------------------------------
+
 eval %sh{kak-lsp --kakoune -s $kak_session}
 hook global WinSetOption filetype=(crystal|html|css|json|rust|python|go|typescript|svelte|javascript) %{
     lsp-auto-hover-insert-mode-enable
@@ -11,7 +12,7 @@ hook global WinSetOption filetype=(crystal|html|css|json|rust|python|go|typescri
 hook global KakEnd .* lsp-exit
 
 # uncomment for lsp debug
-set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
+# set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
 
 define-command lsp-restart -docstring 'restart lsp server' %{ lsp-stop; lsp-start }
 define-command ne -docstring 'go to next error/warning from lsp' %{ lsp-find-error --include-warnings }
@@ -30,12 +31,14 @@ def -hidden insert-c-n %{
 map global insert <c-n> "<a-;>: insert-c-n<ret>"
 
 
-# hooks
+# hooks -----------------------------------------------------------------------
+
 # TODO https://github.com/maximbaz/dotfiles/blob/master/.config/kak/coding.kak
 hook global BufOpenFile  .* modeline-parse
-hook global BufCreate    .* %{ editorconfig-load; set buffer eolformat lf }
+hook global BufCreate    .* %{ try %{ editorconfig-load } }
 hook global BufWritePost .* %{ git show-diff }
 hook global BufReload    .* %{ git show-diff }
+hook global WinCreate    .* %{ manual-indent-enable }
 
 # cd into current-buffer dir or git dir on file open
 hook global WinDisplay   .* %{ evaluate-commands %sh{

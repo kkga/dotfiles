@@ -22,7 +22,6 @@ hook -group windowing-detection global ClientCreate '.*' %{
     }
   }
 }
-plug terminal-mode https://github.com/alexherbo2/terminal-mode.kak
 hook global ModuleLoaded kitty %{
     alias global terminal kitty-terminal
     alias global popup kitty-terminal
@@ -30,11 +29,11 @@ hook global ModuleLoaded kitty %{
 plug auto-pairs https://github.com/alexherbo2/auto-pairs.kak
 plug explore https://github.com/alexherbo2/explore.kak %{
     explore-enable
+    define-command explore-files -params .. '+ kcr-fzf-files %arg{@}'
+    define-command explore-buffers -params .. '+ kcr-fzf-buffers %arg{@}'
 }
 plug edit https://github.com/alexherbo2/edit.kak
-plug manual-indent https://github.com/alexherbo2/manual-indent.kak %{
-    manual-indent-enable
-}
+plug manual-indent https://github.com/alexherbo2/manual-indent.kak
 plug objectify https://github.com/alexherbo2/objectify.kak
 plug text-objects https://github.com/alexherbo2/text-objects.kak
 plug jq https://github.com/alexherbo2/jq.kak

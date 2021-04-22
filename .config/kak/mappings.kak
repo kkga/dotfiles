@@ -1,5 +1,4 @@
-# global mappings
-# ---------------
+# global mappings -------------------------------------------------------------
 
 # jj to exit
 hook global InsertChar j %{ try %{
@@ -41,14 +40,8 @@ hook global InsertCompletionShow .* %{ map window insert <tab> <c-n> }
 hook global InsertCompletionHide .* %{ map window insert <tab> <tab> }
 hook global InsertCompletionShow .* %{ map window insert <s-tab> <c-p> }
 
-# space to leader
-# map global normal -docstring 'leader'                        <space> ,
-# map global normal -docstring 'remove all sels except main'   <backspace> <space>
-# map global normal -docstring 'remove main sel'               <a-backspace> <a-space>
 
-
-# user mappings
-# -------------
+# user mappings ---------------------------------------------------------------
 
 # clipboard
 evaluate-commands %sh{
