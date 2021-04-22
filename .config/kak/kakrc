@@ -1,17 +1,9 @@
 require-module plug
 
-evaluate-commands %sh{
-    kcr init kakoune
-}
-
 plug plug https://github.com/alexherbo2/plug.kak %{
-    define-command plug-upgrade -docstring 'plug-upgrade' %{
-        plug-install
-    }
+    define-command plug-upgrade -docstring 'plug-upgrade' %{ plug-install }
 }
-plug-core %{
-    set-option global makecmd 'make -j 8'
-}
+plug-core %{ set-option global makecmd 'make -j 8' }
 
 plug foot projects/foot.kak
 hook -group windowing-detection global ClientCreate '.*' %{
@@ -36,14 +28,11 @@ plug edit https://github.com/alexherbo2/edit.kak
 plug manual-indent https://github.com/alexherbo2/manual-indent.kak
 plug objectify https://github.com/alexherbo2/objectify.kak
 plug text-objects https://github.com/alexherbo2/text-objects.kak
-plug jq https://github.com/alexherbo2/jq.kak
 plug surround https://github.com/alexherbo2/surround.kak
 plug toggle-highlighter https://github.com/alexherbo2/toggle-highlighter.kak
 plug palette https://github.com/alexherbo2/palette.kak
 plug change-directory https://github.com/alexherbo2/change-directory.kak
-plug sleuth https://github.com/alexherbo2/sleuth.kak %{
-    sleuth-enable
-}
+plug sleuth https://github.com/alexherbo2/sleuth.kak %{ sleuth-enable }
 plug move-line https://github.com/alexherbo2/move-line.kak
 
 plug-old sudo-write https://github.com/occivink/kakoune-sudo-write
@@ -61,6 +50,8 @@ plug-old state-save https://gitlab.com/Screwtapello/kakoune-state-save %{
     state-save-reg-save slash
   }
 }
+
+evaluate-commands %sh{ kcr init kakoune }
 
 source "~/.config/kak/ui.kak"
 source "~/.config/kak/editing.kak"

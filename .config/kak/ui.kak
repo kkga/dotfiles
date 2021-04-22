@@ -3,9 +3,9 @@ colorscheme lucius-custom
 set-option global tabstop 4
 set-option global indentwidth 4
 set-option global scrolloff 12,4
-set-option global ui_options ncurses_status_on_top=true ncurses_assistant=clippy
+set-option global ui_options ncurses_status_on_top=false ncurses_assistant=clippy
 set-option global startup_info_version 20200901
-add-highlighter global/ number-lines -hlcursor
+# add-highlighter global/ number-lines -hlcursor
 add-highlighter global/ wrap -word
 add-highlighter global/ regex \h+$ 0:Error
 add-highlighter global/ show-matching

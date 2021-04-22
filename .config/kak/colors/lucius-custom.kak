@@ -24,13 +24,13 @@ lucius_light_blue="rgb:87d7ff"
 
 echo "
 # then we map them to code
-face global value ${lucius_light_red}
+face global value ${lucius_light_blue}
 face global type ${lucius_blue}
 face global variable ${lucius_green}
 face global module ${lucius_green}
-face global function ${lucius_light_blue}
+face global function ${lucius_orange}
 face global string ${lucius_green}
-face global keyword ${lucius_blue}
+face global keyword ${lucius_blue}+b
 face global operator ${lucius_green}
 face global attribute ${lucius_light_blue}
 face global comment ${lucius_grey}
@@ -50,7 +50,7 @@ face global list ${lucius_blue}
 # and built in faces
 face global Default ${lucius_lighter_grey}
 face global PrimarySelection ${lucius_darker_grey},${lucius_light_blue}+fg
-face global SecondarySelection  ${lucius_lighter_grey},${lucius_dark_blue}+fg
+face global SecondarySelection ${lucius_lighter_grey},${lucius_dark_blue}+fg
 face global PrimaryCursor ${lucius_darker_grey},${lucius_lighter_grey}+fg
 face global SecondaryCursor ${lucius_darker_grey},${lucius_lighter_grey}+fg
 face global PrimaryCursorEol ${lucius_darker_grey},${lucius_dark_green}+fg
@@ -63,7 +63,7 @@ face global MenuBackground ${lucius_light_grey},${lucius_dark_grey}
 face global MenuInfo ${lucius_grey}
 face global Information ${lucius_lighter_grey},${lucius_dark_green}
 face global Error ${lucius_light_red},${lucius_dark_red}
-face global StatusLine ${lucius_light_grey},${lucius_dark_grey}
+face global StatusLine ${lucius_light_grey}
 face global StatusLineMode ${lucius_darker_grey},${lucius_green}+b
 face global StatusLineInfo ${lucius_blue}@StatusLine
 face global StatusLineValue ${lucius_lighter_grey}

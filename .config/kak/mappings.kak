@@ -56,7 +56,7 @@ evaluate-commands %sh{
 }
 
 # ui options
-map global user -docstring 'toggle numbers'        L ': toggle-highlighter global/ number-lines -hlcursor<ret>'
+map global user -docstring 'toggle numbers'        L ": toggle-highlighter global/ number-lines -hlcursor<ret>"
 map global user -docstring 'toggle wrap'           W ': toggle-highlighter global/ wrap -word <ret>'
 
 # buffer
