@@ -6,7 +6,7 @@ export PATH=$HOME/.cargo/bin:$PATH
 export PATH=$HOME/.yarn/bin:$PATH
 export PATH=$HOME/.npm-global/bin:$PATH
 export PATH=$HOME/.deno/bin:$PATH
-export PATH=$GOPATH:$PATH
+export PATH=$GOPATH/bin:$PATH
 export PATH=$VOLTA_HOME/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 

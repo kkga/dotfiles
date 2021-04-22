@@ -176,6 +176,8 @@ neovim
 nmap
 nnn
 nodejs
+notcurses
+notcurses-progs
 noto-fonts-cjk
 noto-fonts-ttf
 noto-fonts-ttf-extra
@@ -247,6 +249,8 @@ starship
 steam
 sublime-text3
 sunwait
+sv-helper
+svctl
 sway
 swayidle
 swaylock
