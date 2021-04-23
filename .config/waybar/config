@@ -71,14 +71,12 @@
     "format": " {usage}%",
     "interval": 5,
     "states": {
-      "warning": 10,
-      "critical": 90
+      "warning": 10
     }
   },
   "battery": {
     "states": {
-      "warning": 25,
-      "critical": 10
+      "warning": 10
     },
     "format-time": "{H}h {M}m",
     "format": "{capacity}%",

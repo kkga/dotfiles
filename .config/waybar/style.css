@@ -44,7 +44,7 @@ window#waybar {
 }
 
 #workspaces button.urgent,
-#battery.critical,
+#battery.warning,
 #pulseaudio.muted,
 #cpu.warning,
 #custom-yadm,

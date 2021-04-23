@@ -161,6 +161,7 @@ mdp
 meld
 mercurial
 mesa
+mesa-demos
 mesa-dri
 mesa-dri-32bit
 mesa-vaapi
