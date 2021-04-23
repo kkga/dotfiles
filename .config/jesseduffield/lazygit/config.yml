@@ -4,13 +4,13 @@ git:
     # useconfig: true
     pager: delta --paging=never
 # gui:
-#   theme:
+# theme:
 #     lightTheme: true
-#     activeBorderColor:
-#       - black
-#       - bold
-#     inactiveBorderColor:
-#       - white
+# activeBorderColor:
+# - yellow
+# inactiveBorderColor:
+# - black
+# - bright
 # selectedLineBgColor:
 #   - reverse
 # selectedRangeBgColor:
