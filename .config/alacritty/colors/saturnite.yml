@@ -3,8 +3,8 @@ colors:
     foreground: "#BCBCBC"
     background: "#1C1C1C"
   selection:
-    text: "#121212"
-    background: "#87AFD7"
+    text: "#FFFFFF"
+    background: "#5F87AF"
   normal:
     black: "#121212"
     red: "#AF5F5F"
@@ -22,4 +22,4 @@ colors:
     blue: "#87AFD7"
     magenta: "#8787AF"
     cyan: "#5FAFAF"
-    white: "#ffffff"
+    white: "#FFFFFF"
