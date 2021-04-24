@@ -60,15 +60,15 @@ set-face global superscript          "%opt{fg}"
 
 set-face global Default              "%opt{fg},default"
 
-set-face global PrimarySelection     "%opt{brwhite},%opt{cyan}"
-set-face global SecondarySelection   "%opt{brwhite},%opt{brblack}"
+set-face global PrimarySelection     "%opt{black},%opt{brblue}+fg"
+set-face global SecondarySelection   "%opt{black},%opt{blue}+fg"
 set-face global PrimaryCursor        "%opt{bg},%opt{fg}+fg"
 set-face global SecondaryCursor      "%opt{black},%opt{white}+fg"
 set-face global PrimaryCursorEol     "%opt{black},%opt{yellow}+fg"
 set-face global SecondaryCursorEol   "%opt{black},%opt{yellow}+fg"
 
 set-face global MenuForeground       "%opt{brwhite},%opt{white}"
-set-face global MenuBackground       "%opt{fg},%opt{brblack}"
+set-face global MenuBackground       "%opt{fg},%opt{bg_dim}"
 set-face global MenuInfo             "%opt{yellow}"
 set-face global Information          "%opt{bryellow},default"
 set-face global Error                "%opt{brwhite},%opt{red}"
