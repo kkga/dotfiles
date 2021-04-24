@@ -1,21 +1,21 @@
 colors:
   primary:
-    foreground: "#BCBCBC"
     background: "#1C1C1C"
+    foreground: "#BCBCBC"
   selection:
     text: "#FFFFFF"
     background: "#5F87AF"
   normal:
     black: "#121212"
-    red: "#AF5F5F"
-    green: "#5F875F"
-    yellow: "#AF8700"
-    blue: "#5F87AF"
-    magenta: "#5F5F87"
-    cyan: "#5F8787"
-    white: "#6C6C6C"
+    red: "#D7875F"
+    green: "#87AF87"
+    yellow: "#D7AF5F"
+    blue: "#87AFD7"
+    magenta: "#8787AF"
+    cyan: "#5FAFAF"
+    white: "#BCBCBC"
   bright:
-    black: "#444444"
+    black: "#808080"
     red: "#D7875F"
     green: "#87AF87"
     yellow: "#D7AF5F"
