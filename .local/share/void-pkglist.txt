@@ -27,8 +27,6 @@ bluez
 bluez-alsa
 bluez-qt5
 bottom
-brightnessctl
-brillo
 broot
 cairo-devel
 cargo
@@ -36,7 +34,6 @@ chromium
 chrony
 clang-tools-extra
 clipman
-clipmenu
 cmake
 cmus
 corectrl
@@ -63,6 +60,7 @@ elixir
 elogind
 elvish
 emptty
+etckeeper
 eudev-libudev
 exa
 execline
@@ -96,7 +94,6 @@ git-libsecret
 github-cli
 glmark2
 gnome-keyring
-gnome-terminal
 go
 godot
 gpgme

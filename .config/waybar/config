@@ -106,10 +106,6 @@
     "return-type": "json",
     "interval": 5
   },
-  "custom/weather": {
-    "exec": "curl 'https://wttr.in/?format=%t+%C'",
-    "interval": 3600
-  },
   "pulseaudio": {
     "format": "{icon} {volume}",
     "format-bluetooth": "BT {volume}% {format_source}",
