@@ -1,8 +1,7 @@
 git:
   paging:
     colorarg: always
-    # useconfig: true
-    pager: delta --paging=never
+    pager: delta --side-by-side --paging=never
 # gui:
 # theme:
 #     lightTheme: true
