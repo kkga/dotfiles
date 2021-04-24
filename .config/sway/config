@@ -4,6 +4,7 @@
 
 # xwayland disable
 default_border pixel 1
+# default_border pixel 1
 default_floating_border pixel 2
 
 smart_borders on
@@ -11,7 +12,7 @@ smart_gaps on
 hide_edge_borders --i3 smart_no_gaps
 focus_wrapping yes
 
-gaps inner 0
+gaps inner 8
 
 font monospace 9
 titlebar_border_thickness 0
@@ -82,7 +83,7 @@ output $laptop scale 2
 output $mon1 resolution 3840x2160 scale 2 position 1920 0
 output $mon2 resolution 3840x2160 scale 2
 
-output * bg #111111 solid_color
+output * bg ~/.local/share/wallpapers/11-0-Big-Sur-Color-Night.jpg fill
 output * max_render_time off
 output * adaptive_sync on
 
@@ -120,7 +121,7 @@ input "type:pointer" {
 set $col_hl         #5F5F87
 set $col_hl_br      #8787AF
 set $col_bg         #303030
-set $col_bg_br      #444444
+set $col_bg_br      #111111
 set $col_fg         #d7d7d7
 set $col_fg_dim     #999999
 
@@ -243,8 +244,8 @@ mode $mode_resize {
    bindsym $down                      resize grow height 10
    bindsym $up                        resize shrink height 10
    bindsym $right                     resize grow width 10
-   bindsym minus                      gaps inner current minus 5px
-   bindsym equal                      gaps inner current plus 5px
+   bindsym minus                      gaps inner current minus 8px
+   bindsym equal                      gaps inner current plus 8px
    bindsym Return                     mode "default"
    bindsym Escape                     mode "default"
 }

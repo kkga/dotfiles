@@ -1,3 +1,5 @@
+# COLORS
+
 declare-option str fg                'rgb:BCBCBC'
 declare-option str bg                'rgb:262626'
 declare-option str bg_dim            'rgb:303030'
@@ -18,61 +20,76 @@ declare-option str brmagenta         'rgb:8787AF'
 declare-option str brcyan            'rgb:5FAFAF'
 declare-option str brwhite           'rgb:FFFFFF'
 
-declare-option str bg_sel_primary    'rgba:5F87AFAA'
-declare-option str bg_sel_secondary  'rgba:5F87AF66'
-declare-option str bg_match          'rgba:5F878766'
 declare-option str bg_warning        'rgba:AF870044'
 declare-option str bg_error          'rgba:AF5F5F44'
 
-# code
-set-face global value                "%opt{brblue}"
-set-face global type                 "%opt{brblue}"
-set-face global variable             "%opt{brgreen}"
-set-face global module               "%opt{brmagenta}"
-set-face global function             "%opt{brblue}"
-set-face global string               "%opt{brgreen}"
-set-face global keyword              "%opt{fg}+b"
-set-face global operator             "%opt{brgreen}"
-set-face global attribute            "%opt{brblue}"
-set-face global comment              "%opt{white}"
-set-face global meta                 "%opt{brmagenta}"
-set-face global builtin              "%opt{fg}+b"
+# CODE
 
-# markup
-set-face global title                "%opt{yellow}+b"
-set-face global header               "%opt{yellow}+b"
-set-face global mono                 "%opt{brgreen}"
+set-face global type                 "%opt{brblue}"
+set-face global value                "%opt{brgreen}"
+set-face global variable             "%opt{brblue}"
+
+set-face global attribute            "%opt{brblue}"
+set-face global builtin              "%opt{fg}+b"
+set-face global comment              "%opt{white}"
+set-face global function             "%opt{brblue}"
+set-face global identifier           "%opt{brblue}"
+set-face global keyword              "%opt{fg}+b"
+set-face global meta                 "%opt{brmagenta}"
+set-face global module               "%opt{brmagenta}"
+set-face global operator             "%opt{brblue}"
+set-face global string               "%opt{bryellow}"
+
+# MARKUP
+
+set-face global header               "%opt{brcyan}+b"
+set-face global title                "%opt{brcyan}+b"
+
 set-face global block                "%opt{blue}"
-set-face global link                 "%opt{brblue}"
 set-face global bullet               "%opt{green}"
 set-face global list                 "%opt{blue}"
+set-face global link                 "%opt{brblue}"
 
-# built in faces
-set-face global Default              "%opt{fg},%opt{bg}"
-set-face global PrimarySelection     "default,%opt{bg_sel_primary}"
-set-face global SecondarySelection   "default,%opt{bg_sel_secondary}"
+set-face global mono                 "%opt{brgreen}"
+set-face global bold                 "%opt{fg},default+b"
+set-face global italic               "%opt{fg},default"
+set-face global subscript            "%opt{fg}"
+set-face global superscript          "%opt{fg}"
+
+# BUILT IN FACES
+
+set-face global Default              "%opt{fg},default"
+
+set-face global PrimarySelection     "%opt{brwhite},%opt{cyan}"
+set-face global SecondarySelection   "%opt{brwhite},%opt{brblack}"
 set-face global PrimaryCursor        "%opt{bg},%opt{fg}+fg"
 set-face global SecondaryCursor      "%opt{black},%opt{white}+fg"
 set-face global PrimaryCursorEol     "%opt{black},%opt{yellow}+fg"
 set-face global SecondaryCursorEol   "%opt{black},%opt{yellow}+fg"
-set-face global LineNumbers          "%opt{white}"
-set-face global LineNumberCursor     "%opt{fg}"
-set-face global LineNumbersWrapped   "%opt{brblack}"
-set-face global MenuForeground       "%opt{brwhite},%opt{yellow}"
+
+set-face global MenuForeground       "%opt{brwhite},%opt{white}"
 set-face global MenuBackground       "%opt{fg},%opt{brblack}"
-set-face global MenuInfo             "%opt{white}"
-set-face global Information          "%opt{brwhite},%opt{green}"
+set-face global MenuInfo             "%opt{yellow}"
+set-face global Information          "%opt{bryellow},default"
 set-face global Error                "%opt{brwhite},%opt{red}"
-set-face global StatusLine           "%opt{fg},%opt{bg_dim}"
-set-face global StatusLineMode       "%opt{brwhite},%opt{blue}+b"
+
+set-face global StatusLine           "%opt{fg}"
+set-face global StatusLineMode       "%opt{black},%opt{bryellow}"
 set-face global StatusLineInfo       "%opt{brblue}"
 set-face global StatusLineValue      "%opt{brwhite},%opt{blue}"
 set-face global StatusCursor         "%opt{white},%opt{brblack}"
 set-face global Prompt               "%opt{bryellow},default"
-set-face global MatchingChar         "default,%opt{bg_match}"
-set-face global BufferPadding        "%opt{brblack},%opt{bg}"
+
+set-face global LineNumbers          "%opt{white}"
+set-face global LineNumberCursor     "%opt{fg}"
+set-face global LineNumbersWrapped   "%opt{brblack}"
+
+set-face global BufferPadding        "%opt{brblack}"
+set-face global MatchingChar         "default,%opt{brblack}"
 set-face global Whitespace           "%opt{brblack}+f"
-set-face global LineFlagErrors       "%opt{brred}"
+
 set-face global Reference            "%opt{white},%opt{brblack}"
+
+set-face global LineFlagErrors       "%opt{brred}"
 set-face global DiagnosticError      "%opt{brred},%opt{bg_error}"
 set-face global DiagnosticWarning    "%opt{bryellow},%opt{bg_warning}"
