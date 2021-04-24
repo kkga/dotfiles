@@ -18,8 +18,9 @@ declare-option str brmagenta         'rgb:8787AF'
 declare-option str brcyan            'rgb:5FAFAF'
 declare-option str brwhite           'rgb:FFFFFF'
 
-declare-option str sel_primary       'rgba:5F87AF88'
-declare-option str sel_secondary     'rgba:5F87AF44'
+declare-option str bg_sel_primary    'rgba:5F87AFAA'
+declare-option str bg_sel_secondary  'rgba:5F87AF66'
+declare-option str bg_match          'rgba:5F878766'
 declare-option str bg_warning        'rgba:AF870044'
 declare-option str bg_error          'rgba:AF5F5F44'
 
@@ -48,8 +49,8 @@ set-face global list                 "%opt{blue}"
 
 # built in faces
 set-face global Default              "%opt{fg},%opt{bg}"
-set-face global PrimarySelection     "default,%opt{sel_primary}"
-set-face global SecondarySelection   "default,%opt{sel_secondary}"
+set-face global PrimarySelection     "default,%opt{bg_sel_primary}"
+set-face global SecondarySelection   "default,%opt{bg_sel_secondary}"
 set-face global PrimaryCursor        "%opt{bg},%opt{fg}+fg"
 set-face global SecondaryCursor      "%opt{black},%opt{white}+fg"
 set-face global PrimaryCursorEol     "%opt{black},%opt{yellow}+fg"
@@ -67,8 +68,8 @@ set-face global StatusLineMode       "%opt{brwhite},%opt{blue}+b"
 set-face global StatusLineInfo       "%opt{brblue}"
 set-face global StatusLineValue      "%opt{brwhite},%opt{blue}"
 set-face global StatusCursor         "%opt{white},%opt{brblack}"
-set-face global Prompt               "%opt{white},%opt{blue}"
-set-face global MatchingChar         "%opt{brwhite},%opt{brblack}"
+set-face global Prompt               "%opt{bryellow},default"
+set-face global MatchingChar         "default,%opt{bg_match}"
 set-face global BufferPadding        "%opt{brblack},%opt{bg}"
 set-face global Whitespace           "%opt{brblack}+f"
 set-face global LineFlagErrors       "%opt{brred}"
