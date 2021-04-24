@@ -33,7 +33,7 @@ face global string ${lucius_green}
 face global keyword ${lucius_blue}+b
 face global operator ${lucius_green}
 face global attribute ${lucius_light_blue}
-face global comment ${lucius_grey}
+face global comment ${lucius_grey}+i
 face global documentation comment
 face global meta ${lucius_purple}
 face global builtin default+b

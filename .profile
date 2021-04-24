@@ -3,7 +3,6 @@ export GOPATH="$HOME/.go"
 
 export PATH=/var/lib/flatpak/exports/bin/:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
-export PATH=$HOME/.yarn/bin:$PATH
 export PATH=$HOME/.npm-global/bin:$PATH
 export PATH=$HOME/.deno/bin:$PATH
 export PATH=$GOPATH/bin:$PATH
@@ -21,10 +20,10 @@ export MANPAGER=most
 export MOST_INITFILE=$HOME/.config/most/mostrc
 
 # export DMENU_PROGRAM='term-dmenu'
-# export FLOATING_TERMINAL='foot -f monospace:size=12 -a popup'
+export FLOATING_TERMINAL='foot -f monospace:size=13 -a popup'
 
 export FZF_DEFAULT_COMMAND='fd --type f'
-export FZF_DEFAULT_OPTS="--color=bw --layout=reverse --inline-info --height=40 --preview-window=down:60%:border-horizontal"
+export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --height=40 --preview-window=down:60%:border-horizontal"
 
 if [ $(uname -s) == "Linux" ]; then
     eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)
