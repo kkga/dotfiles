@@ -34,9 +34,6 @@
 [interactive]
 	diffFilter = delta --color-only
 [delta]
-	; syntax-theme = ansi-light
-	side-by-side = true
-	line-numbers = false
 	hunk-header-decoration-style = none
 [init]
 	defaltBranch = main

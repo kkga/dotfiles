@@ -1,5 +1,5 @@
-@define-color background  #000;
-@define-color foreground  rgba(255,255,255,0.7);
+@define-color background  rgba(0,0,0,0.75);
+@define-color foreground  #bcbcbc;
 @define-color bg-dim      rgba(255,255,255,0.2);
 @define-color border      rgba(255,255,255,0.1);
 @define-color text-bright rgba(255,255,255,1);
@@ -44,7 +44,7 @@ window#waybar {
 }
 
 #workspaces button.urgent,
-#battery.critical,
+#battery.warning,
 #pulseaudio.muted,
 #cpu.warning,
 #custom-yadm,

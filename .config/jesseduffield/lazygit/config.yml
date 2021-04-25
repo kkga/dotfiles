@@ -1,16 +1,15 @@
 git:
   paging:
     colorarg: always
-    # useconfig: true
-    pager: delta --paging=never
+    pager: delta --side-by-side --paging=never
 # gui:
-#   theme:
+# theme:
 #     lightTheme: true
-#     activeBorderColor:
-#       - black
-#       - bold
-#     inactiveBorderColor:
-#       - white
+# activeBorderColor:
+# - yellow
+# inactiveBorderColor:
+# - black
+# - bright
 # selectedLineBgColor:
 #   - reverse
 # selectedRangeBgColor:
