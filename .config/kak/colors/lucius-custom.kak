@@ -29,8 +29,8 @@ face global type ${lucius_blue}
 face global variable ${lucius_green}
 face global module ${lucius_green}
 face global function ${lucius_orange}
-face global string ${lucius_green}
-face global keyword ${lucius_blue}+b
+face global string ${lucius_light_green}
+face global keyword default+b
 face global operator ${lucius_green}
 face global attribute ${lucius_light_blue}
 face global comment ${lucius_grey}
