@@ -20,25 +20,25 @@ declare-option str brmagenta         'rgb:8787AF'
 declare-option str brcyan            'rgb:5FAFAF'
 declare-option str brwhite           'rgb:FFFFFF'
 
-declare-option str bg_warning        'rgba:AF870044'
-declare-option str bg_error          'rgba:AF5F5F44'
+declare-option str bg_warning        'rgba:AF870022'
+declare-option str bg_error          'rgba:AF5F5F22'
 
 # CODE
 
-set-face global type                 "%opt{brblue}"
-set-face global value                "%opt{brgreen}"
-set-face global variable             "%opt{brblue}"
+set-face global type                 "%opt{brmagenta}"
+set-face global value                "%opt{brblue}"
+set-face global variable             "%opt{brred}"
 
 set-face global attribute            "%opt{brblue}"
 set-face global builtin              "%opt{fg}+b"
 set-face global comment              "%opt{white}"
-set-face global function             "%opt{brblue}"
-set-face global identifier           "%opt{brblue}"
+set-face global function             "%opt{bryellow}"
+# set-face global identifier           "%opt{brblue}"
 set-face global keyword              "%opt{fg}+b"
 set-face global meta                 "%opt{brmagenta}"
 set-face global module               "%opt{brmagenta}"
-set-face global operator             "%opt{brblue}"
-set-face global string               "%opt{bryellow}"
+set-face global operator             "%opt{brgreen}"
+set-face global string               "%opt{brgreen}"
 
 # MARKUP
 
@@ -70,7 +70,7 @@ set-face global SecondaryCursorEol   "%opt{black},%opt{yellow}+fg"
 set-face global MenuForeground       "%opt{brwhite},%opt{white}"
 set-face global MenuBackground       "%opt{fg},%opt{brblack}"
 set-face global MenuInfo             "%opt{yellow}"
-set-face global Information          "%opt{bryellow},default"
+set-face global Information          "%opt{bryellow},%opt{bg_dim}"
 set-face global Error                "%opt{brwhite},%opt{red}"
 
 set-face global StatusLine           "%opt{fg}"
@@ -88,8 +88,7 @@ set-face global BufferPadding        "%opt{brblack}"
 set-face global MatchingChar         "default,%opt{brblack}"
 set-face global Whitespace           "%opt{brblack}+f"
 
-set-face global Reference            "%opt{white},%opt{brblack}"
-
 set-face global LineFlagErrors       "%opt{brred}"
-set-face global DiagnosticError      "%opt{brred},%opt{bg_error}"
-set-face global DiagnosticWarning    "%opt{bryellow},%opt{bg_warning}"
+# set-face global Reference            "default,%opt{brblack}"
+# set-face global DiagnosticError      "%opt{brred},%opt{bg_error}"
+# set-face global DiagnosticWarning    "%opt{bryellow},%opt{bg_warning}"
