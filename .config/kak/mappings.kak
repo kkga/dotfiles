@@ -1,4 +1,48 @@
-# global mappings -------------------------------------------------------------
+# GLOBAL -------------------------------------------------------------
+
+# work around some weird defaults
+map global normal a	   		'li'
+map global normal c    		'<a-c>'
+map global normal <a-c>		'c'
+map global normal d    		'<a-d>'
+map global normal <a-d>		'd'
+map global normal x    		'<a-x>'
+
+# select full lines
+map global normal J    		'J<a-x>'
+map global normal K    		'K<a-x>'
+
+# search case-insensitive
+map global normal /    		'/(?i)'
+map global normal ?    		'?(?i)'
+map global normal <a-/>		'<a-/>(?i)'
+map global normal <a-?>		'<a-?>(?i)'
+
+# navigate by paragraphs
+map global normal <c-n> 	']p;'
+map global normal <c-p> 	'[p;'
+
+# ciao macros: q, w and e are now together
+map global normal ^     	'q'
+map global normal <a-^> 	'Q'
+map global normal q     	'b'
+map global normal Q     	'B'
+map global normal <a-q> 	'<a-b>'
+map global normal <a-Q> 	'<a-B>'
+
+# readline
+map global insert <c-w> 	'<esc>bdi'
+map global insert <c-u> 	'<esc>xdO'
+
+map global normal <down>	': move-line-below<ret>'
+map global normal <up>  	': move-line-above<ret>'
+
+map global normal b     	': enter-buffers-mode<ret>'
+map global normal B     	': enter-user-mode -lock buffers<ret>'
+
+map global normal =     	': format<ret>'
+map global normal '#'   	': comment-line<ret>'
+map global normal <a-#> 	': comment-block<ret>'
 
 # jj to exit
 hook global InsertChar j %{ try %{
@@ -6,42 +50,12 @@ hook global InsertChar j %{ try %{
   exec <esc>
 }}
 
-# navigate by paragraphs
-map global normal <c-n> ']p;'
-map global normal <c-p> '[p;'
-
-# ciao macros: q, w and e are now together
-map global normal ^ q
-map global normal <a-^> Q
-
-map global normal q b
-map global normal Q B
-map global normal <a-q> <a-b>
-map global normal <a-Q> <a-B>
-
-# Search case-insensitive by default
-map global normal "/" "/(?i)"
-map global normal "?" "?(?i)"
-map global normal "<a-/>" "<a-/>(?i)"
-map global normal "<a-?>" "<a-?>(?i)"
-
-map global normal -docstring 'move selected lines below' <down>  ': move-line-below<ret>'
-map global normal -docstring 'move selected lines above' <up>    ': move-line-above<ret>'
-
-map global normal -docstring 'buffers…       '           b       ': enter-buffers-mode<ret>'
-map global normal -docstring 'buffers (lock)…'           B       ': enter-user-mode -lock buffers<ret>'
-
-map global normal -docstring 'format buffer'             =       ': format<ret>'
-map global normal -docstring 'comment line'              '#'     ': comment-line<ret>'
-map global normal -docstring 'comment block'             '<a-#>' ': comment-block<ret>'
-
 # autocomplete with tab
 hook global InsertCompletionShow .* %{ map window insert <tab> <c-n> }
 hook global InsertCompletionHide .* %{ map window insert <tab> <tab> }
 hook global InsertCompletionShow .* %{ map window insert <s-tab> <c-p> }
 
-
-# user mappings ---------------------------------------------------------------
+# USER ---------------------------------------------------------------
 
 # clipboard
 evaluate-commands %sh{
@@ -49,15 +63,11 @@ evaluate-commands %sh{
         Linux) copy="wl-copy"; paste="wl-paste" ;;
         Darwin)  copy="pbcopy"; paste="pbpaste" ;;
     esac
-    printf "map global user -docstring 'paste (after) from clipboard' p '<a-!>%s<ret>'\n" "$paste"
-    printf "map global user -docstring 'paste (before) from clipboard' P '!%s<ret>'\n" "$paste"
-    printf "map global user -docstring 'yank to clipboard' y '<a-|>%s<ret>:echo -markup %%{{Information}copied selection clipboard}<ret>'\n" "$copy"
-    printf "map global user -docstring 'replace from clipboard' R '|%s<ret>'\n" "$paste"
+    printf "map global user -docstring 'clip-paste (after)' p '<a-!>%s<ret>'\n" "$paste"
+    printf "map global user -docstring 'clip-paste (before)' P '!%s<ret>'\n" "$paste"
+    printf "map global user -docstring 'clip-yank' y '<a-|>%s<ret>:echo -markup %%{{Information}copied selection clipboard}<ret>'\n" "$copy"
+    printf "map global user -docstring 'clip-replace' R '|%s<ret>'\n" "$paste"
 }
-
-# ui options
-map global user -docstring 'toggle numbers'        L ": toggle-highlighter global/ number-lines -hlcursor<ret>"
-map global user -docstring 'toggle wrap'           W ': toggle-highlighter global/ wrap -word <ret>'
 
 # buffer
 map global user -docstring 'write'                 w ': w<ret>'
@@ -76,3 +86,8 @@ map global user -docstring 'grep buffer'           G ': + kcr-fzf-grep %val{buff
 map global user -docstring 'disable autoformat'    d ': disable-autoformat<ret>'
 map global user -docstring 'surround mode'         s ': enter-user-mode surround<ret>'
 map global user -docstring 'LSP mode'              l ': enter-user-mode lsp<ret>'
+
+# ui options
+map global user -docstring 'toggle line numbers'   L ': toggle-highlighter global/ number-lines -hlcursor<ret>'
+map global user -docstring 'toggle wrap'           W ': toggle-highlighter global/ wrap -word <ret>'
+

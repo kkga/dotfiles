@@ -18,7 +18,7 @@ hook global ModuleLoaded kitty %{
     alias global terminal kitty-terminal
     alias global popup kitty-terminal
 }
-plug auto-pairs https://github.com/alexherbo2/auto-pairs.kak
+plug auto-pairs https://github.com/alexherbo2/auto-pairs.kak %{ auto-pairs-enable }
 plug explore https://github.com/alexherbo2/explore.kak %{
     explore-enable
     define-command explore-files -params .. '+ kcr-fzf-files %arg{@}'
@@ -35,6 +35,7 @@ plug palette https://github.com/alexherbo2/palette.kak
 plug change-directory https://github.com/alexherbo2/change-directory.kak
 plug sleuth https://github.com/alexherbo2/sleuth.kak %{ sleuth-enable }
 plug move-line https://github.com/alexherbo2/move-line.kak
+plug word-select https://github.com/alexherbo2/word-select.kak %{ word-select-add-mappings }
 
 plug-old sudo-write https://github.com/occivink/kakoune-sudo-write
 plug-old vertical-selection https://github.com/occivink/kakoune-vertical-selection

@@ -1,5 +1,5 @@
 define-command files -docstring 'Open one or many files' %{ evaluate-commands %sh{
-    FILES=$(fd --hidden --type file | $DMENU_PROGRAM)
+    FILES=$(fd --hidden --type file | bemenu --fn 'monospace 12' -l 8 -p '')
     for file in $FILES; dom
         printf 'eval -client %%{%s} edit %%{%s}\n' "$kak_client" "$file" | kak -p "$kak_session"
     done

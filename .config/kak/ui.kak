@@ -1,17 +1,22 @@
-# ui settings
+# UI --------------------------------------------------------------------------
+
 colorscheme saturnite
+
 set-option global tabstop 4
 set-option global indentwidth 4
 set-option global scrolloff 12,4
-set-option global ui_options ncurses_status_on_top=true ncurses_assistant=none
+set-option global ui_options ncurses_status_on_top=true ncurses_assistant=off
 set-option global startup_info_version 20200901
-add-highlighter global/ number-lines -hlcursor -separator ' '
-add-highlighter global/ wrap -word
+set-option global autoreload yes
+
+# add-highlighter global/ number-lines -hlcursor
+# add-highlighter global/ wrap -word
 add-highlighter global/ regex \h+$ 0:Error
 add-highlighter global/ show-matching
-add-highlighter global/ regex \b(TODO|FIXME|XXX|NOTE)\b 0:magenta,black+rb
+add-highlighter global/ regex \b(TODO|FIXME|XXX|NOTE)\b 0:yellow,black+rb
 
-# modeline
+# MODELINE --------------------------------------------------------------------
+
 define-command update-status %{ evaluate-commands %sh{
     printf %s 'set-option buffer modelinefmt %{'
     if [ "$kak_opt_lsp_diagnostic_error_count" -ne 0 ]; then
@@ -27,6 +32,7 @@ define-command update-status %{ evaluate-commands %sh{
     printf %s " · {meta}$kak_client{default}@{attribute}$kak_session"
     printf %s '}'
 }}
+
 hook global WinDisplay .* update-status
 hook global BufSetOption lsp_diagnostic_error_count=.* update-status
 hook global BufSetOption lsp_diagnostic_warning_count=.* update-status
