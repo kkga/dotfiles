@@ -68,7 +68,7 @@ set-face global PrimaryCursorEol     "%opt{black},%opt{yellow}+fg"
 set-face global SecondaryCursorEol   "%opt{black},%opt{yellow}+fg"
 
 set-face global MenuForeground       "%opt{brwhite},%opt{white}"
-set-face global MenuBackground       "%opt{fg},%opt{bg_dim}"
+set-face global MenuBackground       "%opt{fg},%opt{brblack}"
 set-face global MenuInfo             "%opt{yellow}"
 set-face global Information          "%opt{bryellow},default"
 set-face global Error                "%opt{brwhite},%opt{red}"
