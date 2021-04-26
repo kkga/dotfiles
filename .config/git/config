@@ -8,6 +8,7 @@
 	a = add
 	c = commit
 	co = checkout
+	clone = clone
 	b = branch
 	s = status
 	sl = status --long
