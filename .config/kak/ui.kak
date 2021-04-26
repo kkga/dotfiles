@@ -27,6 +27,9 @@ define-command update-status %{ evaluate-commands %sh{
     fi
     printf %s ' %sh{pwd | sed "s|^$HOME|~|"}'
     printf %s ' · %val{bufname} [%opt{filetype}]'
+    if [ -f "$kak_buffile" ] && [ ! -w "$kak_buffile" ]; then
+        printf %s '{red}[]{default}'
+    fi
     printf %s ' · %val{cursor_line}:%val{cursor_char_column}/%val{buf_line_count}'
     printf %s ' {{context_info}} {{mode_info}}'
     printf %s " · {meta}$kak_client{default}@{attribute}$kak_session"
