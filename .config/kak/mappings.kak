@@ -29,6 +29,11 @@ map global normal q     	'b'
 map global normal Q     	'B'
 map global normal <a-q> 	'<a-b>'
 map global normal <a-Q> 	'<a-B>'
+map -docstring 'Next word' global normal w ': word-select-next-word<ret>'
+map -docstring 'Next big word' global normal <a-w> ': word-select-next-big-word<ret>'
+map -docstring 'Previous word' global normal q ': word-select-previous-word<ret>'
+map -docstring 'Previous big word' global normal <a-q> ': word-select-previous-big-word<ret>'
+
 
 # readline
 map global insert <c-w> 	'<esc>bdi'
