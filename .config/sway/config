@@ -4,7 +4,6 @@
 
 # xwayland disable
 default_border pixel 1
-# default_border pixel 1
 default_floating_border pixel 2
 
 smart_borders on
@@ -16,9 +15,9 @@ gaps inner 0
 
 font monospace 10
 titlebar_border_thickness 0
-titlebar_padding 6 1
+titlebar_padding 4 0
 
-seat * xcursor_theme Yaru 24
+seat * xcursor_theme Adwaita 24
 seat * hide_cursor 5000
 
 # Autostart {{{1
@@ -85,7 +84,7 @@ output $mon2 resolution 3840x2160 scale 2
 
 output * bg ~/.local/share/wallpapers/11-0-Big-Sur-Color-Night.jpg fill
 output * max_render_time off
-output * adaptive_sync on
+output * adaptive_sync off
 
 # Inputs {{{1
 
