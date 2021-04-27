@@ -17,6 +17,7 @@ hook -group windowing-detection global ClientCreate '.*' %{
 hook global ModuleLoaded kitty %{
     alias global terminal kitty-terminal
     alias global popup kitty-terminal
+    # set-option global kitty_window_type 'os'
 }
 plug auto-pairs https://github.com/alexherbo2/auto-pairs.kak %{ auto-pairs-enable }
 plug explore https://github.com/alexherbo2/explore.kak %{

@@ -2,10 +2,10 @@
 
 # work around some weird defaults
 map global normal a	   		'li'
-map global normal c    		'<a-c>'
-map global normal <a-c>		'c'
-map global normal d    		'<a-d>'
-map global normal <a-d>		'd'
+# map global normal c    		'<a-c>'
+# map global normal <a-c>		'c'
+# map global normal d    		'<a-d>'
+# map global normal <a-d>		'd'
 map global normal x    		'<a-x>'
 
 # select full lines
