@@ -26,7 +26,8 @@ exec mako
 exec pipewire
 exec pipewire-pulse
 exec foot --server
-exec gammastep
+# exec gammastep
+exec wlsunset -l 55.0 -L 37.0
 exec light -S 35
 exec persway -w
 exec wl-paste -t text --watch clipman store --max-items=50
