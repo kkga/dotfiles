@@ -109,6 +109,7 @@ hidapi
 htop
 i3status-rust
 imv
+incron
 inotify-tools
 inxi
 iwd
