@@ -72,6 +72,7 @@ recents = "--sort created- --created-after 'last two weeks'"
 
 e = "zk edit --sort modified --interactive $argv"
 elast = "zk edit --limit 1 --sort modified- $argv"
+ls = "zk list --sort modified --interactive $argv"
 l = "zk list --sort modified --interactive $argv"
 del = "zk list --sort modified --quiet --interactive --format path --delimiter0 $argv | xargs -r -0 trash"
 recent = "zk edit --sort created- --created-after 'last two weeks' --interactive"
