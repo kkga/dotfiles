@@ -1,4 +1,4 @@
 [Desktop Entry]
 Type=Application
 Name=File Manager
-Exec=footclient lf %u
+Exec=alacritty -e lf %u

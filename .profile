@@ -12,6 +12,7 @@ export PATH=$HOME/.local/bin:$PATH
 export XBPS_DISTDIR=$HOME/.void-packages
 
 export BROWSER=firefox
+export TERMINAL=alacritty
 export EDITOR="kcr edit"
 export VISUAL="kcr edit"
 export DMENU='wofi --dmenu'
@@ -19,7 +20,7 @@ export DMENU='wofi --dmenu'
 export MANPAGER=most
 export MOST_INITFILE=$HOME/.config/most/mostrc
 
-# export DMENU_PROGRAM='term-dmenu'
+export DMENU_PROGRAM='term-dmenu'
 export FLOATING_TERMINAL='alacritty --class popup -e'
 
 export FZF_DEFAULT_COMMAND='fd --type f'

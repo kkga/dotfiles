@@ -2,13 +2,13 @@ import:
   - /home/kkga/.config/alacritty/colors/saturnite.yml
 
 font:
-  # normal:
-    # family: agave
+  size: 11
+  normal:
+    family: 'Essential PragmataPro'
   # style: Narrow Regular
   # bold:
   #   family: agave
   # style: semibold
-  size: 11
   # offset:
   #   x: 0
   #   y: -1
@@ -25,7 +25,6 @@ use_thin_strokes: true
 #   program: fish
 #
 window:
-  decorations: none
   dimensions:
     columns: 120
     lines: 40
