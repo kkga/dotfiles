@@ -25,7 +25,7 @@ seat * hide_cursor 5000
 exec mako
 exec pipewire
 exec pipewire-pulse
-exec foot --server
+# exec foot --server
 # exec gammastep
 exec wlsunset -l 55.0 -L 37.0
 exec light -S 35
@@ -47,7 +47,7 @@ exec_always {
 
 # Variables {{{1
 
-set $term 'footclient'
+set $term 'alacritty'
 set $drun 'wofi'
 set $lock 'swaylock -K -e -f -c 222222'
 set $clipboard 'clipman pick -t wofi'

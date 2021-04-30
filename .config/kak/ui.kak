@@ -4,8 +4,12 @@ colorscheme saturnite
 
 set-option global tabstop 4
 # set-option global indentwidth 4
-set-option global scrolloff 12,4
-set-option global ui_options ncurses_status_on_top=true ncurses_assistant=off ncurses_set_title=off
+set-option global scrolloff 4,4
+set-option global ui_options ncurses_status_on_top=true
+set-option -add global ui_options ncurses_assistant=off
+set-option -add global ui_options ncurses_set_title=off
+set-option -add global ui_options ncurses_padding_char=╱
+set-option -add global ui_options ncurses_padding_fill=yes
 set-option global startup_info_version 20200901
 set-option global autoreload yes
 

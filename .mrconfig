@@ -6,11 +6,11 @@ checkout = git clone 'https://github.com/Seirdy/term-dmenu' 'term-dmenu'
 [repos/connect.kak]
 checkout = git clone 'https://github.com/kakounedotcom/connect.kak' 'connect.kak'
 
-[repos/nb]
-checkout = git clone 'https://github.com/xwmx/nb' 'nb'
-
 [repos/kakoune]
 checkout = git clone 'https://github.com/mawww/kakoune' 'kakoune'
 
 [repos/kakoune.cr]
 checkout = git clone 'https://github.com/alexherbo2/kakoune.cr' 'kakoune.cr'
+
+[repos/zk]
+checkout = git clone 'https://github.com/mickael-menu/zk.git' 'zk'
