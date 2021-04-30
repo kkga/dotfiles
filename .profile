@@ -20,7 +20,7 @@ export MANPAGER=most
 export MOST_INITFILE=$HOME/.config/most/mostrc
 
 # export DMENU_PROGRAM='term-dmenu'
-export FLOATING_TERMINAL='foot -f monospace:size=13 -a popup'
+export FLOATING_TERMINAL='alacritty --class popup -e'
 
 export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --height=40 --preview-window=down:60%:border-horizontal"

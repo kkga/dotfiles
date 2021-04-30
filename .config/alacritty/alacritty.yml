@@ -2,8 +2,8 @@ import:
   - /home/kkga/.config/alacritty/colors/saturnite.yml
 
 font:
-  normal:
-    family: agave
+  # normal:
+    # family: agave
   # style: Narrow Regular
   # bold:
   #   family: agave
@@ -16,7 +16,7 @@ font:
   #   x: 0
   #   y: -1
 
-# background_opacity: 0.95
+background_opacity: 0.98
 
 draw_bold_text_with_bright_colors: true
 use_thin_strokes: true
@@ -27,8 +27,8 @@ use_thin_strokes: true
 window:
   decorations: none
   dimensions:
-    columns: 80
-    lines: 32
+    columns: 120
+    lines: 40
 
 cursor:
   style:
