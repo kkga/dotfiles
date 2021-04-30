@@ -94,3 +94,9 @@ roots = [".import"]
 command = "nc"
 args = ["localhost", "6008"]
 
+[language.zk]
+filetypes = ["markdown"]
+roots = [".zk"]
+command = "zk"
+args = ["lsp"]
+
