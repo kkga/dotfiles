@@ -25,7 +25,6 @@ plug explore https://github.com/alexherbo2/explore.kak %{
     define-command explore-files -params .. '+ kcr-fzf-files %arg{@}'
     define-command explore-buffers -params .. '+ kcr-fzf-buffers %arg{@}'
 }
-plug search https://github.com/alexherbo2/search.kak
 plug edit https://github.com/alexherbo2/edit.kak
 plug manual-indent https://github.com/alexherbo2/manual-indent.kak
 plug objectify https://github.com/alexherbo2/objectify.kak
@@ -37,7 +36,6 @@ plug change-directory https://github.com/alexherbo2/change-directory.kak
 plug sleuth https://github.com/alexherbo2/sleuth.kak %{ sleuth-enable }
 plug move-line https://github.com/alexherbo2/move-line.kak
 plug word-select https://github.com/alexherbo2/word-select.kak
-plug lf https://github.com/TeddyDD/kakoune-lf
 
 plug-old sudo-write https://github.com/occivink/kakoune-sudo-write
 plug-old vertical-selection https://github.com/occivink/kakoune-vertical-selection
