@@ -2,4 +2,4 @@
 
 secret=$(prs list --list | $DMENU_PROGRAM )
 
-[[ ! -z '$secret' ]] && ydotool type $(prs show $secret --password --no-interact --quiet)
+[[ ! -z '$secret' ]] && wtype $(prs show $secret --password --no-interact --quiet)
