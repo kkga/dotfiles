@@ -38,7 +38,7 @@ hook global BufOpenFile  .* modeline-parse
 hook global BufCreate    .* %{ try %{ editorconfig-load } }
 hook global BufWritePost .* %{ git show-diff }
 hook global BufReload    .* %{ git show-diff }
-hook global WinCreate    .* %{ manual-indent-enable }
+# hook global WinCreate    .* %{ manual-indent-enable }
 
 # cd into current-buffer dir or git dir on file open
 hook global WinDisplay   .* %{ evaluate-commands %sh{

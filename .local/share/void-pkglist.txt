@@ -227,6 +227,7 @@ ripgrep
 roxterm
 safeeyes
 sakura
+scdoc
 scons
 seahorse
 seatd
