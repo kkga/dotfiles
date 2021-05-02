@@ -27,14 +27,14 @@
   "sway/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
-    "format": "<b>{index}</b><small> /{name}</small>"
+    "format": "{index}"
   },
   "sway/window": {
     "format": "{}",
     "max-length": 80
   },
   "sway/mode": {
-    "format": " ---  {}  ---  ",
+    "format": " --- {} --- ",
     "max-length": 50
   },
   "custom/updates": {
