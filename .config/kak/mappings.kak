@@ -87,11 +87,9 @@ map global user -docstring 'grep'                  g ': + kcr-fzf-grep<ret>'
 map global user -docstring 'grep buffer'           G ': + kcr-fzf-grep %val{buffile}<ret>'
 
 # tools
-map global user -docstring 'disable autoformat'    d ': disable-autoformat<ret>'
 map global user -docstring 'surround mode'         s ': enter-user-mode surround<ret>'
 map global user -docstring 'LSP mode'              l ': enter-user-mode lsp<ret>'
 
 # ui options
 map global user -docstring 'toggle line numbers'   L ': toggle-highlighter global/ number-lines -hlcursor<ret>'
 map global user -docstring 'toggle wrap'           W ': toggle-highlighter global/ wrap -word <ret>'
-
