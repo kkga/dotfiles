@@ -29,7 +29,6 @@ exec pipewire-pulse
 # exec gammastep
 exec wlsunset -l 55.0 -L 37.0
 exec light -S 35
-exec persway -w
 exec wl-paste -t text --watch clipman store --max-items=50
 exec clipman restore
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob -a top -a left -W 200 -H 20 -M 8 -o 2 -b 2 -p 2
@@ -143,10 +142,10 @@ for_window [ title="Picture-in-Picture" ] floating enable
 for_window [ class="Jitsi Meet"         ] floating enable
 for_window [ app_id="spot"              ] floating enable
 for_window [ app_id="mpv"               ] floating enable
-for_window [ app_id="^launcher$"        ] floating enable
-for_window [ app_id="dmenu.*"           ] floating enable
-for_window [ app_id="^popup$"           ] floating enable
-for_window [ app_id="Alacritty · Popup" ] floating enable
+for_window [ app_id="dmenu.*"           ] floating enable, resize set width 100ppt height 40ppt, move position 0px 0px
+for_window [ app_id="^launcher$"        ] floating enable, resize set width 100ppt height 40ppt, move position 0px 0px
+for_window [ app_id="^popup$"           ] floating enable, resize set width 100ppt height 40ppt, move position 0px 0px
+for_window [ app_id="Alacritty · Popup" ] floating enable, resize set width 100ppt height 40ppt, move position 0px 0px
 
 
 # Key bindings {{{1

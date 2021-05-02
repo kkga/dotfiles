@@ -1,0 +1,17 @@
+#!/bin/sh
+
+# Open files.
+#
+# Usage:
+#
+# kcr fzy files [paths]
+
+# – fzy (https://github.com/junegunn/fzf)
+# – fd (https://github.com/sharkdp/fd)
+
+fd --type file . "$@" | fzy -l 24 |
+
+# Open files
+while read file; do
+  kcr edit "$file"
+done
