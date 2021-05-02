@@ -26,7 +26,7 @@
   "sway/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
-    "format": "{index}:{name}"
+    "format": "<b>{index}</b><small> /{name}</small>"
   },
   "sway/window": {
     "format": "{}",
