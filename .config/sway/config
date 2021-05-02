@@ -83,7 +83,7 @@ output $laptop scale 2
 output $mon1 resolution 3840x2160 scale 2 position 1920 0
 output $mon2 resolution 3840x2160 scale 2
 
-output * bg ~/.local/share/wallpapers/11-0-Big-Sur-Color-Night.jpg fill
+output * bg #111111 solid_color
 output * max_render_time off
 output * adaptive_sync off
 
