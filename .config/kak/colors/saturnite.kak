@@ -26,15 +26,15 @@ declare-option str bg_error          'rgba:AF5F5F22'
 # CODE
 
 set-face global type                 "%opt{brmagenta}"
-set-face global value                "%opt{brblue}"
+set-face global value                "%opt{brcyan}"
 set-face global variable             "%opt{brred}"
 
 set-face global attribute            "%opt{brblue}"
 set-face global builtin              "%opt{fg}+b"
 set-face global comment              "%opt{white}"
 set-face global function             "%opt{bryellow}"
-# set-face global identifier           "%opt{brblue}"
-set-face global keyword              "%opt{fg}+b"
+# set-face global identifier           "%opt{brcyan}"
+set-face global keyword              "%opt{brblue}"
 set-face global meta                 "%opt{brmagenta}"
 set-face global module               "%opt{brmagenta}"
 set-face global operator             "%opt{brgreen}"

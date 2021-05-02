@@ -15,7 +15,6 @@ export BROWSER=firefox
 export TERMINAL=alacritty
 export EDITOR="kcr edit"
 export VISUAL="kcr edit"
-# export DMENU='wofi --dmenu'
 
 export DMENU_PROGRAM='term-dmenu'
 export FLOATING_TERMINAL='alacritty --class popup -e'

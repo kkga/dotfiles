@@ -1,9 +1,11 @@
-alias vim="nvim"
 alias gg="lazygit"
 alias ls="exa --group --git --group-directories-first"
 alias y="yadm"
 alias cat="bat"
 alias xr='doas xbps-remove'
+
+alias cp="cp -i"
+alias mv='mv -i'
 
 alias k='kcr edit'
 alias K='kcr-fzf-shell'

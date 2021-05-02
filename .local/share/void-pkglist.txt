@@ -126,6 +126,7 @@ libX11-devel
 libXcomposite-devel
 libXdamage-devel
 libXrender-devel
+libXres-devel
 libXtst-devel
 libXxf86vm-devel
 libcap-devel
@@ -133,6 +134,7 @@ libdrm-devel
 libev-devel
 libgpg-error-devel
 libinput-devel
+libseat-devel
 libspa-bluetooth
 libspa-vulkan
 libusb-compat-devel
@@ -308,6 +310,8 @@ wmctrl
 wob
 wofi
 xarchiver
+xcb-util-errors-devel
+xcb-util-wm-devel
 xclip
 xdg-desktop-portal-gtk
 xdg-desktop-portal-wlr
