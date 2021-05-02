@@ -1,3 +1,0 @@
-Name=Sway-run
-Exec=sway-run.sh
-Environment=wayland
