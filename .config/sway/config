@@ -65,7 +65,7 @@ exec swayidle -w \
           resume 'swaymsg "output * dpms on"' \
           before-sleep 'loginctl lock-session $XDG_SESSION_ID' \
           before-sleep 'playerctl pause' \
-          before-sleep $lock
+          lock $lock
 
 bindswitch lid:toggle exec $lock
 
@@ -255,7 +255,7 @@ set $powermode                        "[E]xit - [R]eebot - [L]ock"
 mode $powermode {
    bindsym e                          exec swaymsg exit
    bindsym r                          exec loginctl reboot
-   bindsym l                          exec $lock; mode "default"
+   bindsym l                          exec loginctl lock-session; mode "default"
    bindsym Return                     mode "default"
    bindsym Escape                     mode "default"
 }
