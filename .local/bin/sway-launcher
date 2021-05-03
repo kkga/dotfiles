@@ -1,3 +1,2 @@
 #!/usr/bin/env bash
 swaymsg exec "$(floating-terminal ~/repos/sway-launcher-desktop/sway-launcher-desktop.sh)"
-
