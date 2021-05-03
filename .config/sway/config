@@ -25,8 +25,6 @@ seat * hide_cursor 5000
 exec mako
 exec pipewire
 exec pipewire-pulse
-# exec foot --server
-# exec gammastep
 exec wlsunset -l 55.0 -L 37.0
 exec light -S 35
 exec wl-paste -t text --watch clipman store --max-items=50
@@ -47,9 +45,10 @@ exec_always {
 # Variables {{{1
 
 set $term 'alacritty'
-set $drun 'wofi'
+set $drun 'sway-launcher'
+set $run 'dmenu-runner'
 set $lock 'swaylock -K -e -f -c 222222'
-set $clipboard 'clipman pick -t wofi'
+set $clipboard floating-terminal clipman pick --print0 --tool=CUSTOM --tool-args="fzf --prompt 'clip > ' --read0"
 
 set $mod Mod4
 set $left h
@@ -60,15 +59,10 @@ set $right l
 # Idle config {{{1
 
 exec swayidle -w \
-          timeout 300 $lock \
-          timeout 600 'swaymsg "output * dpms off"' \
+          timeout 600 $lock \
+          timeout 900 'swaymsg "output * dpms off"' \
           resume 'swaymsg "output * dpms on"' \
           before-sleep $lock
-
-# exec swayidle -w \
-# 	timeout 600 $lock \
-# 	timeout 1200 'loginctl suspend' \
-# 	before-sleep $lock
 
 bindswitch lid:toggle exec $lock
 
@@ -155,6 +149,7 @@ for_window [ app_id="Alacritty · Popup" ] floating enable, resize set width 100
 
    bindsym $mod+Shift+Return          exec $term
    bindsym $mod+d                     exec $drun
+   # bindsym $mod+Control+d             exec $run
    bindsym $mod+c                     exec $clipboard
    bindsym Mod1+Tab                   exec window-switcher
 

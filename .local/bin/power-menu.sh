@@ -3,7 +3,7 @@
 # Launch a dmenu based power menu.
 
 selection=$(
-    echo "lock\nshutdown\nreboot\nsuspend" | $DMENU
+    echo "lock\nshutdown\nreboot\nsuspend" | $DMENU_PROGRAM
 )
 
 case "$selection" in

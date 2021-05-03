@@ -27,7 +27,6 @@ bluez
 bluez-alsa
 bluez-qt5
 bottom
-broot
 cairo-devel
 cargo
 chromium
@@ -59,7 +58,6 @@ dutree
 elixir
 elogind
 elvish
-emptty
 etckeeper
 eudev-libudev
 exa
@@ -169,7 +167,6 @@ mesa-vdpau
 mesa-vulkan-radeon
 mesa-vulkan-radeon-32bit
 meson
-most
 mpv
 myrepos
 neofetch
@@ -242,7 +239,6 @@ snooze
 socklog-void
 sof-firmware
 sound-theme-freedesktop
-spectrwm
 speedtest-cli
 spotify-qt
 spotify-tui
@@ -297,6 +293,7 @@ vulkan-loader
 vulkan-loader-32bit
 wayland-devel
 wayland-protocols
+waylock
 wdisplays
 wev
 wf-recorder

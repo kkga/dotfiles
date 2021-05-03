@@ -14,3 +14,6 @@ checkout = git clone 'https://github.com/alexherbo2/kakoune.cr' 'kakoune.cr'
 
 [repos/zk]
 checkout = git clone 'https://github.com/mickael-menu/zk.git' 'zk'
+
+[repos/sway-launcher-desktop]
+checkout = git clone 'https://github.com/Biont/sway-launcher-desktop' 'sway-launcher-desktop'

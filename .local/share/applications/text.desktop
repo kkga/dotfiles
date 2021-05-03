@@ -1,4 +1,4 @@
 [Desktop Entry]
 Type=Application
 Name=Text editor
-Exec=alacritty -e nvim %u
+Exec=alacritty -e kak %u
