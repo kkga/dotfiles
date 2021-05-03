@@ -45,7 +45,7 @@ exec_always {
 # Variables {{{1
 
 set $term 'alacritty'
-set $drun 'sway-launcher'
+set $drun 'app-launcher'
 set $run 'dmenu-runner'
 set $lock 'swaylock -K -e -f -c 222222'
 set $clipboard 'sway-clipmenu'
@@ -149,7 +149,7 @@ for_window [ app_id="Alacritty · Popup" ] floating enable, resize set width 100
 
    bindsym $mod+Shift+Return          exec $term
    bindsym $mod+d                     exec $drun
-   # bindsym $mod+Control+d             exec $run
+   bindsym $mod+z 			          exec $run
    bindsym $mod+c                     exec $clipboard
    bindsym Mod1+Tab                   exec window-switcher
 
