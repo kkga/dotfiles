@@ -1,4 +1,5 @@
 CPU-X
+Clight
 ImageMagick
 MangoHud
 MangoHud-32bit
@@ -69,7 +70,6 @@ ffscreencast
 ffsend
 firefox
 fish-shell
-flameshot
 flatpak
 font-cozette
 font-ibm-plex-ttf
@@ -127,6 +127,7 @@ libXrender-devel
 libXres-devel
 libXtst-devel
 libXxf86vm-devel
+libappindicator
 libcap-devel
 libdrm-devel
 libev-devel
@@ -156,7 +157,6 @@ mako
 massren
 mdbook-linkcheck
 mdp
-meld
 mercurial
 mesa
 mesa-demos
@@ -191,10 +191,10 @@ pango-devel
 papirus-icon-theme
 paprefs
 par
+pass
 pastel
 patch
 pavucontrol
-peek
 pick
 pinentry-gnome
 pipewire
@@ -218,13 +218,11 @@ python3-xdg
 qemu
 qmk
 qt5-wayland
-qtpass
 qutebrowser
 radeontop
 redshift
 ripgrep
 roxterm
-safeeyes
 sakura
 scdoc
 scons
@@ -275,7 +273,6 @@ upower
 vdpauinfo
 viu
 vkBasalt
-vkQuake
 vmdfmt
 void-docs
 void-docs-browse
@@ -306,7 +303,6 @@ wlsunset
 wmctrl
 wob
 wofi
-xarchiver
 xcb-util-errors-devel
 xcb-util-wm-devel
 xclip
