@@ -1,4 +1,4 @@
-# GLOBAL -------------------------------------------------------------
+# global -------------------------------------------------------------
 
 # work around some weird defaults
 map global normal a	   		'li'
@@ -59,7 +59,7 @@ hook global InsertCompletionShow .* %{ map window insert <tab> <c-n> }
 hook global InsertCompletionHide .* %{ map window insert <tab> <tab> }
 hook global InsertCompletionShow .* %{ map window insert <s-tab> <c-p> }
 
-# USER ---------------------------------------------------------------
+# user ---------------------------------------------------------------
 
 # clipboard
 evaluate-commands %sh{
@@ -89,7 +89,18 @@ map global user -docstring 'grep buffer'           G ': + kcr-fzf-grep %val{buff
 # tools
 map global user -docstring 'surround mode'         s ': enter-user-mode surround<ret>'
 map global user -docstring 'LSP mode'              l ': enter-user-mode lsp<ret>'
+map global user -docstring 'tree mode'             t ': enter-user-mode tree<ret>'
+map global user -docstring 'tree mode (lock)'      T ': enter-user-mode -lock tree<ret>'
 
 # ui options
 map global user -docstring 'toggle line numbers'   L ': toggle-highlighter global/ number-lines -hlcursor<ret>'
 map global user -docstring 'toggle wrap'           W ': toggle-highlighter global/ wrap -word <ret>'
+
+# tree mode
+declare-user-mode tree
+map global tree -docstring 'parent'                h ': tree-select-parent-node<ret>'
+map global tree -docstring 'child'                 l ': tree-select-first-child<ret>'
+map global tree -docstring 'children'              L ': tree-select-children<ret>'
+map global tree -docstring 'next'                  j ': tree-select-next-node<ret>'
+map global tree -docstring 'prev'                  k ': tree-select-previous-node<ret>'
+map global tree -docstring 'info'                  i ': tree-node-sexp<ret>'
