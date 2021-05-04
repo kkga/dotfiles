@@ -25,7 +25,8 @@ seat * hide_cursor 5000
 exec mako
 exec pipewire
 exec pipewire-pulse
-exec wlsunset -l 55.0 -L 37.0
+# exec wlsunset -l 55.0 -L 37.0
+exec gammastep -l 55:37
 exec light -S 35
 exec wl-paste -t text --watch clipman store --max-items=50
 exec clipman restore
