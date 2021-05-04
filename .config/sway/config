@@ -67,7 +67,7 @@ exec swayidle -w \
           before-sleep 'playerctl pause' \
           lock $lock
 
-bindswitch lid:toggle exec $lock
+bindswitch lid:toggle exec 'loginctl lock-session'
 
 # Outputs {{{1
 

@@ -1,4 +1,4 @@
-# UI --------------------------------------------------------------------------
+# ui --------------------------------------------------------------------------
 
 colorscheme saturn
 
@@ -19,7 +19,7 @@ add-highlighter global/ regex \h+$ 0:Error
 add-highlighter global/ show-matching
 add-highlighter global/ regex \b(TODO|FIXME|XXX|NOTE)\b 0:yellow,black+rb
 
-# MODELINE --------------------------------------------------------------------
+# modeline --------------------------------------------------------------------
 
 define-command update-status %{ evaluate-commands %sh{
     printf %s 'set-option buffer modelinefmt %{'
