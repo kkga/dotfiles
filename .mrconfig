@@ -17,3 +17,9 @@ checkout = git clone 'https://github.com/mickael-menu/zk.git' 'zk'
 
 [repos/sway-launcher-desktop]
 checkout = git clone 'https://github.com/Biont/sway-launcher-desktop' 'sway-launcher-desktop'
+
+[projects/saturn.kak]
+checkout = git clone 'git@github.com:kkga/saturn.kak.git' 'saturn.kak'
+
+[projects/iosevka-custom]
+checkout = git clone 'git@github.com:kkga/iosevka-custom.git' 'iosevka-custom'
