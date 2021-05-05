@@ -4,7 +4,8 @@
   "position": "bottom",
   "modules-left": [
     "sway/workspaces",
-    "sway/mode"
+    "sway/mode",
+    "sway/window"
   ],
   "modules-center": [
     "clock"
@@ -26,14 +27,14 @@
   "sway/workspaces": {
     "disable-scroll": true,
     "all-outputs": true,
-    "format": "{index}:{name}"
+    "format": "{index}"
   },
   "sway/window": {
     "format": "{}",
     "max-length": 80
   },
   "sway/mode": {
-    "format": " ---  {}  ---  ",
+    "format": " --- {} --- ",
     "max-length": 50
   },
   "custom/updates": {

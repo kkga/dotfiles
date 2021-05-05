@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export TERM=foot
+export TERM=alacritty
 export BEMENU_SCALE=2
 export MOZ_ENABLE_WAYLAND=1
 export MOZ_WEBRENDER=1

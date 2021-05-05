@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+floating-terminal clipman pick --print0 --tool=CUSTOM --tool-args="fzf --preview 'echo {}' --preview-window right:50%:border-left --prompt 'clip > ' --read0"

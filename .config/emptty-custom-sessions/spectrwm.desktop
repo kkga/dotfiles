@@ -1,3 +1,0 @@
-Name=Spectrwm-run
-Exec=spectrwm-run.sh
-Environment=xorg

@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# This is the terminal program that term-dmenu runs. Some examples:
+# alacritty --class launcher -e "$@"
+# kitty --class launcher "$@"
+# These examples give the window the "launcher" class so you can make your window
+# manager float anything with class "launcher"
+
+# I use havoc (https://github.com/ii8/havoc) for my launchers because it starts up
+# super quickly and is Wayland-native.
+
+if [ -z "$FLOATING_TERMINAL" ]; then
+	# find_alt() prints the first parameter recognized by `command -v`
+	find_alt() {
+		for i; do
+			command -v "${i%% *}" >/dev/null && {
+				echo "$i"
+				return 0
+			}
+		done
+		return 1
+	}
+	FLOATING_TERMINAL=$(find_alt 'foot -a launcher' havoc 'alacritty --class=launcher -e' 'kitty --class=launcher -e' 'konsole -e' 'gnome-terminal -e' 'termite -e' 'st -c launcher -e' 'xterm -e')
+fi
+
+$FLOATING_TERMINAL "$@"
+
+# vi:ft=sh

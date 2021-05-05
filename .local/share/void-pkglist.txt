@@ -1,4 +1,5 @@
 CPU-X
+Clight
 ImageMagick
 MangoHud
 MangoHud-32bit
@@ -27,7 +28,6 @@ bluez
 bluez-alsa
 bluez-qt5
 bottom
-broot
 cairo-devel
 cargo
 chromium
@@ -59,7 +59,6 @@ dutree
 elixir
 elogind
 elvish
-emptty
 etckeeper
 eudev-libudev
 exa
@@ -71,7 +70,6 @@ ffscreencast
 ffsend
 firefox
 fish-shell
-flameshot
 flatpak
 font-cozette
 font-ibm-plex-ttf
@@ -126,13 +124,16 @@ libX11-devel
 libXcomposite-devel
 libXdamage-devel
 libXrender-devel
+libXres-devel
 libXtst-devel
 libXxf86vm-devel
+libappindicator
 libcap-devel
 libdrm-devel
 libev-devel
 libgpg-error-devel
 libinput-devel
+libseat-devel
 libspa-bluetooth
 libspa-vulkan
 libusb-compat-devel
@@ -156,7 +157,6 @@ mako
 massren
 mdbook-linkcheck
 mdp
-meld
 mercurial
 mesa
 mesa-demos
@@ -167,7 +167,6 @@ mesa-vdpau
 mesa-vulkan-radeon
 mesa-vulkan-radeon-32bit
 meson
-most
 mpv
 myrepos
 neofetch
@@ -192,10 +191,10 @@ pango-devel
 papirus-icon-theme
 paprefs
 par
+pass
 pastel
 patch
 pavucontrol
-peek
 pick
 pinentry-gnome
 pipewire
@@ -219,14 +218,13 @@ python3-xdg
 qemu
 qmk
 qt5-wayland
-qtpass
 qutebrowser
 radeontop
 redshift
 ripgrep
 roxterm
-safeeyes
 sakura
+scdoc
 scons
 seahorse
 seatd
@@ -239,7 +237,6 @@ snooze
 socklog-void
 sof-firmware
 sound-theme-freedesktop
-spectrwm
 speedtest-cli
 spotify-qt
 spotify-tui
@@ -276,7 +273,6 @@ upower
 vdpauinfo
 viu
 vkBasalt
-vkQuake
 vmdfmt
 void-docs
 void-docs-browse
@@ -294,6 +290,7 @@ vulkan-loader
 vulkan-loader-32bit
 wayland-devel
 wayland-protocols
+waylock
 wdisplays
 wev
 wf-recorder
@@ -306,7 +303,8 @@ wlsunset
 wmctrl
 wob
 wofi
-xarchiver
+xcb-util-errors-devel
+xcb-util-wm-devel
 xclip
 xdg-desktop-portal-gtk
 xdg-desktop-portal-wlr

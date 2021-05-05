@@ -12,18 +12,15 @@ export PATH=$HOME/.local/bin:$PATH
 export XBPS_DISTDIR=$HOME/.void-packages
 
 export BROWSER=firefox
+export TERMINAL=alacritty
 export EDITOR="kcr edit"
 export VISUAL="kcr edit"
-export DMENU='wofi --dmenu'
 
-export MANPAGER=most
-export MOST_INITFILE=$HOME/.config/most/mostrc
-
-# export DMENU_PROGRAM='term-dmenu'
+export DMENU_PROGRAM='term-dmenu'
 export FLOATING_TERMINAL='alacritty --class popup -e'
 
 export FZF_DEFAULT_COMMAND='fd --type f'
-export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --height=40 --preview-window=down:60%:border-horizontal"
+export FZF_DEFAULT_OPTS="--layout=reverse --inline-info --height=40 --preview-window=down:50%:border-top"
 
 if [ $(uname -s) == "Linux" ]; then
     eval $(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)

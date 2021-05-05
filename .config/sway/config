@@ -25,11 +25,9 @@ seat * hide_cursor 5000
 exec mako
 exec pipewire
 exec pipewire-pulse
-# exec foot --server
-# exec gammastep
-exec wlsunset -l 55.0 -L 37.0
+# exec wlsunset -l 55.0 -L 37.0
+exec gammastep -l 55:37
 exec light -S 35
-exec persway -w
 exec wl-paste -t text --watch clipman store --max-items=50
 exec clipman restore
 exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob -a top -a left -W 200 -H 20 -M 8 -o 2 -b 2 -p 2
@@ -48,9 +46,10 @@ exec_always {
 # Variables {{{1
 
 set $term 'alacritty'
-set $drun 'wofi'
+set $drun 'app-launcher'
+set $run 'dmenu-runner'
 set $lock 'swaylock -K -e -f -c 222222'
-set $clipboard 'clipman pick -t wofi'
+set $clipboard 'sway-clipmenu'
 
 set $mod Mod4
 set $left h
@@ -61,17 +60,15 @@ set $right l
 # Idle config {{{1
 
 exec swayidle -w \
-          timeout 300 $lock \
-          timeout 600 'swaymsg "output * dpms off"' \
-          resume 'swaymsg "output * dpms on"' \
-          before-sleep $lock
+        timeout 600 $lock \
+        timeout 900 'swaymsg "output * dpms off"' \
+        timeout 1200 'loginctl suspend' \
+        resume 'swaymsg "output * dpms on"' \
+        before-sleep 'loginctl lock-session $XDG_SESSION_ID' \
+        before-sleep 'playerctl pause' \
+        lock $lock
 
-# exec swayidle -w \
-# 	timeout 600 $lock \
-# 	timeout 1200 'loginctl suspend' \
-# 	before-sleep $lock
-
-bindswitch lid:toggle exec $lock
+bindswitch lid:toggle exec 'loginctl lock-session'
 
 # Outputs {{{1
 
@@ -83,7 +80,7 @@ output $laptop scale 2
 output $mon1 resolution 3840x2160 scale 2 position 1920 0
 output $mon2 resolution 3840x2160 scale 2
 
-output * bg ~/.local/share/wallpapers/11-0-Big-Sur-Color-Night.jpg fill
+output * bg #111111 solid_color
 output * max_render_time off
 output * adaptive_sync off
 
@@ -134,19 +131,20 @@ client.unfocused         $col_bg_br  $col_bg     $col_fg  $col_bg_br  $col_bg_br
 
 # Rules {{{1
 
-# for_window [ class="^.*"                ] inhibit_idle fullscreen
-# for_window [ app_id="^.*"               ] inhibit_idle fullscreen
-for_window [ class="^Firefox$"          ] inhibit_idle fullscreen
-for_window [ app_id="^firefox$"         ] inhibit_idle fullscreen
-for_window [ app_id="pavucontrol"       ] focus, floating enable
-for_window [ title="Picture-in-Picture" ] floating enable
-for_window [ class="Jitsi Meet"         ] floating enable
-for_window [ app_id="spot"              ] floating enable
-for_window [ app_id="mpv"               ] floating enable
-for_window [ app_id="^launcher$"        ] floating enable
-for_window [ app_id="dmenu.*"           ] floating enable
-for_window [ app_id="^popup$"           ] floating enable
-for_window [ app_id="Alacritty · Popup" ] floating enable
+# for_window [ class="^.*"                       ] inhibit_idle fullscreen
+# for_window [ app_id="^.*"                      ] inhibit_idle fullscreen
+for_window [ class="^Firefox$"                   ] inhibit_idle fullscreen
+for_window [ app_id="^firefox$"                  ] inhibit_idle fullscreen
+for_window [ app_id="pavucontrol"                ] focus, floating enable
+for_window [ title="Picture-in-Picture"          ] floating enable
+for_window [ title="Firefox — Sharing Indicator" ] floating enable
+for_window [ class="Jitsi Meet"                  ] floating enable
+for_window [ app_id="spot"                       ] floating enable
+for_window [ app_id="mpv"                        ] floating enable
+for_window [ app_id="dmenu.*"                    ] floating enable, resize set width 100ppt height 40ppt, move position 0px 0px
+for_window [ app_id="^launcher$"                 ] floating enable, resize set width 100ppt height 40ppt, move position 0px 0px
+for_window [ app_id="^popup$"                    ] floating enable, resize set width 100ppt height 40ppt, move position 0px 0px
+for_window [ app_id="Alacritty · Popup"          ] floating enable, resize set width 100ppt height 40ppt, move position 0px 0px
 
 
 # Key bindings {{{1
@@ -156,6 +154,7 @@ for_window [ app_id="Alacritty · Popup" ] floating enable
 
    bindsym $mod+Shift+Return          exec $term
    bindsym $mod+d                     exec $drun
+   bindsym $mod+z 			          exec $run
    bindsym $mod+c                     exec $clipboard
    bindsym Mod1+Tab                   exec window-switcher
 
@@ -174,8 +173,7 @@ for_window [ app_id="Alacritty · Popup" ] floating enable
    bindsym XF86AudioPrev              exec playerctl previous
    bindsym XF86AudioNext              exec playerctl next
 
-   bindsym $mod+Escape                exec makoctl dismiss
-   bindsym $mod+Control+Escape        exec makoctl dismiss -a
+   bindsym $mod+Escape                exec makoctl dismiss -a
 
 # Moving around {{{2
 
@@ -257,7 +255,7 @@ set $powermode                        "[E]xit - [R]eebot - [L]ock"
 mode $powermode {
    bindsym e                          exec swaymsg exit
    bindsym r                          exec loginctl reboot
-   bindsym l                          exec $lock; mode "default"
+   bindsym l                          exec loginctl lock-session; mode "default"
    bindsym Return                     mode "default"
    bindsym Escape                     mode "default"
 }

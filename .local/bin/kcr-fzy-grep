@@ -1,0 +1,14 @@
+#!/bin/sh
+
+# Open files by content.
+#
+# Usage:
+#
+# kcr fzf grep [paths]
+
+# – fzy (https://github.com/junegunn/fzf)
+# – ripgrep (https://github.com/BurntSushi/ripgrep)
+
+rg --column --with-filename '.+' "$@" |
+fzy -l 24 |
+kcr edit-search

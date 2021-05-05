@@ -1,2 +1,3 @@
 #!/bin/bash
-prs ls -l | $DMENU | xargs --no-run-if-empty prs c
+
+prs list --list | $DMENU_PROGRAM | xargs --no-run-if-empty prs copy --no-interact

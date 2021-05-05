@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Open files.
+#
+# Usage:
+#
+# kcr fzf files [paths]
+
+# – fzf (https://github.com/junegunn/fzf)
+# – fd (https://github.com/sharkdp/fd)
+# – bat (https://github.com/sharkdp/bat)
+
+fd --type file . "$@" | fzf --preview 'bat --color=always --line-range :500 {}' --preview-window=right:50%:border-left |
+
+	# Open files
+	while read file; do
+		kcr edit "$file"
+	done
