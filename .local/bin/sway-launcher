@@ -1,2 +1,8 @@
-#!/usr/bin/env bash
-swaymsg exec "$(floating-terminal ~/repos/sway-launcher-desktop/sway-launcher-desktop.sh)"
+#!/bin/sh
+exec j4-dmenu-desktop \
+	--usage-log="$HOME/.cache/j4" \
+	--no-generic \
+	--display-binary \
+	--use-xdg-de \
+	--term=$TERMINAL \
+	--dmenu="(cat ; (stest -flx $(echo $PATH | tr : ' ') | sort -u)) | term-dmenu"
