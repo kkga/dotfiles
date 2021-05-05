@@ -60,13 +60,13 @@ set $right l
 # Idle config {{{1
 
 exec swayidle -w \
-          timeout 600 $lock \
-          timeout 900 'swaymsg "output * dpms off"' \
-          timeout 1200 'loginctl suspend' \
-          resume 'swaymsg "output * dpms on"' \
-          before-sleep 'loginctl lock-session $XDG_SESSION_ID' \
-          before-sleep 'playerctl pause' \
-          lock $lock
+        timeout 600 $lock \
+        timeout 900 'swaymsg "output * dpms off"' \
+        timeout 1200 'loginctl suspend' \
+        resume 'swaymsg "output * dpms on"' \
+        before-sleep 'loginctl lock-session $XDG_SESSION_ID' \
+        before-sleep 'playerctl pause' \
+        lock $lock
 
 bindswitch lid:toggle exec 'loginctl lock-session'
 
@@ -131,20 +131,20 @@ client.unfocused         $col_bg_br  $col_bg     $col_fg  $col_bg_br  $col_bg_br
 
 # Rules {{{1
 
-# for_window [ class="^.*"                ] inhibit_idle fullscreen
-# for_window [ app_id="^.*"               ] inhibit_idle fullscreen
-for_window [ class="^Firefox$"          ] inhibit_idle fullscreen
-for_window [ app_id="^firefox$"         ] inhibit_idle fullscreen
-for_window [ app_id="pavucontrol"       ] focus, floating enable
-for_window [ title="Picture-in-Picture" ] floating enable
+# for_window [ class="^.*"                       ] inhibit_idle fullscreen
+# for_window [ app_id="^.*"                      ] inhibit_idle fullscreen
+for_window [ class="^Firefox$"                   ] inhibit_idle fullscreen
+for_window [ app_id="^firefox$"                  ] inhibit_idle fullscreen
+for_window [ app_id="pavucontrol"                ] focus, floating enable
+for_window [ title="Picture-in-Picture"          ] floating enable
 for_window [ title="Firefox — Sharing Indicator" ] floating enable
-for_window [ class="Jitsi Meet"         ] floating enable
-for_window [ app_id="spot"              ] floating enable
-for_window [ app_id="mpv"               ] floating enable
-for_window [ app_id="dmenu.*"           ] floating enable, resize set width 100ppt height 40ppt, move position 0px 0px
-for_window [ app_id="^launcher$"        ] floating enable, resize set width 100ppt height 40ppt, move position 0px 0px
-for_window [ app_id="^popup$"           ] floating enable, resize set width 100ppt height 40ppt, move position 0px 0px
-for_window [ app_id="Alacritty · Popup" ] floating enable, resize set width 100ppt height 40ppt, move position 0px 0px
+for_window [ class="Jitsi Meet"                  ] floating enable
+for_window [ app_id="spot"                       ] floating enable
+for_window [ app_id="mpv"                        ] floating enable
+for_window [ app_id="dmenu.*"                    ] floating enable, resize set width 100ppt height 40ppt, move position 0px 0px
+for_window [ app_id="^launcher$"                 ] floating enable, resize set width 100ppt height 40ppt, move position 0px 0px
+for_window [ app_id="^popup$"                    ] floating enable, resize set width 100ppt height 40ppt, move position 0px 0px
+for_window [ app_id="Alacritty · Popup"          ] floating enable, resize set width 100ppt height 40ppt, move position 0px 0px
 
 
 # Key bindings {{{1
@@ -173,8 +173,7 @@ for_window [ app_id="Alacritty · Popup" ] floating enable, resize set width 100
    bindsym XF86AudioPrev              exec playerctl previous
    bindsym XF86AudioNext              exec playerctl next
 
-   bindsym $mod+Escape                exec makoctl dismiss
-   bindsym $mod+Control+Escape        exec makoctl dismiss -a
+   bindsym $mod+Escape                exec makoctl dismiss -a
 
 # Moving around {{{2
 
