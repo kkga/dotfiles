@@ -5,4 +5,4 @@ exec j4-dmenu-desktop \
 	--display-binary \
 	--use-xdg-de \
 	--term=$TERMINAL \
-	--dmenu="(cat ; (stest -flx $(echo $PATH | tr : ' ') | sort -u)) | term-dmenu"
+	--dmenu="(cat ; (stest -flx $(echo $PATH | tr : ' ') | sort -u)) | term-dmenu --bind=tab:down,btab:up"
