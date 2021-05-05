@@ -4,7 +4,7 @@ import:
 font:
   size: 11
   normal:
-    family: monospace
+    family: "Essential PragmataPro"
   # style: Narrow Regular
   # bold:
   #   family: agave
