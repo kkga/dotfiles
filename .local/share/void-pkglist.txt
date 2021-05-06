@@ -59,7 +59,6 @@ dutree
 elixir
 elogind
 elvish
-etckeeper
 eudev-libudev
 exa
 execline
