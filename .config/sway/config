@@ -25,7 +25,6 @@ seat * hide_cursor 5000
 exec mako
 exec pipewire
 exec pipewire-pulse
-# exec wlsunset -l 55.0 -L 37.0
 exec gammastep -l 55:37
 exec light -S 35
 exec wl-paste -t text --watch clipman store --max-items=50
@@ -47,8 +46,6 @@ exec_always {
 
 set $term 'alacritty'
 set $drun 'sway-launcher'
-# set $drun 'app-launcher'
-set $run 'dmenu-runner'
 set $lock 'swaylock -K -e -f -c 222222'
 set $clipboard 'sway-clipmenu'
 
@@ -142,10 +139,7 @@ for_window [ title="Firefox — Sharing Indicator" ] floating enable
 for_window [ class="Jitsi Meet"                  ] floating enable
 for_window [ app_id="spot"                       ] floating enable
 for_window [ app_id="mpv"                        ] floating enable
-for_window [ app_id="dmenu.*"                    ] floating enable, resize set width 100ppt height 40ppt, move position 0px 0px
-for_window [ app_id="^launcher$"                 ] floating enable, resize set width 100ppt height 40ppt, move position 0px 0px
-for_window [ app_id="^popup$"                    ] floating enable, resize set width 100ppt height 40ppt, move position 0px 0px
-for_window [ app_id="Alacritty · Popup"          ] floating enable, resize set width 100ppt height 40ppt, move position 0px 0px
+for_window [ app_id="(?i)popup"                  ] floating enable, resize set width 100ppt height 40ppt, move position 0px 0px
 
 
 # Key bindings {{{1
@@ -155,7 +149,6 @@ for_window [ app_id="Alacritty · Popup"          ] floating enable, resize set 
 
    bindsym $mod+Shift+Return          exec $term
    bindsym $mod+d                     exec $drun
-   bindsym $mod+z 			          exec $run
    bindsym $mod+c                     exec $clipboard
    bindsym Mod1+Tab                   exec window-switcher
 

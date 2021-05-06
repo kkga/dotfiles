@@ -47,6 +47,7 @@ window#waybar {
 #battery.warning,
 #pulseaudio.muted,
 #cpu.warning,
+#temperature.critical,
 #custom-yadm,
 #network.disconnected {
   color: @text-orange;
@@ -80,6 +81,7 @@ window#waybar {
 #custom-tailscale,
 #network,
 #cpu,
+#temperature,
 #memory,
 #backlight,
 #battery,
