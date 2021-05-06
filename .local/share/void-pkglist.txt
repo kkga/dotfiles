@@ -59,7 +59,6 @@ dutree
 elixir
 elogind
 elvish
-etckeeper
 eudev-libudev
 exa
 execline
@@ -111,6 +110,7 @@ incron
 inotify-tools
 inxi
 iwd
+iwgtk
 j4-dmenu-desktop
 jq
 json-c-devel
