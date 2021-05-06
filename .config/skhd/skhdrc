@@ -69,9 +69,9 @@ cmd + ctrl + shift - 8 : yabai.-m window --space  8; yabai -m space --focus 8
 cmd + ctrl + shift - 9 : yabai.-m window --space  9; yabai -m space --focus 9
 
 # change layout of desktop
-# alt - z : yabai -m space --layout bsp
-# alt - x : yabai -m space --layout float
-# alt - c : yabai -m space --layout stack
+cmd + ctrl - z : yabai -m space --layout bsp
+cmd + ctrl - x : yabai -m space --layout float
+cmd + ctrl - c : yabai -m space --layout stack
 
 
 # DISPLAYS

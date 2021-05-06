@@ -55,6 +55,6 @@ plug-old state-save https://gitlab.com/Screwtapello/kakoune-state-save %{
 
 evaluate-commands %sh{ kcr init kakoune }
 
-source "~/.config/kak/ui.kak"
 source "~/.config/kak/editing.kak"
 source "~/.config/kak/mappings.kak"
+source "~/.config/kak/ui.kak"

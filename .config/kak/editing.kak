@@ -11,6 +11,14 @@ hook global WinSetOption filetype=(crystal|html|css|json|rust|python|go|typescri
 }
 hook global KakEnd .* lsp-exit
 
+hook global WinSetOption filetype=(typescript|javascript) %{
+  hook window -group semantic-tokens BufReload .* lsp-semantic-tokens
+  hook window -group semantic-tokens NormalIdle .* lsp-semantic-tokens
+  hook window -group semantic-tokens InsertIdle .* lsp-semantic-tokens
+  hook -once -always window WinSetOption filetype=.* %{
+    remove-hooks window semantic-tokens
+  }
+}
 # uncomment for lsp debug
 # set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
 

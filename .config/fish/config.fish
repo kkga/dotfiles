@@ -18,6 +18,8 @@ alias val='kcr get --value'
 alias opt='kcr get --option'
 alias reg='kcr get --register'
 
+alias t='todo.sh'
+
 alias zk='ZK_NOTEBOOK_DIR=~/notes/h ~/.local/bin/zk'
 alias zkw='ZK_NOTEBOOK_DIR=~/notes/w ~/.local/bin/zk'
 
