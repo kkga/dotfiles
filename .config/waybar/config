@@ -75,13 +75,6 @@
     "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     "format": "{:%a %d %b %H:%M}"
   },
-  "cpu": {
-    "format": " {usage}%",
-    "interval": 5,
-    "states": {
-      "warning": 10
-    }
-  },
   "battery": {
     "states": {
       "warning": 10
@@ -131,6 +124,13 @@
       "default": ["", "", ""]
     },
     "on-click": "pavucontrol"
+  },
+  "cpu": {
+    "format": "{usage:2}%",
+    "interval": 5,
+    "states": {
+      "warning": 10
+    }
   },
   "temperature": {
     "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
