@@ -141,4 +141,4 @@ schemes:
       cyan: "#5fafaf"
       white: "#ffffff"
 
-colors: *dark
+colors: *light

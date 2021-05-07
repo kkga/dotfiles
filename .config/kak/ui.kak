@@ -21,11 +21,11 @@ add-highlighter global/ regex \b(TODO|FIXME|XXX|NOTE)\b 0:yellow,black+rb
 
 define-command light-mode %{ evaluate-commands %sh{
   printf 'colorscheme envy'
-  alacritty-theme-toggle
+  alacritty-theme-toggle light
 }}
 define-command dark-mode %{ evaluate-commands %sh{
   printf 'colorscheme saturn'
-  alacritty-theme-toggle
+  alacritty-theme-toggle dark
 }}
 
 # modeline --------------------------------------------------------------------
