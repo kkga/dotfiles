@@ -13,8 +13,8 @@ set-option -add global ui_options ncurses_padding_fill=yes
 set-option global startup_info_version 20200901
 set-option global autoreload yes
 
-# add-highlighter global/ number-lines -hlcursor
 # add-highlighter global/ wrap -word
+add-highlighter global/ number-lines -hlcursor
 add-highlighter global/ regex \h+$ 0:Error
 add-highlighter global/ show-matching
 add-highlighter global/ regex \b(TODO|FIXME|XXX|NOTE)\b 0:yellow,black+rb
