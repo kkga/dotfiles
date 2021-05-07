@@ -100,3 +100,8 @@ roots = [".zk"]
 command = "zk"
 args = ["lsp"]
 
+[language.ruby]
+filetypes = ["ruby"]
+roots = ["Gemfile"]
+command = "/Users/kkga/.rbenv/shims/solargraph"
+args = ["stdio"]
