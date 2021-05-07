@@ -3,6 +3,7 @@ alias ls="exa --group --git --group-directories-first"
 alias y="yadm"
 alias cat="bat"
 alias xr='doas xbps-remove'
+alias att='alacritty-theme-toggle'
 
 alias cp="cp -i"
 alias mv='mv -i'

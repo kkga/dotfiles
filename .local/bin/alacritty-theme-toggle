@@ -1,0 +1,19 @@
+#!/bin/bash
+
+filename="$HOME/.config/alacritty/alacritty.yml"
+
+case "$1" in
+	dark)
+		sed -i "s/*light/*dark/" $filename
+		;;
+	light)
+		sed -i "s/*dark/*light/" $filename
+		;;
+	*)
+		if grep -Fxq "colors: *light" $filename; then
+			sed -i "s/*light/*dark/" $filename
+		else
+			sed -i "s/*dark/*light/" $filename
+		fi
+		;;
+esac

@@ -1,6 +1,3 @@
-import:
-  - /home/kkga/.config/alacritty/colors/saturnite.yml
-
 font:
   size: 11
   # normal:
@@ -16,14 +13,9 @@ font:
   #   x: 0
   #   y: -1
 
-# background_opacity: 0.95
-
 draw_bold_text_with_bright_colors: true
 use_thin_strokes: true
 
-# shell:
-#   program: fish
-#
 window:
   dimensions:
     columns: 88
@@ -72,7 +64,6 @@ hints:
       key: U
       mods: Control|Shift
 
-
 key_bindings:
   - {
       key: F1,
@@ -97,3 +88,57 @@ key_bindings:
 cursor:
   style: Block
   vi_mode_style: Block
+
+schemes:
+  envy: &light
+    primary:
+      background: "#eeeeee"
+      foreground: "#000000"
+    selection:
+      text: "#000000"
+      background: "#afd7ff"
+    normal:
+      black: "#000000"
+      red: "#d70000"
+      green: "#005f00"
+      yellow: "#d75f00"
+      blue: "#005fd7"
+      magenta: "#5f00d7"
+      cyan: "#0087af"
+      white: "#b2b2b2"
+    bright:
+      black: "#585858"
+      red: "#d70000"
+      green: "#005f00"
+      yellow: "#d75f00"
+      blue: "#005fd7"
+      magenta: "#5f00d7"
+      cyan: "#0087af"
+      white: "#b2b2b2"
+  saturn: &dark
+    primary:
+      background: "#1c1c1c"
+      foreground: "#bcbcbc"
+    selection:
+      text: "#ffffff"
+      background: "#5f87af"
+    normal:
+      black: "#121212"
+      red: "#d7875f"
+      green: "#87af87"
+      yellow: "#d7af5f"
+      blue: "#87afd7"
+      magenta: "#8787af"
+      cyan: "#5fafaf"
+      white: "#bcbcbc"
+    bright:
+      black: "#808080"
+      red: "#d7875f"
+      green: "#87af87"
+      yellow: "#d7af5f"
+      blue: "#87afd7"
+      magenta: "#8787af"
+      cyan: "#5fafaf"
+      white: "#ffffff"
+
+colors: *dark
