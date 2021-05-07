@@ -140,5 +140,4 @@ schemes:
       magenta: "#8787af"
       cyan: "#5fafaf"
       white: "#ffffff"
-
 colors: *dark
