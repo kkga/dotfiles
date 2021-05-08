@@ -38,7 +38,7 @@ exec_always {
     gsettings set $gnome-schema icon-theme 'Adwaita'
     gsettings set $gnome-schema cursor-theme 'Adwaita'
     gsettings set $gnome-schema cursor-size 24
-    gsettings set $gnome-schema font-name 'sans-serif 10'
+    gsettings set $gnome-schema font-name 'sans-serif 9.5'
     gsettings set $gnome-schema monospace-font-name 'monospace 10'
 }
 
@@ -79,8 +79,8 @@ output $mon1 resolution 3840x2160 scale 2 position 1920 0
 output $mon2 resolution 3840x2160 scale 2
 
 output * bg #111111 solid_color
-output * max_render_time off
-output * adaptive_sync off
+# output * max_render_time 1
+# output * adaptive_sync off
 
 # Inputs {{{1
 
