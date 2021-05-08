@@ -147,10 +147,10 @@ for_window [ app_id="(?i)popup"                  ] floating enable, resize set w
 # General {{{2
    floating_modifier $mod             normal
 
-   bindsym $mod+Shift+Return          exec $term
-   bindsym $mod+d                     exec $drun
-   bindsym $mod+c                     exec $clipboard
-   bindsym Mod1+Tab                   exec window-switcher
+   bindsym $mod+Shift+Return          fullscreen disable, exec $term
+   bindsym $mod+d                     fullscreen disable, exec $drun
+   bindsym $mod+c                     fullscreen disable, exec $clipboard
+   bindsym Mod1+Tab                   fullscreen disable, exec window-switcher
 
    bindsym $mod+Shift+c               kill
    bindsym $mod+Backspace             reload
@@ -168,6 +168,7 @@ for_window [ app_id="(?i)popup"                  ] floating enable, resize set w
    bindsym XF86AudioNext              exec playerctl next
 
    bindsym $mod+Escape                exec makoctl dismiss -a
+   bindsym $mod+o                     exec makoctl menu term-dmenu
 
 # Moving around {{{2
 
@@ -232,10 +233,10 @@ for_window [ app_id="(?i)popup"                  ] floating enable, resize set w
 
 set $mode_resize                      "RESIZE"
 mode $mode_resize {
-   bindsym $left                      resize shrink width 10
-   bindsym $down                      resize grow height 10
-   bindsym $up                        resize shrink height 10
-   bindsym $right                     resize grow width 10
+   bindsym $left                      resize shrink width 20
+   bindsym $down                      resize grow height 20
+   bindsym $up                        resize shrink height 20
+   bindsym $right                     resize grow width 20
    bindsym minus                      gaps inner current minus 8px
    bindsym equal                      gaps inner current plus 8px
    bindsym Return                     mode "default"
