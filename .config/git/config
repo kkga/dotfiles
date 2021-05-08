@@ -26,16 +26,15 @@
 	rebase = false
 [log]
 	date = format:%Y-%m-%d %H:%M:%S %z (%A)
-[diff]
-	tool = kitty
-	guitool = kitty.gui
-[difftool]
-	prompt = false
-	trustExitCode = true
 [interactive]
 	diffFilter = delta --color-only
 [delta]
 	hunk-header-decoration-style = none
+    minus-style = red
+    plus-style = green
+	zero-style = dim
+[diff]
+	colorMoved = default
 [init]
 	defaltBranch = main
 [credential]
