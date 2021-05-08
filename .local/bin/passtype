@@ -2,6 +2,6 @@
 
 # depends on wtype
 
-secret=$(prs list --list | $DMENU_PROGRAM )
+secret=$(prs list --list | $DMENU_PROGRAM)
 
-[[ ! -z '$secret' ]] && wtype $(prs show $secret --password --no-interact --quiet)
+[[ -n "$secret" ]] && wtype "$(prs show "$secret" --password --no-interact --quiet)"

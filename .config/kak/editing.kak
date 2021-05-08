@@ -100,5 +100,6 @@ hook global WinSetOption filetype=lua %{
 hook global WinSetOption filetype=sh %{
     set-option buffer formatcmd 'shfmt -ci -sr'
     hook buffer -group format BufWritePre .* format
+    hook buffer -group format BufWritePost .* lint
 }
 

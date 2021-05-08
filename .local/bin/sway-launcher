@@ -4,5 +4,5 @@ exec j4-dmenu-desktop \
 	--no-generic \
 	--display-binary \
 	--use-xdg-de \
-	--term=$TERMINAL \
-	--dmenu="(cat ; (stest -flx $(echo $PATH | tr : ' ') | sort -u)) | term-dmenu --bind=tab:down,btab:up"
+	--term="$TERMINAL" \
+	--dmenu="(cat ; (stest -flx $(echo "$PATH" | tr : ' ') | sort -u)) | term-dmenu --bind=tab:down,btab:up"

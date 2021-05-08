@@ -29,10 +29,9 @@ export input
 # session needs to stay alive after the terminal closes
 # shellcheck disable=SC2016 # I don't want expressions to expand
 floating-terminal dash -c \
-	'output=$(echo "$input" | fzf); export output; abduco -rnf term-dmenu dash -c "echo \"$output\" >/tmp/term-dmenu" 2>/dev/null' 2>/dev/null
+	'output=$(echo "$input" | fzf); export output; abduco -rnf term-dmenu dash -c "echo \"$output\" >/tmp/term-dmenu" 2>/dev/null' 2> /dev/null
 
 # 4. send the value from the named pipe to stdout
-cat </tmp/term-dmenu
+cat < /tmp/term-dmenu
 
 # vi:ft=sh
-

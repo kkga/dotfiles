@@ -37,6 +37,7 @@ plug sleuth https://github.com/alexherbo2/sleuth.kak %{ sleuth-enable }
 plug move-line https://github.com/alexherbo2/move-line.kak
 plug word-select https://github.com/alexherbo2/word-select.kak
 
+plug-old shellcheck https://gitlab.com/Screwtapello/kakoune-shellcheck
 plug-old sudo-write https://github.com/occivink/kakoune-sudo-write
 plug-old vertical-selection https://github.com/occivink/kakoune-vertical-selection
 plug-old buffers https://github.com/Delapouite/kakoune-buffers

@@ -13,6 +13,6 @@
 fd --type file . "$@" | fzf --preview 'bat --color=always --line-range :500 {}' --preview-window=right:50%:border-left |
 
 	# Open files
-	while read file; do
+	while read -r file; do
 		kcr edit "$file"
 	done

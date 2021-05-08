@@ -2,19 +2,19 @@
 # Use grimshot to take a screenshot and upload to 0x0.st
 
 screenshot=$(
-    echo "Clipboard\nFile\n0x0.st" | $DMENU -p "Screenshot" -l 10
+	printf "Clipboard\nFile\n0x0.st" | $DMENU_PROGRAM
 )
 
 case "$screenshot" in
-    Clipboard) grimshot --notify copy area ;;
-    File)
-        grimshot --notify save area ~/Pictures/Screenshots/$(date +%s).png
-        floating-terminal -D ~/Pictures/Screenshots/ lf
-        ;;
-    0x0.st)
-        grimshot save area ~/tmp/screenshot.png
-        cd ~/tmp
-        curl -F'file=@screenshot.png' https://0x0.st | wl-copy
-        notify-send 'Screenshot' 'url copied to clipboard'
-        ;;
+	Clipboard) grimshot --notify copy area ;;
+	File)
+		grimshot --notify save area ~/Pictures/"$(date +%s)".png
+		floating-terminal lf "$HOME/Pictures/"
+		;;
+	0x0.st)
+		grimshot save area ~/tmp/screenshot.png
+		cd ~/tmp
+		curl -F'file=@screenshot.png' https://0x0.st | wl-copy
+		notify-send 'Screenshot' 'url copied to clipboard'
+		;;
 esac
