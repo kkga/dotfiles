@@ -33,10 +33,10 @@ define-command dark-mode %{ evaluate-commands %sh{
 define-command update-status %{ evaluate-commands %sh{
     printf %s 'set-option buffer modelinefmt %{'
     if [ "$kak_opt_lsp_diagnostic_error_count" -ne 0 ]; then
-        printf %s '{DiagnosticError}*%opt{lsp_diagnostic_error_count}{default} '
+        printf %s '{red+b}*%opt{lsp_diagnostic_error_count}{default} '
     fi
     if [ "$kak_opt_lsp_diagnostic_warning_count" -ne 0 ]; then
-        printf %s '{DiagnosticWarning}!%opt{lsp_diagnostic_warning_count}{default} · '
+        printf %s '{yellow+b}!%opt{lsp_diagnostic_warning_count}{default} · '
     fi
     printf %s ' %sh{pwd | sed "s|^$HOME|~|"}'
     printf %s ' · %val{bufname} [%opt{filetype}]'

@@ -20,6 +20,7 @@ Thumbs.db
 venv
 node_modules
 .sass-cache
+elm-stuff
 
 # mongodb
 /db
