@@ -97,6 +97,10 @@ hook global WinSetOption filetype=lua %{
     set-option buffer formatcmd "stylua -"
     hook buffer -group format BufWritePre .* format
 }
+hook global WinSetOption filetype=elm %{
+    set-option buffer formatcmd "elm-format --stdin"
+    hook buffer -group format BufWritePre .* format
+}
 hook global WinSetOption filetype=sh %{
     set-option buffer formatcmd 'shfmt -ci -sr'
     hook buffer -group format BufWritePre .* format
