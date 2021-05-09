@@ -236,6 +236,8 @@ bindsym $mod+Shift+Backspace          mode $powermode
 
 # Status Bar ------------------------------------------------------------------
 
-bar { swaybar_command waybar }
+bar {
+    swaybar_command waybar
+}
 
 include /etc/sway/config.d/*
