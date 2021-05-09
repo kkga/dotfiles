@@ -1,6 +1,4 @@
-# vim:foldmethod=marker:foldlevel=0
-
-# General settings {{{1
+# General settings ------------------------------------------------------------------
 
 # xwayland disable
 default_border pixel 1
@@ -20,7 +18,7 @@ titlebar_padding 4 0
 seat * xcursor_theme Adwaita 24
 seat * hide_cursor 5000
 
-# Autostart {{{1
+# Autostart ------------------------------------------------------------------
 
 exec mako
 exec pipewire
@@ -42,7 +40,7 @@ exec_always {
     gsettings set $gnome-schema monospace-font-name 'monospace 10'
 }
 
-# Variables {{{1
+# Variables ------------------------------------------------------------------
 
 set $term 'alacritty'
 set $drun 'sway-launcher'
@@ -55,7 +53,7 @@ set $down j
 set $up k
 set $right l
 
-# Idle config {{{1
+# Idle config ------------------------------------------------------------------
 
 exec swayidle -w \
         timeout 600 $lock \
@@ -68,7 +66,7 @@ exec swayidle -w \
 
 bindswitch lid:toggle exec 'loginctl lock-session'
 
-# Outputs {{{1
+# Outputs ------------------------------------------------------------------
 
 set $laptop eDP-1
 set $mon1 DP-1
@@ -79,10 +77,8 @@ output $mon1 resolution 3840x2160 scale 2 position 1920 0
 output $mon2 resolution 3840x2160 scale 2
 
 output * bg #111111 solid_color
-# output * max_render_time 1
-# output * adaptive_sync off
 
-# Inputs {{{1
+# Inputs ------------------------------------------------------------------
 
 input "type:keyboard" {
    xkb_layout us,ru
@@ -111,7 +107,7 @@ input "type:pointer" {
     # pointer_accel -0.5
 }
 
-# Colors {{{1
+# Colors ------------------------------------------------------------------
 
 set $col_hl         #5F5F87
 set $col_hl_br      #8787AF
@@ -127,7 +123,7 @@ client.unfocused         $col_bg_br  $col_bg     $col_fg  $col_bg_br  $col_bg_br
 # client.urgent             $color_bright_yellow   $color_bright_yellow   $color_normal_black    $color_unused        $color_unused
 # client.placeholder        $color_unused          $color_unused          $color_unused          $color_unused        $color_unused
 
-# Rules {{{1
+# Rules ------------------------------------------------------------------
 
 # for_window [ class="^.*"                       ] inhibit_idle fullscreen
 # for_window [ app_id="^.*"                      ] inhibit_idle fullscreen
@@ -142,36 +138,29 @@ for_window [ app_id="spot"                       ] floating enable
 for_window [ app_id="mpv"                        ] floating enable
 for_window [ app_id="(?i)popup"                  ] floating enable, resize set width 100ppt height 40ppt, move position 0px 0px
 
+# Key bindings ------------------------------------------------------------------
 
-# Key bindings {{{1
+    floating_modifier $mod             normal
 
-# General {{{2
-   floating_modifier $mod             normal
-
-   bindsym $mod+Shift+Return          fullscreen disable, exec $term
-   bindsym $mod+d                     fullscreen disable, exec $drun
-   bindsym $mod+c                     fullscreen disable, exec $clipboard
-   bindsym Mod1+Tab                   fullscreen disable, exec window-switcher
-
-   bindsym $mod+Shift+c               kill
-   bindsym $mod+Backspace             reload
-
-   bindsym XF86MonBrightnessUp        exec light -A 10 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
-   bindsym XF86MonBrightnessDown      exec light -U 10 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
-   bindsym Mod1+XF86MonBrightnessUp   exec light -s sysfs/backlight/ddcci5 -A 10 && light -s sysfs/backlight/ddcci5 -G | cut -d'.' -f1 > $SWAYSOCK.wob
-   bindsym Mod1+XF86MonBrightnessDown exec light -s sysfs/backlight/ddcci5 -U 10 && light -s sysfs/backlight/ddcci5 -G | cut -d'.' -f1 > $SWAYSOCK.wob
-   bindsym XF86AudioMicMute           exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-   bindsym XF86AudioRaiseVolume       exec pamixer -ui 5 && dc -e "[`pamixer --get-volume`]sM 100d `pamixer --get-volume`<Mp" > $SWAYSOCK.wob
-   bindsym XF86AudioLowerVolume       exec pamixer -ud 5 && dc -e "[`pamixer --get-volume`]sM 100d `pamixer --get-volume`<Mp" > $SWAYSOCK.wob
-   bindsym XF86AudioMute              exec pamixer --toggle-mute && ( pamixer --get-mute && echo 0 > $SWAYSOCK.wob ) || dc -e "[`pamixer --get-volume`]sM 100d `pamixer --get-volume`<Mp" > $SWAYSOCK.wob
-   bindsym XF86AudioPlay              exec playerctl play-pause
-   bindsym XF86AudioPrev              exec playerctl previous
-   bindsym XF86AudioNext              exec playerctl next
-
-   bindsym $mod+Escape                exec makoctl dismiss -a
-   bindsym $mod+o                     exec makoctl menu term-dmenu
-
-# Moving around {{{2
+    bindsym $mod+Shift+Return          fullscreen disable, exec $term
+    bindsym $mod+d                     fullscreen disable, exec $drun
+    bindsym $mod+c                     fullscreen disable, exec $clipboard
+    bindsym Mod1+Tab                   fullscreen disable, exec window-switcher
+    bindsym $mod+Shift+c               kill
+    bindsym $mod+Backspace             reload
+    bindsym XF86MonBrightnessUp        exec light -A 10 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
+    bindsym XF86MonBrightnessDown      exec light -U 10 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
+    bindsym Mod1+XF86MonBrightnessUp   exec light -s sysfs/backlight/ddcci5 -A 10 && light -s sysfs/backlight/ddcci5 -G | cut -d'.' -f1 > $SWAYSOCK.wob
+    bindsym Mod1+XF86MonBrightnessDown exec light -s sysfs/backlight/ddcci5 -U 10 && light -s sysfs/backlight/ddcci5 -G | cut -d'.' -f1 > $SWAYSOCK.wob
+    bindsym XF86AudioMicMute           exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+    bindsym XF86AudioRaiseVolume       exec pamixer -ui 5 && dc -e "[`pamixer --get-volume`]sM 100d `pamixer --get-volume`<Mp" > $SWAYSOCK.wob
+    bindsym XF86AudioLowerVolume       exec pamixer -ud 5 && dc -e "[`pamixer --get-volume`]sM 100d `pamixer --get-volume`<Mp" > $SWAYSOCK.wob
+    bindsym XF86AudioMute              exec pamixer --toggle-mute && ( pamixer --get-mute && echo 0 > $SWAYSOCK.wob ) || dc -e "[`pamixer --get-volume`]sM 100d `pamixer --get-volume`<Mp" > $SWAYSOCK.wob
+    bindsym XF86AudioPlay              exec playerctl play-pause
+    bindsym XF86AudioPrev              exec playerctl previous
+    bindsym XF86AudioNext              exec playerctl next
+    bindsym $mod+Escape                exec makoctl dismiss -a
+    bindsym $mod+o                     exec makoctl menu term-dmenu
 
     bindsym $mod+$left                focus left
     bindsym $mod+$down                focus down
@@ -192,9 +181,6 @@ for_window [ app_id="(?i)popup"                  ] floating enable, resize set w
     bindsym $mod+Ctrl+k               focus parent
     bindsym $mod+Ctrl+j               focus child
 
-# Workspaces {{{2
-
-    # Switch to workspace
     bindsym $mod+tab                  workspace back_and_forth
     bindsym $mod+1                    workspace number 1
     bindsym $mod+2                    workspace number 2
@@ -217,50 +203,39 @@ for_window [ app_id="(?i)popup"                  ] floating enable, resize set w
     bindsym $mod+Shift+9              move container to workspace number 9
     bindsym $mod+Shift+grave          move scratchpad
 
-# Layout stuff {{{2
-
     bindsym $mod+v                    splitt
-
     bindsym $mod+w                    layout tabbed
     bindsym $mod+s                    layout stacking
     bindsym $mod+e                    layout toggle split
-
     bindsym $mod+f                    fullscreen
-
     bindsym $mod+Shift+t              floating toggle
     bindsym $mod+t                    focus mode_toggle
 
-# Resize mode {{{2
-
 set $mode_resize                      "RESIZE"
 mode $mode_resize {
-   bindsym $left                      resize shrink width 20
-   bindsym $down                      resize grow height 20
-   bindsym $up                        resize shrink height 20
-   bindsym $right                     resize grow width 20
-   bindsym minus                      gaps inner current minus 8px
-   bindsym equal                      gaps inner current plus 8px
-   bindsym Return                     mode "default"
-   bindsym Escape                     mode "default"
+    bindsym $left                      resize shrink width 20
+    bindsym $down                      resize grow height 20
+    bindsym $up                        resize shrink height 20
+    bindsym $right                     resize grow width 20
+    bindsym minus                      gaps inner current minus 8px
+    bindsym equal                      gaps inner current plus 8px
+    bindsym Return                     mode "default"
+    bindsym Escape                     mode "default"
 }
 bindsym $mod+r                        mode $mode_resize
 
-# Menu mode {{{2
-
-set $powermode                        "[E]xit - [R]eebot - [L]ock"
+set $powermode                        "[E]xit [R]eebot [L]ock"
 mode $powermode {
-   bindsym e                          exec swaymsg exit
-   bindsym r                          exec loginctl reboot
-   bindsym l                          exec loginctl lock-session; mode "default"
-   bindsym Return                     mode "default"
-   bindsym Escape                     mode "default"
+    bindsym e                          exec swaymsg exit
+    bindsym r                          exec loginctl reboot
+    bindsym l                          exec loginctl lock-session; mode "default"
+    bindsym Return                     mode "default"
+    bindsym Escape                     mode "default"
 }
 bindsym $mod+Shift+Backspace          mode $powermode
 
-# Status Bar {{{1
+# Status Bar ------------------------------------------------------------------
 
-bar {
-    swaybar_command waybar
-}
+bar { swaybar_command waybar }
 
 include /etc/sway/config.d/*
