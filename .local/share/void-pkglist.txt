@@ -29,7 +29,6 @@ bluez-alsa
 bluez-qt5
 bottom
 cairo-devel
-cargo
 chromium
 chrony
 clang-tools-extra
@@ -114,7 +113,6 @@ iwgtk
 j4-dmenu-desktop
 jq
 json-c-devel
-kak-lsp
 keyutils
 kitty
 lazygit
@@ -223,12 +221,14 @@ radeontop
 redshift
 ripgrep
 roxterm
+rustup
 sakura
 scdoc
 scons
 seahorse
 seatd
 setxkbmap
+shellcheck
 skim
 slop
 smbclient
