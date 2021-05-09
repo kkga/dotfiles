@@ -2,8 +2,8 @@ set-option global grepcmd 'rg --smart-case --column --with-filename'
 
 # lsp -------------------------------------------------------------------------
 
-#eval %sh{kak-lsp --kakoune -s $kak_session}
-hook global WinSetOption filetype=(crystal|html|css|json|rust|python|go|typescript|svelte|javascript) %{
+eval %sh{kak-lsp --kakoune -s $kak_session}
+hook global WinSetOption filetype=(crystal|html|css|json|rust|python|go|typescript|svelte|javascript|elm) %{
     lsp-auto-hover-insert-mode-enable
     lsp-enable-window
     set-option global lsp_auto_highlight_references false

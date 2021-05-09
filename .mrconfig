@@ -23,3 +23,6 @@ checkout = git clone 'git@github.com:kkga/saturn.kak.git' 'saturn.kak'
 
 [projects/iosevka-custom]
 checkout = git clone 'git@github.com:kkga/iosevka-custom.git' 'iosevka-custom'
+
+[repos/kak-lsp]
+checkout = git clone 'https://github.com/kak-lsp/kak-lsp' 'kak-lsp'
