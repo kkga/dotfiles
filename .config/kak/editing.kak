@@ -2,7 +2,7 @@ set-option global grepcmd 'rg --smart-case --column --with-filename'
 
 # lsp -------------------------------------------------------------------------
 
-eval %sh{kak-lsp --kakoune -s $kak_session}
+#eval %sh{kak-lsp --kakoune -s $kak_session}
 hook global WinSetOption filetype=(crystal|html|css|json|rust|python|go|typescript|svelte|javascript) %{
     lsp-auto-hover-insert-mode-enable
     lsp-enable-window

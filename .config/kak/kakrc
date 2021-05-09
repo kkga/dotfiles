@@ -1,11 +1,14 @@
 require-module plug
 
 plug plug https://github.com/alexherbo2/plug.kak %{
-    define-command plug-upgrade -docstring 'plug-upgrade' %{ plug-install }
+  define-command plug-upgrade -docstring 'plug-upgrade' %{
+    plug-install
+    plug-execute lsp cargo build --release
+  }
 }
 plug-core %{ set-option global makecmd 'make -j 8' }
 
-# plug foot projects/foot.kak
+plug-old lsp https://github.com/kak-lsp/kak-lsp
 plug alacritty https://github.com/alexherbo2/alacritty.kak
 hook -group windowing-detection global ClientCreate '.*' %{
   evaluate-commands %sh{
@@ -16,14 +19,14 @@ hook -group windowing-detection global ClientCreate '.*' %{
   }
 }
 hook global ModuleLoaded kitty %{
-    alias global terminal kitty-terminal
-    alias global popup kitty-terminal
+  alias global terminal kitty-terminal
+  alias global popup kitty-terminal
 }
 plug auto-pairs https://github.com/alexherbo2/auto-pairs.kak %{ auto-pairs-enable }
 plug explore https://github.com/alexherbo2/explore.kak %{
-    explore-enable
-    define-command explore-files -params .. '+ kcr-fzf-files %arg{@}'
-    define-command explore-buffers -params .. '+ kcr-fzf-buffers %arg{@}'
+  explore-enable
+  define-command explore-files -params .. '+ kcr-fzf-files %arg{@}'
+  define-command explore-buffers -params .. '+ kcr-fzf-buffers %arg{@}'
 }
 plug edit https://github.com/alexherbo2/edit.kak
 plug manual-indent https://github.com/alexherbo2/manual-indent.kak
