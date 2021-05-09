@@ -146,6 +146,7 @@ for_window [ app_id="(?i)popup"                  ] floating enable, resize set w
     bindsym $mod+d                     fullscreen disable, exec $drun
     bindsym $mod+c                     fullscreen disable, exec $clipboard
     bindsym Mod1+Tab                   fullscreen disable, exec window-switcher
+    bindsym $mod+Control+p             fullscreen disable, exec passmenu
     bindsym $mod+Shift+c               kill
     bindsym $mod+Backspace             reload
     bindsym XF86MonBrightnessUp        exec light -A 10 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
