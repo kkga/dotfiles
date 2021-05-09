@@ -2,7 +2,7 @@
 #assume_yes = true
 
 # Disable specific steps - same options as the command line flag
-disable = ["vim"]
+# disable = ["vim"]
 
 # Ignore failures for these steps
 #ignore_failures = ["go"]
@@ -32,9 +32,9 @@ disable = ["vim"]
 #set_title = false
 
 # Cleanup temporary or old files
-cleanup = true
+# cleanup = true
 
-[git]
+# [git]
 #max_concurrency = 5
 # Additional git repositories to pull
 #repos = [
