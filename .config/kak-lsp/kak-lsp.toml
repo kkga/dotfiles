@@ -64,12 +64,6 @@ roots = ["package.json"]
 command = "html-languageserver"
 args = ["--stdio"]
 
-[language.bash]
-filetypes = ["sh"]
-roots = [".git", ".hg"]
-command = "bash-language-server"
-args = ["start"]
-
 [language.elixir]
 filetypes = ["elixir"]
 roots = ["mix.exs"]
