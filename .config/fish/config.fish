@@ -1,15 +1,18 @@
+alias cp="cp -i"
+alias mv='mv -i'
 alias gg="lazygit"
 alias ls="exa --group --git --group-directories-first"
 alias y="yadm"
 alias cat="bat"
 alias att='alacritty-theme-toggle'
+alias t='todo.sh'
+alias zk='ZK_NOTEBOOK_DIR=~/notes/h ~/.local/bin/zk'
+alias zkw='ZK_NOTEBOOK_DIR=~/notes/w ~/.local/bin/zk'
 
 abbr -a -g xr 'doas xbps-remove -Ro'
 abbr -a -g xi 'doas xbps-install -S'
 abbr -a -g xu 'doas xbps-install -Su'
-
-alias cp="cp -i"
-alias mv='mv -i'
+alias xri="xpkg -m | fzf -m --preview 'xq {}' | xargs -ro doas xbps-remove -Ro"
 
 alias k='kcr edit'
 alias K='kcr-fzf-shell'
@@ -21,11 +24,6 @@ alias :cat='kcr cat --raw'
 alias val='kcr get --value'
 alias opt='kcr get --option'
 alias reg='kcr get --register'
-
-alias t='todo.sh'
-
-alias zk='ZK_NOTEBOOK_DIR=~/notes/h ~/.local/bin/zk'
-alias zkw='ZK_NOTEBOOK_DIR=~/notes/w ~/.local/bin/zk'
 
 set --global hydro_symbol_prompt           '>'
 set --global hydro_symbol_git_dirty        '*'
