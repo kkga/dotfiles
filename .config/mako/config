@@ -1,7 +1,7 @@
 layer=overlay
 anchor=bottom-right
-font=sans-serif 10
-width=280
+font=sans-serif 9
+width=320
 padding=8
 margin=16
 border-size=1
