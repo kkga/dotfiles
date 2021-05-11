@@ -2,8 +2,11 @@ alias gg="lazygit"
 alias ls="exa --group --git --group-directories-first"
 alias y="yadm"
 alias cat="bat"
-alias xr='doas xbps-remove'
 alias att='alacritty-theme-toggle'
+
+abbr -a -g xr 'doas xbps-remove -Ro'
+abbr -a -g xi 'doas xbps-install -S'
+abbr -a -g xu 'doas xbps-install -Su'
 
 alias cp="cp -i"
 alias mv='mv -i'
