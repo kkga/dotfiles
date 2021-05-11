@@ -1,3 +1,5 @@
 #!/bin/bash
 
-prs list --list | $DMENU_PROGRAM | xargs --no-run-if-empty prs copy --no-interact
+prs list --list |
+	term-dmenu '--preview-window hidden --prompt "pass> " --bind "ctrl-v:preview(prs show {})"' |
+	xargs --no-run-if-empty prs copy --no-interact
