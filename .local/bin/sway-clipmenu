@@ -1,2 +1,10 @@
 #!/usr/bin/env bash
-floating-terminal clipman pick --print0 --tool=CUSTOM --tool-args="fzf --preview 'echo {}' --preview-window right:50%:border-left --prompt 'clip > ' --read0"
+
+export FZF_DEFAULT_OPTS="
+	$* $FZF_DEFAULT_OPTS\
+	--prompt 'CLIP> '\
+    --preview 'echo {}'\
+    --preview-window right:50%:border-left\
+    --read0"
+
+floating-terminal clipman pick --print0 --tool=CUSTOM --tool-args="fzf"

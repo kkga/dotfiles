@@ -3,15 +3,12 @@
 # Launch a dmenu based power menu.
 
 selection=$(
-	printf "lock\nshutdown\nreboot\nsuspend" | $DMENU_PROGRAM
+	printf "Lock\nShutdown\nReboot\nSuspend" | $DMENU_PROGRAM
 )
 
 case "$selection" in
-	lock) loginctl lock-session ;;
-	shutdown) loginctl poweroff ;;
-	reboot) loginctl reboot ;;
-	suspend)
-		loginctl suspend &
-		loginctl lock-session
-		;;
+	Lock) loginctl lock-session ;;
+	Shutdown) loginctl poweroff ;;
+	Reboot) loginctl reboot ;;
+	Suspend) loginctl suspend & loginctl lock-session ;;
 esac

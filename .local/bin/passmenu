@@ -1,5 +1,12 @@
-#!/bin/bash
+#!/bin/sh
+
+export FZF_DEFAULT_OPTS="
+	$* $FZF_DEFAULT_OPTS\
+	--prompt 'PASS> '\
+	--preview ''\
+	--preview-window right:50%:border-left\
+	--bind 'ctrl-v:preview(prs show {})'"
 
 prs list --list |
-	$DMENU_PROGRAM '--preview-window hidden --prompt "pass> " --bind "ctrl-v:preview(prs show {})"' |
+	$DMENU_PROGRAM |
 	xargs --no-run-if-empty prs copy --no-interact
