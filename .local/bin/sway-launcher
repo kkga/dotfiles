@@ -4,7 +4,7 @@ export FZF_DEFAULT_OPTS="
 	$* $FZF_DEFAULT_OPTS\
 	--bind=tab:down,btab:up
 	--prompt 'RUN> '\
-    --preview 'file {}'\
+    --preview 'whatis {}'\
     --preview-window right:50%:border-left"
 
 exec j4-dmenu-desktop \
