@@ -10,17 +10,17 @@
 [ -z "$DMENU_PROGRAM" ] && DMENU_PROGRAM='term-dmenu --no-extended --print-query --no-sort'
 
 # shellcheck disable=SC2154
-if [ -n "$SWAYSOCK" ] && command -v swaymsg >/dev/null; then
+if [ -n "$SWAYSOCK" ] && command -v swaymsg > /dev/null; then
 	msgprogram='swaymsg'
-elif [ -n "$I3SOCK" ] && command -v i3msg >/dev/null; then
+elif [ -n "$I3SOCK" ] && command -v i3msg > /dev/null; then
 	msgprogram='i3msg'
 fi
 
-$msgprogram -t get_tree \
-	| jq -r 'recurse(.nodes[]?)|recurse(.floating_nodes[]?)|select(.type=="con"),select(.type=="floating_con")|(.id|tostring)+" "+.app_id+": "+.name' \
-	| grep -v '^[0-9]* \: $' \
-	| $DMENU_PROGRAM \
-	| awk '{print $1}' \
-	| xargs -I % "$msgprogram" '[con_id="%"] focus'
+$msgprogram -t get_tree |
+	jq -r 'recurse(.nodes[]?)|recurse(.floating_nodes[]?)|select(.type=="con"),select(.type=="floating_con")|(.id|tostring)+" "+.app_id+": "+.name' |
+	grep -v '^[0-9]* \: $' |
+	$DMENU_PROGRAM |
+	awk '{print $1}' |
+	xargs -I % "$msgprogram" '[con_id="%"] focus'
 
 # vi:ft=sh

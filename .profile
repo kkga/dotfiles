@@ -14,7 +14,7 @@ export TERMINAL="alacritty"
 export EDITOR="kcr edit"
 export VISUAL="kcr edit"
 
-export DMENU_PROGRAM="term-dmenu"
+export DMENU_PROGRAM="fzf-menu"
 export FLOATING_TERMINAL="alacritty --class popup -e"
 
 export FZF_DEFAULT_COMMAND="fd --type f"
