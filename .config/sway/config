@@ -43,6 +43,7 @@ exec_always {
 # Variables ------------------------------------------------------------------
 
 set $term 'alacritty'
+set $floatterm 'floating-terminal bash'
 set $drun 'sway-launcher'
 set $lock 'swaylock -K -e -f -c 222222'
 set $clipboard 'sway-clipmenu'
@@ -143,6 +144,7 @@ for_window [ app_id="(?i)popup"                  ] floating enable, resize set w
     floating_modifier $mod             normal
 
     bindsym $mod+Shift+Return          fullscreen disable, exec $term
+    bindsym $mod+Control+Return        fullscreen disable, exec $floatterm
     bindsym $mod+d                     fullscreen disable, exec $drun
     bindsym $mod+c                     fullscreen disable, exec $clipboard
     bindsym Mod1+Tab                   fullscreen disable, exec window-switcher
@@ -192,7 +194,7 @@ for_window [ app_id="(?i)popup"                  ] floating enable, resize set w
     bindsym $mod+7                    workspace number 7
     bindsym $mod+8                    workspace number 8
     bindsym $mod+9                    workspace number 9
-    bindsym $mod+grave                scratchpad show
+    bindsym $mod+minus                scratchpad show
     bindsym $mod+Shift+1              move container to workspace number 1
     bindsym $mod+Shift+2              move container to workspace number 2
     bindsym $mod+Shift+3              move container to workspace number 3
@@ -202,7 +204,7 @@ for_window [ app_id="(?i)popup"                  ] floating enable, resize set w
     bindsym $mod+Shift+7              move container to workspace number 7
     bindsym $mod+Shift+8              move container to workspace number 8
     bindsym $mod+Shift+9              move container to workspace number 9
-    bindsym $mod+Shift+grave          move scratchpad
+    bindsym $mod+Shift+minus          move scratchpad
 
     bindsym $mod+v                    splitt
     bindsym $mod+w                    layout tabbed
