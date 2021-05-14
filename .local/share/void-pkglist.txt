@@ -265,6 +265,7 @@ trayer-srg
 ttf-material-icons
 ttfautohint
 udiskie
+ufetch
 unar
 unclutter-xfixes
 uni

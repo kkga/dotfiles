@@ -141,101 +141,103 @@ for_window [ app_id="(?i)popup"                  ] floating enable, resize set w
 
 # Key bindings ------------------------------------------------------------------
 
-    floating_modifier $mod             normal
+floating_modifier $mod             normal
 
-    bindsym $mod+Shift+Return          fullscreen disable, exec $term
-    bindsym $mod+Control+Return        fullscreen disable, exec $floatterm
-    bindsym $mod+d                     fullscreen disable, exec $drun
-    bindsym $mod+c                     fullscreen disable, exec $clipboard
-    bindsym Mod1+Tab                   fullscreen disable, exec window-switcher
-    bindsym $mod+Control+p             fullscreen disable, exec passmenu
-    bindsym $mod+Shift+c               kill
-    bindsym $mod+Backspace             reload
-    bindsym XF86MonBrightnessUp        exec light -A 10 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
-    bindsym XF86MonBrightnessDown      exec light -U 10 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
-    bindsym Mod1+XF86MonBrightnessUp   exec light -s sysfs/backlight/ddcci5 -A 10 && light -s sysfs/backlight/ddcci5 -G | cut -d'.' -f1 > $SWAYSOCK.wob
-    bindsym Mod1+XF86MonBrightnessDown exec light -s sysfs/backlight/ddcci5 -U 10 && light -s sysfs/backlight/ddcci5 -G | cut -d'.' -f1 > $SWAYSOCK.wob
-    bindsym XF86AudioMicMute           exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
-    bindsym XF86AudioRaiseVolume       exec pamixer -ui 5 && dc -e "[`pamixer --get-volume`]sM 100d `pamixer --get-volume`<Mp" > $SWAYSOCK.wob
-    bindsym XF86AudioLowerVolume       exec pamixer -ud 5 && dc -e "[`pamixer --get-volume`]sM 100d `pamixer --get-volume`<Mp" > $SWAYSOCK.wob
-    bindsym XF86AudioMute              exec pamixer --toggle-mute && ( pamixer --get-mute && echo 0 > $SWAYSOCK.wob ) || dc -e "[`pamixer --get-volume`]sM 100d `pamixer --get-volume`<Mp" > $SWAYSOCK.wob
-    bindsym XF86AudioPlay              exec playerctl play-pause
-    bindsym XF86AudioPrev              exec playerctl previous
-    bindsym XF86AudioNext              exec playerctl next
-    bindsym $mod+Escape                exec makoctl dismiss -a
-    bindsym $mod+o                     exec makoctl menu term-dmenu
+bindsym $mod+Shift+Return          fullscreen disable, exec $term
+bindsym $mod+Control+Return        fullscreen disable, exec $floatterm
+bindsym $mod+d                     fullscreen disable, exec $drun
+bindsym $mod+c                     fullscreen disable, exec $clipboard
+bindsym Mod1+Tab                   fullscreen disable, exec window-switcher
+bindsym $mod+Control+p             fullscreen disable, exec passmenu
+bindsym $mod+Shift+c               kill
+bindsym $mod+Backspace             reload
+bindsym XF86MonBrightnessUp        exec light -A 10 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
+bindsym XF86MonBrightnessDown      exec light -U 10 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
+bindsym Mod1+XF86MonBrightnessUp   exec light -s sysfs/backlight/ddcci5 -A 10 && light -s sysfs/backlight/ddcci5 -G | cut -d'.' -f1 > $SWAYSOCK.wob
+bindsym Mod1+XF86MonBrightnessDown exec light -s sysfs/backlight/ddcci5 -U 10 && light -s sysfs/backlight/ddcci5 -G | cut -d'.' -f1 > $SWAYSOCK.wob
+bindsym XF86AudioMicMute           exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86AudioRaiseVolume       exec pamixer -ui 5 && dc -e "[`pamixer --get-volume`]sM 100d `pamixer --get-volume`<Mp" > $SWAYSOCK.wob
+bindsym XF86AudioLowerVolume       exec pamixer -ud 5 && dc -e "[`pamixer --get-volume`]sM 100d `pamixer --get-volume`<Mp" > $SWAYSOCK.wob
+bindsym XF86AudioMute              exec pamixer --toggle-mute && ( pamixer --get-mute && echo 0 > $SWAYSOCK.wob ) || dc -e "[`pamixer --get-volume`]sM 100d `pamixer --get-volume`<Mp" > $SWAYSOCK.wob
+bindsym XF86AudioPlay              exec playerctl play-pause
+bindsym XF86AudioPrev              exec playerctl previous
+bindsym XF86AudioNext              exec playerctl next
+bindsym $mod+Escape                exec makoctl dismiss -a
+bindsym $mod+o                     exec makoctl menu term-dmenu
 
-    bindsym $mod+$left                focus left
-    bindsym $mod+$down                focus down
-    bindsym $mod+$up                  focus up
-    bindsym $mod+$right               focus right
+bindsym $mod+$left                focus left
+bindsym $mod+$down                focus down
+bindsym $mod+$up                  focus up
+bindsym $mod+$right               focus right
 
-    bindsym $mod+Shift+$left          move left
-    bindsym $mod+Shift+$down          move down
-    bindsym $mod+Shift+$up            move up
-    bindsym $mod+Shift+$right         move right
+bindsym $mod+Shift+$left          move left
+bindsym $mod+Shift+$down          move down
+bindsym $mod+Shift+$up            move up
+bindsym $mod+Shift+$right         move right
 
-    bindsym $mod+comma                focus output left
-    bindsym $mod+period               focus output right
+bindsym $mod+comma                focus output left
+bindsym $mod+period               focus output right
 
-    bindsym $mod+Shift+comma          move output left
-    bindsym $mod+Shift+period         move output right
+bindsym $mod+Shift+comma          move output left
+bindsym $mod+Shift+period         move output right
 
-    bindsym $mod+Ctrl+k               focus parent
-    bindsym $mod+Ctrl+j               focus child
+bindsym $mod+Ctrl+k               focus parent
+bindsym $mod+Ctrl+j               focus child
 
-    bindsym $mod+tab                  workspace back_and_forth
-    bindsym $mod+1                    workspace number 1
-    bindsym $mod+2                    workspace number 2
-    bindsym $mod+3                    workspace number 3
-    bindsym $mod+4                    workspace number 4
-    bindsym $mod+5                    workspace number 5
-    bindsym $mod+6                    workspace number 6
-    bindsym $mod+7                    workspace number 7
-    bindsym $mod+8                    workspace number 8
-    bindsym $mod+9                    workspace number 9
-    bindsym $mod+minus                scratchpad show
-    bindsym $mod+Shift+1              move container to workspace number 1
-    bindsym $mod+Shift+2              move container to workspace number 2
-    bindsym $mod+Shift+3              move container to workspace number 3
-    bindsym $mod+Shift+4              move container to workspace number 4
-    bindsym $mod+Shift+5              move container to workspace number 5
-    bindsym $mod+Shift+6              move container to workspace number 6
-    bindsym $mod+Shift+7              move container to workspace number 7
-    bindsym $mod+Shift+8              move container to workspace number 8
-    bindsym $mod+Shift+9              move container to workspace number 9
-    bindsym $mod+Shift+minus          move scratchpad
+bindsym $mod+tab                  workspace back_and_forth
+bindsym $mod+1                    workspace number 1
+bindsym $mod+2                    workspace number 2
+bindsym $mod+3                    workspace number 3
+bindsym $mod+4                    workspace number 4
+bindsym $mod+5                    workspace number 5
+bindsym $mod+6                    workspace number 6
+bindsym $mod+7                    workspace number 7
+bindsym $mod+8                    workspace number 8
+bindsym $mod+9                    workspace number 9
+bindsym $mod+minus                scratchpad show
+bindsym $mod+Shift+1              move container to workspace number 1
+bindsym $mod+Shift+2              move container to workspace number 2
+bindsym $mod+Shift+3              move container to workspace number 3
+bindsym $mod+Shift+4              move container to workspace number 4
+bindsym $mod+Shift+5              move container to workspace number 5
+bindsym $mod+Shift+6              move container to workspace number 6
+bindsym $mod+Shift+7              move container to workspace number 7
+bindsym $mod+Shift+8              move container to workspace number 8
+bindsym $mod+Shift+9              move container to workspace number 9
+bindsym $mod+Shift+minus          move scratchpad
 
-    bindsym $mod+v                    splitt
-    bindsym $mod+w                    layout tabbed
-    bindsym $mod+s                    layout stacking
-    bindsym $mod+e                    layout toggle split
-    bindsym $mod+f                    fullscreen
-    bindsym $mod+Shift+t              floating toggle
-    bindsym $mod+t                    focus mode_toggle
+bindsym $mod+v                    splitt
+bindsym $mod+w                    layout tabbed
+bindsym $mod+s                    layout stacking
+bindsym $mod+e                    layout toggle split
+bindsym $mod+f                    fullscreen
+bindsym $mod+Shift+t              floating toggle
+bindsym $mod+t                    focus mode_toggle
 
-set $mode_resize                      "RESIZE"
+set $mode_resize                  "RESIZE"
 mode $mode_resize {
-    bindsym $left                      resize shrink width 20
-    bindsym $down                      resize grow height 20
-    bindsym $up                        resize shrink height 20
-    bindsym $right                     resize grow width 20
-    bindsym minus                      gaps inner current minus 8px
-    bindsym equal                      gaps inner current plus 8px
-    bindsym Return                     mode "default"
-    bindsym Escape                     mode "default"
+    bindsym $left                 resize shrink width 20
+    bindsym $down                 resize grow height 20
+    bindsym $up                   resize shrink height 20
+    bindsym $right                resize grow width 20
+    bindsym minus                 gaps inner current minus 8px
+    bindsym equal                 gaps inner current plus 8px
+    bindsym Return                mode "default"
+    bindsym Escape                mode "default"
 }
-bindsym $mod+r                        mode $mode_resize
+bindsym $mod+r                    mode $mode_resize
 
-set $powermode                        "[E]xit [R]eebot [L]ock"
-mode $powermode {
-    bindsym e                          exec swaymsg exit
-    bindsym r                          exec loginctl reboot
-    bindsym l                          exec loginctl lock-session; mode "default"
-    bindsym Return                     mode "default"
-    bindsym Escape                     mode "default"
+set $mode_power                   "(e)xit (r)eebot (l)ock (s)uspend (p)oweroff"
+mode $mode_power {
+    bindsym e                     exec swaymsg exit
+    bindsym r                     exec loginctl reboot
+    bindsym l                     exec loginctl lock-session; mode "default"
+    bindsym s                     exec loginctl suspend"
+    bindsym p                     exec loginctl poweroff"
+    bindsym Return                mode "default"
+    bindsym Escape                mode "default"
 }
-bindsym $mod+Shift+Backspace          mode $powermode
+bindsym $mod+Shift+Backspace      mode $powermode
 
 # Status Bar ------------------------------------------------------------------
 

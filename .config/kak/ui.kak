@@ -3,7 +3,6 @@
 colorscheme saturn
 
 set-option global tabstop 4
-# set-option global indentwidth 4
 set-option global scrolloff 4,4
 set-option global ui_options ncurses_status_on_top=true
 set-option -add global ui_options ncurses_assistant=off
@@ -15,6 +14,7 @@ set-option global autoreload yes
 
 # add-highlighter global/ wrap -word
 # add-highlighter global/ number-lines -hlcursor
+add-highlighter global/ show-whitespaces
 add-highlighter global/ regex \h+$ 0:Error
 add-highlighter global/ show-matching
 add-highlighter global/ regex \b(TODO|FIXME|XXX|NOTE)\b 0:yellow,black+rb
