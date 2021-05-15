@@ -59,5 +59,3 @@ set fish_pager_color_description           yellow
 set fish_pager_color_selected_background   -r
 
 zoxide init fish | source
-set -gx VOLTA_HOME "$HOME/.volta"
-set -gx PATH "$VOLTA_HOME/bin" $PATH
