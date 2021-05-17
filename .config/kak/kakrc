@@ -1,3 +1,5 @@
+evaluate-commands %sh{ kcr init kakoune }
+
 require-module plug
 
 plug plug https://github.com/alexherbo2/plug.kak %{
@@ -54,8 +56,6 @@ plug-old state-save https://gitlab.com/Screwtapello/kakoune-state-save %{
     state-save-reg-save slash
   }
 }
-
-evaluate-commands %sh{ kcr init kakoune }
 
 source "~/.config/kak/editing.kak"
 source "~/.config/kak/mappings.kak"

@@ -3,7 +3,6 @@
 sudo yabai --load-sa
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 
-# global settings
 yabai -m config mouse_follows_focus          off
 yabai -m config focus_follows_mouse          off
 yabai -m config window_placement             second_child
@@ -24,15 +23,12 @@ yabai -m config mouse_modifier               ctrl
 yabai -m config mouse_action1                move
 yabai -m config mouse_action2                resize
 
-# general space settings
 yabai -m config layout                       bsp
-yabai -m config window_gap                   0
+yabai -m config window_gap                   2
 # yabai -m config external_bar                 all:16:0
 
-# space config
 yabai -m config --space 9 layout float
 
-# rules for apps
 yabai -m rule --add app="^System Preferences$" manage=off
 yabai -m rule --add app="^App Store$"          manage=off
 yabai -m rule --add app="^Activity Monitor$"   manage=off
@@ -44,32 +40,3 @@ yabai -m rule --add app='^Little Snitch$'      manage=off
 yabai -m rule --add app="^Quick Add to Trello$" manage=off
 yabai -m rule --add app="Godot"				   manage=off
 yabai -m rule --add app="^zoom.us$"            manage=off
-
-# yabai -m rule --add app="^Godot$"              space=^4
-# yabai -m rule --add app="^Figma$"              space=^5
-# yabai -m rule --add app="^Safari$"             space=^1
-# yabai -m rule --add app="^Firefox Nightly$"    space=^1
-# yabai -m rule --add app="^Firefox$"            space=^2
-# yabai -m rule --add app="^Slack$"              space=^3
-# yabai -m rule --add app="^Telegram$"           space=^6
-# yabai -m rule --add app="^DejaLu$"             space=^6
-# yabai -m rule --add app="^Keep It$"            space=^7
-# yabai -m rule --add app="^Things$"             space=^7
-# yabai -m rule --add app="^Taskpaper$"          space=^7
-
-# yabai -m rule --add app="^kitty$"              display=^2
-
-
-# yabai -m signal --add event=space_changed \
-#     action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-jsx\"'"
-# yabai -m signal --add event=display_changed \
-#     action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-spaces-jsx\"'"
-
-# yabai -m signal --add event=window_destroyed \
-#     action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-windows-jsx\"'"
-# yabai -m signal --add event=window_created \
-#     action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-windows-jsx\"'"
-# yabai -m signal --add event=window_focused \
-#     action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-windows-jsx\"'"
-# yabai -m signal --add event=space_changed \
-#     action="osascript -e 'tell application \"Übersicht\" to refresh widget id \"nibar-windows-jsx\"'"

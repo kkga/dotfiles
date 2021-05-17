@@ -6,8 +6,6 @@ eval %sh{kak-lsp --kakoune -s $kak_session}
 hook global WinSetOption filetype=(crystal|html|css|json|rust|python|go|typescript|svelte|javascript|elm) %{
     lsp-auto-hover-insert-mode-enable
     lsp-enable-window
-    set-option global lsp_auto_highlight_references false
-    set-option global lsp_hover_anchor true
 }
 hook global KakEnd .* lsp-exit
 
@@ -74,7 +72,7 @@ hook global WinSetOption filetype=.* %{
         try %{ execute-keys -draft '%s\u000d<ret>d' }
     }
 }
-hook global WinSetOption filetype=(svelte|javascript|typescript|css|scss|yaml|html) %{
+hook global WinSetOption filetype=(svelte|css|yaml|html) %{
     set-option buffer formatcmd "prettier --stdin-filepath='%val{buffile}'"
     hook buffer -group format BufWritePre .* format
 }
