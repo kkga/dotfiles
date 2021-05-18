@@ -237,7 +237,7 @@ mode $mode_power {
     bindsym Return                mode "default"
     bindsym Escape                mode "default"
 }
-bindsym $mod+Shift+Backspace      mode $powermode
+bindsym $mod+Shift+Backspace      mode $mode_power
 
 # Status Bar ------------------------------------------------------------------
 
