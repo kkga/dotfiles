@@ -6,4 +6,4 @@ exec_always {
 
 output eDP-1 scale 1
 font monospace 12
-seat * xcursor_theme Adwaita 48
+seat * xcursor_theme Adwaita 32
