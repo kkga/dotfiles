@@ -1,5 +1,5 @@
-font:
-  size: 11
+#font:
+ # size: 11
   # normal:
   #   family: "Essential PragmataPro"
   # style: Narrow Regular
@@ -141,3 +141,7 @@ schemes:
       cyan: "#5fafaf"
       white: "#ffffff"
 colors: *dark
+
+import:
+  - ~/.config/alacritty/device-specific.yml
+

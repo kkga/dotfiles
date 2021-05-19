@@ -12,9 +12,13 @@
   border: none;
   border-radius: 0;
   font-family: monospace, microns;
-  font-size: 9pt;
+  font-size: 10pt;
   min-height: 0;
   transition: none;
+}
+
+window.eDP-1 * { 
+  font-size: 18px; 
 }
 
 window#waybar {
@@ -23,7 +27,7 @@ window#waybar {
 }
 
 #workspaces button {
-  padding: 0;
+  padding: 0 2pt;
   margin: 0;
   color: @foreground;
 }

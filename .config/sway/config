@@ -21,6 +21,7 @@ seat * hide_cursor 5000
 # Autostart ------------------------------------------------------------------
 
 exec mako
+exec kanshi
 exec pipewire
 exec pipewire-pulse
 exec gammastep -l 55:37
@@ -73,7 +74,7 @@ set $laptop eDP-1
 set $mon1 DP-1
 set $mon2 DP-2
 
-output $laptop scale 2
+# output $laptop scale 2
 output $mon1 resolution 3840x2160 scale 2 position 1920 0
 output $mon2 resolution 3840x2160 scale 2
 
@@ -246,3 +247,4 @@ bar {
 }
 
 include /etc/sway/config.d/*
+include ~/.config/sway/$(hostname)/*

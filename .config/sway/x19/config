@@ -1,0 +1,9 @@
+exec_always {
+    gsettings set $gnome-schema cursor-size 32
+    gsettings set $gnome-schema font-name 'sans-serif 12'
+    gsettings set $gnome-schema monospace-font-name 'monospace 12'
+}
+
+output eDP-1 scale 1
+font monospace 12
+seat * xcursor_theme Adwaita 48
