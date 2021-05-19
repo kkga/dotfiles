@@ -7,7 +7,6 @@ SDL2-devel
 Vulkan-Tools
 Waybar
 abduco
-adwaita-plus
 alacritty
 alsa-firmware
 alsa-plugins-pulseaudio
@@ -47,7 +46,6 @@ ddcutil
 delta
 dfu-programmer
 dfu-util
-dina-font
 dkms
 dmenu
 dos2unix
@@ -69,9 +67,7 @@ ffsend
 firefox
 fish-shell
 flatpak
-font-cozette
 font-ibm-plex-ttf
-font-tamzen
 foot
 fuzzel
 fuzzypkg
@@ -139,6 +135,7 @@ libva-vdpau-driver
 libvdpau-va-gl
 libxkbcommon-devel
 light
+linux-firmware
 linux5.11
 linux5.11-headers
 lm_sensors
@@ -186,7 +183,6 @@ openssl-devel
 pamixer
 pandoc
 pango-devel
-papirus-icon-theme
 paprefs
 par
 pass
