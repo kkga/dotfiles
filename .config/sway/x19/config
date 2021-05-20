@@ -1,7 +1,8 @@
 exec_always {
     gsettings set $gnome-schema cursor-size 32
-    gsettings set $gnome-schema font-name 'sans-serif 13'
-    gsettings set $gnome-schema monospace-font-name 'monospace 13'
+	gsettings set $gnome-schema text-scaling-factor 1.25
+    gsettings set $gnome-schema font-name 'sans-serif 11'
+    gsettings set $gnome-schema monospace-font-name 'monospace 11'
 }
 
 output eDP-1 scale 1
