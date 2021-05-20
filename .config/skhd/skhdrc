@@ -58,15 +58,15 @@ cmd + ctrl - 9 : yabai -m space --focus 9
 cmd + ctrl + shift - tab : yabai -m window --space recent; yabai -m space --focus recent
 cmd + ctrl + shift - n : yabai -m window --space next; yabai -m space --focus next
 cmd + ctrl + shift - p : yabai -m window --space prev; yabai -m space --focus prev
-cmd + ctrl + shift - 1 : yabai -m window --space  1; yabai -m space --focus 1
-cmd + ctrl + shift - 2 : yabai -m window --space  2; yabai -m space --focus 2
-cmd + ctrl + shift - 3 : yabai -m window --space  3; yabai -m space --focus 3
-cmd + ctrl + shift - 4 : yabai -m window --space  4; yabai -m space --focus 4
-cmd + ctrl + shift - 5 : yabai -m window --space  5; yabai -m space --focus 5
-cmd + ctrl + shift - 6 : yabai.-m window --space  6; yabai -m space --focus 6
-cmd + ctrl + shift - 7 : yabai.-m window --space  7; yabai -m space --focus 7
-cmd + ctrl + shift - 8 : yabai.-m window --space  8; yabai -m space --focus 8
-cmd + ctrl + shift - 9 : yabai.-m window --space  9; yabai -m space --focus 9
+# cmd + ctrl + shift - 1 : yabai -m window --space  1; yabai -m space --focus 1
+# cmd + ctrl + shift - 2 : yabai -m window --space  2; yabai -m space --focus 2
+# cmd + ctrl + shift - 3 : yabai -m window --space  3; yabai -m space --focus 3
+# cmd + ctrl + shift - 4 : yabai -m window --space  4; yabai -m space --focus 4
+# cmd + ctrl + shift - 5 : yabai -m window --space  5; yabai -m space --focus 5
+# cmd + ctrl + shift - 6 : yabai.-m window --space  6; yabai -m space --focus 6
+# cmd + ctrl + shift - 7 : yabai.-m window --space  7; yabai -m space --focus 7
+# cmd + ctrl + shift - 8 : yabai.-m window --space  8; yabai -m space --focus 8
+# cmd + ctrl + shift - 9 : yabai.-m window --space  9; yabai -m space --focus 9
 
 # change layout of desktop
 cmd + ctrl - z : yabai -m space --layout bsp
