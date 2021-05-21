@@ -24,6 +24,7 @@ exec mako
 exec kanshi
 exec pipewire
 exec pipewire-pulse
+exec foot --server
 exec gammastep -l 55:37
 exec light -S 35
 exec wl-paste -t text --watch clipman store --max-items=50
@@ -45,7 +46,7 @@ exec_always {
 
 # Variables ------------------------------------------------------------------
 
-set $term 'alacritty'
+set $term 'footclient'
 set $floatterm 'floating-terminal bash'
 set $drun 'sway-launcher'
 set $lock 'swaylock -K -e -f -c 222222'

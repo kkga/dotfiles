@@ -49,7 +49,7 @@
     "exec": "~/.config/waybar/modules/xbps.sh",
     "signal": 1,
     "on-click-right": "~/.config/waybar/modules/xbps.sh",
-    "on-click": "alacritty -e topgrade",
+    "on-click": "floating-terminal topgrade",
     "interval": "600"
   },
   "custom/yadm": {
@@ -57,7 +57,7 @@
     "exec": "~/.config/waybar/modules/yadm.sh",
     "signal": 1,
     "on-click-right": "~/.config/waybar/modules/yadm.sh",
-    "on-click": "alacritty -e yadm c -a",
+    "on-click": "floating-terminal yadm c -a",
     "interval": "3600"
   },
   "custom/media": {
