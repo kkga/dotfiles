@@ -1,4 +1,4 @@
 [Desktop Entry]
 Type=Application
 Name=Text editor
-Exec=alacritty -e kak %u
+Exec=footclient kak %u

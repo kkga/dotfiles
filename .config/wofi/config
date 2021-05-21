@@ -1,5 +1,5 @@
 mode=drun,run
-term=alacritty
+term=footclient
 insensitive=true
 no_actions=true
 width=440

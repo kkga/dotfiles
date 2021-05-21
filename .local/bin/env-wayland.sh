@@ -1,6 +1,6 @@
 #!/bin/sh
 
-export TERM=alacritty
+export TERM=foot
 export MOZ_ENABLE_WAYLAND=1
 export MOZ_WEBRENDER=1
 export MOZ_DBUS_REMOTE=1

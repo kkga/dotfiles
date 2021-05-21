@@ -12,13 +12,13 @@
   border: none;
   border-radius: 0;
   font-family: monospace, microns;
-  font-size: 10pt;
+  font-size: 9pt;
   min-height: 0;
   transition: none;
 }
 
-window.eDP-1 * { 
-  font-size: 18px; 
+window.eDP-1 * {
+  font-size: 18px;
 }
 
 window#waybar {
@@ -43,8 +43,8 @@ window#waybar {
   color: @text-bright;
 }
 #window {
-  padding-left: 8px;
-  border-left: 1px solid @bg-dim;
+  padding-left: 8pt;
+  border-left: 1pt solid @bg-dim;
 }
 
 #workspaces button.urgent,

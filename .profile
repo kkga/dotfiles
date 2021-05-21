@@ -10,12 +10,12 @@ export PATH="/var/lib/flatpak/exports/bin/:$PATH"
 export XBPS_DISTDIR="$HOME/.void-packages"
 
 export BROWSER="firefox"
-export TERMINAL="alacritty"
+export TERMINAL="foot"
 export EDITOR="kcr edit"
 export VISUAL="kcr edit"
 
 export DMENU_PROGRAM="fzf-menu"
-export FLOATING_TERMINAL="alacritty --class popup -e"
+export FLOATING_TERMINAL="foot --app-id popup"
 
 export FZF_DEFAULT_COMMAND="fd --type f"
 export FZF_DEFAULT_OPTS="\
@@ -37,3 +37,5 @@ if [ "$(uname -s)" == "Linux" ]; then
 		exec start-sway.sh
 	fi
 fi
+
+# vi:ft=sh

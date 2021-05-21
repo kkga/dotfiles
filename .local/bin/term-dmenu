@@ -4,7 +4,7 @@
 # emulator to filter stdin using fzf. Arguments are passed to fzf.
 # Requires a POSIX-compliant shell, fzf, and abduco.
 
-export FZF_DEFAULT_OPTS="$* $FZF_DEFAULT_OPTS"
+# export FZF_DEFAULT_OPTS="$* $FZF_DEFAULT_OPTS"
 
 # This happens in three steps:
 
