@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
-env FZF_DEFAULT_OPTS="
-	$* $FZF_DEFAULT_OPTS\
-	--prompt 'CLIP> '\
-	--preview 'echo {}'\
-	--preview-window right:50%:border-left\
-	--read0"\
+FZF_DEFAULT_OPTS="
+	$* $FZF_DEFAULT_OPTS \
+	--prompt 'CLIP> ' \
+	--preview 'echo {}' \
+	--preview-window right:50%:border-left \
+	--read0" \
 	exec floating-terminal clipman pick --print0 --tool=CUSTOM --tool-args="fzf-menu"

@@ -37,5 +37,5 @@
 	colorMoved = default
 [init]
 	defaltBranch = main
-[credential]
-	helper = /usr/libexec/git-core/git-credential-libsecret
+; [credential]
+; 	helper = /usr/libexec/git-core/git-credential-libsecret

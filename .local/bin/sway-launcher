@@ -1,15 +1,15 @@
 #!/bin/sh
 
-env FZF_DEFAULT_OPTS="
+FZF_DEFAULT_OPTS="
 	$* $FZF_DEFAULT_OPTS \
-	--bind=tab:down,btab:up
-	--prompt 'RUN> '\
-	--preview 'whatis {}'\
-	--preview-window right:50%:border-left"\
+	--bind=tab:down,btab:up \
+	--prompt 'RUN> ' \
+	--preview 'whatis {}' \
+	--preview-window right:50%:border-left" \
 	exec j4-dmenu-desktop \
-		--usage-log="$HOME/.cache/j4" \
-		--no-generic \
-		--display-binary \
-		--use-xdg-de \
-		--term="alacritty" \
-		--dmenu="(cat ; (stest -flx $(echo "$PATH" | tr : ' ') | sort -u)) | fzf-menu"
+	--usage-log="$HOME/.cache/j4" \
+	--no-generic \
+	--display-binary \
+	--use-xdg-de \
+	--term="alacritty" \
+	--dmenu="(cat ; (stest -flx $(echo "$PATH" | tr : ' ') | sort -u)) | fzf-menu"
