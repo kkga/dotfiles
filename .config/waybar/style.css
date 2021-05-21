@@ -13,12 +13,13 @@
   border-radius: 0;
   font-family: monospace, microns;
   font-size: 9pt;
-  min-height: 0;
+  min-height: 16px;
   transition: none;
 }
 
 window.eDP-1 * {
-  font-size: 18px;
+  font-size: 11pt;
+  min-height: 24px;
 }
 
 window#waybar {
@@ -35,7 +36,6 @@ window#waybar {
   box-shadow: inherit;
   text-shadow: inherit;
   background: @background;
-  border: none;
 }
 #workspaces button.focused {
   font-weight: bold;
@@ -43,8 +43,7 @@ window#waybar {
   color: @text-bright;
 }
 #window {
-  padding-left: 8pt;
-  border-left: 1pt solid @bg-dim;
+  padding-left: 12pt;
 }
 
 #workspaces button.urgent,

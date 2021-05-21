@@ -11,5 +11,5 @@ env FZF_DEFAULT_OPTS="
 		--no-generic \
 		--display-binary \
 		--use-xdg-de \
-		--term="$TERMINAL" \
+		--term="alacritty" \
 		--dmenu="(cat ; (stest -flx $(echo "$PATH" | tr : ' ') | sort -u)) | fzf-menu"
