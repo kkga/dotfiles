@@ -139,7 +139,7 @@ bindsym XF86AudioPlay              exec playerctl play-pause
 bindsym XF86AudioPrev              exec playerctl previous
 bindsym XF86AudioNext              exec playerctl next
 bindsym $mod+Escape                exec makoctl dismiss -a
-bindsym $mod+o                     exec makoctl menu term-dmenu
+bindsym $mod+o                     exec makoctl menu $DMENU_PROGRAM
 
 bindsym $mod+$left                focus left
 bindsym $mod+$down                focus down
@@ -221,11 +221,6 @@ bindsym $mod+Shift+Backspace      mode $mode_power
 #     swaybar_command waybar
 # }
 
-# Local Configs ---------------------------------------------------------------
-
-include /etc/sway/config.d/*
-include ~/.config/sway/$(hostname).conf
-
 # Autostart ------------------------------------------------------------------
 
 # exec mako
@@ -251,5 +246,10 @@ exec_always {
     gsettings set $gnome-schema font-hinting 'slight'
     gsettings set $gnome-schema font-antialiasing 'grayscale'
 }
+
+# Includes ---------------------------------------------------------------
+
+include /etc/sway/config.d/*
+include ~/.config/sway/$(hostname).conf
 
 exec runsvdir ~/.local/service/ 'log: ...........................................................................................................................................................................................................................................................................................................................................................................................................'
