@@ -1,4 +1,4 @@
-# General settings ------------------------------------------------------------------
+# General settings -------------------------------------------------------------
 
 # xwayland disable
 default_border pixel 1
@@ -220,6 +220,8 @@ bindsym $mod+Shift+Backspace      mode $mode_power
 # bar {
 #     swaybar_command waybar
 # }
+
+# Local Configs ---------------------------------------------------------------
 
 include /etc/sway/config.d/*
 include ~/.config/sway/$(hostname).conf
