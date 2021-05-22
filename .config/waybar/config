@@ -30,12 +30,12 @@
     "format": "{index}"
   },
   "sway/window": {
-    "format": "{}",
+    "format": "🭳 {}",
     "max-length": 80
   },
   "sway/mode": {
-    "format": "  {}  ",
-    "max-length": 50
+    "format": "    {}    ",
+    "max-length": 64
   },
   "wlr/taskbar": {
     "format": "",

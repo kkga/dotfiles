@@ -12,14 +12,12 @@
   border: none;
   border-radius: 0;
   font-family: monospace, microns;
-  font-size: 9pt;
+  font-size: 10pt;
   min-height: 16px;
   transition: none;
 }
 
 window.eDP-1 * {
-  font-size: 11pt;
-  min-height: 24px;
 }
 
 window#waybar {
@@ -43,7 +41,6 @@ window#waybar {
   color: @text-bright;
 }
 #window {
-  padding-left: 12pt;
 }
 
 #workspaces button.urgent,
@@ -91,6 +88,6 @@ window#waybar {
 #language,
 #temperature,
 #clock {
-  padding: 0 4px;
-  margin: 0 4px;
+  padding: 0 4pt;
+  margin: 0 2pt;
 }
