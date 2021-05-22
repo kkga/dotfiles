@@ -22,7 +22,7 @@ exec mako
 exec kanshi
 exec pipewire
 exec pipewire-pulse
-exec foot --server
+# exec foot --server
 exec gammastep -l 55:37
 exec light -S 35
 exec wl-paste -t text --watch clipman store --max-items=50

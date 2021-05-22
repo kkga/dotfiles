@@ -30,7 +30,7 @@
     "format": "{index}"
   },
   "sway/window": {
-    "format": "🭳 {}",
+    "format": " -  {}",
     "max-length": 80
   },
   "sway/mode": {
