@@ -16,32 +16,6 @@ titlebar_padding 4 0
 seat * xcursor_theme Adwaita 24
 seat * hide_cursor 5000
 
-# Autostart ------------------------------------------------------------------
-
-exec mako
-exec kanshi
-exec pipewire
-exec pipewire-pulse
-# exec foot --server
-exec gammastep -l 55:37
-exec light -S 35
-exec wl-paste -t text --watch clipman store --max-items=50
-exec clipman restore
-exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob -a top -a left -W 200 -H 20 -M 8 -o 2 -b 2 -p 2
-exec /usr/libexec/polkit-gnome-authentication-agent-1
-
-set $gnome-schema org.gnome.desktop.interface
-exec_always {
-    gsettings set $gnome-schema gtk-theme 'Adwaita'
-    gsettings set $gnome-schema icon-theme 'Adwaita'
-    gsettings set $gnome-schema cursor-theme 'Adwaita'
-    gsettings set $gnome-schema cursor-size 24
-    gsettings set $gnome-schema font-name 'sans-serif 10'
-    gsettings set $gnome-schema monospace-font-name 'monospace 10'
-    gsettings set $gnome-schema font-hinting 'slight'
-    gsettings set $gnome-schema font-antialiasing 'grayscale'
-}
-
 # Variables ------------------------------------------------------------------
 
 set $term 'footclient'
@@ -243,9 +217,37 @@ bindsym $mod+Shift+Backspace      mode $mode_power
 
 # Status Bar ------------------------------------------------------------------
 
-bar {
-    swaybar_command waybar
-}
+# bar {
+#     swaybar_command waybar
+# }
 
 include /etc/sway/config.d/*
 include ~/.config/sway/$(hostname).conf
+
+# Autostart ------------------------------------------------------------------
+
+# exec mako
+# exec kanshi
+# exec pipewire
+# exec pipewire-pulse
+# exec foot --server
+# exec gammastep -l 55:37
+# exec light -S 35
+# exec /usr/libexec/polkit-gnome-authentication-agent-1
+exec wl-paste -t text --watch clipman store --max-items=50
+exec clipman restore
+exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob -a top -a left -W 200 -H 20 -M 8 -o 2 -b 2 -p 2
+
+set $gnome-schema org.gnome.desktop.interface
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'Adwaita'
+    gsettings set $gnome-schema icon-theme 'Adwaita'
+    gsettings set $gnome-schema cursor-theme 'Adwaita'
+    gsettings set $gnome-schema cursor-size 24
+    gsettings set $gnome-schema font-name 'sans-serif 10'
+    gsettings set $gnome-schema monospace-font-name 'monospace 10'
+    gsettings set $gnome-schema font-hinting 'slight'
+    gsettings set $gnome-schema font-antialiasing 'grayscale'
+}
+
+exec runsvdir ~/.local/service/ 'log: ...........................................................................................................................................................................................................................................................................................................................................................................................................'

@@ -13,6 +13,7 @@ abbr -a -g xr 'doas xbps-remove -Ro'
 abbr -a -g xi 'doas xbps-install -S'
 abbr -a -g xu 'doas xbps-install -Su'
 alias xri="xpkg -m | fzf -m --preview 'xq {}' | xargs -ro doas xbps-remove -Ro"
+alias vsvu="SVDIR=~/.local/service/ vsv"
 
 alias k='kcr edit'
 alias K='kcr-fzf-shell'
