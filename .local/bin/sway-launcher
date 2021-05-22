@@ -1,11 +1,10 @@
 #!/bin/sh
-
 exec j4-dmenu-desktop \
 	--usage-log="$HOME/.cache/j4" \
 	--no-generic \
 	--display-binary \
 	--use-xdg-de \
-	--term="alacritty" \
+	--term="foot" \
 	--dmenu="(cat ; (stest -flx $(echo "$PATH" |
 		tr : ' ') |
 		sort -u)) |
