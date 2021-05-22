@@ -1,11 +1,5 @@
 
 
-[repos/term-dmenu]
-checkout = git clone 'https://github.com/Seirdy/term-dmenu' 'term-dmenu'
-
-[repos/connect.kak]
-checkout = git clone 'https://github.com/kakounedotcom/connect.kak' 'connect.kak'
-
 [repos/kakoune]
 checkout = git clone 'https://github.com/mawww/kakoune' 'kakoune'
 
@@ -15,14 +9,11 @@ checkout = git clone 'https://github.com/alexherbo2/kakoune.cr' 'kakoune.cr'
 [repos/zk]
 checkout = git clone 'https://github.com/mickael-menu/zk.git' 'zk'
 
-[repos/sway-launcher-desktop]
-checkout = git clone 'https://github.com/Biont/sway-launcher-desktop' 'sway-launcher-desktop'
-
 [projects/saturn.kak]
 checkout = git clone 'git@github.com:kkga/saturn.kak.git' 'saturn.kak'
 
-[projects/iosevka-custom]
-checkout = git clone 'git@github.com:kkga/iosevka-custom.git' 'iosevka-custom'
-
 [repos/kak-lsp]
 checkout = git clone 'https://github.com/kak-lsp/kak-lsp' 'kak-lsp'
+
+[projects/foot.kak]
+checkout = git clone 'git@github.com:kkga/foot.kak.git' 'foot.kak'
