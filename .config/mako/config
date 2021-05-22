@@ -10,6 +10,7 @@ default-timeout=10000
 background-color=#ffffff
 border-color=#000000
 text-color=#282a33
+font=sans-serif 11
 
 [urgency=high]
 ignore-timeout=1
