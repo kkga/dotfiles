@@ -1,6 +1,7 @@
 {
-  "layer": "top",
+  "layer": "bottom",
   "position": "bottom",
+  "height": 20,
   "modules-left": [
     "sway/workspaces",
     "sway/mode",
@@ -53,11 +54,12 @@
   },
   "custom/yadm": {
     "format": " {}",
+    "tooltip": false,
     "exec": "~/.config/waybar/modules/yadm.sh",
     "signal": 1,
     "on-click-right": "~/.config/waybar/modules/yadm.sh",
     "on-click": "floating-terminal yadm c -a",
-    "interval": "600"
+    "interval": "60"
   },
   "custom/media": {
     "format": "{icon} {}",

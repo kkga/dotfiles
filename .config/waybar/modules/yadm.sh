@@ -1,7 +1,7 @@
 #!/bin/sh
 
-CHANGES=$(yadm status | wc -l)
+COUNT=$(yadm status | wc -l)
 
-if [ $CHANGES != "0" ]; then
-	echo "$CHANGES"
+if [ "$COUNT" != "0" ]; then
+	echo "$COUNT"
 fi
