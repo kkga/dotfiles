@@ -11,5 +11,5 @@ check() {
 
 while true; do
 	check
-	sleep 10m
+	sleep 1m
 done
