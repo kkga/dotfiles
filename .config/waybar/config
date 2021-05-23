@@ -57,7 +57,7 @@
     "signal": 1,
     "on-click-right": "~/.config/waybar/modules/yadm.sh",
     "on-click": "floating-terminal yadm c -a",
-    "interval": "3600"
+    "interval": "600"
   },
   "custom/media": {
     "format": "{icon} {}",
