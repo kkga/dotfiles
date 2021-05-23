@@ -47,7 +47,7 @@
   "custom/updates": {
     "format": " {}",
     "exec": "~/.config/waybar/modules/xbps.sh",
-    "signal": 1,
+    "exec-on-event": true,
     "on-click-right": "~/.config/waybar/modules/xbps.sh",
     "on-click": "floating-terminal topgrade",
     "interval": "600"
@@ -56,10 +56,10 @@
     "format": " {}",
     "tooltip": false,
     "exec": "~/.config/waybar/modules/yadm.sh",
-    "signal": 1,
+    "exec-on-event": true,
     "on-click-right": "~/.config/waybar/modules/yadm.sh",
     "on-click": "floating-terminal yadm c -a",
-    "interval": "60"
+    "interval": "10"
   },
   "custom/media": {
     "format": "{icon} {}",
