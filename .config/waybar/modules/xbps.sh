@@ -1,6 +1,6 @@
 #!/bin/sh
 
-refresh() {
+sync() {
 	doas xbps-install -S > /dev/null
 }
 
@@ -14,7 +14,7 @@ check() {
 }
 
 while true; do
-	refresh
+	sync
 	check
 	sleep 10m
 done
