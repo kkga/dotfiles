@@ -231,9 +231,9 @@ bindsym $mod+Shift+Backspace      mode $mode_power
 # exec gammastep -l 55:37
 # exec light -S 35
 # exec /usr/libexec/polkit-gnome-authentication-agent-1
+# exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob -a top -a left -W 200 -H 20 -M 8 -o 2 -b 2 -p 2
 exec wl-paste -t text --watch clipman store --max-items=50
 exec clipman restore
-exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob -a top -a left -W 200 -H 20 -M 8 -o 2 -b 2 -p 2
 
 set $gnome-schema org.gnome.desktop.interface
 exec_always {
