@@ -58,7 +58,7 @@
     "exec": "~/.config/waybar/modules/yadm.sh",
     "exec-on-event": true,
     "on-click-right": "~/.config/waybar/modules/yadm.sh",
-    "on-click": "floating-terminal yadm c -a",
+    "on-click": "floating-terminal bash yadm c -a",
     "interval": "10"
   },
   "custom/media": {
