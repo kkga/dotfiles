@@ -46,11 +46,8 @@
   },
   "custom/updates": {
     "format": " {}",
-    "exec": "~/.config/waybar/modules/xbps.sh",
-    "exec-on-event": true,
-    "on-click-right": "~/.config/waybar/modules/xbps.sh",
-    "on-click": "floating-terminal topgrade",
-    "interval": "600"
+    "tooltip": false,
+    "exec": "~/.config/waybar/modules/xbps.sh"
   },
   "custom/yadm": {
     "format": " {}",

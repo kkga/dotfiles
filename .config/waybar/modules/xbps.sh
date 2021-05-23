@@ -16,5 +16,5 @@ check() {
 while true; do
 	refresh
 	check
-	sleep 10s
+	sleep 10m
 done
