@@ -217,6 +217,8 @@ exec_always {
     gsettings set $gnome-schema monospace-font-name 'monospace 10'
     gsettings set $gnome-schema font-hinting 'slight'
     gsettings set $gnome-schema font-antialiasing 'grayscale'
+    gsettings set org.gnome.desktop.default-applications.terminal exec $term
+    gsettings set org.gnome.desktop.default-applications.terminal exec-arg ''
 }
 
 # Includes ---------------------------------------------------------------

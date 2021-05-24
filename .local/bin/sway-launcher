@@ -4,7 +4,7 @@ exec j4-dmenu-desktop \
 	--no-generic \
 	--display-binary \
 	--use-xdg-de \
-	--term="foot" \
+	--term="alacritty" \
 	--dmenu="(cat ; (stest -flx $(echo "$PATH" |
 		tr : ' ') |
 		sort -u)) |
