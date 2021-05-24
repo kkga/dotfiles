@@ -296,6 +296,7 @@ wdisplays
 wev
 wf-recorder
 wget
+whois
 wine
 wine-32bit
 winetricks
