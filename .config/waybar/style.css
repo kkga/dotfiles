@@ -11,9 +11,9 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: monospace, microns;
-  font-size: 9pt;
-  min-height: 16px;
+/*  font-family: monospace, microns;
+  font-size: 12px;
+*/  min-height: 16px;
   transition: none;
 }
 
