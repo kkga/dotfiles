@@ -11,14 +11,15 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: monospace, microns;
-  font-size: 9pt;
-  min-height: 0;
+  font-family: monospace;
+  font-size: 8.5pt;
+  font-weight: 400;
+  min-height: 16px;
   transition: none;
 }
 
 window.eDP-1 * {
-  font-size: 18px;
+  font-size: 10pt;
 }
 
 window#waybar {
@@ -35,7 +36,6 @@ window#waybar {
   box-shadow: inherit;
   text-shadow: inherit;
   background: @background;
-  border: none;
 }
 #workspaces button.focused {
   font-weight: bold;
@@ -43,8 +43,6 @@ window#waybar {
   color: @text-bright;
 }
 #window {
-  padding-left: 8pt;
-  border-left: 1pt solid @bg-dim;
 }
 
 #workspaces button.urgent,
@@ -92,6 +90,6 @@ window#waybar {
 #language,
 #temperature,
 #clock {
-  padding: 0 4px;
-  margin: 0 4px;
+  padding: 0 4pt;
+  margin: 0 2pt;
 }

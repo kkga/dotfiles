@@ -18,6 +18,7 @@ plug-core %{ set-option global makecmd 'make -j 8' }
 #     }
 #   }
 # }
+plug gdscript projects/gdscript.kak
 plug foot projects/foot.kak
 hook -group windowing-detection global ClientCreate '.*' %{
   evaluate-commands %sh{

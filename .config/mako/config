@@ -1,15 +1,16 @@
 layer=overlay
 anchor=bottom-right
-font=sans-serif 10
-width=320
-padding=8
+width=400
+padding=12
 margin=16
-border-size=1
-default-timeout=5000
+border-size=2
+border-radius=4
+default-timeout=10000
 
 background-color=#ffffff
-border-color=#000000
-text-color=#282a33
+border-color=#00000099
+text-color=#1c1c1c
+font=sans-serif 11
 
 [urgency=high]
 ignore-timeout=1

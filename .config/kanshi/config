@@ -1,0 +1,9 @@
+profile {
+    output "Unknown 0xD291 0x00000000" mode 1920x1200 scale 1
+}
+
+profile {
+    output "Dell Inc. DELL P2415Q D8VXF85U0J7B" position 1920,0 mode 3840x2160 scale 2
+    output "Dell Inc. DELL P2415Q D8VXF8CA070B" position 3840,0 mode 3840x2160 scale 2
+    output "Unknown 0xD291 0x00000000" position 0,0 mode 1920x1200 scale 1
+}

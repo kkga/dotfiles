@@ -22,6 +22,7 @@ base-system
 bat
 bc
 bemenu
+blender
 blueman
 bluez
 bluez-alsa
@@ -111,6 +112,7 @@ jq
 json-c-devel
 keyutils
 kitty
+kristall
 lazygit
 ldm
 lf
@@ -243,6 +245,7 @@ sublime-text3
 sunwait
 sv-helper
 svctl
+swappy
 sway
 swayidle
 swaylock
@@ -262,6 +265,7 @@ ttf-material-icons
 ttfautohint
 udiskie
 ufetch
+ufw
 unar
 unclutter-xfixes
 uni
@@ -292,6 +296,7 @@ wdisplays
 wev
 wf-recorder
 wget
+whois
 wine
 wine-32bit
 winetricks

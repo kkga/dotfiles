@@ -1,7 +1,0 @@
-#!/bin/bash
-
-# depends on wtype
-
-secret=$(prs list --list | $DMENU_PROGRAM)
-
-[[ -n "$secret" ]] && wtype "$(prs show "$secret" --password --no-interact --quiet)"

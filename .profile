@@ -23,7 +23,7 @@ export FZF_DEFAULT_OPTS="\
 	--inline-info\
 	--height=40\
 	--preview-window=down:40%:border-top\
-	--color=pointer:8,info:8,hl:3,hl+:3\
+	--color=pointer:8,info:8,hl:3,hl+:3,bg+:#404040\
 	"
 
 if [ "$(uname -s)" == "Linux" ]; then
