@@ -1,5 +1,5 @@
 @define-color background  rgba(0,0,0,0.75);
-@define-color foreground  #bcbcbc;
+@define-color foreground  #a8a8a8;
 @define-color bg-dim      rgba(255,255,255,0.2);
 @define-color border      rgba(255,255,255,0.1);
 @define-color text-bright rgba(255,255,255,1);
@@ -56,8 +56,8 @@ window#waybar {
 }
 #mode {
   font-weight: bold;
-  color: @background;
-  background: @text-orange;
+  color: @text-orange;
+  background: @bg-orange;
 }
 
 #custom-vpn.connected,
