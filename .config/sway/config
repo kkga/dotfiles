@@ -21,7 +21,6 @@ seat * hide_cursor 5000
 set $term 'footclient'
 set $floatterm 'floating-terminal bash'
 set $drun 'sway-launcher'
-set $lock 'swaylock -K -e -f -c 222222'
 set $clipboard 'sway-clipmenu'
 
 set $mod Mod4
@@ -29,17 +28,6 @@ set $left h
 set $down j
 set $up k
 set $right l
-
-# Idle config ------------------------------------------------------------------
-
-exec swayidle -w \
-        timeout 600 $lock \
-        timeout 900 'swaymsg "output * dpms off"' \
-        timeout 1200 'loginctl suspend' \
-        resume 'swaymsg "output * dpms on"' \
-        before-sleep 'loginctl lock-session $XDG_SESSION_ID' \
-        before-sleep 'playerctl pause' \
-        lock $lock
 
 # Outputs ------------------------------------------------------------------
 
@@ -54,7 +42,8 @@ output $laptop subpixel rgb
 
 output * bg #111111 solid_color
 
-bindswitch lid:toggle exec loginctl lock-session
+bindswitch --locked lid:on exec loginctl lock-session, output $laptop dpms off
+bindswitch --locked lid:off output $laptop dpms on
 
 # Inputs ------------------------------------------------------------------
 
@@ -77,11 +66,11 @@ input "type:touchpad" {
     accel_profile adaptive
     drag enabled
     scroll_factor 0.5
-    # pointer_accel 1
+    pointer_accel 0.25
 }
 
 input "type:pointer" {
-    accel_profile flat
+    # accel_profile flat
     # pointer_accel -0.5
 }
 
@@ -103,8 +92,6 @@ client.unfocused         $col_bg_br  $col_bg     $col_fg  $col_bg_br  $col_bg_br
 
 # Rules ------------------------------------------------------------------
 
-# for_window [ class="^.*"                       ] inhibit_idle fullscreen
-# for_window [ app_id="^.*"                      ] inhibit_idle fullscreen
 for_window [ class="^Firefox$"                   ] inhibit_idle fullscreen
 for_window [ app_id="^firefox$"                  ] inhibit_idle fullscreen
 for_window [ app_id="pavucontrol"                ] focus, floating enable
@@ -127,6 +114,7 @@ bindsym $mod+c                     fullscreen disable, exec $clipboard
 bindsym Mod1+Tab                   fullscreen disable, exec window-switcher
 bindsym $mod+Shift+c               kill
 bindsym $mod+Backspace             reload
+bindsym XF86Display                output * dpms on
 bindsym XF86MonBrightnessUp        exec light -A 10 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
 bindsym XF86MonBrightnessDown      exec light -U 10 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
 bindsym Mod1+XF86MonBrightnessUp   exec light -s sysfs/backlight/ddcci5 -A 10 && light -s sysfs/backlight/ddcci5 -G | cut -d'.' -f1 > $SWAYSOCK.wob
@@ -215,23 +203,8 @@ mode $mode_power {
 }
 bindsym $mod+Shift+Backspace      mode $mode_power
 
-# Status Bar ------------------------------------------------------------------
-
-# bar {
-#     swaybar_command waybar
-# }
-
 # Autostart ------------------------------------------------------------------
 
-# exec mako
-# exec kanshi
-# exec pipewire
-# exec pipewire-pulse
-# exec foot --server
-# exec gammastep -l 55:37
-# exec light -S 35
-# exec /usr/libexec/polkit-gnome-authentication-agent-1
-# exec mkfifo $SWAYSOCK.wob && tail -f $SWAYSOCK.wob | wob -a top -a left -W 200 -H 20 -M 8 -o 2 -b 2 -p 2
 exec wl-paste -t text --watch clipman store --max-items=50
 exec clipman restore
 
@@ -245,6 +218,9 @@ exec_always {
     gsettings set $gnome-schema monospace-font-name 'monospace 10'
     gsettings set $gnome-schema font-hinting 'slight'
     gsettings set $gnome-schema font-antialiasing 'grayscale'
+    gsettings set org.gnome.desktop.default-applications.terminal exec $term
+    gsettings set org.gnome.desktop.default-applications.terminal exec-arg ''
+    gsettings set org.gnome.desktop.wm.preferences button-layout ''
 }
 
 # Includes ---------------------------------------------------------------

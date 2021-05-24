@@ -1,5 +1,5 @@
 {
-  "layer": "top",
+  "layer": "bottom",
   "position": "bottom",
   "modules-left": [
     "sway/workspaces",
@@ -30,41 +30,29 @@
     "format": "{index}"
   },
   "sway/window": {
-    "format": " -  {}",
+    "format": "  {}",
     "max-length": 80
   },
   "sway/mode": {
-    "format": "    {}    ",
+    "format": "  {}  ",
     "max-length": 64
   },
-  "wlr/taskbar": {
-    "format": "",
-    "tooltip-format": "{title}",
-    "on-click": "activate",
-    "on-click-middle": "close"
-  },
   "custom/updates": {
-    "format": " {}",
-    "exec": "~/.config/waybar/modules/xbps.sh",
-    "signal": 1,
-    "on-click-right": "~/.config/waybar/modules/xbps.sh",
-    "on-click": "floating-terminal topgrade",
-    "interval": "600"
+    "format": "↷ {}",
+    "tooltip": false,
+    "exec": "~/.config/waybar/modules/xbps.sh"
   },
   "custom/yadm": {
-    "format": " {}",
-    "exec": "~/.config/waybar/modules/yadm.sh",
-    "signal": 1,
-    "on-click-right": "~/.config/waybar/modules/yadm.sh",
-    "on-click": "floating-terminal yadm c -a",
-    "interval": "600"
+    "format": "↺ {}",
+    "tooltip": false,
+    "exec": "~/.config/waybar/modules/yadm.sh"
   },
   "custom/media": {
     "format": "{icon} {}",
     "return-type": "json",
     "format-icons": {
-      "Playing": "",
-      "Paused": ""
+      "Playing": "||",
+      "Paused": "|>"
     },
     "max-length": 50,
     "exec": "playerctl metadata --format '{\"text\": \"{{artist}} - {{title}}\", \"tooltip\": \"{{playerName}}: {{artist}} - {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
@@ -85,42 +73,42 @@
   "network": {
     "interval": 2,
     // "interface": "wlan0",
-    "format-wifi": "",
-    "format-ethernet": "",
+    "format-wifi": "◊",
+    "format-ethernet": "∆",
     "format-linked": "{ifname}",
-    "format-disconnected": "",
+    "format-disconnected": "❌",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}",
     "tooltip-format": "{ifname}\n{ipaddr}/{cidr}\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}"
   },
   "custom/vpn": {
-    "format": "",
+    "format": "VPN",
     "exec": "echo '{\"class\": \"connected\", \"tooltip\": \"VPN\"}'",
     "exec-if": "test -d /proc/sys/net/ipv4/conf/mlvd*",
     "return-type": "json",
     "interval": 5
   },
   "custom/tailscale": {
-    "format": "",
+    "format": "TS",
     "exec": "echo '{\"class\": \"connected\", \"tooltip\": \"TAILSCALE\"}'",
     "exec-if": "test -d /proc/sys/net/ipv4/conf/tailscale0",
     "return-type": "json",
     "interval": 5
   },
   "pulseaudio": {
-    "format": "{icon}",
+    "format": "{volume}",
     "format-bluetooth": "BT {volume}% {format_source}",
-    "format-muted": "",
+    "format-muted": "MUTE",
     "format-bluetooth-muted": "BT MUT {format_source}",
     "format-source": "VOL {volume}%",
     "format-source-muted": "MUT {volume}",
     "format-icons": {
-      "headphone": "",
+      "headphone": "Ω",
       "hands-free": "",
       "headset": "",
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", "", ""]
+      "default": ""
     },
     "on-click": "pavucontrol"
   },
