@@ -19,7 +19,7 @@ seat * hide_cursor 5000
 # Variables ------------------------------------------------------------------
 
 set $term 'footclient'
-set $floatterm 'floating-terminal bash'
+set $floatterm 'foot -a popup'
 set $drun 'sway-launcher'
 set $clipboard 'sway-clipmenu'
 
