@@ -51,8 +51,8 @@
     "format": "{icon} {}",
     "return-type": "json",
     "format-icons": {
-      "Playing": "||",
-      "Paused": "|>"
+      "Playing": "",
+      "Paused": ""
     },
     "max-length": 50,
     "exec": "playerctl metadata --format '{\"text\": \"{{artist}} - {{title}}\", \"tooltip\": \"{{playerName}}: {{artist}} - {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
@@ -67,13 +67,12 @@
       "warning": 10
     },
     "format-time": "{H}h {M}m",
-    "format": "♥ {capacity}%",
-    "format-charging": "♥ {capacity}%"
+    "format": "{capacity}%",
+    "format-charging": "{capacity}%"
   },
   "network": {
     "interval": 2,
-    // "interface": "wlan0",
-    "format-wifi": "▼",
+    "format-wifi": "",
     "format-ethernet": "",
     "format-linked": "{ifname}",
     "format-disconnected": "",
