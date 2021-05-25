@@ -40,12 +40,12 @@
   "custom/updates": {
     "format": "↓ {}",
     "tooltip": false,
-    "exec": "pkill waybar-xbps.sh; ~/.config/waybar/modules/waybar-xbps.sh"
+    "exec": "pkill waybar-xbps.sh; waybar-xbps.sh"
   },
   "custom/yadm": {
     "format": "☼ {}",
     "tooltip": false,
-    "exec": "pkill waybar-yadm.sh; ~/.config/waybar/modules/waybar-yadm.sh"
+    "exec": "pkill waybar-yadm.sh; waybar-yadm.sh"
   },
   "custom/media": {
     "format": "{icon} {}",
