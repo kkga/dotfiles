@@ -38,12 +38,12 @@
     "max-length": 64
   },
   "custom/updates": {
-    "format": "↓ {}",
+    "format": " {}",
     "tooltip": false,
     "exec": "pkill waybar-xbps.sh; waybar-xbps.sh"
   },
   "custom/yadm": {
-    "format": "☼ {}",
+    "format": " {}",
     "tooltip": false,
     "exec": "pkill waybar-yadm.sh; waybar-yadm.sh"
   },
