@@ -38,14 +38,14 @@
     "max-length": 64
   },
   "custom/updates": {
-    "format": "↷ {}",
+    "format": "↓ {}",
     "tooltip": false,
-    "exec": "~/.config/waybar/modules/xbps.sh"
+    "exec": "pkill waybar-xbps.sh; ~/.config/waybar/modules/waybar-xbps.sh"
   },
   "custom/yadm": {
-    "format": "↺ {}",
+    "format": "☼ {}",
     "tooltip": false,
-    "exec": "~/.config/waybar/modules/yadm.sh"
+    "exec": "pkill waybar-yadm.sh; ~/.config/waybar/modules/waybar-yadm.sh"
   },
   "custom/media": {
     "format": "{icon} {}",
@@ -59,7 +59,7 @@
     "on-click": "playerctl play-pause"
   },
   "clock": {
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "tooltip-format": "<big>{:%Y %B}</big>\n{calendar}",
     "format": "{:%a %d %b %H:%M}"
   },
   "battery": {
@@ -67,21 +67,21 @@
       "warning": 10
     },
     "format-time": "{H}h {M}m",
-    "format": "{capacity}%",
-    "format-charging": "{capacity}%"
+    "format": "♥ {capacity}%",
+    "format-charging": "♥ {capacity}%"
   },
   "network": {
     "interval": 2,
     // "interface": "wlan0",
-    "format-wifi": "◊",
-    "format-ethernet": "∆",
+    "format-wifi": "▼",
+    "format-ethernet": "",
     "format-linked": "{ifname}",
-    "format-disconnected": "❌",
+    "format-disconnected": "✘",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}",
     "tooltip-format": "{ifname}\n{ipaddr}/{cidr}\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}"
   },
   "custom/vpn": {
-    "format": "VPN",
+    "format": "",
     "exec": "echo '{\"class\": \"connected\", \"tooltip\": \"VPN\"}'",
     "exec-if": "test -d /proc/sys/net/ipv4/conf/mlvd*",
     "return-type": "json",
@@ -95,9 +95,9 @@
     "interval": 5
   },
   "pulseaudio": {
-    "format": "{volume}",
+    "format": "{volume}%",
     "format-bluetooth": "BT {volume}% {format_source}",
-    "format-muted": "MUTE",
+    "format-muted": "MUT",
     "format-bluetooth-muted": "BT MUT {format_source}",
     "format-source": "VOL {volume}%",
     "format-source-muted": "MUT {volume}",
