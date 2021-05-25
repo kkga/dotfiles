@@ -68,7 +68,9 @@ ffsend
 firefox
 fish-shell
 flatpak
+font-ibm-plex-otf
 font-ibm-plex-ttf
+font-inconsolata-otf
 foot
 fuzzel
 fuzzypkg
@@ -265,7 +267,6 @@ ttf-material-icons
 ttfautohint
 udiskie
 ufetch
-ufw
 unar
 unclutter-xfixes
 uni
