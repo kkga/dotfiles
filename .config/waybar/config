@@ -45,7 +45,8 @@
   "custom/yadm": {
     "format": " {}",
     "tooltip": false,
-    "exec": "yadm status | wc -l"
+    "exec": "yadm status | wc -l",
+    "interval": 5
   },
   "custom/media": {
     "format": "{icon} {}",
