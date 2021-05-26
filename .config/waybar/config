@@ -40,14 +40,14 @@
   "custom/updates": {
     "format": " {}",
     "tooltip": false,
-    "exec": "xbps-install -Sun | wc -l | sed '/^0$/d'",
-    "interval": 30
+    "exec": "xbps-install -S > /dev/null; xbps-install -un | wc -l | sed '/^0$/d'",
+    "interval": 600
   },
   "custom/yadm": {
     "format": " {}",
     "tooltip": false,
     "exec": "yadm status | wc -l | sed '/^0$/d'",
-    "interval": 30
+    "interval": 600
   },
   "custom/media": {
     "format": "{icon} {}",
