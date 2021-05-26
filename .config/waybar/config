@@ -47,6 +47,7 @@
     "format": " {}",
     "tooltip": false,
     "exec": "yadm status | wc -l | sed '/^0$/d'",
+    "on-click": "yadm status | wc -l | sed '/^0$/d'",
     "interval": 600
   },
   "custom/media": {
