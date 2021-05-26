@@ -45,7 +45,7 @@
   "custom/yadm": {
     "format": " {}",
     "tooltip": false,
-    "exec": "pkill waybar-yadm.sh; waybar-yadm.sh"
+    "exec": "yadm status | wc -l"
   },
   "custom/media": {
     "format": "{icon} {}",
@@ -71,7 +71,6 @@
     "format-charging": "{capacity}%"
   },
   "network": {
-    "interval": 2,
     "format-wifi": "",
     "format-ethernet": "",
     "format-linked": "{ifname}",
