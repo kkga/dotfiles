@@ -38,14 +38,16 @@
     "max-length": 64
   },
   "custom/updates": {
-    "format": "↓ {}",
+    "format": " {}",
     "tooltip": false,
-    "exec": "pkill waybar-xbps.sh; ~/.config/waybar/modules/waybar-xbps.sh"
+    "exec": "xbps-install -S > /dev/null; xbps-install -un | wc -l | sed '/^0$/d'",
+    "interval": 600
   },
   "custom/yadm": {
-    "format": "☼ {}",
+    "format": " {}",
     "tooltip": false,
-    "exec": "pkill waybar-yadm.sh; ~/.config/waybar/modules/waybar-yadm.sh"
+    "exec": "yadm status | wc -l | sed '/^0$/d'",
+    "interval": 600
   },
   "custom/media": {
     "format": "{icon} {}",
@@ -71,7 +73,6 @@
     "format-charging": "{capacity}%"
   },
   "network": {
-    "interval": 2,
     "format-wifi": "",
     "format-ethernet": "",
     "format-linked": "{ifname}",
