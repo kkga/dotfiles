@@ -40,13 +40,14 @@
   "custom/updates": {
     "format": " {}",
     "tooltip": false,
-    "exec": "xbps-install -S > /dev/null; xbps-install -un | wc -l | sed '/^0$/d'",
-    "interval": 600
+    "exec": "pkill waybar-xbps.sh; waybar-xbps.sh",
+    "on-click": "pkill waybar-xbps.sh; waybar-xbps.sh"
   },
   "custom/yadm": {
     "format": " {}",
     "tooltip": false,
     "exec": "yadm status | wc -l | sed '/^0$/d'",
+    "on-click": "yadm status | wc -l | sed '/^0$/d'",
     "interval": 600
   },
   "custom/media": {
