@@ -16,6 +16,9 @@
   min-height: 16px;
   transition: none;
 }
+tooltip {
+  background-color: black;
+}
 
 window.eDP-1 * {
   font-size: 18px;
@@ -92,3 +95,4 @@ window#waybar {
   padding: 0 4pt;
   margin: 0 4pt;
 }
+
