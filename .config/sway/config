@@ -113,7 +113,7 @@ bindsym $mod+d                     fullscreen disable, exec $drun
 bindsym $mod+c                     fullscreen disable, exec $clipboard
 bindsym Mod1+Tab                   fullscreen disable, exec window-switcher
 bindsym $mod+Shift+c               kill
-bindsym $mod+Backspace             reload
+bindsym $mod+Backspace             reload; exec killall -SIGUSR2 waybar
 bindsym XF86Display                output * dpms on
 bindsym XF86MonBrightnessUp        exec light -A 10 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
 bindsym XF86MonBrightnessDown      exec light -U 10 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
