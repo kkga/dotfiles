@@ -104,3 +104,8 @@ runtime = "node"
 elmPath = "elm"
 elmFormatPath = "elm-format"
 elmTestPath = "elm-test"
+
+[language.zig]
+filetypes = ["zig"]
+roots = ["build.zig"]
+command = "zls"
