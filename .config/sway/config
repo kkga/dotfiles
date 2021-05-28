@@ -192,7 +192,7 @@ mode $mode_resize {
 }
 bindsym $mod+r                    mode $mode_resize
 
-set $mode_power                   "(e)xit (r)eebot (l)ock (s)uspend (p)oweroff"
+set $mode_power                   "E exit | R reebot | L lock | S suspend | P poweroff"
 mode $mode_power {
     bindsym e                     exec swaymsg exit
     bindsym r                     exec loginctl reboot
@@ -202,7 +202,7 @@ mode $mode_power {
     bindsym Return                mode "default"
     bindsym Escape                mode "default"
 }
-bindsym $mod+Shift+Backspace      mode $mode_power
+bindsym $mod+Control+q            mode $mode_power
 
 # Autostart ------------------------------------------------------------------
 
