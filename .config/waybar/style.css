@@ -16,9 +16,12 @@
   min-height: 16px;
   transition: none;
 }
+tooltip {
+  background-color: black;
+}
 
 window.eDP-1 * {
-  font-size: 18px;
+  font-size: 11pt;
 }
 
 window#waybar {
@@ -69,6 +72,7 @@ window#waybar {
 }
 
 #pulseaudio,
+#custom-scratchpad,
 #custom-usbguard,
 #custom-yubikey,
 #custom-decrypted,
@@ -92,3 +96,4 @@ window#waybar {
   padding: 0 4pt;
   margin: 0 4pt;
 }
+
