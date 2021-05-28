@@ -261,6 +261,7 @@ terminus-font
 tmux
 tokei
 topgrade
+touchegg
 trash-cli
 trayer-srg
 ttf-material-icons
