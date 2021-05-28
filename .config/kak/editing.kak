@@ -72,6 +72,21 @@ hook global WinSetOption filetype=.* %{
         try %{ execute-keys -draft '%s\u000d<ret>d' }
     }
 }
+
+hook global WinSetOption filetype=zig %{
+    set-option buffer formatcmd 'zig fmt --stdin'
+    set-option window lsp_auto_highlight_references true
+    set-option global lsp_server_configuration zls.zig_lib_path="/usr/lib/zig"
+    set-option -add global lsp_server_configuration zls.warn_style=true
+    set-option -add global lsp_server_configuration zls.enable_semantic_tokens=true
+    hook window -group semantic-tokens BufReload .* lsp-semantic-tokens
+    hook window -group semantic-tokens NormalIdle .* lsp-semantic-tokens
+    hook window -group semantic-tokens InsertIdle .* lsp-semantic-tokens
+    hook -once -always window WinSetOption filetype=.* %{
+        remove-hooks window semantic-tokens
+    }
+    hook buffer -group format BufWritePre .* format
+}
 hook global WinSetOption filetype=(svelte|css|yaml|html) %{
     set-option buffer formatcmd "prettier --stdin-filepath='%val{buffile}'"
     hook buffer -group format BufWritePre .* format
