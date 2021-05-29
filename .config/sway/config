@@ -70,8 +70,8 @@ input "type:touchpad" {
 }
 
 input "type:pointer" {
-    # accel_profile flat
-    # pointer_accel -0.5
+    accel_profile adaptive
+    pointer_accel -0.5
 }
 
 # Colors ------------------------------------------------------------------
@@ -136,15 +136,17 @@ bindsym $mod+$up                  focus up
 bindsym $mod+$right               focus right
 
 bindsym $mod+Shift+$left          move left
+bindsym $mod+Shift+$right         move right
 bindsym $mod+Shift+$down          move down
 bindsym $mod+Shift+$up            move up
-bindsym $mod+Shift+$right         move right
 
 bindsym $mod+comma                focus output left
 bindsym $mod+period               focus output right
 
 bindsym $mod+Shift+comma          move output left
 bindsym $mod+Shift+period         move output right
+bindsym $mod+Control+Shift+comma  move workspace to output left
+bindsym $mod+Control+Shift+period move workspace to output right
 
 bindsym $mod+Ctrl+k               focus parent
 bindsym $mod+Ctrl+j               focus child
