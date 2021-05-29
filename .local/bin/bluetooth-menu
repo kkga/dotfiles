@@ -1,0 +1,6 @@
+#!/bin/sh
+
+selected=$(bluetoothctl -- devices | $DMENU_PROGRAM | awk -F ' ' '{print $2}')
+
+bluetoothctl -- power on
+bluetoothctl -- connect "$selected"

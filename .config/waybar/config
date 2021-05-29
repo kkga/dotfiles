@@ -97,14 +97,14 @@
     "interval": 5
   },
   "pulseaudio": {
-    "format": "{volume}%",
+    "format": "{icon} {volume}%",
     "format-bluetooth": "BT {volume}% {format_source}",
     "format-muted": "MUT",
     "format-bluetooth-muted": "BT MUT {format_source}",
     "format-source": "VOL {volume}%",
     "format-source-muted": "MUT {volume}",
     "format-icons": {
-      "headphone": "Ω",
+      "headphone": "",
       "hands-free": "",
       "headset": "",
       "phone": "",
