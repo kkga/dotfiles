@@ -14,7 +14,7 @@ titlebar_border_thickness 0
 titlebar_padding 4 0
 
 seat * xcursor_theme Adwaita 24
-seat * hide_cursor 5000
+seat * hide_cursor 10000
 
 # Variables ------------------------------------------------------------------
 
