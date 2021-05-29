@@ -32,12 +32,12 @@ map global insert <c-n> "<a-;>: insert-c-n<ret>"
 # hooks -----------------------------------------------------------------------
 
 define-command disable-autoformat -docstring 'disable auto-format' %{
-	unset-option buffer formatcmd
-	remove-hooks buffer format
+    unset-option buffer formatcmd
+    remove-hooks buffer format
 }
 define-command disable-autolint -docstring 'disable auto-lint' %{
-	unset-option buffer lintcmd
-	remove-hooks buffer lint
+    unset-option buffer lintcmd
+    remove-hooks buffer lint
 }
 
 hook global BufOpenFile  .* modeline-parse
