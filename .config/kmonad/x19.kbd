@@ -1,6 +1,7 @@
+;; vi:ft=lisp
 (defcfg
   input  (device-file "/dev/input/event0")
-  output (uinput-sink "Thinkbook Keyboard")
+  output (uinput-sink "Thinkpad Keyboard")
 
   ;; This option tells KMonad to let non-configured keys act normal
   fallthrough true
@@ -13,21 +14,13 @@
   tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
   caps a    s    d    f    g    h    j    k    l    ;    '    ret
   lsft      z    x    c    v    b    n    m    ,    .    /    rsft
-  lctl      lmet lalt           spc            ralt rctl
+       lctl lmet lalt           spc            ralt prnt rctl
 )
 
 (defalias
-;;	ena (tap-hold-next-release 200 esc (layer-toggle nav))
-	navsp (tap-hold-next-release 200 spc (layer-toggle nav))
-
-    ca (tap-hold-next-release 200 a lctl)
-    as (tap-hold-next-release 200 s lalt)
-    md (tap-hold-next-release 200 d lmet)
-    sf (tap-hold-next-release 200 f lsft)
-    sj (tap-hold-next-release 200 j rsft)
-    mk (tap-hold-next-release 200 k lmet)
-    al (tap-hold-next-release 200 l ralt)
-    c; (tap-hold-next-release 200 ; rctl)
+	alt (tap-hold-next-release 200 alt (layer-toggle nav))
+	spc (tap-hold-next-release 200 spc (layer-toggle nav))
+	esc (tap-hold-next-release 200 esc lctl)
 )
 
 
@@ -37,16 +30,16 @@
 ;;   _    _    _    _    _    _    _    _    _    _    _    _    _    _
 ;;   _    _    _    _    _    _    _    _    _    _    _    _    _
 ;;   _         _    _    _    _    _    _    _    _    _    _    _
-;;   _         _    _              _              _    _
+;;   _    _    _    _              _              _    _    _
 ;; )
 
 (deflayer base
   _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  esc  @ca  @as  @md  @sf  _    _    @sj  @mk  @al  @c;  _    _
+  @esc _    _    _    _    _    _    _    _    _    _    _    _
   _         _    _    _    _    _    _    _    _    _    _    _
-  _         lalt lmet                @navsp         _    _
+       _    lalt lmet           @spc           @alt _    _
 )
 
 (deflayer nav
@@ -55,5 +48,5 @@
   _    _    _    _    _    _    home pgdn pgup end  _    _    _    _
   _    _    _    _    _    _    left down up   rght _    _    _
   _         _    _    _    _    _    _    _    _    _    _    _
-  _         _    _              _              _    _
+       _    _    _              _              _    _    _
 )
