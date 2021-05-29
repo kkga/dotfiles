@@ -168,6 +168,7 @@ mesa-vulkan-radeon-32bit
 meson
 mpv
 myrepos
+ncurses-devel
 neofetch
 neovim
 nmap
@@ -338,6 +339,7 @@ yaru
 youtube-dl
 zathura
 zathura-pdf-mupdf
+zig
 zip
 zola
 zoxide
