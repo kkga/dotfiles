@@ -76,13 +76,13 @@ evaluate-commands %sh{
 # buffer
 map global user -docstring 'write'                 w ': w<ret>'
 map global user -docstring 'quit'                  q ': q<ret>'
-map global user -docstring 'QUIT'                  Q ': q!<ret>'
+map global user -docstring 'quit!'                 Q ': q!<ret>'
 
 # search
 map global user -docstring 'find buffers'          b ': + kcr-fzf-buffers<ret>'
 map global user -docstring 'find files'            f ': + kcr-fzf-files<ret>'
 map global user -docstring 'grep'                  g ': + kcr-fzf-grep<ret>'
-map global user -docstring 'grep buffer'           G ': + kcr-fzf-grep %val{buffile}<ret>'
+map global user -docstring 'jump to line'          j ': + kcr-fzf-lines %val{buffile}<ret>'
 
 # tools
 map global user -docstring 'surround mode'         s ': enter-user-mode surround<ret>'

@@ -1,4 +1,4 @@
-[gd_resource type="EditorSettings" load_steps=16 format=2]
+[gd_resource type="EditorSettings" load_steps=4 format=2]
 
 [sub_resource type="InputEventKey" id=1]
 control = true
@@ -18,72 +18,9 @@ meta = true
 command = true
 scancode = 67
 
-[sub_resource type="InputEventKey" id=4]
-control = true
-command = true
-scancode = 78
-unicode = 78
-
-[sub_resource type="InputEventKey" id=5]
-scancode = 16777224
-unicode = 16777224
-
-[sub_resource type="InputEventKey" id=6]
-control = true
-command = true
-scancode = 68
-unicode = 68
-
-[sub_resource type="InputEventKey" id=7]
-alt = true
-scancode = 16777231
-unicode = 16777231
-
-[sub_resource type="InputEventKey" id=8]
-alt = true
-scancode = 16777233
-unicode = 16777233
-
-[sub_resource type="InputEventKey" id=9]
-alt = true
-scancode = 16777232
-unicode = 16777232
-
-[sub_resource type="InputEventKey" id=10]
-control = true
-command = true
-scancode = 16777234
-unicode = 16777234
-
-[sub_resource type="InputEventKey" id=11]
-control = true
-command = true
-scancode = 16777232
-unicode = 16777232
-
-[sub_resource type="InputEventKey" id=12]
-scancode = 16777248
-unicode = 16777248
-
-[sub_resource type="InputEventKey" id=13]
-alt = true
-scancode = 70
-unicode = 70
-
-[sub_resource type="InputEventKey" id=14]
-control = true
-command = true
-scancode = 72
-unicode = 72
-
-[sub_resource type="InputEventKey" id=15]
-alt = true
-scancode = 86
-unicode = 86
-
 [resource]
-interface/editor/main_font_size = 16
-interface/editor/code_font_size = 20
+interface/editor/main_font_size = 18
+interface/editor/code_font_size = 22.0
 interface/editor/main_font = "/home/kkga/.local/share/fonts/Inter Desktop/Inter-Regular.otf"
 interface/editor/code_font = "/home/kkga/.local/share/fonts/iosevka/iosevka-custom-regular.ttf"
 interface/theme/preset = "Grey"
@@ -218,4 +155,5 @@ editors/3d_gizmos/gizmo_colors/joint_body_b = Color( 0.6, 0.9, 1, 1 )
 text_editor/highlighting/gdscript/function_definition_color = Color( 0.4, 0.9, 1, 1 )
 text_editor/highlighting/gdscript/node_path_color = Color( 0.39, 0.76, 0.35, 1 )
 projects/::home::kkga::projects::souls-like = "/home/kkga/projects/souls-like"
-shortcuts = [ "editor/play", SubResource( 1 ), "editor/play_scene", SubResource( 2 ), "editor/stop", SubResource( 3 ), "file_dialog/create_folder", SubResource( 4 ), "file_dialog/delete", SubResource( 5 ), "file_dialog/focus_path", SubResource( 6 ), "file_dialog/go_back", SubResource( 7 ), "file_dialog/go_forward", SubResource( 8 ), "file_dialog/go_up", SubResource( 9 ), "file_dialog/move_favorite_down", SubResource( 10 ), "file_dialog/move_favorite_up", SubResource( 11 ), "file_dialog/refresh", SubResource( 12 ), "file_dialog/toggle_favorite", SubResource( 13 ), "file_dialog/toggle_hidden_files", SubResource( 14 ), "file_dialog/toggle_mode", SubResource( 15 ) ]
+projects/::home::kkga::projects::td = "/home/kkga/projects/td"
+shortcuts = [ "editor/play", SubResource( 1 ), "editor/play_scene", SubResource( 2 ), "editor/stop", SubResource( 3 ) ]

@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# Jump to line in buffer.
+#
+# Usage:
+#
+# kcr fzf lines [filename]
+
+# – fzf (https://github.com/junegunn/fzf)
+# – ripgrep (https://github.com/BurntSushi/ripgrep)
+
+rg --line-number '.+' "$@" | fzf | cut -d':' -f1 | xargs -I % kcr send execute-keys '%g'
