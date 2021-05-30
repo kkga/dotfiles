@@ -109,6 +109,6 @@ hook global WinSetOption filetype=sh %{
     hook buffer -group format BufWritePost .* lint
 }
 hook global WinSetOption filetype=gdscript %{
-    # set-option buffer formatcmd "gdformat -"
+    set-option buffer formatcmd "gdformat -"
 }
 
