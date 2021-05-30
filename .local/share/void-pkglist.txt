@@ -7,6 +7,7 @@ SDL2-devel
 Vulkan-Tools
 Waybar
 abduco
+acl-devel
 alacritty
 alsa-firmware
 alsa-plugins-pulseaudio
@@ -219,6 +220,7 @@ qmk
 qt5-wayland
 qutebrowser
 radeontop
+readline-devel
 redshift
 ripgrep
 roxterm
