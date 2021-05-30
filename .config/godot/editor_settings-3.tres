@@ -20,7 +20,7 @@ scancode = 67
 
 [resource]
 interface/editor/main_font_size = 18
-interface/editor/code_font_size = 22.0
+interface/editor/code_font_size = 20.0
 interface/editor/main_font = "/home/kkga/.local/share/fonts/Inter Desktop/Inter-Regular.otf"
 interface/editor/code_font = "/home/kkga/.local/share/fonts/iosevka/iosevka-custom-regular.ttf"
 interface/theme/preset = "Grey"
