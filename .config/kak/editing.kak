@@ -3,7 +3,7 @@ set-option global grepcmd 'rg --smart-case --column --with-filename'
 # lsp -------------------------------------------------------------------------
 
 eval %sh{kak-lsp --kakoune -s $kak_session}
-hook global WinSetOption filetype=(crystal|html|css|json|rust|python|go|typescript|svelte|javascript|elm|zig) %{
+hook global WinSetOption filetype=(crystal|html|css|json|rust|python|go|typescript|svelte|javascript|elm|zig|gdscript) %{
     lsp-auto-hover-insert-mode-enable
     lsp-enable-window
 }
@@ -107,5 +107,8 @@ hook global WinSetOption filetype=elm %{
 hook global WinSetOption filetype=sh %{
     set-option buffer formatcmd 'shfmt -ci -sr'
     hook buffer -group format BufWritePost .* lint
+}
+hook global WinSetOption filetype=gdscript %{
+    set-option buffer formatcmd "gdformat -"
 }
 
