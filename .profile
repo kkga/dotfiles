@@ -17,6 +17,10 @@ export VISUAL="kcr edit"
 export DMENU_PROGRAM="fzf-menu"
 export FLOATING_TERMINAL="footclient --app-id popup"
 
+export NNN_PLUG='l:launch;f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
+export NNN_TRASH=1
+export NNN_COLORS='1234'
+
 export FZF_DEFAULT_COMMAND="fd --type f"
 export FZF_DEFAULT_OPTS="\
 	--layout=reverse\
