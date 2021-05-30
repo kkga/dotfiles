@@ -1,17 +1,65 @@
-[gd_resource type="EditorSettings" format=2]
+[gd_resource type="EditorSettings" load_steps=4 format=2]
+
+[sub_resource type="InputEventKey" id=1]
+control = true
+meta = true
+command = true
+scancode = 82
+
+[sub_resource type="InputEventKey" id=2]
+alt = true
+control = true
+command = true
+scancode = 82
+
+[sub_resource type="InputEventKey" id=3]
+control = true
+meta = true
+command = true
+scancode = 67
 
 [resource]
 interface/editor/main_font_size = 16
 interface/editor/code_font_size = 20
 interface/editor/main_font = "/home/kkga/.local/share/fonts/Inter Desktop/Inter-Regular.otf"
-interface/editor/code_font = "/home/kkga/.local/share/fonts/pragmatapro/Essential PragmataPro-R_1.2.ttf"
+interface/editor/code_font = "/home/kkga/.local/share/fonts/iosevka/iosevka-custom-regular.ttf"
 interface/theme/preset = "Grey"
 interface/theme/base_color = Color( 0.24, 0.24, 0.24, 1 )
 interface/theme/accent_color = Color( 0.72, 0.89, 1, 1 )
 interface/theme/contrast = 0.2
 filesystem/file_dialog/show_hidden_files = true
-text_editor/theme/color_theme = "Default"
-text_editor/navigation/v_scroll_speed = 120
+text_editor/theme/line_spacing = 4
+text_editor/highlighting/symbol_color = Color( 0.67, 0.785, 1, 1 )
+text_editor/highlighting/keyword_color = Color( 1, 0.44, 0.52, 1 )
+text_editor/highlighting/base_type_color = Color( 0.26, 1, 0.76, 1 )
+text_editor/highlighting/engine_type_color = Color( 0.556, 1, 0.856, 1 )
+text_editor/highlighting/user_type_color = Color( 0.778, 1, 0.928, 1 )
+text_editor/highlighting/comment_color = Color( 0.81, 0.81, 0.81, 0.5 )
+text_editor/highlighting/string_color = Color( 1, 0.925, 0.63, 1 )
+text_editor/highlighting/background_color = Color( 0.168, 0.168, 0.168, 1 )
+text_editor/highlighting/completion_background_color = Color( 0.24, 0.24, 0.24, 1 )
+text_editor/highlighting/completion_selected_color = Color( 1, 1, 1, 0.07 )
+text_editor/highlighting/completion_existing_color = Color( 1, 1, 1, 0.14 )
+text_editor/highlighting/completion_scroll_color = Color( 1, 1, 1, 0.07 )
+text_editor/highlighting/completion_font_color = Color( 0.81, 0.81, 0.81, 1 )
+text_editor/highlighting/text_color = Color( 0.81, 0.81, 0.81, 1 )
+text_editor/highlighting/line_number_color = Color( 0.81, 0.81, 0.81, 0.5 )
+text_editor/highlighting/safe_line_number_color = Color( 0.81, 0.972, 0.81, 0.75 )
+text_editor/highlighting/caret_color = Color( 1, 1, 1, 1 )
+text_editor/highlighting/text_selected_color = Color( 0.144, 0.144, 0.144, 1 )
+text_editor/highlighting/selection_color = Color( 0.72, 0.89, 1, 0.35 )
+text_editor/highlighting/brace_mismatch_color = Color( 1, 0.47, 0.42, 1 )
+text_editor/highlighting/current_line_color = Color( 1, 1, 1, 0.07 )
+text_editor/highlighting/line_length_guideline_color = Color( 0.24, 0.24, 0.24, 1 )
+text_editor/highlighting/word_highlighted_color = Color( 1, 1, 1, 0.07 )
+text_editor/highlighting/number_color = Color( 0.63, 1, 0.88, 1 )
+text_editor/highlighting/function_color = Color( 0.34, 0.7, 1, 1 )
+text_editor/highlighting/member_variable_color = Color( 0.736, 0.88, 1, 1 )
+text_editor/highlighting/mark_color = Color( 1, 0.47, 0.42, 0.3 )
+text_editor/highlighting/breakpoint_color = Color( 1, 0.47, 0.42, 1 )
+text_editor/highlighting/code_folding_color = Color( 1, 1, 1, 0.7 )
+text_editor/highlighting/search_result_color = Color( 1, 1, 1, 0.07 )
+text_editor/navigation/v_scroll_speed = 160
 text_editor/appearance/show_line_numbers = false
 asset_library/available_urls = {
 "godotengine.org": "https://godotengine.org/asset-library/api",
@@ -107,3 +155,4 @@ editors/3d_gizmos/gizmo_colors/joint_body_b = Color( 0.6, 0.9, 1, 1 )
 text_editor/highlighting/gdscript/function_definition_color = Color( 0.4, 0.9, 1, 1 )
 text_editor/highlighting/gdscript/node_path_color = Color( 0.39, 0.76, 0.35, 1 )
 projects/::home::kkga::projects::souls-like = "/home/kkga/projects/souls-like"
+shortcuts = [ "editor/play", SubResource( 1 ), "editor/play_scene", SubResource( 2 ), "editor/stop", SubResource( 3 ) ]

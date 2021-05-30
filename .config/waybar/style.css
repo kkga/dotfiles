@@ -12,7 +12,6 @@
   border: none;
   border-radius: 0;
   font-family: monospace, microns;
-  font-weight: 600;
   font-size: 9pt;
   min-height: 16px;
   transition: none;
@@ -22,7 +21,7 @@ tooltip {
 }
 
 window.eDP-1 * {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 window#waybar {
