@@ -17,8 +17,7 @@
 )
 
 (defalias
-	alt (tap-hold-next-release 200 alt (layer-toggle nav))
-	spc (tap-hold-next-release 200 spc (layer-toggle nav))
+	f (tap-hold-next-release 200 f (layer-toggle nav))
 	esc (tap-hold-next-release 200 esc lctl)
 )
 
@@ -36,16 +35,16 @@
   _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  @esc _    _    _    _    _    _    _    _    _    _    _    _
+  @esc _    _    _    @f   _    _    _    _    _    _    _    _
   _         _    _    _    _    _    _    _    _    _    _    _
-       _    lalt lmet           @spc           bspc _    _
+       _    lalt lmet           _           bspc _    _
 )
 
 (deflayer nav
   _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    home pgdn pgup end  _    _    _    _
-  _    _    _    _    _    _    left down up   rght _    _    _
+  _    _    _    end  _    _    home pgdn pgup end  _    _    _    _
+  _    home _    _    _    _    left down up   rght bspc _    _
   _         _    _    _    _    _    _    _    _    _    _    _
        _    _    _              _              _    _    _
 )
