@@ -1,5 +1,7 @@
+%[ $LF_LEVEL -eq 1 ] || echo "Warning: You're in a nested lf instance!"
+
 # interpreter for shell commands (needs to be POSIX compatible)
-set shell bash
+set shell sh
 
 # set '-eu' options for shell commands
 # These options are used to have safer shell commands. Option '-e' is used to

@@ -10,16 +10,13 @@ export PATH="/var/lib/flatpak/exports/bin/:$PATH"
 export XBPS_DISTDIR="$HOME/.void-packages"
 
 export BROWSER="firefox"
-export TERMINAL="foot"
 export EDITOR="kcr edit"
-export VISUAL="kcr edit"
+export VISUAL="$EDITOR"
 
-export DMENU_PROGRAM="fzf-menu"
-export FLOATING_TERMINAL="footclient --app-id popup"
-
-export NNN_PLUG='l:launch;f:finder;o:fzopen;p:mocplay;d:diffs;t:nmount;v:imgview'
-export NNN_TRASH=1
-export NNN_COLORS='1234'
+# export TERMINAL="term"
+# export TERMCMD='term'
+# export DMENU_PROGRAM="fzf-menu"
+# export FLOATING_TERMINAL="footclient --app-id popup"
 
 export FZF_DEFAULT_COMMAND="fd --type f"
 export FZF_DEFAULT_OPTS="\

@@ -4,6 +4,7 @@ alias gg="lazygit"
 alias ls="exa --group --git --group-directories-first"
 alias y="yadm"
 alias cat="bat"
+alias lfs="lf -command 'set nopreview; set ratios 1'"
 alias att='alacritty-theme-toggle'
 alias t='todo.sh'
 alias zk='ZK_NOTEBOOK_DIR=~/notes/h ~/.local/bin/zk'
@@ -25,6 +26,8 @@ alias :cat='kcr cat --raw'
 alias val='kcr get --value'
 alias opt='kcr get --option'
 alias reg='kcr get --register'
+
+bind \co 'set old_tty (stty -g); stty sane; l; stty $old_tty; commandline -f repaint'
 
 set --global hydro_symbol_prompt           '>'
 set --global hydro_symbol_git_dirty        '*'
