@@ -22,12 +22,19 @@ set shellopts '-eu'
 # leave some space at the top and the bottom of the screen
 set scrolloff 10
 
+# previewer script
+set previewer ~/.config/lf/pv.sh
+map i $LESSOPEN='| ~/.config/lf/pv.sh %s' less -R $f
+
 # use enter for shell commands
 map <enter> shell
 
 # kakoune-like navigation
 map gk top
 map gj bottom
+
+map <c-k> half-up
+map <c-j> half-down
 
 # execute current file (must be executable)
 map x $$f
@@ -49,8 +56,50 @@ cmd open ${{
     esac
 }}
 
-cmd trash %set -f; trash-put $fx
+# put files into trash, requires trash-cli
+cmd trash $IFS="`printf '\n\t'`"; trash $fx
 map D trash
+
+# recursively make dirs
+# cmd mkdir %{{
+#     IFS=" "
+#     mkdir -p -- "$*"
+#     lf -remote "send $id select \"$*\""
+# }}
+# map a push %mkdir<space>
+
+# new folder with selected files
+cmd newfold ${{
+    set -f
+    read newd
+    mkdir -- "$newd"
+    mv -- $fx "$newd"
+}}
+map <a-a> newfold
+
+cmd bulk-rename ${{
+    IFS=" "
+    old="$(mktemp)"
+    new="$(mktemp)"
+    [ -n "$fs" ] && fs="$(ls)"
+    printf '%s\n' "$fs" >"$old"
+    printf '%s\n' "$fs" >"$new"
+    $EDITOR "$new"
+    [ "$(wc -l "$new")" -ne "$(wc -l "$old")" ] && exit
+    paste "$old" "$new" | while IFS= read -r names; do
+        src="$(printf '%s' "$names" | cut -f1)"
+        dst="$(printf '%s' "$names" | cut -f2)"
+        if [ "$src" = "$dst" ] || [ -e "$dst" ]; then
+            continue
+        fi
+        mv -- "$src" "$dst"
+    done
+    rm -- "$old" "$new"
+    lf -remote "send $id unselect"
+}}
+# map R bulk-rename
+map R $printf '%s\n' $fx | vidir -
+
 
 cmd extract ${{
     set -f
@@ -98,5 +147,5 @@ cmd jump ${{
 map <c-f> :jump
 
 cmd autojump %lf -remote "send $id cd '$(zoxide query $1)'"
-map <c-j> push :autojump<space>
+map <c-z> push :autojump<space>
 # vi:ft=sh
