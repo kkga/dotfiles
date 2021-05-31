@@ -42,6 +42,7 @@ map gj bottom
 # }}
 
 cmd trash %trash-put $fx
+map <c-d> :trash
 
 # extract the current file with the right command
 # (xkcd link: https://xkcd.com/1168/)
@@ -85,3 +86,7 @@ cmd jump ${{
     lf -remote "send $id $cmd \"$res\""
 }}
 map <c-f> :jump
+
+cmd autojump %lf -remote "send $id cd '$(zoxide query $1)'"
+map <c-j> push :autojump<space>
+# vi:ft=sh
