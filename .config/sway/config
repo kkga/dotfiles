@@ -14,7 +14,7 @@ titlebar_border_thickness 0
 titlebar_padding 4 0
 
 seat * xcursor_theme Adwaita 24
-seat * hide_cursor 5000
+seat * hide_cursor 10000
 
 # Variables ------------------------------------------------------------------
 
@@ -70,8 +70,8 @@ input "type:touchpad" {
 }
 
 input "type:pointer" {
-    # accel_profile flat
-    # pointer_accel -0.5
+    accel_profile adaptive
+    pointer_accel -0.5
 }
 
 # Colors ------------------------------------------------------------------
@@ -113,7 +113,7 @@ bindsym $mod+d                     fullscreen disable, exec $drun
 bindsym $mod+c                     fullscreen disable, exec $clipboard
 bindsym Mod1+Tab                   fullscreen disable, exec window-switcher
 bindsym $mod+Shift+c               kill
-bindsym $mod+Backspace             reload; exec killall -SIGUSR2 waybar
+bindsym $mod+Shift+Backspace       reload; exec killall -SIGUSR2 waybar
 bindsym XF86Display                output * dpms on
 bindsym XF86MonBrightnessUp        exec light -A 10 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
 bindsym XF86MonBrightnessDown      exec light -U 10 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
@@ -136,15 +136,17 @@ bindsym $mod+$up                  focus up
 bindsym $mod+$right               focus right
 
 bindsym $mod+Shift+$left          move left
+bindsym $mod+Shift+$right         move right
 bindsym $mod+Shift+$down          move down
 bindsym $mod+Shift+$up            move up
-bindsym $mod+Shift+$right         move right
 
 bindsym $mod+comma                focus output left
 bindsym $mod+period               focus output right
 
 bindsym $mod+Shift+comma          move output left
 bindsym $mod+Shift+period         move output right
+bindsym $mod+Control+Shift+comma  move workspace to output left
+bindsym $mod+Control+Shift+period move workspace to output right
 
 bindsym $mod+Ctrl+k               focus parent
 bindsym $mod+Ctrl+j               focus child
@@ -192,7 +194,7 @@ mode $mode_resize {
 }
 bindsym $mod+r                    mode $mode_resize
 
-set $mode_power                   "(e)xit (r)eebot (l)ock (s)uspend (p)oweroff"
+set $mode_power                   "E exit | R reebot | L lock | S suspend | P poweroff"
 mode $mode_power {
     bindsym e                     exec swaymsg exit
     bindsym r                     exec loginctl reboot
@@ -202,7 +204,7 @@ mode $mode_power {
     bindsym Return                mode "default"
     bindsym Escape                mode "default"
 }
-bindsym $mod+Shift+Backspace      mode $mode_power
+bindsym $mod+Control+q            mode $mode_power
 
 # Autostart ------------------------------------------------------------------
 

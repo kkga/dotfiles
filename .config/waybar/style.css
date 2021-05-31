@@ -21,7 +21,7 @@ tooltip {
 }
 
 window.eDP-1 * {
-  font-size: 11pt;
+  font-size: 18px;
 }
 
 window#waybar {
@@ -96,4 +96,3 @@ window#waybar {
   padding: 0 4pt;
   margin: 0 4pt;
 }
-

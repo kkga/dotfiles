@@ -1,5 +1,7 @@
+%[ $LF_LEVEL -eq 1 ] || echo "Warning: You're in a nested lf instance!"
+
 # interpreter for shell commands (needs to be POSIX compatible)
-set shell bash
+set shell sh
 
 # set '-eu' options for shell commands
 # These options are used to have safer shell commands. Option '-e' is used to
@@ -10,50 +12,61 @@ set shell bash
 # times.
 set shellopts '-eu'
 
+# set internal field separator (IFS) to "\n" for shell commands
+# This is useful to automatically split file names in $fs and $fx properly
+# since default file separator used in these variables (i.e. 'filesep' option)
+# is newline. You need to consider the values of these options and create your
+# commands accordingly.
+# set ifs "\n"
+
 # leave some space at the top and the bottom of the screen
 set scrolloff 10
 
 # use enter for shell commands
 map <enter> shell
 
+# kakoune-like navigation
+map gk top
+map gj bottom
+
 # execute current file (must be executable)
 map x $$f
 map X !$f
 
 # dedicated keys for file opener actions
-# map o &mimeopen $f
-# map O $mimeopen --ask $f
-
-# kakoune-like navigation
-map gk top
-map gj bottom
+map o &mimeopen $f
+map O $mimeopen --ask $f
 
 # define a custom 'open' command
 # This command is called when current file is not a directory. You may want to
 # use either file extensions and/or mime types here. Below uses an editor for
 # text files and a file opener for the rest.
-# cmd open ${{
-#     case $(file --mime-type $f -b) in
-#         text/*) $EDITOR $fx;;
-#         *) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
-#     esac
-# }}
-
-cmd trash %trash-put $fx
-
-# extract the current file with the right command
-# (xkcd link: https://xkcd.com/1168/)
-cmd extract ${{
-    set -f
-    case $f in
-        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
-        *.tar.gz|*.tgz) tar xzvf $f;;
-        *.tar.xz|*.txz) tar xJvf $f;;
-        *.zip) unzip $f;;
-        *.rar) unrar x $f;;
-        *.7z) 7z x $f;;
+cmd open ${{
+    test -L $f && f=$(readlink -f $f)
+    case $(file --mime-type $f -b) in
+        text/*) $EDITOR $fx;;
+        *) for f in $fx; do setsid $OPENER $f > /dev/null 2> /dev/null & done;;
     esac
 }}
+
+cmd trash %set -f; trash-put $fx
+map D trash
+
+cmd extract ${{
+    set -f
+    unar $f
+}}
+# cmd extract ${{
+#     set -f
+#     case $f in
+#         *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
+#         *.tar.gz|*.tgz) tar xzvf $f;;
+#         *.tar.xz|*.txz) tar xJvf $f;;
+#         *.zip) unzip $f;;
+#         *.rar) unrar x $f;;
+#         *.7z) 7z x $f;;
+#     esac
+# }}
 
 # compress current file or selected files with tar and gunzip
 cmd tar ${{
@@ -74,7 +87,7 @@ cmd zip ${{
 }}
 
 cmd jump ${{
-    res="$(fd . -H -d 4 | fzy | sed 's/\\/\\\\/g;s/"/\\"/g')"
+    res="$(fd . -H -d 4 | fzf | sed 's/\\/\\\\/g;s/"/\\"/g')"
     if [ -d "$res" ]; then
         cmd="cd"
     else
@@ -83,3 +96,7 @@ cmd jump ${{
     lf -remote "send $id $cmd \"$res\""
 }}
 map <c-f> :jump
+
+cmd autojump %lf -remote "send $id cd '$(zoxide query $1)'"
+map <c-j> push :autojump<space>
+# vi:ft=sh

@@ -25,14 +25,14 @@ map global normal <c-p> 	'[p;'
 # ciao macros: q, w and e are now together
 map global normal ^     	'q'
 map global normal <a-^> 	'Q'
-# map global normal q     	'b'
-# map global normal Q     	'B'
-# map global normal <a-q> 	'<a-b>'
-map global normal w         ': word-select-next-word<ret>'
-map global normal <a-w>     ': word-select-next-big-word<ret>'
-map global normal q         ': word-select-previous-word<ret>'
-map global normal <a-q>     ': word-select-previous-big-word<ret>'
-map global normal <a-Q> 	'<a-B>'
+map global normal q     	'b'
+map global normal Q     	'B'
+map global normal <a-q> 	'<a-b>'
+# map global normal w         ': word-select-next-word<ret>'
+# map global normal <a-w>     ': word-select-next-big-word<ret>'
+# map global normal q         ': word-select-previous-word<ret>'
+# map global normal <a-q>     ': word-select-previous-big-word<ret>'
+# map global normal <a-Q> 	'<a-B>'
 
 # readline
 map global insert <c-w> 	'<esc>bdi'
@@ -76,13 +76,13 @@ evaluate-commands %sh{
 # buffer
 map global user -docstring 'write'                 w ': w<ret>'
 map global user -docstring 'quit'                  q ': q<ret>'
-map global user -docstring 'QUIT'                  Q ': q!<ret>'
+map global user -docstring 'quit!'                 Q ': q!<ret>'
 
 # search
 map global user -docstring 'find buffers'          b ': + kcr-fzf-buffers<ret>'
 map global user -docstring 'find files'            f ': + kcr-fzf-files<ret>'
 map global user -docstring 'grep'                  g ': + kcr-fzf-grep<ret>'
-map global user -docstring 'grep buffer'           G ': + kcr-fzf-grep %val{buffile}<ret>'
+map global user -docstring 'jump to line'          j ': + kcr-fzf-lines %val{buffile}<ret>'
 
 # tools
 map global user -docstring 'surround mode'         s ': enter-user-mode surround<ret>'

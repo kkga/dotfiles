@@ -9,16 +9,7 @@ plug plug https://github.com/alexherbo2/plug.kak %{
 }
 plug-core %{ set-option global makecmd 'make -j 8' }
 
-# plug alacritty https://github.com/alexherbo2/alacritty.kak
-# hook -group windowing-detection global ClientCreate '.*' %{
-#   evaluate-commands %sh{
-#     [ "$WAYLAND_DISPLAY" ] && {
-#       echo alias global terminal alacritty-terminal
-#       echo alias global popup alacritty-terminal-popup
-#     }
-#   }
-# }
-plug gdscript projects/gdscript.kak
+# plug gdscript projects/gdscript.kak
 plug foot projects/foot.kak
 hook -group windowing-detection global ClientCreate '.*' %{
   evaluate-commands %sh{
