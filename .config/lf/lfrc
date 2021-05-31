@@ -50,8 +50,7 @@ cmd open ${{
 }}
 
 cmd trash %set -f; trash-put $fx
-map <c-d> :trash
-
+map D trash
 
 cmd extract ${{
     set -f

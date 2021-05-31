@@ -30,6 +30,7 @@ bluez-alsa
 bluez-qt5
 bottom
 cairo-devel
+chrome-gnome-shell
 chromium
 chrony
 clang-tools-extra
@@ -58,6 +59,7 @@ dutree
 elixir
 elogind
 elvish
+emptty
 eudev-libudev
 exa
 execline
@@ -89,6 +91,7 @@ git-extras
 git-libsecret
 github-cli
 glmark2
+gnome
 gnome-keyring
 go
 godot
