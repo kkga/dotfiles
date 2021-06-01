@@ -11,8 +11,8 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: monospace, microns;
-  font-size: 9pt;
+  font-family: iosevka k extended, microns;
+  font-size: 11px;
   min-height: 16px;
   transition: none;
 }
