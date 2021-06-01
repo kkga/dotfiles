@@ -1,3 +1,5 @@
+# .profile
+
 export GOPATH="$HOME/.go"
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
@@ -38,5 +40,3 @@ if [ "$(uname -s)" == "Linux" ]; then
 		exec start-sway.sh
 	fi
 fi
-
-# vi:ft=sh
