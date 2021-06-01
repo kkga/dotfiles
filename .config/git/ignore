@@ -22,5 +22,8 @@ node_modules
 .sass-cache
 elm-stuff
 
+tags
+.cache/
+
 # mongodb
 /db

@@ -280,6 +280,7 @@ uni
 unicode-emoji
 upower
 vdpauinfo
+vifm
 viu
 vkBasalt
 vmdfmt

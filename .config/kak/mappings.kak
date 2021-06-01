@@ -81,6 +81,7 @@ map global user -docstring 'quit!'                 Q ': q!<ret>'
 # search
 map global user -docstring 'find buffers'          b ': + kcr-fzf-buffers<ret>'
 map global user -docstring 'find files'            f ': + kcr-fzf-files<ret>'
+map global user -docstring 'browse files'          F ': > lf -command "set nopreview; set ratios 1"<ret>'
 map global user -docstring 'grep'                  g ': + kcr-fzf-grep<ret>'
 map global user -docstring 'jump to line'          j ': + kcr-fzf-lines %val{buffile}<ret>'
 
