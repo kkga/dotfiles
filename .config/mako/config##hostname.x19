@@ -4,7 +4,7 @@ width=400
 padding=12
 margin=16
 border-size=2
-border-radius=4
+border-radius=0
 default-timeout=10000
 
 # background-color=#ffffff
