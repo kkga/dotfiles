@@ -146,6 +146,8 @@ light
 linux-firmware
 linux5.11
 linux5.11-headers
+linux5.12
+linux5.12-headers
 lm_sensors
 lowdown
 lua-devel
