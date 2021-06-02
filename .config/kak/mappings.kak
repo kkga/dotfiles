@@ -1,5 +1,33 @@
 # global -------------------------------------------------------------
 
+# Big keys
+# [Enter] [Backspace] [Tab] [Alt-Tab]
+# map -docstring 'Reduce selections to their cursor' global normal <backspace> ';'
+# map -docstring 'Swap selections cursor and anchor' global normal <tab> '<a-;>'
+# map -docstring 'Ensure selection cursor is after anchor' global normal <a-tab> '<a-:>'
+
+map -docstring 'Enter command prompt' global normal <ret> :
+
+map -docstring 'Alternate buffer' global normal <c-a> ga
+map -docstring 'Quit' global normal <c-q> ':quit<ret>'
+map -docstring 'Save buffer' global normal <c-w> ':write<ret>'
+
+map -docstring 'New terminal' global normal <c-t> ': connect-terminal<ret>'
+map -docstring 'New popup' global normal + ': connect-popup<ret>'
+map -docstring 'Open files' global normal <c-f> ': + kcr-fzf-files<ret>'
+map -docstring 'Open buffers' global normal <c-b> ': + kcr-fzf-buffers<ret>'
+map -docstring 'Open files by content' global normal <c-g> ': + kcr-fzf-grep<ret>'
+map -docstring 'Jump to line in buffer' global normal <c-k> ': + kcr-fzf-lines %val{buffile}<ret>'
+map -docstring 'Open lf' global normal <c-o> ': > lf -command "set nopreview; set ratios 1" .<ret>'
+map -docstring 'Open lazygit' global normal <c-l> ': + lazygit<ret>'
+# map -docstring 'Open sidetree' global normal <c-e> ': > sidetree<ret>'
+
+# map global user -docstring 'find buffers'          b ': + kcr-fzf-buffers<ret>'
+# map global user -docstring 'find files'            f ': + kcr-fzf-files<ret>'
+# map global user -docstring 'browse files'          F ': > lf -command "set nopreview; set ratios 1"<ret>'
+# map global user -docstring 'grep'                  g ': + kcr-fzf-grep<ret>'
+# map global user -docstring 'jump to line'          j ': + kcr-fzf-lines %val{buffile}<ret>'
+
 # work around some weird defaults
 map global normal a	   		'li'
 # map global normal c    		'<a-c>'
@@ -74,16 +102,16 @@ evaluate-commands %sh{
 }
 
 # buffer
-map global user -docstring 'write'                 w ': w<ret>'
-map global user -docstring 'quit'                  q ': q<ret>'
-map global user -docstring 'quit!'                 Q ': q!<ret>'
+# map global user -docstring 'write'                 w ': w<ret>'
+# map global user -docstring 'quit'                  q ': q<ret>'
+# map global user -docstring 'quit!'                 Q ': q!<ret>'
 
 # search
-map global user -docstring 'find buffers'          b ': + kcr-fzf-buffers<ret>'
-map global user -docstring 'find files'            f ': + kcr-fzf-files<ret>'
-map global user -docstring 'browse files'          F ': > lf -command "set nopreview; set ratios 1"<ret>'
-map global user -docstring 'grep'                  g ': + kcr-fzf-grep<ret>'
-map global user -docstring 'jump to line'          j ': + kcr-fzf-lines %val{buffile}<ret>'
+# map global user -docstring 'find buffers'          b ': + kcr-fzf-buffers<ret>'
+# map global user -docstring 'find files'            f ': + kcr-fzf-files<ret>'
+# map global user -docstring 'browse files'          F ': > lf -command "set nopreview; set ratios 1"<ret>'
+# map global user -docstring 'grep'                  g ': + kcr-fzf-grep<ret>'
+# map global user -docstring 'jump to line'          j ': + kcr-fzf-lines %val{buffile}<ret>'
 
 # tools
 map global user -docstring 'surround mode'         s ': enter-user-mode surround<ret>'
