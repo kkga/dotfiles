@@ -94,10 +94,16 @@ hook global WinSetOption filetype=json %{
     set-option buffer formatcmd "deno fmt --ext json -"
 }
 hook global WinSetOption filetype=markdown %{
+    require-module todo
     set-option buffer lintcmd "proselint"
     set-option buffer formatcmd "deno fmt --ext md -"
     # set-option buffer formatcmd "prettier --prose-wrap=always --stdin-filepath='%val{buffile}'"
     hook buffer -group format BufWritePost .* lint
+
+    map buffer normal <ret> ': todo-toggle<ret>' -docstring "toggle checkbox"
+    add-highlighter buffer/ regex '\[ \]' 0:blue
+    add-highlighter buffer/ regex '\[x\]' 0:comment
+
 }
 hook global WinSetOption filetype=lua %{
     set-option buffer formatcmd "stylua -"
