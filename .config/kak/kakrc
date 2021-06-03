@@ -1,6 +1,6 @@
 # external plugins
-source "~/.config/kak/auto-pairs.kak/rc/auto-pairs.kak"; require-module auto-pairs; auto-pairs-enable
 source "~/.config/kak/foot.kak/rc/foot.kak"; require-module foot
+source "~/.config/kak/auto-pairs.kak/rc/auto-pairs.kak"; require-module auto-pairs; auto-pairs-enable
 source "~/.config/kak/surround.kak/rc/surround.kak"; require-module surround
 source "~/.config/kak/toggle-highlighter.kak/rc/toggle-highlighter.kak"; require-module toggle-highlighter
 source "~/.config/kak/move-line.kak/rc/move-line.kak"; require-module move-line
@@ -11,42 +11,14 @@ source "~/.config/kak/sudo-write/sudo-write.kak"
 source "~/.config/kak/shellcheck/shellcheck.kak"
 source "~/.config/kak/buffers/buffers.kak"
 
-# set-option global makecmd 'make -j 8'
-
-# require-module plug
-
-# plug plug https://github.com/alexherbo2/plug.kak %{
-#   define-command plug-upgrade -docstring 'plug-upgrade' %{
-#     plug-install
-#   }
-# }
-# plug-core %{  }
-# plug gdscript projects/gdscript.kak
-# plug foot projects/foot.kak
-# plug auto-pairs https://github.com/alexherbo2/auto-pairs.kak %{ auto-pairs-enable }
-# plug auto-pairs repos/auto-pairs.kak %{ auto-pairs-enable }
-# plug explore https://github.com/alexherbo2/explore.kak %{
-#   explore-enable
-#   define-command explore-files -params .. '+ kcr-fzf-files %arg{@}'
-#   define-command explore-buffers -params .. '+ kcr-fzf-buffers %arg{@}'
-# }
 # plug edit https://github.com/alexherbo2/edit.kak
 # plug manual-indent https://github.com/alexherbo2/manual-indent.kak
 # plug objectify https://github.com/alexherbo2/objectify.kak
 # plug text-objects https://github.com/alexherbo2/text-objects.kak
-# plug surround https://github.com/alexherbo2/surround.kak
-# plug toggle-highlighter https://github.com/alexherbo2/toggle-highlighter.kak
 # plug palette https://github.com/alexherbo2/palette.kak
-# plug change-directory https://github.com/alexherbo2/change-directory.kak
-# plug sleuth https://github.com/alexherbo2/sleuth.kak %{ sleuth-enable }
-# plug move-line https://github.com/alexherbo2/move-line.kak
 # plug word-select https://github.com/alexherbo2/word-select.kak
 
-# plug-old shellcheck https://gitlab.com/Screwtapello/kakoune-shellcheck
-# plug-old sudo-write https://github.com/occivink/kakoune-sudo-write
 # plug-old vertical-selection https://github.com/occivink/kakoune-vertical-selection
-# plug-old buffers https://github.com/Delapouite/kakoune-buffers
-# plug-old state-save https://gitlab.com/Screwtapello/kakoune-state-save
 
 evaluate-commands %sh{ kcr init kakoune }
 

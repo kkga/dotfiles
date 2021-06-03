@@ -75,7 +75,7 @@
     "format-charging": "{capacity}%"
   },
   "network": {
-    "interface": "wlan0",
+    //"interface": "wlan0",
     "format-wifi": "",
     "format-ethernet": "",
     "format-linked": "{ifname}",
@@ -98,7 +98,7 @@
     "interval": 5
   },
   "pulseaudio": {
-    "format": "{volume}%",
+    "format": "{icon} {volume}%",
     "format-bluetooth": "BT {volume}% {format_source}",
     "format-muted": "MUT",
     "format-bluetooth-muted": "BT MUT {format_source}",

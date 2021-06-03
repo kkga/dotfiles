@@ -1,9 +1,6 @@
 [submodule ".config/kak/auto-pairs.kak"]
 	path = .config/kak/auto-pairs.kak
 	url = https://github.com/alexherbo2/auto-pairs.kak
-[submodule ".config/kak/foot.kak"]
-	path = .config/kak/foot.kak
-	url = /home/kkga/projects/foot.kak/
 [submodule ".config/kak/surround.kak"]
 	path = .config/kak/surround.kak
 	url = https://github.com/alexherbo2/surround.kak
@@ -12,7 +9,7 @@
 	url = https://github.com/alexherbo2/toggle-highlighter.kak
 [submodule ".config/kak/state-save"]
 	path = .config/kak/state-save
-	url = https://gitlab.com/Screwtapello/kakoune-state-save
+	url = https://gitlab.com/Screwtapello/kakoune-state-save.git/
 [submodule ".config/kak/vertical-selection"]
 	path = .config/kak/vertical-selection
 	url = https://github.com/occivink/kakoune-vertical-selection
@@ -24,10 +21,13 @@
 	url = https://github.com/alexherbo2/move-line.kak
 [submodule ".config/kak/shellcheck"]
 	path = .config/kak/shellcheck
-	url = https://gitlab.com/Screwtapello/kakoune-shellcheck
+	url = https://gitlab.com/Screwtapello/kakoune-shellcheck.git
 [submodule ".config/kak/sleuth.kak"]
 	path = .config/kak/sleuth.kak
 	url = https://github.com/alexherbo2/sleuth.kak
 [submodule ".config/kak/buffers"]
 	path = .config/kak/buffers
 	url = https://github.com/Delapouite/kakoune-buffers
+[submodule ".config/kak/foot.kak"]
+	path = .config/kak/foot.kak
+	url = https://github.com/kkga/foot.kak

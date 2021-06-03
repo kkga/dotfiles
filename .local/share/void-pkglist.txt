@@ -172,6 +172,7 @@ mesa-vdpau
 mesa-vulkan-radeon
 mesa-vulkan-radeon-32bit
 meson
+moreutils
 mpv
 myrepos
 ncurses-devel

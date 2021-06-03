@@ -29,11 +29,11 @@ map -docstring 'Open lazygit' global normal <c-l> ': + lazygit<ret>'
 
 # work around some weird defaults
 map global normal a	   		'li'
+map global normal x    		'<a-x>'
 # map global normal c    		'<a-c>'
 # map global normal <a-c>		'c'
 # map global normal d    		'<a-d>'
 # map global normal <a-d>		'd'
-map global normal x    		'<a-x>'
 
 # select full lines
 map global normal J    		'J<a-x>'
@@ -100,19 +100,8 @@ evaluate-commands %sh{
     printf "map global user -docstring 'clip-replace' R '|%s<ret>'\n" "$paste"
 }
 
-# buffer
-# map global user -docstring 'write'                 w ': w<ret>'
-# map global user -docstring 'quit'                  q ': q<ret>'
-# map global user -docstring 'quit!'                 Q ': q!<ret>'
-
-# search
-# map global user -docstring 'find buffers'          b ': + kcr-fzf-buffers<ret>'
-# map global user -docstring 'find files'            f ': + kcr-fzf-files<ret>'
-# map global user -docstring 'browse files'          F ': > lf -command "set nopreview; set ratios 1"<ret>'
-# map global user -docstring 'grep'                  g ': + kcr-fzf-grep<ret>'
-# map global user -docstring 'jump to line'          j ': + kcr-fzf-lines %val{buffile}<ret>'
-
 # tools
+map global user -docstring 'surround mode'         s ': enter-user-mode surround<ret>'
 map global user -docstring 'surround mode'         s ': enter-user-mode surround<ret>'
 map global user -docstring 'LSP mode'              l ': enter-user-mode lsp<ret>'
 map global user -docstring 'tree mode'             t ': enter-user-mode tree<ret>'

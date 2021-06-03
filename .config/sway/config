@@ -199,8 +199,8 @@ mode $mode_power {
     bindsym e                     exec swaymsg exit
     bindsym r                     exec loginctl reboot
     bindsym l                     exec loginctl lock-session; mode "default"
-    bindsym s                     exec loginctl suspend"
-    bindsym p                     exec loginctl poweroff"
+    bindsym s                     exec loginctl suspend
+    bindsym p                     exec loginctl poweroff
     bindsym Return                mode "default"
     bindsym Escape                mode "default"
 }
