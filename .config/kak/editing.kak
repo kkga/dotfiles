@@ -4,8 +4,9 @@ set-option global grepcmd 'rg --smart-case --column --with-filename'
 
 eval %sh{kak-lsp --kakoune -s $kak_session}
 hook global WinSetOption filetype=(crystal|html|css|json|rust|python|go|typescript|svelte|javascript|elm|zig|gdscript) %{
-    lsp-auto-hover-insert-mode-enable
     lsp-enable-window
+    lsp-auto-signature-help-enable
+    lsp-auto-hover-insert-mode-enable
 }
 hook global KakEnd .* lsp-exit
 
