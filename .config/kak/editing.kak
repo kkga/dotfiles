@@ -1,4 +1,4 @@
-#set-option global grepcmd 'rg --smart-case --column --with-filename'
+set-option global grepcmd 'rg --smart-case --column --with-filename'
 
 # lsp -------------------------------------------------------------------------
 
