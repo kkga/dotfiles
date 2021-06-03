@@ -28,3 +28,6 @@
 [submodule ".config/kak/buffers"]
 	path = .config/kak/buffers
 	url = https://github.com/Delapouite/kakoune-buffers
+[submodule ".config/kak/foot.kak"]
+	path = .config/kak/foot.kak
+	url = https://github.com/kkga/foot.kak
