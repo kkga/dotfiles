@@ -98,7 +98,7 @@
     "interval": 5
   },
   "pulseaudio": {
-    "format": "{icon} {volume}%",
+    "format": "{volume}%",
     "format-bluetooth": "BT {volume}% {format_source}",
     "format-muted": "MUT",
     "format-bluetooth-muted": "BT MUT {format_source}",
