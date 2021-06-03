@@ -39,5 +39,5 @@
 	colorMoved = default
 [init]
 	defaltBranch = main
-[submodule]
-	recurse = true
+; [submodule]
+; 	recurse = true
