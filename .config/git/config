@@ -8,7 +8,7 @@
 	a = add
 	c = commit
 	co = checkout
-	clone = clone
+	cl = clone
 	b = branch
 	s = status
 	sl = status --long
@@ -20,11 +20,11 @@
 	ui = auto
 [status]
 	short = true
-	; submoduleSummary = true
+	submoduleSummary = true
 [push]
 	default = simple
-; [pull]
-	; ff = only
+[pull]
+	rebase = false
 [log]
 	date = format:%Y-%m-%d %H:%M:%S %z (%A)
 [interactive]
