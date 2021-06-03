@@ -31,6 +31,32 @@ define-command dark-mode %{ evaluate-commands %sh{
   alacritty-theme-toggle dark
 }}
 
+# windowing
+hook -group windowing-detection global ClientCreate '.*' %{
+  evaluate-commands %sh{
+    [ "$WAYLAND_DISPLAY" ] && {
+      echo alias global terminal foot-terminal
+      echo alias global popup foot-terminal-popup
+    }
+  }
+}
+hook global ModuleLoaded kitty %{
+  alias global terminal kitty-terminal
+  alias global popup kitty-terminal
+}
+
+# state-save
+hook global KakBegin .* %{
+  state-save-reg-load colon
+  state-save-reg-load pipe
+  state-save-reg-load slash
+}
+hook global KakEnd .* %{
+  state-save-reg-save colon
+  state-save-reg-save pipe
+  state-save-reg-save slash
+}
+
 # modeline --------------------------------------------------------------------
 
 define-command update-status %{ evaluate-commands %sh{

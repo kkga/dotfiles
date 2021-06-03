@@ -6,3 +6,6 @@ cd "$HOME"
 
 echo "Init submodules"
 yadm submodule update --recursive --init
+
+echo "Updating the yadm repo origin URL"
+yadm remote set-url origin "git@github.com:kkga/dotfiles.git"
