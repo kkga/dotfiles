@@ -20,7 +20,7 @@
 	ui = auto
 [status]
 	short = true
-	submoduleSummary = true
+	; submoduleSummary = true
 [push]
 	default = simple
 [pull]
