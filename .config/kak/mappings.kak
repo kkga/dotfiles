@@ -1,31 +1,12 @@
 # global -------------------------------------------------------------
 
-# Big keys
-# [Enter] [Backspace] [Tab] [Alt-Tab]
-# map -docstring 'Reduce selections to their cursor' global normal <backspace> ';'
-# map -docstring 'Swap selections cursor and anchor' global normal <tab> '<a-;>'
-# map -docstring 'Ensure selection cursor is after anchor' global normal <a-tab> '<a-:>'
+# ambiguous keys
+map global insert '<c-h>' <backspace>
+map global normal '<c-i>' <tab>
 
-# map -docstring 'Enter command prompt' global normal <ret> :
-
-map -docstring 'Alternate buffer' global normal <c-a> ga
-map -docstring 'Quit' global normal <c-q> ':quit<ret>'
-map -docstring 'Save buffer' global normal <c-w> ':write<ret>'
-
-map -docstring 'New terminal' global normal <c-t> ': connect-terminal<ret>'
-map -docstring 'New popup' global normal + ': connect-popup<ret>'
-map -docstring 'Open files' global normal <c-f> ': + kcr-fzf-files<ret>'
-map -docstring 'Open buffers' global normal <c-b> ': + kcr-fzf-buffers<ret>'
-map -docstring 'Open files by content' global normal <c-g> ': + kcr-fzf-grep<ret>'
-map -docstring 'Jump to line in buffer' global normal <c-k> ': + kcr-fzf-lines %val{buffile}<ret>'
-map -docstring 'Open lf' global normal <c-h> ': > lf -command "set nopreview; set ratios 1" .<ret>'
-map -docstring 'Open lazygit' global normal <c-l> ': + lazygit<ret>'
-
-# map global user -docstring 'find buffers'          b ': + kcr-fzf-buffers<ret>'
-# map global user -docstring 'find files'            f ': + kcr-fzf-files<ret>'
-# map global user -docstring 'browse files'          F ': > lf -command "set nopreview; set ratios 1"<ret>'
-# map global user -docstring 'grep'                  g ': + kcr-fzf-grep<ret>'
-# map global user -docstring 'jump to line'          j ': + kcr-fzf-lines %val{buffile}<ret>'
+# map -docstring 'Alternate buffer' global normal <c-a> ga
+# map -docstring 'Quit' global normal <c-q> ':quit<ret>'
+# map -docstring 'Save buffer' global normal <c-w> ':write<ret>'
 
 # work around some weird defaults
 map global normal a	   		'li'
@@ -55,22 +36,20 @@ map global normal <a-^> 	'Q'
 map global normal q     	'b'
 map global normal Q     	'B'
 map global normal <a-q> 	'<a-b>'
-# map global normal w         ': word-select-next-word<ret>'
-# map global normal <a-w>     ': word-select-next-big-word<ret>'
-# map global normal q         ': word-select-previous-word<ret>'
-# map global normal <a-q>     ': word-select-previous-big-word<ret>'
-# map global normal <a-Q> 	'<a-B>'
 
 # readline
 map global insert <c-w> 	'<esc>bdi'
 map global insert <c-u> 	'<esc>xdO'
 
+# move lines
 map global normal <down>	': move-line-below<ret>'
 map global normal <up>  	': move-line-above<ret>'
 
+# buffers
 map global normal b     	': enter-buffers-mode<ret>'
 map global normal B     	': enter-user-mode -lock buffers<ret>'
 
+# format & comment
 map global normal =     	': format<ret>'
 map global normal '#'   	': comment-line<ret>'
 map global normal <a-#> 	': comment-block<ret>'
@@ -85,6 +64,16 @@ hook global InsertChar j %{ try %{
 hook global InsertCompletionShow .* %{ map window insert <tab> <c-n> }
 hook global InsertCompletionHide .* %{ map window insert <tab> <tab> }
 hook global InsertCompletionShow .* %{ map window insert <s-tab> <c-p> }
+
+# tools
+map global normal -docstring 'popup'               <+>   ': connect-popup<ret>'
+map global normal -docstring 'terminal'            <c-t> ': connect-terminal<ret>'
+map global normal -docstring 'files'               <c-f> ': + kcr-fzf-files<ret>'
+map global normal -docstring 'buffers'             <c-b> ': + kcr-fzf-buffers<ret>'
+map global normal -docstring 'files by content'    <c-g> ': + kcr-fzf-grep<ret>'
+map global normal -docstring 'lines in buffer'     <c-k> ': + kcr-fzf-lines %val{buffile}<ret>'
+map global normal -docstring 'lf'                  <c-h> ': > lf -command "set nopreview; set ratios 1" .<ret>'
+map global normal -docstring 'lazygit'             <c-l> ': + lazygit<ret>'
 
 # user ---------------------------------------------------------------
 
@@ -101,7 +90,6 @@ evaluate-commands %sh{
 }
 
 # tools
-map global user -docstring 'surround mode'         s ': enter-user-mode surround<ret>'
 map global user -docstring 'surround mode'         s ': enter-user-mode surround<ret>'
 map global user -docstring 'LSP mode'              l ': enter-user-mode lsp<ret>'
 map global user -docstring 'tree mode'             t ': enter-user-mode tree<ret>'

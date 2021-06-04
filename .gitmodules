@@ -31,3 +31,12 @@
 [submodule ".config/kak/foot.kak"]
 	path = .config/kak/foot.kak
 	url = https://github.com/kkga/foot.kak
+[submodule ".config/kak/out-of-view.kak"]
+	path = .config/kak/out-of-view.kak
+	url = https://github.com/alexherbo2/out-of-view.kak
+[submodule ".config/kak/text-objects.kak"]
+	path = .config/kak/text-objects.kak
+	url = https://github.com/alexherbo2/text-objects.kak
+[submodule ".config/kak/objectify.kak"]
+	path = .config/kak/objectify.kak
+	url = https://github.com/alexherbo2/objectify.kak

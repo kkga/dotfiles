@@ -4,6 +4,7 @@ ImageMagick
 MangoHud
 MangoHud-32bit
 SDL2-devel
+Solaar
 Vulkan-Tools
 Waybar
 abduco
@@ -149,6 +150,7 @@ linux5.11-headers
 linux5.12
 linux5.12-headers
 lm_sensors
+logiops
 lowdown
 lua-devel
 luarocks
@@ -317,6 +319,7 @@ wlsunset
 wmctrl
 wob
 wofi
+xbindkeys
 xcb-util-errors-devel
 xcb-util-wm-devel
 xclip

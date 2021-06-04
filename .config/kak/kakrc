@@ -5,20 +5,14 @@ source "~/.config/kak/surround.kak/rc/surround.kak"; require-module surround
 source "~/.config/kak/toggle-highlighter.kak/rc/toggle-highlighter.kak"; require-module toggle-highlighter
 source "~/.config/kak/move-line.kak/rc/move-line.kak"; require-module move-line
 source "~/.config/kak/sleuth.kak/rc/sleuth.kak"; require-module sleuth; sleuth-enable
+source "~/.config/kak/out-of-view.kak/rc/out-of-view.kak"; require-module out-of-view; out-of-view-enable
+source "~/.config/kak/objectify.kak/rc/objectify.kak"; require-module objectify;
+source "~/.config/kak/text-objects.kak/rc/text-objects.kak"; require-module text-objects;
 source "~/.config/kak/state-save/state-save.kak"
 source "~/.config/kak/vertical-selection/vertical-selection.kak"
 source "~/.config/kak/sudo-write/sudo-write.kak"
 source "~/.config/kak/shellcheck/shellcheck.kak"
 source "~/.config/kak/buffers/buffers.kak"
-
-# plug edit https://github.com/alexherbo2/edit.kak
-# plug manual-indent https://github.com/alexherbo2/manual-indent.kak
-# plug objectify https://github.com/alexherbo2/objectify.kak
-# plug text-objects https://github.com/alexherbo2/text-objects.kak
-# plug palette https://github.com/alexherbo2/palette.kak
-# plug word-select https://github.com/alexherbo2/word-select.kak
-
-# plug-old vertical-selection https://github.com/occivink/kakoune-vertical-selection
 
 evaluate-commands %sh{ kcr init kakoune }
 
