@@ -59,7 +59,7 @@ input "1133:16495:Logitech_MX_Ergo" {
    pointer_accel 0
    scroll_method on_button_down
    scroll_button BTN_RIGHT
-   scroll_factor 1
+   scroll_factor 2
 }
 
 input "1:1:AT_Translated_Set_2_keyboard" {
