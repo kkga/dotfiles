@@ -45,6 +45,10 @@ map global insert <c-u> 	'<esc>xdO'
 map global normal <down>	': move-line-below<ret>'
 map global normal <up>  	': move-line-above<ret>'
 
+# inc-dec
+map global normal <c-a>     ': inc-dec-modify-numbers + %val{count}<ret>'
+map global normal <c-x>     ': inc-dec-modify-numbers - %val{count}<ret>'
+
 # buffers
 map global normal b     	': enter-buffers-mode<ret>'
 map global normal B     	': enter-user-mode -lock buffers<ret>'
