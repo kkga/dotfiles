@@ -57,6 +57,7 @@ input "type:keyboard" {
 input "1133:16495:Logitech_MX_Ergo" {
    accel_profile adaptive
    pointer_accel 0
+   middle_emulation true
    scroll_method on_button_down
    scroll_button BTN_RIGHT
    scroll_factor 2
