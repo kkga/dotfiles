@@ -75,7 +75,7 @@ map global normal -docstring 'terminal'            <c-t> ': connect-terminal<ret
 map global normal -docstring 'files'               <c-f> ': + kcr-fzf-files<ret>'
 map global normal -docstring 'buffers'             <c-b> ': + kcr-fzf-buffers<ret>'
 map global normal -docstring 'files by content'    <c-g> ': + kcr-fzf-grep<ret>'
-map global normal -docstring 'lines in buffer'     <c-k> ': + kcr-fzf-lines %val{buffile}<ret>'
+	map	global normal -docstring 'lines	in buffer'	   <c-k> ':	+ kcr-fzf-lines	%val{buffile}<ret>'
 map global normal -docstring 'lf'                  <c-h> ': > lf -command "set nopreview; set ratios 1" .<ret>'
 map global normal -docstring 'lazygit'             <c-l> ': + lazygit<ret>'
 
@@ -100,8 +100,8 @@ map global user -docstring 'tree mode'             t ': enter-user-mode tree<ret
 map global user -docstring 'tree mode (lock)'      T ': enter-user-mode -lock tree<ret>'
 
 # ui options
-map global user -docstring 'toggle line numbers'   L ': toggle-highlighter global/ number-lines -hlcursor<ret>'
-map global user -docstring 'toggle wrap'           W ': toggle-highlighter global/ wrap -word <ret>'
+# map global user -docstring 'toggle line numbers'   L ': toggle-highlighter global/ number-lines -hlcursor<ret>'
+# map global user -docstring 'toggle wrap'           W ': toggle-highlighter global/ wrap -word <ret>'
 
 # tree mode
 declare-user-mode tree

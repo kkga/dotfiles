@@ -61,11 +61,11 @@ alias global fa find-edit-all
 
 # modeline --------------------------------------------------------------------
 
-set-option global out_of_view_format '↑%opt{out_of_view_selection_above_count} | ↓%opt{out_of_view_selection_below_count}'
+set-option global out_of_view_format '↑%opt{out_of_view_selection_above_count} | ↓%opt{out_of_view_selection_below_count} · '
 
 define-command update-status %{ evaluate-commands %sh{
     printf %s 'set-option buffer modelinefmt %{'
-        printf %s '{yellow}%opt{out_of_view_status_line}{default} '
+        printf %s '{yellow}%opt{out_of_view_status_line}{default}'
         if [ "$kak_opt_lsp_diagnostic_error_count" -ne 0 ]; then
             printf %s '{red+b}*%opt{lsp_diagnostic_error_count}{default} '
         fi
