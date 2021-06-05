@@ -4,10 +4,6 @@
 map global insert '<c-h>' <backspace>
 map global normal '<c-i>' <tab>
 
-# map -docstring 'Alternate buffer' global normal <c-a> ga
-# map -docstring 'Quit' global normal <c-q> ':quit<ret>'
-# map -docstring 'Save buffer' global normal <c-w> ':write<ret>'
-
 # work around some weird defaults
 map global normal a	   		'li'
 map global normal x    		'<a-x>'
@@ -68,6 +64,10 @@ hook global InsertChar j %{ try %{
 hook global InsertCompletionShow .* %{ map window insert <tab> <c-n> }
 hook global InsertCompletionHide .* %{ map window insert <tab> <tab> }
 hook global InsertCompletionShow .* %{ map window insert <s-tab> <c-p> }
+
+map global normal '<c-q>' ':quit<ret>'
+map global normal '<c-w>' ':write<ret>'
+map global normal '<c-a>' 'ga'
 
 # tools
 map global normal -docstring 'popup'               <+>   ': connect-popup<ret>'
