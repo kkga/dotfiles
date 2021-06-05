@@ -12,6 +12,10 @@ map global normal x         '<a-x>'
 # map global normal d           '<a-d>'
 # map global normal <a-d>       'd'
 
+# repurpose visual mode keys for object selection
+map global normal v         '<a-i>'
+map global normal V         '<a-a>'
+
 # select full lines
 map global normal J         'J<a-x>'
 map global normal K         'K<a-x>'

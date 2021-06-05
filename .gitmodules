@@ -37,3 +37,6 @@
 [submodule ".config/kak/objectify.kak"]
 	path = .config/kak/objectify.kak
 	url = https://github.com/alexherbo2/objectify.kak
+[submodule ".config/kak/registers"]
+	path = .config/kak/registers
+	url = https://github.com/Delapouite/kakoune-registers

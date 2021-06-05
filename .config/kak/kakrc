@@ -12,6 +12,7 @@ source "~/.config/kak/vertical-selection/vertical-selection.kak"
 source "~/.config/kak/sudo-write/sudo-write.kak"
 source "~/.config/kak/shellcheck/shellcheck.kak"
 source "~/.config/kak/buffers/buffers.kak"
+source "~/.config/kak/registers/registers.kak"
 
 evaluate-commands %sh{ kcr init kakoune }
 

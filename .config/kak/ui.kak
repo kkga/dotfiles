@@ -36,6 +36,9 @@ hook global ModuleLoaded kitty %{
     alias global popup kitty-terminal
 }
 
+# buffers
+hook global WinDisplay .* info-buffers
+
 # state-save
 hook global KakBegin .* %{
     state-save-reg-load colon
