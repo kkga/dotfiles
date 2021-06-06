@@ -31,13 +31,6 @@ set $right l
 
 # Outputs ------------------------------------------------------------------
 
-# set $laptop eDP-1
-
-# output $laptop scale 2
-# output $mon1 resolution 3840x2160 scale 2 position 1920 0 subpixel rgb
-# output $mon2 resolution 3840x2160 scale 2 subpixel rgb
-# output $laptop subpixel rgb
-
 output * bg #111111 solid_color
 
 # Inputs ------------------------------------------------------------------
@@ -54,7 +47,7 @@ input "1133:16495:Logitech_MX_Ergo" {
    pointer_accel 0
    middle_emulation true
    scroll_method on_button_down
-   scroll_button BTN_MIDDLE
+   scroll_button BTN_SIDE
    scroll_factor 1
 }
 

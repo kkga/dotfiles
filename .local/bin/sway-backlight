@@ -1,8 +1,8 @@
 #!/bin/sh
 
 error() {
-    echo >&2 "$*"
-    exit 1
+	echo >&2 "$*"
+	exit 1
 }
 
 [ $# -gt 0 ] || error "Usage: $0 <action> <amount> (e.g. $0 inc 10)"
@@ -10,40 +10,39 @@ error() {
 lsmod | grep -q ddcci || exec doas modprobe ddcci
 
 increase() {
-    if [ $# -gt 1 ]; then
-        brightnessctl -d "$1" set +"$2"
-    else
-        brightnessctl set +"$1";
-    fi
+	if [ $# -gt 1 ]; then
+		brightnessctl -d "$1" set +"$2"
+	else
+		brightnessctl set +"$1"
+	fi
 }
 
 decrease() {
-    if [ $# -gt 1 ]; then
-        brightnessctl -d "$1" set "$2"-;
-    else
-        brightnessctl set "$1"-;
-    fi
+	if [ $# -gt 1 ]; then
+		brightnessctl -d "$1" set "$2"-
+	else
+		brightnessctl set "$1"-
+	fi
 }
 
 get() {
-    if [ $# -gt 0 ]; then
-        brightnessctl -d "$1" get;
-    else
-        brightnessctl get;
-    fi
+	if [ $# -gt 0 ]; then
+		brightnessctl -d "$1" get
+	else
+		brightnessctl get
+	fi
 }
 
 if [ "$1" = "-d" ]; then
-    case "$3" in
-        inc) increase "$2" "$4" ;;
-        dec) decrease "$2" "$4" ;;
-        get) get "$2" ;;
-    esac
+	case "$3" in
+		inc) increase "$2" "$4" ;;
+		dec) decrease "$2" "$4" ;;
+		get) get "$2" ;;
+	esac
 else
-    case "$1" in
-        inc) increase "$2" ;;
-        dec) decrease "$2" ;;
-        get) get ;;
-    esac
+	case "$1" in
+		inc) increase "$2" ;;
+		dec) decrease "$2" ;;
+		get) get ;;
+	esac
 fi
-
