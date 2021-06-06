@@ -152,6 +152,7 @@ linux5.12-headers
 lm_sensors
 logiops
 lowdown
+lsd
 lua-devel
 luarocks
 luasec
@@ -224,7 +225,6 @@ python3-pip
 python3-proselint
 python3-xdg
 qemu
-qmk
 qt5-wayland
 qutebrowser
 radeontop
