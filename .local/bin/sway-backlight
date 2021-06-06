@@ -7,9 +7,7 @@ error() {
 
 [ $# -gt 0 ] || error "Usage: $0 <action> <amount> (e.g. $0 inc 10)"
 
-if brightnessctl -l | grep ddcci > /dev/null; then
-	lsmod | grep -q ddcci || exec doas modprobe ddcci
-fi
+modinfo ddcci > /dev/null && lsmod | grep -q ddcci || exec doas modprobe ddcci
 
 increase() {
 	if [ $# -gt 1 ]; then
