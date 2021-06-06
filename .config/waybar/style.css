@@ -12,7 +12,7 @@
   border: none;
   border-radius: 0;
   font-family: iosevka k extended, microns;
-  font-size: 12px;
+  font-size: 11pt;
   min-height: 16px;
   transition: none;
 }
@@ -20,8 +20,13 @@ tooltip {
   background-color: black;
 }
 
+/*window.DP-1 *,
+window.DP-2 * {
+  font-size: 11pt;
+}
+*/
 window.eDP-1 * {
-  font-size: 17px;
+  font-size: 11pt;
 }
 
 window#waybar {

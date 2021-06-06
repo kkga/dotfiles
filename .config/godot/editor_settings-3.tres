@@ -19,8 +19,8 @@ command = true
 scancode = 67
 
 [resource]
-interface/editor/main_font_size = 17
-interface/editor/code_font_size = 18
+interface/editor/main_font_size = 16
+interface/editor/code_font_size = 17
 interface/editor/main_font = "/home/kkga/.local/share/fonts/Inter Desktop/Inter-Regular.otf"
 interface/editor/main_font_bold = "/home/kkga/.local/share/fonts/Inter Desktop/Inter-Bold.otf"
 interface/editor/code_font = "/home/kkga/.local/share/fonts/iosevka-k/iosevka-k-extended.ttf"
@@ -58,12 +58,15 @@ text_editor/highlighting/search_result_color = Color( 0.380392, 0.196078, 0.0784
 text_editor/highlighting/search_result_border_color = Color( 0, 0, 0, 0 )
 text_editor/navigation/v_scroll_speed = 160
 text_editor/appearance/show_line_numbers = false
+text_editor/help/help_font_size = 17
+text_editor/help/help_source_font_size = 17
+text_editor/help/help_title_font_size = 24
+run/output/font_size = 16
 asset_library/available_urls = {
 "godotengine.org": "https://godotengine.org/asset-library/api",
 "localhost": "http://127.0.0.1/asset-library/api"
 }
 asset_library/use_threads = true
-projects/::home::kkga::projects::godot-test = "/home/kkga/projects/godot-test"
 export/android/android_sdk_path = ""
 export/android/debug_keystore = ""
 export/android/debug_keystore_user = "androiddebugkey"
@@ -106,7 +109,7 @@ text_editor/files/auto_reload_scripts_on_external_change = true
 text_editor/files/auto_reload_and_parse_scripts_on_save = true
 text_editor/files/open_dominant_script_on_scene_change = true
 text_editor/external/use_external_editor = false
-text_editor/external/exec_path = ""
+text_editor/external/exec_path = "/usr/local/bin/kak"
 text_editor/script_list/script_temperature_enabled = true
 text_editor/script_list/highlight_current_script = true
 text_editor/script_list/script_temperature_history_size = 15
@@ -151,8 +154,6 @@ editors/3d_gizmos/gizmo_colors/joint_body_a = Color( 0.6, 0.8, 1, 1 )
 editors/3d_gizmos/gizmo_colors/joint_body_b = Color( 0.6, 0.9, 1, 1 )
 text_editor/highlighting/gdscript/function_definition_color = Color( 0.862745, 0.862745, 0.666667, 1 )
 text_editor/highlighting/gdscript/node_path_color = Color( 0.419608, 0.737255, 0.984314, 1 )
-projects/::home::kkga::projects::souls-like = "/home/kkga/projects/souls-like"
-projects/::home::kkga::projects::td = "/home/kkga/projects/td"
 projects/::home::kkga::godot::td = "/home/kkga/godot/td"
 text_editor/help/sort_functions_alphabetically = true
 shortcuts = [ "editor/play", SubResource( 1 ), "editor/play_scene", SubResource( 2 ), "editor/stop", SubResource( 3 ) ]

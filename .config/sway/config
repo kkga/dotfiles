@@ -9,11 +9,11 @@ smart_gaps on
 hide_edge_borders --i3 smart_no_gaps
 focus_wrapping yes
 
-font pango: monospace 9
+# font pango: monospace 9
 titlebar_border_thickness 0
 titlebar_padding 4 0
 
-seat * xcursor_theme Adwaita 24
+# seat * xcursor_theme Adwaita 24
 seat * hide_cursor 10000
 
 # Variables ------------------------------------------------------------------
@@ -31,19 +31,7 @@ set $right l
 
 # Outputs ------------------------------------------------------------------
 
-set $laptop eDP-1
-set $mon1 DP-1
-set $mon2 DP-2
-
-# output $laptop scale 2
-output $mon1 resolution 3840x2160 scale 2 position 1920 0 subpixel rgb
-output $mon2 resolution 3840x2160 scale 2 subpixel rgb
-output $laptop subpixel rgb
-
 output * bg #111111 solid_color
-
-bindswitch --locked lid:on exec loginctl lock-session, output $laptop dpms off
-bindswitch --locked lid:off output $laptop dpms on
 
 # Inputs ------------------------------------------------------------------
 
@@ -59,8 +47,8 @@ input "1133:16495:Logitech_MX_Ergo" {
    pointer_accel 0
    middle_emulation true
    scroll_method on_button_down
-   scroll_button BTN_RIGHT
-   scroll_factor 2
+   scroll_button BTN_SIDE
+   scroll_factor 1
 }
 
 input "1:1:AT_Translated_Set_2_keyboard" {
@@ -124,10 +112,10 @@ bindsym Mod1+Tab                   fullscreen disable, exec window-switcher
 bindsym $mod+Shift+c               kill
 bindsym $mod+Shift+Backspace       reload; exec killall -SIGUSR2 waybar
 bindsym XF86Display                output * dpms on
-bindsym XF86MonBrightnessUp        exec light -A 10 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
-bindsym XF86MonBrightnessDown      exec light -U 10 && light -G | cut -d'.' -f1 > $SWAYSOCK.wob
-bindsym Mod1+XF86MonBrightnessUp   exec light -s sysfs/backlight/ddcci5 -A 10 && light -s sysfs/backlight/ddcci5 -G | cut -d'.' -f1 > $SWAYSOCK.wob
-bindsym Mod1+XF86MonBrightnessDown exec light -s sysfs/backlight/ddcci5 -U 10 && light -s sysfs/backlight/ddcci5 -G | cut -d'.' -f1 > $SWAYSOCK.wob
+bindsym XF86MonBrightnessUp        exec sway-backlight inc 10 && sway-backlight get > $SWAYSOCK.wob
+bindsym XF86MonBrightnessDown      exec sway-backlight dec 10 && sway-backlight get > $SWAYSOCK.wob
+bindsym Mod1+XF86MonBrightnessUp   exec sway-backlight -d ddcci5 inc 10 && sway-backlight -d ddcci5 get > $SWAYSOCK.wob
+bindsym Mod1+XF86MonBrightnessDown exec sway-backlight -d ddcci5 dec 10 && sway-backlight -d ddcci5 get > $SWAYSOCK.wob
 bindsym XF86AudioMicMute           exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym XF86AudioRaiseVolume       exec pamixer -ui 5 && pamixer --get-volume > $SWAYSOCK.wob
 bindsym XF86AudioLowerVolume       exec pamixer -ud 5 && pamixer --get-volume > $SWAYSOCK.wob
