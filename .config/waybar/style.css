@@ -1,6 +1,6 @@
 @define-color background  rgba(0,0,0,0.75);
 @define-color foreground  #a8a8a8;
-@define-color bg-dim      rgba(255,255,255,0.2);
+@define-color bg-dim      rgba(255,255,255,0.3);
 @define-color border      rgba(255,255,255,0.1);
 @define-color text-bright rgba(255,255,255,1);
 @define-color bg-orange   rgba(255,165,0,0.2);
@@ -11,8 +11,8 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: iosevka k extended, microns;
-  font-size: 11pt;
+  font-family: iosevka k extended;
+  font-size: 10.5pt;
   min-height: 16px;
   transition: none;
 }
@@ -26,7 +26,7 @@ window.DP-2 * {
 }
 */
 window.eDP-1 * {
-  font-size: 11pt;
+  font-size: 9.5pt;
 }
 
 window#waybar {
