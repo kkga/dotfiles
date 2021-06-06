@@ -45,6 +45,7 @@ hook global BufOpenFile  .* modeline-parse
 hook global BufCreate    .* %{ try %{ editorconfig-load } }
 hook global BufWritePost .* %{ git show-diff }
 hook global BufReload    .* %{ git show-diff }
+hook global BufWritePost .* %{ try %{ lint } }
 hook global BufWritePre  .* %{ try %{ format-buffer } }
 hook global ModeChange pop:insert:.* %{ try %{ execute-keys -draft '%s\h+$<ret>d' } }
 
@@ -98,7 +99,6 @@ hook global WinSetOption filetype=markdown %{
     set-option buffer lintcmd "proselint"
     set-option buffer formatcmd "deno fmt --ext md -"
     # set-option buffer formatcmd "prettier --prose-wrap=always --stdin-filepath='%val{buffile}'"
-    hook buffer -group format BufWritePost .* lint
 
     map buffer normal <ret> ': todo-toggle<ret>' -docstring "toggle checkbox"
     add-highlighter buffer/ regex '\[ \]' 0:blue
@@ -113,7 +113,6 @@ hook global WinSetOption filetype=elm %{
 }
 hook global WinSetOption filetype=sh %{
     set-option buffer formatcmd 'shfmt -ci -sr'
-    hook buffer -group format BufWritePost .* lint
 }
 hook global WinSetOption filetype=gdscript %{
     set-option buffer formatcmd "gdformat -"

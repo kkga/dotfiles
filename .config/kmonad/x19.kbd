@@ -37,14 +37,14 @@
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   @esc _    _    _    @f   _    _    _    _    _    _    _    _
   _         _    _    _    _    _    _    _    _    _    _    _
-       _    lalt lmet           _           bspc _    _
+       _    lalt lmet           _              bspc _    _
 )
 
 (deflayer nav
   _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    end  _    _    home pgdn pgup end  _    _    _    _
-  _    home _    _    _    _    left down up   rght bspc _    _
+  _    _    _    _    _    _    home pgdn pgup end  _    _    _    _
+  _    _    _    _    _    _    left down up   rght bspc _    _
   _         _    _    _    _    _    _    _    _    _    _    _
        _    _    _              _              _    _    _
 )
