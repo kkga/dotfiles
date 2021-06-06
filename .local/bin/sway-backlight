@@ -7,7 +7,9 @@ error() {
 
 [ $# -gt 0 ] || error "Usage: $0 <action> <amount> (e.g. $0 inc 10)"
 
-lsmod | grep -q ddcci || exec doas modprobe ddcci
+if brightnessctl -l | grep ddcci > /dev/null; then
+	lsmod | grep -q ddcci || exec doas modprobe ddcci
+fi
 
 increase() {
 	if [ $# -gt 1 ]; then
@@ -27,9 +29,9 @@ decrease() {
 
 get() {
 	if [ $# -gt 0 ]; then
-		brightnessctl -d "$1" get
+		brightnessctl -m -d "$1" | awk -F, '{print substr($4, 0, length($4)-1)}'
 	else
-		brightnessctl get
+		brightnessctl -m | awk -F, '{print substr($4, 0, length($4)-1)}'
 	fi
 }
 

@@ -112,10 +112,10 @@ bindsym Mod1+Tab                   fullscreen disable, exec window-switcher
 bindsym $mod+Shift+c               kill
 bindsym $mod+Shift+Backspace       reload; exec killall -SIGUSR2 waybar
 bindsym XF86Display                output * dpms on
-bindsym XF86MonBrightnessUp        exec sway-backlight inc 10 && sway-backlight get > $SWAYSOCK.wob
-bindsym XF86MonBrightnessDown      exec sway-backlight dec 10 && sway-backlight get > $SWAYSOCK.wob
-bindsym Mod1+XF86MonBrightnessUp   exec sway-backlight -d ddcci5 inc 10 && sway-backlight -d ddcci5 get > $SWAYSOCK.wob
-bindsym Mod1+XF86MonBrightnessDown exec sway-backlight -d ddcci5 dec 10 && sway-backlight -d ddcci5 get > $SWAYSOCK.wob
+bindsym XF86MonBrightnessUp        exec sway-backlight inc 10% && sway-backlight get > $SWAYSOCK.wob
+bindsym XF86MonBrightnessDown      exec sway-backlight dec 10% && sway-backlight get > $SWAYSOCK.wob
+bindsym Mod1+XF86MonBrightnessUp   exec sway-backlight -d ddcci5 inc 10% && sway-backlight -d ddcci5 get > $SWAYSOCK.wob
+bindsym Mod1+XF86MonBrightnessDown exec sway-backlight -d ddcci5 dec 10% && sway-backlight -d ddcci5 get > $SWAYSOCK.wob
 bindsym XF86AudioMicMute           exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym XF86AudioRaiseVolume       exec pamixer -ui 5 && pamixer --get-volume > $SWAYSOCK.wob
 bindsym XF86AudioLowerVolume       exec pamixer -ud 5 && pamixer --get-volume > $SWAYSOCK.wob
