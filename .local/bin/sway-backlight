@@ -7,7 +7,9 @@ error() {
 
 [ $# -gt 0 ] || error "Usage: $0 <action> <amount> (e.g. $0 inc 10)"
 
-modinfo ddcci > /dev/null && lsmod | grep -q ddcci || exec doas modprobe ddcci
+if modinfo ddcci 2> /dev/null; then
+	lsmod | grep -q ddcci || exec doas modprobe ddcci
+fi
 
 increase() {
 	if [ $# -gt 1 ]; then
