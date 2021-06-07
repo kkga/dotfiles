@@ -13,6 +13,8 @@ map global normal x         '<a-x>'
 # map global normal <a-d>       'd'
 
 # repurpose visual mode keys for object selection
+map global normal <a-v>     'v'
+map global normal <a-V>     'V'
 map global normal v         '<a-i>'
 map global normal V         '<a-a>'
 
