@@ -5,33 +5,59 @@ error() {
 	exit 1
 }
 
-[ $# -gt 0 ] || error "Usage: $0 <action> [-d <device>] <amount> (e.g. $0 inc 10)"
+script_name=$(basename -- "$0")
 
-if modinfo ddcci > /dev/null 2>&1; then
-	lsmod | grep -q ddcci || exec doas modprobe ddcci
+if pidof -x "$script_name" -o $$ > /dev/null; then
+	error "Another instance of this script is already running."
 fi
 
+[ $# -gt 0 ] || error "Usage: $0 <action> [-d <device>] <amount> (e.g. $0 inc 10)"
+
 increase() {
-	if [ $# -gt 1 ]; then
-		brightnessctl -d "$1" set +"$2"
+	if ddcutil detect > /dev/null; then
+		if [ $# -gt 1 ]; then
+			ddcutil -d "$1" setvcp 10 + "$2"
+		else
+			ddcutil setvcp 10 + "$1"
+		fi
 	else
-		brightnessctl set +"$1"
+		if [ $# -gt 1 ]; then
+			brightnessctl -d "$1" set +"$2"-
+		else
+			brightnessctl set +"$1"
+		fi
 	fi
 }
 
 decrease() {
-	if [ $# -gt 1 ]; then
-		brightnessctl -d "$1" set "$2"-
+	if ddcutil detect > /dev/null; then
+		if [ $# -gt 1 ]; then
+			ddcutil -d "$1" setvcp 10 - "$2"
+		else
+			ddcutil setvcp 10 - "$1"
+		fi
 	else
-		brightnessctl set "$1"-
+		if [ $# -gt 1 ]; then
+			brightnessctl -d "$1" set "$2"-
+		else
+			brightnessctl set "$1"-
+		fi
 	fi
 }
 
 get() {
-	if [ $# -gt 0 ]; then
-		brightnessctl -m -d "$1" | awk -F, '{print substr($4, 0, length($4)-1)}'
+	if ddcutil detect > /dev/null; then
+		if [ $# -gt 0 ]; then
+			ddcutil -d "$1" getvcp 10 --brief | awk '{print $4}'
+		else
+			ddcutil getvcp 10 --brief | awk '{print $4}'
+		fi
 	else
-		brightnessctl -m | awk -F, '{print substr($4, 0, length($4)-1)}'
+		if [ $# -gt 0 ]; then
+			brightnessctl -m -d "$1" | awk -F, '{print substr($4, 0, length($4)-1)}'
+		else
+			brightnessctl -m | awk -F, '{print substr($4, 0, length($4)-1)}'
+		fi
 	fi
 }
 
