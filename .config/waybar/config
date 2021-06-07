@@ -45,7 +45,7 @@
     "on-click": "pkill waybar-xbps.sh; waybar-xbps.sh"
   },
   "custom/yadm": {
-    "format": "DOT {}",
+    "format": "* {}",
     "tooltip": false,
     "exec": "yadm status | wc -l | sed '/^0$/d'",
     "on-click": "yadm status | wc -l | sed '/^0$/d'",
