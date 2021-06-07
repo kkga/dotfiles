@@ -30,6 +30,7 @@ bluez
 bluez-alsa
 bluez-qt5
 bottom
+brightnessctl
 cairo-devel
 chrome-gnome-shell
 chromium
@@ -177,6 +178,7 @@ mesa-vulkan-radeon-32bit
 meson
 moreutils
 mpv
+mupdf
 myrepos
 ncurses-devel
 neofetch
@@ -240,6 +242,7 @@ seahorse
 seatd
 setxkbmap
 shellcheck
+shfmt
 skim
 slop
 smbclient
