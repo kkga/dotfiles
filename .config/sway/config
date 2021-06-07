@@ -203,6 +203,33 @@ mode $mode_power {
 }
 bindsym $mod+Control+q            mode $mode_power
 
+set $mode_backlight               "BACKLIGHT: D1 (1-0) | D2 (alt + 1-0)"
+mode $mode_backlight {
+    bindsym 1                     exec sway-backlight set 10
+    bindsym 2                     exec sway-backlight set 20
+    bindsym 3                     exec sway-backlight set 30
+    bindsym 4                     exec sway-backlight set 40
+    bindsym 5                     exec sway-backlight set 50
+    bindsym 6                     exec sway-backlight set 60
+    bindsym 7                     exec sway-backlight set 70
+    bindsym 8                     exec sway-backlight set 80
+    bindsym 9                     exec sway-backlight set 90
+    bindsym 0                     exec sway-backlight set 100
+    bindsym Mod1+1                exec sway-backlight -d 2 set 10
+    bindsym Mod1+2                exec sway-backlight -d 2 set 20
+    bindsym Mod1+3                exec sway-backlight -d 2 set 30
+    bindsym Mod1+4                exec sway-backlight -d 2 set 40
+    bindsym Mod1+5                exec sway-backlight -d 2 set 50
+    bindsym Mod1+6                exec sway-backlight -d 2 set 60
+    bindsym Mod1+7                exec sway-backlight -d 2 set 70
+    bindsym Mod1+8                exec sway-backlight -d 2 set 80
+    bindsym Mod1+9                exec sway-backlight -d 2 set 90
+    bindsym Mod1+0                exec sway-backlight -d 2 set 100
+    bindsym Return                mode "default"
+    bindsym Escape                mode "default"
+}
+bindsym $mod+b                    mode $mode_backlight
+
 # Autostart ------------------------------------------------------------------
 
 exec wl-paste -t text --watch clipman store --max-items=50

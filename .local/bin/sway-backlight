@@ -61,16 +61,34 @@ get() {
 	fi
 }
 
+sset() {
+	if ddcutil detect > /dev/null; then
+		if [ $# -gt 1 ]; then
+			ddcutil -d "$1" setvcp 10 "$2"
+		else
+			ddcutil setvcp 10 "$1"
+		fi
+	else
+		if [ $# -gt 0 ]; then
+			brightnessctl -d "$1" set "$2"
+		else
+			brightnessctl set "$1"
+		fi
+	fi
+}
+
 if [ "$1" = "-d" ]; then
 	case "$3" in
 		inc) increase "$2" "$4" ;;
 		dec) decrease "$2" "$4" ;;
+		set) sset "$2" "$4" ;;
 		get) get "$2" ;;
 	esac
 else
 	case "$1" in
 		inc) increase "$2" ;;
 		dec) decrease "$2" ;;
+		set) sset "$2" ;;
 		get) get ;;
 	esac
 fi
