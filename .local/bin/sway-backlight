@@ -14,7 +14,7 @@ fi
 [ $# -gt 0 ] || error "Usage: $0 <action> [-d <device>] <amount> (e.g. $0 inc 10)"
 
 increase() {
-	if ddcutil detect > /dev/null; then
+	if ddcutil detect > /dev/null 2>&1; then
 		if [ $# -gt 1 ]; then
 			ddcutil -d "$1" setvcp 10 + "$2"
 		else
@@ -22,15 +22,15 @@ increase() {
 		fi
 	else
 		if [ $# -gt 1 ]; then
-			brightnessctl -d "$1" set +"$2"-
+			brightnessctl -d "$1" set +"$2"%
 		else
-			brightnessctl set +"$1"
+			brightnessctl set +"$1"%
 		fi
 	fi
 }
 
 decrease() {
-	if ddcutil detect > /dev/null; then
+	if ddcutil detect > /dev/null 2>&1; then
 		if [ $# -gt 1 ]; then
 			ddcutil -d "$1" setvcp 10 - "$2"
 		else
@@ -38,15 +38,15 @@ decrease() {
 		fi
 	else
 		if [ $# -gt 1 ]; then
-			brightnessctl -d "$1" set "$2"-
+			brightnessctl -d "$1" set "$2"%-
 		else
-			brightnessctl set "$1"-
+			brightnessctl set "$1"%-
 		fi
 	fi
 }
 
 get() {
-	if ddcutil detect > /dev/null; then
+	if ddcutil detect > /dev/null 2>&1; then
 		if [ $# -gt 0 ]; then
 			ddcutil -d "$1" getvcp 10 --brief | awk '{print $4}'
 		else
@@ -62,7 +62,7 @@ get() {
 }
 
 sset() {
-	if ddcutil detect > /dev/null; then
+	if ddcutil detect > /dev/null 2>&1; then
 		if [ $# -gt 1 ]; then
 			ddcutil -d "$1" setvcp 10 "$2"
 		else
