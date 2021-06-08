@@ -24,6 +24,7 @@ base-system
 bat
 bc
 bemenu
+birdtray
 blender
 blueman
 bluez
@@ -31,6 +32,7 @@ bluez-alsa
 bluez-qt5
 bottom
 brightnessctl
+brillo
 cairo-devel
 chrome-gnome-shell
 chromium
@@ -46,7 +48,6 @@ cross-arm-none-eabi-newlib
 davfs2
 dbus-elogind
 dconf-editor
-ddcci-dkms
 ddcutil
 delta
 dfu-programmer
@@ -272,6 +273,7 @@ tailscale
 tealdeer
 teensy_loader_cli
 terminus-font
+thunderbird
 tmux
 tokei
 topgrade
