@@ -1,39 +1,39 @@
 [submodule ".config/kak/auto-pairs.kak"]
-	path = .config/kak/auto-pairs.kak
+	path = .config/kak/plugins/auto-pairs.kak
 	url = https://github.com/alexherbo2/auto-pairs.kak
 [submodule ".config/kak/surround.kak"]
-	path = .config/kak/surround.kak
+	path = .config/kak/plugins/surround.kak
 	url = https://github.com/alexherbo2/surround.kak
 [submodule ".config/kak/state-save"]
-	path = .config/kak/state-save
+	path = .config/kak/plugins/state-save
 	url = https://gitlab.com/Screwtapello/kakoune-state-save.git/
 [submodule ".config/kak/vertical-selection"]
-	path = .config/kak/vertical-selection
+	path = .config/kak/plugins/vertical-selection
 	url = https://github.com/occivink/kakoune-vertical-selection
 [submodule ".config/kak/sudo-write"]
-	path = .config/kak/sudo-write
+	path = .config/kak/plugins/sudo-write
 	url = https://github.com/occivink/kakoune-sudo-write
 [submodule ".config/kak/move-line.kak"]
-	path = .config/kak/move-line.kak
+	path = .config/kak/plugins/move-line.kak
 	url = https://github.com/alexherbo2/move-line.kak
 [submodule ".config/kak/shellcheck"]
-	path = .config/kak/shellcheck
+	path = .config/kak/plugins/shellcheck
 	url = https://gitlab.com/Screwtapello/kakoune-shellcheck.git
 [submodule ".config/kak/sleuth.kak"]
-	path = .config/kak/sleuth.kak
+	path = .config/kak/plugins/sleuth.kak
 	url = https://github.com/alexherbo2/sleuth.kak
 [submodule ".config/kak/buffers"]
-	path = .config/kak/buffers
+	path = .config/kak/plugins/buffers
 	url = https://github.com/Delapouite/kakoune-buffers
 [submodule ".config/kak/foot.kak"]
-	path = .config/kak/foot.kak
+	path = .config/kak/plugins/foot.kak
 	url = https://github.com/kkga/foot.kak
 [submodule ".config/kak/out-of-view.kak"]
-	path = .config/kak/out-of-view.kak
+	path = .config/kak/plugins/out-of-view.kak
 	url = https://github.com/alexherbo2/out-of-view.kak
 [submodule ".config/kak/text-objects.kak"]
-	path = .config/kak/text-objects.kak
+	path = .config/kak/plugins/text-objects.kak
 	url = https://github.com/alexherbo2/text-objects.kak
 [submodule ".config/kak/objectify.kak"]
-	path = .config/kak/objectify.kak
+	path = .config/kak/plugins/objectify.kak
 	url = https://github.com/alexherbo2/objectify.kak
