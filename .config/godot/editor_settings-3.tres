@@ -154,6 +154,6 @@ editors/3d_gizmos/gizmo_colors/joint_body_a = Color( 0.6, 0.8, 1, 1 )
 editors/3d_gizmos/gizmo_colors/joint_body_b = Color( 0.6, 0.9, 1, 1 )
 text_editor/highlighting/gdscript/function_definition_color = Color( 0.862745, 0.862745, 0.666667, 1 )
 text_editor/highlighting/gdscript/node_path_color = Color( 0.419608, 0.737255, 0.984314, 1 )
-projects/::home::kkga::godot::td = "/home/kkga/godot/td"
 text_editor/help/sort_functions_alphabetically = true
+projects/::home::kkga::projects::td = "/home/kkga/projects/td"
 shortcuts = [ "editor/play", SubResource( 1 ), "editor/play_scene", SubResource( 2 ), "editor/stop", SubResource( 3 ) ]
