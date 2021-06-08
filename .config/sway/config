@@ -44,11 +44,11 @@ input "type:keyboard" {
 
 input "1133:16495:Logitech_MX_Ergo" {
    accel_profile adaptive
-   pointer_accel 0
+   pointer_accel 0.5
    middle_emulation true
    scroll_method on_button_down
    scroll_button BTN_SIDE
-   scroll_factor 1
+   scroll_factor 1.5
 }
 
 input "1:1:AT_Translated_Set_2_keyboard" {
