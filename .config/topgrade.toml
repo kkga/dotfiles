@@ -56,8 +56,8 @@
 
 # Custom commands
 [commands]
-"YADM Status" = "bash -c 'if [ -x $(command -v yadm) ]; then yadm status; fi'"
-"XBPS Check Restart" = "bash -c 'if [ -x $(command -v xcheckrestart) ]; then xcheckrestart; fi'"
+"YADM Status" = "bash -c 'if command -v yadm &> /dev/null; then yadm status; fi'"
+"XBPS Check Restart" = "bash -c 'if command -v xcheckrestart &> /dev/null; then xcheckrestart; fi'"
 
 # [brew]
 # greedy_cask = true
