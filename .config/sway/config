@@ -232,6 +232,16 @@ bindsym $mod+b                    mode $mode_backlight
 
 # Autostart ------------------------------------------------------------------
 
+bar {
+   status_command status_command cd ~/.config/luastatus && exec luastatus-i3-wrapper -B no_separators backlight.lua alsa-gauge.lua wireless.lua cpu-usage.lua network-rate.lua xkb.lua time-battery-combined.lua
+   # status_command i3status-rs
+   position top
+   font pango: monospace 12
+   height 20
+}
+
+# Autostart ------------------------------------------------------------------
+
 exec wl-paste -t text --watch clipman store --max-items=50
 exec clipman restore
 
