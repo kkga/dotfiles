@@ -12,7 +12,8 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: iosevka k extended;
+  font-family: terminus;
+  font-weight: bold;
   font-size: 11pt;
   min-height: 16px;
   transition: none;
@@ -27,7 +28,7 @@ window.DP-2 * {
 }
 */
 window.eDP-1 * {
-  font-size: 9.5pt;
+  font-size: 12pt;
 }
 
 window#waybar {
@@ -36,7 +37,7 @@ window#waybar {
 }
 
 #workspaces button {
-  padding: 0 4pt;
+  padding: 0 3pt;
   margin: 0;
   color: @foreground;
 }
