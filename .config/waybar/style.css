@@ -1,6 +1,7 @@
 @define-color background  rgba(0,0,0,0.75);
 @define-color foreground  #a8a8a8;
-@define-color bg-dim      rgba(255,255,255,0.3);
+@define-color bg-highlight #5F5F87;
+@define-color bg-dim      rgba(255,255,255,0.2);
 @define-color border      rgba(255,255,255,0.1);
 @define-color text-bright rgba(255,255,255,1);
 @define-color bg-orange   rgba(255,165,0,0.2);
@@ -12,7 +13,7 @@
   border: none;
   border-radius: 0;
   font-family: iosevka k extended;
-  font-size: 11.5pt;
+  font-size: 11pt;
   min-height: 16px;
   transition: none;
 }
@@ -35,23 +36,24 @@ window#waybar {
 }
 
 #workspaces button {
-  padding: 0 2pt;
+  padding: 0 4pt;
   margin: 0;
   color: @foreground;
 }
 #workspaces button:hover {
   box-shadow: inherit;
   text-shadow: inherit;
-  background: @background;
+}
+#workspaces button.visible {
+  color: @text-bright;
+  background: @bg-dim;
 }
 #workspaces button.focused {
   font-weight: bold;
-  background: @bg-dim;
   color: @text-bright;
+  background: @bg-highlight;
+  text-shadow: 1px 1px 0 black;
 }
-#window {
-}
-
 #workspaces button.urgent,
 #battery.warning,
 #pulseaudio.muted,
@@ -62,6 +64,7 @@ window#waybar {
   color: @text-orange;
   background: @bg-orange;
 }
+
 #mode {
   font-weight: bold;
   color: @text-orange;
