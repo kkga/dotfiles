@@ -1,6 +1,3 @@
-[submodule ".config/kak/auto-pairs.kak"]
-	path = .config/kak/plugins/auto-pairs.kak
-	url = https://github.com/alexherbo2/auto-pairs.kak
 [submodule ".config/kak/surround.kak"]
 	path = .config/kak/plugins/surround.kak
 	url = https://github.com/alexherbo2/surround.kak
@@ -37,3 +34,6 @@
 [submodule ".config/kak/objectify.kak"]
 	path = .config/kak/plugins/objectify.kak
 	url = https://github.com/alexherbo2/objectify.kak
+[submodule ".config/kak/plugins/auto-pairs.kak"]
+	path = .config/kak/plugins/auto-pairs.kak
+	url = https://github.com/alexherbo2/auto-pairs.kak
