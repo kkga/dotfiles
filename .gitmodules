@@ -36,4 +36,4 @@
 	url = https://github.com/alexherbo2/objectify.kak
 [submodule ".config/kak/plugins/auto-pairs.kak"]
 	path = .config/kak/plugins/auto-pairs.kak
-	url = https://github.com/alexherbo2/auto-pairs.kak
+	url = https://github.com/kkga/auto-pairs.kak
