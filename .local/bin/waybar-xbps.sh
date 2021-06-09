@@ -5,11 +5,11 @@ sync() {
 }
 
 check() {
-	UPDATES=$(xbps-install -un | cut -d' ' -f2 | sort | uniq -c | xargs)
+	UPDATES=$(xbps-install -un | wc -l)
 	if [ -z "$UPDATES" ]; then
 		echo ""
 	else
-		echo "$UPDATES""s"
+		echo "$UPDATES"
 	fi
 }
 
