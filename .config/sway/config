@@ -233,21 +233,7 @@ bindsym $mod+b                    mode $mode_backlight
 # Status ------------------------------------------------------------------
 
 bar {
-   swaybar_command waybar
-   # status_command luastatus-sway.sh
-   # status_command i3status-rs
-   # position top
-   # font pango: iosevka k extended 12
-   # height 20
-   # colors {
-   #    separator #666666
-   #    background #000000
-   #    statusline $col_fg_dim
-   #    focused_workspace $col_bg $col_bg #ffffff
-   #    # active_workspace #333333 #333333 #ffffff
-   #    inactive_workspace #000000 #000000 $col_fg_dim
-   #    # urgent_workspace #2f343a #900000 #ffffff
-   # }
+    swaybar_command waybar
 }
 
 ## Autostart ------------------------------------------------------------------
