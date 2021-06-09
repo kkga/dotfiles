@@ -53,8 +53,8 @@
     "format": "{icon} {}",
     "return-type": "json",
     "format-icons": {
-      "Playing": "",
-      "Paused": ""
+      "Playing": "|>",
+      "Paused": "||"
     },
     "max-length": 50,
     "exec": "playerctl metadata --format '{\"text\": \"{{artist}} - {{title}}\", \"tooltip\": \"{{playerName}}: {{artist}} - {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",

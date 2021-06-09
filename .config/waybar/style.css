@@ -46,7 +46,6 @@ window#waybar {
   text-shadow: inherit;
 }
 #workspaces button.visible {
-  color: @text-bright;
   background: @bg-dim;
 }
 #workspaces button.focused {
