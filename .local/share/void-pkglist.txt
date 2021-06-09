@@ -335,6 +335,7 @@ xdg-user-dirs-gtk
 xdg-utils
 xdotool
 xev
+xeyes
 xf86-video-amdgpu
 xidle
 xinit

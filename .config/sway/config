@@ -234,12 +234,6 @@ bindsym $mod+b                    mode $mode_backlight
 
 bar {
    swaybar_command waybar
-}
-
-# Autostart ------------------------------------------------------------------
-
-bar {
-   swaybar_command waybar
    # status_command luastatus-sway.sh
    # status_command i3status-rs
    # position top
@@ -256,7 +250,7 @@ bar {
    # }
 }
 
-# Autostart ------------------------------------------------------------------
+## Autostart ------------------------------------------------------------------
 
 exec wl-paste -t text --watch clipman store --max-items=50
 exec clipman restore
