@@ -9,7 +9,7 @@ smart_gaps on
 hide_edge_borders --i3 smart_no_gaps
 focus_wrapping yes
 
-# font pango: monospace 9
+font pango: terminus 10
 titlebar_border_thickness 0
 titlebar_padding 4 0
 
