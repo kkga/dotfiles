@@ -6,7 +6,7 @@ sync() {
 
 check() {
 	UPDATES=$(xbps-install -un | wc -l)
-	if [ -z "$UPDATES" ]; then
+	if [ "$UPDATES" -eq "0" ]; then
 		echo ""
 	else
 		echo "$UPDATES"
