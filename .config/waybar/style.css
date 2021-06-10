@@ -13,8 +13,7 @@
   border: none;
   border-radius: 0;
   font-family: terminus;
-  font-weight: bold;
-  font-size: 14pt;
+  font-size: 12pt;
   min-height: 16px;
   transition: none;
 }
@@ -37,7 +36,8 @@ window#waybar {
 }
 
 #workspaces button {
-  padding: 0 3pt;
+  padding: 0 2pt;
+  font-weight: bold;
   margin: 0;
   color: @foreground;
 }
