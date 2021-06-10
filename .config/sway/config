@@ -58,7 +58,7 @@ input "type:touchpad" {
     natural_scroll enabled
     middle_emulation disabled
     drag enabled
-    scroll_factor 0.5
+    scroll_factor 1
 }
 
 # Colors ------------------------------------------------------------------
