@@ -19,8 +19,8 @@ map global normal v         '<a-i>'
 map global normal V         '<a-a>'
 
 # select full lines
-map global normal J         'J<a-x>'
-map global normal K         'K<a-x>'
+# map global normal J         'J<a-x>'
+# map global normal K         'K<a-x>'
 
 # search case-insensitive
 map global normal /         '/(?i)'
