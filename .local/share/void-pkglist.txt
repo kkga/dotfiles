@@ -52,6 +52,7 @@ ddcutil
 delta
 dfu-programmer
 dfu-util
+dina-font
 dkms
 dmenu
 dos2unix
@@ -77,6 +78,7 @@ flatpak
 font-ibm-plex-otf
 font-ibm-plex-ttf
 font-inconsolata-otf
+fonttosfnt
 foot
 fuzzel
 fuzzypkg
@@ -145,12 +147,11 @@ libusb-compat-devel
 libva-vdpau-driver
 libvdpau-va-gl
 libxkbcommon-devel
+libxkbcommon-tools
 light
 linux-firmware
 linux5.11
 linux5.11-headers
-linux5.12
-linux5.12-headers
 lm_sensors
 logiops
 lowdown
@@ -159,7 +160,6 @@ lua-devel
 luarocks
 luasec
 luasocket
-luastatus
 lutris
 lxappearance
 maim
@@ -183,7 +183,6 @@ mupdf
 myrepos
 ncurses-devel
 neofetch
-neovim
 nmap
 nnn
 nodejs
@@ -360,6 +359,4 @@ zathura
 zathura-pdf-mupdf
 zig
 zip
-zola
 zoxide
-zsh

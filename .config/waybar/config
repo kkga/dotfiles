@@ -15,6 +15,7 @@
     "custom/updates",
     "custom/yadm",
     "cpu",
+    "temperature",
     "pulseaudio",
     "network",
     "custom/tailscale",
