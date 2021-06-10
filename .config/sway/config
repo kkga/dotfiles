@@ -42,14 +42,19 @@ input "type:keyboard" {
    xkb_options grp:alt_space_toggle
 }
 
-input "1133:16495:Logitech_MX_Ergo" {
-   # accel_profile adaptive
-   pointer_accel 0.5
-   # middle_emulation true
-   # scroll_method on_button_down
-   # scroll_button BTN_SIDE
-   # scroll_factor 1.5
+input "type:pointer" {
+    accel_profile adaptive
+    pointer_accel 1
 }
+
+# input "1133:16495:Logitech_MX_Ergo" {
+#    accel_profile adaptive
+#    pointer_accel 0.5
+#    middle_emulation true
+#    scroll_method on_button_down
+#    scroll_button BTN_SIDE
+#    scroll_factor 1.5
+# }
 
 input "1:1:AT_Translated_Set_2_keyboard" {
    xkb_options grp:alt_space_toggle,ctrl:nocaps,altwin:swap_lalt_lwin
@@ -65,11 +70,6 @@ input "type:touchpad" {
     scroll_factor 0.5
     pointer_accel 0.25
 }
-
-# input "type:pointer" {
-#     accel_profile adaptive
-#     pointer_accel -0.5
-# }
 
 # Colors ------------------------------------------------------------------
 
