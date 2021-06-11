@@ -3,37 +3,25 @@
 /* Adjust tab corner shape, optionally remove space below tabs */
 
 #tabbrowser-tabs {
-    --user-tab-rounding: 0px;
+  --user-tab-rounding: 0px;
 }
 @media (-moz-proton) {
-    .tab-background {
-        border-radius: var(--user-tab-rounding) var(--user-tab-rounding) 0px 0px !important;
-        margin-block: 1px 0 !important;
-    }
-    /* Container color bar visibility */
-    .tabbrowser-tab[usercontextid] > .tab-stack > .tab-background > .tab-context-line {
-        margin: 0px max(calc(var(--user-tab-rounding) - 3px), 0px) !important;
-    }
+  .tab-background {
+    border-radius: var(--user-tab-rounding) var(--user-tab-rounding) 0px 0px !important;
+    margin-block: 1px 0 !important;
+  }
+  #scrollbutton-up,
+  #scrollbutton-down {
+    border-top-width: 1px !important;
+    border-bottom-width: 0 !important;
+  }
+  /* Container color bar visibility */
+  .tabbrowser-tab[usercontextid]
+    > .tab-stack
+    > .tab-background
+    > .tab-context-line {
+    margin: 0px max(calc(var(--user-tab-rounding) - 3px), 0px) !important;
+  }
 }
 
-/* Inactive tabs: Separator line style */
-
-@media (-moz-proton) {
-    .tabbrowser-tab:not([selected=true]):not([multiselected=true]):not([beforeselected-visible="true"]) .tab-background {
-        border-right: 1px solid rgba(0, 0, 0, .20) !important;
-    }
-    /* For dark backgrounds */
-    [brighttext="true"] .tabbrowser-tab:not([selected=true]):not([multiselected=true]):not([beforeselected-visible="true"]) .tab-background {
-        border-right: 1px solid var(--lwt-selected-tab-background-color, rgba(255, 255, 255, .20)) !important;
-    }
-    .tabbrowser-tab:not([selected=true]):not([multiselected=true]) .tab-background {
-        border-radius: 0 !important;
-    }
-    /* Remove padding between tabs */
-    .tabbrowser-tab {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
-}
-
-/* Tweak Options as of 6/05/2021; Generated Tue Jun 08 2021 09:49:51 GMT+0300 (MSK) */
+/* Tweak Options as of 6/10/2021; Generated Thu Jun 10 2021 18:41:54 GMT+0300 (Moscow Standard Time) */
