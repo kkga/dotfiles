@@ -12,8 +12,8 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: terminus;
-  font-size: 12pt;
+  font-family: monospace;
+  font-size: 11pt;
   min-height: 16px;
   transition: none;
 }
@@ -23,7 +23,7 @@ tooltip {
 
 window.DP-1 *,
 window.DP-2 * {
-  font-size: 14pt;
+  font-size: 11.5pt;
 }
 
 window.eDP-1 * {
