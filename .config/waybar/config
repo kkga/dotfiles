@@ -33,13 +33,13 @@
     "max-length": 64
   },
   "custom/updates": {
-    "format": "UPD {}",
+    "format": "↓ {}",
     "tooltip": false,
     "exec": "pkill waybar-xbps.sh; waybar-xbps.sh",
     "on-click": "pkill waybar-xbps.sh; waybar-xbps.sh"
   },
   "custom/yadm": {
-    "format": "* {}",
+    "format": "◆ {}",
     "tooltip": false,
     "exec": "yadm status | wc -l | sed '/^0$/d'",
     "on-click": "yadm status | wc -l | sed '/^0$/d'",
@@ -71,7 +71,7 @@
   "network": {
     //"interface": "wlan0",
     "format-wifi": "WLAN",
-    "format-ethernet": "ETH",
+    "format-ethernet": "eth",
     "format-linked": "{ifname}",
     "format-disconnected": "-X-",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}",
