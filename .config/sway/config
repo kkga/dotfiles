@@ -51,7 +51,7 @@ input "type:pointer" {
 }
 
 input "type:touchpad" {
-    pointer_accel 0.5
+    pointer_accel 0.25
     accel_profile adaptive
     dwt disabled
     tap enabled
