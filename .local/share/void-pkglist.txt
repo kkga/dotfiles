@@ -152,6 +152,8 @@ light
 linux-firmware
 linux5.11
 linux5.11-headers
+linux5.12
+linux5.12-headers
 lm_sensors
 logiops
 lowdown
@@ -225,6 +227,7 @@ python3-adblock
 python3-attrs
 python3-pip
 python3-proselint
+python3-s-tui
 python3-xdg
 qemu
 qt5-wayland
@@ -276,6 +279,7 @@ thunderbird
 tmux
 tokei
 topgrade
+torbrowser-launcher
 touchegg
 trash-cli
 trayer-srg
