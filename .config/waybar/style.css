@@ -12,7 +12,7 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: monospace;
+  font-family: Cascadia Mono;
   font-size: 10pt;
   min-height: 16px;
   transition: none;
@@ -27,7 +27,7 @@ window.DP-2 * {
 }
 
 window.eDP-1 * {
-  font-size: 16px;
+  font-size: 9.5pt;
 }
 
 window#waybar {
