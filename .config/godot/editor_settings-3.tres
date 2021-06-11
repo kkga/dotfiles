@@ -156,4 +156,5 @@ text_editor/highlighting/gdscript/function_definition_color = Color( 0.862745, 0
 text_editor/highlighting/gdscript/node_path_color = Color( 0.419608, 0.737255, 0.984314, 1 )
 text_editor/help/sort_functions_alphabetically = true
 projects/::home::kkga::projects::td = "/home/kkga/projects/td"
+projects/::home::kkga::projects::godot-voxel = "/home/kkga/projects/godot-voxel"
 shortcuts = [ "editor/play", SubResource( 1 ), "editor/play_scene", SubResource( 2 ), "editor/stop", SubResource( 3 ) ]
