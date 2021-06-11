@@ -1,0 +1,6 @@
+#!/bin/bash
+# requires: https://github.com/doy/rbw
+set -eu
+set -o pipefail
+
+rbw ls --fields folder,name,user | sed 's/\t/\//g' | sort | $DMENU_PROGRAM | sed 's/^[^\/]*\///' | sed 's/\// /' | xargs -r rbw get | wl-copy
