@@ -45,6 +45,7 @@ input "type:keyboard" {
 input "type:pointer" {
 	pointer_accel 0.5
 	accel_profile adaptive
+    middle_emulation enabled
 	scroll_method on_button_down
 	scroll_button BTN_SIDE
 	scroll_factor 1.5
