@@ -127,7 +127,6 @@ exec_always {
 
 exec wl-paste -t text --watch clipman store --max-items=50
 exec clipman restore
-exec firefox
 
 # Includes ---------------------------------------------------------------
 
