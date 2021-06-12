@@ -24,11 +24,13 @@ base-system
 bat
 bc
 bemenu
+bemenu-devel
 birdtray
 blender
 blueman
 bluez
 bluez-alsa
+bluez-deprecated
 bluez-qt5
 bottom
 brightnessctl
@@ -135,12 +137,14 @@ libXres-devel
 libXtst-devel
 libXxf86vm-devel
 libappindicator
+libassuan-devel
 libcap-devel
 libdrm-devel
 libev-devel
 libgpg-error-devel
 libinput-devel
 libseat-devel
+libsixel
 libspa-bluetooth
 libspa-vulkan
 libusb-compat-devel
@@ -218,6 +222,7 @@ plex-media-player
 polkit-elogind
 polkit-gnome
 polybar
+popt-devel
 powertop
 procs
 progress
