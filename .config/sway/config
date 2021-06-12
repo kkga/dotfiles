@@ -89,6 +89,7 @@ for_window [ title="Firefox — Sharing Indicator" ] floating enable
 for_window [ class="Jitsi Meet"                  ] floating enable
 for_window [ app_id="spot"                       ] floating enable
 for_window [ app_id="mpv"                        ] floating enable
+for_window [ instance="Godot_Engine"             ] floating enable
 for_window [ app_id="(?i)popup"                  ] floating enable, resize set width 100ppt height 40ppt, move position 0px 0px
 
 workspace 1 output DP-1
