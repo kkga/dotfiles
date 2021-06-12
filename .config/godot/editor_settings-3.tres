@@ -20,10 +20,11 @@ scancode = 67
 
 [resource]
 interface/editor/main_font_size = 16
-interface/editor/code_font_size = 17
+interface/editor/code_font_size = 18
+interface/editor/font_hinting = 1
 interface/editor/main_font = "/home/kkga/.local/share/fonts/Inter Desktop/Inter-Regular.otf"
 interface/editor/main_font_bold = "/home/kkga/.local/share/fonts/Inter Desktop/Inter-Bold.otf"
-interface/editor/code_font = "/home/kkga/.local/share/fonts/iosevka-k/iosevka-k-extended.ttf"
+interface/editor/code_font = "/home/kkga/.local/share/fonts/CascadiaCode/CascadiaMono.ttf"
 filesystem/file_dialog/show_hidden_files = true
 text_editor/theme/color_theme = "VS-Code-Dark"
 text_editor/theme/line_spacing = 4
