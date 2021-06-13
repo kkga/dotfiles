@@ -1,6 +1,7 @@
 #!/bin/sh
 Environment=wayland
 
+. /etc/profile
 . "$HOME/.profile"
 . "$HOME/.local/bin/env-wayland.sh"
 
