@@ -49,8 +49,8 @@
     "format": "{icon} {}",
     "return-type": "json",
     "format-icons": {
-      "Playing": "|>",
-      "Paused": "||"
+      "Playing": "▶",
+      "Paused": "▮▮"
     },
     "max-length": 50,
     "exec": "playerctl metadata --format '{\"text\": \"{{artist}} - {{title}}\", \"tooltip\": \"{{playerName}}: {{artist}} - {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
@@ -65,7 +65,7 @@
       "warning": 10
     },
     "format-time": "{H}h {M}m",
-    "format": "♥ {capacity}%",
+    "format": "{capacity}%",
     "format-charging": "{capacity}%"
   },
   "network": {
@@ -99,7 +99,7 @@
     "format-source": "VOL {volume}%",
     "format-source-muted": "MUT {volume}",
     "format-icons": {
-      "headphone": "HP ",
+      "headphone": "(HP) ",
       "hands-free": "",
       "headset": "",
       "phone": "",
@@ -110,7 +110,7 @@
     "on-click": "pavucontrol"
   },
   "cpu": {
-    "format": "{usage:2}%",
+    "format": "{usage}%",
     "interval": 5,
     "states": {
       "warning": 10
