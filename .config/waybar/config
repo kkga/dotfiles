@@ -70,7 +70,7 @@
   },
   "network": {
     //"interface": "wlan0",
-    "format-wifi": "▼⬙",
+    "format-wifi": "▼",
     "format-ethernet": "◁▷",
     "format-linked": "{ifname}",
     "format-disconnected": " ⨯ ",
