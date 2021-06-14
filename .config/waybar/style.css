@@ -13,7 +13,7 @@
   border: none;
   border-radius: 0;
   font-family: monospace;
-  font-size: 10pt;
+  font-size: 10.5pt;
   min-height: 16px;
   transition: none;
 }
@@ -27,7 +27,7 @@ window.DP-2 * {
 }
 
 window.eDP-1 * {
-  font-size: 16px;
+  font-size: 10.5pt;
 }
 
 window#waybar {
@@ -36,7 +36,7 @@ window#waybar {
 }
 
 #workspaces button {
-  padding: 0 2pt;
+  padding: 0 3pt;
   font-weight: bold;
   margin: 0;
   color: @foreground;
@@ -47,6 +47,7 @@ window#waybar {
 }
 #workspaces button.visible {
   background: @bg-dim;
+  color: @text-bright;
 }
 #workspaces button.focused {
   font-weight: bold;
@@ -74,6 +75,7 @@ window#waybar {
 #custom-vpn.connected,
 #custom-tailscale.connected,
 #custom-updates,
+#custom-scratchpad,
 #battery.charging {
   color: @text-blue;
   background: @bg-blue;

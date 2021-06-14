@@ -49,8 +49,8 @@
     "format": "{icon} {}",
     "return-type": "json",
     "format-icons": {
-      "Playing": "|>",
-      "Paused": "||"
+      "Playing": "▶",
+      "Paused": "▮▮"
     },
     "max-length": 50,
     "exec": "playerctl metadata --format '{\"text\": \"{{artist}} - {{title}}\", \"tooltip\": \"{{playerName}}: {{artist}} - {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
@@ -70,10 +70,10 @@
   },
   "network": {
     //"interface": "wlan0",
-    "format-wifi": "WLAN",
-    "format-ethernet": "eth",
+    "format-wifi": "▼",
+    "format-ethernet": "◁▷",
     "format-linked": "{ifname}",
-    "format-disconnected": "-X-",
+    "format-disconnected": "⨯",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}",
     "tooltip-format": "{ifname}\n{ipaddr}/{cidr}\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}"
   },
@@ -99,7 +99,7 @@
     "format-source": "VOL {volume}%",
     "format-source-muted": "MUT {volume}",
     "format-icons": {
-      "headphone": "HP ",
+      "headphone": "(HP) ",
       "hands-free": "",
       "headset": "",
       "phone": "",
@@ -110,7 +110,7 @@
     "on-click": "pavucontrol"
   },
   "cpu": {
-    "format": "{usage:2}%",
+    "format": "{usage}%",
     "interval": 5,
     "states": {
       "warning": 10
@@ -124,11 +124,11 @@
   },
   "custom/scratchpad": {
     "interval": 5,
-    "return-type": "json",
-    "exec": "swaymsg -t get_tree | jq --unbuffered --compact-output '( select(.name == \"root\") | .nodes[] | select(.name == \"__i3\") | .nodes[] | select(.name == \"__i3_scratch\") | .focus) as $scratch_ids | [..  | (.nodes? + .floating_nodes?) // empty | .[] | select(.id |IN($scratch_ids[]))] as $scratch_nodes | { text: \"\\($scratch_nodes | length)\", tooltip: $scratch_nodes | map(\"\\(.app_id // .window_properties.class) (\\(.id)): \\(.name)\") | join(\"\\n\") }'",
-    "format": "({})",
-    "on-click": "exec swaymsg 'scratchpad show'",
-    "on-click-right": "exec swaymsg 'move scratchpad'"
+    "exec": "swaymsg -t get_tree | jq 'recurse(.nodes[]) | first(select(.name==\"__i3_scratch\")) | .floating_nodes | length | select(. >= 1)'",
+    "format": "⬒ {}",
+    "on-click": "swaymsg 'scratchpad show'",
+    "on-click-right": "swaymsg 'move scratchpad'",
+    "tooltip": false
   },
   "sway/language": {
     "format": "{}"

@@ -20,10 +20,11 @@ scancode = 67
 
 [resource]
 interface/editor/main_font_size = 16
-interface/editor/code_font_size = 17
+interface/editor/code_font_size = 18
+interface/editor/font_hinting = 1
 interface/editor/main_font = "/home/kkga/.local/share/fonts/Inter Desktop/Inter-Regular.otf"
 interface/editor/main_font_bold = "/home/kkga/.local/share/fonts/Inter Desktop/Inter-Bold.otf"
-interface/editor/code_font = "/home/kkga/.local/share/fonts/iosevka-k/iosevka-k-extended.ttf"
+interface/editor/code_font = "/home/kkga/.local/share/fonts/CascadiaCode/CascadiaMono.ttf"
 filesystem/file_dialog/show_hidden_files = true
 text_editor/theme/color_theme = "VS-Code-Dark"
 text_editor/theme/line_spacing = 4
@@ -156,4 +157,5 @@ text_editor/highlighting/gdscript/function_definition_color = Color( 0.862745, 0
 text_editor/highlighting/gdscript/node_path_color = Color( 0.419608, 0.737255, 0.984314, 1 )
 text_editor/help/sort_functions_alphabetically = true
 projects/::home::kkga::projects::td = "/home/kkga/projects/td"
+projects/::home::kkga::projects::godot-voxel = "/home/kkga/projects/godot-voxel"
 shortcuts = [ "editor/play", SubResource( 1 ), "editor/play_scene", SubResource( 2 ), "editor/stop", SubResource( 3 ) ]
