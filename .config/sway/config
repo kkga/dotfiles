@@ -31,7 +31,7 @@ set $right l
 
 # Outputs ------------------------------------------------------------------
 
-output * bg #111111 solid_color
+output * bg ~/.local/share/wallpapers/office-night.png center
 
 # Inputs ------------------------------------------------------------------
 
