@@ -2,9 +2,8 @@
   "layer": "bottom",
   "position": "bottom",
   "modules-left": ["sway/workspaces", "sway/window"],
-  "modules-center": ["sway/mode"],
+  "modules-center": ["sway/mode", "custom/scratchpad"],
   "modules-right": [
-    "custom/scratchpad",
     "custom/media",
     "custom/updates",
     "custom/yadm",
