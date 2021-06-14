@@ -29,10 +29,6 @@ set $down j
 set $up k
 set $right l
 
-# Outputs ------------------------------------------------------------------
-
-output * bg ~/.local/share/wallpapers/office-night.png center
-
 # Inputs ------------------------------------------------------------------
 
 input "type:keyboard" {
