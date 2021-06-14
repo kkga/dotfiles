@@ -1,19 +1,25 @@
 layer=overlay
 anchor=bottom-right
-width=400
-padding=12
-margin=16
+background-color=#282828
 border-size=2
-border-radius=0
-default-timeout=10000
-
-# background-color=#ffffff
-# border-color=#00000099
-# text-color=#1c1c1c
+border-color=#ebdbb2
+text-color=#ebdbb2
+format=<b>%s</b>\n%b
+height=600
+width=512
+margin=40
+padding=16
+default-timeout=20000
 font=sans-serif 18
 
+[urgency=low]
+background-color=#353535
+default-timeout=10000
+
 [urgency=high]
+background-color=#4a3533
 ignore-timeout=1
+default-timeout=0
 
 [grouped]
 format=(%g) <b>%s</b>\n\n\n%b
