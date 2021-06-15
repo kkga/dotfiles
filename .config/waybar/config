@@ -57,7 +57,7 @@
   },
   "clock": {
     "tooltip-format": "<big>{:%Y %B}\n{calendar}</big>",
-    "format": "{:%H:%M}"
+    "format": "| {:%H:%M}"
   },
   "battery": {
     "format": "<small>BAT</small> {capacity}% <small>({time})</small>",
