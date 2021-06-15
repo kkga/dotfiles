@@ -12,8 +12,8 @@
     "pulseaudio",
     "custom/tailscale",
     "custom/vpn",
-    "battery",
     "network",
+    "battery",
     //"sway/language",
     "clock",
     "tray"
@@ -61,7 +61,7 @@
   },
   "battery": {
     "format": "<small>BAT</small> {capacity}% <small>({time})</small>",
-    "format-charging": "<small>BAT </small>{capacity}%",
+    "format-charging": "<small>BAT</small> {capacity}% <small>(++ {time})</small>",
     "states": {
       "warning": 10
     },
@@ -91,9 +91,9 @@
     "interval": 5
   },
   "pulseaudio": {
-    "format": "<small>VOL </small>{volume}%{icon}",
+    "format": "<small>VOL</small> {volume}%{icon}",
     "format-bluetooth": "BT {volume}% {format_source}",
-    "format-muted": "MUT",
+    "format-muted": "<small>VOL</small> MUT",
     "format-bluetooth-muted": "BT MUT {format_source}",
     "format-source": "VOL {volume}%",
     "format-source-muted": "MUT {volume}",
