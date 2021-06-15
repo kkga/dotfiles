@@ -41,9 +41,6 @@ alt + ctrl + shift - t : yabai -m window --toggle float;\
 # SPACES
 
 # fast focus desktop
-alt + ctrl - n : yabai -m space  --focus next
-alt + ctrl - p : yabai -m space  --focus prev
-alt + ctrl - tab : yabai -m space --focus recent
 alt + ctrl - 1 : yabai -m space --focus 1
 alt + ctrl - 2 : yabai -m space --focus 2
 alt + ctrl - 3 : yabai -m space --focus 3
@@ -53,11 +50,11 @@ alt + ctrl - 6 : yabai -m space --focus 6
 alt + ctrl - 7 : yabai -m space --focus 7
 alt + ctrl - 8 : yabai -m space --focus 8
 alt + ctrl - 9 : yabai -m space --focus 9
+alt + ctrl - n : yabai -m space  --focus next
+alt + ctrl - p : yabai -m space  --focus prev
+alt + ctrl - tab : yabai -m space --focus recent
 
 # send window to desktop and follow focus
-alt + ctrl + shift - tab : yabai -m window --space recent; yabai -m space --focus recent
-alt + ctrl + shift - n : yabai -m window --space next; yabai -m space --focus next
-alt + ctrl + shift - p : yabai -m window --space prev; yabai -m space --focus prev
 alt + ctrl + shift - 1 : yabai -m window --space  1; yabai -m space --focus 1
 alt + ctrl + shift - 2 : yabai -m window --space  2; yabai -m space --focus 2
 alt + ctrl + shift - 3 : yabai -m window --space  3; yabai -m space --focus 3
@@ -67,6 +64,9 @@ alt + ctrl + shift - 6 : yabai.-m window --space  6; yabai -m space --focus 6
 alt + ctrl + shift - 7 : yabai.-m window --space  7; yabai -m space --focus 7
 alt + ctrl + shift - 8 : yabai.-m window --space  8; yabai -m space --focus 8
 alt + ctrl + shift - 9 : yabai.-m window --space  9; yabai -m space --focus 9
+alt + ctrl + shift - n : yabai -m window --space next; yabai -m space --focus next
+alt + ctrl + shift - p : yabai -m window --space prev; yabai -m space --focus prev
+alt + ctrl + shift - tab : yabai -m window --space recent; yabai -m space --focus recent
 
 # change layout of desktop
 alt + ctrl - z : yabai -m space --layout bsp
