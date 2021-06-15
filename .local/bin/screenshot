@@ -8,8 +8,8 @@ screenshot=$(
 case "$screenshot" in
 	Copy) grimshot --notify copy area ;;
 	Save)
-		grimshot --notify save area ~/Pictures/"$(date +%s)".png
-		floating-terminal lf "$HOME/Pictures/"
+		grimshot --notify save area ~/pictures/"$(date +%s)".png
+		floating-terminal lf "$HOME/pictures/"
 		;;
 	Upload)
 		grimshot save area ~/tmp/screenshot.png
