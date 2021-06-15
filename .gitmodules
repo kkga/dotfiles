@@ -16,18 +16,12 @@
 [submodule ".config/kak/plugins/shellcheck"]
 	path = .config/kak/plugins/shellcheck
 	url = https://gitlab.com/Screwtapello/kakoune-shellcheck.git
-[submodule ".config/kak/plugins/sleuth.kak"]
-	path = .config/kak/plugins/sleuth.kak
-	url = https://github.com/alexherbo2/sleuth.kak
 [submodule ".config/kak/plugins/buffers"]
 	path = .config/kak/plugins/buffers
 	url = https://github.com/Delapouite/kakoune-buffers
 [submodule ".config/kak/plugins/foot.kak"]
 	path = .config/kak/plugins/foot.kak
 	url = https://github.com/kkga/foot.kak
-[submodule ".config/kak/plugins/out-of-view.kak"]
-	path = .config/kak/plugins/out-of-view.kak
-	url = https://github.com/alexherbo2/out-of-view.kak
 [submodule ".config/kak/plugins/text-objects.kak"]
 	path = .config/kak/plugins/text-objects.kak
 	url = https://github.com/alexherbo2/text-objects.kak
