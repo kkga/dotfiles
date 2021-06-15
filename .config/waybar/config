@@ -32,13 +32,13 @@
     "max-length": 64
   },
   "custom/updates": {
-    "format": "↓ {}",
+    "format": "<small>UPD</small> {}",
     "tooltip": false,
     "exec": "pkill waybar-xbps.sh; waybar-xbps.sh",
     "on-click": "pkill waybar-xbps.sh; waybar-xbps.sh"
   },
   "custom/yadm": {
-    "format": "◆ {}",
+    "format": "<small>YADM</small> {}",
     "tooltip": false,
     "exec": "yadm status | wc -l | sed '/^0$/d'",
     "on-click": "yadm status | wc -l | sed '/^0$/d'",
@@ -48,8 +48,8 @@
     "format": "{icon} {}",
     "return-type": "json",
     "format-icons": {
-      "Playing": "▶",
-      "Paused": "▮▮"
+      "Playing": "(playing)",
+      "Paused": "(paused)"
     },
     "max-length": 50,
     "exec": "playerctl metadata --format '{\"text\": \"{{artist}} - {{title}}\", \"tooltip\": \"{{playerName}}: {{artist}} - {{title}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
@@ -72,7 +72,7 @@
     "format-wifi": "<small>WLAN</small> {essid}",
     "format-ethernet": "<small>ETH</small> {ifname}",
     "format-linked": "{ifname}",
-    "format-disconnected": "⨯",
+    "format-disconnected": "-X-",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}",
     "tooltip-format": "{ifname}\n{ipaddr}/{cidr}\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}"
   },
@@ -122,13 +122,13 @@
     "tooltip": false
   },
   "custom/recording": {
-    "exec": "if pgrep -x wf-recorder > /dev/null; then printf 'REC'; fi",
+    "exec": "if pgrep -x wf-recorder > /dev/null; then printf '- REC -'; fi",
     "interval": 5
   },
   "custom/scratchpad": {
     "interval": 5,
     "exec": "swaymsg -t get_tree | jq 'recurse(.nodes[]) | first(select(.name==\"__i3_scratch\")) | .floating_nodes | length | select(. >= 1)'",
-    "format": "⬒ {}",
+    "format": "<small>SCRATCH</small> {}",
     "on-click": "swaymsg 'scratchpad show'",
     "on-click-right": "swaymsg 'move scratchpad'",
     "tooltip": false
