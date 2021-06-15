@@ -28,17 +28,17 @@
     "max-length": 80
   },
   "sway/mode": {
-    "format": " - {} - ",
+    "format": "<span weight=\"bold\"> - {} - </span>",
     "max-length": 64
   },
   "custom/updates": {
-    "format": "<small>UPD</small> {}",
+    "format": "upd <span weight=\"bold\">{}</span>",
     "tooltip": false,
     "exec": "pkill waybar-xbps.sh; waybar-xbps.sh",
     "on-click": "pkill waybar-xbps.sh; waybar-xbps.sh"
   },
   "custom/yadm": {
-    "format": "<small>YADM</small> {}",
+    "format": "yadm <span weight=\"bold\">{}</span>",
     "tooltip": false,
     "exec": "yadm status | wc -l | sed '/^0$/d'",
     "on-click": "yadm status | wc -l | sed '/^0$/d'",
@@ -57,20 +57,20 @@
   },
   "clock": {
     "tooltip-format": "<big>{:%Y %B}\n{calendar}</big>",
-    "format": "| {:%H:%M}"
+    "format": "<span weight=\"bold\">{:%H:%M}</span>"
   },
   "battery": {
-    "format": "<small>BAT</small> {capacity}% <small>({time})</small>",
+    "format": "bat <span weight=\"bold\">{capacity}%</span> <small>({time})</small>",
     "format-charging": "<small>BAT</small> {capacity}% <small>(++ {time})</small>",
     "states": {
       "warning": 10
     },
-    "format-time": "{H}:{M}"
+    "format-time": "{H}:{M:02}"
   },
   "network": {
     //"interface": "wlan0",
-    "format-wifi": "<small>WLAN</small> {essid}",
-    "format-ethernet": "<small>ETH</small> {ifname}",
+    "format-wifi": "wlan <span weight=\"bold\">{essid}</span>",
+    "format-ethernet": "<span weight=\"bold\">eth</span> {ifname}",
     "format-linked": "{ifname}",
     "format-disconnected": "-X-",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}",
@@ -91,9 +91,9 @@
     "interval": 5
   },
   "pulseaudio": {
-    "format": "<small>VOL</small> {volume}%{icon}",
+    "format": "vol <span weight=\"bold\">{volume}%</span>{icon}",
     "format-bluetooth": "BT {volume}% {format_source}",
-    "format-muted": "<small>VOL</small> MUT",
+    "format-muted": "vol <span weight=\"bold\">MUT</span>",
     "format-bluetooth-muted": "BT MUT {format_source}",
     "format-source": "VOL {volume}%",
     "format-source-muted": "MUT {volume}",
@@ -109,7 +109,7 @@
     "on-click": "pavucontrol"
   },
   "cpu": {
-    "format": "<small>CPU</small> {usage}%",
+    "format": "cpu <span weight=\"bold\">{usage}%</span>",
     "interval": 5,
     "states": {
       "warning": 10
@@ -118,17 +118,17 @@
   "temperature": {
     "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
     "critical-threshold": 70,
-    "format": "<small>TEMP</small> {temperatureC}°",
+    "format": "temp <span weight=\"bold\">{temperatureC}°</span>",
     "tooltip": false
   },
   "custom/recording": {
-    "exec": "if pgrep -x wf-recorder > /dev/null; then printf '- REC -'; fi",
+    "exec": "if pgrep -x wf-recorder > /dev/null; then printf '<span weight=\"bold\">- REC -</span>'; fi",
     "interval": 5
   },
   "custom/scratchpad": {
     "interval": 5,
     "exec": "swaymsg -t get_tree | jq 'recurse(.nodes[]) | first(select(.name==\"__i3_scratch\")) | .floating_nodes | length | select(. >= 1)'",
-    "format": "<small>SCRATCH</small> {}",
+    "format": "<span weight=\"bold\">- [{}] -</span>",
     "on-click": "swaymsg 'scratchpad show'",
     "on-click-right": "swaymsg 'move scratchpad'",
     "tooltip": false
