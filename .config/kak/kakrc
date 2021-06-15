@@ -1,9 +1,6 @@
 source "~/.config/kak/plugins/foot.kak/rc/foot.kak"; require-module foot
 source "~/.config/kak/plugins/auto-pairs.kak/rc/auto-pairs.kak"; require-module auto-pairs; auto-pairs-enable
 source "~/.config/kak/plugins/surround.kak/rc/surround.kak"; require-module surround
-source "~/.config/kak/plugins/move-line.kak/rc/move-line.kak"; require-module move-line
-source "~/.config/kak/plugins/sleuth.kak/rc/sleuth.kak"; require-module sleuth; sleuth-enable
-source "~/.config/kak/plugins/out-of-view.kak/rc/out-of-view.kak"; require-module out-of-view; out-of-view-enable
 source "~/.config/kak/plugins/objectify.kak/rc/objectify.kak"; require-module objectify;
 source "~/.config/kak/plugins/text-objects.kak/rc/text-objects.kak"; require-module text-objects;
 source "~/.config/kak/plugins/state-save/state-save.kak"

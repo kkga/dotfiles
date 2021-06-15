@@ -72,7 +72,7 @@ hook global InsertCompletionHide .* %{ map window insert <tab> <tab> }
 hook global InsertCompletionShow .* %{ map window insert <s-tab> <c-p> }
 
 map global normal '<c-q>' ':quit<ret>'
-map global normal '<c-w>' ':write<ret>'
+map global normal '<c-w>' ':write; echo -markup "{Information}Saved"<ret>'
 
 # tools
 map global normal -docstring 'popup'               <+>   ': connect-popup<ret>'

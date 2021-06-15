@@ -10,9 +10,6 @@
 [submodule ".config/kak/plugins/sudo-write"]
 	path = .config/kak/plugins/sudo-write
 	url = https://github.com/occivink/kakoune-sudo-write
-[submodule ".config/kak/plugins/move-line.kak"]
-	path = .config/kak/plugins/move-line.kak
-	url = https://github.com/alexherbo2/move-line.kak
 [submodule ".config/kak/plugins/shellcheck"]
 	path = .config/kak/plugins/shellcheck
 	url = https://gitlab.com/Screwtapello/kakoune-shellcheck.git

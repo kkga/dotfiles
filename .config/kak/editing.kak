@@ -2,7 +2,7 @@ set-option global grepcmd 'rg --smart-case --column --with-filename'
 
 # lsp -------------------------------------------------------------------------
 
-eval %sh{kak-lsp --kakoune -s $kak_session}
+eval %sh{kak-lsp --kakoune -s "$kak_session"}
 hook global WinSetOption filetype=(crystal|html|css|json|rust|python|go|typescript|svelte|javascript|elm|zig|gdscript) %{
     lsp-enable-window
     lsp-auto-signature-help-enable
@@ -41,7 +41,8 @@ define-command disable-autolint -docstring 'disable auto-lint' %{
     remove-hooks buffer lint
 }
 
-hook global BufOpenFile  .* modeline-parse
+hook global BufOpenFile  .* %{ modeline-parse }
+hook global BufOpenFile  .* %{ require-module move-line }
 hook global BufCreate    .* %{ try %{ editorconfig-load } }
 hook global BufWritePost .* %{ git show-diff }
 hook global BufReload    .* %{ git show-diff }
