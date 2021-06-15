@@ -72,6 +72,12 @@ window#waybar {
   background: @bg-orange;
 }
 
+#custom-recording {
+  color: @text-orange;
+  background: @bg-orange;
+  font-weight: bold;
+}
+
 #custom-vpn.connected,
 #custom-tailscale.connected,
 #custom-updates,
@@ -94,6 +100,7 @@ window#waybar {
 #custom-media,
 #custom-weather,
 #custom-tailscale,
+#custom-recording,
 #network,
 #cpu,
 #temperature,

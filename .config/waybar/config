@@ -2,7 +2,7 @@
   "layer": "bottom",
   "position": "bottom",
   "modules-left": ["sway/workspaces", "sway/window"],
-  "modules-center": ["sway/mode", "custom/scratchpad"],
+  "modules-center": ["sway/mode", "custom/scratchpad", "custom/recording"],
   "modules-right": [
     "custom/media",
     "custom/updates",
@@ -120,6 +120,10 @@
     "critical-threshold": 70,
     "format": "{temperatureC}°",
     "tooltip": false
+  },
+  "custom/recording": {
+    "exec": "if pgrep -x wf-recorder > /dev/null; then printf 'REC'; fi",
+    "interval": 5
   },
   "custom/scratchpad": {
     "interval": 5,

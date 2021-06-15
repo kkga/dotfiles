@@ -20,6 +20,7 @@ text/html=browser.desktop
 image/jpeg=imv.desktop;
 image/gif=imv.desktop;
 image/png=imv.desktop;
+image/webp=imv.desktop;
 application/pdf=org.pwmt.zathura.desktop
 inode/directory=file.desktop
 application/x-directory=file.desktop
