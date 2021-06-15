@@ -10,11 +10,11 @@
     "cpu",
     "temperature",
     "pulseaudio",
-    "network",
     "custom/tailscale",
     "custom/vpn",
-    "sway/language",
     "battery",
+    "network",
+    //"sway/language",
     "clock",
     "tray"
   ],
@@ -24,11 +24,11 @@
     "format": "{index}"
   },
   "sway/window": {
-    "format": "  {}",
+    "format": "| {}",
     "max-length": 80
   },
   "sway/mode": {
-    "format": "  {}  ",
+    "format": " - {} - ",
     "max-length": 64
   },
   "custom/updates": {
@@ -60,17 +60,17 @@
     "format": "{:%H:%M}"
   },
   "battery": {
+    "format": "<small>BAT</small> {capacity}% <small>({time})</small>",
+    "format-charging": "<small>BAT </small>{capacity}%",
     "states": {
       "warning": 10
     },
-    "format-time": "{H}h {M}m",
-    "format": "{capacity}%",
-    "format-charging": "{capacity}%"
+    "format-time": "{H}:{M}"
   },
   "network": {
     //"interface": "wlan0",
-    "format-wifi": "▼",
-    "format-ethernet": "◁▷",
+    "format-wifi": "<small>WLAN</small> {essid}",
+    "format-ethernet": "<small>ETH</small> {ifname}",
     "format-linked": "{ifname}",
     "format-disconnected": "⨯",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}",
@@ -91,14 +91,14 @@
     "interval": 5
   },
   "pulseaudio": {
-    "format": "{icon}{volume}%",
+    "format": "<small>VOL </small>{volume}%{icon}",
     "format-bluetooth": "BT {volume}% {format_source}",
     "format-muted": "MUT",
     "format-bluetooth-muted": "BT MUT {format_source}",
     "format-source": "VOL {volume}%",
     "format-source-muted": "MUT {volume}",
     "format-icons": {
-      "headphone": "(HP) ",
+      "headphone": " (HP)",
       "hands-free": "",
       "headset": "",
       "phone": "",
@@ -109,7 +109,7 @@
     "on-click": "pavucontrol"
   },
   "cpu": {
-    "format": "{usage}%",
+    "format": "<small>CPU</small> {usage}%",
     "interval": 5,
     "states": {
       "warning": 10
@@ -118,7 +118,7 @@
   "temperature": {
     "hwmon-path": "/sys/class/hwmon/hwmon3/temp1_input",
     "critical-threshold": 70,
-    "format": "{temperatureC}°",
+    "format": "<small>TEMP</small> {temperatureC}°",
     "tooltip": false
   },
   "custom/recording": {
