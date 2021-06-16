@@ -1,4 +1,3 @@
-# cursorline highlighting
 declare-option str cursorline_bg rgba:7F7F7F16
 
 define-command cursorline-toggle %{
@@ -15,7 +14,6 @@ define-command cursorline-toggle %{
     }
 }
 
-# line-numbers highlighting
 define-command line-numbers-toggle -params .. %{
     try %{
         add-highlighter window/line-numbers number-lines -hlcursor -separator ' ' %arg{@}
@@ -24,7 +22,6 @@ define-command line-numbers-toggle -params .. %{
     }
 }
 
-# show whitespaces
 define-command -params 0 whitespaces-toggle %{
     try %{
         add-highlighter window/whitespaces show-whitespaces -tab "»" -lf "↲" -nbsp "␣" -spc "·"
@@ -33,7 +30,6 @@ define-command -params 0 whitespaces-toggle %{
     }
 }
 
-# soft line-wrapping
 define-command -params 0 softwrap-toggle %{
     try %{
         add-highlighter window/wrap wrap -marker "…"

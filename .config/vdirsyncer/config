@@ -1,0 +1,19 @@
+[general]
+status_path = "~/.local/share/vdirsyncer/status/"
+
+[pair fastmail]
+a = "local"
+b = "cal"
+collections = ["from a", "from b"]
+
+[storage cal]
+type = "caldav"
+url = "https://caldav.messagingengine.com/"
+username = "me@kkga.me"
+password.fetch = ["command", "secret-tool", "lookup", "fastmail.com", "me@kkga.me"]
+
+[storage local]
+type = "filesystem"
+path = "~/.local/share/vdirsyncer/fastmail"
+fileext = ".ics"
+

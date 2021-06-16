@@ -70,7 +70,7 @@
   "network": {
     //"interface": "wlan0",
     "format-wifi": "wlan <span weight=\"bold\">{essid}</span>",
-    "format-ethernet": "<span weight=\"bold\">eth</span> {ifname}",
+    "format-ethernet": "eth <span weight=\"bold\">{ifname}</span>",
     "format-linked": "{ifname}",
     "format-disconnected": "-X-",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}",

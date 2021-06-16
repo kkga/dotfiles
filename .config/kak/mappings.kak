@@ -1,7 +1,6 @@
 # global -------------------------------------------------------------
 
 # ambiguous keys
-map global insert '<c-h>' <backspace>
 map global normal '<c-i>' <tab>
 
 # work around some weird defaults
@@ -39,10 +38,6 @@ map global normal q         'b'
 map global normal Q         'B'
 map global normal <a-q>     '<a-b>'
 
-# readline
-map global insert <c-w>     '<esc>bdi'
-map global insert <c-u>     '<esc>xdO'
-
 # move lines
 map global normal <down>    ': move-line-below<ret>'
 map global normal <up>      ': move-line-above<ret>'
@@ -66,13 +61,24 @@ hook global InsertChar j %{ try %{
   exec <esc>
 }}
 
+# readline
+map global insert <c-h>     '<backspace>'
+map global insert <c-w>     '<esc>bdi'
+map global insert <c-u>     '<esc>xdO'
+
+# indentation
+map global insert <tab>     '<a-;><a-gt>'
+map global insert <s-tab>   '<a-;><lt>'
+
 # autocomplete with tab
 hook global InsertCompletionShow .* %{ map window insert <tab> <c-n> }
-hook global InsertCompletionHide .* %{ map window insert <tab> <tab> }
+hook global InsertCompletionHide .* %{ map window insert <tab> '<a-;><a-gt>' }
 hook global InsertCompletionShow .* %{ map window insert <s-tab> <c-p> }
+hook global InsertCompletionHide .* %{ map window insert <s-tab> '<a-;><lt>' }
 
-map global normal '<c-q>' ':quit<ret>'
+# save and quit
 map global normal '<c-w>' ':write; echo -markup "{Information}Saved"<ret>'
+map global normal '<c-q>' ':quit<ret>'
 
 # tools
 map global normal -docstring 'popup'               <+>   ': connect-popup<ret>'

@@ -1,2 +1,2 @@
 #!/bin/sh
-exec foot --server --font=monospace:size=10.5
+exec foot --server --font=monospace:size=11
