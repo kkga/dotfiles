@@ -21,7 +21,8 @@ set-option -add global ui_options ncurses_padding_fill=yes
 # add-highlighter global/ show-matching
 add-highlighter global/ regex \h+$ 0:Error
 add-highlighter global/ regex \b(TODO|FIXME|XXX|NOTE)\b 0:yellow,black+rb
-ui-line-numbers-toggle
+
+ui-cursorline-toggle
 
 # windowing
 hook -group windowing-detection global ClientCreate '.*' %{
