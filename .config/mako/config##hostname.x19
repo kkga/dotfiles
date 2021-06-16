@@ -10,7 +10,7 @@ width=440
 margin=40
 padding=16
 default-timeout=20000
-font=sans-serif 15
+font=sans-serif 14
 
 [urgency=low]
 background-color=#353535
