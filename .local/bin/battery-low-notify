@@ -9,7 +9,7 @@ while true; do
 	status="$(echo "$acpi" | grep -P -o '(?<=: )[^,]+')"
 
 	if [ "$status" = "Discharging" ]; then
-		if [ "$need_notify_critical" -eq 1 ] && [ "$percent" -le 15 ]; then
+		if [ "$need_notify_critical" -eq 1 ] && [ "$percent" -le 10 ]; then
 			notify-send -u critical -i /usr/share/icons/Adwaita/48x48/legacy/battery-empty.png "Battery level is critically low" "$percent% remaining"
 			need_notify_critical=0
 			need_notify_low=0
