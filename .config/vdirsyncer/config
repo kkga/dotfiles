@@ -5,6 +5,7 @@ status_path = "~/.local/share/vdirsyncer/status/"
 a = "local"
 b = "cal"
 collections = ["from a", "from b"]
+metadata = ["displayname", "color"]
 
 [storage cal]
 type = "caldav"
