@@ -37,6 +37,7 @@ bottom
 brightnessctl
 brillo
 cairo-devel
+cheat
 chrome-gnome-shell
 chromium
 chrony
@@ -103,6 +104,7 @@ gnome
 gnome-keyring
 go
 godot
+goxel
 gpgme
 grimshot
 grub-btrfs
@@ -155,8 +157,6 @@ libxkbcommon-devel
 libxkbcommon-tools
 light
 linux-firmware
-linux5.11
-linux5.11-headers
 linux5.12
 linux5.12-headers
 lm_sensors
@@ -248,6 +248,7 @@ rustup
 sakura
 scdoc
 scons
+sd
 seahorse
 seatd
 setxkbmap
@@ -353,6 +354,7 @@ xinit
 xinput
 xkb-switch
 xorg-minimal
+xpadneo
 xprop
 xrdb
 xsecurelock
