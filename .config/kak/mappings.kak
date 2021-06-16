@@ -104,12 +104,12 @@ evaluate-commands %sh{
     printf "map global user -docstring 'clip-replace' R '|%s<ret>'\n" "$paste"
 }
 
-# tools
 map global user -docstring 'surround mode'         s ': enter-user-mode surround<ret>'
 map global user -docstring 'LSP mode'              l ': enter-user-mode lsp<ret>'
 map global user -docstring 'LSP mode (lock)'       L ': enter-user-mode -lock lsp<ret>'
 map global user -docstring 'tree mode (lock)'      t ': enter-user-mode -lock tree<ret>'
 map global user -docstring "inc-dec mode (lock)"   i ': enter-user-mode -lock inc-dec<ret>'
+map global user -docstring "UI mode"               u ': enter-user-mode -lock ui<ret>'
 
 # tree mode
 declare-user-mode tree

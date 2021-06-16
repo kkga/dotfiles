@@ -17,10 +17,11 @@ set-option -add global ui_options ncurses_padding_fill=yes
 
 # add-highlighter global/ wrap -word
 # add-highlighter global/ number-lines -hlcursor
-add-highlighter global/ show-whitespaces
+# add-highlighter global/ show-whitespaces
+# add-highlighter global/ show-matching
 add-highlighter global/ regex \h+$ 0:Error
-add-highlighter global/ show-matching
 add-highlighter global/ regex \b(TODO|FIXME|XXX|NOTE)\b 0:yellow,black+rb
+ui-line-numbers-toggle
 
 # windowing
 hook -group windowing-detection global ClientCreate '.*' %{
