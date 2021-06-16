@@ -1,0 +1,15 @@
+[calendars]
+
+[[local]]
+path = ~/.local/share/vdirsyncer/fastmail/*
+type = discover
+
+[locale]
+timeformat = %H:%M
+dateformat = %Y-%m-%d
+longdateformat = %Y-%m-%d
+datetimeformat = %Y-%m-%d %H:%M
+longdatetimeformat = %Y-%m-%d %H:%M
+
+[default]
+default_calendar = "2BF6B16E-8955-4BBB-B369-B535F7FC046C"
