@@ -12,8 +12,8 @@
 * {
   border: none;
   border-radius: 0;
-  font-family: monospace;
-  font-size: 12pt;
+  font-family: Iosevka K Extended;
+  font-size: 11pt;
   min-height: 16px;
   transition: none;
 }
@@ -27,7 +27,7 @@ window.DP-2 * {
 }
 
 window.eDP-1 * {
-  font-size: 12pt;
+  font-size: 10pt;
 }
 
 window#waybar {
