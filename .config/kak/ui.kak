@@ -17,15 +17,22 @@ set-option -add global ui_options ncurses_padding_fill=yes
 
 # add-highlighter global/ wrap -word
 # add-highlighter global/ number-lines -hlcursor
-add-highlighter global/ show-whitespaces
-add-highlighter global/ show-matching
-add-highlighter global/ regex \h+$ 0:Error
-add-highlighter global/ regex \b(TODO|FIXME|XXX|NOTE)\b 0:yellow,black+rb
+# add-highlighter global/ show-whitespaces
+# add-highlighter global/ show-matching
+# add-highlighter global/ regex \h+$ 0:Error
+# add-highlighter global/ regex \b(TODO|FIXME|XXX|NOTE)\b 0:yellow,black+rb
 
+set-option -add global ui_line_numbers_flags -hlcursor
+set-option -add global ui_line_numbers_flags -separator " "
+set-option -add global ui_whitespaces_flags -tab "»"
+set-option -add global ui_whitespaces_flags -lf "↲"
+set-option -add global ui_whitespaces_flags -nbsp "␣"
+set-option -add global ui_whitespaces_flags -spc "·"
 
 hook global WinCreate .* %{
+    ui-line-numbers-toggle
     ui-whitespaces-toggle
-    ui-line-numbers-relative-toggle
+    ui-trailing-spaces-toggle
     ui-cursorline-toggle
     ui-matching-toggle
 }

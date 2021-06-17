@@ -14,4 +14,3 @@ evaluate-commands %sh{ kcr init kakoune }
 source "~/.config/kak/editing.kak"
 source "~/.config/kak/ui.kak"
 source "~/.config/kak/mappings.kak"
-
