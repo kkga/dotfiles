@@ -7,7 +7,8 @@ export XBPS_DISTDIR="$HOME/.void-packages"
 export BROWSER="firefox"
 export EDITOR="kcr edit"
 export VISUAL="$EDITOR"
-export FZF_DEFAULT_COMMAND="fd --type f"
+export FZF_DEFAULT_COMMAND="rg --files"
+# export FZF_DEFAULT_COMMAND="fd --type f"
 export FZF_DEFAULT_OPTS="\
 	--layout=reverse\
 	--inline-info\
