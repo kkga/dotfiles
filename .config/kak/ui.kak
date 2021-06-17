@@ -77,16 +77,16 @@ define-command update-status %{ evaluate-commands %sh{
             printf %s '{red+b}*%opt{lsp_diagnostic_error_count}{default} '
         fi
         if [ "$kak_opt_lsp_diagnostic_warning_count" -ne 0 ]; then
-            printf %s '{yellow+b}!%opt{lsp_diagnostic_warning_count}{default} · '
+            printf %s '{yellow+b}!%opt{lsp_diagnostic_warning_count} {Whitespace}│{default} '
         fi
         printf %s ' %sh{pwd | sed "s|^$HOME|~|"}'
-        printf %s ' · %val{bufname} [%opt{filetype}]'
+        printf %s ' {Whitespace}│{default} %val{bufname} [%opt{filetype}]'
         if [ -f "$kak_buffile" ] && [ ! -w "$kak_buffile" ]; then
             printf %s '{red}[]{default}'
         fi
-        printf %s ' · %val{cursor_line}:%val{cursor_char_column}/%val{buf_line_count}'
+        printf %s ' {Whitespace}│{default} %val{cursor_line}:%val{cursor_char_column}/%val{buf_line_count}'
         printf %s ' {{context_info}} {{mode_info}}'
-        printf %s " · {meta}$kak_client{default}@{attribute}$kak_session"
+        printf %s " {Whitespace}│{default} {meta}$kak_client{default}@{attribute}$kak_session"
     printf %s '}'
 }}
 

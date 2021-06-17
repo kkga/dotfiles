@@ -13,7 +13,7 @@ if [ -z "$FLOATING_TERMINAL" ]; then
 	# find_alt() prints the first parameter recognized by `command -v`
 	find_alt() {
 		for i; do
-			command -v "${i%% *}" >/dev/null && {
+			command -v "${i%% *}" > /dev/null && {
 				echo "$i"
 				return 0
 			}
@@ -21,6 +21,10 @@ if [ -z "$FLOATING_TERMINAL" ]; then
 		return 1
 	}
 	FLOATING_TERMINAL=$(find_alt 'foot -a launcher' havoc 'alacritty --class=launcher -e' 'kitty --class=launcher -e' 'konsole -e' 'gnome-terminal -e' 'termite -e' 'st -c launcher -e' 'xterm -e')
+fi
+
+if pgrep sway > /dev/null; then
+	swaymsg fullscreen disable
 fi
 
 $FLOATING_TERMINAL "$@"
