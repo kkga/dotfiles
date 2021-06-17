@@ -15,6 +15,7 @@ alsa-firmware
 alsa-plugins-pulseaudio
 alsa-utils
 anki
+asciinema
 astyle
 autorandr
 avr-binutils
@@ -127,6 +128,7 @@ j4-dmenu-desktop
 jq
 json-c-devel
 keyutils
+khal
 kitty
 kristall
 lazygit
@@ -285,6 +287,7 @@ teensy_loader_cli
 terminus-font
 thunderbird
 tmux
+todoman
 tokei
 topgrade
 torbrowser-launcher
@@ -300,6 +303,7 @@ unclutter-xfixes
 uni
 unicode-emoji
 upower
+vdirsyncer
 vdpauinfo
 vifm
 vim
