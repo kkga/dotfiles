@@ -34,8 +34,8 @@
   "custom/updates": {
     "format": "upd <span weight=\"bold\">{}</span>",
     "tooltip": false,
-    "exec": "pkill waybar-xbps.sh; waybar-xbps.sh",
-    "on-click": "pkill waybar-xbps.sh; waybar-xbps.sh"
+    "exec": "pkill waybar-xbps; waybar-xbps",
+    "on-click": "pkill waybar-xbps; waybar-xbps"
   },
   "custom/yadm": {
     "format": "yadm <span weight=\"bold\">{}</span>",

@@ -24,6 +24,6 @@ export FZF_DEFAULT_OPTS="\
 # export GPG_TTY=$(tty)
 
 # if [[ -z $WAYLAND_DISPLAY && $(tty) == "/dev/tty1" ]]; then
-# 	exec start-sway.sh
+# 	exec start-sway
 # fi
 # fi

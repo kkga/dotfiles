@@ -23,7 +23,7 @@ add-highlighter global/ regex \h+$ 0:Error
 add-highlighter global/ regex \b(TODO|FIXME|XXX|NOTE)\b 0:yellow,black+rb
 
 # ui-whitespaces-toggle
-ui-cursorline-enable
+# ui-cursorline-enable
 # ui-matching-toggle
 
 # windowing

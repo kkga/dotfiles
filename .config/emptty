@@ -3,7 +3,7 @@ Environment=wayland
 
 . /etc/profile
 . "$HOME/.profile"
-. "$HOME/.local/bin/env-wayland.sh"
+. "$HOME/.local/bin/env-wayland"
 
 export XDG_SESSION_TYPE=wayland
 export XDG_SESSION_DESKTOP=sway
