@@ -44,8 +44,8 @@ define-command disable-autolint -docstring 'disable auto-lint' %{
 hook global BufOpenFile  .* %{ modeline-parse }
 hook global BufOpenFile  .* %{ require-module move-line }
 hook global BufCreate    .* %{ try %{ editorconfig-load } }
-hook global BufWritePost .* %{ git show-diff }
-hook global BufReload    .* %{ git show-diff }
+# hook global BufWritePost .* %{ git show-diff }
+# hook global BufReload    .* %{ git show-diff }
 hook global BufWritePost .* %{ try %{ lint } }
 hook global BufWritePre  .* %{ try %{ format-buffer } }
 hook global ModeChange pop:insert:.* %{ try %{ execute-keys -draft '%s\h+$<ret>d' } }
@@ -56,7 +56,7 @@ hook global WinDisplay   .* %{ evaluate-commands %sh{
     project_dir="$(git rev-parse --show-toplevel 2>/dev/null)"
     [ -n "$project_dir" ] && dir="$project_dir" || dir="${PWD%/.git}"
     printf "cd %%{%s}\n" "$dir"
-    [ -n "$project_dir" ] && [ "$kak_buffile" = "${kak_buffile#\*}" ] && printf "git show-diff"
+    # [ -n "$project_dir" ] && [ "$kak_buffile" = "${kak_buffile#\*}" ] && printf "git show-diff"
 } }
 
 hook global WinSetOption filetype=.* %{

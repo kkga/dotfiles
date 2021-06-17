@@ -17,14 +17,18 @@ set-option -add global ui_options ncurses_padding_fill=yes
 
 # add-highlighter global/ wrap -word
 # add-highlighter global/ number-lines -hlcursor
-# add-highlighter global/ show-whitespaces
-# add-highlighter global/ show-matching
+add-highlighter global/ show-whitespaces
+add-highlighter global/ show-matching
 add-highlighter global/ regex \h+$ 0:Error
 add-highlighter global/ regex \b(TODO|FIXME|XXX|NOTE)\b 0:yellow,black+rb
 
-# ui-whitespaces-toggle
-# ui-cursorline-enable
-# ui-matching-toggle
+
+hook global WinCreate .* %{
+    ui-whitespaces-toggle
+    ui-line-numbers-relative-toggle
+    ui-cursorline-toggle
+    ui-matching-toggle
+}
 
 # windowing
 hook -group windowing-detection global ClientCreate '.*' %{
@@ -70,20 +74,13 @@ alias global fa find-edit-all
 
 define-command update-status %{ evaluate-commands %sh{
     printf %s 'set-option buffer modelinefmt %{'
-        if [ "$kak_opt_lsp_diagnostic_error_count" -ne 0 ]; then
-            printf %s '{red+b}*%opt{lsp_diagnostic_error_count}{default} '
-        fi
-        if [ "$kak_opt_lsp_diagnostic_warning_count" -ne 0 ]; then
-            printf %s '{yellow+b}!%opt{lsp_diagnostic_warning_count} {Whitespace}│{default} '
-        fi
-        printf %s ' %sh{pwd | sed "s|^$HOME|~|"}'
-        printf %s ' {Whitespace}│{default} %val{bufname} [%opt{filetype}]'
-        if [ -f "$kak_buffile" ] && [ ! -w "$kak_buffile" ]; then
-            printf %s '{red}[]{default}'
-        fi
-        printf %s ' {Whitespace}│{default} %val{cursor_line}:%val{cursor_char_column}/%val{buf_line_count}'
-        printf %s ' {{context_info}} {{mode_info}}'
-        printf %s " {Whitespace}│{default} {meta}$kak_client{default}@{attribute}$kak_session"
+        if [ "$kak_opt_lsp_diagnostic_error_count" -ne 0 ]; then printf %s '{red+b}*%opt{lsp_diagnostic_error_count}{default} '; fi
+        if [ "$kak_opt_lsp_diagnostic_warning_count" -ne 0 ]; then printf %s '{yellow+b}!%opt{lsp_diagnostic_warning_count} {Whitespace}│{default} '; fi
+        printf %s ' {Whitespace}[{default}%sh{pwd | sed "s|^$HOME|~|"}{Whitespace}]{default}'
+        printf %s ' {Whitespace}[{default}%val{bufname}{comment}(%opt{filetype}){default}'
+        if [ -f "$kak_buffile" ] && [ ! -w "$kak_buffile" ]; then printf %s '{red}[]{default}'; fi
+        printf %s ' %val{cursor_line}{comment}:{default}%val{cursor_char_column}/%val{buf_line_count} {{context_info}} {{mode_info}}{Whitespace}]{default}'
+        printf %s " {Whitespace}[{default}{meta}$kak_client{comment}@{attribute}$kak_session{Whitespace}]{default}"
     printf %s '}'
 }}
 
