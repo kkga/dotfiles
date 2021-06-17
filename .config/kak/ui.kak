@@ -15,27 +15,15 @@ set-option -add global ui_options ncurses_set_title=off
 set-option -add global ui_options ncurses_padding_char=╱
 set-option -add global ui_options ncurses_padding_fill=yes
 
-# add-highlighter global/ wrap -word
-# add-highlighter global/ number-lines -hlcursor
-# add-highlighter global/ show-whitespaces
-# add-highlighter global/ show-matching
-# add-highlighter global/ regex \h+$ 0:Error
-# add-highlighter global/ regex \b(TODO|FIXME|XXX|NOTE)\b 0:yellow,black+rb
-
+set-option global ui_line_numbers_flags -hlcursor -separator " "
+set-option global ui_wrap_flags -word -width 80 -marker ...
 
 hook global WinCreate .* %{
-    set-option -add global ui_wrap_flags -word
-    set-option -add global ui_wrap_flags -marker "..."
-    set-option -add global ui_line_numbers_flags -hlcursor
-    set-option -add global ui_line_numbers_flags -separator " "
-    set-option -add global ui_whitespaces_flags -tab "»"
-    set-option -add global ui_whitespaces_flags -lf "↲"
-    set-option -add global ui_whitespaces_flags -nbsp "␣"
-    set-option -add global ui_whitespaces_flags -spc "·"
-    ui-line-numbers-toggle
-    ui-whitespaces-toggle
-    ui-trailing-spaces-toggle
     ui-cursorline-toggle
+    ui-wrap-toggle
+    ui-trailing-spaces-toggle
+    ui-search-toggle
+    ui-line-numbers-toggle
     ui-matching-toggle
 }
 
