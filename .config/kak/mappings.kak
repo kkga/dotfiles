@@ -1,7 +1,7 @@
-# global -------------------------------------------------------------
+# normal -------------------------------------------------------------
 
 # ambiguous keys
-map global normal '<c-i>' <tab>
+# map global normal '<c-i>' <tab>
 
 # work around some weird defaults
 map global normal a         'li'
@@ -43,8 +43,8 @@ map global normal <down>    ': move-line-below<ret>'
 map global normal <up>      ': move-line-above<ret>'
 
 # inc-dec
-map global normal <c-a>     ': inc-dec-modify-numbers + %val{count}<ret>'
-map global normal <c-x>     ': inc-dec-modify-numbers - %val{count}<ret>'
+map global normal <c-a>     ': inc-dec %val{count} + 0<ret>'
+map global normal <c-x>     ': inc-dec %val{count} - 0<ret>'
 
 # buffers
 map global normal b         ': enter-buffers-mode<ret>'
@@ -54,6 +54,22 @@ map global normal B         ': enter-user-mode -lock buffers<ret>'
 map global normal =         ': format<ret>'
 map global normal '#'       ': comment-line<ret>'
 map global normal <a-#>     ': comment-block<ret>'
+
+# save and quit
+map global normal '<c-w>' ':write; echo -markup "{Information}buffer saved"<ret>'
+map global normal '<c-q>' ':quit<ret>'
+
+# tools
+map global normal -docstring 'popup'               <+>   ': connect-popup<ret>'
+map global normal -docstring 'terminal'            <c-t> ': connect-terminal<ret>'
+map global normal -docstring 'files'               <c-f> ': + kcr-fzf-files<ret>'
+map global normal -docstring 'buffers'             <c-b> ': + kcr-fzf-buffers<ret>'
+map global normal -docstring 'files by content'    <c-g> ': + kcr-fzf-grep<ret>'
+map global normal -docstring 'lines in buffer'     <c-l> ': + kcr-fzf-lines %val{buffile}<ret>'
+map global normal -docstring 'lf'                  <c-h> ': > lf -command "set nopreview; set ratios 1" .<ret>'
+map global normal -docstring 'lazygit'             <c-v> ': + lazygit<ret>'
+
+# insert -------------------------------------------------------------
 
 # jj to exit
 hook global InsertChar j %{ try %{
@@ -76,23 +92,9 @@ hook global InsertCompletionHide .* %{ map window insert <tab> '<a-;><a-gt>' }
 hook global InsertCompletionShow .* %{ map window insert <s-tab> <c-p> }
 hook global InsertCompletionHide .* %{ map window insert <s-tab> '<a-;><lt>' }
 
-# save and quit
-map global normal '<c-w>' ':write; echo -markup "{Information}Saved"<ret>'
-map global normal '<c-q>' ':quit<ret>'
-
-# tools
-map global normal -docstring 'popup'               <+>   ': connect-popup<ret>'
-map global normal -docstring 'terminal'            <c-t> ': connect-terminal<ret>'
-map global normal -docstring 'files'               <c-f> ': + kcr-fzf-files<ret>'
-map global normal -docstring 'buffers'             <c-b> ': + kcr-fzf-buffers<ret>'
-map global normal -docstring 'files by content'    <c-g> ': + kcr-fzf-grep<ret>'
-map global normal -docstring 'lines in buffer'     <c-k> ': + kcr-fzf-lines %val{buffile}<ret>'
-map global normal -docstring 'lf'                  <c-h> ': > lf -command "set nopreview; set ratios 1" .<ret>'
-map global normal -docstring 'lazygit'             <c-l> ': + lazygit<ret>'
-
 # user ---------------------------------------------------------------
 
-# clipboard
+# system clipboard
 evaluate-commands %sh{
     case $(uname) in
         Linux) copy="wl-copy"; paste="wl-paste" ;;

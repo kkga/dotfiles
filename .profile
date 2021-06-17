@@ -1,20 +1,12 @@
-# .profile
+# ~/.profile
 
-export GOPATH="$HOME/.go"
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="$HOME/.deno/bin:$PATH"
-export PATH="$GOPATH/bin:$PATH"
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="/var/lib/flatpak/exports/bin/:$PATH"
+PATH="$HOME/.local/bin:$HOME/.volta/bin:$HOME/.cargo/bin:/var/lib/flatpak/exports/bin/:$PATH"
+export PATH
 
 export XBPS_DISTDIR="$HOME/.void-packages"
-
 export BROWSER="firefox"
 export EDITOR="kcr edit"
 export VISUAL="$EDITOR"
-
 export FZF_DEFAULT_COMMAND="fd --type f"
 export FZF_DEFAULT_OPTS="\
 	--layout=reverse\

@@ -22,7 +22,9 @@ set-option -add global ui_options ncurses_padding_fill=yes
 add-highlighter global/ regex \h+$ 0:Error
 add-highlighter global/ regex \b(TODO|FIXME|XXX|NOTE)\b 0:yellow,black+rb
 
-ui-cursorline-toggle
+# ui-whitespaces-toggle
+ui-cursorline-enable
+# ui-matching-toggle
 
 # windowing
 hook -group windowing-detection global ClientCreate '.*' %{
