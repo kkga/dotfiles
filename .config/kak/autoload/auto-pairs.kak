@@ -19,10 +19,12 @@
 # When moving or leaving insert mode, the functionalities deactivates.
 
 # Auto-pairing of characters activates only when this expression does not fail.
-# By default, it avoids escaped pairs and word characters.
+# By default, it avoids non-nestable pairs (such as quotes), escaped pairs and word characters.
 declare-option -docstring 'auto-pairing of characters activates only when this expression does not fail' str auto_close_trigger %{
+  execute-keys '<a-h>'
+  execute-keys '<a-K>(\w["''`]|""|''''|``).\z<ret>'
   set-register / "[^\\]?\Q%opt{opening_pair}\E\W\z"
-  execute-keys '<a-h><a-k><ret>'
+  execute-keys '<a-k><ret>'
 }
 
 # Internal variables
@@ -38,9 +40,12 @@ hook -group clean-auto-pairs-state global WinSetOption 'inserted_pairs=0' %{
 
 define-command -override enable-auto-pairs -docstring 'enable auto-pairs' %{
   remove-hooks global auto-pairs
-  auto-close-nestable-pair ( )
-  auto-close-nestable-pair { }
-  auto-close-nestable-pair [ ]
+  auto-close-pair ( )
+  auto-close-pair { }
+  auto-close-pair [ ]
+  auto-close-pair '"' '"'
+  auto-close-pair "'" "'"
+  auto-close-pair ` `
 }
 
 define-command -override disable-auto-pairs -docstring 'disable auto-pairs' %{
@@ -48,7 +53,7 @@ define-command -override disable-auto-pairs -docstring 'disable auto-pairs' %{
 }
 
 # Internal commands
-define-command -override -hidden auto-close-nestable-pair -params 2 %{
+define-command -override -hidden auto-close-pair -params 2 %{
   hook -group auto-pairs global InsertChar "\Q%arg{1}" "handle-inserted-opening-pair %%🐈%arg{1}🐈 %%🐈%arg{2}🐈"
   hook -group auto-pairs global InsertDelete "\Q%arg{1}" "handle-deleted-opening-pair %%🐈%arg{1}🐈 %%🐈%arg{2}🐈"
 }
@@ -73,7 +78,7 @@ define-command -override -hidden handle-inserted-opening-pair -params 2 %{
     }
 
     # Add insert mappings
-    map window insert %arg{2} '<a-;>:auto-pairs-move-right<ret>'
+    map window insert %arg{2} "<a-;>:auto-pairs-insert-character %%🐈%arg{2}🐈<ret>"
     map window insert <ret> '<a-;>:auto-pairs-insert-new-line<ret>'
 
     # Keep the track of inserted pairs
@@ -101,9 +106,15 @@ define-command -override -hidden handle-deleted-opening-pair -params 2 %{
 }
 
 # Insert mappings
-define-command -override -hidden auto-pairs-move-right %{
-  execute-keys '<a-;>l'
-  decrement-inserted-pairs-count
+# Insert character or move right in pair
+define-command -override -hidden auto-pairs-insert-character -params 1 %{
+  try %{
+    execute-keys -draft "<space>;<a-k>\Q%arg{1}<ret>"
+    execute-keys '<a-;>l'
+    decrement-inserted-pairs-count
+  } catch %{
+    execute-keys -with-hooks %arg{1}
+  }
 }
 
 define-command -override -hidden auto-pairs-insert-new-line %{
