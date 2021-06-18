@@ -1,8 +1,5 @@
 # normal -------------------------------------------------------------
 
-# ambiguous keys
-# map global normal '<c-i>' <tab>
-
 # work around some weird defaults
 map global normal a         'li'
 map global normal x         '<a-x>'

@@ -1,54 +1,6 @@
 enable-auto-pairs
 
-# tools -----------------------------------------------------------------------
-
-set-option global grepcmd 'rg --column'
-
-# lsp -------------------------------------------------------------------------
-
-eval %sh{kak-lsp --kakoune -s "$kak_session"}
-hook global WinSetOption filetype=(crystal|html|css|json|rust|python|go|typescript|svelte|javascript|elm|zig|gdscript) %{
-    lsp-enable-window
-    lsp-auto-signature-help-enable
-    lsp-auto-hover-insert-mode-enable
-}
-hook global KakEnd .* lsp-exit
-
-# uncomment for lsp debug
-# set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
-
-define-command lsp-restart -docstring 'restart lsp server' %{ lsp-stop; lsp-start }
-define-command ne -docstring 'go to next error/warning from lsp' %{ lsp-find-error --include-warnings }
-define-command pe -docstring 'go to previous error/warning from lsp' %{ lsp-find-error --previous --include-warnings }
-define-command ee -docstring 'go to current error/warning from lsp' %{ lsp-find-error --include-warnings; lsp-find-error --previous --include-warnings }
-
-# lsp snippets
-def -hidden insert-c-n %{
-    try %{
-        lsp-snippets-select-next-placeholders
-        exec '<a-;>d'
-    } catch %{
-        exec -with-hooks '<c-n>'
-    }
-}
-map global insert <c-n> "<a-;>: insert-c-n<ret>"
-
-# commands --------------------------------------------------------------------
-
-define-command ide -params 0..1 %{
-    try %{ rename-session %arg{1} }
-
-    rename-client main
-    set-option global jumpclient main
-
-    new rename-client tools
-    set-option global toolsclient tools
-
-    new rename-client docs
-    set-option global docsclient docs
-}
-
-# hooks -----------------------------------------------------------------------
+# commands -----------------------------------------------------------------------
 
 define-command disable-autoformat -docstring 'disable auto-format' %{
     unset-option buffer formatcmd
@@ -59,14 +11,15 @@ define-command disable-autolint -docstring 'disable auto-lint' %{
     remove-hooks buffer lint
 }
 
+# generic hooks ---------------------------------------------------------------
+
 hook global BufOpenFile  .* %{ modeline-parse }
-hook global BufOpenFile  .* %{ require-module move-line }
 hook global BufCreate    .* %{ try %{ editorconfig-load } }
-# hook global BufWritePost .* %{ git show-diff }
-# hook global BufReload    .* %{ git show-diff }
 hook global BufWritePost .* %{ try %{ lint } }
 hook global BufWritePre  .* %{ try %{ format-buffer } }
-hook global ModeChange pop:insert:.* %{ try %{ execute-keys -draft '%s\h+$<ret>d' } }
+# hook global BufWritePost .* %{ git show-diff }
+# hook global BufReload    .* %{ git show-diff }
+# hook global ModeChange pop:insert:.* %{ try %{ execute-keys -draft '%s\h+$<ret>d' } }
 
 # cd into current-buffer dir or git dir on file open
 hook global WinDisplay   .* %{ evaluate-commands %sh{
@@ -78,13 +31,13 @@ hook global WinDisplay   .* %{ evaluate-commands %sh{
 } }
 
 hook global WinSetOption filetype=.* %{
-    # disable-autoformat
-    # disable-autolint
     hook buffer -group format BufWritePre .* %{
         try %{ execute-keys -draft '%s\h+$<ret>d' }
         try %{ execute-keys -draft '%s\u000d<ret>d' }
     }
 }
+
+# filetype hooks ---------------------------------------------------------------
 
 hook global WinSetOption filetype=zig %{
     set-option buffer formatcmd 'zig fmt --stdin'
@@ -98,9 +51,11 @@ hook global WinSetOption filetype=zig %{
         remove-hooks window semantic-tokens
     }
 }
+
 hook global WinSetOption filetype=(svelte|css|yaml|html) %{
     set-option buffer formatcmd "prettier --stdin-filepath='%val{buffile}'"
 }
+
 hook global WinSetOption filetype=(javascript|typescript) %{
     set-option buffer formatcmd "deno fmt -"
     hook window -group semantic-tokens BufReload .* lsp-semantic-tokens
@@ -110,30 +65,29 @@ hook global WinSetOption filetype=(javascript|typescript) %{
         remove-hooks window semantic-tokens
     }
 }
+
 hook global WinSetOption filetype=json %{
     set-option buffer formatcmd "deno fmt --ext json -"
 }
+
 hook global WinSetOption filetype=markdown %{
     require-module todo
     set-option buffer lintcmd "proselint"
-    set-option buffer formatcmd "deno fmt --ext md -"
     # set-option buffer formatcmd "prettier --prose-wrap=always --stdin-filepath='%val{buffile}'"
-
+    set-option buffer formatcmd "deno fmt --ext md -"
     map buffer normal <ret> ': todo-toggle<ret>' -docstring "toggle checkbox"
     add-highlighter buffer/ regex '\[ \]' 0:blue
     add-highlighter buffer/ regex '\[x\]' 0:comment
-
 }
+
 hook global WinSetOption filetype=lua %{
     set-option buffer formatcmd "stylua -"
 }
-hook global WinSetOption filetype=elm %{
-    set-option buffer formatcmd "elm-format --stdin"
-}
+
 hook global WinSetOption filetype=sh %{
     set-option buffer formatcmd 'shfmt -ci -sr'
 }
+
 hook global WinSetOption filetype=gdscript %{
     set-option buffer formatcmd "gdformat -"
 }
-
