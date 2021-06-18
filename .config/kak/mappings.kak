@@ -78,9 +78,9 @@ map global normal -docstring 'files'               <c-f> ': + kcr-fzf-files<ret>
 map global normal -docstring 'buffers'             <c-b> ': + kcr-fzf-buffers<ret>'
 map global normal -docstring 'files by content'    <c-g> ': + kcr-fzf-grep<ret>'
 map global normal -docstring 'lines in buffer'     <c-l> ': + kcr-fzf-lines %val{buffile}<ret>'
+map global normal -docstring 'recent files'        <c-r> ': + kcr-fzf-mru<ret>'
 map global normal -docstring 'lf'                  <c-h> ': > lf -command "set nopreview; set ratios 1" .<ret>'
 map global normal -docstring 'lazygit'             <c-v> ': + lazygit<ret>'
-map global normal -docstring 'recent files'        <c-r> ': + kcr-fzf-mru<ret>'
 
 # insert -------------------------------------------------------------
 
