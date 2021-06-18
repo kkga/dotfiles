@@ -79,7 +79,7 @@
   "custom/vpn": {
     "format": "VPN",
     "exec": "echo '{\"class\": \"connected\", \"tooltip\": \"VPN\"}'",
-    "exec-if": "test -d /proc/sys/net/ipv4/conf/mlvd*",
+    "exec-if": "test -d /proc/sys/net/ipv4/conf/mullvad*",
     "return-type": "json",
     "interval": 5
   },

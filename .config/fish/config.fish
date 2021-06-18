@@ -2,6 +2,7 @@ alias cp="cp -i"
 alias mv='mv -i'
 alias gg="lazygit"
 alias ls="exa --group --git --group-directories-first"
+alias tree="exa --tree --level=3"
 alias y="yadm"
 alias cat="bat"
 alias lfs="lf -command 'set nopreview; set ratios 1'"
@@ -35,11 +36,6 @@ set --global hydro_symbol_prompt           '>'
 set --global hydro_symbol_git_dirty        '*'
 
 set -x LS_COLORS "$LS_COLORS:ow=1;7;34:st=30;44:su=30;41"
-
-set -g man_blink -o red
-set -g man_bold -o green
-set -g man_standout -b cyan black
-set -g man_underline -u brwhite
 
 set fish_greeting					       ''
 set fish_color_autosuggestion              normal

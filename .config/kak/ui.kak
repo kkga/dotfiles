@@ -65,6 +65,14 @@ define-command find-edit-all -params 1 -shell-script-candidates 'rg --files --hi
 }
 alias global fa find-edit-all
 
+
+hook global BufCreate [^*].* %{
+    nop %sh{
+        mru=~/.cache/kak-mru
+        echo "$kak_buffile" | awk '!seen[$0]++' - "$mru" | sponge "$mru"
+    }
+}
+
 # modeline --------------------------------------------------------------------
 
 define-command update-status %{ evaluate-commands %sh{
