@@ -1,7 +1,7 @@
 #!/bin/sh
 
 case "$1" in
-	*.md) lowdown -Tterm "$1" ;;
+	# *.md) lowdown -Tterm "$1" ;;
 	*.tar*) tar tf "$1" ;;
 	*.zip) unzip -l "$1" ;;
 	*.rar) unrar l "$1" ;;

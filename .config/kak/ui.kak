@@ -20,10 +20,8 @@ set-option global ui_wrap_flags -word -width 80 -marker ...
 
 hook global WinCreate .* %{
     ui-cursorline-toggle
-    ui-wrap-toggle
     ui-trailing-spaces-toggle
     ui-search-toggle
-    ui-line-numbers-toggle
     ui-matching-toggle
 }
 
