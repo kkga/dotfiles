@@ -1,3 +1,5 @@
+enable-auto-pairs
+
 # tools -----------------------------------------------------------------------
 
 set-option global grepcmd 'rg --column'
