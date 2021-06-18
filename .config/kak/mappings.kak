@@ -55,9 +55,21 @@ map global normal =         ': format<ret>'
 map global normal '#'       ': comment-line<ret>'
 map global normal <a-#>     ': comment-block<ret>'
 
+# auto-select word under cursor and put it to / register
+define-command word-auto-select -hidden -params 1 -docstring 'auto-select a word under cursor' %{
+    try %{ evaluate-commands %sh{
+        if echo "$kak_selections_desc" | grep -Eq '^(([0-9]+)\.([0-9]+),\2\.\3:?)+$'; then
+          echo execute-keys '<a-i>w<ret>'
+        fi
+    } }
+    execute-keys -save-regs '' -with-hooks %arg{1}
+}
+map global normal '*'       ': word-auto-select *<ret>'
+map global normal '<a-*>'   ': word-auto-select <lt>a-*><ret>'
+
 # save and quit
-map global normal '<c-w>' ':write; echo -markup "{Information}buffer saved"<ret>'
-map global normal '<c-q>' ':quit<ret>'
+map global normal '<c-w>'   ':write; echo -markup "{Information}buffer saved"<ret>'
+map global normal '<c-q>'   ':quit<ret>'
 
 # tools
 map global normal -docstring 'popup'               <+>   ': connect-popup<ret>'
