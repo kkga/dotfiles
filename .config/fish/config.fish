@@ -2,6 +2,7 @@ alias cp="cp -i"
 alias mv='mv -i'
 alias gg="lazygit"
 alias ls="exa --group --git --group-directories-first"
+alias tree="exa --tree --level=3"
 alias y="yadm"
 alias cat="bat"
 alias lfs="lf -command 'set nopreview; set ratios 1'"
