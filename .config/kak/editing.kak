@@ -1,3 +1,5 @@
+# tools -----------------------------------------------------------------------
+
 set-option global grepcmd 'rg --column'
 
 # lsp -------------------------------------------------------------------------
@@ -29,6 +31,20 @@ def -hidden insert-c-n %{
 }
 map global insert <c-n> "<a-;>: insert-c-n<ret>"
 
+# commands --------------------------------------------------------------------
+
+define-command ide -params 0..1 %{
+    try %{ rename-session %arg{1} }
+
+    rename-client main
+    set-option global jumpclient main
+
+    new rename-client tools
+    set-option global toolsclient tools
+
+    new rename-client docs
+    set-option global docsclient docs
+}
 
 # hooks -----------------------------------------------------------------------
 
