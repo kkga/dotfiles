@@ -15,7 +15,7 @@
     "network",
     "battery",
     //"sway/language",
-    "custom/weather",
+    //custom/weather",
     "clock",
     "tray"
   ],

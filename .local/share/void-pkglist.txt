@@ -320,7 +320,6 @@ volta
 vpm
 vpnd
 vpsm
-vscode
 vsv
 vulkan-loader
 vulkan-loader-32bit
