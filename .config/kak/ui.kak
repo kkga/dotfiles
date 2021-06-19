@@ -47,7 +47,7 @@ set-option -add global ui_options ncurses_padding_char=╱
 set-option -add global ui_options ncurses_padding_fill=yes
 
 set-option global ui_line_numbers_flags -hlcursor -separator " "
-set-option global ui_wrap_flags -word -width 80 -marker ...
+set-option global ui_wrap_flags -word -width 100
 
 hook global WinCreate .* %{
     ui-cursorline-toggle
