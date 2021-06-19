@@ -8,13 +8,14 @@
     "custom/updates",
     "custom/yadm",
     "cpu",
-    "temperature",
+    //"temperature",
     "pulseaudio",
     "custom/tailscale",
     "custom/vpn",
     "network",
     "battery",
     //"sway/language",
+    "custom/weather",
     "clock",
     "tray"
   ],
@@ -132,6 +133,10 @@
     "on-click": "swaymsg 'scratchpad show'",
     "on-click-right": "swaymsg 'move scratchpad'",
     "tooltip": false
+  },
+  "custom/weather": {
+    "exec": "curl 'https://wttr.in/?format=1'",
+    "interval": 3600
   },
   "sway/language": {
     "format": "{}"
