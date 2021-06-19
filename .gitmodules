@@ -25,3 +25,6 @@
 [submodule ".config/kak/plugins/objectify.kak"]
 	path = .config/kak/plugins/objectify.kak
 	url = https://github.com/alexherbo2/objectify.kak
+[submodule ".config/kak/plugins/scrollbar.kak"]
+	path = .config/kak/plugins/scrollbar.kak
+	url = https://github.com/sawdust-and-diamonds/scrollbar.kak

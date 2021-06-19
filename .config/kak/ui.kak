@@ -46,14 +46,23 @@ set-option -add global ui_options ncurses_set_title=off
 set-option -add global ui_options ncurses_padding_char=╱
 set-option -add global ui_options ncurses_padding_fill=yes
 
-set-option global ui_line_numbers_flags -hlcursor -separator " "
+set-option global ui_line_numbers_flags -hlcursor
 set-option global ui_wrap_flags -word -width 100
 
+set-face global Scrollbar "%opt{brblack},default"
+set-face global ScrollbarSel "%opt{bg_accent}"
+set-face global ScrollbarHL "%opt{bg_warning}"
+set-option global scrollbar_char "▌"
+set-option global scrollbar_sel_char "▌"
+
+
 hook global WinCreate .* %{
+    # ui-line-numbers-toggle
     ui-cursorline-toggle
     ui-trailing-spaces-toggle
     ui-search-toggle
     ui-matching-toggle
+    scrollbar-enable
 }
 
 # windowing
