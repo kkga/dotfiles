@@ -4,7 +4,7 @@ Relatively simple Linux config for desktop, managed with [yadm].
 - window manager: [sway] ([sway-config])
 - shell: [fish] ([config][fish-config])
 - terminal: [foot] ([config][foot-config])
-- editor: [kakoune] ([config][kak-config]) {}[]()$%{-<>}
+- editor: [kakoune] ([config][kak-config])
 - menu/launcher (fzf-based): [fzf-menu], [sway-launcher]
 - colors: [saturn]
 
