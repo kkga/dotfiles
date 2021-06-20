@@ -33,8 +33,6 @@ map global insert <c-n> "<a-;>: insert-c-n<ret>"
 
 colorscheme saturn
 
-set-option global tabstop 4
-set-option global indentwidth 4
 set-option global scrolloff 4,4
 set-option global startup_info_version 20200901
 set-option global autoreload yes
@@ -49,12 +47,11 @@ set-option -add global ui_options ncurses_padding_fill=yes
 set-option global ui_line_numbers_flags -hlcursor
 set-option global ui_wrap_flags -word -width 100
 
-set-face global Scrollbar "%opt{brblack},default"
-set-face global ScrollbarSel "%opt{bg_accent}"
+set-face global Scrollbar "%opt{bg_bright},default"
+set-face global ScrollbarSel "%opt{brcyan}"
 set-face global ScrollbarHL "%opt{bg_warning}"
 set-option global scrollbar_char "▌"
 set-option global scrollbar_sel_char "▌"
-
 
 hook global WinCreate .* %{
     # ui-line-numbers-toggle

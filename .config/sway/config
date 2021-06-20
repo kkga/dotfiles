@@ -1,8 +1,8 @@
 # General settings -------------------------------------------------------------
 
 # xwayland disable
-default_border pixel 1
-default_floating_border pixel 1
+default_border pixel 2
+default_floating_border pixel 2
 
 smart_borders on
 smart_gaps on
@@ -26,7 +26,7 @@ input "type:keyboard" {
 }
 
 input "type:pointer" {
-	pointer_accel 0.5
+	pointer_accel 1
 	accel_profile adaptive
     middle_emulation enabled
 	scroll_method on_button_down
