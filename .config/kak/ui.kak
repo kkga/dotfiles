@@ -33,8 +33,6 @@ map global insert <c-n> "<a-;>: insert-c-n<ret>"
 
 colorscheme saturn
 
-set-option global tabstop 4
-set-option global indentwidth 4
 set-option global scrolloff 4,4
 set-option global startup_info_version 20200901
 set-option global autoreload yes

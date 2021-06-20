@@ -1,7 +1,4 @@
 source "~/.config/kak/plugins/foot.kak/rc/foot.kak"; require-module foot
-source "~/.config/kak/plugins/surround.kak/rc/surround.kak"; require-module surround
-source "~/.config/kak/plugins/objectify.kak/rc/objectify.kak"; require-module objectify;
-source "~/.config/kak/plugins/text-objects.kak/rc/text-objects.kak"; require-module text-objects;
 source "~/.config/kak/plugins/state-save/state-save.kak"
 source "~/.config/kak/plugins/sudo-write/sudo-write.kak"
 source "~/.config/kak/plugins/shellcheck/shellcheck.kak"
