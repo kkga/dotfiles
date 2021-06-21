@@ -147,6 +147,7 @@ libassuan-devel
 libcap-devel
 libdrm-devel
 libev-devel
+libevent-devel
 libgpg-error-devel
 libinput-devel
 libseat-devel
@@ -199,6 +200,7 @@ nodejs
 notcurses
 notcurses-progs
 noto-fonts-cjk
+noto-fonts-emoji
 noto-fonts-ttf
 noto-fonts-ttf-extra
 nushell
