@@ -1,4 +1,3 @@
-source "~/.config/kak/plugins/foot.kak/rc/foot.kak"; require-module foot
 source "~/.config/kak/plugins/state-save/state-save.kak"
 source "~/.config/kak/plugins/sudo-write/sudo-write.kak"
 source "~/.config/kak/plugins/shellcheck/shellcheck.kak"

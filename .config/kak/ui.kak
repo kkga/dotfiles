@@ -63,14 +63,15 @@ hook global WinCreate .* %{
 }
 
 # windowing
-hook -group windowing-detection global ClientCreate '.*' %{
-    evaluate-commands %sh{
-        [ "$WAYLAND_DISPLAY" ] && {
-            echo alias global terminal foot-terminal
-            echo alias global popup foot-terminal-popup
-        }
-    }
-}
+foot-integration-enable
+# hook -group windowing-detection global ClientCreate '.*' %{
+#     evaluate-commands %sh{
+#         [ "$WAYLAND_DISPLAY" ] && {
+#             echo alias global terminal foot-terminal
+#             echo alias global popup foot-terminal-popup
+#         }
+#     }
+# }
 hook -group terminal global ModuleLoaded kitty %{
     alias global terminal kitty-terminal
     alias global popup kitty-terminal
