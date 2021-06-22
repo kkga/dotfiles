@@ -37,8 +37,8 @@ map global normal <a-q>     '<a-b>'
 map global normal w         ': select-next-word<ret>'
 
 # move lines
-map global normal <down>    ': move-line-below<ret>'
-map global normal <up>      ': move-line-above<ret>'
+map global normal <down>    ': move-lines-down<ret>'
+map global normal <up>      ': move-lines-up<ret>'
 
 map global normal "'"       ': enter-user-mode surround<ret>'
 
