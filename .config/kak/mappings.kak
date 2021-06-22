@@ -1,8 +1,5 @@
 # normal -------------------------------------------------------------
 
-# ambiguous keys
-# map global normal '<c-i>' <tab>
-
 # work around some weird defaults
 map global normal a         'li'
 map global normal x         '<a-x>'
@@ -37,10 +34,13 @@ map global normal <a-^>     'Q'
 map global normal q         'b'
 map global normal Q         'B'
 map global normal <a-q>     '<a-b>'
+map global normal w         ': select-next-word<ret>'
 
 # move lines
 map global normal <down>    ': move-line-below<ret>'
 map global normal <up>      ': move-line-above<ret>'
+
+map global normal "'"       ': enter-user-mode surround<ret>'
 
 # inc-dec
 map global normal <c-a>     ': inc-dec %val{count} + 0<ret>'
@@ -55,19 +55,40 @@ map global normal =         ': format<ret>'
 map global normal '#'       ': comment-line<ret>'
 map global normal <a-#>     ': comment-block<ret>'
 
+# selection
+# auto-select word under cursor and put it to / register
+define-command word-auto-select -hidden -params 1 -docstring 'auto-select a word under cursor' %{
+    try %{ evaluate-commands %sh{
+        if echo "$kak_selections_desc" | grep -Eq '^(([0-9]+)\.([0-9]+),\2\.\3:?)+$'; then
+          echo execute-keys '<a-i>w<ret>'
+        fi
+    } }
+    execute-keys -save-regs '' -with-hooks %arg{1}
+}
+map global normal '*'       ': word-auto-select *<ret>'
+map global normal '<a-*>'   ': word-auto-select <lt>a-*><ret>'
+map global normal <a-percent> ': select-highlights<ret>' -docstring 'select all occurrences of current selection'
+map global normal S ': select-objects<ret>'
+
+
 # save and quit
-map global normal '<c-w>' ':write; echo -markup "{Information}buffer saved"<ret>'
-map global normal '<c-q>' ':quit<ret>'
+map global normal '<c-w>'   ':write; echo -markup "{Information}buffer saved"<ret>'
+map global normal '<c-q>'   ':quit<ret>'
 
 # tools
-map global normal -docstring 'popup'               <+>   ': connect-popup<ret>'
-map global normal -docstring 'terminal'            <c-t> ': connect-terminal<ret>'
-map global normal -docstring 'files'               <c-f> ': + kcr-fzf-files<ret>'
-map global normal -docstring 'buffers'             <c-b> ': + kcr-fzf-buffers<ret>'
-map global normal -docstring 'files by content'    <c-g> ': + kcr-fzf-grep<ret>'
-map global normal -docstring 'lines in buffer'     <c-l> ': + kcr-fzf-lines %val{buffile}<ret>'
-map global normal -docstring 'lf'                  <c-h> ': > lf -command "set nopreview; set ratios 1" .<ret>'
-map global normal -docstring 'lazygit'             <c-v> ': + lazygit<ret>'
+map global normal <+>   ': connect-popup<ret>'                                -docstring 'popup'
+map global normal <c-t> ': connect-terminal<ret>'                             -docstring 'terminal'
+map global normal <c-f> ': + kcr-fzf-files<ret>'                              -docstring 'files'
+map global normal <c-b> ': + kcr-fzf-buffers<ret>'                            -docstring 'buffers'
+map global normal <c-g> ': + kcr-fzf-grep<ret>'                               -docstring 'files by content'
+map global normal <c-l> ': + kcr-fzf-lines %val{buffile}<ret>'                -docstring 'lines in buffer'
+map global normal <c-r> ': + kcr-fzf-mru<ret>'                                -docstring 'recent files'
+map global normal <c-h> ': > lf -command "set nopreview; set ratios 1" .<ret>'-docstring 'lf'
+map global normal <c-v> ': + lazygit<ret>'                                    -docstring 'lazygit'
+
+# object  ----------------------------------------------------------
+
+map global object v '<esc>: vertical-selection-up-and-down<ret>' -docstring 'vertical-selection'
 
 # insert -------------------------------------------------------------
 
@@ -106,12 +127,11 @@ evaluate-commands %sh{
     printf "map global user -docstring 'clip-replace' R '|%s<ret>'\n" "$paste"
 }
 
-map global user -docstring 'surround mode'         s ': enter-user-mode surround<ret>'
 map global user -docstring 'LSP mode'              l ': enter-user-mode lsp<ret>'
 map global user -docstring 'LSP mode (lock)'       L ': enter-user-mode -lock lsp<ret>'
 map global user -docstring 'tree mode (lock)'      t ': enter-user-mode -lock tree<ret>'
-map global user -docstring "inc-dec mode (lock)"   i ': enter-user-mode -lock inc-dec<ret>'
-map global user -docstring "UI mode"               u ': enter-user-mode -lock ui<ret>'
+map global user -docstring 'inc-dec mode (lock)'   i ': enter-user-mode -lock inc-dec<ret>'
+map global user -docstring 'UI mode'               u ': enter-user-mode -lock ui<ret>'
 
 # tree mode
 declare-user-mode tree

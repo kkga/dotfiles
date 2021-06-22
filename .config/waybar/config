@@ -8,13 +8,14 @@
     "custom/updates",
     "custom/yadm",
     "cpu",
-    "temperature",
+    //"temperature",
     "pulseaudio",
     "custom/tailscale",
     "custom/vpn",
     "network",
     "battery",
     //"sway/language",
+    "custom/weather",
     "clock",
     "tray"
   ],
@@ -79,7 +80,7 @@
   "custom/vpn": {
     "format": "VPN",
     "exec": "echo '{\"class\": \"connected\", \"tooltip\": \"VPN\"}'",
-    "exec-if": "test -d /proc/sys/net/ipv4/conf/mlvd*",
+    "exec-if": "test -d /proc/sys/net/ipv4/conf/mullvad*",
     "return-type": "json",
     "interval": 5
   },
@@ -131,6 +132,11 @@
     "format": "<span weight=\"bold\">- [{}] -</span>",
     "on-click": "swaymsg 'scratchpad show'",
     "on-click-right": "swaymsg 'move scratchpad'",
+    "tooltip": false
+  },
+  "custom/weather": {
+    "exec": "curl https://wttr.in/Moscow?format='%f+(%C)'",
+    "interval": 3600,
     "tooltip": false
   },
   "sway/language": {

@@ -1,7 +1,7 @@
-#font:
- # size: 11
-  # normal:
-  #   family: "Essential PragmataPro"
+font:
+    size: 11
+    normal:
+        family: "Input"
   # style: Narrow Regular
   # bold:
   #   family: agave

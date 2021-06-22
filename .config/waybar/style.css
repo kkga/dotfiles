@@ -13,7 +13,7 @@
   border: none;
   border-radius: 0;
   font-family: monospace;
-  font-size: 11pt;
+  font-size: 11.5pt;
   min-height: 16px;
   transition: none;
 }
@@ -23,11 +23,11 @@ tooltip {
 
 window.DP-1 *,
 window.DP-2 * {
-  font-size: 11pt;
+  font-size: 12.5pt;
 }
 
 window.eDP-1 * {
-  font-size: 10pt;
+  font-size: 10.5pt;
 }
 
 window#waybar {

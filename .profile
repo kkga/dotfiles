@@ -1,6 +1,6 @@
 # ~/.profile
 
-PATH="$HOME/.local/bin:$HOME/.volta/bin:$HOME/.cargo/bin:/var/lib/flatpak/exports/bin/:$PATH"
+PATH="$HOME/.local/bin:$HOME/.deno/bin:$HOME/.volta/bin:$HOME/.cargo/bin:/var/lib/flatpak/exports/bin/:$PATH"
 export PATH
 
 export XBPS_DISTDIR="$HOME/.void-packages"

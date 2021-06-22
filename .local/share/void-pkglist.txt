@@ -83,6 +83,7 @@ flatpak
 font-ibm-plex-otf
 font-ibm-plex-ttf
 font-inconsolata-otf
+font-iosevka
 fonttosfnt
 foot
 fuzzel
@@ -146,6 +147,7 @@ libassuan-devel
 libcap-devel
 libdrm-devel
 libev-devel
+libevent-devel
 libgpg-error-devel
 libinput-devel
 libseat-devel
@@ -198,6 +200,7 @@ nodejs
 notcurses
 notcurses-progs
 noto-fonts-cjk
+noto-fonts-emoji
 noto-fonts-ttf
 noto-fonts-ttf-extra
 nushell
@@ -215,6 +218,7 @@ pass
 pastel
 patch
 pavucontrol
+peco
 pick
 pinentry-gnome
 pipewire
@@ -287,6 +291,7 @@ teensy_loader_cli
 terminus-font
 thunderbird
 tmux
+todoist
 todoman
 tokei
 topgrade
@@ -320,7 +325,6 @@ volta
 vpm
 vpnd
 vpsm
-vscode
 vsv
 vulkan-loader
 vulkan-loader-32bit

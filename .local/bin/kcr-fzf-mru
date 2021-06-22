@@ -1,0 +1,4 @@
+#!/bin/sh
+# Jump to recent file in Kakoune.
+
+kcr edit "$(fzf < ~/.cache/kak-mru)"

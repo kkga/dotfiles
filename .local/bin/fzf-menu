@@ -9,7 +9,6 @@ mkfifo "$input"
 mkfifo "$output"
 chmod 600 "$input" "$output"
 
-# it's better to use st here (starts a lot faster than pretty much everything else)
 # the ugly printf | sed thing is here to make args with quotes work.
 # (e.g. --preview='echo {1}').
 # sadly we can't use "$@" here directly because we are inside sh -c "..." call

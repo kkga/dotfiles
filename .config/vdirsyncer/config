@@ -6,6 +6,7 @@ a = "local"
 b = "cal"
 collections = ["from a", "from b"]
 metadata = ["displayname", "color"]
+conflict_resolution = ["command", "meld"]
 
 [storage cal]
 type = "caldav"

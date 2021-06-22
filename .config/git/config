@@ -39,7 +39,5 @@
 	colorMoved = default
 [init]
 	defaltBranch = main
-[submodule]
-	recurse = true
 [credential]
 	helper = /usr/libexec/git-core/git-credential-libsecret

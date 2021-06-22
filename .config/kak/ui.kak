@@ -1,9 +1,38 @@
-# ui --------------------------------------------------------------------------
+# tools -------------------------------------------------------------
+
+set-option global grepcmd 'rg --column'
+
+eval %sh{kak-lsp --kakoune -s "$kak_session"}
+hook global WinSetOption filetype=(crystal|html|css|json|rust|python|go|typescript|svelte|javascript|elm|zig|gdscript) %{
+    lsp-enable-window
+    lsp-auto-signature-help-enable
+    lsp-auto-hover-insert-mode-enable
+}
+hook global KakEnd .* lsp-exit
+
+# uncomment for lsp debug
+# set global lsp_cmd "kak-lsp -s %val{session} -vvv --log /tmp/kak-lsp.log"
+
+define-command lsp-restart -docstring 'restart lsp server' %{ lsp-stop; lsp-start }
+define-command ne -docstring 'go to next error/warning from lsp' %{ lsp-find-error --include-warnings }
+define-command pe -docstring 'go to previous error/warning from lsp' %{ lsp-find-error --previous --include-warnings }
+define-command ee -docstring 'go to current error/warning from lsp' %{ lsp-find-error --include-warnings; lsp-find-error --previous --include-warnings }
+
+# lsp snippets
+def -hidden insert-c-n %{
+    try %{
+        lsp-snippets-select-next-placeholders
+        exec '<a-;>d'
+    } catch %{
+        exec -with-hooks '<c-n>'
+    }
+}
+map global insert <c-n> "<a-;>: insert-c-n<ret>"
+
+# ui options -------------------------------------------------------------
 
 colorscheme saturn
 
-set-option global tabstop 4
-set-option global indentwidth 4
 set-option global scrolloff 4,4
 set-option global startup_info_version 20200901
 set-option global autoreload yes
@@ -15,26 +44,22 @@ set-option -add global ui_options ncurses_set_title=off
 set-option -add global ui_options ncurses_padding_char=╱
 set-option -add global ui_options ncurses_padding_fill=yes
 
-# add-highlighter global/ wrap -word
-# add-highlighter global/ number-lines -hlcursor
-# add-highlighter global/ show-whitespaces
-# add-highlighter global/ show-matching
-# add-highlighter global/ regex \h+$ 0:Error
-# add-highlighter global/ regex \b(TODO|FIXME|XXX|NOTE)\b 0:yellow,black+rb
+set-option global ui_line_numbers_flags -hlcursor
+set-option global ui_wrap_flags -word -width 100
 
-set-option -add global ui_line_numbers_flags -hlcursor
-set-option -add global ui_line_numbers_flags -separator " "
-set-option -add global ui_whitespaces_flags -tab "»"
-set-option -add global ui_whitespaces_flags -lf "↲"
-set-option -add global ui_whitespaces_flags -nbsp "␣"
-set-option -add global ui_whitespaces_flags -spc "·"
+set-face global Scrollbar "%opt{bg_bright},default"
+set-face global ScrollbarSel "%opt{brcyan}"
+set-face global ScrollbarHL "%opt{bg_warning}"
+set-option global scrollbar_char "▌"
+set-option global scrollbar_sel_char "▌"
 
 hook global WinCreate .* %{
-    ui-line-numbers-toggle
-    ui-whitespaces-toggle
-    ui-trailing-spaces-toggle
+    # ui-line-numbers-toggle
     ui-cursorline-toggle
+    ui-trailing-spaces-toggle
+    ui-search-toggle
     ui-matching-toggle
+    scrollbar-enable
 }
 
 # windowing
@@ -51,10 +76,26 @@ hook -group terminal global ModuleLoaded kitty %{
     alias global popup kitty-terminal
 }
 
-# buffers
-hook global WinDisplay .* info-buffers
+# native file picker
+define-command find-edit -params 1 -shell-script-candidates 'rg --files' -docstring 'Find and edit' %{
+    edit %arg{1}
+}
+alias global f find-edit
+define-command find-edit-all -params 1 -shell-script-candidates 'rg --files --hidden' -docstring 'Find all and edit' %{
+    edit %arg{1}
+}
+alias global fa find-edit-all
 
-# state-save
+# populate list of recently opened files
+hook global BufCreate [^*].* %{
+    nop %sh{
+        mru=~/.cache/kak-mru
+        echo "$kak_buffile" | awk '!seen[$0]++' - "$mru" | sponge "$mru"
+    }
+}
+
+# misc
+hook global WinDisplay .* info-buffers
 hook global KakBegin .* %{
     state-save-reg-load colon
     state-save-reg-load pipe
@@ -66,18 +107,7 @@ hook global KakEnd .* %{
     state-save-reg-save slash
 }
 
-# find files
-define-command find-edit -params 1 -shell-script-candidates 'rg --files' -docstring 'Find and edit' %{
-    edit %arg{1}
-}
-alias global f find-edit
-
-define-command find-edit-all -params 1 -shell-script-candidates 'rg --files --hidden' -docstring 'Find all and edit' %{
-    edit %arg{1}
-}
-alias global fa find-edit-all
-
-# modeline --------------------------------------------------------------------
+# modeline  -------------------------------------------------------------
 
 define-command update-status %{ evaluate-commands %sh{
     printf %s 'set-option buffer modelinefmt %{'
