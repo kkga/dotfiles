@@ -1,6 +1,3 @@
-[submodule ".config/kak/plugins/surround.kak"]
-	path = .config/kak/plugins/surround.kak
-	url = https://github.com/alexherbo2/surround.kak
 [submodule ".config/kak/plugins/state-save"]
 	path = .config/kak/plugins/state-save
 	url = https://gitlab.com/Screwtapello/kakoune-state-save.git/
@@ -16,15 +13,3 @@
 [submodule ".config/kak/plugins/buffers"]
 	path = .config/kak/plugins/buffers
 	url = https://github.com/Delapouite/kakoune-buffers
-[submodule ".config/kak/plugins/foot.kak"]
-	path = .config/kak/plugins/foot.kak
-	url = https://github.com/kkga/foot.kak
-[submodule ".config/kak/plugins/text-objects.kak"]
-	path = .config/kak/plugins/text-objects.kak
-	url = https://github.com/alexherbo2/text-objects.kak
-[submodule ".config/kak/plugins/objectify.kak"]
-	path = .config/kak/plugins/objectify.kak
-	url = https://github.com/alexherbo2/objectify.kak
-[submodule ".config/kak/plugins/auto-pairs.kak"]
-	path = .config/kak/plugins/auto-pairs.kak
-	url = https://github.com/kkga/auto-pairs.kak
