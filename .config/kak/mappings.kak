@@ -40,6 +40,8 @@ map global normal w         ': select-next-word<ret>'
 map global normal <down>    ': move-line-below<ret>'
 map global normal <up>      ': move-line-above<ret>'
 
+map global normal "'"       ': enter-user-mode surround<ret>'
+
 # inc-dec
 map global normal <c-a>     ': inc-dec %val{count} + 0<ret>'
 map global normal <c-x>     ': inc-dec %val{count} - 0<ret>'
@@ -130,7 +132,6 @@ map global user -docstring 'LSP mode (lock)'       L ': enter-user-mode -lock ls
 map global user -docstring 'tree mode (lock)'      t ': enter-user-mode -lock tree<ret>'
 map global user -docstring 'inc-dec mode (lock)'   i ': enter-user-mode -lock inc-dec<ret>'
 map global user -docstring 'UI mode'               u ': enter-user-mode -lock ui<ret>'
-map global user -docstring 'surround mode'         s ': enter-user-mode surround<ret>'
 
 # tree mode
 declare-user-mode tree
