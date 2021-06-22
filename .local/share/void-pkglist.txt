@@ -218,6 +218,7 @@ pass
 pastel
 patch
 pavucontrol
+peco
 pick
 pinentry-gnome
 pipewire
@@ -290,6 +291,7 @@ teensy_loader_cli
 terminus-font
 thunderbird
 tmux
+todoist
 todoman
 tokei
 topgrade
