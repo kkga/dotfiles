@@ -4,3 +4,31 @@ filter:
   - css: ".release-header>div>div>a"
   - html2text
 max_tries: 30
+---
+name: "fcft"
+url: "https://codeberg.org/dnkl/fcft/releases/latest"
+filter:
+  - css: ".release-list-title>a"
+  - html2text
+max_tries: 30
+---
+name: "fuzzel"
+url: "https://codeberg.org/dnkl/fuzzel/releases/latest"
+filter:
+  - css: ".release-list-title>a"
+  - html2text
+max_tries: 30
+---
+name: "foot"
+url: "https://codeberg.org/dnkl/foot/releases/latest"
+filter:
+  - css: ".release-list-title>a"
+  - html2text
+max_tries: 30
+---
+name: "yambar"
+url: "https://codeberg.org/dnkl/yambar/releases/latest"
+filter:
+  - css: ".release-list-title>a"
+  - html2text
+max_tries: 30
