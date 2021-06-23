@@ -1,0 +1,6 @@
+name: "xdg-desktop-portal-wlr"
+url: "https://github.com/emersion/xdg-desktop-portal-wlr/releases/latest"
+filter:
+  - css: ".release-header>div>div>a"
+  - html2text
+max_tries: 30
