@@ -83,7 +83,6 @@ flatpak
 font-ibm-plex-otf
 font-ibm-plex-ttf
 font-inconsolata-otf
-font-iosevka
 fonttosfnt
 foot
 fuzzel
