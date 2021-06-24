@@ -27,13 +27,14 @@ window.DP-2 * {
 }
 
 window.eDP-1 * {
-  font-size: 11pt;
+  font-size: 10pt;
 }
 
 window#waybar {
   background: @background;
   color: @foreground;
 }
+
 
 #workspaces button {
   padding: 0 3pt;
@@ -44,6 +45,7 @@ window#waybar {
 #workspaces button:hover {
   box-shadow: inherit;
   text-shadow: inherit;
+  background: inherit;
 }
 #workspaces button.visible {
   background: @bg-dim;
@@ -55,6 +57,23 @@ window#waybar {
   background: @bg-highlight;
   text-shadow: 1px 1px 0 black;
 }
+
+#taskbar button {
+  padding: 0 6pt;
+  color: @foreground;
+  opacity: 0.5;
+}
+#taskbar button:hover {
+  box-shadow: inherit;
+  text-shadow: inherit;
+  background: inherit;
+  opacity: 1;
+}
+#taskbar button.active {
+  font-weight: bold;
+  opacity: 1;
+}
+
 #workspaces button.urgent,
 #battery.warning,
 #pulseaudio.muted,
@@ -106,6 +125,7 @@ window#waybar {
 #temperature,
 #memory,
 #backlight,
+#taskbar,
 #battery,
 #language,
 #temperature,
