@@ -52,7 +52,7 @@ input "43255:6183:HID_Technologies_Bastyl_Mouse" {
 }
 
 input "1149:32891:Kensington_Orbit_Fusion_Wireless_Trackball" {
-    pointer_accel 0.0
+    pointer_accel 0.5
     scroll_factor 1.0
     scroll_method on_button_down
     scroll_button BTN_MIDDLE
