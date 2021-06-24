@@ -5,6 +5,13 @@ filter:
   - html2text
 max_tries: 30
 ---
+name: "cascadia code"
+url: "https://github.com/microsoft/cascadia-code/releases/latest"
+filter:
+  - css: ".release-header>div>div>a"
+  - html2text
+max_tries: 30
+---
 name: "fcft"
 url: "https://codeberg.org/dnkl/fcft/releases/latest"
 filter:
