@@ -19,19 +19,19 @@ seat * hide_cursor 10000
 # Inputs ------------------------------------------------------------------
 
 input "type:keyboard" {
-	xkb_layout us,ru
-	repeat_delay 200
-	repeat_rate 30
-	xkb_options grp:alt_space_toggle
+    xkb_layout us,ru
+    repeat_delay 200
+    repeat_rate 30
+    xkb_options grp:alt_space_toggle
 }
 
 input "type:pointer" {
-	pointer_accel 1
-	accel_profile adaptive
-	middle_emulation enabled
-	scroll_method on_button_down
-	scroll_button BTN_SIDE
-	scroll_factor 1.5
+    pointer_accel 1
+    accel_profile adaptive
+    middle_emulation enabled
+    scroll_method on_button_down
+    scroll_button BTN_SIDE
+    scroll_factor 2.0
 }
 
 input "type:touchpad" {
@@ -43,6 +43,18 @@ input "type:touchpad" {
     middle_emulation disabled
     drag enabled
     scroll_factor 1
+}
+
+input "43255:6183:HID_Technologies_Bastyl_Mouse" {
+    scroll_factor 0.5
+    scroll_method on_button_down
+    scroll_button BTN_MIDDLE
+}
+
+input "20547:7851:PloopyCo_Trackball_Nano_Consumer_Control" {
+    scroll_factor 0.25
+    scroll_method on_button_down
+    scroll_button BTN_MIDDLE
 }
 
 # Colors ------------------------------------------------------------------

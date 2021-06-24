@@ -307,6 +307,7 @@ unclutter-xfixes
 uni
 unicode-emoji
 upower
+urlwatch
 vdirsyncer
 vdpauinfo
 vifm
