@@ -51,8 +51,9 @@ input "43255:6183:HID_Technologies_Bastyl_Mouse" {
     scroll_button BTN_MIDDLE
 }
 
-input "20547:7851:PloopyCo_Trackball_Nano_Consumer_Control" {
-    scroll_factor 0.25
+input "1149:32891:Kensington_Orbit_Fusion_Wireless_Trackball" {
+    pointer_accel 0.0
+    scroll_factor 1.0
     scroll_method on_button_down
     scroll_button BTN_MIDDLE
 }
