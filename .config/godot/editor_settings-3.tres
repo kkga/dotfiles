@@ -19,7 +19,7 @@ command = true
 scancode = 67
 
 [resource]
-interface/editor/main_font_size = 16
+interface/editor/main_font_size = 15
 interface/editor/code_font_size = 18
 interface/editor/font_hinting = 1
 interface/editor/main_font = "/home/kkga/.local/share/fonts/Inter Desktop/Inter-Regular.otf"
@@ -61,7 +61,7 @@ text_editor/appearance/show_line_numbers = false
 text_editor/help/help_font_size = 17
 text_editor/help/help_source_font_size = 17
 text_editor/help/help_title_font_size = 24
-run/output/font_size = 16
+run/output/font_size = 14
 asset_library/available_urls = {
 "godotengine.org": "https://godotengine.org/asset-library/api",
 "localhost": "http://127.0.0.1/asset-library/api"
