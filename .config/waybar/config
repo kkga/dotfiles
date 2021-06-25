@@ -150,6 +150,10 @@
   },
   "sway/language": {
     "format": "{}"
+  },
+  "tray": {
+    "icon-size": 20,
+    "spacing": 8
   }
 }
 // vim: ft=json:

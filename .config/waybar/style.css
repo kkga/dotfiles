@@ -13,7 +13,7 @@
   border: none;
   border-radius: 0;
   font-family: monospace;
-  font-size: 12pt;
+  font-size: 11pt;
   min-height: 16px;
   transition: none;
 }
@@ -23,7 +23,7 @@ tooltip {
 
 window.DP-1 *,
 window.DP-2 * {
-  font-size: 12.5pt;
+  font-size: 11pt;
 }
 
 window.eDP-1 * {
@@ -34,7 +34,6 @@ window#waybar {
   background: @background;
   color: @foreground;
 }
-
 
 #workspaces button {
   padding: 0 3pt;
@@ -61,7 +60,7 @@ window#waybar {
 #taskbar button {
   padding: 0 6pt;
   color: @foreground;
-  opacity: 0.5;
+  opacity: 0.75;
 }
 #taskbar button:hover {
   box-shadow: inherit;
@@ -129,7 +128,8 @@ window#waybar {
 #battery,
 #language,
 #temperature,
-#clock {
+#clock,
+#tray {
   padding: 0 4pt;
   margin: 0 4pt;
 }
