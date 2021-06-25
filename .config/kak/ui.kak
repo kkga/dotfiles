@@ -55,11 +55,11 @@ set-option global scrollbar_sel_char "▌"
 
 hook global WinCreate .* %{
     # ui-line-numbers-toggle
+    # ui-whitespaces-toggle
     ui-cursorline-toggle
     ui-trailing-spaces-toggle
     ui-search-toggle
     ui-matching-toggle
-    ui-whitespaces-toggle
     scrollbar-enable
 }
 
