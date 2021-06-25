@@ -296,6 +296,7 @@ tokei
 topgrade
 torbrowser-launcher
 touchegg
+transmission-gtk
 trash-cli
 trayer-srg
 ttf-material-icons
