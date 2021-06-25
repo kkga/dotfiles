@@ -145,6 +145,7 @@
   },
   "custom/weather": {
     "exec": "curl https://wttr.in/Moscow?format='%f+(%C)'",
+    "on-click": "floating-terminal -H curl wttr.in",
     "interval": 3600,
     "tooltip": false
   },
