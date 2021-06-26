@@ -14,9 +14,9 @@
     "custom/tailscale",
     "custom/vpn",
     "network",
-    "battery",
     //"sway/language",
     "custom/weather",
+    "battery",
     "clock",
     "tray"
   ],
