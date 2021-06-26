@@ -58,6 +58,11 @@ input "1149:32891:Kensington_Orbit_Fusion_Wireless_Trackball" {
     scroll_button BTN_MIDDLE
 }
 
+input "1133:16495:Logitech_MX_Ergo" {
+    accel_profile adaptive
+    pointer_accel 1.0
+}
+
 # Colors ------------------------------------------------------------------
 
 set $col_hl         #5F5F87
