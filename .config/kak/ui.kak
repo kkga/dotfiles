@@ -61,6 +61,7 @@ hook global WinCreate .* %{
     ui-trailing-spaces-toggle
     ui-search-toggle
     ui-matching-toggle
+    ui-todos-toggle
     scrollbar-enable
 }
 

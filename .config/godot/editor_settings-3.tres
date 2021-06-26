@@ -1,11 +1,11 @@
 [gd_resource type="EditorSettings" load_steps=3 format=2]
 
-[sub_resource type="InputEventKey" id=4]
+[sub_resource type="InputEventKey" id=1]
 control = true
 command = true
 scancode = 82
 
-[sub_resource type="InputEventKey" id=3]
+[sub_resource type="InputEventKey" id=2]
 shift = true
 control = true
 command = true
@@ -13,11 +13,11 @@ scancode = 67
 
 [resource]
 interface/editor/main_font_size = 15
-interface/editor/code_font_size = 17
+interface/editor/code_font_size = 20
 interface/editor/font_hinting = 1
 interface/editor/main_font = "/home/kkga/.local/share/fonts/Inter Desktop/Inter-Regular.otf"
 interface/editor/main_font_bold = "/home/kkga/.local/share/fonts/Inter Desktop/Inter-Bold.otf"
-interface/editor/code_font = "/home/kkga/.local/share/fonts/cascadia/CascadiaMono.ttf"
+interface/editor/code_font = "/home/kkga/.local/share/fonts/iosevka-k/iosevka-k-regular.ttf"
 interface/theme/preset = "Grey"
 interface/theme/base_color = Color( 0.24, 0.24, 0.24, 1 )
 interface/theme/accent_color = Color( 0.72, 0.89, 1, 1 )
@@ -158,4 +158,4 @@ text_editor/highlighting/gdscript/node_path_color = Color( 0.372549, 0.686275, 0
 text_editor/help/sort_functions_alphabetically = true
 projects/::home::kkga::projects::td = "/home/kkga/projects/td"
 projects/::home::kkga::projects::souls-like = "/home/kkga/projects/souls-like"
-shortcuts = [ "editor/play", SubResource( 4 ), "editor/stop", SubResource( 3 ) ]
+shortcuts = [ "editor/play", SubResource( 1 ), "editor/stop", SubResource( 2 ) ]
