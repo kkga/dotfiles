@@ -1,7 +1,7 @@
-set-indent global 2
+# set-indent global 2
 
-enable-detect-indent
-enable-auto-indent
+# enable-detect-indent
+# enable-auto-indent
 enable-auto-pairs
 
 # commands -----------------------------------------------------------------------
