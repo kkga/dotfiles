@@ -30,7 +30,7 @@ alias opt='kcr get --option'
 alias reg='kcr get --register'
 
 bind \co 'set old_tty (stty -g); stty sane; l; stty $old_tty; commandline -f repaint'
-fzf_configure_bindings --directory=\cf
+# fzf_configure_bindings --directory=\cf
 
 set --global hydro_symbol_prompt           '>'
 set --global hydro_symbol_git_dirty        '*'
