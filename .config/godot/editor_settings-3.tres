@@ -13,7 +13,7 @@ scancode = 67
 
 [resource]
 interface/editor/main_font_size = 15
-interface/editor/code_font_size = 20
+interface/editor/code_font_size = 19
 interface/editor/font_hinting = 1
 interface/editor/main_font = "/home/kkga/.local/share/fonts/Inter Desktop/Inter-Regular.otf"
 interface/editor/main_font_bold = "/home/kkga/.local/share/fonts/Inter Desktop/Inter-Bold.otf"
