@@ -62,7 +62,7 @@ text_editor/appearance/show_line_numbers = false
 text_editor/help/help_font_size = 18
 text_editor/help/help_source_font_size = 19
 text_editor/help/help_title_font_size = 24
-run/output/font_size = 14
+run/output/font_size = 16
 asset_library/available_urls = {
 "godotengine.org": "https://godotengine.org/asset-library/api",
 "localhost": "http://127.0.0.1/asset-library/api"
