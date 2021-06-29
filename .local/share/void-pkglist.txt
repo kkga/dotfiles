@@ -83,6 +83,7 @@ fish-shell
 flatpak
 font-ibm-plex-otf
 font-ibm-plex-ttf
+fontforge
 fonttosfnt
 foot
 fuzzel
