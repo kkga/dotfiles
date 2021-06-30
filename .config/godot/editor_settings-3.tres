@@ -18,10 +18,11 @@ command = true
 scancode = 67
 
 [resource]
-interface/editor/main_font_size = 16
+interface/editor/main_font_size = 17
 interface/editor/code_font_size = 21
-interface/editor/main_font = "/home/kkga/.local/share/fonts/Inter Desktop/Inter-Regular.otf"
-interface/editor/main_font_bold = "/home/kkga/.local/share/fonts/Inter Desktop/Inter-Bold.otf"
+interface/editor/font_hinting = 1
+interface/editor/main_font = "/home/kkga/.local/share/fonts/Rubik/static/Rubik-Regular.ttf"
+interface/editor/main_font_bold = "/home/kkga/.local/share/fonts/Rubik/static/Rubik-Bold.ttf"
 interface/editor/code_font = "/home/kkga/.local/share/fonts/agave/Agave-Regular.ttf"
 interface/theme/preset = "Grey"
 interface/theme/base_color = Color( 0.24, 0.24, 0.24, 1 )
