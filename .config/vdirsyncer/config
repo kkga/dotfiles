@@ -1,7 +1,7 @@
 [general]
 status_path = "~/.local/share/vdirsyncer/status/"
 
-[pair fastmail]
+[pair migadu]
 a = "local"
 b = "cal"
 collections = ["from a", "from b"]
@@ -10,12 +10,12 @@ conflict_resolution = ["command", "meld"]
 
 [storage cal]
 type = "caldav"
-url = "https://caldav.messagingengine.com/"
+url = "https://cdav.migadu.com/calendars/me@kkga.me/home"
 username = "me@kkga.me"
-password.fetch = ["command", "secret-tool", "lookup", "fastmail.com", "me@kkga.me"]
+password.fetch = ["command", "secret-tool", "lookup", "migadu.com", "me@kkga.me"]
 
 [storage local]
 type = "filesystem"
-path = "~/.local/share/vdirsyncer/fastmail"
+path = "~/.local/share/vdirsyncer/migadu"
 fileext = ".ics"
 
