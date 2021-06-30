@@ -16,6 +16,7 @@
     "network",
     //"sway/language",
     "custom/weather",
+    "idle_inhibitor",
     "battery",
     "clock",
     "tray"
@@ -155,6 +156,13 @@
   "tray": {
     "icon-size": 20,
     "spacing": 8
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "II",
+      "deactivated": "II"
+    }
   }
 }
 // vim: ft=json:

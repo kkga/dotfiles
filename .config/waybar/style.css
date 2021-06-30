@@ -90,7 +90,8 @@ window#waybar {
   background: @bg-orange;
 }
 
-#custom-recording {
+#custom-recording,
+#idle_inhibitor.activated {
   color: @text-orange;
   background: @bg-orange;
   font-weight: bold;
@@ -120,6 +121,7 @@ window#waybar {
 #custom-tailscale,
 #custom-recording,
 #network,
+#idle_inhibitor,
 #cpu,
 #temperature,
 #memory,
