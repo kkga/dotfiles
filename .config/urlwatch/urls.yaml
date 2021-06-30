@@ -12,6 +12,13 @@ filter:
   - html2text
 max_tries: 30
 ---
+name: "agave"
+url: "https://github.com/blobject/agave/releases/latest"
+filter:
+  - css: ".release-header>div>div>a"
+  - html2text
+max_tries: 30
+---
 name: "fcft"
 url: "https://codeberg.org/dnkl/fcft/releases/latest"
 filter:

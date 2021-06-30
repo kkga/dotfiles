@@ -5,13 +5,13 @@ control = true
 command = true
 scancode = 82
 
-[sub_resource type="InputEventKey" id=3]
+[sub_resource type="InputEventKey" id=2]
 alt = true
 control = true
 command = true
 scancode = 82
 
-[sub_resource type="InputEventKey" id=2]
+[sub_resource type="InputEventKey" id=3]
 shift = true
 control = true
 command = true
@@ -22,7 +22,7 @@ interface/editor/main_font_size = 16
 interface/editor/code_font_size = 21
 interface/editor/main_font = "/home/kkga/.local/share/fonts/Inter Desktop/Inter-Regular.otf"
 interface/editor/main_font_bold = "/home/kkga/.local/share/fonts/Inter Desktop/Inter-Bold.otf"
-interface/editor/code_font = "/home/kkga/.local/share/fonts/agave/Agave-Regular-slashed.ttf"
+interface/editor/code_font = "/home/kkga/.local/share/fonts/agave/Agave-Regular.ttf"
 interface/theme/preset = "Grey"
 interface/theme/base_color = Color( 0.24, 0.24, 0.24, 1 )
 interface/theme/accent_color = Color( 0.72, 0.89, 1, 1 )
@@ -164,4 +164,4 @@ text_editor/help/sort_functions_alphabetically = true
 projects/::home::kkga::projects::td = "/home/kkga/projects/td"
 projects/::home::kkga::projects::souls-like = "/home/kkga/projects/souls-like"
 interface/dialogs/uv_editor_bounds = Rect2( 288, 160, 3264, 1813 )
-shortcuts = [ "editor/play", SubResource( 1 ), "editor/play_scene", SubResource( 3 ), "editor/stop", SubResource( 2 ) ]
+shortcuts = [ "editor/play", SubResource( 1 ), "editor/play_scene", SubResource( 2 ), "editor/stop", SubResource( 3 ) ]
