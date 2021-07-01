@@ -54,6 +54,7 @@ davfs2
 dbus-elogind
 dconf-editor
 ddcutil
+ddgr
 delta
 dfu-programmer
 dfu-util
@@ -81,6 +82,7 @@ ffsend
 firefox
 fish-shell
 flatpak
+font-cozette
 font-ibm-plex-otf
 font-ibm-plex-ttf
 fontforge
@@ -92,6 +94,7 @@ fwupd
 fzy
 gammastep
 gcc
+geary
 geoclue2
 geoip
 gettext
