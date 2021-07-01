@@ -119,8 +119,6 @@ exec_always {
     gsettings set $gnome-schema cursor-size 24
     gsettings set $gnome-schema font-name 'sans-serif 9'
     gsettings set $gnome-schema monospace-font-name 'monospace 9'
-    gsettings set $gnome-schema font-hinting 'slight'
-    gsettings set $gnome-schema font-antialiasing 'grayscale'
     gsettings set org.gnome.desktop.default-applications.terminal exec $term
     gsettings set org.gnome.desktop.default-applications.terminal exec-arg ''
     gsettings set org.gnome.desktop.wm.preferences button-layout ''
