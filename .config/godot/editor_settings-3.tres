@@ -18,7 +18,7 @@ command = true
 scancode = 67
 
 [resource]
-interface/editor/main_font_size = 17
+interface/editor/main_font_size = 16
 interface/editor/code_font_size = 21
 interface/editor/font_hinting = 1
 interface/editor/main_font = "/home/kkga/.local/share/fonts/Rubik/static/Rubik-Regular.ttf"
@@ -30,7 +30,7 @@ interface/theme/accent_color = Color( 0.72, 0.89, 1, 1 )
 interface/theme/contrast = 0.2
 filesystem/file_dialog/show_hidden_files = true
 text_editor/theme/color_theme = "Apprentice"
-text_editor/theme/line_spacing = 2
+text_editor/theme/line_spacing = 4
 text_editor/highlighting/symbol_color = Color( 0.737255, 0.737255, 0.737255, 1 )
 text_editor/highlighting/keyword_color = Color( 0.560784, 0.686275, 0.843137, 1 )
 text_editor/highlighting/base_type_color = Color( 0.529412, 0.529412, 0.686275, 1 )
