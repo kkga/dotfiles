@@ -1,0 +1,22 @@
+# Sample minimal config file.  Copy this to ~/.offlineimaprc and edit to
+# get started fast.
+
+[general]
+accounts = migadu
+pythonfile = ~/.config/offlineimap/offlineimap.py
+
+[Account migadu]
+localrepository = migadu-local
+remoterepository = migadu-remote
+
+[Repository migadu-local]
+type = Maildir
+localfolders = ~/.mail/
+
+[Repository migadu-remote]
+type = IMAP
+remotehost = imap.migadu.com
+remoteuser = me@kkga.me
+remotepasseval = get_pw_from_desc("vdirsyncer")
+
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
