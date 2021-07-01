@@ -18,5 +18,4 @@ type = IMAP
 remotehost = imap.migadu.com
 remoteuser = me@kkga.me
 remotepasseval = get_pw_from_desc("vdirsyncer")
-
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
