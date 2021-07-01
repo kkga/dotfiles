@@ -3,7 +3,8 @@ alias mv='mv -i'
 alias gg="lazygit"
 alias ls="exa --group --git --group-directories-first"
 alias tree="exa --tree --level=3"
-alias y="yadm"
+alias y="env GIT_WORK_TREE=$HOME yadm"
+alias yg="env GIT_WORK_TREE=$HOME GIT_DIR=$HOME/.local/share/yadm/repo.git lazygit"
 alias cat="bat"
 alias lfs="lf -command 'set nopreview; set ratios 1'"
 alias att='alacritty-theme-toggle'

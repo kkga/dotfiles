@@ -10,7 +10,7 @@ conflict_resolution = ["command", "meld"]
 
 [storage cal]
 type = "caldav"
-url = "https://cdav.migadu.com/calendars/me@kkga.me/home"
+url = "https://cdav.migadu.com/calendars/me@kkga.me/tasks"
 username = "me@kkga.me"
 password.fetch = ["command", "secret-tool", "lookup", "migadu.com", "me@kkga.me"]
 
