@@ -10,12 +10,14 @@ Vulkan-Tools
 Waybar
 abduco
 acl-devel
+aerc
 alacritty
 alsa-firmware
 alsa-plugins-pulseaudio
 alsa-utils
 anki
 asciinema
+astroid
 astyle
 autorandr
 avr-binutils
@@ -38,6 +40,7 @@ bottom
 brightnessctl
 brillo
 cairo-devel
+catimg
 cheat
 chrome-gnome-shell
 chromium
@@ -50,6 +53,7 @@ corectrl
 cross-arm-none-eabi-binutils
 cross-arm-none-eabi-gcc
 cross-arm-none-eabi-newlib
+dante
 davfs2
 dbus-elogind
 dconf-editor
@@ -202,6 +206,7 @@ nnn
 nodejs
 notcurses
 notcurses-progs
+notmuch
 noto-fonts-cjk
 noto-fonts-emoji
 noto-fonts-ttf
@@ -209,6 +214,7 @@ noto-fonts-ttf-extra
 nushell
 obs
 obs-devel
+offlineimap
 oil
 opendoas
 openssl-devel
@@ -238,6 +244,7 @@ procs
 progress
 protontricks
 pulseaudio
+python-gobject
 python3-adblock
 python3-attrs
 python3-pip
@@ -333,6 +340,8 @@ vpsm
 vsv
 vulkan-loader
 vulkan-loader-32bit
+w3m
+w3m-img
 wayland-devel
 wayland-protocols
 waylock
@@ -380,6 +389,7 @@ xurls
 yad
 yadm
 yambar
+yandex-disk
 yaru
 youtube-dl
 zathura
