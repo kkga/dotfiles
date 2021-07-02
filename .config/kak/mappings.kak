@@ -92,9 +92,13 @@ map global object v '<esc>: vertical-selection-up-and-down<ret>' -docstring 'ver
 
 # insert -------------------------------------------------------------
 
-# jj to exit
+# jk/kj to exit
+hook global InsertChar k %{ try %{
+  exec -draft hH <a-k>jk<ret> d
+  exec <esc>
+}}
 hook global InsertChar j %{ try %{
-  exec -draft hH <a-k>jj<ret> d
+  exec -draft hH <a-k>kj<ret> d
   exec <esc>
 }}
 
