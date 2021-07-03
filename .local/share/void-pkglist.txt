@@ -113,6 +113,7 @@ gnome
 gnome-keyring
 go
 godot
+goimapnotify
 goxel
 gpgme
 grimshot

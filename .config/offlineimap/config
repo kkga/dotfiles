@@ -1,6 +1,3 @@
-# Sample minimal config file.  Copy this to ~/.offlineimaprc and edit to
-# get started fast.
-
 [general]
 accounts = migadu
 pythonfile = ~/.config/offlineimap/offlineimap.py

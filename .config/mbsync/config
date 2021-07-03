@@ -1,0 +1,23 @@
+IMAPAccount kkga
+Host imap.migadu.com
+User me@kkga.me
+PassCmd "secret-tool lookup migadu.com me@kkga.me"
+SSLType IMAPS
+#CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+
+IMAPStore kkga-remote
+Account kkga
+
+MaildirStore kkga-local
+SubFolders Verbatim
+Path ~/.mail/kkga/
+Inbox ~/.mail/kkga/INBOX
+
+Channel kkga
+Far :kkga-remote:
+Near :kkga-local:
+Create Both
+Expunge Both
+Patterns *
+SyncState *
