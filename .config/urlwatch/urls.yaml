@@ -46,3 +46,12 @@ filter:
   - css: ".release-list-title>a"
   - html2text
 max_tries: 30
+---
+name: "gdscript-toolkit"
+url: "https://github.com/Scony/godot-gdscript-toolkit/releases/latest"
+filter:
+  - css: ".release-header>div>div>a"
+  - html2text
+max_tries: 30
+---
+
