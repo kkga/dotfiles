@@ -86,6 +86,7 @@ for_window [ app_id="^firefox$"                  ] inhibit_idle fullscreen
 for_window [ app_id="pavucontrol"                ] floating enable
 for_window [ app_id="spot"                       ] floating enable
 for_window [ app_id="mpv"                        ] floating enable
+for_window [ app_id="yad"                        ] floating enable
 for_window [ title="Htop*"                       ] floating enable
 for_window [ title="Picture-in-Picture"          ] floating enable
 for_window [ title="Firefox — Sharing Indicator" ] floating enable
