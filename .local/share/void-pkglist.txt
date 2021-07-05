@@ -17,7 +17,6 @@ alsa-plugins-pulseaudio
 alsa-utils
 anki
 asciinema
-astroid
 astyle
 autorandr
 avr-binutils
@@ -207,7 +206,6 @@ nnn
 nodejs
 notcurses
 notcurses-progs
-notmuch
 noto-fonts-cjk
 noto-fonts-emoji
 noto-fonts-ttf
@@ -215,7 +213,6 @@ noto-fonts-ttf-extra
 nushell
 obs
 obs-devel
-offlineimap
 oil
 opendoas
 openssl-devel
@@ -251,6 +248,7 @@ python3-attrs
 python3-pip
 python3-proselint
 python3-s-tui
+python3-wheel
 python3-xdg
 qemu
 qt5-wayland
@@ -308,6 +306,7 @@ tokei
 topgrade
 torbrowser-launcher
 touchegg
+translate-shell
 transmission-gtk
 trash-cli
 trayer-srg
