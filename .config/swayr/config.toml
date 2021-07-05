@@ -3,7 +3,7 @@ executable = 'fzf-menu'
 args = ['--bind=tab:down,btab:up']
 
 [format]
-window_format = '[{workspace_name}] {app_name}: {urgency_start}{title}{urgency_end} — '
+window_format = '[{workspace_name}] {app_name}: {urgency_start}{title}{urgency_end} — ({id})'
 workspace_format = '-{name}-'
 urgency_start = '!!! '
 urgency_end = ' !!!'
