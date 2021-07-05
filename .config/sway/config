@@ -127,7 +127,7 @@ exec_always {
 
 exec wl-paste -t text --watch clipman store --max-items=50
 exec clipman restore
-exec env RUST_BACKTRACE=1 swayrd > /tmp/swayrd.log 2>&1
+exec swayrd > /tmp/swayrd.log 2>&1
 
 # Includes ---------------------------------------------------------------
 
