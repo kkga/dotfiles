@@ -32,3 +32,4 @@ message/rfc822=userapp-Thunderbird-EMEU50.desktop
 [Added Associations]
 x-scheme-handler/mailto=userapp-Thunderbird-EMEU50.desktop;
 message/rfc822=userapp-Thunderbird-EMEU50.desktop;
+application/x-xpinstall=thunderbird.desktop;

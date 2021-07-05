@@ -14,3 +14,6 @@ checkout = git clone 'git@github.com:kkga/saturn.kak.git' 'saturn.kak'
 
 [repos/kak-lsp]
 checkout = git clone 'https://github.com/kak-lsp/kak-lsp' 'kak-lsp'
+
+[repos/firefox-csshacks]
+checkout = git clone 'https://github.com/MrOtherGuy/firefox-csshacks/' 'firefox-csshacks'
