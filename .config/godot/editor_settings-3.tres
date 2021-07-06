@@ -19,7 +19,7 @@ scancode = 67
 
 [resource]
 interface/editor/main_font_size = 16
-interface/editor/code_font_size = 21
+interface/editor/code_font_size = 20
 interface/editor/font_hinting = 1
 interface/editor/main_font = "/home/kkga/.local/share/fonts/Rubik/static/Rubik-Regular.ttf"
 interface/editor/main_font_bold = "/home/kkga/.local/share/fonts/Rubik/static/Rubik-Bold.ttf"
@@ -165,4 +165,5 @@ text_editor/help/sort_functions_alphabetically = true
 projects/::home::kkga::projects::td = "/home/kkga/projects/td"
 projects/::home::kkga::projects::souls-like = "/home/kkga/projects/souls-like"
 interface/dialogs/uv_editor_bounds = Rect2( 288, 160, 3264, 1813 )
+projects/::home::kkga::repos::godot-steering-ai-framework::godot = "/home/kkga/repos/godot-steering-ai-framework/godot"
 shortcuts = [ "editor/play", SubResource( 1 ), "editor/play_scene", SubResource( 2 ), "editor/stop", SubResource( 3 ) ]
