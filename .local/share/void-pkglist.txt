@@ -201,6 +201,7 @@ mupdf
 myrepos
 ncurses-devel
 neofetch
+nerd-fonts-ttf
 nmap
 nnn
 nodejs
@@ -283,6 +284,7 @@ spotify-tui
 spotifyd
 starship
 steam
+sublime-merge-bin
 sublime-text3
 sunwait
 sv-helper

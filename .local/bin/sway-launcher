@@ -4,8 +4,8 @@ exec j4-dmenu-desktop \
 	--no-generic \
 	--display-binary \
 	--use-xdg-de \
-	--term="alacritty" \
+	--term="term" \
 	--dmenu="(cat ; (stest -flx $(echo "$PATH" |
 		tr : ' ') |
 		sort -u)) |
-		fzf-menu --prompt 'RUN> ' --bind=tab:down,btab:up --preview 'whatis {}' --preview-window right:50%:border-left"
+		fzf-menu --bind=tab:down,btab:up"
