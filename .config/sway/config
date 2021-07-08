@@ -83,6 +83,7 @@ client.unfocused         $col_bg_br  $col_bg     $col_fg  $col_bg_br  $col_bg_br
 
 for_window [ app_id="thunderbird"                ] move container to workspace number 9, workspace number 9
 for_window [ app_id="^firefox$"                  ] inhibit_idle fullscreen
+for_window [ class="steam_app*"                  ] inhibit_idle fullscreen
 for_window [ app_id="pavucontrol"                ] floating enable
 for_window [ app_id="spot"                       ] floating enable
 for_window [ app_id="mpv"                        ] floating enable
