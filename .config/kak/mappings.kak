@@ -122,13 +122,14 @@ hook global InsertCompletionHide .* %{ map window insert <s-tab> '<a-;><lt>' }
 # system clipboard
 evaluate-commands %sh{
     case $(uname) in
-        Linux) copy="wl-copy"; paste="wl-paste" ;;
+        Linux) copy="wl-copy"; paste="wl-paste --no-newline" ;;
         Darwin)  copy="pbcopy"; paste="pbpaste" ;;
     esac
-    printf "map global user -docstring 'clip-paste (after)' p '<a-!>%s<ret>'\n" "$paste"
-    printf "map global user -docstring 'clip-paste (before)' P '!%s<ret>'\n" "$paste"
-    printf "map global user -docstring 'clip-yank' y '<a-|>%s<ret>:echo -markup %%{{Information}copied selection clipboard}<ret>'\n" "$copy"
-    printf "map global user -docstring 'clip-replace' R '|%s<ret>'\n" "$paste"
+    printf "map global user -docstring 'clip-paste (after)'   p '<a-!>%s<ret>'\n" "$paste"
+    printf "map global user -docstring 'clip-paste (before)'  P '!%s<ret>'\n" "$paste"
+    printf "map global user -docstring 'clip-yank'            y '<a-|>%s<ret>:echo -markup %%{{Information}copied selection clipboard}<ret>'\n" "$copy"
+    printf "map global user -docstring 'clip-replace'         R '|%s<ret>'\n" "$paste"
+
 }
 
 map global user -docstring 'LSP mode'              l ': enter-user-mode lsp<ret>'
