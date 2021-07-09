@@ -93,7 +93,7 @@ for_window [ title="Picture-in-Picture"          ] floating enable
 for_window [ title="Firefox — Sharing Indicator" ] floating enable
 for_window [ class="Jitsi Meet"                  ] floating enable
 for_window [ instance="Godot_Engine"             ] floating enable
-for_window [ app_id="(?i)popup"                  ] floating enable, border pixel 8, resize set width 100ppt height 600, move position 0px 0px
+for_window [ app_id="(?i)popup"                  ] floating enable, border pixel 8, resize set width 100ppt height 35ppt, move position 0px 0px
 # for_window [ app_id="(?i)popup"                  ] floating enable, border pixel 8, resize set width 1600 height 1200, move position center
 
 workspace 1 output DP-1

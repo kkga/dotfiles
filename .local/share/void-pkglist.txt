@@ -170,6 +170,8 @@ light
 linux-firmware
 linux5.12
 linux5.12-headers
+linux5.13
+linux5.13-headers
 lm_sensors
 logiops
 lowdown
