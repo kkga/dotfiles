@@ -14,8 +14,6 @@ text/xml=kcr.desktop
 text/x-ruby=kcr.desktop
 text/x-script.python=kcr.desktop
 text/x-shellscript=kcr.desktop
-x-scheme-handler/http=browser.desktop
-x-scheme-handler/https=browser.desktop
 text/html=browser.desktop
 image/jpeg=imv.desktop;
 image/gif=imv.desktop;
@@ -24,12 +22,8 @@ image/webp=imv.desktop;
 application/pdf=org.pwmt.zathura.desktop
 inode/directory=file.desktop
 application/x-directory=file.desktop
+x-scheme-handler/http=browser.desktop
+x-scheme-handler/https=browser.desktop
 x-scheme-handler/ftp=browser.desktop
 x-scheme-handler/chrome=browser.desktop
-x-scheme-handler/mailto=userapp-Thunderbird-EMEU50.desktop
-message/rfc822=userapp-Thunderbird-EMEU50.desktop
-
-[Added Associations]
-x-scheme-handler/mailto=userapp-Thunderbird-EMEU50.desktop;
-message/rfc822=userapp-Thunderbird-EMEU50.desktop;
-application/x-xpinstall=thunderbird.desktop;
+x-scheme-handler/mailto=thunderbird.desktop
