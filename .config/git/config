@@ -24,7 +24,7 @@
 [push]
 	default = simple
 [pull]
-	rebase = false
+    ff = only
 [log]
 	date = format:%Y-%m-%d %H:%M:%S %z (%A)
 [interactive]

@@ -1,3 +1,16 @@
+set $gnome-schema org.gnome.desktop.interface
+
+set $popupBorder 8
+set $popupHeight 40ppt
+set $popupWidth 100ppt
+
+set $col_hl         #5F5F87
+set $col_hl_br      #8787AF
+set $col_bg         #303030
+set $col_bg_br      #111111
+set $col_fg         #d7d7d7
+set $col_fg_dim     #999999
+
 # General settings -------------------------------------------------------------
 
 # xwayland disable
@@ -65,13 +78,6 @@ input "1133:16495:Logitech_MX_Ergo" {
 
 # Colors ------------------------------------------------------------------
 
-set $col_hl         #5F5F87
-set $col_hl_br      #8787AF
-set $col_bg         #303030
-set $col_bg_br      #111111
-set $col_fg         #d7d7d7
-set $col_fg_dim     #999999
-
 # Colors                 border		 background	 text	  indicator	  child_border
 client.focused           $col_hl     $col_hl     $col_fg  $col_hl_br  $col_hl
 client.focused_inactive  $col_bg_br  $col_bg_br  $col_fg  $col_bg_br  $col_bg_br
@@ -93,8 +99,7 @@ for_window [ title="Picture-in-Picture"          ] floating enable
 for_window [ title="Firefox — Sharing Indicator" ] floating enable
 for_window [ class="Jitsi Meet"                  ] floating enable
 for_window [ instance="Godot_Engine"             ] floating enable
-for_window [ app_id="(?i)popup"                  ] floating enable, border pixel 8, resize set width 100ppt height 35ppt, move position 0px 0px
-# for_window [ app_id="(?i)popup"                  ] floating enable, border pixel 8, resize set width 1600 height 1200, move position center
+for_window [ app_id="(?i)popup"                  ] floating enable, border pixel $popupBorder, resize set width $popupWidth height $popupHeight, move position 0px 0px
 
 workspace 1 output DP-1
 workspace 2 output DP-1
@@ -114,7 +119,6 @@ bar {
 
 ## Autostart ------------------------------------------------------------------
 
-set $gnome-schema org.gnome.desktop.interface
 exec_always {
     gsettings set $gnome-schema gtk-theme 'Adwaita'
     gsettings set $gnome-schema icon-theme 'Adwaita'
