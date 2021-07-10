@@ -3,7 +3,6 @@ source "~/.config/kak/plugins/sudo-write/sudo-write.kak"
 source "~/.config/kak/plugins/shellcheck/shellcheck.kak"
 source "~/.config/kak/plugins/vertical-selection/vertical-selection.kak"
 source "~/.config/kak/plugins/buffers/buffers.kak"
-source "~/.config/kak/plugins/scrollbar.kak/scrollbar.kak"
 
 evaluate-commands %sh{ kcr init kakoune }
 
