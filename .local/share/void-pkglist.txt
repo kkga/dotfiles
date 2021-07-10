@@ -203,7 +203,6 @@ mupdf
 myrepos
 ncurses-devel
 neofetch
-nerd-fonts-ttf
 nmap
 nnn
 nodejs

@@ -1,0 +1,52 @@
+{
+  "name": "Vimium C",
+  "@time": "7/10/2021, 10:38:47 AM",
+  "time": 1625913527200,
+  "environment": {
+    "extension": "1.90.2",
+    "platform": "linux",
+    "firefox": 78
+  },
+  "exclusionRules": [
+    {
+      "pattern": ":https://www.youtube.com/",
+      "passKeys": "f t "
+    },
+    {
+      "pattern": ":https://config.qmk.fm/",
+      "passKeys": ""
+    }
+  ],
+  "keyMappings": [
+    "unmapAll",
+    "map H goBack",
+    "map L goForward",
+    "map J nextTab",
+    "map K previousTab",
+    "map j scrollDown",
+    "map k scrollUp",
+    "map d scrollPageDown",
+    "map u scrollPageUp",
+    "map gj scrollToBottom",
+    "map gk scrollToTop",
+    "map ge Vomnibar.activateUrl",
+    "map gi focusInput",
+    "map o Vomnibar.activate",
+    "map O Vomnibar.activateInNewTab",
+    "map t Vomnibar.activateTabSelection",
+    "map ^ visitPreviousTab",
+    "map < moveTabLeft",
+    "map > moveTabRight",
+    "map f LinkHints.activate",
+    "map F LinkHints.activateModeToOpenInNewForegroundTab",
+    "map yy copyCurrentUrl",
+    "map yf LinkHints.activateModeToCopyLinkUrl",
+    "map p openCopiedUrlInCurrentTab",
+    "map P openCopiedUrlInNewTab",
+    "map i enterInsertMode",
+    "map v enterVisualMode",
+    "map , passNextKey"
+  ],
+  "searchUrl": "https://www.duckduckgo.com/?q=$s DuckDuckGo",
+  "smoothScroll": false
+}
