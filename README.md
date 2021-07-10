@@ -2,10 +2,11 @@ Relatively simple Linux config for desktop, managed with [yadm].
 
 - OS: [Void Linux] ([package list])
 - window manager: [sway] ([sway-config])
-- shell: [fish] ([config][fish-config])
-- terminal: [foot] ([config][foot-config])
-- editor: [kakoune] ([config][kak-config])
+- bar: [waybar] ([waybar-config])
 - menu/launcher (fzf-based): [fzf-menu], [sway-launcher]
+- terminal: [foot] ([config][foot-config])
+- shell: [fish] ([config][fish-config])
+- editor: [kakoune] ([config][kak-config])
 - colors: [saturn]
 
 [yadm]: https://github.com/TheLocehiliosan/yadm
@@ -13,6 +14,8 @@ Relatively simple Linux config for desktop, managed with [yadm].
 [package list]: /.local/share/void-pkglist.txt
 [sway]: https://github.com/swaywm/sway/
 [sway-config]: /.config/sway/config
+[waybar]: https://github.com/Alexays/Waybar
+[waybar-config]: /.config/waybar/config
 [fish]: https://fishshell.com
 [fish-config]: /.config/fish/config.fish
 [foot]: https://codeberg.org/dnkl/foot
