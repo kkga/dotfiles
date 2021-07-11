@@ -10,6 +10,7 @@ Vulkan-Tools
 Waybar
 abduco
 acl-devel
+adwaita-plus
 aerc
 alacritty
 alsa-firmware
@@ -107,6 +108,7 @@ git
 git-extras
 git-libsecret
 github-cli
+gitui
 glmark2
 gnome
 gnome-keyring
@@ -115,6 +117,7 @@ godot
 goimapnotify
 goxel
 gpgme
+gping
 grimshot
 grub-btrfs
 grub-btrfs-runit
@@ -208,10 +211,7 @@ nnn
 nodejs
 notcurses
 notcurses-progs
-noto-fonts-cjk
 noto-fonts-emoji
-noto-fonts-ttf
-noto-fonts-ttf-extra
 nushell
 obs
 obs-devel
