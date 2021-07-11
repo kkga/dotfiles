@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 exec floating-terminal clipman pick \
 	--print0 --tool=CUSTOM \
