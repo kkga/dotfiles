@@ -16,9 +16,9 @@ export FZF_DEFAULT_OPTS="\
 	--color=pointer:8,info:8,hl:3,hl+:3,bg+:#404040\
 	"
 
-if [[ -z $WAYLAND_DISPLAY && $(tty) == "/dev/tty1" ]]; then
-	exec start-sway
-fi
+# if [[ -z $WAYLAND_DISPLAY && $(tty) == "/dev/tty1" ]]; then
+# 	exec start-sway
+# fi
 
 # if [ "$(uname -s)" == "Linux" ]; then
 #     eval "$(/usr/bin/gnome-keyring-daemon --start --components=pkcs11,secrets,ssh)"

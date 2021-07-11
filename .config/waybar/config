@@ -15,8 +15,8 @@
     "custom/vpn",
     "network",
     //"sway/language",
-    "custom/weather",
-    "idle_inhibitor",
+    //"custom/weather",
+    //"idle_inhibitor",
     "battery",
     "clock",
     "tray"
