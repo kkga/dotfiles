@@ -23,8 +23,8 @@
 	submoduleSummary = true
 [push]
 	default = simple
-[pull]
-    ff = only
+; [pull]
+    ; ff = only
 [log]
 	date = format:%Y-%m-%d %H:%M:%S %z (%A)
 [interactive]
