@@ -69,10 +69,10 @@ sset() {
 			ddcutil setvcp 10 "$1"
 		fi
 	else
-		if [ $# -gt 0 ]; then
-			brightnessctl -d "$1" set "$2"
+		if [ $# -gt 1 ]; then
+			brightnessctl -d "$1" set "$2%"
 		else
-			brightnessctl set "$1"
+			brightnessctl set "$1%"
 		fi
 	fi
 }
