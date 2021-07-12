@@ -131,6 +131,7 @@ htop
 i3status-rust
 imv
 incron
+inetutils-ifconfig
 inotify-tools
 inxi
 iwd
@@ -393,7 +394,6 @@ yad
 yadm
 yambar
 yandex-disk
-yaru
 youtube-dl
 zathura
 zathura-pdf-mupdf
