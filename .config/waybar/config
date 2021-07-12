@@ -71,8 +71,8 @@
     "format": "<span weight=\"bold\">{:%H:%M}</span>"
   },
   "battery": {
-    "format": "bat <span weight=\"bold\">{capacity}%</span> <small>({time})</small>",
-    "format-charging": "<small>BAT</small> {capacity}% <small>(++ {time})</small>",
+    "format": "bat <span weight=\"bold\">{capacity}%</span>",
+    "format-charging": "bat <span weight=\"bold\">{capacity}%</span>",
     "states": {
       "warning": 10
     },
@@ -85,7 +85,8 @@
     "format-linked": "{ifname}",
     "format-disconnected": "-X-",
     "tooltip-format-wifi": "{essid} ({signalStrength}%)\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}",
-    "tooltip-format": "{ifname}\n{ipaddr}/{cidr}\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}"
+    "tooltip-format": "{ifname}\n{ipaddr}/{cidr}\n↓ {bandwidthDownBits}\n↑ {bandwidthUpBits}",
+    "on-click": "nm-connection-editor"
   },
   "custom/vpn": {
     "format": "VPN",
