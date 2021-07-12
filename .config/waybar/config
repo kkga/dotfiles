@@ -89,7 +89,7 @@
     "on-click": "nm-connection-editor"
   },
   "custom/vpn": {
-    "format": "VPN",
+    "format": "vpn",
     "exec": "echo '{\"class\": \"connected\", \"tooltip\": \"VPN\"}'",
     "exec-if": "test -d /proc/sys/net/ipv4/conf/m*",
     "return-type": "json",
