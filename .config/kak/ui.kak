@@ -39,7 +39,7 @@ set-option global startup_info_version 20200901
 set-option global autoreload yes
 set-option global lsp_auto_highlight_references false
 set-option global lsp_hover_anchor true
-set-option -add global ui_options terminal_status_on_top=true
+# set-option -add global ui_options terminal_status_on_top=true
 set-option -add global ui_options terminal_assistant=off
 set-option -add global ui_options terminal_set_title=off
 set-option -add global ui_options terminal_padding_char=╱
