@@ -1,6 +1,6 @@
 set $gnome-schema org.gnome.desktop.interface
 
-set $popupBorder 8
+set $popupBorder 4
 set $popupHeight 40ppt
 set $popupWidth 100ppt
 
@@ -15,7 +15,7 @@ set $col_fg_dim     #999999
 
 # xwayland disable
 default_border pixel 2
-default_floating_border pixel 2
+default_floating_border normal
 
 smart_borders on
 smart_gaps on

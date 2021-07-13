@@ -14,7 +14,7 @@ chmod 600 "$input" "$output"
 # sadly we can't use "$@" here directly because we are inside sh -c "..." call
 # already.
 # you can also set window dimensions via -g '=COLSxROWS', see man st.
-floating-terminal dash -c "cat $input | fzf $(printf -- " '%s'" "$@" | sed "s/^ ''$//") | tee $output" &
+floating-terminal -T "menu" dash -c "cat $input | fzf $(printf -- " '%s'" "$@" | sed "s/^ ''$//") | tee $output" &
 disown
 
 # handle ctrl+c outside child terminal window
