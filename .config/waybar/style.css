@@ -1,7 +1,8 @@
 @define-color background  rgba(0,0,0,0.75);
 @define-color foreground  #a8a8a8;
+@define-color foreground-dim  rgba(255,255,255,0.5);
 @define-color bg-highlight #5F5F87;
-@define-color bg-dim      rgba(255,255,255,0.2);
+@define-color bg-dim      rgba(255,255,255,0.15);
 @define-color border      rgba(255,255,255,0.1);
 @define-color text-bright rgba(255,255,255,1);
 @define-color bg-orange   rgba(255,165,0,0.2);
@@ -59,18 +60,18 @@ window#waybar {
 
 #taskbar button {
   padding: 0 6pt;
-  color: @foreground;
-  opacity: 0.75;
+  color: @foreground-dim;
 }
 #taskbar button:hover {
   box-shadow: inherit;
   text-shadow: inherit;
   background: inherit;
-  opacity: 1;
+  background: @bg-dim;
 }
 #taskbar button.active {
   font-weight: bold;
-  opacity: 1;
+  color: @foreground;
+  background: @bg-dim;
 }
 
 #workspaces button.urgent,

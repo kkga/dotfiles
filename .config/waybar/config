@@ -23,8 +23,8 @@
   ],
 
   "wlr/taskbar": {
-    "format": "[{app_id}]",
-    "icon-size": 20,
+    "format": "{app_id}",
+    "icon-size": 16,
     "tooltip-format": "{title}",
     "on-click": "activate",
     "on-click-middle": "close"
@@ -96,7 +96,7 @@
     "interval": 5
   },
   "custom/tailscale": {
-    "format": "TS",
+    "format": "ts",
     "exec": "echo '{\"class\": \"connected\", \"tooltip\": \"TAILSCALE\"}'",
     "exec-if": "test -d /proc/sys/net/ipv4/conf/tailscale0",
     "return-type": "json",
