@@ -1,4 +1,1 @@
-.config/spotifyd/*
-.config/luastatus/credentials.lua
-.ssh/id_rsa
-.gnupg/*.gpg
+
