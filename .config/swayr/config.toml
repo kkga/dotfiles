@@ -7,3 +7,17 @@ window_format = '[{workspace_name}] {app_name}: {urgency_start}{title}{urgency_e
 workspace_format = '-{name}-'
 urgency_start = '!!! '
 urgency_end = ' !!!'
+
+[layout]
+auto_tile = true
+auto_tile_min_window_width_per_output_width = [
+    [1024, 500],
+    [1280, 600],
+    [1400, 680],
+    [1440, 700],
+    [1600, 780],
+    [1920, 920],
+    [2560, 1000],
+    [3440, 1000],
+    [4096, 1200],
+]
