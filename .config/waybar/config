@@ -44,15 +44,14 @@
   },
   "custom/updates": {
     "format": "upd <span weight=\"bold\">{}</span>",
-    "tooltip": false,
+    "return-type": "json",
     "exec": "pkill waybar-xbps; waybar-xbps",
     "on-click": "pkill waybar-xbps; waybar-xbps"
   },
   "custom/yadm": {
     "format": "yadm <span weight=\"bold\">{}</span>",
-    "tooltip": false,
-    "exec": "yadm status | wc -l | sed '/^0$/d'",
-    "on-click": "yadm status | wc -l | sed '/^0$/d'",
+    "return-type": "json",
+    "exec": "waybar-yadm",
     "interval": 600
   },
   "custom/media": {
