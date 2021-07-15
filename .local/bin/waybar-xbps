@@ -8,7 +8,7 @@ check() {
 	UPDATES=$(xbps-install -un | wc -l)
 	LIST=$(xbps-install -un | awk '{print $1}' | sed 's/$/\\n/' | tr -d '\n')
 	if [ "$UPDATES" -eq "0" ]; then
-		printf '{"text": ""}\n'
+		printf ''
 	else
 		printf '{"text": "%s", "tooltip": "%s"}\n' "$UPDATES" "$LIST"
 	fi
