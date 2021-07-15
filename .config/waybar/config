@@ -1,7 +1,7 @@
 {
   "layer": "bottom",
   "height": 16,
-  "position": "bottom",
+  "position": "top",
   "modules-left": ["sway/workspaces", "wlr/taskbar"],
   "modules-center": ["sway/mode", "custom/scratchpad", "custom/recording"],
   "modules-right": [

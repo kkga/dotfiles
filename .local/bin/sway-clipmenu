@@ -1,5 +1,5 @@
 #!/bin/sh
 
-exec floating-terminal clipman pick \
+exec clipman pick \
 	--print0 --tool=CUSTOM \
 	--tool-args="fzf-menu --prompt 'CLIP> ' --bind=tab:down,btab:up --preview 'echo {}' --preview-window right:50%:border-left --read0"
