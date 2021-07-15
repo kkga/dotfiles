@@ -3,6 +3,7 @@ Clight
 ImageMagick
 MangoHud
 MangoHud-32bit
+NetworkManager
 RcloneBrowser
 SDL2-devel
 Solaar
@@ -29,6 +30,7 @@ bat
 bc
 bemenu
 bemenu-devel
+bind-utils
 birdtray
 blender
 blueman
@@ -42,13 +44,14 @@ brillo
 cairo-devel
 catimg
 cheat
-chrome-gnome-shell
 chromium
 chrony
 clang-tools-extra
 clipman
 cmake
+cmst
 cmus
+connman
 corectrl
 cross-arm-none-eabi-binutils
 cross-arm-none-eabi-gcc
@@ -62,9 +65,12 @@ ddgr
 delta
 dfu-programmer
 dfu-util
+dhcpcd-gtk
+dhcpcd-qt
 dina-font
 dkms
 dmenu
+dnsmasq
 dos2unix
 duf
 dunst
@@ -110,7 +116,6 @@ git-libsecret
 github-cli
 gitui
 glmark2
-gnome
 gnome-keyring
 go
 godot
@@ -145,6 +150,7 @@ kitty
 kristall
 lazygit
 ldm
+ldns
 lf
 libX11-devel
 libXcomposite-devel
@@ -180,6 +186,7 @@ lm_sensors
 logiops
 lowdown
 lsd
+lshw
 lua-devel
 luarocks
 luasec
@@ -207,6 +214,7 @@ mupdf
 myrepos
 ncurses-devel
 neofetch
+network-manager-applet
 nmap
 nnn
 nodejs
@@ -357,7 +365,6 @@ whois
 wine
 wine-32bit
 winetricks
-wireguard-tools
 wlsunset
 wmctrl
 wob
