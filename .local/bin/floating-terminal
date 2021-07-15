@@ -18,4 +18,4 @@ if [ -n "$SWAYSOCK" ]; then
 	swaymsg fullscreen disable > /dev/null
 fi
 
-$FLOATING_TERMINAL -N "$@"
+$FLOATING_TERMINAL "$@"

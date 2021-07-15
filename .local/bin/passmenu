@@ -3,5 +3,7 @@
 set -eu
 set -o pipefail
 
-floating-terminal rbw unlock
+if ! rbw unlocked; then
+	floating-terminal rbw unlock
+fi
 rbw ls --fields folder,name,user | sed 's/\t/\//g' | sort | $DMENU_PROGRAM | sed 's/^[^\/]*\///' | sed 's/\// /' | xargs -r rbw get | wl-copy
