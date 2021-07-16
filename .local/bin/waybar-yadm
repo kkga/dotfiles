@@ -1,0 +1,10 @@
+#!/bin/sh
+
+CHANGES=$(yadm status | wc -l)
+FILES=$(yadm status | sed 's/$/\\n/' | tr -d '\n')
+
+if [ "$CHANGES" -eq "0" ]; then
+	printf ''
+else
+	printf '{"text": "%s", "tooltip": "%s"}\n' "$CHANGES" "$FILES"
+fi
