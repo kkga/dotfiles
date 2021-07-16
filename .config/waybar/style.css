@@ -1,5 +1,5 @@
 @define-color background  rgba(0,0,0,0.75);
-@define-color foreground  #a8a8a8;
+@define-color foreground  #A8A8A8;
 @define-color foreground-dim  rgba(255,255,255,0.5);
 @define-color bg-highlight #5F5F87;
 @define-color bg-dim      rgba(255,255,255,0.15);
@@ -9,6 +9,7 @@
 @define-color text-orange rgba(255,165,0,1);
 @define-color bg-blue     rgba(173,216,230,0.2);
 @define-color text-blue   rgba(173,216,230,1);
+@define-color bg-accent   #D7875F;
 
 * {
   border: none;
@@ -87,8 +88,8 @@ window#waybar {
 
 #mode {
   font-weight: bold;
-  color: @text-orange;
-  background: @bg-orange;
+  color: #000000;
+  background: @text-orange;
 }
 
 #custom-recording,
