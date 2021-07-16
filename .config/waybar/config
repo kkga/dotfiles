@@ -92,7 +92,8 @@
     "exec": "echo '{\"class\": \"connected\", \"tooltip\": \"VPN\"}'",
     "exec-if": "test -d /proc/sys/net/ipv4/conf/m*",
     "return-type": "json",
-    "interval": 5
+    "interval": 5,
+    "on-click": "floating-terminal -H nmcli connection show"
   },
   "custom/tailscale": {
     "format": "ts",
