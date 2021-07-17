@@ -1,6 +1,6 @@
 #!/bin/sh
 
-menu=$(printf "firefox\nqutebrowser\ncopy to clipboard\nplay" | $DMENU_PROGRAM)
+menu=$(printf "firefox\nqutebrowser\ncopy to clipboard\nopen in mpv\nclipboard to mpv" | $DMENU_PROGRAM)
 
 case $menu in
 	"firefox")
@@ -12,7 +12,10 @@ case $menu in
 	"copy to clipboard")
 		echo "$@" | wl-copy
 		;;
-	"play")
+	"open in mpv")
 		mpv "$@" &
+		;;
+	"clipboard to mpv")
+		mpv "$(wl-paste)" &
 		;;
 esac
