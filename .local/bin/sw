@@ -1,10 +1,12 @@
 #!/bin/sh
 
-. "$HOME/.local/bin/env-wayland"
+SWAY_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/sway"
 
-export XDG_SESSION_TYPE=wayland
-export XDG_SESSION_DESKTOP=sway
-export XDG_CURRENT_DESKTOP=sway
-export LIBSEAT_BACKEND=logind
+# sway specific environment
+if [[ -f $SWAY_CONFIG_HOME/env ]]; then
+	set -a
+	. "$SWAY_CONFIG_HOME/env"
+	set +a
+fi
 
 exec dbus-run-session sway "$@"
