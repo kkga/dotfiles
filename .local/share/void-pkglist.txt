@@ -77,7 +77,6 @@ dunst
 dust
 dutree
 editorconfig
-elixir
 elogind
 elvish
 emptty
@@ -349,7 +348,6 @@ void-repo-nonfree
 void-updates
 volta
 vpm
-vpnd
 vpsm
 vsv
 vulkan-loader

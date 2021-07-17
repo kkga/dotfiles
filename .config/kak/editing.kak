@@ -82,6 +82,11 @@ hook global WinSetOption filetype=markdown %{
     map buffer normal <ret> ': todo-toggle<ret>' -docstring "toggle checkbox"
     add-highlighter buffer/ regex '\[ \]' 0:blue
     add-highlighter buffer/ regex '\[x\]' 0:comment
+
+    predictive-text-enable
+    hook window -once WinSetOption filetype=.* %{
+        predictive-text-disable
+    }
 }
 
 hook global WinSetOption filetype=lua %{

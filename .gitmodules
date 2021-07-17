@@ -13,3 +13,6 @@
 [submodule ".config/kak/plugins/buffers"]
 	path = .config/kak/plugins/buffers
 	url = https://github.com/Delapouite/kakoune-buffers
+[submodule ".config/kak/plugins/kakoune-predictive-text"]
+	path = .config/kak/plugins/kakoune-predictive-text
+	url = https://gitlab.com/Screwtapello/kakoune-predictive-text
