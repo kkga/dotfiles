@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 SWAY_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}/sway"
 

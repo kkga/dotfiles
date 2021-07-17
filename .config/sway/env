@@ -26,5 +26,3 @@ TERMINAL="term"
 TERMCMD="term"
 DMENU_PROGRAM="fzf-menu"
 FLOATING_TERMINAL="footclient --app-id popup"
-
-
