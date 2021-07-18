@@ -15,7 +15,6 @@ adwaita-plus
 aerc
 alacritty
 alsa-firmware
-alsa-plugins-pulseaudio
 alsa-utils
 anki
 asciinema
@@ -179,8 +178,6 @@ light
 linux-firmware
 linux5.12
 linux5.12-headers
-linux5.13
-linux5.13-headers
 lm_sensors
 logiops
 lowdown
@@ -252,7 +249,7 @@ powertop
 procs
 progress
 protontricks
-pulseaudio
+pulseaudio-utils
 python-gobject
 python3-adblock
 python3-attrs
@@ -336,7 +333,6 @@ urlwatch
 vdirsyncer
 vdpauinfo
 vifm
-vim
 viu
 vkBasalt
 vmdfmt
@@ -358,6 +354,7 @@ wayland-devel
 wayland-protocols
 waylock
 wdisplays
+weechat
 wev
 wf-recorder
 wget
