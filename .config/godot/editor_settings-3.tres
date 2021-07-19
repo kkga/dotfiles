@@ -163,4 +163,5 @@ projects/::home::kkga::projects::souls-like = "/home/kkga/projects/souls-like"
 interface/dialogs/uv_editor_bounds = Rect2( 288, 160, 3264, 1813 )
 projects/::home::kkga::repos::godot-steering-ai-framework::godot = "/home/kkga/repos/godot-steering-ai-framework/godot"
 projects/::home::kkga::repos::tps-demo = "/home/kkga/repos/tps-demo"
+projects/::home::kkga::repos::godot-demo-projects::3d::waypoints = "/home/kkga/repos/godot-demo-projects/3d/waypoints"
 shortcuts = [ "editor/play", SubResource( 1 ), "editor/play_scene", SubResource( 2 ), "editor/stop", SubResource( 3 ) ]
