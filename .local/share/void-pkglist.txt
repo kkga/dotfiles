@@ -114,6 +114,7 @@ git-libsecret
 github-cli
 gitui
 glmark2
+gnome
 gnome-keyring
 go
 godot
@@ -208,6 +209,8 @@ moreutils
 mpv
 mupdf
 myrepos
+nautilus
+ncspot
 ncurses-devel
 neofetch
 network-manager-applet
@@ -290,6 +293,7 @@ speedtest-cli
 spotify-qt
 spotify-tui
 spotifyd
+srain
 starship
 steam
 sublime-merge-bin
@@ -307,6 +311,7 @@ syncthing
 tailscale
 tealdeer
 teensy_loader_cli
+telegram-tg
 terminus-font
 thunderbird
 tmux
@@ -398,6 +403,7 @@ yad
 yadm
 yambar
 yandex-disk
+yaru
 youtube-dl
 zathura
 zathura-pdf-mupdf
