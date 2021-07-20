@@ -96,6 +96,7 @@ font-ibm-plex-ttf
 fontforge
 fonttosfnt
 foot
+fstl
 fuzzel
 fuzzypkg
 fwupd
